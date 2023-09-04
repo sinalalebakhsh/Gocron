@@ -567,6 +567,12 @@ Understanding Flow Control
         someNames: [Boots Hat]
 
 
+    Copying Slices with Different Sizes
+    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        replacementProducts := []string { "Canoe", "Boots"}
+        copy(products, replacementProducts)
+    Output:
+        products: [Canoe Boots Paddle Hat]
 
 
 
