@@ -48,8 +48,14 @@ var OriginalFeatures Features = Features{
         The go run command builds and executes the source code in a specified folder without
         creating an executable output
     10.
+        test
+        The go test command executes unit tests
     11.
+        version
+        The go version command writes out the Go version number.
     12.
+        vet
+        The go vet command detects common problems in Go code
     13.
     14.
     15.
