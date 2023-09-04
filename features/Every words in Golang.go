@@ -459,10 +459,11 @@ Understanding Flow Control
     many values you need to store or when the number changes over time. One way to define a slice is to use the
     built-in make function
 
-    names := make([]string, 3)
-    names[0] = "Kayak"
-    names[1] = "Lifejacket"
-    names[2] = "Paddle"
+    example:
+        names := make([]string, 3)
+        names[0] = "Kayak"
+        names[1] = "Lifejacket"
+        names[2] = "Paddle"
 
     Literal Syntax:
         names := []string {"Kayak", "Lifejacket", "Paddle"}
