@@ -106,6 +106,10 @@ Understanding the Basic Data Types
     int type size is platform-dependent and will be either 32 or 64 bits. There are
     also integer types that have a specific size, such as int8, int16, int32, and
     int64, but the int type should be used unless you need a specific size.
+    
+    Literal Value Examples:
+        20, -20. Values can also be expressed in hex (0x14), octal (0o24), and binary notation
+        (0b0010100).
 
 24.unit
     uint8,  uint16,  uint32,  uint64,int8,  int16,  int32
@@ -114,11 +118,18 @@ Understanding the Basic Data Types
     types that have a specific size, such as uint8, uint16, uint32, and uint64, but
     the uint type should be used unless you need a specific size.
 
+    Literal Value Examples:
+        There are no uint literals. All literal whole numbers are treated as int values.
+
 25.byte = uint8
     This type is an alias for uint8 and is typically used to represent a byte of data.
     byte = 8 bits, 
     1024bytes = 1 kilobyte
     1024 kilobytes = 1 megabyte
+    
+    Literal Value Examples:
+        There are no byte literals. Bytes are typically expressed as integer literals (such as 101) or run
+        literals ('e') since the byte type is an alias for the uint8 type.
 
 26.float32, float64
     Floating Point Numbers. e.g 3.14, 123.541, 100.4020401
@@ -141,7 +152,8 @@ Understanding the Basic Data Types
     but—loosely—this is the representation of a single character. The rune type is
     an alias for int32.
 
-    
+31.
+
 variable = var
     constant = const
 Constants are basically variables whose values cannot be changed later.
