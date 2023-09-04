@@ -40,8 +40,12 @@ var OriginalFeatures Features = Features{
         install
         The go install command downloads packages and is usually used to install tool packages,
         as demonstrated in the “Debugging Go Code” section
-    7. 
+    7.
+        help
+        The go help command displays help information for other Go features. The command go
+        help build, for example, displays information about the build argument.
     8.
+    
     9.
         variable = var
             constant = const
