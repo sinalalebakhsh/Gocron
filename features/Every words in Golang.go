@@ -45,58 +45,60 @@ var OriginalFeatures Features = Features{
         The go help command displays help information for other Go features. The command go
         help build, for example, displays information about the build argument.
     8.
-    
+        mod
+        The go mod command is used to create and manage a Go module, as demonstrated in the
+        “Defining a Module” section
     9.
-        variable = var
-            constant = const
-        Constants are basically variables whose values cannot be changed later.
-            package main = first executable file main.go
-        func main() {} = every execute files in "package main"
-            fmt = for printing in CLI
-        import = for importing another package
-            string
-        int = integers
-            uint8,  uint16,  uint32,  uint64,int8,  int16,  int32
-        byte = uint8
-        e.g
     10.
-        byte = 8 bits, 1024bytes = 1 kilobyte, 1024 kilobytes = 1 megabyte
     11.
-        rune = uint32
     12.
+    13.
+    14.
+    15.
+    16.
+    17.
+    18.
+    19.
+    20.
+    21.
+    22.
+    23.
+    24.
+    25.
+    variable = var
+        constant = const
+    Constants are basically variables whose values cannot be changed later.
+        package main = first executable file main.go
+    func main() {} = every execute files in "package main"
+        fmt = for printing in CLI
+    import = for importing another package
+        string
+    int = integers
+        uint8,  uint16,  uint32,  uint64,int8,  int16,  int32
+    byte = uint8
+    e.g
+        byte = 8 bits, 1024bytes = 1 kilobyte, 1024 kilobytes = 1 megabyte
+        rune = uint32
         float32, float64
         Floating Point Numbers. e.g 3.14, 123.541, 100.4020401
-    13.
         complex64, complex128
-    14.
         Format String like: fmt.Printf("%v %s %f", variable, string, float32)
-    15.
         Scope
         Go is lexically scoped using blocks.
     
-    16.
         Defining Multiple Variables
-    17.
         fmt.Scanf("%f", &input)
         We use another function from the fmt package to readthe   user   input   (Scanf).
-    18.
         for 
         loop
-    19.
         if
         else
-    20.
         switch
         default
-    21.
         array
         An array is a numbered sequence of elements of a sin-gle type with a fixed length.
-    22.
         target
-    23.
-    24.
         value
-    25.
         range
     26.
         len(x)
