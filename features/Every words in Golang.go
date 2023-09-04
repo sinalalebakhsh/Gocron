@@ -18,37 +18,35 @@ var OriginalFeatures Features = Features{
     Using the Go Command
     1.
         build
-        The go build command compiles the source code in the current directory and generates an
-        executable file, as described in the “Compiling and Running Source Code” section.
+        The go build command compiles the source code in the current directory 
+        and generates an executable file.
     2.
         clean
-        The go clean command removes the output produced by the go build command, including
-        the executable and any temporary files that were created during the build, as described in the
-        “Compiling and Running Source Code” section.
+        The go clean command removes the output produced by the go build command, 
+        including the executable and any temporary files that were created during the build.
     3.
         doc
-        The go doc command generates documentation from source code. See the “Linting Go Code”
-        section for a simple example
+        The go doc command generates documentation from source code.
     4.
         fmt
-        The go fmt command ensures consistent indentation and alignment in source code files, as
-        described in the “Formatting Go Code” section.
+        The go fmt command ensures consistent indentation and alignment in source code files.
     5.
         get
-        The go get command downloads and installs external packages
+        The go get command downloads and installs external packages.
     6.
         install
-        The go install command downloads packages and is usually used to install tool packages,
-        as demonstrated in the “Debugging Go Code” section
+        The go install command downloads packages and is usually used to install tool packages.
     7.
         help
         The go help command displays help information for other Go features. The command go
         help build, for example, displays information about the build argument.
     8.
         mod
-        The go mod command is used to create and manage a Go module, as demonstrated in the
-        “Defining a Module” section
+        The go mod command is used to create and manage a Go module.
     9.
+        run
+        The go run command builds and executes the source code in a specified folder without
+        creating an executable output
     10.
     11.
     12.
