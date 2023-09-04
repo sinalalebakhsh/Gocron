@@ -26,7 +26,7 @@ var OriginalFeatures Features = Features{
         the executable and any temporary files that were created during the build, as described in the
         “Compiling and Running Source Code” section.
     3.
-        
+
     4. 
     5. 
     6.
@@ -89,7 +89,8 @@ var OriginalFeatures Features = Features{
         length
     27.
         slice
-        A slice is a segment of an array. Like arrays slices areindexable and have a length. Unlike arrays this lengthis allowed to change.
+        A slice is a segment of an array. Like arrays slices areindexable and have a length. 
+        Unlike arrays this lengthis allowed to change.
     28.
         make
         f you want to create a slice you should use the built-inmake function
@@ -101,7 +102,9 @@ var OriginalFeatures Features = Features{
         Another way to create slices is to use the [low : high]expression
     30.
         map
-        A map is an unordered collection of key-value pairs.Also known as an associative array, a hash table or dictionary, maps are used to look up a value by its associated key.
+        A map is an unordered collection of key-value pairs.
+        Also known as an associative array, a hash table or dictionary, 
+        maps are used to look up a value by its associated key.
     31.
         slices maps 
     32.
@@ -111,7 +114,9 @@ var OriginalFeatures Features = Features{
         make map
     34.
         function
-        A function is an independent section of code that mapszero or more input parameters to zero or more outputparameters.   Functions   (also   known   as   procedures   orsubroutines) are often represented as a black box: (theblack box represents the function)
+        A function is an independent section of code that mapszero or more input parameters to zero or more outputparameters.   
+        Functions (also known as procedures orsubroutines) 
+        are often represented as a black box: (theblack box represents the function)
         func FunctionName(ParameterName ParameterType) ReturnType { body of function}
         e.g
         func getUserName(UserInput string) string { return UserInput }
@@ -125,7 +130,7 @@ var OriginalFeatures Features = Features{
         closure
         It is possible to create functions inside of functions
     38.
-        increment  adds 1 to the variable  x  which is defined inthe  main  function's   scope. 
+        increment adds 1 to the variable  x  which is defined inthe  main  function's   scope. 
     39.
         return function from a function
     40.
