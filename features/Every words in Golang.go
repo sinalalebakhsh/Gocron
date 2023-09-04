@@ -124,7 +124,12 @@ Understanding the Basic Data Types
     Floating Point Numbers. e.g 3.14, 123.541, 100.4020401
     These types represent numbers with a fraction. These types allocate 32 or 64
     bits to store the value.
-    
+
+27.complex64, complex128
+    These types represent numbers that have real and imaginary components.
+    These types allocate 64 or 128 bits to store the value.
+
+
 variable = var
     constant = const
 Constants are basically variables whose values cannot be changed later.
@@ -136,7 +141,7 @@ import = for importing another package
 e.g
     rune = uint32
     
-    complex64, complex128
+   
     Format String like: fmt.Printf("%v %s %f", variable, string, float32)
     Scope
     Go is lexically scoped using blocks.
