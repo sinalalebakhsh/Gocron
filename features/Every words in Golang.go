@@ -126,7 +126,7 @@ Understanding the Basic Data Types
     byte = 8 bits, 
     1024bytes = 1 kilobyte
     1024 kilobytes = 1 megabyte
-    
+
     Literal Value Examples:
         There are no byte literals. Bytes are typically expressed as integer literals (such as 101) or run
         literals ('e') since the byte type is an alias for the uint8 type.
@@ -136,6 +136,10 @@ Understanding the Basic Data Types
     These types represent numbers with a fraction. These types allocate 32 or 64
     bits to store the value.
 
+    Literal Value Examples:
+        20.2, -20.2, 1.2e10, 1.2e-10. Values can also be expressed in hex notation (0x2p10), although
+        the exponent is expressed in decimal digits.
+
 27.complex64, complex128
     These types represent numbers that have real and imaginary components.
     These types allocate 64 or 128 bits to store the value.
@@ -144,14 +148,25 @@ Understanding the Basic Data Types
     bolean
     This type represents a Boolean truth with the values true and false.
 
+    Literal Value Examples:
+        true, false.
+
 29.string
     This type represents a sequence of characters.
+
+    Literal Value Examples:
+        "Hello". Character sequences escaped with a backslash are interpreted if the value is enclosed
+        in double quotes ("Hello\n"). Escape sequences are not interpreted if the value is enclosed in
+        backquotes ('Hello\n').
 
 30.rune = int32
     This type represents a single Unicode code point. Unicode is complicated,
     but—loosely—this is the representation of a single character. The rune type is
     an alias for int32.
-
+   
+    Literal Value Examples:
+        'A', '\n', '\u00A5', '¥'. Characters, glyphs, and escape sequences are enclosed in single
+        quotes (the ' character).
 31.
 
 variable = var
