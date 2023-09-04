@@ -193,19 +193,19 @@ rune        0
 Operations and Conversions
 ------------------------------------------------------------------------------------------------
 33.+, -, *, /, %
-    These operators are used to perform arithmetic using numeric values, as described in the
-    “Understanding the Arithmetic Operators” section. The + operator can also be used for string
-    concatenation, as described in the “Concatenating Strings” section.
+    These operators are used to perform arithmetic using numeric values
 
 34.==, !=, <, <=, >, >=
-    These operators compare two values, as described in the “Understanding the Comparison
-    Operators” section.
+    These operators compare two values.
 
 35.||, &&, !
-    These are the logical operators, which are applied to bool values and return a bool value, as
-    described in the “Understanding the Logical Operators” section.
+    These are the logical operators, which are applied to bool values and return a bool value.
 
-36.
+36.=, :=
+    These are the assignment operators. The standard assignment operator (=) is used to set
+    the initial value when a constant or variable is defined, or to change the value assigned to
+    a previously defined variable. The shorthand operator (:=) is used to define a variable and
+    assign a value.
 
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
