@@ -538,8 +538,51 @@ Understanding Flow Control
         someNames := make([]string, 2)
         copy(someNames, allNames)
     Output:
-        someNames: [Lifejacket Paddle]
         allNames [Lifejacket Paddle Hat]
+        someNames: [Lifejacket Paddle]
+
+
+    the Uninitialized Slice Pitfall
+    the copy function doesn't resize the destination slice. A common
+    pitfall is to try to copy elements into a slice that has not been initialized
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        allNames := products[1:]
+        var someNames []string
+        copy(someNames, allNames)
+    Output:
+        someNames: []
+        allNames [Lifejacket Paddle Hat]
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
