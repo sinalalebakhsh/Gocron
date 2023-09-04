@@ -413,6 +413,8 @@ Understanding Flow Control
 59.default
     The default keyword is used to define a clause that will be executed when none of the case statements
     matches the switch statement's value
+    
+    example:
         switch (character) {
                 case 'K', 'k':
                 if (character == 'k') {
