@@ -644,9 +644,16 @@ Understanding Flow Control
     Unlike arrays, where values are associated with sequential integer locations, 
     maps can use other data types as keys
 
-    
+    example:
+        products := make(map[string]float64, 10)
+        products["Kayak"] = 279
+        products["Lifejacket"] = 48.95
 
-
+    Map Literal Syntax:
+        products := map[string]float64 {
+            "Kayak" : 279,
+            "Lifejacket": 48.95,
+        }
 
 
 
