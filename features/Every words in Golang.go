@@ -290,12 +290,13 @@ Functions for Parsing Strings into Other Data Types
     This function parses a string into an int64 with the specified base and size. Acceptable
     base values are 2 for binary, 8 for octal, 16 for hex, and 10.
 
-46.ParseUint(str,
-base, size)This function parses a string into an unsigned integer value with the specified base and
-size.
-Atoi(str)This function parses a string into a base 10 int and is equivalent to calling
-ParseInt(str, 10, 0), as described in the “Using the Integer Convenience Function”
-section.
+46.ParseUint(str,base, size)
+    This function parses a string into an unsigned integer value with the specified base and size.
+
+47.Atoi(str)
+    This function parses a string into a base 10 int and is equivalent to calling
+    ParseInt(str, 10, 0)
+
 
 
     package main = first executable file main.go
