@@ -79,7 +79,8 @@ Useful Debugger State Commands
 
 Useful Debugger Commands for Controlling Execution
 ------------------------------------------------------------------------------------------------
-17.
+17.continue
+    This command resumes execution of the application.
 
 18.
 
