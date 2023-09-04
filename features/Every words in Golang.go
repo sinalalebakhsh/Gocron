@@ -796,6 +796,13 @@ example:
     for index, char := range price {
         fmt.Println(index, char, string(char))
     }
+Output:
+    0 8364 €
+    3 52 4
+    4 56 8
+    5 46 .
+    6 57 9
+    7 53 5
 
     
 
