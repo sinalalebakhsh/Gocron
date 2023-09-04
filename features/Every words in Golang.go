@@ -215,7 +215,21 @@ Operations and Conversions
     not often required in mainstream development
     where the | operator is used to configure the Go logging features.
 
-    
+
+The Arithmetic Operators
+------------------------------------------------------------------------------------------------
+Operator    Description
+-------     ---------------------
+   +        This operator returns the sum of two operands.
+   -        This operator returns the difference between two operands.
+   *        This operator returns the product of two operands.
+   /        This product returns the quotient of two operators.
+   %        This product returns the remainder, which is similar to the modulo operator provided by
+            other programming languages but can return negative values, as described in the “Using the
+            Remainder Operator” section.
+
+
+
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
     fmt = for printing in CLI
