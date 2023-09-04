@@ -178,7 +178,15 @@ Understanding the Basic Data Types
 
 The Zero Values for the Basic Data Types
 ------------------------------------------------------------------------------------------------
-
+Type    Zero Value
+------  -----------
+int         0
+unit        0
+byte        0
+float64     0
+bool        false
+string      “” (the empty string)
+rune        0
 
 
 
