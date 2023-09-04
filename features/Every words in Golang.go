@@ -193,7 +193,7 @@ rune        0
 Operations and Conversions
 ------------------------------------------------------------------------------------------------
 33.+, -, *, /, %
-    These operators are used to perform arithmetic using numeric values
+    These operators are used to perform arithmetic using numeric values.
 
 34.==, !=, <, <=, >, >=
     These operators compare two values.
@@ -207,6 +207,15 @@ Operations and Conversions
     a previously defined variable. The shorthand operator (:=) is used to define a variable and
     assign a value.
 
+37.-=, +=, ++, --
+    These operators increment and decrement numeric values.
+
+38.&, |, ^, &^, <<, >>
+    These are the bitwise operators, which can be applied to integer values. These operators are
+    not often required in mainstream development
+    where the | operator is used to configure the Go logging features.
+
+    
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
     fmt = for printing in CLI
