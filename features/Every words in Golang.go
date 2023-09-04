@@ -171,9 +171,15 @@ Understanding the Basic Data Types
 31.var = variable 
     Variables are defined using the var keyword, and, unlike constants, the value assigned to a variable can be
     changed
-    
+
 32.const = constant
     Constants are basically variables whose values cannot be changed later.
+
+
+The Zero Values for the Basic Data Types
+------------------------------------------------------------------------------------------------
+
+
 
 
     package main = first executable file main.go
