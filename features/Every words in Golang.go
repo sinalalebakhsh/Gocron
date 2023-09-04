@@ -215,7 +215,6 @@ Operations and Conversions
     not often required in mainstream development
     where the | operator is used to configure the Go logging features.
 
-
 The Arithmetic Operators
 ------------------------------------------------------------------------------------------------
 Operator    Description
@@ -227,7 +226,6 @@ Operator    Description
    %        This product returns the remainder, which is similar to the modulo operator provided by
             other programming languages but can return negative values, as described in the “Using the
             Remainder Operator” section.
-
 
 The Comparison Operators
 ------------------------------------------------------------------------------------------------
@@ -241,8 +239,10 @@ Operator    Description
    >=       This operator returns true if the first operand is greater than or equal to the second
             operand.
 
-
-
+The Logical Operators
+------------------------------------------------------------------------------------------------
+Operator    Description
+-------     ---------------------
 
 
     package main = first executable file main.go
