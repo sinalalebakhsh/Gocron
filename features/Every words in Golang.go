@@ -779,9 +779,13 @@ Converting a String to Runes
     which is essentially a single character. 
     To avoid slicing strings in the middle of characters, 
     an explicit conversion to a rune slice can be performed
+    Unicode is incredibly complex, as you would expect 
+    from any standard that aims to describe multiple
+    writing systems evolved over thousands of years.
 
-
-
+    Converting to Runes:
+        var price []rune = []rune("€48.95")
+        var amountString string = string(price[1:])
 
 
 
