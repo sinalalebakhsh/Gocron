@@ -365,7 +365,18 @@ Understanding Flow Control
                 fmt.Println("Index:", index, "Character:", string(character))
             }
 
-    
+57.switch
+    A switch statement provides an alternative way to control execution flow, based on matching the result of an
+    expression to a specific value, as opposed to evaluating a true or false result
+    example:
+    switch (character) {
+        case 'K':
+            fmt.Println("K at position", index)
+        case 'y':
+            fmt.Println("y at position", index)
+    }
+
+
 
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
