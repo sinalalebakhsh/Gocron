@@ -47,17 +47,17 @@ Using the Go Command
 9.run
     The go run command builds and executes the source code in a specified folder without
     creating an executable output
-    
-10.
-    test
+
+10.test
     The go test command executes unit tests
-11.
-    version
+
+11.version
     The go version command writes out the Go version number.
-12.
-    vet
+
+12.vet
     The go vet command detects common problems in Go code
 
+    
 
 Useful Debugger State Commands
 ==============================================================================
