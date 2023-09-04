@@ -167,11 +167,15 @@ Understanding the Basic Data Types
     Literal Value Examples:
         'A', '\n', '\u00A5', '¥'. Characters, glyphs, and escape sequences are enclosed in single
         quotes (the ' character).
-31.
 
-variable = var
-    constant = const
-Constants are basically variables whose values cannot be changed later.
+31.var = variable 
+    Variables are defined using the var keyword, and, unlike constants, the value assigned to a variable can be
+    changed
+    
+32.const = constant
+    Constants are basically variables whose values cannot be changed later.
+
+
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
     fmt = for printing in CLI
