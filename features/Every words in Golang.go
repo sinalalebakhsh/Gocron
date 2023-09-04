@@ -789,6 +789,15 @@ Converting a String to Runes
 
 
 
+Enumerating Strings
+------------------------------------------------------------------------------------------------        
+example:
+    var price = "€48.95"
+    for index, char := range price {
+        fmt.Println(index, char, string(char))
+    }
+
+    
 
 
 
