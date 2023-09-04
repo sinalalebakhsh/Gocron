@@ -356,7 +356,16 @@ Understanding Flow Control
     The for keyword is used to create loops that repeatedly execute statements. The most basic for loops will
     repeat indefinitely unless interrupted by the break keyword
 
+    Incorporating the Condition into the Loop
+    example: 
+    for (counter <= 3) {}
 
+    Enumerating Sequences
+    for index, character := range product {
+                fmt.Println("Index:", index, "Character:", string(character))
+            }
+
+    
 
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
