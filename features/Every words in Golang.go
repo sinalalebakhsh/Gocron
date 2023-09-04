@@ -454,6 +454,7 @@ Understanding Flow Control
         }
     
 62.Slices
+    The slice type in this example is []string
     The best way to think of slices is as a variable-length array because they are useful when you don’t know how
     many values you need to store or when the number changes over time. One way to define a slice is to use the
     built-in make function
@@ -463,9 +464,20 @@ Understanding Flow Control
     names[1] = "Lifejacket"
     names[2] = "Paddle"
 
+    Literal Syntax
+    names := []string {"Kayak", "Lifejacket", "Paddle"}
 
+63.append
+    One of the key advantages of slices is that they can be expanded to accommodate additional elements
+    
+    Appending Elements to a Slice
+        names := []string {"Kayak", "Lifejacket", "Paddle"}
+        names = append(names, "Hat", "Gloves")
 
-
+    Appending Items to a Slice
+        names := []string {"Kayak", "Lifejacket", "Paddle"}
+        appendedNames := append(names, "Hat", "Gloves")
+        names[0] = "Canoe"
 
 
 
