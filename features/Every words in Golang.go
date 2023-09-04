@@ -1,12 +1,11 @@
 package features
 
 type Features struct {
-    EveryWordsInGolang string
+	EveryWordsInGolang string
 }
 
-
 var OriginalFeatures Features = Features{
-    EveryWordsInGolang: `
+	EveryWordsInGolang: `
 
 in Command Line Interface Go:
 ----------------------------------------------------------------
@@ -448,9 +447,21 @@ Understanding Flow Control
     The number of elements specified with the literal syntax can be less than the capacity of the array. 
     Any position in the array for which a value is not provided will be assigned the zero value for the array type.
 
+    Enumerating Arrays
+        names := [3]string { "Kayak", "Lifejacket", "Paddle" }
+        for index, value := range names {
+            fmt.Println("Index:", index, "Value:", value)
+        }
+    
+62.Slices
+    The best way to think of slices is as a variable-length array because they are useful when you don’t know how
+    many values you need to store or when the number changes over time. One way to define a slice is to use the
+    built-in make function
 
-
-
+    names := make([]string, 3)
+    names[0] = "Kayak"
+    names[1] = "Lifejacket"
+    names[2] = "Paddle"
 
 
 
