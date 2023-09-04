@@ -114,8 +114,17 @@ Understanding the Basic Data Types
     types that have a specific size, such as uint8, uint16, uint32, and uint64, but
     the uint type should be used unless you need a specific size.
 
-25.
+25.byte = uint8
+    This type is an alias for uint8 and is typically used to represent a byte of data.
+    byte = 8 bits, 
+    1024bytes = 1 kilobyte
+    1024 kilobytes = 1 megabyte
 
+26.float32, float64
+    Floating Point Numbers. e.g 3.14, 123.541, 100.4020401
+    These types represent numbers with a fraction. These types allocate 32 or 64
+    bits to store the value.
+    
 variable = var
     constant = const
 Constants are basically variables whose values cannot be changed later.
@@ -124,13 +133,9 @@ func main() {} = every execute files in "package main"
     fmt = for printing in CLI
 import = for importing another package
     string
-
-byte = uint8
 e.g
-    byte = 8 bits, 1024bytes = 1 kilobyte, 1024 kilobytes = 1 megabyte
     rune = uint32
-    float32, float64
-    Floating Point Numbers. e.g 3.14, 123.541, 100.4020401
+    
     complex64, complex128
     Format String like: fmt.Printf("%v %s %f", variable, string, float32)
     Scope
@@ -150,7 +155,6 @@ e.g
     target
     value
     range
-26.
     len(x)
     length
 27.
