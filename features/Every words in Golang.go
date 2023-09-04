@@ -772,6 +772,17 @@ Understanding the Dual Nature of Strings
     Output:
         Length: 8
 
+Converting a String to Runes
+------------------------------------------------------------------------------------------------        
+69.rune
+    The rune type represents a Unicode code point, 
+    which is essentially a single character. 
+    To avoid slicing strings in the middle of characters, 
+    an explicit conversion to a rune slice can be performed
+
+
+
+
 
 
 
