@@ -340,6 +340,19 @@ g, G
     smaller values.
 
 
+Understanding Flow Control
+------------------------------------------------------------------------------------------------
+53.if
+    The if keyword is followed by the expression and then the group of statements to be executed,
+    surrounded by braces
+
+54.else
+    The else keyword can be used to create additional clauses in an if statement
+    
+55.else if
+    The else/if combination can be repeated to create a sequence of clauses
+
+    
 
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
