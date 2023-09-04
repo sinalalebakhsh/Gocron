@@ -733,6 +733,9 @@ Understanding the Dual Nature of Strings
         } else {
                 fmt.Println("Parse Error:", parseErr)
         }
+    Output:
+        Currency: 36
+        Amount: 48.95
 
     Converting the Result:
         var price string = "$48.95"
@@ -745,7 +748,9 @@ Understanding the Dual Nature of Strings
         } else {
             fmt.Println("Parse Error:", parseErr)
         }
-
+    Output:
+        Currency: $
+        Amount: 48.95
 
 
 
