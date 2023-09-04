@@ -752,7 +752,17 @@ Understanding the Dual Nature of Strings
         Currency: $
         Amount: 48.95
 
-
+    Changing the Currency Symbol:
+        var price string = "€48.95"
+        var currency string = string(price[0])
+        var amountString string = price[1:]
+        amount, parseErr  := strconv.ParseFloat(amountString, 64)
+        fmt.Println("Currency:", currency)
+        if (parseErr == nil) {
+            fmt.Println("Amount:", amount)
+        } else {
+            fmt.Println("Parse Error:", parseErr)
+        }
 
 
 
