@@ -411,6 +411,21 @@ Understanding Flow Control
 
 
 
+59.default
+    The default keyword is used to define a clause that will be executed when none of the case statements
+    matches the switch statement's value
+        switch (character) {
+                case 'K', 'k':
+                if (character == 'k') {
+                    fmt.Println("Lowercase k at position", index)
+                    break
+                }
+                fmt.Println("Uppercase K at position", index)
+                case 'y':
+                fmt.Println("y at position", index)
+                default:
+                fmt.Println("Character", string(character), "at position", index)
+            }
 
 
     package main = first executable file main.go
