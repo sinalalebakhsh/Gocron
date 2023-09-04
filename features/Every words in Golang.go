@@ -82,9 +82,11 @@ Useful Debugger Commands for Controlling Execution
 17.continue
     This command resumes execution of the application.
 
-18.
+18.next
+    This command moves to the next statement.
 
-19.
+19.step
+    This command steps into the current statement.
 
 20.
 
