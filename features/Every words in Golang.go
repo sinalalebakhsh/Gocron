@@ -855,7 +855,23 @@ Output:
             }
         }
 
-
+73.Dealing with No Arguments for a Variadic Parameter
+    example:
+        func printSuppliers(product string, suppliers ...string ) {
+            for _, supplier := range suppliers {
+                fmt.Println("Product:", product, "Supplier:", supplier)
+            }
+        }
+        func main() {
+            printSuppliers("Kayak", "Acme Kayaks", "Bob's Boats", "Crazy Canoes")
+            printSuppliers("Lifejacket", "Sail Safe Co")
+            printSuppliers("Soccer Ball")
+        }
+    Output:
+        Product: Kayak Supplier: Acme Kayaks
+        Product: Kayak Supplier: Bob's Boats
+        Product: Kayak Supplier: Crazy Canoes
+        Product: Lifejacket Supplier: Sail Safe Co
 
 
 
