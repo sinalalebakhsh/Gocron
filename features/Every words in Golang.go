@@ -427,7 +427,7 @@ Understanding Flow Control
                 fmt.Println("Character", string(character), "at position", index)
             }
 
-60.Label
+60.goto label 
     Label statements allow execution to jump to a different point, 
     giving greater flexibility than other flow control features
     example:
@@ -440,6 +440,11 @@ Understanding Flow Control
 
 
     
+
+
+
+
+        
 
 
 
