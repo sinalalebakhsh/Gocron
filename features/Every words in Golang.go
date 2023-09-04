@@ -352,7 +352,11 @@ Understanding Flow Control
 55.else if
     The else/if combination can be repeated to create a sequence of clauses
 
-    
+56.for
+    The for keyword is used to create loops that repeatedly execute statements. The most basic for loops will
+    repeat indefinitely unless interrupted by the break keyword
+
+
 
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
