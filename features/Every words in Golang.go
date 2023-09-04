@@ -356,13 +356,14 @@ Understanding Flow Control
     repeat indefinitely unless interrupted by the break keyword
 
     Incorporating the Condition into the Loop
+    
     example: 
-    for (counter <= 3) {}
+        for (counter <= 3) {}
 
-    Enumerating Sequences
-    for index, character := range product {
-                fmt.Println("Index:", index, "Character:", string(character))
-            }
+    Enumerating Sequences:
+        for index, character := range product {
+                    fmt.Println("Index:", index, "Character:", string(character))
+                }
 
 57.switch
     A switch statement provides an alternative way to control execution flow, based on matching the result of an
