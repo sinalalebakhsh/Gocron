@@ -321,6 +321,26 @@ The strconv Functions for Converting Values into Strings
     This function returns a string representation of the specified int value,
     expressed using base 10.
 
+
+Commonly Used Format Options for Floating-Point String Formatting
+------------------------------------------------------------------------------------------------
+Function
+---------
+f
+    The floating-point value will be expressed in the form ±ddd.ddd without an exponent, such as
+    49.95.
+
+e, E
+    The floating-point value will be expressed in the form ±ddd.ddde±dd, such as 4.995e+01 or
+    4.995E+01. The case of the letter denoting the exponent is determined by the case of the rune
+    used as the formatting argument.
+
+g, G
+    The floating-point value will be expressed using format e/E for large exponents or format f for
+    smaller values.
+
+
+
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
     fmt = for printing in CLI
