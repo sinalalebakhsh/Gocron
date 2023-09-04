@@ -468,6 +468,8 @@ Understanding Flow Control
     names := []string {"Kayak", "Lifejacket", "Paddle"}
 
 63.append
+    If you define a slice variable but don’t initialize it, then the result is a slice that has a length of zero
+    and a capacity of zero, and this will cause an error when an element is appended to it.
     One of the key advantages of slices is that they can be expanded to accommodate additional elements
     
     Appending Elements to a Slice
@@ -479,7 +481,13 @@ Understanding Flow Control
         appendedNames := append(names, "Hat", "Gloves")
         names[0] = "Canoe"
 
+    Allocating Additional Slice Capacity
+        names := make([]string, 3, 6)
+        names[0] = "Kayak"
+        names[1] = "Lifejacket"
+        names[2] = "Paddle"
 
+    
 
 
 
