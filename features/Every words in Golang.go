@@ -76,6 +76,9 @@ Useful Debugger State Commands
 16.whatis <expr>
     This command prints the type of the specified expression such as whatis
 
+
+Useful Debugger Commands for Controlling Execution
+------------------------------------------------------------------------------------------------
 17.
 
 18.
