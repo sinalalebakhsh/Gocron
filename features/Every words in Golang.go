@@ -6,34 +6,34 @@ type Features struct {
 
 
 var OriginalFeatures Features = Features{
-    EveryWordsInGolang: `in Command Line Interface Go:
+    EveryWordsInGolang: `
+    
+    in Command Line Interface Go:
+    ==============================================================================
     1- go mod init YOUR_NAME
     2- go work init YOUR_WORK_DIRECTORY
     3- go run main.go  OR  go run projectName.go
     
     
-    in File of Go:
-    -------------
-    
     Using the Go Command
     ==============================================================================
-    |1.
-    |    build
+    |1.build
     |    The go build command compiles the source code in the current directory 
     |    and generates an executable file.
-    |2.
-    |    clean
+    |
+    |2.clean
     |    The go clean command removes the output produced by the go build command, 
     |    including the executable and any temporary files that were created during the build.
-    |3.
-    |    doc
+    |
+    |3.doc
     |    The go doc command generates documentation from source code.
-    |4.
-    |    fmt
+    |
+    |4.fmt
     |    The go fmt command ensures consistent indentation and alignment in source code files.
-    |5.
-    |    get
+    |
+    |5.get
     |    The go get command downloads and installs external packages.
+    |
     |6.
     |    install
     |    The go install command downloads packages and is usually used to install tool packages.
