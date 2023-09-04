@@ -37,6 +37,9 @@ var OriginalFeatures Features = Features{
         get
         The go get command downloads and installs external packages
     6.
+        install
+        The go install command downloads packages and is usually used to install tool packages,
+        as demonstrated in the “Debugging Go Code” section
     7. 
     8.
     9.
