@@ -438,13 +438,21 @@ Understanding Flow Control
                 goto target
         }
 
+61.Array
+    Go arrays are a fixed length and contain elements of a single type, which are accessed by index
+    var names [3]string
 
-    
+    Array Literal Syntax
+    names := [3]string { "Kayak", "Lifejacket", "Paddle" }
+
+    The number of elements specified with the literal syntax can be less than the capacity of the array. 
+    Any position in the array for which a value is not provided will be assigned the zero value for the array type.
 
 
 
 
-        
+
+
 
 
 
