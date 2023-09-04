@@ -201,7 +201,11 @@ Operations and Conversions
     These operators compare two values, as described in the “Understanding the Comparison
     Operators” section.
 
+35.||, &&, !
+    These are the logical operators, which are applied to bool values and return a bool value, as
+    described in the “Understanding the Logical Operators” section.
 
+36.
 
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
