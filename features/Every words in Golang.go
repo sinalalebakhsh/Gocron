@@ -97,9 +97,22 @@ Useful Debugger Commands for Controlling Execution
 22.exit
     This command exits the debugger.
 
-23.
 
-24.
+
+Understanding the Basic Data Types
+------------------------------------------------------------------------------------------------
+23.int = integers
+    This type represents a whole number, which can be positive or negative. The
+    int type size is platform-dependent and will be either 32 or 64 bits. There are
+    also integer types that have a specific size, such as int8, int16, int32, and
+    int64, but the int type should be used unless you need a specific size.
+
+24.unit
+    uint8,  uint16,  uint32,  uint64,int8,  int16,  int32
+    This type represents a positive whole number. The uint type size is platform-
+    dependent and will be either 32 or 64 bits. There are also unsigned integer
+    types that have a specific size, such as uint8, uint16, uint32, and uint64, but
+    the uint type should be used unless you need a specific size.
 
 25.
 
@@ -111,8 +124,7 @@ func main() {} = every execute files in "package main"
     fmt = for printing in CLI
 import = for importing another package
     string
-int = integers
-    uint8,  uint16,  uint32,  uint64,int8,  int16,  int32
+
 byte = uint8
 e.g
     byte = 8 bits, 1024bytes = 1 kilobyte, 1024 kilobytes = 1 megabyte
