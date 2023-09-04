@@ -639,7 +639,12 @@ Understanding Flow Control
     Output:
         Equal: true
 
+67.map
+    Maps are a built-in data structure that associates data values with keys. 
+    Unlike arrays, where values are associated with sequential integer locations, 
+    maps can use other data types as keys
 
+    
 
 
 
