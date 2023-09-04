@@ -88,11 +88,14 @@ Useful Debugger Commands for Controlling Execution
 19.step
     This command steps into the current statement.
 
-20.
+20.stepout
+    This command steps out of the current statement.
 
-21.
-
-22.
+21.restart
+    This command restarts the process. Use the continue command to begin execution.
+    
+22.exit
+    This command exits the debugger.
 
 23.
 
