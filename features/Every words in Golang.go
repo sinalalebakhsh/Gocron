@@ -396,8 +396,18 @@ Understanding Flow Control
         fmt.Println("y at position", index)
         }
 
-
-
+58.Falling Through
+    Go switch statements don't automatically fall through, but this behavior can be enabled using the
+    fallthrough keyword
+        switch (character) {
+            case 'K':
+                fmt.Println("Uppercase character")
+                fallthrough
+            case 'k':
+                fmt.Println("k at position", index)
+            case 'y':
+                fmt.Println("y at position", index)
+            }
 
 
 
