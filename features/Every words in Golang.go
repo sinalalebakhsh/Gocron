@@ -256,8 +256,21 @@ Operator    Description
             the operand is true.
 
 
+            
+Converting Floating-Point Values to Integers
+------------------------------------------------------------------------------------------------
+Functions in the math Package for Converting Numeric Types
+Function            Description
+--------            -------------------------------------------------------------
+Ceil(value)         This function returns the smallest integer that is greater than the specified floating-
+                    point value. The smallest integer that is greater than 27.1, for example, is 28.
 
+Floor(value)        This function returns the largest integer that is less than the specified floating-point
+                    value. The largest integer that is less than 27.1, for example, is 28.
 
+Round(value)        This function rounds the specified floating-point value to the nearest integer.
+
+RoundToEven(value)  This function rounds the specified floating-point value to the nearest even integer.
 
 
     package main = first executable file main.go
