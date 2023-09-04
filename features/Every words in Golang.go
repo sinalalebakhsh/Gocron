@@ -26,7 +26,7 @@ var OriginalFeatures Features = Features{
         the executable and any temporary files that were created during the build, as described in the
         “Compiling and Running Source Code” section.
     3.
-
+        
     4. 
     5. 
     6.
@@ -114,7 +114,8 @@ var OriginalFeatures Features = Features{
         make map
     34.
         function
-        A function is an independent section of code that mapszero or more input parameters to zero or more outputparameters.   
+        A function is an independent section of code 
+        that mapszero or more input parameters to zero or more outputparameters.   
         Functions (also known as procedures orsubroutines) 
         are often represented as a black box: (theblack box represents the function)
         func FunctionName(ParameterName ParameterType) ReturnType { body of function}
@@ -130,19 +131,22 @@ var OriginalFeatures Features = Features{
         closure
         It is possible to create functions inside of functions
     38.
-        increment adds 1 to the variable  x  which is defined inthe  main  function's   scope. 
+        increment adds 1 to the variable x which is defined inthe main function's scope. 
     39.
         return function from a function
     40.
         recursion
-        Finally a function is able to call itself. Here is one wayto compute the factorial of a number
+        Finally a function is able to call itself. 
+        Here is one way to compute the factorial of a number
     41.
         defer
-        Go has a special statement called defer which schedules a function call to be run after the function completes.
-        is often used when resources need to be freed insome way. For example when we open a file we need to make sure to close it later. With defer:
+        Go has a special statement called defer which schedules 
+        a function call to be run after the function completes.
+        is often used when resources need to be freed insome way. 
+        For example when we open a file we need to make sure to close it later. With defer:
     42.
         panic
-        the  panicfunction   to   cause   a   run   time   error.  
+        the panicfunction to cause a run time error.  
     43.
         recover
         We can handle arun-time panic with the built-in recover function.
@@ -155,12 +159,17 @@ var OriginalFeatures Features = Features{
         Another way to get a pointer is to use the built-in newfunction.
     46.
         type
-        In the provided Go code, "type" is a keyword used to define a new named type or alias. It allows you to create custom types with specific behaviors and characteristics.
-        By using the "type" keyword, you can create your own named types or aliases that can be used throughout your code, providing better abstraction and type safety.
+        In the provided Go code, "type" is a keyword used 
+        to define a new named type or alias. 
+        It allows you to create custom types with specific behaviors and characteristics.
+        By using the "type" keyword, 
+        you can create your own named types or aliases that can be used throughout your code, 
+        providing better abstraction and type safety.
     47.
         struct
         A struct is a type which contains named fields.
-        the keyword structto indicate that we are defining a struct type and alist of fields inside of curly braces.
+        the keyword structto indicate that we are defining 
+        a struct type and alist of fields inside of curly braces.
         Each field has a name and a type. 
         For a struct zero means each of the fields is set to their correspond-ing zero value:
         (0 for ints, 0.0 for floats, "" for strings,nil for pointers, ...)
@@ -218,7 +227,8 @@ var OriginalFeatures Features = Features{
         hashes & cryptography
         Hash functions in Go are broken into two categories:
         cryptographic and non-crypto-graphic.
-        The non-cryptographic hash functions can be found underneath the hash package and include adler32, crc32, crc64 and fnv.
+        The non-cryptographic hash functions 
+        can be found underneath the hash package and include adler32, crc32, crc64 and fnv.
     66.
         servers
     67.
@@ -246,7 +256,8 @@ var OriginalFeatures Features = Features{
             max(1,2)
     74.
         Currying
-        Function currying is the practice of writing a function that takes a function (or functions) as input, and returns a new function.
+        Function currying is the practice of writing a function 
+        that takes a function (or functions) as input, and returns a new function.
     75.
         Replace(s)
         This method returns a string for which all the replacements specified with the
