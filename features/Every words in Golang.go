@@ -529,6 +529,9 @@ Understanding Flow Control
     The copy function is used to copy elements between slices. This function can be used to ensure that slices
     have separate arrays and to create slices that combine elements from different sources.
 
+         Destination   Source
+         ---------     --------
+    copy(someNames,    allNames)
 
 
     Duplicating a Slice
@@ -553,10 +556,18 @@ Understanding Flow Control
         someNames: []
         allNames [Lifejacket Paddle Hat]
 
+    Specifying Ranges When Copying Slices
+    Fine-grained control over the elements that are copied can be achieved using ranges
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        allNames := products[1:]
+        someNames := []string { "Boots", "Canoe"}
+        copy(someNames[1:], allNames[2:3])
+    Output:
+        allNames [Lifejacket Paddle Hat]
+        someNames: [Boots Hat]
 
 
 
-        
 
 
 
