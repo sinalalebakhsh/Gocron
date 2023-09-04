@@ -525,7 +525,7 @@ Understanding Flow Control
         allNames = append(allNames, "Gloves")
         allNames[1] = "Canoe"
 
-    Comparing Slices
+    Comparing Slices:
         Go restricts the use of the comparison operator so that slices can be compared only to the nil value.
             p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
             p2 := p1
@@ -543,8 +543,8 @@ Understanding Flow Control
     copy(someNames,    allNames)
 
 
-    Duplicating a Slice
-    The copy function accepts two arguments
+    Duplicating a Slice:
+    The copy function accepts two arguments:
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         allNames := products[1:]
         someNames := make([]string, 2)
@@ -554,7 +554,7 @@ Understanding Flow Control
         someNames: [Lifejacket Paddle]
 
 
-    the Uninitialized Slice Pitfall
+    the Uninitialized Slice Pitfall:
     the copy function doesn't resize the destination slice. A common
     pitfall is to try to copy elements into a slice that has not been initialized
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
@@ -565,7 +565,7 @@ Understanding Flow Control
         someNames: []
         allNames [Lifejacket Paddle Hat]
 
-    Specifying Ranges When Copying Slices
+    Specifying Ranges When Copying Slices:
     Fine-grained control over the elements that are copied can be achieved using ranges
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         allNames := products[1:]
@@ -576,7 +576,7 @@ Understanding Flow Control
         someNames: [Boots Hat]
 
 
-    Copying Slices with Different Sizes
+    Copying Slices with Different Sizes:
     products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         replacementProducts := []string { "Canoe", "Boots"}
         copy(products, replacementProducts)
@@ -592,13 +592,13 @@ Understanding Flow Control
     Output:
         products: [Canoe Lifejacket Paddle Hat]
 
-    Deleting Slice Elements
+    Deleting Slice Elements:
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         deleted := append(products[:2], products[3:]...)
         fmt.Println("Deleted:", deleted)
 
     
-    Enumerating Slices
+    Enumerating Slices:
         products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         for index, value := range products[2:] {
             fmt.Println("Index:", index, "Value:", value)
@@ -668,6 +668,8 @@ Understanding Flow Control
                     fmt.Println("No stored value")
                 }
 
+    Removing Items from a Map:
+                
 
 
 
