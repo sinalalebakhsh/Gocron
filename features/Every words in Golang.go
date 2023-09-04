@@ -675,7 +675,27 @@ Understanding Flow Control
                 }
 
     Removing Items from a Map:
-                
+        products := map[string]float64 {
+            "Kayak" : 279,
+            "Lifejacket": 48.95,
+            "Hat": 0,
+        }
+        delete(products, "Hat")            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
