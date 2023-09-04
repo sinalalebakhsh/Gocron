@@ -763,9 +763,14 @@ Understanding the Dual Nature of Strings
         } else {
             fmt.Println("Parse Error:", parseErr)
         }
+    Output:
+        Currency: â
+        Parse Error: strconv.ParseFloat: parsing "\x82\xac48.95": invalid syntax
 
-
-
+    Obtaining the Length:
+        fmt.Println("Length:", len(price))
+    Output:
+        Length: 8
 
 
 
