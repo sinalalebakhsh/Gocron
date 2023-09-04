@@ -299,8 +299,26 @@ Functions for Parsing Strings into Other Data Types
 
 
 Formatting Values as Strings
+The strconv Functions for Converting Values into Strings
 ------------------------------------------------------------------------------------------------
+48.FormatBool(val)
+    This function returns the string true or false based on the value of the
+    specified bool.
 
+49.FormatInt(val, base)
+    This function returns a string representation of the specified int64 value,
+    expressed in the specified base.
+
+50.FormatUint(val, base)
+    This function returns a string representation of the specified uint64 value,
+    expressed in the specified base.
+    
+51.FormatFloat(val, format, This function returns a string representation of the specified float64 value,
+precision, size)
+expressed using the specified format, precision, and size.
+Itoa(val)
+This function returns a string representation of the specified int value,
+expressed using base 10.
 
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
