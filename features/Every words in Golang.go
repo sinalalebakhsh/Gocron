@@ -384,6 +384,24 @@ Understanding Flow Control
                 fmt.Println("y at position", index)
     }
 
+    Terminate case Statement Execution
+        switch (character) {
+            case 'K', 'k':
+        if (character == 'k') {
+            fmt.Println("Lowercase k at position", index)
+            break
+        }
+        fmt.Println("Uppercase K at position", index)
+            case 'y':
+        fmt.Println("y at position", index)
+        }
+
+
+
+
+
+
+
 
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
