@@ -487,12 +487,32 @@ Understanding Flow Control
         names[1] = "Lifejacket"
         names[2] = "Paddle"
 
+    Adding Elements to a Slice
+        names := make([]string, 3, 6)
+        names[0] = "Kayak"
+        names[1] = "Lifejacket"
+        names[2] = "Paddle"
+        appendedNames := append(names, "Hat", "Gloves")
+        names[0] = "Canoe"
+        fmt.Println("names:",names)
+        fmt.Println("appendedNames:", appendedNames)
+
+
+    Appending One Slice to Another
+        names := make([]string, 3, 6)
+        names[0] = "Kayak"
+        names[1] = "Lifejacket"
+        names[2] = "Paddle"
+        moreNames := []string { "Hat Gloves"}
+        appendedNames := append(names, moreNames...)
+        fmt.Println("appendedNames:", appendedNames)
+
+    Creating Slices from Existing Arrays
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        someNames := products[1:3]
+        allNames := products[:]
+
     
-
-
-
-
-
 
 
 
