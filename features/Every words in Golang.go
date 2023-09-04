@@ -828,6 +828,10 @@ Output:
 71.Function Parameters
     Parameters allow a function to receive data values when it is called, 
     allowing its behavior to be altered.
+    Values for parameters are supplied as arguments when invoking the function, meaning that different
+    values can be provided each time the function is called. Arguments are provided between the parentheses
+    that follow the function name, separated by commas and in the same order in which the parameters have
+    been defined
 
     example:
         func printPrice(product string, price float64, taxRate float64) {
@@ -835,8 +839,21 @@ Output:
             fmt.Println(product, "price:", price, "Tax:", taxAmount)
         }
 
-    
 
+72.Defining Variadic Parameters
+    example:
+        func printSuppliers(product string, suppliers []string ) {
+            for _, supplier := range suppliers {
+                fmt.Println("Product:", product, "Supplier:", supplier)
+            }
+        }
+
+    example:
+        func printSuppliers(product string, suppliers ...string ) {
+            for _, supplier := range suppliers {
+                fmt.Println("Product:", product, "Supplier:", supplier)
+            }
+        }
 
 
 
