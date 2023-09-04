@@ -464,30 +464,30 @@ Understanding Flow Control
     names[1] = "Lifejacket"
     names[2] = "Paddle"
 
-    Literal Syntax
-    names := []string {"Kayak", "Lifejacket", "Paddle"}
+    Literal Syntax:
+        names := []string {"Kayak", "Lifejacket", "Paddle"}
 
 63.append
     If you define a slice variable but don’t initialize it, then the result is a slice that has a length of zero
     and a capacity of zero, and this will cause an error when an element is appended to it.
     One of the key advantages of slices is that they can be expanded to accommodate additional elements
     
-    Appending Elements to a Slice
+    Appending Elements to a Slice:
         names := []string {"Kayak", "Lifejacket", "Paddle"}
         names = append(names, "Hat", "Gloves")
 
-    Appending Items to a Slice
+    Appending Items to a Slice:
         names := []string {"Kayak", "Lifejacket", "Paddle"}
         appendedNames := append(names, "Hat", "Gloves")
         names[0] = "Canoe"
 
-    Allocating Additional Slice Capacity
+    Allocating Additional Slice Capacity:
         names := make([]string, 3, 6)
         names[0] = "Kayak"
         names[1] = "Lifejacket"
         names[2] = "Paddle"
 
-    Adding Elements to a Slice
+    Adding Elements to a Slice:
         names := make([]string, 3, 6)
         names[0] = "Kayak"
         names[1] = "Lifejacket"
@@ -498,7 +498,7 @@ Understanding Flow Control
         fmt.Println("appendedNames:", appendedNames)
 
 
-    Appending One Slice to Another
+    Appending One Slice to Another:
         names := make([]string, 3, 6)
         names[0] = "Kayak"
         names[1] = "Lifejacket"
@@ -507,18 +507,18 @@ Understanding Flow Control
         appendedNames := append(names, moreNames...)
         fmt.Println("appendedNames:", appendedNames)
 
-    Creating Slices from Existing Arrays
+    Creating Slices from Existing Arrays:
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         someNames := products[1:3]
         allNames := products[:]
 
-    Specifying Capacity When Creating a Slice from an Array
+    Specifying Capacity When Creating a Slice from an Array:
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         someNames := products[1:3:3]
         allNames := products[:]
         someNames = append(someNames, "Gloves")
 
-    Creating Slices from Other Slices
+    Creating Slices from Other Slices:
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         allNames := products[1:]
         someNames := allNames[1:3]
