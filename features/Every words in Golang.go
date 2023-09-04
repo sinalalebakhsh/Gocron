@@ -255,7 +255,6 @@ Operator    Description
             It returns true if the operand is false and false if
             the operand is true.
 
-
             
 Converting Floating-Point Values to Integers
 Functions in the math Package for Converting Numeric Types
@@ -268,13 +267,16 @@ Functions in the math Package for Converting Numeric Types
     This function returns the largest integer that is less than the specified floating-point
     value. The largest integer that is less than 27.1, for example, is 28.
 
-Round(value)        This function rounds the specified floating-point value to the nearest integer.
+41.Round(value)
+    This function rounds the specified floating-point value to the nearest integer.
 
-RoundToEven(value)  This function rounds the specified floating-point value to the nearest even integer.
+42.RoundToEven(value)
+    This function rounds the specified floating-point value to the nearest even integer.
 
 
 
 Parsing from Strings
+------------------------------------------------------------------------------------------------
 
 
 
