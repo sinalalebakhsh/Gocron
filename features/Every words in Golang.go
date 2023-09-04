@@ -316,10 +316,10 @@ The strconv Functions for Converting Values into Strings
 51.FormatFloat(val, format, precision, size) 
     This function returns a string representation of the specified float64 value,
     expressed using the specified format, precision, and size.
-    
-Itoa(val)
-This function returns a string representation of the specified int value,
-expressed using base 10.
+
+52.Itoa(val)
+    This function returns a string representation of the specified int value,
+    expressed using base 10.
 
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
