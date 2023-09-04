@@ -398,6 +398,8 @@ Understanding Flow Control
 58.Falling Through
     Go switch statements don't automatically fall through, but this behavior can be enabled using the
     fallthrough keyword
+
+    example:
         switch (character) {
             case 'K':
                 fmt.Println("Uppercase character")
