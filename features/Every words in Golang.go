@@ -243,6 +243,21 @@ The Logical Operators
 ------------------------------------------------------------------------------------------------
 Operator    Description
 -------     ---------------------
+   ||       This operator returns true if either operand is true. 
+            If the first operand is true, then the second
+            operand will not be evaluated.
+
+   &&       This operator returns true if both operands are true. 
+            If the first operand is false, then the
+            second operand will not be evaluated.
+
+   !        This operator is used with a single operand. 
+            It returns true if the operand is false and false if
+            the operand is true.
+
+
+
+
 
 
     package main = first executable file main.go
