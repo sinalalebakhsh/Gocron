@@ -129,7 +129,11 @@ Understanding the Basic Data Types
     These types represent numbers that have real and imaginary components.
     These types allocate 64 or 128 bits to store the value.
 
+28.bool 
+    bolean
+    This type represents a Boolean truth with the values true and false.
 
+    
 variable = var
     constant = const
 Constants are basically variables whose values cannot be changed later.
