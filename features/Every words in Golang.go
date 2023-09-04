@@ -889,9 +889,33 @@ Output:
         fmt.Println("After calling function", val1, val2)
     }
 
+76.Using Named Results
+    example:
+        func calcTax(price float64) (float64, bool) {
+            if (price > 100) {
+                return price * 0.2, true
+            }
+            return 0, false
+        }
+        func calcTotalPrice(products map[string]float64,
+                minSpend float64) (total, tax float64)  {
+            total = minSpend
+            for _, price := range products {
+                if taxAmount, due := calcTax(price); due {
+                    total += taxAmount;
+                    tax += taxAmount
+                } else {
+                    total += price
+                }
+            }
+            return
+        }
+
+77.defer
+    The defer keyword is used to schedule a function call that will be performed immediately before the current
+    function returns
+
     
-
-
 
 
 
