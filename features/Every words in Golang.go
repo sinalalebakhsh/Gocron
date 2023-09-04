@@ -873,6 +873,11 @@ Output:
         Product: Kayak Supplier: Crazy Canoes
         Product: Lifejacket Supplier: Sail Safe Co
 
+74.return Function Results
+    func calcTax(price float64) float64 {
+        return price + (price * 0.2)
+    }
+
 
 
 
