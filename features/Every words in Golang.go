@@ -9,14 +9,14 @@ var OriginalFeatures Features = Features{
     EveryWordsInGolang: `
 
 in Command Line Interface Go:
-==============================================================================
+----------------------------------------------------------------
 1- go mod init YOUR_NAME
 2- go work init YOUR_WORK_DIRECTORY
 3- go run main.go  OR  go run projectName.go
 
 
 Using the Go Command
-==============================================================================
+------------------------------------------------------------------------------------------------
 1.build
     The go build command compiles the source code in the current directory 
     and generates an executable file.
@@ -60,21 +60,33 @@ Using the Go Command
     
 
 Useful Debugger State Commands
-==============================================================================
+------------------------------------------------------------------------------------------------
 13.
 
 14.
+
 15.
+
 16.
+
 17.
+
 18.
+
 19.
+
 20.
+
 21.
+
 22.
+
 23.
+
 24.
+
 25.
+
 variable = var
     constant = const
 Constants are basically variables whose values cannot be changed later.
