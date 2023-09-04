@@ -26,9 +26,16 @@ var OriginalFeatures Features = Features{
         the executable and any temporary files that were created during the build, as described in the
         “Compiling and Running Source Code” section.
     3.
-        
-    4. 
-    5. 
+        doc
+        The go doc command generates documentation from source code. See the “Linting Go Code”
+        section for a simple example
+    4.
+        fmt
+        The go fmt command ensures consistent indentation and alignment in source code files, as
+        described in the “Formatting Go Code” section.
+    5.
+        get
+        The go get command downloads and installs external packages
     6.
     7. 
     8.
