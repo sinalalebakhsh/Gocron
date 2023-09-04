@@ -276,8 +276,8 @@ Functions in the math Package for Converting Numeric Types
 
 
 Parsing from Strings
-------------------------------------------------------------------------------------------------
 Functions for Parsing Strings into Other Data Types
+------------------------------------------------------------------------------------------------
 43.ParseBool(str)
     This function parses a string into a bool value. Recognized string values are "true",
     "false", "TRUE", "FALSE", "True", "False", "T", "F", "0", and "1".
@@ -297,6 +297,9 @@ Functions for Parsing Strings into Other Data Types
     This function parses a string into a base 10 int and is equivalent to calling
     ParseInt(str, 10, 0)
 
+
+Formatting Values as Strings
+------------------------------------------------------------------------------------------------
 
 
     package main = first executable file main.go
