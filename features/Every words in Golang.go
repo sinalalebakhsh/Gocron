@@ -512,8 +512,18 @@ Understanding Flow Control
         someNames := products[1:3]
         allNames := products[:]
 
-    
+    Specifying Capacity When Creating a Slice from an Array
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        someNames := products[1:3:3]
+        allNames := products[:]
+        someNames = append(someNames, "Gloves")
 
+    Creating Slices from Other Slices
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        allNames := products[1:]
+        someNames := allNames[1:3]
+        allNames = append(allNames, "Gloves")
+        allNames[1] = "Canoe"
 
 
 
