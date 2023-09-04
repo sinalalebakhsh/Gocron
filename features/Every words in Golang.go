@@ -133,6 +133,14 @@ Understanding the Basic Data Types
     bolean
     This type represents a Boolean truth with the values true and false.
 
+29.string
+    This type represents a sequence of characters.
+
+30.rune = int32
+    This type represents a single Unicode code point. Unicode is complicated,
+    but—loosely—this is the representation of a single character. The rune type is
+    an alias for int32.
+
     
 variable = var
     constant = const
@@ -143,7 +151,7 @@ func main() {} = every execute files in "package main"
 import = for importing another package
     string
 e.g
-    rune = uint32
+    
     
    
     Format String like: fmt.Printf("%v %s %f", variable, string, float32)
