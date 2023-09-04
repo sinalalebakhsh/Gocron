@@ -69,10 +69,12 @@ Useful Debugger State Commands
 14.set <variable> = <value>
     This command changes the value of the specified variable.
     این دستور مقدار متغیر مشخص شده را تغییر می دهد.
-    
-15.
 
-16.
+15.locals
+    This command prints the value of all local variables.
+
+16.whatis <expr>
+    This command prints the type of the specified expression such as whatis
 
 17.
 
