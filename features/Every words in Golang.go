@@ -312,10 +312,11 @@ The strconv Functions for Converting Values into Strings
 50.FormatUint(val, base)
     This function returns a string representation of the specified uint64 value,
     expressed in the specified base.
+
+51.FormatFloat(val, format, precision, size) 
+    This function returns a string representation of the specified float64 value,
+    expressed using the specified format, precision, and size.
     
-51.FormatFloat(val, format, This function returns a string representation of the specified float64 value,
-precision, size)
-expressed using the specified format, precision, and size.
 Itoa(val)
 This function returns a string representation of the specified int value,
 expressed using base 10.
