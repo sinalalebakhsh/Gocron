@@ -376,6 +376,13 @@ Understanding Flow Control
             fmt.Println("y at position", index)
     }
 
+    Matching Multiple Values
+        switch (character) {
+            case 'K', 'k':
+                fmt.Println("K or k at position", index)
+            case 'y':
+                fmt.Println("y at position", index)
+    }
 
 
     package main = first executable file main.go
