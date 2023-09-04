@@ -34,20 +34,20 @@ Using the Go Command
 5.get
     The go get command downloads and installs external packages.
 
-6.
-    install
+6.install
     The go install command downloads packages and is usually used to install tool packages.
-7.
-    help
+
+7.help
     The go help command displays help information for other Go features. The command go
     help build, for example, displays information about the build argument.
-8.
-    mod
+
+8.mod
     The go mod command is used to create and manage a Go module.
-9.
-    run
+
+9.run
     The go run command builds and executes the source code in a specified folder without
     creating an executable output
+    
 10.
     test
     The go test command executes unit tests
