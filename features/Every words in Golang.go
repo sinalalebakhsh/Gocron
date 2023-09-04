@@ -583,10 +583,36 @@ Understanding Flow Control
     Output:
         products: [Canoe Lifejacket Paddle Hat]
 
+    Deleting Slice Elements
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        deleted := append(products[:2], products[3:]...)
+        fmt.Println("Deleted:", deleted)
+
     
+    Enumerating Slices
+        products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        for index, value := range products[2:] {
+            fmt.Println("Index:", index, "Value:", value)
+        }
+    Output:
+        Index: 0 Value: Paddle
+        Index: 1 Value: Hat
 
 
 
+65.sort
+    There is no built-in support for sorting slices, but the standard library includes the sort package, which
+    defines functions for sorting different types of slice.
+        products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        sort.Strings(products)
+        for index, value := range products {
+            fmt.Println("Index:", index, "Value:", value)
+        }
+    Output:
+        Index: 0 Value: Hat
+        Index: 1 Value: Kayak
+        Index: 2 Value: Lifejacket
+        Index: 3 Value: Paddle
 
 
 
