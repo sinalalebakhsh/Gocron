@@ -368,22 +368,22 @@ Understanding Flow Control
     A switch statement provides an alternative way to control execution flow, based on matching the result of an
     expression to a specific value, as opposed to evaluating a true or false result
     example:
-    switch (character) {
-        case 'K':
-            fmt.Println("K at position", index)
-        case 'y':
-            fmt.Println("y at position", index)
-    }
+        switch (character) {
+            case 'K':
+                fmt.Println("K at position", index)
+            case 'y':
+                fmt.Println("y at position", index)
+        }
 
-    Matching Multiple Values
+    Matching Multiple Values:
         switch (character) {
             case 'K', 'k':
                 fmt.Println("K or k at position", index)
             case 'y':
                 fmt.Println("y at position", index)
-    }
+        }
 
-    Terminate case Statement Execution
+    Terminate case Statement Execution:
         switch (character) {
             case 'K', 'k':
         if (character == 'k') {
