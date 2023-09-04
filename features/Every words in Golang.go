@@ -914,11 +914,19 @@ Output:
 77.defer
     The defer keyword is used to schedule a function call that will be performed immediately before the current
     function returns
+    The defer keyword lets you group the statements that create, use, and
+    release the resource together.
+    The defer keyword can be used with any function call
+    a single function can use the defer keyword multiple times.
+    Immediately before the function returns, Go will perform the
+    calls scheduled with the defer keyword in the order in which they were defined.
 
-    
-
-
-
+78.Function Types
+    Functions in Go have a data type, which describes the combination of parameters the
+    function consumes and the results the function produces. This type can be specified
+    explicitly or inferred from a function defined using a literal syntax.
+    Function types are defined using the func keyword, followed by a signature that
+    describes the parameters and results. No function body is specified.
 
 
 
