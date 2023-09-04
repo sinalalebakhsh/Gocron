@@ -525,6 +525,15 @@ Understanding Flow Control
         allNames = append(allNames, "Gloves")
         allNames[1] = "Canoe"
 
+    Comparing Slices
+        Go restricts the use of the comparison operator so that slices can be compared only to the nil value.
+            p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+            p2 := p1
+            fmt.Println("Equal:", p1 == p2)
+        Output:
+            .\main.go:13:30: invalid operation: p1 == p2 (slice can only be compared to nil)
+
+
 64.copy
     The copy function is used to copy elements between slices. This function can be used to ensure that slices
     have separate arrays and to create slices that combine elements from different sources.
@@ -614,7 +623,21 @@ Understanding Flow Control
         Index: 2 Value: Lifejacket
         Index: 3 Value: Paddle
 
-
+66.DeepEqual
+    The DeepEqual function can be used to compare a wider range of data types than the
+    equality operator, including slices.
+        package main
+        import (
+            "fmt"
+            "reflect"
+        )
+        func main() {
+            p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+            p2 := p1
+            fmt.Println("Equal:", reflect.DeepEqual(p1, p2))
+        }
+    Output:
+        Equal: true
 
 
 
