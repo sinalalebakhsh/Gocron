@@ -190,6 +190,19 @@ rune        0
 
 
 
+Operations and Conversions
+------------------------------------------------------------------------------------------------
+33.+, -, *, /, %
+    These operators are used to perform arithmetic using numeric values, as described in the
+    “Understanding the Arithmetic Operators” section. The + operator can also be used for string
+    concatenation, as described in the “Concatenating Strings” section.
+
+34.==, !=, <, <=, >, >=
+    These operators compare two values, as described in the “Understanding the Comparison
+    Operators” section.
+
+
+
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
     fmt = for printing in CLI
