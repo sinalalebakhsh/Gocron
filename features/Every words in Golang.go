@@ -427,6 +427,42 @@ Understanding Flow Control
                 fmt.Println("Character", string(character), "at position", index)
             }
 
+60.Label
+    Label statements allow execution to jump to a different point, 
+    giving greater flexibility than other flow control features
+    example:
+        counter := 0
+        target: fmt.Println("Counter", counter)
+        counter++
+        if (counter < 5) {
+                goto target
+        }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
