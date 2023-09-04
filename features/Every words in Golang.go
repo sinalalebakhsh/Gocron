@@ -188,8 +188,6 @@ string      “” (the empty string)
 rune        0
 
 
-Understanding the Dual Nature of Strings
-------------------------------------------------------------------------------------------------
 
 
 
@@ -718,20 +716,40 @@ Understanding Flow Control
                 fmt.Println("Key:", key, "Value:", products[key])
             }
         }
-    
-    
+
+        
+
+Understanding the Dual Nature of Strings
+------------------------------------------------------------------------------------------------        
 68.strconv
     Indexing and Slicing a String:
-    var price string = "$48.95"
-    var currency byte = price[0]
-    var amountString string = price[1:]
-    amount, parseErr := strconv.ParseFloat(amountString, 64)
-    fmt.Println("Currency:", currency)
-    if (parseErr == nil) {
+        var price string = "$48.95"
+        var currency byte = price[0]
+        var amountString string = price[1:]
+        amount, parseErr := strconv.ParseFloat(amountString, 64)
+        fmt.Println("Currency:", currency)
+        if (parseErr == nil) {
+                fmt.Println("Amount:", amount)
+        } else {
+                fmt.Println("Parse Error:", parseErr)
+        }
+
+    Converting the Result:
+        var price string = "$48.95"
+        var currency string = string(price[0])
+        var amountString string = price[1:]
+        amount, parseErr  := strconv.ParseFloat(amountString, 64)
+        fmt.Println("Currency:", currency)
+        if (parseErr == nil) {
             fmt.Println("Amount:", amount)
-    } else {
+        } else {
             fmt.Println("Parse Error:", parseErr)
-    }
+        }
+
+
+
+
+
 
 
 
