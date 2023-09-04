@@ -221,16 +221,26 @@ The Arithmetic Operators
 Operator    Description
 -------     ---------------------
    +        This operator returns the sum of two operands.
-
    -        This operator returns the difference between two operands.
-
    *        This operator returns the product of two operands.
-
    /        This product returns the quotient of two operators.
-
    %        This product returns the remainder, which is similar to the modulo operator provided by
             other programming languages but can return negative values, as described in the “Using the
             Remainder Operator” section.
+
+
+The Comparison Operators
+------------------------------------------------------------------------------------------------
+Operator    Description
+-------     ---------------------
+   ==       This operator returns true if the operands are equal.
+   !=       This operator returns true if the operands are not equal.
+   <        This operator returns true if the first operand is less than the second operand.
+   >        This operator returns true if the first operand is greater than the second operand.
+   <=       This operator returns true if the first operand is less than or equal to the second operand.
+   >=       This operator returns true if the first operand is greater than or equal to the second
+            operand.
+
 
 
 
