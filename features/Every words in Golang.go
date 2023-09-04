@@ -525,6 +525,39 @@ Understanding Flow Control
         allNames = append(allNames, "Gloves")
         allNames[1] = "Canoe"
 
+64.copy
+    The copy function is used to copy elements between slices. This function can be used to ensure that slices
+    have separate arrays and to create slices that combine elements from different sources.
+
+
+
+    Duplicating a Slice
+    The copy function accepts two arguments
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        allNames := products[1:]
+        someNames := make([]string, 2)
+        copy(someNames, allNames)
+    Output:
+        someNames: [Lifejacket Paddle]
+        allNames [Lifejacket Paddle Hat]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
