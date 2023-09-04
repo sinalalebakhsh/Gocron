@@ -61,10 +61,15 @@ Using the Go Command
 
 Useful Debugger State Commands
 ------------------------------------------------------------------------------------------------
-13.
+13.print <expr>
+    This command evaluates an expression and displays the result. It can
+    be used to display a value (print i) or perform a more complex test
+    (print i > 0).
 
-14.
-
+14.set <variable> = <value>
+    This command changes the value of the specified variable.
+    این دستور مقدار متغیر مشخص شده را تغییر می دهد.
+    
 15.
 
 16.
