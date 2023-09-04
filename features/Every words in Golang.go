@@ -825,8 +825,17 @@ Output:
     Functions are groups of code statements that are executed only when the function is
     invoked during the flow of execution.
 
+71.Function Parameters
+    Parameters allow a function to receive data values when it is called, 
+    allowing its behavior to be altered.
 
+    example:
+        func printPrice(product string, price float64, taxRate float64) {
+            taxAmount := price * taxRate
+            fmt.Println(product, "price:", price, "Tax:", taxAmount)
+        }
 
+    
 
 
 
