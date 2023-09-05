@@ -1788,8 +1788,17 @@ Output:
     The initialization function is called init, and it is defined without parameters and a result. The init
     function is called automatically and provides an opportunity to prepare the package for use.
 
-    
+    The init function is not a regular Go function and cannot be invoked directly. And, unlike regular
+    functions, a single file can define multiple init functions, all of which will be executed.
 
+    AVOIDING THE MULTIPLE INITIALIZATION FUNCTION PITFALL
+    Each code file can have its own initialization function. When using the standard Go compiler, the
+    initialization functions are executed based on the alphabetic order of the filenames, so the function in
+    the a.go file will be executed before the function in the b.go file, and so on.
+    But this order is not part of the Go language specification and should not be relied on. Your initialization
+    functions should be self-contained and not rely on other init functions having been invoked previously.
+
+120.
 
 
 
