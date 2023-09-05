@@ -1764,8 +1764,19 @@ Output:
 
 
 
-    
+117.Package Access Control
+    Go has an unusual approach to access control. Instead of relying on dedicated keywords, like public
+    and private, Go examines the first letter of the names given to the features in a code file, such as types,
+    functions, and methods. If the first letter is lowercase, then the feature can be used only within the package
+    that defines it. Features are exported for use outside of the package by giving them an uppercase first letter.
 
+    The access control rules do not apply to individual function or method parameters, which means that
+    the NewProduct function has to have an uppercase first character to be exported, but the parameter names
+    can be lowercase.
+
+
+118.Adding Code Files to Packages
+    
 
 
 
