@@ -1779,9 +1779,16 @@ Output:
     Packages can contain multiple code files, and to simplify development, access control rules and package
     prefixes do not apply when accessing features defined in the same package.
 
+119.func init()
+    Each code file can contain an initialization function that is executed only when all packages have been
+    loaded and all other initialization—such as defining constants and variables—has been done. The most
+    common use for initialization functions is to perform calculations that are difficult to perform or that require
+    duplication to perform
 
+    The initialization function is called init, and it is defined without parameters and a result. The init
+    function is called automatically and provides an opportunity to prepare the package for use.
 
-
+    
 
 
 
