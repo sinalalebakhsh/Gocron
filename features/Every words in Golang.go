@@ -1150,7 +1150,22 @@ Output:
     How are they used?
     The type and struct keywords are used to define a type, 
     allowing field names and types to be specified.
-
+    
+    example:
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            kayak := Product {
+                name: "Kayak",
+                category: "Watersports",
+                price: 275,
+            }
+            fmt.Println(kayak.name, kayak.category, kayak.price)
+            kayak.price = 300
+            fmt.Println("Changed price:", kayak.price)
+        }
 
 
 
