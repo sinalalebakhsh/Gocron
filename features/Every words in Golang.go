@@ -1038,7 +1038,16 @@ Output:
                 printPrice(product, price, selectCalculator(price))
             }
         }
-    
+
+83.the Literal Function Syntax
+    example:
+        func selectCalculator(price float64) calcFunc {
+            if (price > 100) {
+                var withTax calcFunc = func (price float64) float64 {
+                    return price + (price * 0.2)
+                }
+                return withTax
+            }
 
 
 
@@ -1073,7 +1082,7 @@ Output:
 
 
 
-        
+
 
 
 
