@@ -1739,12 +1739,24 @@ Output:
         }
 
 
+115.Package
+    Packages are the Go feature that allows projects to be structured so that related functionality can be grouped
+    together, without the need to put all the code into a single file or folder.
+    
+    What are they?
+    Packages allow projects to be structured so that related features can be developed together.
+
+    Why are they useful?
+    Packages are how Go implements access controls so that the implementation of
+    a feature can be hidden from the code that consumes it.
+    
+    How are they used?
+    Packages are defined by creating code files in folders and using the package
+    keyword to denote which package they belong to.
 
 
-
-
-
-
+116.the Module File
+    
 
 
 
