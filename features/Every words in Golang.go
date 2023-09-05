@@ -1167,9 +1167,15 @@ Output:
             fmt.Println("Changed price:", kayak.price)
         }
 
+    Go doesn't differentiate between structs and classes, in the way that other languages do. All custom
+    data types are defined as structs, and the decision to pass them by reference or by value is made
+    depending on whether a pointer is used.
 
+    Go doesn't allow structs to be used with the const keyword, and the compiler will report an error if
+    you try to define a constant struct.
 
-
+89.Creating Struct Values
+    
 
 
 
