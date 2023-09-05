@@ -1420,7 +1420,10 @@ Output:
 
 102.Struct Constructor Functions
     A constructor function is responsible for creating struct values using values received through parameters
-    
+    Constructor functions are used to create struct values consistently. Constructor functions are usually
+    named new or New followed by the struct type so that the constructor function for creating Product values
+    is named newProduct.
+
     example:
         package main
         import "fmt"
@@ -1428,9 +1431,11 @@ Output:
             name, category string
             price float64
         }
+        
         func newProduct(name, category string, price float64) *Product {
             return &Product{name, category, price}
         }
+        
         func main() {
             products := [2]*Product {
                 newProduct("Kayak", "Watersports", 275),
@@ -1439,11 +1444,44 @@ Output:
             for _, p := range products {
                 fmt.Println("Name:", p.name, "Category:",  p.category, "Price", p.price)
             }
-    }
+        }
 
+103.Modifying a Constructor
+    The benefit of using constructor functions is consistency, 
+    ensuring that changes to the construction
+    process are reflected in all the struct values created by the function.
 
+    example:
+        func newProduct(name, category string, price float64) *Product {
+            return &Product{name, category, price - 10}
+        }
 
-
+104.Pointer Types for Struct Fields
+    example:
+        package main
+        import "fmt"
+        type Product struct {
+            name, category string
+            price float64
+            *Supplier
+        }
+        type Supplier struct {
+            name, city string
+        }
+        func newProduct(name, category string, price float64, supplier *Supplier) *Product {
+            return &Product{name, category, price -10, supplier}
+        }
+        func main() {
+            acme := &Supplier { "Acme Co", "New York"}
+            products := [2]*Product {
+                newProduct("Kayak", "Watersports", 275, acme),
+                newProduct("Hat", "Skiing", 42.50, acme),
+            }
+            for _, p := range products {
+                fmt.Println("Name:", p.name, "Supplier:",
+                    p.Supplier.name, p.Supplier.city)
+            }
+        }
 
 
 
