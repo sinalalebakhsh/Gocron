@@ -2,8 +2,8 @@ package features
 
 type Features struct {
 	EveryWordsInGolang string
-    SingleDefinition map[string]string
 }
+
 
 var OriginalFeatures Features = Features{
 	EveryWordsInGolang: `
@@ -1424,10 +1424,5 @@ e.g
 
 115.
     `,
-   SingleDefinition: map[string]string{
-    "build": `
-    build
-    The go build command compiles the source code in the current directory 
-    and generates an executable file.`,
-   },
 }
+
