@@ -1682,7 +1682,12 @@ Output:
         e1 == e2 false
         e3 == e4 true
 
-
+113.Empty Interface
+    Go allows the user of the empty interface—which means an interface that defines no methods—to represent
+    any type, which can be a useful way to group disparate types that share no common features
+    The empty interface represents all types, including the built-in types and any structs and interfaces
+    that have been defined.
+    
 
 
 
