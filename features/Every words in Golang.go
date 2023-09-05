@@ -1798,7 +1798,19 @@ Output:
     But this order is not part of the Go language specification and should not be relied on. Your initialization
     functions should be self-contained and not rely on other init functions having been invoked previously.
 
-120.
+120.External Packages
+    The argument to the go get command is the path for the module that contains the package you want
+    to use. The name is followed by the @ character and then the package version number, which is prefixed with
+    the letter v
+    The go get command is sophisticated and knows that the path specified.
+    The specified version of the module is downloaded, and the packages it contains are compiled and
+    installed so they can be used in the project. (Packages are distributed as source code, which allows them to
+    be compiled for the platform on which you are working.)
+    
+    In Terminal:
+    example:
+        go get github.com/fatih/color@v1.10.0
+        
 
 
 
