@@ -1303,7 +1303,8 @@ Output:
         }
 
 97.Creating Arrays, Slices, and Maps Containing Struct Values
-    Omitting the Struct Type:
+    Omitting the Struct Type
+    example:
         package main
         import "fmt"
         func main() {
@@ -1348,46 +1349,72 @@ Output:
     creates a new value that copies the field values.
 
 99.Copying a Struct Value
-    package main
-    import "fmt"
-    func main() {
-        type Product struct {
-            name, category string
-            price float64
+    example:
+        package main
+        import "fmt"
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            p1 := Product {
+                name: "Kayak",
+                category: "Watersports",
+                price: 275,
+            }
+            p2 := p1
+            p1.name = "Original Kayak"
+            fmt.Println("P1:", p1.name)
+            fmt.Println("P2:", p2.name)
         }
-        p1 := Product {
-            name: "Kayak",
-            category: "Watersports",
-            price: 275,
-        }
-        p2 := p1
-        p1.name = "Original Kayak"
-        fmt.Println("P1:", p1.name)
-        fmt.Println("P2:", p2.name)
-    }
 
 100.Using a Pointer to a Struct
-    package main
-    import "fmt"
-    func main() {
+    example:
+        package main
+        import "fmt"
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            p1 := Product {
+                name: "Kayak",
+                category: "Watersports",
+                price: 275,
+            }
+            p2 := &p1
+            p1.name = "Original Kayak"
+            fmt.Println("P1:", p1.name)
+            fmt.Println("P2:", (*p2).name)
+        }
+
+
+101.the Struct Pointer Convenience Syntax
+    example:
+        package main
+        import "fmt"
+        
         type Product struct {
             name, category string
             price float64
         }
-        p1 := Product {
-            name: "Kayak",
-            category: "Watersports",
-            price: 275,
+        
+        func calcTax(product *Product) {
+            if ((*product).price > 100) {
+                (*product).price += (*product).price * 0.2
+            }
         }
-        p2 := &p1
-        p1.name = "Original Kayak"
-        fmt.Println("P1:", p1.name)
-        fmt.Println("P2:", (*p2).name)
-    }
-
-
-
-
+        
+        func main() {
+            kayak := Product {
+                name: "Kayak",
+                category: "Watersports",
+                price: 275,
+            }
+            calcTax(&kayak)
+            fmt.Println("Name:", kayak.name, "Category:",
+            kayak.category, "Price", kayak.price)
+        }
 
 
 
