@@ -1139,8 +1139,17 @@ Output:
         }
 
 
-
-
+        
+88.struct
+    What are they?
+    Structs are data types, comprised of fields.
+    
+    Why are they useful?
+    Structs allow custom data types to be defined.
+    
+    How are they used?
+    The type and struct keywords are used to define a type, 
+    allowing field names and types to be specified.
 
 
 
