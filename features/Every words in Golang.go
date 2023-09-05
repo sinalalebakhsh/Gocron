@@ -1776,7 +1776,9 @@ Output:
 
 
 118.Adding Code Files to Packages
-    
+    Packages can contain multiple code files, and to simplify development, access control rules and package
+    prefixes do not apply when accessing features defined in the same package.
+
 
 
 
