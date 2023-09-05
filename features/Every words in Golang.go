@@ -2,6 +2,7 @@ package features
 
 type Features struct {
 	EveryWordsInGolang string
+    build1 string
 }
 
 var OriginalFeatures Features = Features{
@@ -928,6 +929,10 @@ Output:
     Function types are defined using the func keyword, followed by a signature that
     describes the parameters and results. No function body is specified.
 
+    Go does not support arrow functions, where functions are expressed more concisely using the =>
+    operator, without the func keyword and a code block surrounded by braces. In Go, functions must always be
+    defined with the keyword and a body.
+
 79.Function Comparisons and the Zero Type
     example:
         func calcWithTax(price float64) float64 {
@@ -1419,4 +1424,8 @@ e.g
 
 115.
     `,
+    build1: `
+    build
+    The go build command compiles the source code in the current directory 
+    and generates an executable file.`,
 }
