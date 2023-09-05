@@ -1194,8 +1194,16 @@ Output:
         }
     }
 
+91.new 
+    the new function to create struct values
+        var lifejacket = new(Product)
 
+    The result is a pointer to a struct value whose fields are 
+    initialized with their type's zero value. 
+    This is equivalent to this statement:
+        var lifejacket = &Product{}
 
+    These approaches are interchangeable, and choosing between them is a matter of preference.
 
 
 
