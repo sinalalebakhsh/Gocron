@@ -1071,6 +1071,18 @@ Output:
         return withoutTax
     }
 
+85.Functions Values Directly
+    func selectCalculator(price float64) calcFunc {
+        if (price > 100) {
+            return func (price float64) float64 {
+                return price + (price * 0.2)
+            }
+        }
+         return func (price float64) float64 {
+            return price
+        }
+    }
+
 
 
 
