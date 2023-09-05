@@ -1511,9 +1511,21 @@ Output:
             }
         }
 
-106.
+106.Method
+    What are they?
+    Methods are functions that are invoked on a struct and have access to all of the
+    fields defined by the value's type. Interfaces define sets of methods, which can be
+    implemented by struct types.
 
+    Why are they useful?
+    These features allow types to be mixed and used through their common
+    characteristics.
 
+    How are they used?
+    Methods are defined using the func keyword, but with the addition of a receiver.
+    Interfaces are defined using the type and interface keywords.
+
+    
 
 
 
