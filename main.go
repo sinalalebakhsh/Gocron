@@ -11,6 +11,6 @@ func main()  {
 	fmt.Println(features.OriginalFeatures)
 
 
-	fmt.Println(features.)
+	fmt.Println(features.OriginSingleDef)
 	
 }
