@@ -1174,9 +1174,25 @@ Output:
     Go doesn't allow structs to be used with the const keyword, and the compiler will report an error if
     you try to define a constant struct.
 
-89.Creating Struct Values
-    
+89.struct tag
+    The struct type can be defined with tags, which provide additional information about how a field should
+    be processed. Struct tags are just strings that are interpreted by the code that processes struct values,
+    using the features provided by the reflect package.
 
+90.struct values
+    Values do not have to be provided for all fields when creating a struct value
+    
+    example:
+    func main() {
+        type Product struct {
+            name, category string
+            price float64
+        }
+        kayak := Product {
+                name: "Kayak",
+                category: "Watersports",
+        }
+    }
 
 
 
