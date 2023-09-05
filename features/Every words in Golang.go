@@ -1756,10 +1756,15 @@ Output:
 
 
 116.the Module File
+    This name is important because it is used to import features from other packages created within
+    the same project and third-party packages
+    The go statement specifies the version of Go that is used.
+
+
+
+
+
     
-
-
-
 
 
 
