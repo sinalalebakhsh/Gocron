@@ -1205,7 +1205,18 @@ Output:
 
     These approaches are interchangeable, and choosing between them is a matter of preference.
 
-
+92.Field Positions to Create Struct Values
+    example:
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            var kayak = Product { "Kayak", "Watersports", 275.00 }
+            fmt.Println("Name:", kayak.name)
+            fmt.Println("Category:", kayak.category)
+            fmt.Println("Price:", kayak.price)
+        }
 
 
 
