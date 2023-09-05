@@ -1811,8 +1811,15 @@ Output:
     example:
         go get github.com/fatih/color@v1.10.0
         
-
-
+121.finding go packages
+    There are two useful resources for finding Go packages:
+    
+    1-https://pkg.go.dev, which provides a search engine.
+    
+    2-https://github.com/golang/go/wiki/Projects, 
+    which provides a curated list of Go projects, grouped by category. 
+    Not all the projects listed at pkg.go.dev are on the
+    list, and I tend to use both resources to find packages.
 
 
 
