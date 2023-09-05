@@ -1218,6 +1218,27 @@ Output:
             fmt.Println("Price:", kayak.price)
         }
 
+93.Defining Embedded Fields
+    If a field is defined without a name, 
+    it is known as an embedded field, and it is accessed using the name of its type.
+
+    example:
+        func main() {
+                type Product struct {
+                    name, category string
+                    price float64
+                }
+                type StockLevel struct {
+                    Product
+                    count int
+                }
+                stockItem := StockLevel {
+                    Product: Product { "Kayak", "Watersports", 275.00 },
+                    count: 100,
+                }
+                fmt.Println("Name:", stockItem.Product.name)
+                fmt.Println("Count:", stockItem.count)
+        }
 
 
 
