@@ -1343,8 +1343,28 @@ Output:
             fmt.Println("Map:", kvp["kayak"].Product.name)
         }
 
+98.Structs and Pointers
+    Assigning a struct to a new variable or using a struct as a function parameter 
+    creates a new value that copies the field values.
 
-
+    Copying a Struct Value:
+        package main
+        import "fmt"
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            p1 := Product {
+                name: "Kayak",
+                category: "Watersports",
+                price: 275,
+            }
+            p2 := p1
+            p1.name = "Original Kayak"
+            fmt.Println("P1:", p1.name)
+            fmt.Println("P2:", p2.name)
+        }
 
 
 
