@@ -2,13 +2,27 @@ package getuserinput
 
 import (
 	"bufio"
+	"errors"
 	"os"
 	"strings"
+
+	"github.com/sinalalebakhsh/Gocron/features"
 )
 
-func GetUserInput() string {
+func GetUserInput() (string, error) {
 	UserInput := bufio.NewReader(os.Stdin)
-	Input, _ := UserInput.ReadString('\n') 
-	Input = strings.TrimSuffix(Input, "\n")
-	return Input
+	FinalInput, _ := UserInput.ReadString('\n') 
+	FinalInput = strings.TrimSuffix(FinalInput, "\n")
+
+
+	Final := features.OriginSingleDef.SingleDefinition[FinalInput]
+
+	for _, Value := range features.OriginSingleDef.SingleDefinition {
+		if features.OriginSingleDef.SingleDefinition[Value] == Final {
+			return Final , nil
+		} 
+	}
+
+	return "", errors.New("it's not yet add")
+
 }

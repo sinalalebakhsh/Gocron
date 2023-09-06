@@ -13,15 +13,16 @@ func main()  {
 
 	color.Cyan(fmt.Sprintln(features.OriginalFeatures))
 
-	UserInput := getuserinput.GetUserInput()
-	
-	
 
-	for _, Value := range features.OriginSingleDef.SingleDefinition {
-		if UserInput == Value {
-			fmt.Println(Value)
-		}
-	} 
+	UserInput , err := getuserinput.GetUserInput()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(UserInput)
+
+	
+		
+	
 	// color.Blue(fmt.Sprintln(features.OriginSingleDef))
 
 
