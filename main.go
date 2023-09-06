@@ -2,18 +2,28 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"strings"
 
-	"github.com/sinalalebakhsh/Gocron/features"
 	"github.com/sinalalebakhsh/Gocron/GetUserInput"
+	"github.com/sinalalebakhsh/Gocron/features"
 
 	"github.com/fatih/color"
 )
 
 func main()  {
 
+
+	if os.Args[1] == strings.ToLower("-h") || os.Args[1] == strings.ToLower("help") {
+		fmt.Println(`
+Gocron Project:
+is a API for learning GO language with example.
+my name is Sina LalehBakhsh, I hope this API is useful for you`)
+	}
+
 	color.Cyan(fmt.Sprintln(features.OriginalFeatures))
 
-	
+
 
 	UserInput , err := getuserinput.GetUserInput()
 	if err != nil {
