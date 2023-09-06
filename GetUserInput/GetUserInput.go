@@ -15,11 +15,15 @@ func GetUserInput() (string, error) {
 	FinalInput, _ := UserInput.ReadString('\n') 
 	FinalInput = strings.TrimSuffix(FinalInput, "\n")
 
+	for _ , Value := range features.OriginSingleDef.SingleDefinition {
+		if Value == features.OriginSingleDef.SingleDefinition[FinalInput] {
+			Final := fmt.Sprint(features.OriginSingleDef.SingleDefinition[FinalInput])			
+			return Final, nil
+		} else {
+			goto target
+		}
+	} 
 
-	Final := features.OriginSingleDef.SingleDefinition[FinalInput]
-
-	fmt.Println(features.OriginSingleDef.SingleDefinition[Final])
-	
-	return "", errors.New("it's not yet add")
+	target: return "", errors.New("it's not yet add")
 
 }
