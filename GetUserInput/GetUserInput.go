@@ -13,9 +13,9 @@ import (
 
 func GetUserInput() {
 	UserInput := bufio.NewReader(os.Stdin)
-	FinalInput, _ := UserInput.ReadString('\n') 
+	FinalInput, _ := UserInput.ReadString('\n')
 	FinalInput = strings.TrimSuffix(FinalInput, "\n")
-	
+
 	SliceOfMap := make([]string, 0, len(features.OriginSingleDef.SingleDefinition))
 
 	for key, _ := range features.OriginSingleDef.SingleDefinition {
@@ -24,14 +24,21 @@ func GetUserInput() {
 
 	sort.Strings(SliceOfMap)
 
+	Regulators := false
+
 	for _, value := range SliceOfMap {
 		if FinalInput == value {
 			color.Green(fmt.Sprintln(features.OriginSingleDef.SingleDefinition[value]))
+			Regulators = true
 			break
-		} 
-		color.Red(fmt.Sprintln("Do not add yet"))
-		break
+		}
 	}
 
+	if Regulators == false {
+		fmt.Println("---------------------")
+		color.Red(fmt.Sprintf("Do not add %s yet.", FinalInput))
+		fmt.Println("---------------------")
+
+	}
 
 }
