@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"github.com/fatih/color"
-	"github.com/sinalalebakhsh/Gocron/features/helpMessage"
 
+	"github.com/fatih/color"
+	"github.com/sinalalebakhsh/Gocron/features"
 )
 
 func GetFirstArg() {
@@ -18,7 +18,7 @@ func GetFirstArg() {
 		FirstArg == "help" || 
 		FirstArg == strings.ToLower("-HELP") ||
 		FirstArg == strings.ToLower("--HELP") {
-			features.
+			features.HelpMessage()
 		} else if FirstArg == strings.ToLower("all") || 
 		FirstArg == strings.ToLower("everyexample") || 
 		FirstArg == strings.ToLower("examples") {
