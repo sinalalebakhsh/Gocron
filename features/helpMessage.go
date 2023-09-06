@@ -1,9 +1,11 @@
 package features
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/fatih/color"
+)
 
-func HelpMessage(){
-	fmt.Println(`
+var Message string = fmt.Sprintln(`
 Gocron Project:
 -------------------------------------------------------
 is a API for learning GO language with example.
@@ -14,5 +16,8 @@ if your perpuse is more than one word, for convenience searching, just write key
 like this:
 	map slice
 -------------------------------------------------------`)
-} 
+
+func HelpMessage(){
+	color.HiBlue(Message)
+}
 
