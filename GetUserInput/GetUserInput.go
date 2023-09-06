@@ -28,17 +28,19 @@ func GetUserInput() {
 
 	for _, value := range SliceOfMap {
 		if FinalInput == value {
+			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			color.Green(fmt.Sprintln(features.OriginSingleDef.SingleDefinition[value]))
+			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+
 			Regulators = true
 			break
 		}
 	}
 
 	if Regulators == false {
-		fmt.Println("---------------------")
+		color.Red(fmt.Sprintln("---------------------"))
 		color.Red(fmt.Sprintf("Do not add %s yet.", FinalInput))
-		fmt.Println("---------------------")
-
+		color.Red(fmt.Sprintln("---------------------"))
 	}
 
 }
