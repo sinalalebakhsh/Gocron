@@ -1,4 +1,4 @@
-package features
+package getuserinput
 
 import (
 	"fmt"
