@@ -3,6 +3,7 @@ package getuserinput
 import (
 	"bufio"
 	"errors"
+	"fmt"
 	"os"
 	"strings"
 
@@ -17,12 +18,8 @@ func GetUserInput() (string, error) {
 
 	Final := features.OriginSingleDef.SingleDefinition[FinalInput]
 
-	for _, Value := range features.OriginSingleDef.SingleDefinition {
-		if features.OriginSingleDef.SingleDefinition[Value] == Final {
-			return Final , nil
-		} 
-	}
-
+	fmt.Println(features.OriginSingleDef.SingleDefinition[Final])
+	
 	return "", errors.New("it's not yet add")
 
 }
