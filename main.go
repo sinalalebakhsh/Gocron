@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"github.com/sinalalebakhsh/Gocron/GetUserInput"
-	"github.com/fatih/color"
+	// "github.com/fatih/color"
 )
 
 func main()  {
@@ -12,14 +12,10 @@ func main()  {
 	getuserinput.GetFirstArg()
 
 
+	getuserinput.GetUserInput()
 
 
-	UserInput , err := getuserinput.GetUserInput()
-	if err != nil {
-		fmt.Println(err)
-	}
-	color.Cyan(fmt.Sprintln(UserInput))
-		
+
 
 	
 }
