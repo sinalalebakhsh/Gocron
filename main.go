@@ -13,18 +13,14 @@ func main()  {
 
 	color.Cyan(fmt.Sprintln(features.OriginalFeatures))
 
+	
 
 	UserInput , err := getuserinput.GetUserInput()
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(UserInput)
-
-	
+	color.Blue(fmt.Sprintln(UserInput))
 		
-	
-	// color.Blue(fmt.Sprintln(features.OriginSingleDef))
-
 
 	
 }
