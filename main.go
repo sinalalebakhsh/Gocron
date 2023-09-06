@@ -12,7 +12,10 @@ func main()  {
 
 	color.Cyan(fmt.Sprintln(features.OriginalFeatures))
 
-	color.Blue(fmt.Sprintln(features.OriginSingleDef))
+	for _, Value := range features.OriginSingleDef.SingleDefinition {
+		fmt.Println(Value)
+	} 
+	// color.Blue(fmt.Sprintln(features.OriginSingleDef))
 
 
 	
