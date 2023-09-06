@@ -34,7 +34,11 @@ flag package:
     Go provides a flag package supporting basic command-line flag parsing.
     We'll use this package to implement our example command-line program.`,
     
-    
+    "clean":`clean
+The go clean command removes the output produced by the go build command, 
+including the executable and any temporary files that were created during the build.`,
+
+
 },
 
 }
