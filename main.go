@@ -1,16 +1,21 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/sinalalebakhsh/Gocron/features"
+	// "fmt"
+	"github.com/sinalalebakhsh/Gocron/GetUserInput"
+	// "github.com/fatih/color"
 )
 
 func main()  {
 
-	fmt.Println(features.OriginalFeatures)
+
+	getuserinput.GetFirstArg()
 
 
-	fmt.Println(features.OriginSingleDef)
+	getuserinput.GetUserInput()
+
+
+
+
 	
 }
