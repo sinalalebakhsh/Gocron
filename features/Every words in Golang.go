@@ -1800,22 +1800,62 @@ Output:
 
 120.Creating Nested Packages
     Packages can be defined within other packages, making it easy to break up complex features into as many
-    units as possible. 
-    #1
-    contents:
-        package cart
-        import "packages/store"
-        type Cart struct {
-            CustomerName string
-            Products []store.Product
-        }
-        func (cart *Cart) GetTotal() (total float64) {
-            for _, p := range cart.Products {
-                total += p.Price()
+    units as possible.
+    The package statement is used just as with any other package, without the need to include the name
+    of the parent or enclosing package. And dependency on custom packages must include the full package
+    path. 
+
+    example:
+        Create the packages/store/cart folder and add to it a file named cart.go with the contents:
+        #1
+        contents:
+            package cart
+            import "packages/store"
+            type Cart struct {
+                CustomerName string
+                Products []store.Product
             }
-            return
-        }
+            func (cart *Cart) GetTotal() (total float64) {
+                for _, p := range cart.Products {
+                    total += p.Price()
+                }
+                return
+            }
     
+
+
+
+
+
+
+            
+
+
+
+
+
+
+            
+
+
+
+
+
+
+            
+
+
+
+
+
+
+            
+
+
+
+
+
+
 
 
 
