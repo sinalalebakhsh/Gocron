@@ -1853,6 +1853,22 @@ Output:
                 }
         }
 
+122.Importing a Package Only for Initialization Effects
+    Go prevents packages from being imported but not used, 
+    which can be a problem if you rely on the effect of
+    an initialization function but don't need to use any of the features the package exports.
+    If I need the effect of the initialization function, 
+    but I don't need to use the GetData function the package exports.
+
+    example:
+        package main
+        import (
+            "fmt"
+            "packages/store"
+            . "packages/fmt"
+            "packages/store/cart"
+            _ "packages/data"
+        )
 
 
             
