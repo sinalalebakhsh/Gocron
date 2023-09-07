@@ -355,6 +355,7 @@ Understanding Flow Control
     The else/if combination can be repeated to create a sequence of clauses
 
 56.for
+    Go allows loops only inside of functions.
     The for keyword is used to create loops that repeatedly execute statements. The most basic for loops will
     repeat indefinitely unless interrupted by the break keyword
 
@@ -1822,8 +1823,8 @@ Output:
                 return
             }
     
-    
-    When importing a nested package, the package path starts with the module name and lists the
+    The features defined by the nested package are accessed using the package name, just like any other
+    package. When importing a nested package, the package path starts with the module name and lists the
     sequence of packages.
     example:
         package main
@@ -1844,7 +1845,8 @@ Output:
         }
 
 
-
+121.Using Package Initialization Functions
+    
 
 
 
