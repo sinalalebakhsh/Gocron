@@ -1822,6 +1822,26 @@ Output:
                 return
             }
     
+    
+    When importing a nested package, the package path starts with the module name and lists the
+    sequence of packages.
+    example:
+        package main
+        import (
+            "fmt"
+            "packages/store"
+            . "packages/fmt"
+            "packages/store/cart"
+        )
+        func main() {
+            product := store.NewProduct("Kayak", "Watersports", 279)
+            cart := cart.Cart {
+                CustomerName: "Alice",
+                Products: []store.Product{ *product },
+            }
+            fmt.Println("Name:", cart.CustomerName)
+            fmt.Println("Total:",  ToCurrency(cart.GetTotal()))
+        }
 
 
 
