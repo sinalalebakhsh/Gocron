@@ -1845,8 +1845,13 @@ Output:
         }
 
 
-121.Using Package Initialization Functions
-    
+121.Initialization Function
+    example:
+        func init() {
+                for category, price := range categoryMaxPrices {
+                    categoryMaxPrices[category] = price + (price * defaultTaxRate)
+                }
+        }
 
 
 
