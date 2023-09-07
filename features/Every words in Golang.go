@@ -1798,7 +1798,39 @@ Output:
     But this order is not part of the Go language specification and should not be relied on. Your initialization
     functions should be self-contained and not rely on other init functions having been invoked previously.
 
-120.
+120.Creating Nested Packages
+    Packages can be defined within other packages, making it easy to break up complex features into as many
+    units as possible. 
+    #1
+    contents:
+        package cart
+        import "packages/store"
+        type Cart struct {
+            CustomerName string
+            Products []store.Product
+        }
+        func (cart *Cart) GetTotal() (total float64) {
+            for _, p := range cart.Products {
+                total += p.Price()
+            }
+            return
+        }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
