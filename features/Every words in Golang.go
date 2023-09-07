@@ -1798,7 +1798,6 @@ Output:
     But this order is not part of the Go language specification and should not be relied on. Your initialization
     functions should be self-contained and not rely on other init functions having been invoked previously.
 
-120.
 
 
 
