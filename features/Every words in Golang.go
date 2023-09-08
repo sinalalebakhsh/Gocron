@@ -1952,7 +1952,24 @@ Output:
             return &Product{ name, category, price }
         }
         
+127.Creating Struct Values in Packages
+    example:
+    package main
+    import (
+        "fmt"
+        "composition/store"
+    )
+    func main() {
+        
+        // use Constructor:
+        kayak := store.NewProduct("Kayak", "Watersports", 275)
 
+        // use the literal syntax:
+        lifejacket := &store.Product{ Name: "Lifejacket", Category:  "Watersports"}
+        for _, p := range []*store.Product { kayak, lifejacket} {
+            fmt.Println("Name:", p.Name, "Category:", p.Category, "Price:", p.Price(0.2))
+        }
+    }
     
 
 
