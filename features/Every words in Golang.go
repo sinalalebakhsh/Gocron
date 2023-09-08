@@ -1809,22 +1809,24 @@ Output:
     path. 
 
     example:
-        Create the packages/store/cart folder and add to it a file named cart.go with the contents:
-        #1
-        contents:
-            package cart
-            import "packages/store"
-            type Cart struct {
-                CustomerName string
-                Products []store.Product
-            }
-            func (cart *Cart) GetTotal() (total float64) {
-                for _, p := range cart.Products {
-                    total += p.Price()
-                }
-                return
-            }
-    
+    |    Create the packages/store/cart folder 
+    |    and add to it a file named cart.go with the contents:
+    |    #1
+    |    contents:
+    |        package cart
+    |        import "packages/store"
+    |        type Cart struct {
+    |            CustomerName string
+    |            Products []store.Product
+    |        }
+    |        func (cart *Cart) GetTotal() (total float64) {
+    |            for _, p := range cart.Products {
+    |                total += p.Price()
+    |            }
+    |            return
+    |        }
+    |_______________________________________________________________________________________________
+
     The features defined by the nested package are accessed using the package name, just like any other
     package. When importing a nested package, the package path starts with the module name and lists the
     sequence of packages.
