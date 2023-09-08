@@ -2643,6 +2643,31 @@ Converting a String to Runes
     Enumerate the values received           Use a for loop with the range keyword 
     from a channel
 
+139.How Go Executes Code
+    All Go programs use at least one goroutine because this is how Go executes the code in the
+    main function.
+
+    When compiled Go code is executed, the runtime creates a goroutine that starts executing
+    the statements in the entry point, which is the main function in the main package. 
+    Each statement in the main function is executed in the order in which they are defined. 
+    The goroutine keeps executing statements until
+    it reaches the end of the main function, at which point the application terminates.
+
+    The goroutine executes each statement in the main function synchronously, 
+    which means that it waits
+    for the statement to complete before moving on to the next statement. 
+    The statements in the main function
+
+
+
+
+
+
+
+
+
+
+
 
 
 
