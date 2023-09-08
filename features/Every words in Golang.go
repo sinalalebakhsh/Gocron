@@ -791,38 +791,42 @@ Converting a String to Runes
 
 
 
-Enumerating Strings
-------------------------------------------------------------------------------------------------        
-example:
-    var price = "€48.95"
-    for index, char := range price {
-        fmt.Println(index, char, string(char))
-    }
-Output:
-    0 8364 €
-    3 52 4
-    4 56 8
-    5 46 .
-    6 57 9
-    7 53 5
+    Enumerating Strings        
+    example:
+    |    var price = "€48.95"
+    |    for index, char := range price {
+    |        fmt.Println(index, char, string(char))
+    |    }
+    |_______________________________________________
 
-Enumerating the Bytes
-------------------------------------------------------------------------------------------------        
-example:
-    var price = "€48.95"
-    for index, char := range []byte(price) {
-        fmt.Println(index, char)
-    }
-Output:
-    0 226
-    1 130
-    2 172
-    3 52
-    4 56
-    5 46
-    6 57
-    7 53
+    Output:
+    |    0 8364 €
+    |    3 52 4
+    |    4 56 8
+    |    5 46 .
+    |    6 57 9
+    |    7 53 5
+    |_________________________________________________
 
+    Enumerating the Bytes
+    example:
+    |    var price = "€48.95"
+    |    for index, char := range []byte(price) {
+    |        fmt.Println(index, char)
+    |    }
+    |_________________________________________________
+
+    Output:
+    |    0 226
+    |    1 130
+    |    2 172
+    |    3 52
+    |    4 56
+    |    5 46
+    |    6 57
+    |    7 53
+    |____________________________
+    
 70.func
     Functions are groups of code statements that are executed only when the function is
     invoked during the flow of execution.
@@ -840,7 +844,7 @@ Output:
     |        taxAmount := price * taxRate
     |        fmt.Println(product, "price:", price, "Tax:", taxAmount)
     |    }
-    |__________________________________________
+    |___________________________________________
 
 72.Defining Variadic Parameters
     example:
