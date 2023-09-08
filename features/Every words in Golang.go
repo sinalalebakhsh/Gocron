@@ -1972,11 +1972,40 @@ Output:
     }
     
 
+128.Steps of composition
+    1-Defining the Base Type -> struct - method 
+    2-Defining a Constructor -> for create struct
+    3-Composing Types
 
+    example:
+    product.go:
+    |    // struct:
+    |    type Product struct {
+    |            Name, Category string
+    |            price float64
+    |    }
+    |    // method:
+    |    func (p *Product) Price(taxRate float64) float64 {
+    |        return p.price + (p.price * taxRate)
+    |    }
+    |    // Constructor:
+    |    func NewProduct(name, category string, price float64) *Product {
+    |        return &Product{ name, category, price }
+    |    }
+    |________________________________
 
-
-
-
+    boat.go:
+    |   
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |   
 
 
 
