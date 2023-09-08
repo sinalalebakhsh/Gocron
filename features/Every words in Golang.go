@@ -1226,23 +1226,24 @@ Output:
     it is known as an embedded field, and it is accessed using the name of its type.
 
     example:
-        func main() {
-                type Product struct {
-                    name, category string
-                    price float64
-                }
-                type StockLevel struct {
-                    Product
-                    count int
-                }
-                stockItem := StockLevel {
-                    Product: Product { "Kayak", "Watersports", 275.00 },
-                    count: 100,
-                }
-                fmt.Println("Name:", stockItem.Product.name)
-                fmt.Println("Count:", stockItem.count)
-        }
-
+    |    func main() {
+    |            type Product struct {
+    |                name, category string
+    |                price float64
+    |            }
+    |            type StockLevel struct {
+    |                Product
+    |                count int
+    |            }
+    |            stockItem := StockLevel {
+    |                Product: Product { "Kayak", "Watersports", 275.00 },
+    |                count: 100,
+    |            }
+    |            fmt.Println("Name:", stockItem.Product.name)
+    |            fmt.Println("Count:", stockItem.count)
+    |    }
+    |____________________________________________________________
+    
 94.Defining an Additional Field
     example:
     |    func main() {
@@ -1264,7 +1265,7 @@ Output:
     |        fmt.Println("Alt Name:", stockItem.Alternate.name)
     |    }
     |__________________________________________________________________________
-    
+
 95.Comparing Struct Values
     example:
     |    func main() {
