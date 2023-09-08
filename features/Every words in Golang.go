@@ -1985,6 +1985,14 @@ Output:
     A struct can mix regular and embedded field types, but the embedded fields are an important part of
     the composition feature
 
+    Go gives special treatment to struct types that have fields whose type is another struct type, in the way
+    that the Boat type has a *Product field in the example project. You can see this special treatment in the
+    statement in the for loop, which is responsible for writing out details of each Boat.
+    Go allows the fields of the nested type to be accessed in two ways. The first is the conventional approach
+    of navigating the hierarchy of types to reach the value that is required. The *Product field is embedded, which
+    means that its name its its type.
+
+    
     example:
     product.go:
     |    // struct:
