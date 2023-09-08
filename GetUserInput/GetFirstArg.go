@@ -16,12 +16,21 @@ func GetFirstArg() {
 		if FirstArg == "-h" || 
 		FirstArg == "help" || 
 		FirstArg == "-help" ||
-		FirstArg == strings.ToLower("--help") {
+		FirstArg == "--help" {
 			features.HelpMessage()
-		} else if FirstArg == strings.ToLower("all") || 
-		FirstArg == strings.ToLower("everyexample") || 
-		FirstArg == strings.ToLower("examples") {
-
+		} else if FirstArg == "all" || 
+		FirstArg == "-all" || 
+		FirstArg == "--all" || 
+		FirstArg == "everything" || 
+		FirstArg == "fullexplaination" || 
+		FirstArg == "explain" || 
+		FirstArg == "example" || 
+		FirstArg == "allexample" || 
+		FirstArg == "allcodes" || 
+		FirstArg == "allcode" || 
+		FirstArg == "everyexample" || 
+		FirstArg == "examples" {
+			
 			color.Yellow(fmt.Sprintln(features.OriginalFeatures))			
 		} 
 	}
