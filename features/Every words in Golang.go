@@ -1353,24 +1353,26 @@ Output:
 
 99.Copying a Struct Value
     example:
-        package main
-        import "fmt"
-        func main() {
-            type Product struct {
-                name, category string
-                price float64
-            }
-            p1 := Product {
-                name: "Kayak",
-                category: "Watersports",
-                price: 275,
-            }
-            p2 := p1
-            p1.name = "Original Kayak"
-            fmt.Println("P1:", p1.name)
-            fmt.Println("P2:", p2.name)
-        }
+    |    package main
+    |    import "fmt"
+    |    func main() {
+    |        type Product struct {
+    |            name, category string
+    |            price float64
+    |        }
+    |        p1 := Product {
+    |            name: "Kayak",
+    |            category: "Watersports",
+    |            price: 275,
+    |        }
+    |        p2 := p1
+    |        p1.name = "Original Kayak"
+    |        fmt.Println("P1:", p1.name)
+    |        fmt.Println("P2:", p2.name)
+    |    }
+    |_______________________________________________
 
+    
 100.Using a Pointer to a Struct
     example:
     |    package main
