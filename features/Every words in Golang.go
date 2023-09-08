@@ -37,7 +37,7 @@ Using the Go Command
     For example, in wc -l the -l is a command-line flag.
     Go provides a flag package supporting basic command-line flag parsing.
     We'll use this package to implement our example command-line program.
-    
+
 6.install
     The go install command downloads packages and is usually used to install tool packages.
 
@@ -472,7 +472,7 @@ Understanding Flow Control
 
 62.Slices
     The slice type in this example is []string
-    The best way to think of slices is as a variable-length array because they are useful when you don’t know how
+    The best way to think of slices is as a variable-length array because they are useful when you don't know how
     many values you need to store or when the number changes over time. One way to define a slice is to use the
     built-in make function
 
@@ -490,7 +490,7 @@ Understanding Flow Control
 
 
 63.append
-    If you define a slice variable but don’t initialize it, then the result is a slice that has a length of zero
+    If you define a slice variable but don't initialize it, then the result is a slice that has a length of zero
     and a capacity of zero, and this will cause an error when an element is appended to it.
     One of the key advantages of slices is that they can be expanded to accommodate additional elements
     
@@ -2726,7 +2726,35 @@ Converting a String to Runes
     example:
         storeTotal += <- channel
 
+144.using adapters to execute functions asynchronously
+    It isn't always possible to rewrite existing functions or methods to use channels, but it is a simple matter
+    to execute synchronous functions asynchronously in a wrapper, like this:
+    The syntax is a little awkward because the arguments used to invoke the function are expressed
+    immediately following the function definition. But the result is the same, which is that a synchronous
+    function can be executed by a goroutine with the result being sent through a channel.
 
+    example:
+        ...
+        calcTax := func(price float64) float64 {
+            return price + (price * 0.2)
+        }
+        wrapper := func (price float64, c chan float64)  {
+            c <- calcTax(price)
+        }
+        resultChannel := make(chan float64)
+        go wrapper(275, resultChannel)
+        result := <- resultChannel
+        fmt.Println("Result:", result)
+        ...
+        The wrapper function receives a channel, which it uses to send the value received from executing the
+        calcTax function synchronously. This can be expressed more concisely by defining a function without
+        assigning it to a variable, like this:
+        ...
+        go func (price float64, c chan float64) {
+            c <- calcTax(price)
+        }(275, resultChannel)
+        ...
+    
 
 
 
