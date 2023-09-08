@@ -2137,8 +2137,13 @@ Output:
     |    }
     |__________________________________________________________________
         
+    Output:
+    |    Rental Boat: Rubber Ring Rental Price: 12
+    |    Rental Boat: Yacht Rental Price: 60000
+    |    Rental Boat: Super Yacht Rental Price: 120000
+    |_______________________________________________________________
 
-
+    
 
 
 
