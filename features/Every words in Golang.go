@@ -1992,7 +1992,10 @@ Output:
     of navigating the hierarchy of types to reach the value that is required. The *Product field is embedded, which
     means that its name its its type.
 
-    
+    The Boat type doesn't define a Name field, but it can be treated as though it did because of the direct
+    access feature. This is known as field promotion, and Go essentially flattens the types so that the Boat
+    type behaves as though it defines the fields that are provided by the nested Product type
+
     example:
     product.go:
     |    // struct:
