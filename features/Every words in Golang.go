@@ -1894,23 +1894,40 @@ Output:
             golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae // indirect
         )
 
+    Note:
+        You can also use the go.mod file to create dependencies on projects you have created locally
+
+    The first time you run the go get command, you will see a list of the modules that are
+    downloaded, which illustrated that modules have their own dependencies and that these are resolved
+    automatically:
+        go: downloading github.com/fatih/color v1.10.0
+        go: downloading github.com/mattn/go-isatty v0.0.12
+        go: downloading github.com/mattn/go-colorable v0.1.8
+        go: downloading golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae
 
 
-
-
-
-
-
-
-
-
-
+125.
 
 
 
 
 
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
