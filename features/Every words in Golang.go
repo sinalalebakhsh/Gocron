@@ -1879,8 +1879,38 @@ Output:
     This creates a rich module ecosystem,
     but it does mean that maintenance and support can be inconsistent.
 
+124.indirect
+    The indirect comment at the end of the statements is added automatically because
+    the packages are not used by the code in the project. A file named go.sum is created when the module is
+    obtained and contains checksums used to validate the packages.
+
+    example:
+        module packages
+        go 1.17
+        require (
+            github.com/fatih/color v1.10.0 // indirect
+            github.com/mattn/go-colorable v0.1.8 // indirect
+            github.com/mattn/go-isatty v0.0.12 // indirect
+            golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae // indirect
+        )
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
 
 
