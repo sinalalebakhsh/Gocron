@@ -1152,6 +1152,8 @@ Output:
     The type and struct keywords are used to define a type, 
     allowing field names and types to be specified.
     
+    A struct can mix regular and embedded field types.
+
     example:
         func main() {
             type Product struct {
@@ -1977,6 +1979,9 @@ Output:
     2-Defining a Constructor -> for create struct
     3-Composing Types
 
+    A struct can mix regular and embedded field types, but the embedded fields are an important part of
+    the composition feature
+
     example:
     product.go:
     |    // struct:
@@ -2173,15 +2178,13 @@ Output:
 
 
 
+
     package main = first executable file main.go
 func main() {} = every execute files in "package main"
     fmt = for printing in CLI
 import = for importing another package
     string
 e.g
-    
-    
-   
     Format String like: fmt.Printf("%v %s %f", variable, string, float32)
     Scope
     Go is lexically scoped using blocks.
@@ -2202,31 +2205,39 @@ e.g
     range
     len(x)
     length
+
 27.
     slice
     A slice is a segment of an array. Like arrays slices areindexable and have a length. 
     Unlike arrays this lengthis allowed to change.
+
 28.
     make
     f you want to create a slice you should use the built-inmake function
+
 29.
     slice functions:
     append
     add to slice
     [low : high]
     Another way to create slices is to use the [low : high]expression
+
 30.
     map
     A map is an unordered collection of key-value pairs.
     Also known as an associative array, a hash table or dictionary, 
     maps are used to look up a value by its associated key.
+
 31.
     slices maps 
+
 32.
     delete function
     We can also delete items from a map using the built-indelete function.
+
 33.
     make map
+
 34.
     function
     A function is an independent section of code 
@@ -2236,42 +2247,54 @@ e.g
     func FunctionName(ParameterName ParameterType) ReturnType { body of function}
     e.g
     func getUserName(UserInput string) string { return UserInput }
+
 35.
     returning multiple values
     Go is also capable of returning multiple values from afunction
+
 36.
     variadic functions
     func add(args ...int) int {}
+
 37.
     closure
     It is possible to create functions inside of functions
+
 38.
     increment adds 1 to the variable x which is defined inthe main function's scope. 
+    
 39.
     return function from a function
+
 40.
     recursion
     Finally a function is able to call itself. 
     Here is one way to compute the factorial of a number
+
 41.
     defer
     Go has a special statement called defer which schedules 
     a function call to be run after the function completes.
     is often used when resources need to be freed insome way. 
     For example when we open a file we need to make sure to close it later. With defer:
+
 42.
     panic
     the panicfunction to cause a run time error.  
+
 43.
     recover
     We can handle arun-time panic with the built-in recover function.
     recover stops the panic and returns the value that waspassed to the call to panic.
+
 44.
     Pointers    
     * &
+
 45.
     new
     Another way to get a pointer is to use the built-in newfunction.
+
 46.
     type
     In the provided Go code, "type" is a keyword used 
@@ -2280,8 +2303,10 @@ e.g
     By using the "type" keyword, 
     you can create your own named types or aliases that can be used throughout your code, 
     providing better abstraction and type safety.
+
 47.
     struct
+    A struct can mix regular and embedded field types
     A struct is a type which contains named fields.
     the keyword structto indicate that we are defining 
     a struct type and alist of fields inside of curly braces.
