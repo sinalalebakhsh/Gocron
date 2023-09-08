@@ -609,14 +609,17 @@ Understanding Flow Control
 
     
     Enumerating Slices:
-        products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-        for index, value := range products[2:] {
-            fmt.Println("Index:", index, "Value:", value)
-        }
-    Output:
-        Index: 0 Value: Paddle
-        Index: 1 Value: Hat
+    example:
+    |    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |    for index, value := range products[2:] {
+    |        fmt.Println("Index:", index, "Value:", value)
+    |    }
+    |_______________________________________
 
+    Output:
+    |    Index: 0 Value: Paddle
+    |    Index: 1 Value: Hat
+    |
 
 
 65.sort
@@ -637,7 +640,8 @@ Understanding Flow Control
     |    Index: 1 Value: Kayak
     |    Index: 2 Value: Lifejacket
     |    Index: 3 Value: Paddle
-    |
+    |_________________________________________
+
 66.DeepEqual
     The DeepEqual function can be used to compare a wider range of data types than the
     equality operator, including slices.
