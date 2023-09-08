@@ -2755,9 +2755,22 @@ Converting a String to Runes
         }(275, resultChannel)
         ...
     
+145.Coordinating Channels
+    By default, sending and receiving through a channel are blocking operations. This means a goroutine that
+    sends a value will not execute any further statements until another goroutine receives the value from the
+    channel. If a second goroutine sends a value, it will be blocked until the channel is cleared, causing a queue
+    of goroutines waiting for values to be received. This happens in the other direction, too, so that goroutines
+    that receive values will block until another goroutine sends one.
 
-
-
+    example:
+    If Bob has a message for Alice, the default channel behavior requires 
+    Alice and Bob to agree on a meeting place, and
+    whoever gets there first will wait for the other to arrive. 
+    Bob will only give the message to Alice when they are
+    both present. When Charlie also has a message for Alice, he will form a queue behind Bob. 
+    Everyone waits patiently, messages are transferred only when the sender 
+    and receiver are both available, and messages are
+    processed sequentially.
 
 
 
