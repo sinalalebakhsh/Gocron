@@ -483,9 +483,10 @@ Understanding Flow Control
     One of the key advantages of slices is that they can be expanded to accommodate additional elements
     
     Appending Elements to a Slice:
-        names := []string {"Kayak", "Lifejacket", "Paddle"}
-        names = append(names, "Hat", "Gloves")
-
+    example:
+    |    names := []string {"Kayak", "Lifejacket", "Paddle"}
+    |    names = append(names, "Hat", "Gloves")
+    |_____________________________________________________________
     Appending Items to a Slice:
         names := []string {"Kayak", "Lifejacket", "Paddle"}
         appendedNames := append(names, "Hat", "Gloves")
@@ -565,7 +566,7 @@ Understanding Flow Control
     Output:
     |    allNames [Lifejacket Paddle Hat]
     |    someNames: [Lifejacket Paddle]
-    |
+    |____________________________________________
 
     the Uninitialized Slice Pitfall:
     the copy function doesn't resize the destination slice. A common
