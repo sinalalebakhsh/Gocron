@@ -1912,6 +1912,26 @@ Output:
         go mod tidy
 
 
+126.Putting Type and Interface Composition in Context
+    What is it?
+    Composition is the process by which new types are created by combining
+    structs and interfaces.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
