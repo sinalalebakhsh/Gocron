@@ -876,10 +876,12 @@ Output:
         Product: Lifejacket Supplier: Sail Safe Co
 
 74.return Function Results
-    func calcTax(price float64) float64 {
-        return price + (price * 0.2)
-    }
-
+    example:
+    |    func calcTax(price float64) float64 {
+    |        return price + (price * 0.2)
+    |    }
+    |_________________________________________
+    
 75.Returning Multiple Function Results
     example:
     |    func swapValues(first, second int) (int, int) {
@@ -892,7 +894,7 @@ Output:
     |        fmt.Println("After calling function", val1, val2)
     |    }
     |______________________________________
-    
+
 76.Using Named Results
     example:
     |    func calcTax(price float64) (float64, bool) {
