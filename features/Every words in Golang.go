@@ -2734,27 +2734,29 @@ Converting a String to Runes
     function can be executed by a goroutine with the result being sent through a channel.
 
     example:
-        ...
-        calcTax := func(price float64) float64 {
-            return price + (price * 0.2)
-        }
-        wrapper := func (price float64, c chan float64)  {
-            c <- calcTax(price)
-        }
-        resultChannel := make(chan float64)
-        go wrapper(275, resultChannel)
-        result := <- resultChannel
-        fmt.Println("Result:", result)
-        ...
-        The wrapper function receives a channel, which it uses to send the value received from executing the
-        calcTax function synchronously. This can be expressed more concisely by defining a function without
-        assigning it to a variable, like this:
-        ...
-        go func (price float64, c chan float64) {
-            c <- calcTax(price)
-        }(275, resultChannel)
-        ...
-    
+    |    ...
+    |    calcTax := func(price float64) float64 {
+    |        return price + (price * 0.2)
+    |    }
+    |    wrapper := func (price float64, c chan float64)  {
+    |        c <- calcTax(price)
+    |    }
+    |    resultChannel := make(chan float64)
+    |    go wrapper(275, resultChannel)
+    |    result := <- resultChannel
+    |    fmt.Println("Result:", result)
+    |    ...
+    |    The wrapper function receives a channel, which it uses to send the value received from executing the
+    |    calcTax function synchronously. This can be expressed more concisely by defining a function without
+    |    assigning it to a variable, like this:
+    |    ...
+    |    go func (price float64, c chan float64) {
+    |        c <- calcTax(price)
+    |    }(275, resultChannel)
+    |    ...
+    |_____________________________________________________________________________
+
+
 145.Coordinating Channels
     By default, sending and receiving through a channel are blocking operations. This means a goroutine that
     sends a value will not execute any further statements until another goroutine receives the value from the
@@ -2763,15 +2765,15 @@ Converting a String to Runes
     that receive values will block until another goroutine sends one.
 
     example:
-        If Bob has a message for Alice, the default channel behavior requires 
-        Alice and Bob to agree on a meeting place, and
-        whoever gets there first will wait for the other to arrive. 
-        Bob will only give the message to Alice when they are
-        both present. When Charlie also has a message for Alice, he will form a queue behind Bob. 
-        Everyone waits patiently, messages are transferred only when the sender 
-        and receiver are both available, and messages are
-        processed sequentially.
-
+    |    If Bob has a message for Alice, the default channel behavior requires 
+    |    Alice and Bob to agree on a meeting place, and
+    |    whoever gets there first will wait for the other to arrive. 
+    |    Bob will only give the message to Alice when they are
+    |    both present. When Charlie also has a message for Alice, he will form a queue behind Bob. 
+    |    Everyone waits patiently, messages are transferred only when the sender 
+    |    and receiver are both available, and messages are
+    |    processed sequentially.
+    |_________________________________________________________________________________________
 
 146.Buffered Channel
     The default channel behavior can lead to bursts of activity as goroutines do their work, followed by a long
@@ -2779,7 +2781,18 @@ Converting a String to Runes
     because the goroutines finish once their messages are received, but in a real project goroutines often have
     repetitive tasks to perform, and waiting for a receiver can cause a performance bottleneck.
 
-
+    An alternative approach is to create a channel with a buffer, 
+    which is used to accept values from a
+    sender and store them until a receiver becomes available. 
+    This makes sending a message a nonblocking
+    operation, allowing a sender to pass its value to the channel and continue working without having to wait
+    for a receiver. 
+    
+    example:
+    |    This is similar to Alice having an inbox on her desk. Senders come to Alice's office and put
+    |    their message into the inbox, leaving it for Alice to read when she is ready. But, if the inbox is full, then they
+    |    will have to wait until she has processed some of her backlog before sending a new message.
+    |_____________________________________________________________________________________________________
 
 
 
