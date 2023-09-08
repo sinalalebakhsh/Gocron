@@ -1996,17 +1996,20 @@ Output:
 
     boat.go:
     |   package store
+    |
+    |   The Boat struct type defines an embedded *Product field
     |   type Boat struct {
-    |       *Product
-    |       Capacity int
-    |       Motorized bool
+    |       *Product       -------------------> Embedded Type
+    |       Capacity int   -----------------> Reguler Fields
+    |       Motorized bool ________________|
     |   }
+    |
     |   func NewBoat(name string, price float64, capacity int, motorized bool) *Boat {
     |           return &Boat {
     |               NewProduct(name, "Watersports", price), capacity, motorized,
     |           }
     |       }
-
+    |_________________________________
 
 
 
