@@ -1088,18 +1088,19 @@ Output:
 
 
 86.Literal Function Argument
-    func main() {
-        products := map[string]float64 {
-            "Kayak" : 275,
-            "Lifejacket": 48.95,
-        }
-        for product, price := range products {
-            printPrice(product, price, func (price float64) float64 {
-                return price + (price * 0.2)
-            })
-        }
-    }
-
+    example:
+    |    func main() {
+    |        products := map[string]float64 {
+    |            "Kayak" : 275,
+    |            "Lifejacket": 48.95,
+    |        }
+    |        for product, price := range products {
+    |            printPrice(product, price, func (price float64) float64 {
+    |                return price + (price * 0.2)
+    |            })
+    |        }
+    |    }
+    |
 
 87.Function Closure
     Functions defined using the literal syntax can reference variables from the surrounding code, a feature
