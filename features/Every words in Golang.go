@@ -590,12 +590,14 @@ Understanding Flow Control
     |__________________________________________
 
     Copying Slices with Different Sizes:
-    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-        replacementProducts := []string { "Canoe", "Boots"}
-        copy(products, replacementProducts)
-    Output:
-        products: [Canoe Boots Paddle Hat]
+    |    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |    replacementProducts := []string { "Canoe", "Boots"}
+    |    copy(products, replacementProducts)
+    |_______________________________________________
 
+    Output:
+    |    products: [Canoe Boots Paddle Hat]
+    |______________________________________________   
 
     Copying a Larger Source Slice
     example:
