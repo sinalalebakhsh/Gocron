@@ -964,29 +964,29 @@ Output:
 
 80.Functions as Arguments
     example:
-        func calcWithTax(price float64) float64 {
-            return price + (price * 0.2)
-        }
-        func calcWithoutTax(price float64) float64 {
-            return price
-        }
-        func printPrice(product string, price float64, calculator func(float64) float64 ) {
-            fmt.Println("Product:", product, "Price:", calculator(price))
-        }
-        func main() {
-            products := map[string]float64 {
-                "Kayak" : 275,
-                "Lifejacket": 48.95,
-            }
-            for product, price := range products {
-                if (price > 100) {
-                    printPrice(product, price, calcWithTax)
-                } else {
-                    printPrice(product, price, calcWithoutTax)
-                }
-            }
-        }
-
+    |    func calcWithTax(price float64) float64 {
+    |        return price + (price * 0.2)
+    |    }
+    |    func calcWithoutTax(price float64) float64 {
+    |        return price
+    |    }
+    |    func printPrice(product string, price float64, calculator func(float64) float64 ) {
+    |        fmt.Println("Product:", product, "Price:", calculator(price))
+    |    }
+    |    func main() {
+    |        products := map[string]float64 {
+    |            "Kayak" : 275,
+    |            "Lifejacket": 48.95,
+    |        }
+    |        for product, price := range products {
+    |            if (price > 100) {
+    |                printPrice(product, price, calcWithTax)
+    |            } else {
+    |                printPrice(product, price, calcWithoutTax)
+    |            }
+    |        }
+    |    }
+    |
 81.Functions as Results
     example:
     |    func calcWithTax(price float64) float64 {
@@ -1014,7 +1014,7 @@ Output:
     |        }
     |    }
     |_________________________________________________
-    
+
 82.Function Type Aliases
     Go supports type aliases, which can be used to assign a name to
     a function signature so that the parameter and result types are not specified every time the function type is
