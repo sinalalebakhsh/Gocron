@@ -2794,6 +2794,10 @@ Converting a String to Runes
     |    will have to wait until she has processed some of her backlog before sending a new message.
     |_____________________________________________________________________________________________________
 
+    Creating a Buffered Channel
+    example:
+    |    var channel chan float64 = make(chan float64, 2)
+    |___________________________________________________________
 
 
 
