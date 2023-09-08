@@ -2230,7 +2230,8 @@ Output:
     is a more concise way of expressing this statement:
         return deal.Name, deal.price, deal.Product.Price(0)
 
-    
+    The new Price method stops Go from promoting the Product method 
+    and produces the following result
     Defining a Method in the specialdeal.go:
     |    package store
     |    type SpecialDeal struct {
@@ -2248,8 +2249,12 @@ Output:
     |       return deal.price
     |    }
     |_____________________________________________________
-
-
+    
+    Output:
+    |    Name: Weekend Special
+    |    Price field: 229
+    |    Price method: 229
+    |_________________________________
 
 
 
