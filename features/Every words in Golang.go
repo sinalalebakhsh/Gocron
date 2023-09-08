@@ -230,7 +230,6 @@ Operator    Description
             Remainder Operator” section.
 
 The Comparison Operators
-------------------------------------------------------------------------------------------------
 Operator    Description
 -------     ---------------------
    ==       This operator returns true if the operands are equal.
@@ -242,7 +241,6 @@ Operator    Description
             operand.
 
 The Logical Operators
-------------------------------------------------------------------------------------------------
 Operator    Description
 -------     ---------------------
    ||       This operator returns true if either operand is true. 
