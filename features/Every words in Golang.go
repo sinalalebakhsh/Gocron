@@ -567,14 +567,18 @@ Understanding Flow Control
     the Uninitialized Slice Pitfall:
     the copy function doesn't resize the destination slice. A common
     pitfall is to try to copy elements into a slice that has not been initialized
-        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-        allNames := products[1:]
-        var someNames []string
-        copy(someNames, allNames)
-    Output:
-        someNames: []
-        allNames [Lifejacket Paddle Hat]
+    example:
+    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |    allNames := products[1:]
+    |    var someNames []string
+    |    copy(someNames, allNames)
+    |___________________________________________
 
+    Output:
+    |    someNames: []
+    |    allNames [Lifejacket Paddle Hat]
+    |____________________________________________
+    
     Specifying Ranges When Copying Slices:
     Fine-grained control over the elements that are copied can be achieved using ranges
     example:
