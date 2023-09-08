@@ -2049,10 +2049,33 @@ Output:
     |    }
     |
     |_____________________________________________________________________
+    
+    Output:
+    |    Conventional: Kayak Direct: Kayak
+    |    Conventional: Canoe Direct: Canoe
+    |    Conventional: Tender Direct: Tender
+    |___________________________________________
 
 
+    Calling a Method in the main.go:
+    |    package main
+    |    import (
+    |        "fmt"
+    |        "composition/store"
+    |    )
+    |    func main() {
+    |        boats := []*store.Boat {
+    |            store.NewBoat("Kayak", 275, 1, false),
+    |            store.NewBoat("Canoe", 400, 3, false),
+    |            store.NewBoat("Tender", 650.25, 2, true),
+    |        }
+    |        for _, b := range boats {
+    |            fmt.Println("Boat:", b.Name, "Price:", b.Price(0.2))
+    |        }
+    |    }
+    |____________________________________________________________________
 
-
+129.
 
 
         
