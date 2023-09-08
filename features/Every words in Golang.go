@@ -2658,6 +2658,31 @@ Converting a String to Runes
     for the statement to complete before moving on to the next statement. 
     The statements in the main function
 
+140.Creating Additional Goroutines
+    Go allows the developer to create additional goroutines, which execute code at the same time as the main
+    goroutine. Go makes it easy to create new goroutines
+
+    example:
+        package main
+        import (
+            "fmt"
+            "time
+        )
+
+        func main(){
+            fmt.Println("first statement")
+            fmt.Println("second statement")
+            time.Sleep(time.Second * 2)
+
+            go fmt.Println("first statement")
+            
+            fmt.Println("first statement")
+
+        }
+
+
+
+
 
 
 
