@@ -260,7 +260,6 @@ Operator    Description
             
 Converting Floating-Point Values to Integers
 Functions in the math Package for Converting Numeric Types
-------------------------------------------------------------------------------------------------
 39.Ceil(value)
     This function returns the smallest integer that is greater than the specified floating-
     point value. The smallest integer that is greater than 27.1, for example, is 28.
@@ -279,7 +278,6 @@ Functions in the math Package for Converting Numeric Types
 
 Parsing from Strings
 Functions for Parsing Strings into Other Data Types
-------------------------------------------------------------------------------------------------
 43.ParseBool(str)
     This function parses a string into a bool value. Recognized string values are "true",
     "false", "TRUE", "FALSE", "True", "False", "T", "F", "0", and "1".
@@ -302,7 +300,8 @@ Functions for Parsing Strings into Other Data Types
 
 Formatting Values as Strings
 The strconv Functions for Converting Values into Strings
-------------------------------------------------------------------------------------------------
+
+
 48.FormatBool(val)
     This function returns the string true or false based on the value of the
     specified bool.
@@ -325,7 +324,6 @@ The strconv Functions for Converting Values into Strings
 
 
 Commonly Used Format Options for Floating-Point String Formatting
-------------------------------------------------------------------------------------------------
 Function
 ---------
 f
@@ -343,7 +341,6 @@ g, G
 
 
 Understanding Flow Control
-------------------------------------------------------------------------------------------------
 53.if
     The if keyword is followed by the expression and then the group of statements to be executed,
     surrounded by braces
@@ -371,7 +368,7 @@ Understanding Flow Control
     |            }
     |___________________________________________________________
 
-    
+
 57.switch
     A switch statement provides an alternative way to control execution flow, based on matching the result of an
     expression to a specific value, as opposed to evaluating a true or false result
