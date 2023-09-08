@@ -1975,9 +1975,12 @@ Output:
     
 
 128.Steps of composition
+    
     1-Defining the Base Type -> struct - method 
     2-Defining a Constructor -> for create struct
     3-Composing Types
+    4-Using the Boat Struct in the main.go
+
 
     A struct can mix regular and embedded field types, but the embedded fields are an important part of
     the composition feature
@@ -2016,8 +2019,25 @@ Output:
     |       }
     |_________________________________
 
-
-
+    main.go:
+    |    package main
+    |    import (
+    |        "fmt"
+    |        "composition/store"
+    |    )
+    |
+    |    func main() {
+    |       boats := []*store.Boat {
+    |           store.NewBoat("Kayak", 275, 1, false),
+    |           store.NewBoat("Canoe", 400, 3, false),
+    |           store.NewBoat("Tender", 650.25, 2, true),
+    |       }
+    |       for _, b := range boats {
+    |            fmt.Println("Conventional:", b.Product.Name, "Direct:", b.Name)
+    |        }
+    |    }
+    |
+    |_____________________________________________________________________
 
 
 
