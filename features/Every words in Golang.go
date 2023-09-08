@@ -2256,10 +2256,32 @@ Output:
     |    Price method: 229
     |_________________________________
 
+132.Promotion Ambiguity
+    A related issue arises when two embedded fields use the same field or method names
+    example:
+    An Ambiguous Method in the main.go:
+    |    package main
+    |    import (
+    |       "fmt"
+    |       "composition/store"
+    |    )
+    |    func main() {
+    |       kayak := store.NewProduct("Kayak", "Watersports", 279)
+    |       type OfferBundle struct {
+    |          *store.SpecialDeal
+    |          *store.Product
+    |       }
+    |       bundle := OfferBundle {
+    |          store.NewSpecialDeal("Weekend Special", kayak, 50),
+    |          store.NewProduct("Lifrejacket", "Watersports", 48.95),
+    |       }
+    |       fmt.Println("Price:", bundle.Price(0))
+    |    }
+    |___________________________________________________
 
-
-
-            
+    Output:
+    |    .\main.go:22:33: ambiguous selector bundle.Price    
+    |________________________________________________________       
 
 
 
