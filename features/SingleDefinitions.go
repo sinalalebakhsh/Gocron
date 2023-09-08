@@ -35,44 +35,125 @@ We'll use this package to implement our example command-line program.`,
 The go clean command removes the output produced by the go build command, 
 including the executable and any temporary files that were created during the build.`,
 
-    "Goroutines and Channels":`Goroutines and Channels
-    What are they?
-    Goroutines are lightweight threads created and managed by the Go runtime.
-    Channels are pipes that carry values of a specific type.
-    
-    Why are they useful?
-    Goroutines allow functions to be executed concurrently, without needing to deal
-    with the complications of operating system threads. Channels allow goroutines to
-    produce results asynchronously.
+    "Goroutines":`Goroutines and Channels
+What are they?
+Goroutines are lightweight threads created and managed by the Go runtime.
+Channels are pipes that carry values of a specific type.
 
-    How are they used?
-    Goroutines are created using the go keyword. Channels are defined as data types.
+Why are they useful?
+Goroutines allow functions to be executed concurrently, without needing to deal
+with the complications of operating system threads. Channels allow goroutines to
+produce results asynchronously.
 
-    Are there any or limitations?
-    pitfalls Care must be taken to manage the direction of channels. 
-    Goroutines that share data require additional features.
-    
-    Are there any alternatives?
-    Goroutines and channels are the built-in Go concurrency features, but some
-    applications can rely on a single thread of execution, which is created by default to
-    execute the main function.
-    
+How are they used?
+Goroutines are created using the go keyword. Channels are defined as data types.
 
-    Problem                                 Solution
-    ---------------------------------       -------------------------
-    Execute a function asynchronously       Create a goroutine
-    
-    Produce a result from a function        Use a channel 
-    executed asynchronously
+Are there any or limitations?
+pitfalls Care must be taken to manage the direction of channels. 
+Goroutines that share data require additional features.
 
-    Send and receive values                 Use arrow expressions 
-    using a channel
+Are there any alternatives?
+Goroutines and channels are the built-in Go concurrency features, but some
+applications can rely on a single thread of execution, which is created by default to
+execute the main function.
 
-    Indicate that no further values         Use the close function
-    will be sent over a channel
 
-    Enumerate the values received           Use a for loop with the range keyword 
-    from a channel
+Problem                                 Solution
+---------------------------------       -------------------------
+Execute a function asynchronously       Create a goroutine
+
+Produce a result from a function        Use a channel 
+executed asynchronously
+
+Send and receive values                 Use arrow expressions 
+using a channel
+
+Indicate that no further values         Use the close function
+will be sent over a channel
+
+Enumerate the values received           Use a for loop with the range keyword 
+from a channel
+`,
+
+"Channels":`Goroutines and Channels
+What are they?
+Goroutines are lightweight threads created and managed by the Go runtime.
+Channels are pipes that carry values of a specific type.
+
+Why are they useful?
+Goroutines allow functions to be executed concurrently, without needing to deal
+with the complications of operating system threads. Channels allow goroutines to
+produce results asynchronously.
+
+How are they used?
+Goroutines are created using the go keyword. Channels are defined as data types.
+
+Are there any or limitations?
+pitfalls Care must be taken to manage the direction of channels. 
+Goroutines that share data require additional features.
+
+Are there any alternatives?
+Goroutines and channels are the built-in Go concurrency features, but some
+applications can rely on a single thread of execution, which is created by default to
+execute the main function.
+
+
+Problem                                 Solution
+---------------------------------       -------------------------
+Execute a function asynchronously       Create a goroutine
+
+Produce a result from a function        Use a channel 
+executed asynchronously
+
+Send and receive values                 Use arrow expressions 
+using a channel
+
+Indicate that no further values         Use the close function
+will be sent over a channel
+
+Enumerate the values received           Use a for loop with the range keyword 
+from a channel
+`,
+
+
+"Goroutines and Channels":`Goroutines and Channels
+What are they?
+Goroutines are lightweight threads created and managed by the Go runtime.
+Channels are pipes that carry values of a specific type.
+
+Why are they useful?
+Goroutines allow functions to be executed concurrently, without needing to deal
+with the complications of operating system threads. Channels allow goroutines to
+produce results asynchronously.
+
+How are they used?
+Goroutines are created using the go keyword. Channels are defined as data types.
+
+Are there any or limitations?
+pitfalls Care must be taken to manage the direction of channels. 
+Goroutines that share data require additional features.
+
+Are there any alternatives?
+Goroutines and channels are the built-in Go concurrency features, but some
+applications can rely on a single thread of execution, which is created by default to
+execute the main function.
+
+
+Problem                                 Solution
+---------------------------------       -------------------------
+Execute a function asynchronously       Create a goroutine
+
+Produce a result from a function        Use a channel 
+executed asynchronously
+
+Send and receive values                 Use arrow expressions 
+using a channel
+
+Indicate that no further values         Use the close function
+will be sent over a channel
+
+Enumerate the values received           Use a for loop with the range keyword 
+from a channel
 `,
 
 },
