@@ -2763,17 +2763,21 @@ Converting a String to Runes
     that receive values will block until another goroutine sends one.
 
     example:
-    If Bob has a message for Alice, the default channel behavior requires 
-    Alice and Bob to agree on a meeting place, and
-    whoever gets there first will wait for the other to arrive. 
-    Bob will only give the message to Alice when they are
-    both present. When Charlie also has a message for Alice, he will form a queue behind Bob. 
-    Everyone waits patiently, messages are transferred only when the sender 
-    and receiver are both available, and messages are
-    processed sequentially.
+        If Bob has a message for Alice, the default channel behavior requires 
+        Alice and Bob to agree on a meeting place, and
+        whoever gets there first will wait for the other to arrive. 
+        Bob will only give the message to Alice when they are
+        both present. When Charlie also has a message for Alice, he will form a queue behind Bob. 
+        Everyone waits patiently, messages are transferred only when the sender 
+        and receiver are both available, and messages are
+        processed sequentially.
 
 
-
+146.Buffered Channel
+    The default channel behavior can lead to bursts of activity as goroutines do their work, followed by a long
+    idle period waiting for messages to be received. This doesn't have an impact on the example application
+    because the goroutines finish once their messages are received, but in a real project goroutines often have
+    repetitive tasks to perform, and waiting for a receiver can cause a performance bottleneck.
 
 
 
