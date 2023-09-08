@@ -844,19 +844,21 @@ Output:
 
 72.Defining Variadic Parameters
     example:
-        func printSuppliers(product string, suppliers []string ) {
-            for _, supplier := range suppliers {
-                fmt.Println("Product:", product, "Supplier:", supplier)
-            }
-        }
+    |    func printSuppliers(product string, suppliers []string ) {
+    |        for _, supplier := range suppliers {
+    |            fmt.Println("Product:", product, "Supplier:", supplier)
+    |        }
+    |    }
+    |______________________________________________
 
     example:
-        func printSuppliers(product string, suppliers ...string ) {
-            for _, supplier := range suppliers {
-                fmt.Println("Product:", product, "Supplier:", supplier)
-            }
-        }
-
+    |    func printSuppliers(product string, suppliers ...string ) {
+    |        for _, supplier := range suppliers {
+    |            fmt.Println("Product:", product, "Supplier:", supplier)
+    |        }
+    |    }
+    |_______________________________________________
+    
 73.Dealing with No Arguments for a Variadic Parameter
     example:
     |    func printSuppliers(product string, suppliers ...string ) {
@@ -876,7 +878,8 @@ Output:
     |    Product: Kayak Supplier: Bob's Boats
     |    Product: Kayak Supplier: Crazy Canoes
     |    Product: Lifejacket Supplier: Sail Safe Co
-    |
+    |________________________________________
+
 74.return Function Results
     example:
     |    func calcTax(price float64) float64 {
