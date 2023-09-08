@@ -1266,18 +1266,18 @@ Output:
 
 95.Comparing Struct Values
     example:
-        func main() {
-            type Product struct {
-                name, category string
-                price float64
-            }
-            p1 := Product { name: "Kayak", category: "Watersports", price: 275.00 }
-            p2 := Product { name: "Kayak", category: "Watersports", price: 275.00 }
-            p3 := Product { name: "Kayak", category: "Boats", price: 275.00 }
-            fmt.Println("p1 == p2:", p1 == p2)
-            fmt.Println("p1 == p3:", p1 == p3)
-        }
-
+    |    func main() {
+    |        type Product struct {
+    |            name, category string
+    |            price float64
+    |        }
+    |        p1 := Product { name: "Kayak", category: "Watersports", price: 275.00 }
+    |        p2 := Product { name: "Kayak", category: "Watersports", price: 275.00 }
+    |        p3 := Product { name: "Kayak", category: "Boats", price: 275.00 }
+    |        fmt.Println("p1 == p2:", p1 == p2)
+    |        fmt.Println("p1 == p3:", p1 == p3)
+    |    }
+    |
 96.Anonymous Struct Types
     Anonymous struct types are defined without using a name
     example:
@@ -1304,7 +1304,8 @@ Output:
     |        writeName(prod)
     |        writeName(item)
     |    }
-    |
+    |_________________________________________________________________________
+
 97.Creating Arrays, Slices, and Maps Containing Struct Values
     Omitting the Struct Type
     example:
