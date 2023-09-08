@@ -679,13 +679,14 @@ Understanding Flow Control
                 }
 
     Removing Items from a Map:
-        products := map[string]float64 {
-            "Kayak" : 279,
-            "Lifejacket": 48.95,
-            "Hat": 0,
-        }
-        delete(products, "Hat")            
-
+    example:
+    |    products := map[string]float64 {
+    |        "Kayak" : 279,
+    |        "Lifejacket": 48.95,
+    |        "Hat": 0,
+    |    }
+    |    delete(products, "Hat")            
+    |___________________________________________________
 
 
     Enumerating the Contents of a Map:
@@ -699,7 +700,7 @@ Understanding Flow Control
     |        fmt.Println("Key:", key, "Value:", value)
     |    }
     |__________________________________________________________
-    
+
     Enumerating a Map in Order:
     example:
     |    import (
