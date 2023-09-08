@@ -2322,23 +2322,25 @@ Output:
     Using an Interface in the main.go:
     |    package main
     |    import (
-    |        "fmt"
-    |        "composition/store"
+    |       "fmt"
+    |       "composition/store"
     |    )
     |    func main() {
-    |        products := map[string]store.ItemForSale {
-    |            "Kayak": store.NewBoat("Kayak", 279, 1, false),
-    |            "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
-    |        }
-    |        for key, p := range products {
-    |            fmt.Println("Key:", key, "Price:", p.Price(0.2))
-    |        }
+    |       products := map[string]store.ItemForSale {
+    |          "Kayak": store.NewBoat("Kayak", 279, 1, false),
+    |          "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+    |       }
+    |       for key, p := range products {
+    |          fmt.Println("Key:", key, "Price:", p.Price(0.2))
+    |       }
     |    }
     |____________________________________________
 
+    Output:
+    |    Key: Kayak Price: 334.8
+    |    Key: Ball Price: 23.4
+    |
 
-
-            
 
 
 
