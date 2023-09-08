@@ -1155,21 +1155,22 @@ Output:
     A struct can mix regular and embedded field types.
 
     example:
-        func main() {
-            type Product struct {
-                name, category string
-                price float64
-            }
-            kayak := Product {
-                name: "Kayak",
-                category: "Watersports",
-                price: 275,
-            }
-            fmt.Println(kayak.name, kayak.category, kayak.price)
-            kayak.price = 300
-            fmt.Println("Changed price:", kayak.price)
-        }
-
+    |    func main() {
+    |        type Product struct {
+    |            name, category string
+    |            price float64
+    |        }
+    |        kayak := Product {
+    |            name: "Kayak",
+    |            category: "Watersports",
+    |            price: 275,
+    |        }
+    |        fmt.Println(kayak.name, kayak.category, kayak.price)
+    |        kayak.price = 300
+    |        fmt.Println("Changed price:", kayak.price)
+    |    }
+    |_________________________________________________________________
+    
     Go doesn't differentiate between structs and classes, in the way that other languages do. All custom
     data types are defined as structs, and the decision to pass them by reference or by value is made
     depending on whether a pointer is used.
@@ -1197,7 +1198,7 @@ Output:
     |        }
     |    }
     |_________________________________________________________
-    
+
 91.new 
     the new function to create struct values
         var lifejacket = new(Product)
