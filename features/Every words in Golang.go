@@ -2680,7 +2680,15 @@ Converting a String to Runes
 
         }
 
+141.Returning Results from Goroutines
+    Getting a result from a function that is being executed asynchronously 
+    can be complicated because it requires coordination between the goroutine 
+    that produces the result and the goroutine that consumes the result.
+    To address this issue, Go provides channels, which are 
+    conduits through which data can be sent and received.
 
+
+    
 
 
 
