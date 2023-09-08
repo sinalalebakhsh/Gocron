@@ -1934,7 +1934,24 @@ Output:
     Go doesn't support classes or inheritance and focuses on composition instead. But, despite the
     differences, composition can be used to create hierarchies of types, just in a different way.
 
-
+    Steps:
+        1-Defining the Base Type -> struct - method 
+        2-Defining a Constructor -> for create struct
+        example:
+        // struct:
+        type Product struct {
+                Name, Category string
+                price float64
+        }
+        // method:
+        func (p *Product) Price(taxRate float64) float64 {
+            return p.price + (p.price * taxRate)
+        }
+        // Constructor:
+        func NewProduct(name, category string, price float64) *Product {
+            return &Product{ name, category, price }
+        }
+        
 
     
 
