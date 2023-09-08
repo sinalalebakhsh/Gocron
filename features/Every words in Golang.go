@@ -389,32 +389,33 @@ Understanding Flow Control
         }
 
     Terminate case Statement Execution:
-        switch (character) {
-            case 'K', 'k':
-        if (character == 'k') {
-            fmt.Println("Lowercase k at position", index)
-            break
-        }
-        fmt.Println("Uppercase K at position", index)
-            case 'y':
-        fmt.Println("y at position", index)
-        }
-
+    example:
+    |    switch (character) {
+    |        case 'K', 'k':
+    |    if (character == 'k') {
+    |        fmt.Println("Lowercase k at position", index)
+    |        break
+    |    }
+    |    fmt.Println("Uppercase K at position", index)
+    |        case 'y':
+    |    fmt.Println("y at position", index)
+    |    }
+    |
 58.Falling Through
     Go switch statements don't automatically fall through, but this behavior can be enabled using the
     fallthrough keyword
 
     example:
-        switch (character) {
-            case 'K':
-                fmt.Println("Uppercase character")
-                fallthrough
-            case 'k':
-                fmt.Println("k at position", index)
-            case 'y':
-                fmt.Println("y at position", index)
-            }
-
+    |    switch (character) {
+    |        case 'K':
+    |            fmt.Println("Uppercase character")
+    |            fallthrough
+    |        case 'k':
+    |            fmt.Println("k at position", index)
+    |        case 'y':
+    |            fmt.Println("y at position", index)
+    |        }
+    |_________________________________________________________
 
 
 59.default
@@ -435,7 +436,7 @@ Understanding Flow Control
     |            fmt.Println("Character", string(character), "at position", index)
     |        }
     |___________________________________________________________
-    
+
 60.goto label 
     Label statements allow execution to jump to a different point, 
     giving greater flexibility than other flow control features
