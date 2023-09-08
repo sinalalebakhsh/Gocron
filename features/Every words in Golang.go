@@ -666,18 +666,20 @@ Understanding Flow Control
         }
 
     Checking for Items in a Map:
-        products := map[string]float64 {
-                    "Kayak" : 279,
-                    "Lifejacket": 48.95,
-                    "Hat": 0,
-                }
-                value, ok := products["Hat"]
-                if (ok) {
-                    fmt.Println("Stored value:", value)
-                } else {
-                    fmt.Println("No stored value")
-                }
-
+    example:
+    |    products := map[string]float64 {
+    |                "Kayak" : 279,
+    |                "Lifejacket": 48.95,
+    |                "Hat": 0,
+    |            }
+    |            value, ok := products["Hat"]
+    |            if (ok) {
+    |                fmt.Println("Stored value:", value)
+    |            } else {
+    |                fmt.Println("No stored value")
+    |            }
+    |_________________________________________________________
+    
     Removing Items from a Map:
     example:
     |    products := map[string]float64 {
