@@ -2057,6 +2057,12 @@ Output:
     |___________________________________________
 
 
+    If the field type is a value, such as Product, then any methods defined with Product or *Product
+    receivers will be promoted. If the field type is a pointer, such as *Product, then only methods with *Product
+    receivers will be prompted.
+    There is no Price method defined for the *Boat type, but Go promotes the method defined with a
+    *Product receiver.
+
     Calling a Method in the main.go:
     |    package main
     |    import (
@@ -2075,6 +2081,14 @@ Output:
     |    }
     |____________________________________________________________________
 
+    Output:
+    |    Boat: Kayak Price: 330
+    |    Boat: Canoe Price: 480
+    |    Boat: Tender Price: 780.3
+    |___________________________________________
+
+
+    
 129.
 
 
