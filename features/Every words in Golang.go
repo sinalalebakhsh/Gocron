@@ -636,19 +636,25 @@ Understanding Flow Control
 66.DeepEqual
     The DeepEqual function can be used to compare a wider range of data types than the
     equality operator, including slices.
-        package main
-        import (
-            "fmt"
-            "reflect"
-        )
-        func main() {
-            p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-            p2 := p1
-            fmt.Println("Equal:", reflect.DeepEqual(p1, p2))
-        }
-    Output:
-        Equal: true
 
+    example:
+    |    package main
+    |    import (
+    |        "fmt"
+    |        "reflect"
+    |    )
+    |    func main() {
+    |        p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |        p2 := p1
+    |        fmt.Println("Equal:", reflect.DeepEqual(p1, p2))
+    |    }
+    |_____________________________________________________________
+    
+    Output:
+    |    Equal: true
+    |___________________________________________________
+
+    
 67.map
     Maps are a built-in data structure that associates data values with keys. 
     Unlike arrays, where values are associated with sequential integer locations, 
@@ -659,7 +665,7 @@ Understanding Flow Control
     |    products["Kayak"] = 279
     |    products["Lifejacket"] = 48.95
     |____________________________________________________
-    
+
     Map Literal Syntax:
         products := map[string]float64 {
             "Kayak" : 279,
