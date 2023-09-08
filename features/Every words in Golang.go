@@ -1608,68 +1608,71 @@ Output:
     |        }
     |    }
     |______________________________________________________________________
-    
+
 110.an Interface in a Function
     example:
-        package main
-        import "fmt"
-        type Expense interface {
-            getName() string
-            getCost(annual bool) float64
-        }
-        func calcTotal(expenses []Expense) (total float64) {
-            for _, item := range expenses {
-                total += item.getCost(true)
-            }
-            return
-        }
-        func main() {
-            expenses := []Expense {
-                Product { "Kayak", "Watersports", 275 },
-                Service {"Boat Cover", 12, 89.50 },
-            }
-            for _, expense := range expenses {
-                fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
-            }
-            fmt.Println("Total:", calcTotal(expenses))
-        }
+    |    package main
+    |    import "fmt"
+    |    type Expense interface {
+    |        getName() string
+    |        getCost(annual bool) float64
+    |    }
+    |    func calcTotal(expenses []Expense) (total float64) {
+    |        for _, item := range expenses {
+    |            total += item.getCost(true)
+    |        }
+    |        return
+    |    }
+    |    func main() {
+    |        expenses := []Expense {
+    |            Product { "Kayak", "Watersports", 275 },
+    |            Service {"Boat Cover", 12, 89.50 },
+    |        }
+    |        for _, expense := range expenses {
+    |            fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
+    |        }
+    |        fmt.Println("Total:", calcTotal(expenses))
+    |    }
+    |___________________________________________________________________
 
 111.an Interface for Struct Fields
     example:
-        package main
-        import "fmt"
-        type Expense interface {
-            getName() string
-            getCost(annual bool) float64
-        }
-        func calcTotal(expenses []Expense) (total float64) {
-            for _, item := range expenses {
-                total += item.getCost(true)
-            }
-            return
-        }
-        type Account struct {
-            accountNumber int
-            expenses []Expense
-        }
-        func main() {
-            account := Account {
-                accountNumber: 12345,
-                expenses: []Expense {
-                    Product { "Kayak", "Watersports", 275 },
-                    Service {"Boat Cover", 12, 89.50 },
-                },
-            }
-            for _, expense := range account.expenses {
-                fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
-            }
-            fmt.Println("Total:", calcTotal(account.expenses))
-        }
+    |    package main
+    |    import "fmt"
+    |    type Expense interface {
+    |        getName() string
+    |        getCost(annual bool) float64
+    |    }
+    |    func calcTotal(expenses []Expense) (total float64) {
+    |        for _, item := range expenses {
+    |            total += item.getCost(true)
+    |        }
+    |        return
+    |    }
+    |    type Account struct {
+    |        accountNumber int
+    |        expenses []Expense
+    |    }
+    |    func main() {
+    |        account := Account {
+    |            accountNumber: 12345,
+    |            expenses: []Expense {
+    |                Product { "Kayak", "Watersports", 275 },
+    |                Service {"Boat Cover", 12, 89.50 },
+    |            },
+    |        }
+    |        for _, expense := range account.expenses {
+    |            fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
+    |        }
+    |        fmt.Println("Total:", calcTotal(account.expenses))
+    |    }
+    |___________________________________________________________________________
 
 112.Comparing Interface Values
     Care must be taken when comparing interface values, and inevitably, some knowledge of the dynamic
     types is required.
-    The first two Expense values are not equal. That’s because the dynamic type for these values is a pointer
+    The first two Expense values are not equal. 
+    That's because the dynamic type for these values is a pointer
     type, and pointers are equal only if they point to the same memory location
     
     example:
