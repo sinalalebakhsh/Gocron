@@ -1931,6 +1931,13 @@ Output:
     Composition is optional, and you can create entirely independent types.
 
 
+    Go doesn't support classes or inheritance and focuses on composition instead. But, despite the
+    differences, composition can be used to create hierarchies of types, just in a different way.
+
+
+
+    
+
 
 
 
