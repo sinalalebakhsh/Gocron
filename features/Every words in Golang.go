@@ -2093,6 +2093,9 @@ Output:
     The composition feature can be used to create complex chains of nested types, 
     whose fields and methods are promoted to the top-level enclosing type.
 
+    Go performs promotion so that the fields defined by all three types in the chain can be
+    accessed directly.
+
     example:
     rentalboats.go:
     |    package store
@@ -2108,7 +2111,24 @@ Output:
     |    }
     |__________________________________________________________
 
-
+    
+    Accessing Nested Fields Directly in the main.go:
+    |    package main
+    |    import (
+    |        "fmt"
+    |        "composition/store"
+    |    )
+    |    func main() {
+    |        rentals := []*store.RentalBoat {
+    |            store.NewRentalBoat("Rubber Ring", 10, 1, false, false),
+    |            store.NewRentalBoat("Yacht", 50000, 5, true, true),
+    |            store.NewRentalBoat("Super Yacht", 100000, 15, true, true),
+    |        }
+    |        for _, r := range rentals {
+    |            fmt.Println("Rental Boat:", r.Name, "Rental Price:", r.Price(0.2))
+    |        }
+    |    }
+    |__________________________________________________________________
         
 
 
