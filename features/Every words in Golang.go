@@ -487,63 +487,80 @@ Understanding Flow Control
     |    names := []string {"Kayak", "Lifejacket", "Paddle"}
     |    names = append(names, "Hat", "Gloves")
     |_____________________________________________________________
+
     Appending Items to a Slice:
-        names := []string {"Kayak", "Lifejacket", "Paddle"}
-        appendedNames := append(names, "Hat", "Gloves")
-        names[0] = "Canoe"
+    example:
+    |    names := []string {"Kayak", "Lifejacket", "Paddle"}
+    |    appendedNames := append(names, "Hat", "Gloves")
+    |    names[0] = "Canoe"
+    |_____________________________________________________________
 
     Allocating Additional Slice Capacity:
-        names := make([]string, 3, 6)
-        names[0] = "Kayak"
-        names[1] = "Lifejacket"
-        names[2] = "Paddle"
+    example:
+    |    names := make([]string, 3, 6)
+    |    names[0] = "Kayak"
+    |    names[1] = "Lifejacket"
+    |    names[2] = "Paddle"
+    |_____________________________________________________________
 
     Adding Elements to a Slice:
-        names := make([]string, 3, 6)
-        names[0] = "Kayak"
-        names[1] = "Lifejacket"
-        names[2] = "Paddle"
-        appendedNames := append(names, "Hat", "Gloves")
-        names[0] = "Canoe"
-        fmt.Println("names:",names)
-        fmt.Println("appendedNames:", appendedNames)
-
+    example:
+    |    names := make([]string, 3, 6)
+    |    names[0] = "Kayak"
+    |    names[1] = "Lifejacket"
+    |    names[2] = "Paddle"
+    |    appendedNames := append(names, "Hat", "Gloves")
+    |    names[0] = "Canoe"
+    |    fmt.Println("names:",names)
+    |    fmt.Println("appendedNames:", appendedNames)
+    |______________________________________________________________
 
     Appending One Slice to Another:
-        names := make([]string, 3, 6)
-        names[0] = "Kayak"
-        names[1] = "Lifejacket"
-        names[2] = "Paddle"
-        moreNames := []string { "Hat Gloves"}
-        appendedNames := append(names, moreNames...)
-        fmt.Println("appendedNames:", appendedNames)
+    example:
+    |    names := make([]string, 3, 6)
+    |    names[0] = "Kayak"
+    |    names[1] = "Lifejacket"
+    |    names[2] = "Paddle"
+    |    moreNames := []string { "Hat Gloves"}
+    |    appendedNames := append(names, moreNames...)
+    |    fmt.Println("appendedNames:", appendedNames)
+    |______________________________________________________________
 
     Creating Slices from Existing Arrays:
-        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-        someNames := products[1:3]
-        allNames := products[:]
+    example:
+    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |    someNames := products[1:3]
+    |    allNames := products[:]
+    |______________________________________________________________
 
     Specifying Capacity When Creating a Slice from an Array:
-        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-        someNames := products[1:3:3]
-        allNames := products[:]
-        someNames = append(someNames, "Gloves")
+    example:
+    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |    someNames := products[1:3:3]
+    |    allNames := products[:]
+    |    someNames = append(someNames, "Gloves")
+    |______________________________________________________________
 
     Creating Slices from Other Slices:
-        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-        allNames := products[1:]
-        someNames := allNames[1:3]
-        allNames = append(allNames, "Gloves")
-        allNames[1] = "Canoe"
+    example:
+    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |    allNames := products[1:]
+    |    someNames := allNames[1:3]
+    |    allNames = append(allNames, "Gloves")
+    |    allNames[1] = "Canoe"
+    |______________________________________________________________
 
     Comparing Slices:
-        Go restricts the use of the comparison operator so that slices can be compared only to the nil value.
-            p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-            p2 := p1
-            fmt.Println("Equal:", p1 == p2)
-        Output:
-            .\main.go:13:30: invalid operation: p1 == p2 (slice can only be compared to nil)
+    example:
+    |    Go restricts the use of the comparison operator so that slices can be compared only to the nil value.
+    |        p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |        p2 := p1
+    |        fmt.Println("Equal:", p1 == p2)
+    |_______________________________________________________________
 
+    Output:
+    |    .\main.go:13:30: invalid operation: p1 == p2 (slice can only be compared to nil)
+    |_______________________________________________________________
 
 64.copy
     The copy function is used to copy elements between slices. This function can be used to ensure that slices
