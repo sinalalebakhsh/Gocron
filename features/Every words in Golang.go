@@ -2626,6 +2626,10 @@ Converting a String to Runes
     applications can rely on a single thread of execution, which is created by default to
     execute the main function.
     
+    Receiving from a channel is a blocking operation, 
+    meaning that execution will not continue until a value
+    has been received
+    
 
     Problem                                 Solution
     ---------------------------------       -------------------------
@@ -2643,6 +2647,9 @@ Converting a String to Runes
     Enumerate the values received           Use a for loop with the range keyword 
     from a channel
 
+
+
+
 139.How Go Executes Code
     All Go programs use at least one goroutine because this is how Go executes the code in the
     main function.
@@ -2659,7 +2666,8 @@ Converting a String to Runes
     The statements in the main function
 
 140.Creating Additional Goroutines
-    Go allows the developer to create additional goroutines, which execute code at the same time as the main
+    Go allows the developer to create additional goroutines, 
+    which execute code at the same time as the main
     goroutine. Go makes it easy to create new goroutines
 
     example:
@@ -2681,6 +2689,10 @@ Converting a String to Runes
         }
 
 141.Returning Results from Goroutines
+    Receiving from a channel is a blocking operation, 
+    meaning that execution will not continue until a value
+    has been received
+
     Getting a result from a function that is being executed asynchronously 
     can be complicated because it requires coordination between the goroutine 
     that produces the result and the goroutine that consumes the result.
@@ -2693,12 +2705,18 @@ Converting a String to Runes
 
 
 142.Sending a Result Using a Channel
-    
+    Receiving from a channel is a blocking operation, 
+    meaning that execution will not continue until a value
+    has been received
+
     example:
         resultChannel <- total
 
 143.Receiving a Result Using a Channel
-
+    Receiving from a channel is a blocking operation, 
+    meaning that execution will not continue until a value
+    has been received
+    
     example:
         storeTotal += <- channel
 
