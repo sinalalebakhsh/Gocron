@@ -373,20 +373,23 @@ Understanding Flow Control
     A switch statement provides an alternative way to control execution flow, based on matching the result of an
     expression to a specific value, as opposed to evaluating a true or false result
     example:
-        switch (character) {
-            case 'K':
-                fmt.Println("K at position", index)
-            case 'y':
-                fmt.Println("y at position", index)
-        }
-
+    |    switch (character) {
+    |        case 'K':
+    |            fmt.Println("K at position", index)
+    |        case 'y':
+    |            fmt.Println("y at position", index)
+    |    }
+    |___________________________________________________________
+    
     Matching Multiple Values:
-        switch (character) {
-            case 'K', 'k':
-                fmt.Println("K or k at position", index)
-            case 'y':
-                fmt.Println("y at position", index)
-        }
+    example:
+    |    switch (character) {
+    |        case 'K', 'k':
+    |            fmt.Println("K or k at position", index)
+    |        case 'y':
+    |            fmt.Println("y at position", index)
+    |    }
+    |___________________________________________________________
 
     Terminate case Statement Execution:
     example:
@@ -400,7 +403,9 @@ Understanding Flow Control
     |        case 'y':
     |    fmt.Println("y at position", index)
     |    }
-    |
+    |__________________________________________________________
+
+
 58.Falling Through
     Go switch statements don't automatically fall through, but this behavior can be enabled using the
     fallthrough keyword
