@@ -422,19 +422,20 @@ Understanding Flow Control
     matches the switch statement's value
     
     example:
-        switch (character) {
-                case 'K', 'k':
-                if (character == 'k') {
-                    fmt.Println("Lowercase k at position", index)
-                    break
-                }
-                fmt.Println("Uppercase K at position", index)
-                case 'y':
-                fmt.Println("y at position", index)
-                default:
-                fmt.Println("Character", string(character), "at position", index)
-            }
-
+    |    switch (character) {
+    |            case 'K', 'k':
+    |            if (character == 'k') {
+    |                fmt.Println("Lowercase k at position", index)
+    |                break
+    |            }
+    |            fmt.Println("Uppercase K at position", index)
+    |            case 'y':
+    |            fmt.Println("y at position", index)
+    |            default:
+    |            fmt.Println("Character", string(character), "at position", index)
+    |        }
+    |___________________________________________________________
+    
 60.goto label 
     Label statements allow execution to jump to a different point, 
     giving greater flexibility than other flow control features
@@ -447,7 +448,7 @@ Understanding Flow Control
     |    }
     |__________________________________________________________
 
-    
+
 61.Array
     Go arrays are a fixed length and contain elements of a single type, which are accessed by index
     var names [3]string
