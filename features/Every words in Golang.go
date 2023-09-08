@@ -469,14 +469,18 @@ Understanding Flow Control
     built-in make function
 
     example:
-        names := make([]string, 3)
-        names[0] = "Kayak"
-        names[1] = "Lifejacket"
-        names[2] = "Paddle"
+    |    names := make([]string, 3)
+    |    names[0] = "Kayak"
+    |    names[1] = "Lifejacket"
+    |    names[2] = "Paddle"
+    |____________________________________________________________
 
     Literal Syntax:
-        names := []string {"Kayak", "Lifejacket", "Paddle"}
+    example:
+    |    names := []string {"Kayak", "Lifejacket", "Paddle"}
+    |____________________________________________________________
 
+    
 63.append
     If you define a slice variable but don’t initialize it, then the result is a slice that has a length of zero
     and a capacity of zero, and this will cause an error when an element is appended to it.
