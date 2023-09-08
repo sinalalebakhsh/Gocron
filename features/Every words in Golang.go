@@ -1906,7 +1906,10 @@ Output:
         go: downloading golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae
 
 
-125.
+125.Managing External Packages
+    Removing a Package
+    To update the go.mod file to reflect the change, run the command:
+        go mod tidy
 
 
 
