@@ -1676,23 +1676,27 @@ Output:
     type, and pointers are equal only if they point to the same memory location
     
     example:
-        package main
-        import "fmt"
-        type Expense interface {
-            getName() string
-            getCost(annual bool) float64
-        }
-        func main() {
-            var e1 Expense = &Product { name: "Kayak" }
-            var e2 Expense = &Product { name: "Kayak" }
-            var e3 Expense = Service { description: "Boat Cover" }
-            var e4 Expense = Service { description: "Boat Cover" }
-            fmt.Println("e1 == e2", e1 == e2)
-            fmt.Println("e3 == e4", e3 == e4)
-        }
+    |    package main
+    |    import "fmt"
+    |    type Expense interface {
+    |        getName() string
+    |        getCost(annual bool) float64
+    |    }
+    |    func main() {
+    |        var e1 Expense = &Product { name: "Kayak" }
+    |        var e2 Expense = &Product { name: "Kayak" }
+    |        var e3 Expense = Service { description: "Boat Cover" }
+    |        var e4 Expense = Service { description: "Boat Cover" }
+    |        fmt.Println("e1 == e2", e1 == e2)
+    |        fmt.Println("e3 == e4", e3 == e4)
+    |    }
+    |_____________________________________________________________________
+
     Output:
-        e1 == e2 false
-        e3 == e4 true
+    |    e1 == e2 false
+    |    e3 == e4 true
+    |_________________________________________________
+
 
 113.Empty Interface
     Go allows the user of the empty interface—which means an interface that defines no methods—to represent
