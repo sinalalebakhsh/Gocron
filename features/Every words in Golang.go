@@ -1308,45 +1308,46 @@ Output:
 97.Creating Arrays, Slices, and Maps Containing Struct Values
     Omitting the Struct Type
     example:
-        package main
-        import "fmt"
-        func main() {
-            type Product struct {
-                name, category string
-                price float64
-                //otherNames []string
-            }
-            type StockLevel struct {
-                Product
-                Alternate Product
-                count int
-            }
-            array := [1]StockLevel {
-                {
-                    Product: Product { "Kayak", "Watersports", 275.00 },
-                    Alternate: Product{"Lifejacket", "Watersports", 48.95 },
-                    count: 100,
-                },
-            }
-            fmt.Println("Array:", array[0].Product.name)
-            slice := []StockLevel {
-                {
-                    Product: Product { "Kayak", "Watersports", 275.00 },
-                    Alternate: Product{"Lifejacket", "Watersports", 48.95 },
-                    count: 100,
-                },
-            }
-            fmt.Println("Slice:", slice[0].Product.name)
-            kvp := map[string]StockLevel {
-                "kayak": {
-                    Product: Product { "Kayak", "Watersports", 275.00 },
-                    Alternate: Product{"Lifejacket", "Watersports", 48.95 },
-                    count: 100,
-                },
-            }
-            fmt.Println("Map:", kvp["kayak"].Product.name)
-        }
-
+    |    package main
+    |    import "fmt"
+    |    func main() {
+    |        type Product struct {
+    |            name, category string
+    |            price float64
+    |            //otherNames []string
+    |        }
+    |        type StockLevel struct {
+    |            Product
+    |            Alternate Product
+    |            count int
+    |        }
+    |        array := [1]StockLevel {
+    |            {
+    |                Product: Product { "Kayak", "Watersports", 275.00 },
+    |                Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+    |                count: 100,
+    |            },
+    |        }
+    |        fmt.Println("Array:", array[0].Product.name)
+    |        slice := []StockLevel {
+    |            {
+    |                Product: Product { "Kayak", "Watersports", 275.00 },
+    |                Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+    |                count: 100,
+    |            },
+    |        }
+    |        fmt.Println("Slice:", slice[0].Product.name)
+    |        kvp := map[string]StockLevel {
+    |            "kayak": {
+    |                Product: Product { "Kayak", "Watersports", 275.00 },
+    |                Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+    |                count: 100,
+    |            },
+    |        }
+    |        fmt.Println("Map:", kvp["kayak"].Product.name)
+    |    }
+    |_________________________________________________________________________________________
+    
 98.Structs and Pointers
     Assigning a struct to a new variable or using a struct as a function parameter 
     creates a new value that copies the field values.
@@ -1372,7 +1373,7 @@ Output:
     |    }
     |_______________________________________________
 
-    
+
 100.Using a Pointer to a Struct
     example:
     |    package main
