@@ -836,11 +836,11 @@ Output:
     been defined
 
     example:
-        func printPrice(product string, price float64, taxRate float64) {
-            taxAmount := price * taxRate
-            fmt.Println(product, "price:", price, "Tax:", taxAmount)
-        }
-
+    |    func printPrice(product string, price float64, taxRate float64) {
+    |        taxAmount := price * taxRate
+    |        fmt.Println(product, "price:", price, "Tax:", taxAmount)
+    |    }
+    |__________________________________________
 
 72.Defining Variadic Parameters
     example:
@@ -858,7 +858,7 @@ Output:
     |        }
     |    }
     |_______________________________________________
-    
+
 73.Dealing with No Arguments for a Variadic Parameter
     example:
     |    func printSuppliers(product string, suppliers ...string ) {
