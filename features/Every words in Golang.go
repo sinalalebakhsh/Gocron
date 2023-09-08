@@ -1186,17 +1186,18 @@ Output:
     Values do not have to be provided for all fields when creating a struct value
     
     example:
-    func main() {
-        type Product struct {
-            name, category string
-            price float64
-        }
-        kayak := Product {
-                name: "Kayak",
-                category: "Watersports",
-        }
-    }
-
+    |    func main() {
+    |        type Product struct {
+    |            name, category string
+    |            price float64
+    |        }
+    |        kayak := Product {
+    |                name: "Kayak",
+    |                category: "Watersports",
+    |        }
+    |    }
+    |_________________________________________________________
+    
 91.new 
     the new function to create struct values
         var lifejacket = new(Product)
@@ -1221,7 +1222,7 @@ Output:
     |        fmt.Println("Price:", kayak.price)
     |    }
     |_____________________________________________________________
-    
+
 93.Defining Embedded Fields
     If a field is defined without a name, 
     it is known as an embedded field, and it is accessed using the name of its type.
