@@ -755,27 +755,30 @@ Understanding the Dual Nature of Strings
         Amount: 48.95
 
     Changing the Currency Symbol:
-        var price string = "€48.95"
-        var currency string = string(price[0])
-        var amountString string = price[1:]
-        amount, parseErr  := strconv.ParseFloat(amountString, 64)
-        fmt.Println("Currency:", currency)
-        if (parseErr == nil) {
-            fmt.Println("Amount:", amount)
-        } else {
-            fmt.Println("Parse Error:", parseErr)
-        }
-    Output:
-        Currency: â
-        Parse Error: strconv.ParseFloat: parsing "\x82\xac48.95": invalid syntax
+    example:
+    |   var price string = "€48.95"
+    |   var currency string = string(price[0])
+    |   var amountString string = price[1:]
+    |   amount, parseErr  := strconv.ParseFloat(amountString, 64)
+    |   fmt.Println("Currency:", currency)
+    |   if (parseErr == nil) {
+    |       fmt.Println("Amount:", amount)
+    |   } else {
+    |       fmt.Println("Parse Error:", parseErr)
+    |   }
+    |______________________________________________
 
+    Output:
+    |    Currency: â
+    |    Parse Error: strconv.ParseFloat: parsing "\x82\xac48.95": invalid syntax
+    |______________________________________________
+    
     Obtaining the Length:
         fmt.Println("Length:", len(price))
     Output:
         Length: 8
 
 Converting a String to Runes
-------------------------------------------------------------------------------------------------        
 69.rune
     The rune type represents a Unicode code point, 
     which is essentially a single character. 
@@ -826,7 +829,7 @@ Converting a String to Runes
     |    6 57
     |    7 53
     |____________________________
-    
+
 70.func
     Functions are groups of code statements that are executed only when the function is
     invoked during the flow of execution.
