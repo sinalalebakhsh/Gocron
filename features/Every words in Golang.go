@@ -2697,6 +2697,10 @@ Converting a String to Runes
     example:
         resultChannel <- total
 
+143.Receiving a Result Using a Channel
+
+    example:
+        storeTotal += <- channel
 
 
 
