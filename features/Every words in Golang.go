@@ -1696,51 +1696,51 @@ Output:
     any value
     
     example:
-        package main
-        import "fmt"
-        type Expense interface {
-            getName() string
-            getCost(annual bool) float64
-        }
-        type Person struct {
-            name, city string
-        }
-        func processItem(item interface{}) {
-                switch value := item.(type) {
-                    case Product:
-                        fmt.Println("Product:", value.name, "Price:", value.price)
-                    case *Product:
-                        fmt.Println("Product Pointer:", value.name, "Price:", value.price)
-                    case Service:
-                        fmt.Println("Service:", value.description, "Price:",
-                            value.monthlyFee * float64(value.durationMonths))
-                    case Person:
-                        fmt.Println("Person:", value.name, "City:", value.city)
-                    case *Person:
-                        fmt.Println("Person Pointer:", value.name, "City:", value.city)
-                    case string, bool, int:
-                        fmt.Println("Built-in type:", value)
-                    default:
-                        fmt.Println("Default:", value)
-                }
-            }
-        func main() {
-            var expense Expense = &Product { "Kayak", "Watersports", 275 }
-            data := []interface{} {
-                expense,
-                Product { "Lifejacket", "Watersports", 48.95 },
-                Service {"Boat Cover", 12, 89.50, []string{} },
-                Person { "Alice", "London"},
-                &Person { "Bob", "New York"},
-                "This is a string",
-                100,
-                true,
-            }
-            for _, item := range data {
-                processItem(item)
-            }
-        }
-
+    |    package main
+    |    import "fmt"
+    |    type Expense interface {
+    |        getName() string
+    |        getCost(annual bool) float64
+    |    }
+    |    type Person struct {
+    |        name, city string
+    |    }
+    |    func processItem(item interface{}) {
+    |            switch value := item.(type) {
+    |                case Product:
+    |                    fmt.Println("Product:", value.name, "Price:", value.price)
+    |                case *Product:
+    |                    fmt.Println("Product Pointer:", value.name, "Price:", value.price)
+    |                case Service:
+    |                    fmt.Println("Service:", value.description, "Price:",
+    |                        value.monthlyFee * float64(value.durationMonths))
+    |                case Person:
+    |                    fmt.Println("Person:", value.name, "City:", value.city)
+    |                case *Person:
+    |                    fmt.Println("Person Pointer:", value.name, "City:", value.city)
+    |                case string, bool, int:
+    |                    fmt.Println("Built-in type:", value)
+    |                default:
+    |                    fmt.Println("Default:", value)
+    |            }
+    |        }
+    |    func main() {
+    |        var expense Expense = &Product { "Kayak", "Watersports", 275 }
+    |        data := []interface{} {
+    |            expense,
+    |            Product { "Lifejacket", "Watersports", 48.95 },
+    |            Service {"Boat Cover", 12, 89.50, []string{} },
+    |            Person { "Alice", "London"},
+    |            &Person { "Bob", "New York"},
+    |            "This is a string",
+    |            100,
+    |            true,
+    |        }
+    |        for _, item := range data {
+    |            processItem(item)
+    |        }
+    |    }
+    |_________________________________________________________________________________
 
 115.Package
     Packages are the Go feature that allows projects to be structured so that related functionality can be grouped
@@ -1757,15 +1757,10 @@ Output:
     Packages are defined by creating code files in folders and using the package
     keyword to denote which package they belong to.
 
-
 116.the Module File
     This name is important because it is used to import features from other packages created within
     the same project and third-party packages
     The go statement specifies the version of Go that is used.
-
-
-
-
 
 117.Package Access Control
     Go has an unusual approach to access control. Instead of relying on dedicated keywords, like public
