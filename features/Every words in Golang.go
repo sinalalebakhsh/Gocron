@@ -2088,8 +2088,25 @@ Output:
     |___________________________________________
 
 
-    
-129.
+
+129.Creating a Chain of Nested Types
+    The composition feature can be used to create complex chains of nested types, 
+    whose fields and methods are promoted to the top-level enclosing type.
+
+    example:
+    rentalboats.go:
+    |    package store
+    |
+    |    type RentalBoat struct {
+    |       *Boat
+    |       IncludeCrew bool
+    |    }
+    |
+    |    func NewRentalBoat(name string, price float64, capacity int,
+    |          motorized, crewed bool) *RentalBoat {
+    |       return &RentalBoat{NewBoat(name, price, capacity, motorized), crewed}
+    |    }
+    |__________________________________________________________
 
 
         
