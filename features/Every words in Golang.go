@@ -1917,7 +1917,18 @@ Output:
     Composition is the process by which new types are created by combining
     structs and interfaces.
 
+    Why is it useful?
+    Composition allows types to be defined based on existing types.
 
+    How is it used?
+    Existing types are embedded in new types.
+    
+    Are there any pitfalls or limitations?
+    Composition doesn't work in the same way as inheritance, and care must be
+    taken to achieve the desired outcome.
+
+    Are there any alternatives? 
+    Composition is optional, and you can create entirely independent types.
 
 
 
