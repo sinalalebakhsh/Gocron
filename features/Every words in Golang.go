@@ -2799,6 +2799,14 @@ Converting a String to Runes
     |    var channel chan float64 = make(chan float64, 2)
     |___________________________________________________________
 
+    Result explain:
+    |    For this example, I have set the size of the buffer to 2, meaning that two senders will be able to send
+    |    values through the channel without having to wait for them to be received.
+    |____________________________________________________________________
+
+
+
+147.Inspecting a Channel Buffer
 
 
 
