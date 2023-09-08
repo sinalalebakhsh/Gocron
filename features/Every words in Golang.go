@@ -722,7 +722,6 @@ Understanding Flow Control
         
 
 Understanding the Dual Nature of Strings
-------------------------------------------------------------------------------------------------        
 68.strconv
     Indexing and Slicing a String:
         var price string = "$48.95"
@@ -740,16 +739,17 @@ Understanding the Dual Nature of Strings
         Amount: 48.95
 
     Converting the Result:
-        var price string = "$48.95"
-        var currency string = string(price[0])
-        var amountString string = price[1:]
-        amount, parseErr  := strconv.ParseFloat(amountString, 64)
-        fmt.Println("Currency:", currency)
-        if (parseErr == nil) {
-            fmt.Println("Amount:", amount)
-        } else {
-            fmt.Println("Parse Error:", parseErr)
-        }
+    |    var price string = "$48.95"
+    |    var currency string = string(price[0])
+    |    var amountString string = price[1:]
+    |    amount, parseErr  := strconv.ParseFloat(amountString, 64)
+    |    fmt.Println("Currency:", currency)
+    |    if (parseErr == nil) {
+    |        fmt.Println("Amount:", amount)
+    |    } else {
+    |        fmt.Println("Parse Error:", parseErr)
+    |    }
+    |
     Output:
         Currency: $
         Amount: 48.95
