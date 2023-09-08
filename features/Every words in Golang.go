@@ -1245,25 +1245,26 @@ Output:
 
 94.Defining an Additional Field
     example:
-        func main() {
-            type Product struct {
-                name, category string
-                price float64
-            }
-            type StockLevel struct {
-                Product
-                Alternate Product
-                count int
-            }
-            stockItem := StockLevel {
-                Product: Product { "Kayak", "Watersports", 275.00 },
-                Alternate: Product{"Lifejacket", "Watersports", 48.95 },
-                count: 100,
-            }
-            fmt.Println("Name:", stockItem.Product.name)
-            fmt.Println("Alt Name:", stockItem.Alternate.name)
-        }
-
+    |    func main() {
+    |        type Product struct {
+    |            name, category string
+    |            price float64
+    |        }
+    |        type StockLevel struct {
+    |            Product
+    |            Alternate Product
+    |            count int
+    |        }
+    |        stockItem := StockLevel {
+    |            Product: Product { "Kayak", "Watersports", 275.00 },
+    |            Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+    |            count: 100,
+    |        }
+    |        fmt.Println("Name:", stockItem.Product.name)
+    |        fmt.Println("Alt Name:", stockItem.Alternate.name)
+    |    }
+    |__________________________________________________________________________
+    
 95.Comparing Struct Values
     example:
     |    func main() {
@@ -1277,7 +1278,9 @@ Output:
     |        fmt.Println("p1 == p2:", p1 == p2)
     |        fmt.Println("p1 == p3:", p1 == p3)
     |    }
-    |
+    |__________________________________________________________________________
+
+
 96.Anonymous Struct Types
     Anonymous struct types are defined without using a name
     example:
