@@ -15,7 +15,7 @@ var OriginSingleDef SingleDefinitions = SingleDefinitions{
     },
 
 	SingleDefinition: map[string]string{
-		"build": `build:
+		"build": `1.build:
 The go build command compiles the source code in the current directory 
 and generates an executable file.`,
 	

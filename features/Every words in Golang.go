@@ -31,7 +31,13 @@ Using the Go Command
 
 5.get
     The go get command downloads and installs external packages.
-
+    flag
+    flag package:
+    Command-line flags are a common way to specify options for command-line programs. 
+    For example, in wc -l the -l is a command-line flag.
+    Go provides a flag package supporting basic command-line flag parsing.
+    We'll use this package to implement our example command-line program.
+    
 6.install
     The go install command downloads packages and is usually used to install tool packages.
 
