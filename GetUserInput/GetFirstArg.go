@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
+
 	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/features"
 )
@@ -30,7 +32,8 @@ func GetFirstArg() {
 		FirstArg == "allcode" || 
 		FirstArg == "everyexample" || 
 		FirstArg == "examples" {
-			
+			features.HelpMessage()
+			time.Sleep(time.Second * 2)
 			color.Yellow(fmt.Sprintln(features.OriginalFeatures))			
 		} 
 	}
