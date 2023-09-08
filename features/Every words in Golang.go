@@ -2096,6 +2096,13 @@ Output:
     Go performs promotion so that the fields defined by all three types in the chain can be
     accessed directly.
 
+    Go promotes fields from the nested Boat and 
+    Product types so they can be accessed through the top-
+    level RentalBoat type, which allows the Name field to be read.
+    Methods are also promoted to the top-level type, 
+    which is why I can use the Price method, even though it is defined on the *Product type,
+    which is at the end of the chain.
+
     example:
     rentalboats.go:
     |    package store
