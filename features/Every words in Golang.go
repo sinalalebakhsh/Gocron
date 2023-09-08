@@ -2283,9 +2283,32 @@ Output:
     |    .\main.go:22:33: ambiguous selector bundle.Price    
     |________________________________________________________       
 
+133.Composition and Interfaces
+    example:
+    Mixing Types in the main.go:
+    |    package main
+    |    import (
+    |        "fmt"
+    |        "composition/store"
+    |    )
+    |    func main() {
+    |        products := map[string]*store.Product {
+    |            "Kayak": store.NewBoat("Kayak", 279, 1, false),
+    |            "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+    |        }
+    |        for _, p := range products {
+    |            fmt.Println("Name:", p.Name, "Category:", p.Category, "Price:", p.Price(0.2))
+    |        }
+    |    }
+    |__________________________________________
 
+    Output:
+    |    .\main.go:11:9: cannot use store.NewBoat("Kayak", 279, 1, false) (type *store.Boat) as
+    |    type *store.Product in map value
+    |____________________________________________
 
-
+134.Composition to Implement Interfaces
+    
 
 
             
