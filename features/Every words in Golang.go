@@ -2367,7 +2367,13 @@ Output:
     |    }
     |________________________________________________________________
 
+    Output:
+    |    .\main.go:21:42: item.Name undefined (type store.ItemForSale has no field or method Name)
+    |    .\main.go:21:66: item.Category undefined (type store.ItemForSale has no field or method
+    |    Category)
+    |_____________________________________________________________________________
 
+    
 
 
 
