@@ -1047,14 +1047,14 @@ Output:
 
 83.the Literal Function Syntax
     example:
-        func selectCalculator(price float64) calcFunc {
-            if (price > 100) {
-                var withTax calcFunc = func (price float64) float64 {
-                    return price + (price * 0.2)
-                }
-                return withTax
-            }
-
+    |    func selectCalculator(price float64) calcFunc {
+    |        if (price > 100) {
+    |            var withTax calcFunc = func (price float64) float64 {
+    |                return price + (price * 0.2)
+    |            }
+    |            return withTax
+    |        }
+    |
 
 84.Function Variable Scope
     example:
@@ -1073,7 +1073,7 @@ Output:
     |        return withoutTax
     |    }
     |_____________________________________________________
-    
+
 85.Functions Values Directly
     example:
     |    func selectCalculator(price float64) calcFunc {
