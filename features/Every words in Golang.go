@@ -9,14 +9,12 @@ var OriginalFeatures Features = Features{
 	EveryWordsInGolang: `
 
 in Command Line Interface Go:
-----------------------------------------------------------------
 1- go mod init YOUR_NAME
 2- go work init YOUR_WORK_DIRECTORY
 3- go run main.go  OR  go run projectName.go
 
 
 Using the Go Command
-------------------------------------------------------------------------------------------------
 1.build
     The go build command compiles the source code in the current directory 
     and generates an executable file.
@@ -60,7 +58,6 @@ Using the Go Command
     
 
 Useful Debugger State Commands
-------------------------------------------------------------------------------------------------
 13.print <expr>
     This command evaluates an expression and displays the result. It can
     be used to display a value (print i) or perform a more complex test
@@ -78,7 +75,6 @@ Useful Debugger State Commands
 
 
 Useful Debugger Commands for Controlling Execution
-------------------------------------------------------------------------------------------------
 17.continue
     This command resumes execution of the application.
 
@@ -100,7 +96,6 @@ Useful Debugger Commands for Controlling Execution
 
 
 Understanding the Basic Data Types
-------------------------------------------------------------------------------------------------
 23.int = integers
     This type represents a whole number, which can be positive or negative. The
     int type size is platform-dependent and will be either 32 or 64 bits. There are
