@@ -577,14 +577,17 @@ Understanding Flow Control
 
     Specifying Ranges When Copying Slices:
     Fine-grained control over the elements that are copied can be achieved using ranges
-        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-        allNames := products[1:]
-        someNames := []string { "Boots", "Canoe"}
-        copy(someNames[1:], allNames[2:3])
-    Output:
-        allNames [Lifejacket Paddle Hat]
-        someNames: [Boots Hat]
+    example:
+    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |    allNames := products[1:]
+    |    someNames := []string { "Boots", "Canoe"}
+    |    copy(someNames[1:], allNames[2:3])
+    |______________________________________________
 
+    Output:
+    |    allNames [Lifejacket Paddle Hat]
+    |    someNames: [Boots Hat]
+    |__________________________________________
 
     Copying Slices with Different Sizes:
     products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
@@ -605,7 +608,7 @@ Understanding Flow Control
     Output:
     |    products: [Canoe Lifejacket Paddle Hat]
     |__________________________________________________
-    
+
     Deleting Slice Elements:
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         deleted := append(products[:2], products[3:]...)
