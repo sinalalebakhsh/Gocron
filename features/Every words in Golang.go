@@ -1871,10 +1871,13 @@ Output:
         )
 
 123.Finding Go Packages
-        #1 https://pkg.go.dev
-        #2 https://github.com/golang/go/wiki/Projects
+    #1 https://pkg.go.dev
+    #2 https://github.com/golang/go/wiki/Projects
 
-
+    Many Go modules are written by individual developers
+    to solve a problem and then published for anyone else to use. 
+    This creates a rich module ecosystem,
+    but it does mean that maintenance and support can be inconsistent.
 
 
 
