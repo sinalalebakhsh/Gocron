@@ -2308,13 +2308,33 @@ Output:
     |____________________________________________
 
 134.Composition to Implement Interfaces
-    
+    Go takes promoted methods into account when determining whether a type conforms to an interface,
+    which avoids the need to duplicate methods that are already present through an embedded field.
 
+    add a file named forsale.go to the store folder:
+    The Contents of the forsale.go:
+    |    package store
+    |    type ItemForSale interface {
+    |        Price(taxRate float64) float64
+    |    }
+    |__________________________________________        
 
-            
-
-
-
+    Using an Interface in the main.go:
+    |    package main
+    |    import (
+    |        "fmt"
+    |        "composition/store"
+    |    )
+    |    func main() {
+    |        products := map[string]store.ItemForSale {
+    |            "Kayak": store.NewBoat("Kayak", 279, 1, false),
+    |            "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+    |        }
+    |        for key, p := range products {
+    |            fmt.Println("Key:", key, "Price:", p.Price(0.2))
+    |        }
+    |    }
+    |____________________________________________
 
 
 
