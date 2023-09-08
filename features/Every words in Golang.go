@@ -1586,23 +1586,29 @@ Output:
 
 
 109.Defining and Using Interfaces
+    One interface can enclose another, with the effect that types must implement all the methods defined
+    by the enclosing and enclosed interfaces. Interfaces are simpler than structs, and there are no fields or
+    method to promote. The result of composing interfaces is a union of the method defined by the enclosing
+    and enclosed types.
+    
     example:
-        package main
-        import "fmt"
-        type Expense interface {
-            getName() string
-            getCost(annual bool) float64
-        }
-        func main() {
-            expenses := []Expense {
-                Product { "Kayak", "Watersports", 275 },
-                Service {"Boat Cover", 12, 89.50 },
-            }
-            for _, expense := range expenses {
-                fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
-            }
-        }
-
+    |    package main
+    |    import "fmt"
+    |    type Expense interface {
+    |        getName() string
+    |        getCost(annual bool) float64
+    |    }
+    |    func main() {
+    |        expenses := []Expense {
+    |            Product { "Kayak", "Watersports", 275 },
+    |            Service {"Boat Cover", 12, 89.50 },
+    |        }
+    |        for _, expense := range expenses {
+    |            fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
+    |        }
+    |    }
+    |______________________________________________________________________
+    
 110.an Interface in a Function
     example:
         package main
