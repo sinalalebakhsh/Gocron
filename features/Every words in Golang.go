@@ -1073,17 +1073,18 @@ Output:
     }
 
 85.Functions Values Directly
-    func selectCalculator(price float64) calcFunc {
-        if (price > 100) {
-            return func (price float64) float64 {
-                return price + (price * 0.2)
-            }
-        }
-         return func (price float64) float64 {
-            return price
-        }
-    }
-
+    example:
+    |    func selectCalculator(price float64) calcFunc {
+    |        if (price > 100) {
+    |            return func (price float64) float64 {
+    |                return price + (price * 0.2)
+    |            }
+    |        }
+    |         return func (price float64) float64 {
+    |            return price
+    |        }
+    |    }
+    |____________________________________________________
 
 
 
@@ -1100,7 +1101,7 @@ Output:
     |            })
     |        }
     |    }
-    |
+    |____________________________________________________
 
 87.Function Closure
     Functions defined using the literal syntax can reference variables from the surrounding code, a feature
