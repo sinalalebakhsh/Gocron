@@ -2188,8 +2188,21 @@ Output:
     |    Rental Boat: Super Yacht Rental Price: 120000 Captain: Dora
     |___________________________________________________________________
 
-    
-
+131.When Promotion Cannot Be Performed
+    specialdeal.go File in the store Folder:
+    |    package store
+    |    type SpecialDeal struct {
+    |       Name string
+    |       *Product
+    |       price float64
+    |    }
+    |    func NewSpecialDeal(name string, p *Product, discount float64) *SpecialDeal {
+    |       return &SpecialDeal{ name, p, p.price - discount }
+    |    }
+    |    func (deal *SpecialDeal ) GetDetails() (string, float64, float64) {
+    |       return deal.Name, deal.price, deal.Price(0)
+    |    }
+    |____________________________________________________________________
 
 
 
