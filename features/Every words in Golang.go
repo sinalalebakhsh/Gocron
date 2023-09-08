@@ -362,13 +362,16 @@ Understanding Flow Control
     Incorporating the Condition into the Loop
     
     example: 
-        for (counter <= 3) {}
+    |    for (counter <= 3) {}
+    |___________________________________________________________
 
     Enumerating Sequences:
-        for index, character := range product {
-                    fmt.Println("Index:", index, "Character:", string(character))
-                }
+    |    for index, character := range product {
+    |                fmt.Println("Index:", index, "Character:", string(character))
+    |            }
+    |___________________________________________________________
 
+    
 57.switch
     A switch statement provides an alternative way to control execution flow, based on matching the result of an
     expression to a specific value, as opposed to evaluating a true or false result
@@ -380,7 +383,7 @@ Understanding Flow Control
     |            fmt.Println("y at position", index)
     |    }
     |___________________________________________________________
-    
+
     Matching Multiple Values:
     example:
     |    switch (character) {
