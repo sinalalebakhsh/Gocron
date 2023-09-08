@@ -439,13 +439,15 @@ Understanding Flow Control
     Label statements allow execution to jump to a different point, 
     giving greater flexibility than other flow control features
     example:
-        counter := 0
-        target: fmt.Println("Counter", counter)
-        counter++
-        if (counter < 5) {
-                goto target
-        }
+    |    counter := 0
+    |    target: fmt.Println("Counter", counter)
+    |    counter++
+    |    if (counter < 5) {
+    |            goto target
+    |    }
+    |__________________________________________________________
 
+    
 61.Array
     Go arrays are a fixed length and contain elements of a single type, which are accessed by index
     var names [3]string
@@ -457,11 +459,14 @@ Understanding Flow Control
     Any position in the array for which a value is not provided will be assigned the zero value for the array type.
 
     Enumerating Arrays:
-        names := [3]string { "Kayak", "Lifejacket", "Paddle" }
-        for index, value := range names {
-            fmt.Println("Index:", index, "Value:", value)
-        }
-    
+    example:
+    |    names := [3]string { "Kayak", "Lifejacket", "Paddle" }
+    |    for index, value := range names {
+    |        fmt.Println("Index:", index, "Value:", value)
+    |    }
+    |___________________________________________________________
+
+
 62.Slices
     The slice type in this example is []string
     The best way to think of slices is as a variable-length array because they are useful when you don’t know how
@@ -480,7 +485,7 @@ Understanding Flow Control
     |    names := []string {"Kayak", "Lifejacket", "Paddle"}
     |____________________________________________________________
 
-    
+
 63.append
     If you define a slice variable but don’t initialize it, then the result is a slice that has a length of zero
     and a capacity of zero, and this will cause an error when an element is appended to it.
