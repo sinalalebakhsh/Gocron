@@ -2182,8 +2182,13 @@ Output:
     |    }
     |___________________________________________________________________
 
+    Output:
+    |    Rental Boat: Rubber Ring Rental Price: 12 Captain: N/A
+    |    Rental Boat: Yacht Rental Price: 60000 Captain: Bob
+    |    Rental Boat: Super Yacht Rental Price: 120000 Captain: Dora
+    |___________________________________________________________________
 
-
+    
 
 
 
