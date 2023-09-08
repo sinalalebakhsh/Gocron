@@ -881,16 +881,18 @@ Output:
     }
 
 75.Returning Multiple Function Results
-    func swapValues(first, second int) (int, int) {
-        return second, first
-    }
-    func main() {
-        val1, val2 := 10, 20
-        fmt.Println("Before calling function", val1, val2)
-        val1, val2 = swapValues(val1, val2)
-        fmt.Println("After calling function", val1, val2)
-    }
-
+    example:
+    |    func swapValues(first, second int) (int, int) {
+    |        return second, first
+    |    }
+    |    func main() {
+    |        val1, val2 := 10, 20
+    |        fmt.Println("Before calling function", val1, val2)
+    |        val1, val2 = swapValues(val1, val2)
+    |        fmt.Println("After calling function", val1, val2)
+    |    }
+    |______________________________________
+    
 76.Using Named Results
     example:
     |    func calcTax(price float64) (float64, bool) {
@@ -913,7 +915,7 @@ Output:
     |        return
     |    }
     |_____________________________________________________
-    
+
 77.defer
     The defer keyword is used to schedule a function call that will be performed immediately before the current
     function returns
