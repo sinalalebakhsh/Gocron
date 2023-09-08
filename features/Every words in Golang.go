@@ -595,13 +595,17 @@ Understanding Flow Control
 
 
     Copying a Larger Source Slice
-    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-        replacementProducts := []string { "Canoe", "Boots"}
-        copy(products[0:1], replacementProducts)
-        fmt.Println("products:", products)
-    Output:
-        products: [Canoe Lifejacket Paddle Hat]
+    example:
+    |    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |        replacementProducts := []string { "Canoe", "Boots"}
+    |        copy(products[0:1], replacementProducts)
+    |        fmt.Println("products:", products)
+    |__________________________________________________
 
+    Output:
+    |    products: [Canoe Lifejacket Paddle Hat]
+    |__________________________________________________
+    
     Deleting Slice Elements:
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         deleted := append(products[:2], products[3:]...)
@@ -619,7 +623,7 @@ Understanding Flow Control
     Output:
     |    Index: 0 Value: Paddle
     |    Index: 1 Value: Hat
-    |
+    |________________________________
 
 
 65.sort
