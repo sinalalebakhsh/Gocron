@@ -2189,6 +2189,7 @@ Output:
     |___________________________________________________________________
 
 131.When Promotion Cannot Be Performed
+    example:
     specialdeal.go File in the store Folder:
     |    package store
     |    type SpecialDeal struct {
@@ -2204,7 +2205,21 @@ Output:
     |    }
     |____________________________________________________________________
 
-
+    Using a New Type in the main.go:
+    |    package main
+    |    import (
+    |        "fmt"
+    |        "composition/store"
+    |    )
+    |    func main() {
+    |        product := store.NewProduct("Kayak", "Watersports", 279)
+    |        deal := store.NewSpecialDeal("Weekend Special", product, 50)
+    |        Name, price, Price := deal.GetDetails()
+    |        fmt.Println("Name:", Name)
+    |        fmt.Println("Price field:", price)
+    |        fmt.Println("Price method:", Price)
+    |    }
+    |_____________________________________________________________________
 
 
 
