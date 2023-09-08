@@ -655,10 +655,11 @@ Understanding Flow Control
     maps can use other data types as keys
 
     example:
-        products := make(map[string]float64, 10)
-        products["Kayak"] = 279
-        products["Lifejacket"] = 48.95
-
+    |    products := make(map[string]float64, 10)
+    |    products["Kayak"] = 279
+    |    products["Lifejacket"] = 48.95
+    |____________________________________________________
+    
     Map Literal Syntax:
         products := map[string]float64 {
             "Kayak" : 279,
@@ -679,7 +680,7 @@ Understanding Flow Control
     |                fmt.Println("No stored value")
     |            }
     |_________________________________________________________
-    
+
     Removing Items from a Map:
     example:
     |    products := map[string]float64 {
