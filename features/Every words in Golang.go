@@ -2687,9 +2687,15 @@ Converting a String to Runes
     To address this issue, Go provides channels, which are 
     conduits through which data can be sent and received.
 
+    Defining a Channel:
+    example:
+        var channel chan float64 = make(chan float64)
 
+
+142.Sending a Result Using a Channel
     
-
+    example:
+        resultChannel <- total
 
 
 
