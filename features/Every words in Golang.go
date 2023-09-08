@@ -177,7 +177,6 @@ Understanding the Basic Data Types
 
 
 The Zero Values for the Basic Data Types
-------------------------------------------------------------------------------------------------
 Type    Zero Value
 ------  -----------
 int         0
@@ -193,7 +192,6 @@ rune        0
 
 
 Operations and Conversions
-------------------------------------------------------------------------------------------------
 33.+, -, *, /, %
     These operators are used to perform arithmetic using numeric values.
 
@@ -218,7 +216,6 @@ Operations and Conversions
     where the | operator is used to configure the Go logging features.
 
 The Arithmetic Operators
-------------------------------------------------------------------------------------------------
 Operator    Description
 -------     ---------------------
    +        This operator returns the sum of two operands.
