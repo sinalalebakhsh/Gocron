@@ -2604,8 +2604,15 @@ Converting a String to Runes
     |    }
     |_______________________________________________________________
 
-
-
+138.Goroutines and Channels
+    What are they?
+    Goroutines are lightweight threads created and managed by the Go runtime.
+    Channels are pipes that carry values of a specific type.
+    
+    Why are they useful?
+    Goroutines allow functions to be executed concurrently, without needing to deal
+    with the complications of operating system threads. Channels allow goroutines to
+    produce results asynchronously.
 
 
 
