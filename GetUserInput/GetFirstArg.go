@@ -15,13 +15,14 @@ func GetFirstArg() {
 		FirstArg := strings.ToLower(AllArgs[1])
 		if FirstArg == "-h" || 
 		FirstArg == "help" || 
-		FirstArg == strings.ToLower("-HELP") ||
-		FirstArg == strings.ToLower("--HELP") {
+		FirstArg == "-help" ||
+		FirstArg == strings.ToLower("--help") {
 			features.HelpMessage()
 		} else if FirstArg == strings.ToLower("all") || 
 		FirstArg == strings.ToLower("everyexample") || 
 		FirstArg == strings.ToLower("examples") {
-			color.Cyan(fmt.Sprintln(features.OriginalFeatures))			
+
+			color.Yellow(fmt.Sprintln(features.OriginalFeatures))			
 		} 
 	}
 }
