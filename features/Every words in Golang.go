@@ -1210,17 +1210,18 @@ Output:
 
 92.Field Positions to Create Struct Values
     example:
-        func main() {
-            type Product struct {
-                name, category string
-                price float64
-            }
-            var kayak = Product { "Kayak", "Watersports", 275.00 }
-            fmt.Println("Name:", kayak.name)
-            fmt.Println("Category:", kayak.category)
-            fmt.Println("Price:", kayak.price)
-        }
-
+    |    func main() {
+    |        type Product struct {
+    |            name, category string
+    |            price float64
+    |        }
+    |        var kayak = Product { "Kayak", "Watersports", 275.00 }
+    |        fmt.Println("Name:", kayak.name)
+    |        fmt.Println("Category:", kayak.category)
+    |        fmt.Println("Price:", kayak.price)
+    |    }
+    |_____________________________________________________________
+    
 93.Defining Embedded Fields
     If a field is defined without a name, 
     it is known as an embedded field, and it is accessed using the name of its type.
@@ -1243,7 +1244,7 @@ Output:
     |            fmt.Println("Count:", stockItem.count)
     |    }
     |____________________________________________________________
-    
+
 94.Defining an Additional Field
     example:
     |    func main() {
