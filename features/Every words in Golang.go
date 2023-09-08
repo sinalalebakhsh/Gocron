@@ -555,14 +555,17 @@ Understanding Flow Control
 
     Duplicating a Slice:
     The copy function accepts two arguments:
-        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-        allNames := products[1:]
-        someNames := make([]string, 2)
-        copy(someNames, allNames)
-    Output:
-        allNames [Lifejacket Paddle Hat]
-        someNames: [Lifejacket Paddle]
+    example:
+    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |    allNames := products[1:]
+    |    someNames := make([]string, 2)
+    |    copy(someNames, allNames)
+    |_________________________________________
 
+    Output:
+    |    allNames [Lifejacket Paddle Hat]
+    |    someNames: [Lifejacket Paddle]
+    |
 
     the Uninitialized Slice Pitfall:
     the copy function doesn't resize the destination slice. A common
@@ -578,7 +581,7 @@ Understanding Flow Control
     |    someNames: []
     |    allNames [Lifejacket Paddle Hat]
     |____________________________________________
-    
+
     Specifying Ranges When Copying Slices:
     Fine-grained control over the elements that are copied can be achieved using ranges
     example:
