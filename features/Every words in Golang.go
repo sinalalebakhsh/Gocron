@@ -622,17 +622,22 @@ Understanding Flow Control
 65.sort
     There is no built-in support for sorting slices, but the standard library includes the sort package, which
     defines functions for sorting different types of slice.
-        products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-        sort.Strings(products)
-        for index, value := range products {
-            fmt.Println("Index:", index, "Value:", value)
-        }
-    Output:
-        Index: 0 Value: Hat
-        Index: 1 Value: Kayak
-        Index: 2 Value: Lifejacket
-        Index: 3 Value: Paddle
 
+    example:
+    |    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+    |    sort.Strings(products)
+    |    for index, value := range products {
+    |        fmt.Println("Index:", index, "Value:", value)
+    |    }
+    |_____________________________________________________
+
+
+    Output:
+    |    Index: 0 Value: Hat
+    |    Index: 1 Value: Kayak
+    |    Index: 2 Value: Lifejacket
+    |    Index: 3 Value: Paddle
+    |
 66.DeepEqual
     The DeepEqual function can be used to compare a wider range of data types than the
     equality operator, including slices.
@@ -654,7 +659,7 @@ Understanding Flow Control
     |    Equal: true
     |___________________________________________________
 
-    
+
 67.map
     Maps are a built-in data structure that associates data values with keys. 
     Unlike arrays, where values are associated with sequential integer locations, 
