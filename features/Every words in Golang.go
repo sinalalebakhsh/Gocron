@@ -2614,6 +2614,49 @@ Converting a String to Runes
     with the complications of operating system threads. Channels allow goroutines to
     produce results asynchronously.
 
+    How are they used?
+    Goroutines are created using the go keyword. Channels are defined as data types.
+
+    Are there any or limitations?
+    pitfalls Care must be taken to manage the direction of channels. 
+    Goroutines that share data require additional features.
+    
+    Are there any alternatives?
+    Goroutines and channels are the built-in Go concurrency features, but some
+    applications can rely on a single thread of execution, which is created by default to
+    execute the main function.
+    
+
+    Problem                                 Solution
+    ---------------------------------       -------------------------
+    Execute a function asynchronously       Create a goroutine
+    
+    Produce a result from a function        Use a channel 
+    executed asynchronously
+
+    Send and receive values                 Use arrow expressions 
+    using a channel
+
+    Indicate that no further values         Use the close function
+    will be sent over a channel
+
+    Enumerate the values received           Use a for loop with the range keyword 
+    from a channel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
