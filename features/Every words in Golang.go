@@ -2456,8 +2456,11 @@ Output:
     Output:
     |    Name: Kayak Category: Watersports Price: 334.8
     |    Name: Soccer Ball Category: Soccer Price: 23.4
-    |
+    |_________________________________________________________________
 
+137.Composing Interfaces
+    Go allows interfaces to be composed from other interfaces
+    
 
 
 
