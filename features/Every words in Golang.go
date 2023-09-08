@@ -1455,10 +1455,11 @@ Output:
     process are reflected in all the struct values created by the function.
 
     example:
-        func newProduct(name, category string, price float64) *Product {
-            return &Product{name, category, price - 10}
-        }
-
+    |    func newProduct(name, category string, price float64) *Product {
+    |        return &Product{name, category, price - 10}
+    |    }
+    |____________________________________________________________________________
+    
 104.Pointer Types for Struct Fields
     example:
     |    package main
@@ -1487,7 +1488,7 @@ Output:
     |    }
     |________________________________________________________________________________________
 
-    
+
 105.Pointer Field Copying
     Care must be taken when copying structs to consider the effect on pointer fields
     
