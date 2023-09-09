@@ -3273,9 +3273,29 @@ Converting a String to Runes
                                 strings s1 and s2 are the same.
 
     HasPrefix(s, prefix)        This function returns true if the string s begins with the string prefix.
-    
+
     HasSuffix(s, suffix)        This function returns true if the string ends with the string suffix.
 
+    example:
+    |    package main
+    |    import (
+    |        "fmt"
+    |        "strings"
+    |    )
+    |    func main() {
+    |        product := "Kayak"
+    |        fmt.Println("Contains:", strings.Contains(product, "yak"))
+    |        fmt.Println("ContainsAny:", strings.ContainsAny(product, "abc"))
+    |        fmt.Println("ContainsRune:", strings.ContainsRune(product, 'K'))
+    |        fmt.Println("EqualFold:", strings.EqualFold(product, "KAYAK"))
+    |        fmt.Println("HasPrefix:", strings.HasPrefix(product, "Ka"))
+    |        fmt.Println("HasSuffix:", strings.HasSuffix(product, "yak"))
+    |    }
+    |________________________________________________________________________
+
+    Output:
+    
+    
 
 
 
