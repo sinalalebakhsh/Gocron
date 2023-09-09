@@ -2899,6 +2899,17 @@ Converting a String to Runes
             fmt.Println("Channel has been closed")
         }
 
+
+    
+    Restrictions on channel direction can also be created through explicit conversion
+
+    example:
+        func main() {
+            dispatchChannel := make(chan DispatchNotification, 100)
+            go DispatchOrders(chan<- DispatchNotification(dispatchChannel))
+            receiveDispatches((<-chan DispatchNotification)(dispatchChannel))
+        }
+
         
 
 
