@@ -177,16 +177,16 @@ Understanding the Basic Data Types
     Constants are basically variables whose values cannot be changed later.
 
 
-The Zero Values for the Basic Data Types
-Type    Zero Value
-------  -----------
-int         0
-unit        0
-byte        0
-float64     0
-bool        false
-string      “” (the empty string)
-rune        0
+    The Zero Values for the Basic Data Types
+    Type    Zero Value
+    ------  -----------
+    int         0
+    unit        0
+    byte        0
+    float64     0
+    bool        false
+    string      “” (the empty string)
+    rune        0
 
 
 
@@ -216,42 +216,42 @@ Operations and Conversions
     not often required in mainstream development
     where the  operator is used to configure the Go logging features.
 
-The Arithmetic Operators
-Operator    Description
--------     ---------------------
-   +        This operator returns the sum of two operands.
-   -        This operator returns the difference between two operands.
-   *        This operator returns the product of two operands.
-   /        This product returns the quotient of two operators.
-   %        This product returns the remainder, which is similar to the modulo operator provided by
-            other programming languages but can return negative values, as described in the “Using the
-            Remainder Operator” section.
+    The Arithmetic Operators
+    Operator    Description
+    -------     ---------------------
+    +        This operator returns the sum of two operands.
+    -        This operator returns the difference between two operands.
+    *        This operator returns the product of two operands.
+    /        This product returns the quotient of two operators.
+    %        This product returns the remainder, which is similar to the modulo operator provided by
+                other programming languages but can return negative values, as described in the “Using the
+                Remainder Operator” section.
 
-The Comparison Operators
-Operator    Description
--------     ---------------------
-   ==       This operator returns true if the operands are equal.
-   !=       This operator returns true if the operands are not equal.
-   <        This operator returns true if the first operand is less than the second operand.
-   >        This operator returns true if the first operand is greater than the second operand.
-   <=       This operator returns true if the first operand is less than or equal to the second operand.
-   >=       This operator returns true if the first operand is greater than or equal to the second
-            operand.
+    The Comparison Operators
+    Operator    Description
+    -------     ---------------------
+    ==       This operator returns true if the operands are equal.
+    !=       This operator returns true if the operands are not equal.
+    <        This operator returns true if the first operand is less than the second operand.
+    >        This operator returns true if the first operand is greater than the second operand.
+    <=       This operator returns true if the first operand is less than or equal to the second operand.
+    >=       This operator returns true if the first operand is greater than or equal to the second
+                operand.
 
-The Logical Operators
-Operator    Description
--------     ---------------------
-          This operator returns true if either operand is true. 
-            If the first operand is true, then the second
-            operand will not be evaluated.
+    The Logical Operators
+    Operator    Description
+    -------     ---------------------
+            This operator returns true if either operand is true. 
+                If the first operand is true, then the second
+                operand will not be evaluated.
 
-   &&       This operator returns true if both operands are true. 
-            If the first operand is false, then the
-            second operand will not be evaluated.
+    &&       This operator returns true if both operands are true. 
+                If the first operand is false, then the
+                second operand will not be evaluated.
 
-   !        This operator is used with a single operand. 
-            It returns true if the operand is false and false if
-            the operand is true.
+    !        This operator is used with a single operand. 
+                It returns true if the operand is false and false if
+                the operand is true.
 
             
 Converting Floating-Point Values to Integers
@@ -293,11 +293,8 @@ Functions for Parsing Strings into Other Data Types
     This function parses a string into a base 10 int and is equivalent to calling
     ParseInt(str, 10, 0)
 
-
 Formatting Values as Strings
 The strconv Functions for Converting Values into Strings
-
-
 48.FormatBool(val)
     This function returns the string true or false based on the value of the
     specified bool.
@@ -318,22 +315,20 @@ The strconv Functions for Converting Values into Strings
     This function returns a string representation of the specified int value,
     expressed using base 10.
 
+    Commonly Used Format Options for Floating-Point String Formatting
+    Function
+    f
+        The floating-point value will be expressed in the form ±ddd.ddd without an exponent, such as
+        49.95.
 
-Commonly Used Format Options for Floating-Point String Formatting
-Function
----------
-f
-    The floating-point value will be expressed in the form ±ddd.ddd without an exponent, such as
-    49.95.
+    e, E
+        The floating-point value will be expressed in the form ±ddd.ddde±dd, such as 4.995e+01 or
+        4.995E+01. The case of the letter denoting the exponent is determined by the case of the rune
+        used as the formatting argument.
 
-e, E
-    The floating-point value will be expressed in the form ±ddd.ddde±dd, such as 4.995e+01 or
-    4.995E+01. The case of the letter denoting the exponent is determined by the case of the rune
-    used as the formatting argument.
-
-g, G
-    The floating-point value will be expressed using format e/E for large exponents or format f for
-    smaller values.
+    g, G
+        The floating-point value will be expressed using format e/E for large exponents or format f for
+        smaller values.
 
 
 Understanding Flow Control
@@ -482,7 +477,6 @@ Understanding Flow Control
         names[1] = "Lifejacket"
         names[2] = "Paddle"
     
-
     Literal Syntax:
     example:
         names := []string {"Kayak", "Lifejacket", "Paddle"}
@@ -568,8 +562,6 @@ Understanding Flow Control
             p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
             p2 := p1
             fmt.Println("Equal:", p1 == p2)
-    
-
     Output:
         .\main.go:13:30: invalid operation: p1 == p2 (slice can only be compared to nil)
     
@@ -578,11 +570,6 @@ Understanding Flow Control
     The copy function is used to copy elements between slices. This function can be used to ensure that slices
     have separate arrays and to create slices that combine elements from different sources.
 
-         Destination   Source
-         ---------     --------
-    copy(someNames,    allNames)
-
-
     Duplicating a Slice:
     The copy function accepts two arguments:
     example:
@@ -590,8 +577,6 @@ Understanding Flow Control
         allNames := products[1:]
         someNames := make([]string, 2)
         copy(someNames, allNames)
-    
-
     Output:
         allNames [Lifejacket Paddle Hat]
         someNames: [Lifejacket Paddle]
@@ -605,8 +590,6 @@ Understanding Flow Control
         allNames := products[1:]
         var someNames []string
         copy(someNames, allNames)
-    
-
     Output:
         someNames: []
         allNames [Lifejacket Paddle Hat]
@@ -619,8 +602,6 @@ Understanding Flow Control
         allNames := products[1:]
         someNames := []string { "Boots", "Canoe"}
         copy(someNames[1:], allNames[2:3])
-    
-
     Output:
         allNames [Lifejacket Paddle Hat]
         someNames: [Boots Hat]
@@ -630,8 +611,6 @@ Understanding Flow Control
         products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         replacementProducts := []string { "Canoe", "Boots"}
         copy(products, replacementProducts)
-    
-
     Output:
         products: [Canoe Boots Paddle Hat]
        
@@ -642,8 +621,6 @@ Understanding Flow Control
             replacementProducts := []string { "Canoe", "Boots"}
             copy(products[0:1], replacementProducts)
             fmt.Println("products:", products)
-    
-
     Output:
         products: [Canoe Lifejacket Paddle Hat]
     
@@ -660,8 +637,6 @@ Understanding Flow Control
         for index, value := range products[2:] {
             fmt.Println("Index:", index, "Value:", value)
         }
-    
-
     Output:
         Index: 0 Value: Paddle
         Index: 1 Value: Hat
@@ -678,9 +653,6 @@ Understanding Flow Control
         for index, value := range products {
             fmt.Println("Index:", index, "Value:", value)
         }
-    
-
-
     Output:
         Index: 0 Value: Hat
         Index: 1 Value: Kayak
@@ -702,9 +674,7 @@ Understanding Flow Control
             p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
             p2 := p1
             fmt.Println("Equal:", reflect.DeepEqual(p1, p2))
-        }
-    
-    
+        }    
     Output:
         Equal: true
     
@@ -816,8 +786,7 @@ Understanding the Dual Nature of Strings
             fmt.Println("Amount:", amount)
         } else {
             fmt.Println("Parse Error:", parseErr)
-        }
-    
+        }   
     Output:
         Currency: $
         Amount: 48.95
@@ -834,8 +803,6 @@ Understanding the Dual Nature of Strings
        } else {
            fmt.Println("Parse Error:", parseErr)
        }
-    
-
     Output:
         Currency: â
         Parse Error: strconv.ParseFloat: parsing "\x82\xac48.95": invalid syntax
@@ -868,8 +835,6 @@ Converting a String to Runes
         for index, char := range price {
             fmt.Println(index, char, string(char))
         }
-    
-
     Output:
         0 8364 €
         3 52 4
@@ -885,8 +850,6 @@ Converting a String to Runes
         for index, char := range []byte(price) {
             fmt.Println(index, char)
         }
-    
-
     Output:
         0 226
         1 130
@@ -946,8 +909,6 @@ Converting a String to Runes
             printSuppliers("Lifejacket", "Sail Safe Co")
             printSuppliers("Soccer Ball")
         }
-    
-
     Output:
         Product: Kayak Supplier: Acme Kayaks
         Product: Kayak Supplier: Bob's Boats
@@ -1803,8 +1764,6 @@ Converting a String to Runes
             fmt.Println("e1 == e2", e1 == e2)
             fmt.Println("e3 == e4", e3 == e4)
         }
-    
-
     Output:
         e1 == e2 false
         e3 == e4 true
@@ -2169,10 +2128,7 @@ Converting a String to Runes
            for , b := range boats {
                 fmt.Println("Conventional:", b.Product.Name, "Direct:", b.Name)
             }
-        }
-    
-    
-    
+        }    
     Output:
         Conventional: Kayak Direct: Kayak
         Conventional: Canoe Direct: Canoe
@@ -2202,8 +2158,6 @@ Converting a String to Runes
                 fmt.Println("Boat:", b.Name, "Price:", b.Price(0.2))
             }
         }
-    
-
     Output:
         Boat: Kayak Price: 330
         Boat: Canoe Price: 480
@@ -2257,9 +2211,7 @@ Converting a String to Runes
             for , r := range rentals {
                 fmt.Println("Rental Boat:", r.Name, "Rental Price:", r.Price(0.2))
             }
-        }
-    
-        
+        }        
     Output:
         Rental Boat: Rubber Ring Rental Price: 12
         Rental Boat: Yacht Rental Price: 60000
@@ -2303,8 +2255,6 @@ Converting a String to Runes
                  "Captain:", r.Captain)
            }
         }
-    
-
     Output:
         Rental Boat: Rubber Ring Rental Price: 12 Captain: N/A
         Rental Boat: Yacht Rental Price: 60000 Captain: Bob
@@ -2342,8 +2292,6 @@ Converting a String to Runes
             fmt.Println("Price field:", price)
             fmt.Println("Price method:", Price)
         }
-    
-
     Output:
         Name: Weekend Special
         Price field: 229
@@ -2370,9 +2318,7 @@ Converting a String to Runes
         }
         func (deal *SpecialDeal) Price(taxRate float64) float64 {
            return deal.price
-        }
-    
-    
+        }    
     Output:
         Name: Weekend Special
         Price field: 229
@@ -2400,8 +2346,6 @@ Converting a String to Runes
            }
            fmt.Println("Price:", bundle.Price(0))
         }
-    
-
     Output:
         .\main.go:22:33: ambiguous selector bundle.Price    
            
@@ -2423,8 +2367,6 @@ Converting a String to Runes
                 fmt.Println("Name:", p.Name, "Category:", p.Category, "Price:", p.Price(0.2))
             }
         }
-    
-
     Output:
         .\main.go:11:9: cannot use store.NewBoat("Kayak", 279, 1, false) (type *store.Boat) as
         type *store.Product in map value
@@ -2457,8 +2399,6 @@ Converting a String to Runes
               fmt.Println("Key:", key, "Price:", p.Price(0.2))
            }
         }
-    
-
     Output:
         Key: Kayak Price: 334.8
         Key: Ball Price: 23.4
@@ -2488,8 +2428,6 @@ Converting a String to Runes
                 }
             }
         }
-    
-
     Output:
         .\main.go:21:42: item.Name undefined (type store.ItemForSale has no field or method Name)
         .\main.go:21:66: item.Category undefined (type store.ItemForSale has no field or method
@@ -2520,8 +2458,6 @@ Converting a String to Runes
               }
            }
         }
-    
-
     Output:
         Name: Kayak Category: Watersports Price: 334.8
         Name: Soccer Ball Category: Soccer Price: 23.4
@@ -3113,9 +3049,6 @@ Converting a String to Runes
                 }
             }
         }
-    
-
-
     Output:
         Watersports Total: $328.95
         Chess Total: $1291.00
@@ -3199,9 +3132,6 @@ Converting a String to Runes
               }
            }
         }
-    
-
-
     Output:
         Watersports Total: $328.95
         Chess Total: $1291.00
@@ -3291,8 +3221,6 @@ Converting a String to Runes
             fmt.Println("HasPrefix:", strings.HasPrefix(product, "Ka"))
             fmt.Println("HasSuffix:", strings.HasSuffix(product, "yak"))
         }
-    
-
     Output:
         Contains: true
         ContainsAny: true
@@ -3316,8 +3244,6 @@ Converting a String to Runes
             fmt.Println("Bytes Prefix:", bytes.HasPrefix([]byte(price),
                 []byte { 226, 130 }))
         }
-    
-
     Output:
         Strings Prefix: true
         Bytes Prefix: true
