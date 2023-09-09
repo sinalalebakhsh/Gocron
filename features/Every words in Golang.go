@@ -3383,12 +3383,9 @@ Converting a String to Runes
         LastIndexAny: 4
 
 
-168.Inspecting Strings with Custom Functions
-    IndexFunc
-    LastIndexFunc
-        The IndexFunc and LastIndexFunc functions use a custom function to inspect strings, using custom
-        functions
-
+168.IndexFunc and LastIndexFunc functions 
+    Inspecting Strings with Custom Functions
+    The IndexFunc and LastIndexFunc functions use a custom function to inspect strings, using custom functions
 
     Custom functions receive a rune and return a bool result that indicates if the character meets the
     desired condition. The IndexFunc function invokes the custom function for each character in the string until
@@ -3466,6 +3463,27 @@ Converting a String to Runes
         SplitAfter >>for <<
         SplitAfter >>one <<
         SplitAfter >>person<<
+
+170.SplitN and SplitAfterN functions 
+    Restricting the Number of Results
+    The SplitN and SplitAfterN functions accept an int argument that specifies the maximum number of
+    results that should be included in the results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
