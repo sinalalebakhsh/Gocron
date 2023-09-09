@@ -12,15 +12,20 @@ import (
 
 func HandlerAllFeatures(w http.ResponseWriter, r *http.Request) {
 	Gold := fmt.Sprint(features.OriginalFeatures)
-
 	fmt.Fprint(w, Gold)
-
 }
+
+func HandlerSingleDefinitions(w http.ResponseWriter, r *http.Request) {
+	Gold := fmt.Sprint(features.OriginSingleDef)
+	fmt.Fprint(w, Gold)
+}
+
 
 func Servers() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/", HandlerAllFeatures).Methods("GET")
+	router.HandleFunc("/example", HandlerSingleDefinitions).Methods("GET")
 	http.Handle("/", router)
 	http.ListenAndServe(":8080", nil)
 }
