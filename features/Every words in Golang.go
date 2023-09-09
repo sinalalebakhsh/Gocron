@@ -3340,9 +3340,24 @@ Converting a String to Runes
         a Upper case: false
         k Upper case: false        
 
+167.Inspecting Strings
+    The strings Functions for Inspecting Strings
+    Function                Description
+    ------------            --------------------------------------------------
+    Count(s, sub)           This function returns an int that reports how many times the specified
+                            substring is found in the string s.
+    Index(s, sub)           These functions return the index of the first or last occurrence of a specified
+    LastIndex(s, sub)       substring string within the string s, or -1 if there is no occurrence.
 
+    IndexAny(s, chars)      These functions return the first or last occurrence of any character in the
+    LastIndexAny(s, chars)  specified string within the string s, or -1 if there is no occurrence.
 
+    IndexByte(s, b)         These functions return the index of the first or last occurrence of a specified
+    LastIndexByte(s, b)     byte within the string s, or -1 if there is no occurrence.
 
+    IndexFunc(s, func)      These functions return the index of the first or last occurrence of the
+    LastIndexFunc(s, func)  character in the string s for which the specified function returns true, as
+                            described in the “Inspecting Strings with Custom Functions” section.
 
 
 
