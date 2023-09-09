@@ -2827,18 +2827,19 @@ Converting a String to Runes
     Go doesn't require channels to be closed to free up resources or perform any kind of housekeeping task.
 
     example:
-    close(channel)
+    |    close(channel)
+    |_______________________________________
 
     example:
-        if details, open := <- dispatchChannel; open {
-                fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
-                "x", details.Product.Name)
-            } else {
-                fmt.Println("Channel has been closed")
-            break
-        }
+    |    if details, open := <- dispatchChannel; open {
+    |            fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
+    |            "x", details.Product.Name)
+    |        } else {
+    |            fmt.Println("Channel has been closed")
+    |        break
+    |    }
+    |____________________________________________________
 
-        
 149.
 
 
