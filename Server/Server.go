@@ -16,7 +16,9 @@ func HandlerAllFeatures(w http.ResponseWriter, r *http.Request) {
 }
 
 func Servers() {
-	http.HandleFunc("/", HandlerAllFeatures)
+	router := mux.NewRouter()
+
+	router.HandleFunc("/", HandlerAllFeatures).Methods("GET")
 	http.ListenAndServe(":8080", nil)
 }
 
