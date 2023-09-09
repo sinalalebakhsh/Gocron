@@ -3383,8 +3383,25 @@ Converting a String to Runes
         LastIndexAny: 4
 
 
+168.Inspecting Strings with Custom Functions
+    IndexFunc
+    LastIndexFunc
+        The IndexFunc and LastIndexFunc functions use a custom function to inspect strings, using custom
+        functions
 
-
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            description := "A boat for one person"
+            isLetterB := func (r rune) bool {
+                return r == 'B' || r == 'b'
+            }
+            fmt.Println("IndexFunc:", strings.IndexFunc(description, isLetterB))
+        }
 
 
 
