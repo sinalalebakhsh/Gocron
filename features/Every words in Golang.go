@@ -3566,7 +3566,8 @@ Converting a String to Runes
         Field >>double<<
         Field >>spaced<<
 
-
+174.Trimming Strings
+    
 
 
 
