@@ -3669,7 +3669,8 @@ Converting a String to Runes
     Output:
         Trimmed:  boat for one perso
 
-        
+179.Altering Strings
+    تغییر رشته‌ها 
 
 
 
