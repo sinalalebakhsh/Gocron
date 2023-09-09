@@ -3073,6 +3073,12 @@ Converting a String to Runes
     You don't have to use the error interface in your code, 
     but it is employed throughout the Go standard library and is difficult to avoid.
 
+    Go provides a predefined interface named error that provides one way to resolve this issue. Here is the
+    definition of the interface:
+
+    type error interface {
+        Error() string
+    }
 
     Problem                                 Solution
     ----------------------------------      ---------------------------------------------------
@@ -3088,7 +3094,7 @@ Converting a String to Runes
     Recover from a panic                    Use the defer keyword to register a function that
                                             calls the recover function
 
-
+                                            
 157.
 
 
