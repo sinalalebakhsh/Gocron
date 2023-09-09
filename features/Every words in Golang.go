@@ -2851,6 +2851,10 @@ Converting a String to Runes
     A for loop can be used with the range keyword to enumerate the values sent through a channel, allowing
     the values to be received more easily and terminating the loop when the channel is closed
 
+    The range expression produces one value per iteration, which is the value received from the channel.
+    The for loop will continue to receive values until the channel is closed. (You can use a for...range loop on a
+    channel that isn't closed, in which case the loop will never exit.)
+
     example:
     |    go DispatchOrders(dispatchChannel)
     |    for details := range dispatchChannel {
@@ -2859,6 +2863,8 @@ Converting a String to Runes
     |    }
     |    fmt.Println("Channel has been closed")
     |________________________________________________________
+
+
 
 
 
