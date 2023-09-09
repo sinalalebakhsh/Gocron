@@ -3494,6 +3494,8 @@ Converting a String to Runes
     One limitation of the Split, SplitN, SplitAfter, and SplitAfterN functions is they do not deal with
     repeated sequences of characters, which can be a problem when splitting a string on whitespace characters
 
+    The words in the source string are double-spaced, but the SplitN function splits only on the first space
+    character, which produces odd results.
     example:
         package main
         import (
@@ -3512,7 +3514,27 @@ Converting a String to Runes
         Split >><<
         Split >>is  double  spaced<<    
 
-
+172.Fields Function
+    The Fields function doesn't support a limit on the number of results 
+    but does deal with the double spaces properly.
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            description := "This  is  double  spaced"
+            splits := strings.Fields(description)
+            for _, x := range splits {
+                fmt.Println("Field >>" + x + "<<")
+            }
+        }
+    Output:
+        Field >>This<<
+        Field >>is<<
+        Field >>double<<
+        Field >>spaced<<
 
 
 
