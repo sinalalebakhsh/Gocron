@@ -3232,16 +3232,19 @@ Converting a String to Runes
     implementations of these features since the standard library is well-
     written and thoroughly tested.
 
-    Problem                 Solution
-    -------------------     -------------------------------------------------------------------
-    Compare strings         Use the Contains, EqualFold, or Has* function in the strings package
+    Problem                     Solution
+    -------------------         -------------------------------------------------------------------
+    Compare strings             Use the Contains, EqualFold, or Has* function in the strings package
 
-    Convert string case     Use the ToLower, ToUpper, Title, or ToTitle function in the
-                            strings package
+    Convert string case         Use the ToLower, ToUpper, Title, or ToTitle function in the
+                                strings package
 
-    Check or change         Use the functions provided by the unicode package
+    Check or change             Use the functions provided by the unicode package
     character case
 
+    Find content in strings     Use the functions provided by the strings or regexp package
+
+    
 
 
 
