@@ -3257,8 +3257,20 @@ Converting a String to Runes
     Efficiently build a         Use the Builder type in the strings package
     string
 
+161.Comparing Strings
+    The strings Functions for Comparing Strings
 
+    Function                    Description
+    -------------               ------------------------
+    Contains(s, substr)         This function returns true if the string s contains substr and false if it does not.
+    
+    ContainsAny(s, substr)      This function returns true if the string s contains any of the characters
+                                contained in the string substr.
 
+    ContainsRune(s, rune)       This function returns true if the string s contains a specific rune.
+
+    EqualFold(s1, s2)           This function performs a case-insensitive comparison and returns true of
+                                strings s1 and s2 are the same.
 
 
 
