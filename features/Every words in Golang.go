@@ -2865,10 +2865,26 @@ Converting a String to Runes
     |________________________________________________________
 
 
+150.Restricting Channel Direction
+    By default, channels can be used to send and receive data, but this can be restricted when using channels
+    as arguments, such that only send or receive operations can be performed.
+    
+    example:
+        func DispatchOrders(channel chan<- DispatchNotification)
 
+    The location of the arrow specifies the direction of the channel. 
+    When the arrow follows the chan keyword,
+    then the channel can be used only to send.
+    The channel can be used to receive only if the arrow precedes the chan keyword (<-chan, for example).
 
+    Attempting to receive from a send-only (and vice versa) channel is a compile-time error,
 
-
+    example:
+    |    # concurrency
+    |    .\orderdispatch.go:29:29: invalid operation: <-channel (receive from send-only type chan<-
+    |    DispatchNotification)
+    |___________________________________________________________________
+    
 
 
 
