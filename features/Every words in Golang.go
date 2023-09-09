@@ -2829,6 +2829,16 @@ Converting a String to Runes
     example:
     close(channel)
 
+    example:
+        if details, open := <- dispatchChannel; open {
+                fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
+                "x", details.Product.Name)
+            } else {
+                fmt.Println("Channel has been closed")
+            break
+        }
+
+        
 149.
 
 
