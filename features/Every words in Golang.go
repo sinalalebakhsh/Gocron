@@ -3317,9 +3317,11 @@ Converting a String to Runes
     |            []byte { 226, 130 }))
     |    }
     |____________________________________________
-    
 
-
+    Output:
+    |    Strings Prefix: true
+    |    Bytes Prefix: true
+    |
 
 
 
