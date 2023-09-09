@@ -3265,7 +3265,6 @@ Converting a String to Runes
     ToTitle(str)    This function returns a new string containing the characters in the specified string
                     mapped to title case.
 
-
     Care must be taken with the Title and ToTitle functions, which don't work the way you might expect.
     The Title function returns a string that is suitable for use as a title, but it treats all words the same
 
@@ -3358,7 +3357,6 @@ Converting a String to Runes
     IndexFunc(s, func)      These functions return the index of the first or last occurrence of the
     LastIndexFunc(s, func)  character in the string s for which the specified function returns true, as
                             described in the “Inspecting Strings with Custom Functions” section.
-
     
     example:
         package main
