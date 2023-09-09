@@ -2807,7 +2807,15 @@ Converting a String to Runes
 
 
 147.Inspecting a Channel Buffer
-
+    You can determine the size of a channel's buffer using 
+    the built-in cap function and determine how many
+    values are in the buffer using the len function
+    The modified statement uses the len and cap functions to report 
+    the number of values in the channel's
+    buffer and the overall size of the buffer.
+    
+    example:
+        len(channel), "items in buffer, size", cap(channel))
 
 
 
