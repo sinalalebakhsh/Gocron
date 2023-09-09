@@ -2820,7 +2820,13 @@ Converting a String to Runes
 148.Closing a Channel
     The solution for this problem is for the sender to indicate when no further values are coming through the
     channel, which is done by closing the channel
+    The built-in close function accepts a channel as its argument and is used to indicate that there will be
+    no further values sent through the channel. Receivers can check if a channel is closed when requesting a
+    value.
+    You need to close channels only when it is helpful to do so to coordinate your goroutines. 
+    Go doesn't require channels to be closed to free up resources or perform any kind of housekeeping task.
 
+    example:
     close(channel)
 
 149.
