@@ -3389,6 +3389,12 @@ Converting a String to Runes
         The IndexFunc and LastIndexFunc functions use a custom function to inspect strings, using custom
         functions
 
+
+    Custom functions receive a rune and return a bool result that indicates if the character meets the
+    desired condition. The IndexFunc function invokes the custom function for each character in the string until
+    a true result is obtained, at which point the index is returned.
+    The isLetterB variable is assigned a custom function that receives a rune and returns true if the rune
+    is a uppercase or lowercase B. The custom function is passed to the strings.IndexFunc function
     example:
         package main
         import (
@@ -3402,6 +3408,8 @@ Converting a String to Runes
             }
             fmt.Println("IndexFunc:", strings.IndexFunc(description, isLetterB))
         }
+    Output:
+        IndexFunc: 2
 
 
 
