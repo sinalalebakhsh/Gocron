@@ -2830,6 +2830,11 @@ Converting a String to Runes
     |    close(channel)
     |_______________________________________
 
+
+    The receive operator can be used to obtain two values. 
+    The first value is assigned the value received
+    from the channel, and the second value indicates whether the channel is closed
+
     example:
     |    if details, open := <- dispatchChannel; open {
     |            fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
@@ -2840,6 +2845,7 @@ Converting a String to Runes
     |    }
     |____________________________________________________
 
+    
 149.
 
 
