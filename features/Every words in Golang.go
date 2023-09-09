@@ -3054,12 +3054,18 @@ Converting a String to Runes
 
 156.Error Handling
     What is it?
-    Go's error handling allows exceptional conditions and failures to be represented
-    and dealt with.
+    Go's error handling allows exceptional conditions and failures to be represented and dealt with.
+
+    Why is it useful?
+    Applications will often encounter unexpected situations, 
+    and the error handling features provide a way to respond to those situations when they arise.
+
+    How is it used?
+    The error interface is used to define error conditions, 
+    which are typically returned as function results. 
+    The panic function is called when an unrecoverable error occurs.
 
     
-
-
 
 
 
