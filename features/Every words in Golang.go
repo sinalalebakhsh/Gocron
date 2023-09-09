@@ -3287,8 +3287,25 @@ Converting a String to Runes
         Title: A Boat For Sailing
         Title: A BOAT FOR SAILING
     
-
-
+164.Title Case
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            specialChar := "\u01c9"
+            fmt.Println("Original:", specialChar, []byte(specialChar))
+            upperChar := strings.ToUpper(specialChar)
+            fmt.Println("Upper:", upperChar, []byte(upperChar))
+            titleChar := strings.ToTitle(specialChar)
+            fmt.Println("Title:", titleChar, []byte(titleChar))
+        }
+    Output:
+        Original: ǉ [199 137]
+        Upper: Ǉ [199 135]
+        Title: ǈ [199 136]
 
 
 
