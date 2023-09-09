@@ -3490,8 +3490,27 @@ Converting a String to Runes
 
 
 171.strings.SplitN function
-    
+    Splitting on Whitespace Characters
+    One limitation of the Split, SplitN, SplitAfter, and SplitAfterN functions is they do not deal with
+    repeated sequences of characters, which can be a problem when splitting a string on whitespace characters
 
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            description := "This  is  double  spaced"
+            splits := strings.SplitN(description, " ", 3)
+            for _, x := range splits {
+                fmt.Println("Split >>" + x + "<<")
+            }
+        }
+    Output:
+        Split >>This<<
+        Split >><<
+        Split >>is  double  spaced<<    
 
 
 
