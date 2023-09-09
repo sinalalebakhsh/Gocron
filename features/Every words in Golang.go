@@ -3009,7 +3009,21 @@ Converting a String to Runes
         }
 
 154.Sending Without Blocking
+    A select statement can also be used to send to a channel without blocking
 
+    example:
+        func enumerateProducts(channel chan<- *Product) {
+            for _, p := range ProductList {
+                select {
+                    case channel <- p:
+                        fmt.Println("Sent product:", p.Name)
+                    default:
+                        fmt.Println("Discarding product:", p.Name)
+                        time.Sleep(time.Second)
+                }
+            }
+            close(channel)
+        }
 
 
 
