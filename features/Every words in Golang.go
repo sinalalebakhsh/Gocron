@@ -3065,12 +3065,27 @@ Converting a String to Runes
     which are typically returned as function results. 
     The panic function is called when an unrecoverable error occurs.
 
+    Are there any pitfalls or limitations?
+    Care must be taken to ensure that errors are communicated to the part of the
+    application that can best decide how serious the situation is.
+
+    Are there any alternatives?
+    You don't have to use the error interface in your code, 
+    but it is employed throughout the Go standard library and is difficult to avoid.
+
+
+    Problem                                 Solution
+    ----------------------------------      ---------------------------------------------------
+    Indicate that an error has occurred     Create a struct that implements the error interface
+                                            and return it as a function result
+
+    Report an error over a channel          Add an error field to the struct type used for
+                                            channel messages
     
+    Indicate that an unrecoverable          Call the panic function 
+    error has occurred
 
-
-
-
-
+    
 
 
 
