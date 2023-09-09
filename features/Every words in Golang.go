@@ -2925,7 +2925,7 @@ Converting a String to Runes
     that can be performed without blocking is reached. The channel operation is performed, and the statements
     enclosed in the case statement are executed. If none of the channel operations can be performed, the
     statements in the default clause are executed.
-    
+
     example:
       for {
             select {
@@ -2944,11 +2944,62 @@ Converting a String to Runes
         }
         alldone: fmt.Println("All values received")
 
-153.
+        
 
+153.Receiving from Multiple Channels
+    A select statement can be used to receive without blocking,
+    when there are multiple channels, through which values are sent at different
+    rates. A select statement will allow the receiver to obtain values from whichever channel has them, without
+    blocking on any single channel
 
-
-
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func enumerateProducts(channel chan<- *Product) {
+            for _, p := range ProductList[:3] {
+                channel <- p
+                time.Sleep(time.Millisecond * 800)
+            }
+            close(channel)
+        }
+        func main() {
+            dispatchChannel := make(chan DispatchNotification, 100)
+            go DispatchOrders(chan<- DispatchNotification(dispatchChannel))
+            productChannel := make(chan *Product)
+            go enumerateProducts(productChannel)
+            openChannels := 2
+            for  {
+                select {
+                    case details, ok := <- dispatchChannel:
+                        if ok {
+                            fmt.Println("Dispatch to", details.Customer, ":",
+                                details.Quantity, "x", details.Product.Name)
+                        } else {
+                            fmt.Println("Dispatch channel has been closed")
+                            dispatchChannel = nil
+                            openChannels--
+                        }
+                    case product, ok := <- productChannel:
+                        if ok {
+                            fmt.Println("Product:", product.Name)
+                        } else {
+                            fmt.Println("Product channel has been closed")
+                            productChannel = nil
+                            openChannels--
+                        }
+                    default:
+                        if (openChannels == 0) {
+                            goto alldone
+                        }
+                        fmt.Println("-- No message ready to be received")
+                        time.Sleep(time.Millisecond * 500)
+                }
+            }
+            alldone: fmt.Println("All values received")
+        }
 
 
 
