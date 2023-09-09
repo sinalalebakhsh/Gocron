@@ -2813,11 +2813,17 @@ Converting a String to Runes
     The modified statement uses the len and cap functions to report 
     the number of values in the channel's
     buffer and the overall size of the buffer.
-    
+
     example:
         len(channel), "items in buffer, size", cap(channel))
 
+148.Closing a Channel
+    The solution for this problem is for the sender to indicate when no further values are coming through the
+    channel, which is done by closing the channel
 
+    close(channel)
+
+149.
 
 
 
