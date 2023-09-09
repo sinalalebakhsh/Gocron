@@ -2834,6 +2834,7 @@ Converting a String to Runes
     The receive operator can be used to obtain two values. 
     The first value is assigned the value received
     from the channel, and the second value indicates whether the channel is closed
+    It is illegal to send values to a channel once it has been closed.
 
     example:
     |    if details, open := <- dispatchChannel; open {
@@ -2845,10 +2846,19 @@ Converting a String to Runes
     |    }
     |____________________________________________________
 
-    
-149.
 
+149.Enumerating Channel Values
+    A for loop can be used with the range keyword to enumerate the values sent through a channel, allowing
+    the values to be received more easily and terminating the loop when the channel is closed
 
+    example:
+    |    go DispatchOrders(dispatchChannel)
+    |    for details := range dispatchChannel {
+    |        fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
+    |            "x", details.Product.Name)
+    |    }
+    |    fmt.Println("Channel has been closed")
+    |________________________________________________________
 
 
 
