@@ -3142,11 +3142,64 @@ Converting a String to Runes
         }
 
 159.Reporting Errors via Channels
-    
+    example:
+    operations.go:
+    |    package main
+    |    type CategoryError struct {
+    |       requestedCategory string
+    |    }
+    |    func (e *CategoryError) Error() string {
+    |       return "Category " + e.requestedCategory + " does not exist"
+    |    }
+    |    type ChannelMessage struct {
+    |       Category string
+    |       Total float64
+    |       *CategoryError
+    |    }
+    |    func (slice ProductSlice) TotalPrice(category string) (total float64,
+    |          err *CategoryError) {
+    |       productCount := 0
+    |       for _, p := range slice {
+    |          if (p.Category == category) {
+    |             total += p.Price
+    |             productCount++
+    |          }
+    |       }
+    |       if (productCount == 0) {
+    |          err = &CategoryError{ requestedCategory: category}
+    |       }
+    |       return
+    |    }
+    |    func (slice ProductSlice) TotalPriceAsync (categories []string,
+    |          channel chan<- ChannelMessage) {
+    |       for _, c := range categories {
+    |          total, err := slice.TotalPrice(c)
+    |          channel <- ChannelMessage{
+    |             Category: c,
+    |             Total: total,
+    |             CategoryError: err,
+    |          }
+    |       }
+    |       close(channel)
+    |    }
+    |________________________________________________________________________________
 
-
-
-
+    main.go:
+        package main
+    |    import "fmt"
+    |    func main() {
+    |       categories := []string { "Watersports", "Chess", "Running" }
+    |       channel := make(chan ChannelMessage, 10)
+    |       go Products.TotalPriceAsync(categories, channel)
+    |       for message := range channel {
+    |          if message.CategoryError == nil {
+    |             fmt.Println(message.Category, "Total:", ToCurrency(message.Total))
+    |          } else {
+    |             fmt.Println(message.Category, "(no such category)")
+    |          }
+    |       }
+    |    }
+    |___________________________________________________________________________________
 
 
 
