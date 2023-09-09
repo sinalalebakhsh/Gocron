@@ -3095,8 +3095,32 @@ Converting a String to Runes
                                             calls the recover function
 
                                             
-157.
+157.Generating Errors
+    Functions and methods can express exceptional or unexpected outcomes by producing error responses
+    Defining an Error
+    
+    example:
+    |    package main
+    |    import "fmt"
+    |    func main() {
+    |        categories := []string { "Watersports", "Chess", "Running" }
+    |        for _, cat := range categories {
+    |            total, err := Products.TotalPrice(cat)
+    |            if (err == nil) {
+    |                fmt.Println(cat, "Total:", ToCurrency(total))
+    |            } else {
+    |                fmt.Println(cat, "(no such category)")
+    |            }
+    |        }
+    |    }
+    |___________________________________________________________________
 
+
+    Output:
+    |    Watersports Total: $328.95
+    |    Chess Total: $1291.00
+    |    Running (no such category)
+    |_____________________________________________
 
 
 
