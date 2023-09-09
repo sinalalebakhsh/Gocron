@@ -3037,7 +3037,7 @@ Converting a String to Runes
     list. If none of the channels can be used, then the default clause is executed. There is no default clause
     in this example, which means that the select statement will block until one of the channels can receive
     a value.
-    
+
     example:
         func enumerateProducts(channel1, channel2 chan<- *Product) {
             for _, p := range ProductList {
@@ -3052,7 +3052,12 @@ Converting a String to Runes
             close(channel2)
         }
 
+156.Error Handling
+    What is it?
+    Go's error handling allows exceptional conditions and failures to be represented
+    and dealt with.
 
+    
 
 
 
