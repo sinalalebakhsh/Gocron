@@ -3320,7 +3320,25 @@ Converting a String to Runes
     IsTitle(rune)   This function returns true if the specified rune is title case.
     ToTitle(rune)   This function returns the title case rune associated with the specified rune.
 
-
+166.the Rune Case Functions
+    example:
+        package main
+        import (
+            "fmt"
+            "unicode"
+        )
+        func main() {
+            product := "Kayak"
+            for _, char := range product {
+                fmt.Println(string(char), "Upper case:", unicode.IsUpper(char))
+            }
+        }
+    Output:
+        K Upper case: true
+        a Upper case: false
+        y Upper case: false
+        a Upper case: false
+        k Upper case: false        
 
 
 
