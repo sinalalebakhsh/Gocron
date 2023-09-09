@@ -3123,9 +3123,23 @@ Converting a String to Runes
     |_____________________________________________
 
 
+158.Ignoring Error Results
+    I don't recommend ignoring error results because it means you will lose important information.
 
-
-
+    but if you don't need to know when something goes wrong, 
+    then you can use the blank identifier instead of a
+    name for the error result, like this:
+    
+    example:
+        package main
+        import "fmt"
+        func main() {
+            categories := []string { "Watersports", "Chess", "Running" }
+            for _, cat := range categories {
+                total, _ := Products.TotalPrice(cat)
+                fmt.Println(cat, "Total:", ToCurrency(total))
+            }
+        }
 
 
 
