@@ -3209,12 +3209,38 @@ Converting a String to Runes
     |_______________________________________
 
 160.String Processing and Regular Expressions
-    
+    What are they?
+    String processing includes a wide range of operations, from trimming
+    whitespace to splitting a string into components. Regular expressions
+    are patterns that allow string matching rules to be concisely defined.
 
+    Why are they useful?
+    These operations are useful when an application needs to process
+    string values. A common example is processing HTTP requests.
 
+    How are they used?
+    These features are contained in the strings and regexp packages,
+    which are part of the standard library.
 
+    Are there any pitfalls or limitations?
+    There are some quirks in the way that some of these operations are
+    performed, but they mostly behave as you would expect.
 
+    Are there any alternatives?
+    The use of these packages is optional, and they do not have
+    to be used. That said, there is little point in creating your own
+    implementations of these features since the standard library is well-
+    written and thoroughly tested.
 
+    Problem                 Solution
+    -------------------     -------------------------------------------------------------------
+    Compare strings         Use the Contains, EqualFold, or Has* function in the strings package
+
+    Convert string case     Use the ToLower, ToUpper, Title, or ToTitle function in the
+                            strings package
+
+    Check or change         Use the functions provided by the unicode package
+    character case
 
 
 
