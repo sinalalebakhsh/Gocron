@@ -2884,8 +2884,22 @@ Converting a String to Runes
     |    .\orderdispatch.go:29:29: invalid operation: <-channel (receive from send-only type chan<-
     |    DispatchNotification)
     |___________________________________________________________________
-    
 
+
+151.Restricting Channel Argument Direction
+    Go allows bidirectional channels to be assigned to unidirectional channel variables, 
+    allowing restrictions to be applied
+
+    example:
+        func receiveDispatches(channel <-chan DispatchNotification) {
+            for details := range channel {
+                fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
+                    "x", details.Product.Name)
+            }
+            fmt.Println("Channel has been closed")
+        }
+
+        
 
 
 
