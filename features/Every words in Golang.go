@@ -2917,7 +2917,26 @@ Converting a String to Runes
     which allows for complex arrangements of goroutines and channels to be created. 
     There are several uses for select statements.
 
-    
+    The simplest use for select statements is to receive from a channel without blocking, ensuring that a
+    goroutine won't have to wait when the channel is empty.
+
+    example:
+      for {
+            select {
+                case details, ok := <- dispatchChannel:
+                if ok {
+                    fmt.Println("Dispatch to", details.Customer, ":",
+                        details.Quantity, "x", details.Product.Name)
+                } else {
+                    fmt.Println("Channel has been closed")
+                    goto alldone
+                }
+            default:
+                fmt.Println("-- No message ready to be received")
+                time.Sleep(time.Millisecond * 500)
+            }
+        }
+        alldone: fmt.Println("All values received")
 
 
 
