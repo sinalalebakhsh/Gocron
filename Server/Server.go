@@ -19,6 +19,7 @@ func Servers() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/", HandlerAllFeatures).Methods("GET")
+	http.Handle("/", router)
 	http.ListenAndServe(":8080", nil)
 }
 
