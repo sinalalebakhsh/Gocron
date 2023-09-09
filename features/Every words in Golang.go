@@ -3263,7 +3263,7 @@ Converting a String to Runes
     Function                    Description
     -------------               ------------------------
     Contains(s, substr)         This function returns true if the string s contains substr and false if it does not.
-    
+
     ContainsAny(s, substr)      This function returns true if the string s contains any of the characters
                                 contained in the string substr.
 
@@ -3272,7 +3272,9 @@ Converting a String to Runes
     EqualFold(s1, s2)           This function performs a case-insensitive comparison and returns true of
                                 strings s1 and s2 are the same.
 
-
+    HasPrefix(s, prefix)        This function returns true if the string s begins with the string prefix.
+    
+    HasSuffix(s, suffix)        This function returns true if the string ends with the string suffix.
 
 
 
