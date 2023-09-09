@@ -3032,6 +3032,12 @@ Converting a String to Runes
     When the select statement is executed, the Go runtime builds a combined list of case statements that can be
     executed without blocking and picks one at random, which can be either a send or a receive statement.
 
+    This example has two channels with small buffers. As with receiving, the select statement builds a list
+    of the channels through which a value can be sent without blocking and then picks one at random from that
+    list. If none of the channels can be used, then the default clause is executed. There is no default clause
+    in this example, which means that the select statement will block until one of the channels can receive
+    a value.
+    
     example:
         func enumerateProducts(channel1, channel2 chan<- *Product) {
             for _, p := range ProductList {
@@ -3045,6 +3051,7 @@ Converting a String to Runes
             close(channel1)
             close(channel2)
         }
+
 
 
 
