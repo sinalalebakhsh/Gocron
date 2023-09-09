@@ -3206,8 +3206,69 @@ Converting a String to Runes
     |    Watersports Total: $328.95
     |    Chess Total: $1291.00
     |    Running (no such category)
-|
+    |_______________________________________
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
