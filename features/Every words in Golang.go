@@ -3517,6 +3517,8 @@ Converting a String to Runes
 172.Fields Function
     The Fields function doesn't support a limit on the number of results 
     but does deal with the double spaces properly.
+    The Fields function has a better approach, which is to split on any character for
+    which the IsSpace function in the unicode package returns true.
     example:
         package main
         import (
@@ -3535,6 +3537,54 @@ Converting a String to Runes
         Field >>is<<
         Field >>double<<
         Field >>spaced<<
+
+173.FieldsFunc function
+    Splitting Using a Custom Function to Split Strings
+    The FieldsFunc function splits a string by passing each character to a custom function and splitting when
+    that function returns true
+    The custom function receives a rune and returns true if that rune should cause the string to split.
+    The FieldsFunc function is smart enough to deal with repeated characters
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            description := "This  is  double  spaced"
+            splitter := func(r rune) bool {
+                return r == ' '
+            }
+            splits := strings.FieldsFunc(description, splitter)
+            for _, x := range splits {
+                fmt.Println("Field >>" + x + "<<")
+            }
+        }
+    Output:
+        Field >>This<<
+        Field >>is<<
+        Field >>double<<
+        Field >>spaced<<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
