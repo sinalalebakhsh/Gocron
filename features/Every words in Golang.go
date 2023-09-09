@@ -3469,9 +3469,28 @@ Converting a String to Runes
     The SplitN and SplitAfterN functions accept an int argument that specifies the maximum number of
     results that should be included in the results
 
+    Restricting the Results
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            description := "A boat for one person"
+            splits := strings.SplitN(description, " ", 3)
+            for _, x := range splits {
+                fmt.Println("Split >>" + x + "<<")
+            }
+        }
+    Output:
+        Split >>A<<
+        Split >>boat<<
+        Split >>for one person<<
 
 
-
+171.strings.SplitN function
+    
 
 
 
