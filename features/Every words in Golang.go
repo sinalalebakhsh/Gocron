@@ -3588,9 +3588,18 @@ Converting a String to Runes
                             This function removes the complete prefix string—use the TrimLeft
                             function to remove characters from a set.
 
+    TrimSuffix(s, suffix)   This function returns the string s after removing the specified suffix string.
+                            This function removes the complete suffix string—use the TrimRight
+                            function to remove characters from a set.
 
+    TrimFunc(s, func)       This function returns the string s from which any leading or trailing
+                            character for which a custom function returns true are removed.
 
+    TrimLeftFunc(s, func)   This function returns the string s from which any leading character for
+                            which a custom function returns true are removed.
 
+    TrimRightFunc(s, func)  This function returns the string s from which any trailing character for
+                            which a custom function returns true are removed.
 
 
 
