@@ -3085,9 +3085,11 @@ Converting a String to Runes
     Indicate that an unrecoverable          Call the panic function 
     error has occurred
 
-    
+    Recover from a panic                    Use the defer keyword to register a function that
+                                            calls the recover function
 
 
+157.
 
 
 
