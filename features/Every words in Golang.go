@@ -2919,7 +2919,13 @@ Converting a String to Runes
 
     The simplest use for select statements is to receive from a channel without blocking, ensuring that a
     goroutine won't have to wait when the channel is empty.
-
+    A select statement has a similar structure to a switch statement, except that the case statements are
+    channel operations.
+    When the select statement is executed, each channel operation is evaluated until one
+    that can be performed without blocking is reached. The channel operation is performed, and the statements
+    enclosed in the case statement are executed. If none of the channel operations can be performed, the
+    statements in the default clause are executed.
+    
     example:
       for {
             select {
@@ -2937,6 +2943,70 @@ Converting a String to Runes
             }
         }
         alldone: fmt.Println("All values received")
+
+153.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
