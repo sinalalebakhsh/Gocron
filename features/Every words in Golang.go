@@ -3321,8 +3321,25 @@ Converting a String to Runes
     Output:
     |    Strings Prefix: true
     |    Bytes Prefix: true
-    |
+    |____________________________________________
 
+163.Converting String Case
+    The Case Functions in the strings Package
+    Function        Description
+    --------------  ------------------------------------------------------
+    ToLower(str)    This function returns a new string containing the characters in the specified string
+                    mapped to lowercase.
+
+    ToUpper(str)    This function returns a new string containing the characters in the specified string
+                    mapped to lowercase.
+
+    Title(str)      This function converts the specific string so that the first character of each word is
+                    uppercase and the remaining characters are lowercase.
+
+    ToTitle(str)    This function returns a new string containing the characters in the specified string
+                    mapped to title case.
+
+                    
 
 
 
