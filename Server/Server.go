@@ -6,6 +6,8 @@ import (
 
 	"github.com/sinalalebakhsh/Gocron/features"
 	"github.com/gorilla/mux"
+
+
 )
 
 func HandlerAllFeatures(w http.ResponseWriter, r *http.Request) {
@@ -24,3 +26,7 @@ func Servers() {
 }
 
 
+// Future possibilities 
+	// For flexible URL:
+		// "github.com/sinalalebakhsh/Gocron/GetUserInput"
+		// getuserinput.GetUserInput()
