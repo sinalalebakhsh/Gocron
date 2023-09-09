@@ -3567,11 +3567,26 @@ Converting a String to Runes
         Field >>spaced<<
 
 174.Trimming Strings
+    The Functions for Trimming Strings in the strings Package
     
+    Function                Description
+    ------------            ---------------------------------------
+    TrimSpace(s)            This function returns the string s without leading or trailing whitespace characters.
 
+    Trim(s, set)            This function returns a string from which any leading or trailing characters
+                            contained in the string set are removed from the string s.
 
+    TrimLeft(s, set)        This function returns the string s without any leading character contained
+                            in the string set. This function matches any of the specified characters—use
+                            the TrimPrefix function to remove a complete substring.
 
+    TrimRight(s, set)       This function returns the string s without any trailing character contained
+                            in the string set. This function matches any of the specified characters—use
+                            the TrimSuffix function to remove a complete substring.
 
+    TrimPrefix(s, prefix)   This function returns the string s after removing the specified prefix string.
+                            This function removes the complete prefix string—use the TrimLeft
+                            function to remove characters from a set.
 
 
 
