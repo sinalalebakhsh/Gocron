@@ -2902,6 +2902,8 @@ Converting a String to Runes
 
     
     Restrictions on channel direction can also be created through explicit conversion
+    The explicit conversion for the receive-only channel requires parentheses around the channel type
+    to prevent the compiler from interpreting a conversion to the DispatchNotification type.
 
     example:
         func main() {
@@ -2910,7 +2912,12 @@ Converting a String to Runes
             receiveDispatches((<-chan DispatchNotification)(dispatchChannel))
         }
 
-        
+152.Select Statements
+    The select keyword is used to group operations that will send or receive from channels, 
+    which allows for complex arrangements of goroutines and channels to be created. 
+    There are several uses for select statements.
+
+    
 
 
 
