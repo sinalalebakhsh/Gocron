@@ -3601,10 +3601,37 @@ Converting a String to Runes
     TrimRightFunc(s, func)  This function returns the string s from which any trailing character for
                             which a custom function returns true are removed.
 
+175.TrimSpace function
+    Trimming Whitespace
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            username := " Alice"
+            trimmed := strings.TrimSpace(username)
+            fmt.Println("Trimmed:", ">>" + trimmed + "<<")
+        }
+    Output:
+        Trimmed: >>Alice<<
 
 
-
-
+176.Trim, TrimLeft, and TrimRight functions
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            description := "A boat for one person"
+            trimmed := strings.Trim(description, "Anor ")
+            fmt.Println("Trimmed:>>"+ trimmed+ "<<")
+        }
+    Ourput:
+        Trimmed:>>boat for one pers<<
 
 
 
