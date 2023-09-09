@@ -3294,8 +3294,13 @@ Converting a String to Runes
     |________________________________________________________________________
 
     Output:
-    
-    
+    |    Contains: true
+    |    ContainsAny: true
+    |    ContainsRune: true
+    |    HasPrefix: true
+    |    HasSuffix: true
+    |    EqualFold: true
+    |___________________________
 
 
 
