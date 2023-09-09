@@ -9,8 +9,8 @@ var OriginalFeatures Features = Features{
 	EveryWordsInGolang: `
 
 in Command Line Interface Go:
-1- go mod init YOUR_NAME
-2- go work init YOUR_WORK_DIRECTORY
+1- go mod init YOURNAME
+2- go work init YOURWORKDIRECTORY
 3- go run main.go  OR  go run projectName.go
 
 
@@ -199,7 +199,7 @@ Operations and Conversions
 34.==, !=, <, <=, >, >=
     These operators compare two values.
 
-35.||, &&, !
+35., &&, !
     These are the logical operators, which are applied to bool values and return a bool value.
 
 36.=, :=
@@ -211,10 +211,10 @@ Operations and Conversions
 37.-=, +=, ++, --
     These operators increment and decrement numeric values.
 
-38.&, |, ^, &^, <<, >>
+38.&, , ^, &^, <<, >>
     These are the bitwise operators, which can be applied to integer values. These operators are
     not often required in mainstream development
-    where the | operator is used to configure the Go logging features.
+    where the  operator is used to configure the Go logging features.
 
 The Arithmetic Operators
 Operator    Description
@@ -241,7 +241,7 @@ Operator    Description
 The Logical Operators
 Operator    Description
 -------     ---------------------
-   ||       This operator returns true if either operand is true. 
+          This operator returns true if either operand is true. 
             If the first operand is true, then the second
             operand will not be evaluated.
 
@@ -355,51 +355,51 @@ Understanding Flow Control
     Incorporating the Condition into the Loop
     
     example: 
-    |    for (counter <= 3) {}
-    |___________________________________________________________
+        for (counter <= 3) {}
+    
 
     Enumerating Sequences:
-    |    for index, character := range product {
-    |                fmt.Println("Index:", index, "Character:", string(character))
-    |            }
-    |___________________________________________________________
+        for index, character := range product {
+                    fmt.Println("Index:", index, "Character:", string(character))
+                }
+    
 
 
 57.switch
     A switch statement provides an alternative way to control execution flow, based on matching the result of an
     expression to a specific value, as opposed to evaluating a true or false result
     example:
-    |    switch (character) {
-    |        case 'K':
-    |            fmt.Println("K at position", index)
-    |        case 'y':
-    |            fmt.Println("y at position", index)
-    |    }
-    |___________________________________________________________
+        switch (character) {
+            case 'K':
+                fmt.Println("K at position", index)
+            case 'y':
+                fmt.Println("y at position", index)
+        }
+    
 
     Matching Multiple Values:
     example:
-    |    switch (character) {
-    |        case 'K', 'k':
-    |            fmt.Println("K or k at position", index)
-    |        case 'y':
-    |            fmt.Println("y at position", index)
-    |    }
-    |___________________________________________________________
+        switch (character) {
+            case 'K', 'k':
+                fmt.Println("K or k at position", index)
+            case 'y':
+                fmt.Println("y at position", index)
+        }
+    
 
     Terminate case Statement Execution:
     example:
-    |    switch (character) {
-    |        case 'K', 'k':
-    |    if (character == 'k') {
-    |        fmt.Println("Lowercase k at position", index)
-    |        break
-    |    }
-    |    fmt.Println("Uppercase K at position", index)
-    |        case 'y':
-    |    fmt.Println("y at position", index)
-    |    }
-    |__________________________________________________________
+        switch (character) {
+            case 'K', 'k':
+        if (character == 'k') {
+            fmt.Println("Lowercase k at position", index)
+            break
+        }
+        fmt.Println("Uppercase K at position", index)
+            case 'y':
+        fmt.Println("y at position", index)
+        }
+    
 
 
 58.Falling Through
@@ -407,16 +407,16 @@ Understanding Flow Control
     fallthrough keyword
 
     example:
-    |    switch (character) {
-    |        case 'K':
-    |            fmt.Println("Uppercase character")
-    |            fallthrough
-    |        case 'k':
-    |            fmt.Println("k at position", index)
-    |        case 'y':
-    |            fmt.Println("y at position", index)
-    |        }
-    |_________________________________________________________
+        switch (character) {
+            case 'K':
+                fmt.Println("Uppercase character")
+                fallthrough
+            case 'k':
+                fmt.Println("k at position", index)
+            case 'y':
+                fmt.Println("y at position", index)
+            }
+    
 
 
 59.default
@@ -424,31 +424,31 @@ Understanding Flow Control
     matches the switch statement's value
     
     example:
-    |    switch (character) {
-    |            case 'K', 'k':
-    |            if (character == 'k') {
-    |                fmt.Println("Lowercase k at position", index)
-    |                break
-    |            }
-    |            fmt.Println("Uppercase K at position", index)
-    |            case 'y':
-    |            fmt.Println("y at position", index)
-    |            default:
-    |            fmt.Println("Character", string(character), "at position", index)
-    |        }
-    |___________________________________________________________
+        switch (character) {
+                case 'K', 'k':
+                if (character == 'k') {
+                    fmt.Println("Lowercase k at position", index)
+                    break
+                }
+                fmt.Println("Uppercase K at position", index)
+                case 'y':
+                fmt.Println("y at position", index)
+                default:
+                fmt.Println("Character", string(character), "at position", index)
+            }
+    
 
 60.goto label 
     Label statements allow execution to jump to a different point, 
     giving greater flexibility than other flow control features
     example:
-    |    counter := 0
-    |    target: fmt.Println("Counter", counter)
-    |    counter++
-    |    if (counter < 5) {
-    |            goto target
-    |    }
-    |__________________________________________________________
+        counter := 0
+        target: fmt.Println("Counter", counter)
+        counter++
+        if (counter < 5) {
+                goto target
+        }
+    
 
 
 61.Array
@@ -463,11 +463,11 @@ Understanding Flow Control
 
     Enumerating Arrays:
     example:
-    |    names := [3]string { "Kayak", "Lifejacket", "Paddle" }
-    |    for index, value := range names {
-    |        fmt.Println("Index:", index, "Value:", value)
-    |    }
-    |___________________________________________________________
+        names := [3]string { "Kayak", "Lifejacket", "Paddle" }
+        for index, value := range names {
+            fmt.Println("Index:", index, "Value:", value)
+        }
+    
 
 
 62.Slices
@@ -477,16 +477,16 @@ Understanding Flow Control
     built-in make function
 
     example:
-    |    names := make([]string, 3)
-    |    names[0] = "Kayak"
-    |    names[1] = "Lifejacket"
-    |    names[2] = "Paddle"
-    |____________________________________________________________
+        names := make([]string, 3)
+        names[0] = "Kayak"
+        names[1] = "Lifejacket"
+        names[2] = "Paddle"
+    
 
     Literal Syntax:
     example:
-    |    names := []string {"Kayak", "Lifejacket", "Paddle"}
-    |____________________________________________________________
+        names := []string {"Kayak", "Lifejacket", "Paddle"}
+    
 
 
 63.append
@@ -496,83 +496,83 @@ Understanding Flow Control
     
     Appending Elements to a Slice:
     example:
-    |    names := []string {"Kayak", "Lifejacket", "Paddle"}
-    |    names = append(names, "Hat", "Gloves")
-    |_____________________________________________________________
+        names := []string {"Kayak", "Lifejacket", "Paddle"}
+        names = append(names, "Hat", "Gloves")
+    
 
     Appending Items to a Slice:
     example:
-    |    names := []string {"Kayak", "Lifejacket", "Paddle"}
-    |    appendedNames := append(names, "Hat", "Gloves")
-    |    names[0] = "Canoe"
-    |_____________________________________________________________
+        names := []string {"Kayak", "Lifejacket", "Paddle"}
+        appendedNames := append(names, "Hat", "Gloves")
+        names[0] = "Canoe"
+    
 
     Allocating Additional Slice Capacity:
     example:
-    |    names := make([]string, 3, 6)
-    |    names[0] = "Kayak"
-    |    names[1] = "Lifejacket"
-    |    names[2] = "Paddle"
-    |_____________________________________________________________
+        names := make([]string, 3, 6)
+        names[0] = "Kayak"
+        names[1] = "Lifejacket"
+        names[2] = "Paddle"
+    
 
     Adding Elements to a Slice:
     example:
-    |    names := make([]string, 3, 6)
-    |    names[0] = "Kayak"
-    |    names[1] = "Lifejacket"
-    |    names[2] = "Paddle"
-    |    appendedNames := append(names, "Hat", "Gloves")
-    |    names[0] = "Canoe"
-    |    fmt.Println("names:",names)
-    |    fmt.Println("appendedNames:", appendedNames)
-    |______________________________________________________________
+        names := make([]string, 3, 6)
+        names[0] = "Kayak"
+        names[1] = "Lifejacket"
+        names[2] = "Paddle"
+        appendedNames := append(names, "Hat", "Gloves")
+        names[0] = "Canoe"
+        fmt.Println("names:",names)
+        fmt.Println("appendedNames:", appendedNames)
+    
 
     Appending One Slice to Another:
     example:
-    |    names := make([]string, 3, 6)
-    |    names[0] = "Kayak"
-    |    names[1] = "Lifejacket"
-    |    names[2] = "Paddle"
-    |    moreNames := []string { "Hat Gloves"}
-    |    appendedNames := append(names, moreNames...)
-    |    fmt.Println("appendedNames:", appendedNames)
-    |______________________________________________________________
+        names := make([]string, 3, 6)
+        names[0] = "Kayak"
+        names[1] = "Lifejacket"
+        names[2] = "Paddle"
+        moreNames := []string { "Hat Gloves"}
+        appendedNames := append(names, moreNames...)
+        fmt.Println("appendedNames:", appendedNames)
+    
 
     Creating Slices from Existing Arrays:
     example:
-    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |    someNames := products[1:3]
-    |    allNames := products[:]
-    |______________________________________________________________
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        someNames := products[1:3]
+        allNames := products[:]
+    
 
     Specifying Capacity When Creating a Slice from an Array:
     example:
-    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |    someNames := products[1:3:3]
-    |    allNames := products[:]
-    |    someNames = append(someNames, "Gloves")
-    |______________________________________________________________
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        someNames := products[1:3:3]
+        allNames := products[:]
+        someNames = append(someNames, "Gloves")
+    
 
     Creating Slices from Other Slices:
     example:
-    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |    allNames := products[1:]
-    |    someNames := allNames[1:3]
-    |    allNames = append(allNames, "Gloves")
-    |    allNames[1] = "Canoe"
-    |______________________________________________________________
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        allNames := products[1:]
+        someNames := allNames[1:3]
+        allNames = append(allNames, "Gloves")
+        allNames[1] = "Canoe"
+    
 
     Comparing Slices:
     example:
-    |    Go restricts the use of the comparison operator so that slices can be compared only to the nil value.
-    |        p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |        p2 := p1
-    |        fmt.Println("Equal:", p1 == p2)
-    |_______________________________________________________________
+        Go restricts the use of the comparison operator so that slices can be compared only to the nil value.
+            p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+            p2 := p1
+            fmt.Println("Equal:", p1 == p2)
+    
 
     Output:
-    |    .\main.go:13:30: invalid operation: p1 == p2 (slice can only be compared to nil)
-    |_______________________________________________________________
+        .\main.go:13:30: invalid operation: p1 == p2 (slice can only be compared to nil)
+    
 
 64.copy
     The copy function is used to copy elements between slices. This function can be used to ensure that slices
@@ -586,67 +586,67 @@ Understanding Flow Control
     Duplicating a Slice:
     The copy function accepts two arguments:
     example:
-    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |    allNames := products[1:]
-    |    someNames := make([]string, 2)
-    |    copy(someNames, allNames)
-    |_________________________________________
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        allNames := products[1:]
+        someNames := make([]string, 2)
+        copy(someNames, allNames)
+    
 
     Output:
-    |    allNames [Lifejacket Paddle Hat]
-    |    someNames: [Lifejacket Paddle]
-    |____________________________________________
+        allNames [Lifejacket Paddle Hat]
+        someNames: [Lifejacket Paddle]
+    
 
     the Uninitialized Slice Pitfall:
     the copy function doesn't resize the destination slice. A common
     pitfall is to try to copy elements into a slice that has not been initialized
     example:
-    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |    allNames := products[1:]
-    |    var someNames []string
-    |    copy(someNames, allNames)
-    |___________________________________________
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        allNames := products[1:]
+        var someNames []string
+        copy(someNames, allNames)
+    
 
     Output:
-    |    someNames: []
-    |    allNames [Lifejacket Paddle Hat]
-    |____________________________________________
+        someNames: []
+        allNames [Lifejacket Paddle Hat]
+    
 
     Specifying Ranges When Copying Slices:
     Fine-grained control over the elements that are copied can be achieved using ranges
     example:
-    |    products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |    allNames := products[1:]
-    |    someNames := []string { "Boots", "Canoe"}
-    |    copy(someNames[1:], allNames[2:3])
-    |______________________________________________
+        products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        allNames := products[1:]
+        someNames := []string { "Boots", "Canoe"}
+        copy(someNames[1:], allNames[2:3])
+    
 
     Output:
-    |    allNames [Lifejacket Paddle Hat]
-    |    someNames: [Boots Hat]
-    |__________________________________________
+        allNames [Lifejacket Paddle Hat]
+        someNames: [Boots Hat]
+    
 
     Copying Slices with Different Sizes:
-    |    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |    replacementProducts := []string { "Canoe", "Boots"}
-    |    copy(products, replacementProducts)
-    |_______________________________________________
+        products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        replacementProducts := []string { "Canoe", "Boots"}
+        copy(products, replacementProducts)
+    
 
     Output:
-    |    products: [Canoe Boots Paddle Hat]
-    |______________________________________________   
+        products: [Canoe Boots Paddle Hat]
+       
 
     Copying a Larger Source Slice
     example:
-    |    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |        replacementProducts := []string { "Canoe", "Boots"}
-    |        copy(products[0:1], replacementProducts)
-    |        fmt.Println("products:", products)
-    |__________________________________________________
+        products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+            replacementProducts := []string { "Canoe", "Boots"}
+            copy(products[0:1], replacementProducts)
+            fmt.Println("products:", products)
+    
 
     Output:
-    |    products: [Canoe Lifejacket Paddle Hat]
-    |__________________________________________________
+        products: [Canoe Lifejacket Paddle Hat]
+    
 
     Deleting Slice Elements:
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
@@ -656,16 +656,16 @@ Understanding Flow Control
     
     Enumerating Slices:
     example:
-    |    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |    for index, value := range products[2:] {
-    |        fmt.Println("Index:", index, "Value:", value)
-    |    }
-    |_______________________________________
+        products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        for index, value := range products[2:] {
+            fmt.Println("Index:", index, "Value:", value)
+        }
+    
 
     Output:
-    |    Index: 0 Value: Paddle
-    |    Index: 1 Value: Hat
-    |________________________________
+        Index: 0 Value: Paddle
+        Index: 1 Value: Hat
+    
 
 
 65.sort
@@ -673,41 +673,41 @@ Understanding Flow Control
     defines functions for sorting different types of slice.
 
     example:
-    |    products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |    sort.Strings(products)
-    |    for index, value := range products {
-    |        fmt.Println("Index:", index, "Value:", value)
-    |    }
-    |_____________________________________________________
+        products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+        sort.Strings(products)
+        for index, value := range products {
+            fmt.Println("Index:", index, "Value:", value)
+        }
+    
 
 
     Output:
-    |    Index: 0 Value: Hat
-    |    Index: 1 Value: Kayak
-    |    Index: 2 Value: Lifejacket
-    |    Index: 3 Value: Paddle
-    |_________________________________________
+        Index: 0 Value: Hat
+        Index: 1 Value: Kayak
+        Index: 2 Value: Lifejacket
+        Index: 3 Value: Paddle
+    
 
 66.DeepEqual
     The DeepEqual function can be used to compare a wider range of data types than the
     equality operator, including slices.
 
     example:
-    |    package main
-    |    import (
-    |        "fmt"
-    |        "reflect"
-    |    )
-    |    func main() {
-    |        p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
-    |        p2 := p1
-    |        fmt.Println("Equal:", reflect.DeepEqual(p1, p2))
-    |    }
-    |_____________________________________________________________
+        package main
+        import (
+            "fmt"
+            "reflect"
+        )
+        func main() {
+            p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+            p2 := p1
+            fmt.Println("Equal:", reflect.DeepEqual(p1, p2))
+        }
+    
     
     Output:
-    |    Equal: true
-    |___________________________________________________
+        Equal: true
+    
 
 
 67.map
@@ -716,10 +716,10 @@ Understanding Flow Control
     maps can use other data types as keys
 
     example:
-    |    products := make(map[string]float64, 10)
-    |    products["Kayak"] = 279
-    |    products["Lifejacket"] = 48.95
-    |____________________________________________________
+        products := make(map[string]float64, 10)
+        products["Kayak"] = 279
+        products["Lifejacket"] = 48.95
+    
 
     Map Literal Syntax:
         products := map[string]float64 {
@@ -729,64 +729,64 @@ Understanding Flow Control
 
     Checking for Items in a Map:
     example:
-    |    products := map[string]float64 {
-    |                "Kayak" : 279,
-    |                "Lifejacket": 48.95,
-    |                "Hat": 0,
-    |            }
-    |            value, ok := products["Hat"]
-    |            if (ok) {
-    |                fmt.Println("Stored value:", value)
-    |            } else {
-    |                fmt.Println("No stored value")
-    |            }
-    |_________________________________________________________
+        products := map[string]float64 {
+                    "Kayak" : 279,
+                    "Lifejacket": 48.95,
+                    "Hat": 0,
+                }
+                value, ok := products["Hat"]
+                if (ok) {
+                    fmt.Println("Stored value:", value)
+                } else {
+                    fmt.Println("No stored value")
+                }
+    
 
     Removing Items from a Map:
     example:
-    |    products := map[string]float64 {
-    |        "Kayak" : 279,
-    |        "Lifejacket": 48.95,
-    |        "Hat": 0,
-    |    }
-    |    delete(products, "Hat")            
-    |___________________________________________________
+        products := map[string]float64 {
+            "Kayak" : 279,
+            "Lifejacket": 48.95,
+            "Hat": 0,
+        }
+        delete(products, "Hat")            
+    
 
 
     Enumerating the Contents of a Map:
     example:
-    |    products := map[string]float64 {
-    |            "Kayak" : 279,
-    |            "Lifejacket": 48.95,
-    |            "Hat": 0,
-    |    }
-    |    for key, value := range products {
-    |        fmt.Println("Key:", key, "Value:", value)
-    |    }
-    |__________________________________________________________
+        products := map[string]float64 {
+                "Kayak" : 279,
+                "Lifejacket": 48.95,
+                "Hat": 0,
+        }
+        for key, value := range products {
+            fmt.Println("Key:", key, "Value:", value)
+        }
+    
 
     Enumerating a Map in Order:
     example:
-    |    import (
-    |            "fmt"
-    |            "sort"
-    |        )
-    |    func main() {
-    |        products := map[string]float64 {
-    |            "Kayak" : 279,
-    |            "Lifejacket": 48.95,
-    |            "Hat": 0,
-    |        }
-    |        keys := make([]string, 0, len(products))
-    |        for key, _ := range products {
-    |            keys = append(keys, key)
-    |        }
-    |        sort.Strings(keys)
-    |        for _, key := range keys {
-    |            fmt.Println("Key:", key, "Value:", products[key])
-    |        }
-    |    }
-    |______________________________________________________
+        import (
+                "fmt"
+                "sort"
+            )
+        func main() {
+            products := map[string]float64 {
+                "Kayak" : 279,
+                "Lifejacket": 48.95,
+                "Hat": 0,
+            }
+            keys := make([]string, 0, len(products))
+            for key,  := range products {
+                keys = append(keys, key)
+            }
+            sort.Strings(keys)
+            for , key := range keys {
+                fmt.Println("Key:", key, "Value:", products[key])
+            }
+        }
+    
         
 
 Understanding the Dual Nature of Strings
@@ -807,39 +807,39 @@ Understanding the Dual Nature of Strings
         Amount: 48.95
 
     Converting the Result:
-    |    var price string = "$48.95"
-    |    var currency string = string(price[0])
-    |    var amountString string = price[1:]
-    |    amount, parseErr  := strconv.ParseFloat(amountString, 64)
-    |    fmt.Println("Currency:", currency)
-    |    if (parseErr == nil) {
-    |        fmt.Println("Amount:", amount)
-    |    } else {
-    |        fmt.Println("Parse Error:", parseErr)
-    |    }
-    |
+        var price string = "$48.95"
+        var currency string = string(price[0])
+        var amountString string = price[1:]
+        amount, parseErr  := strconv.ParseFloat(amountString, 64)
+        fmt.Println("Currency:", currency)
+        if (parseErr == nil) {
+            fmt.Println("Amount:", amount)
+        } else {
+            fmt.Println("Parse Error:", parseErr)
+        }
+    
     Output:
         Currency: $
         Amount: 48.95
 
     Changing the Currency Symbol:
     example:
-    |   var price string = "€48.95"
-    |   var currency string = string(price[0])
-    |   var amountString string = price[1:]
-    |   amount, parseErr  := strconv.ParseFloat(amountString, 64)
-    |   fmt.Println("Currency:", currency)
-    |   if (parseErr == nil) {
-    |       fmt.Println("Amount:", amount)
-    |   } else {
-    |       fmt.Println("Parse Error:", parseErr)
-    |   }
-    |______________________________________________
+       var price string = "€48.95"
+       var currency string = string(price[0])
+       var amountString string = price[1:]
+       amount, parseErr  := strconv.ParseFloat(amountString, 64)
+       fmt.Println("Currency:", currency)
+       if (parseErr == nil) {
+           fmt.Println("Amount:", amount)
+       } else {
+           fmt.Println("Parse Error:", parseErr)
+       }
+    
 
     Output:
-    |    Currency: â
-    |    Parse Error: strconv.ParseFloat: parsing "\x82\xac48.95": invalid syntax
-    |______________________________________________
+        Currency: â
+        Parse Error: strconv.ParseFloat: parsing "\x82\xac48.95": invalid syntax
+    
     
     Obtaining the Length:
         fmt.Println("Length:", len(price))
@@ -864,39 +864,39 @@ Converting a String to Runes
 
     Enumerating Strings        
     example:
-    |    var price = "€48.95"
-    |    for index, char := range price {
-    |        fmt.Println(index, char, string(char))
-    |    }
-    |_______________________________________________
+        var price = "€48.95"
+        for index, char := range price {
+            fmt.Println(index, char, string(char))
+        }
+    
 
     Output:
-    |    0 8364 €
-    |    3 52 4
-    |    4 56 8
-    |    5 46 .
-    |    6 57 9
-    |    7 53 5
-    |_________________________________________________
+        0 8364 €
+        3 52 4
+        4 56 8
+        5 46 .
+        6 57 9
+        7 53 5
+    
 
     Enumerating the Bytes
     example:
-    |    var price = "€48.95"
-    |    for index, char := range []byte(price) {
-    |        fmt.Println(index, char)
-    |    }
-    |_________________________________________________
+        var price = "€48.95"
+        for index, char := range []byte(price) {
+            fmt.Println(index, char)
+        }
+    
 
     Output:
-    |    0 226
-    |    1 130
-    |    2 172
-    |    3 52
-    |    4 56
-    |    5 46
-    |    6 57
-    |    7 53
-    |____________________________
+        0 226
+        1 130
+        2 172
+        3 52
+        4 56
+        5 46
+        6 57
+        7 53
+    
 
 70.func
     Functions are groups of code statements that are executed only when the function is
@@ -911,92 +911,92 @@ Converting a String to Runes
     been defined
 
     example:
-    |    func printPrice(product string, price float64, taxRate float64) {
-    |        taxAmount := price * taxRate
-    |        fmt.Println(product, "price:", price, "Tax:", taxAmount)
-    |    }
-    |___________________________________________
+        func printPrice(product string, price float64, taxRate float64) {
+            taxAmount := price * taxRate
+            fmt.Println(product, "price:", price, "Tax:", taxAmount)
+        }
+    
 
 72.Defining Variadic Parameters
     example:
-    |    func printSuppliers(product string, suppliers []string ) {
-    |        for _, supplier := range suppliers {
-    |            fmt.Println("Product:", product, "Supplier:", supplier)
-    |        }
-    |    }
-    |______________________________________________
+        func printSuppliers(product string, suppliers []string ) {
+            for , supplier := range suppliers {
+                fmt.Println("Product:", product, "Supplier:", supplier)
+            }
+        }
+    
 
     example:
-    |    func printSuppliers(product string, suppliers ...string ) {
-    |        for _, supplier := range suppliers {
-    |            fmt.Println("Product:", product, "Supplier:", supplier)
-    |        }
-    |    }
-    |_______________________________________________
+        func printSuppliers(product string, suppliers ...string ) {
+            for , supplier := range suppliers {
+                fmt.Println("Product:", product, "Supplier:", supplier)
+            }
+        }
+    
 
 73.Dealing with No Arguments for a Variadic Parameter
     example:
-    |    func printSuppliers(product string, suppliers ...string ) {
-    |        for _, supplier := range suppliers {
-    |            fmt.Println("Product:", product, "Supplier:", supplier)
-    |        }
-    |    }
-    |    func main() {
-    |        printSuppliers("Kayak", "Acme Kayaks", "Bob's Boats", "Crazy Canoes")
-    |        printSuppliers("Lifejacket", "Sail Safe Co")
-    |        printSuppliers("Soccer Ball")
-    |    }
-    |______________________________________________
+        func printSuppliers(product string, suppliers ...string ) {
+            for , supplier := range suppliers {
+                fmt.Println("Product:", product, "Supplier:", supplier)
+            }
+        }
+        func main() {
+            printSuppliers("Kayak", "Acme Kayaks", "Bob's Boats", "Crazy Canoes")
+            printSuppliers("Lifejacket", "Sail Safe Co")
+            printSuppliers("Soccer Ball")
+        }
+    
 
     Output:
-    |    Product: Kayak Supplier: Acme Kayaks
-    |    Product: Kayak Supplier: Bob's Boats
-    |    Product: Kayak Supplier: Crazy Canoes
-    |    Product: Lifejacket Supplier: Sail Safe Co
-    |________________________________________
+        Product: Kayak Supplier: Acme Kayaks
+        Product: Kayak Supplier: Bob's Boats
+        Product: Kayak Supplier: Crazy Canoes
+        Product: Lifejacket Supplier: Sail Safe Co
+    
 
 74.return Function Results
     example:
-    |    func calcTax(price float64) float64 {
-    |        return price + (price * 0.2)
-    |    }
-    |_________________________________________
+        func calcTax(price float64) float64 {
+            return price + (price * 0.2)
+        }
+    
 
 75.Returning Multiple Function Results
     example:
-    |    func swapValues(first, second int) (int, int) {
-    |        return second, first
-    |    }
-    |    func main() {
-    |        val1, val2 := 10, 20
-    |        fmt.Println("Before calling function", val1, val2)
-    |        val1, val2 = swapValues(val1, val2)
-    |        fmt.Println("After calling function", val1, val2)
-    |    }
-    |______________________________________
+        func swapValues(first, second int) (int, int) {
+            return second, first
+        }
+        func main() {
+            val1, val2 := 10, 20
+            fmt.Println("Before calling function", val1, val2)
+            val1, val2 = swapValues(val1, val2)
+            fmt.Println("After calling function", val1, val2)
+        }
+    
 
 76.Using Named Results
     example:
-    |    func calcTax(price float64) (float64, bool) {
-    |        if (price > 100) {
-    |            return price * 0.2, true
-    |        }
-    |        return 0, false
-    |    }
-    |    func calcTotalPrice(products map[string]float64,
-    |            minSpend float64) (total, tax float64)  {
-    |        total = minSpend
-    |        for _, price := range products {
-    |            if taxAmount, due := calcTax(price); due {
-    |                total += taxAmount;
-    |                tax += taxAmount
-    |            } else {
-    |                total += price
-    |            }
-    |        }
-    |        return
-    |    }
-    |_____________________________________________________
+        func calcTax(price float64) (float64, bool) {
+            if (price > 100) {
+                return price * 0.2, true
+            }
+            return 0, false
+        }
+        func calcTotalPrice(products map[string]float64,
+                minSpend float64) (total, tax float64)  {
+            total = minSpend
+            for , price := range products {
+                if taxAmount, due := calcTax(price); due {
+                    total += taxAmount;
+                    tax += taxAmount
+                } else {
+                    total += price
+                }
+            }
+            return
+        }
+    
 
 77.defer
     The defer keyword is used to schedule a function call that will be performed immediately before the current
@@ -1021,216 +1021,216 @@ Converting a String to Runes
 
 79.Function Comparisons and the Zero Type
     example:
-    |    func calcWithTax(price float64) float64 {
-    |        return price + (price * 0.2)
-    |    }
-    |    func calcWithoutTax(price float64) float64 {
-    |        return price
-    |    }
-    |    func main() {
-    |        products := map[string]float64 {
-    |            "Kayak" : 275,
-    |            "Lifejacket": 48.95,
-    |        }
-    |        for product, price := range products {
-    |            var calcFunc func(float64) float64
-    |            fmt.Println("Function assigned:", calcFunc == nil)
-    |            if (price > 100) {
-    |                calcFunc = calcWithTax
-    |            } else {
-    |                calcFunc = calcWithoutTax
-    |            }
-    |            fmt.Println("Function assigned:", calcFunc == nil)
-    |            totalPrice := calcFunc(price)
-    |            fmt.Println("Product:", product, "Price:", totalPrice)
-    |        }
-    |    }
-    |_________________________________________________
+        func calcWithTax(price float64) float64 {
+            return price + (price * 0.2)
+        }
+        func calcWithoutTax(price float64) float64 {
+            return price
+        }
+        func main() {
+            products := map[string]float64 {
+                "Kayak" : 275,
+                "Lifejacket": 48.95,
+            }
+            for product, price := range products {
+                var calcFunc func(float64) float64
+                fmt.Println("Function assigned:", calcFunc == nil)
+                if (price > 100) {
+                    calcFunc = calcWithTax
+                } else {
+                    calcFunc = calcWithoutTax
+                }
+                fmt.Println("Function assigned:", calcFunc == nil)
+                totalPrice := calcFunc(price)
+                fmt.Println("Product:", product, "Price:", totalPrice)
+            }
+        }
+    
 
 80.Functions as Arguments
     example:
-    |    func calcWithTax(price float64) float64 {
-    |        return price + (price * 0.2)
-    |    }
-    |    func calcWithoutTax(price float64) float64 {
-    |        return price
-    |    }
-    |    func printPrice(product string, price float64, calculator func(float64) float64 ) {
-    |        fmt.Println("Product:", product, "Price:", calculator(price))
-    |    }
-    |    func main() {
-    |        products := map[string]float64 {
-    |            "Kayak" : 275,
-    |            "Lifejacket": 48.95,
-    |        }
-    |        for product, price := range products {
-    |            if (price > 100) {
-    |                printPrice(product, price, calcWithTax)
-    |            } else {
-    |                printPrice(product, price, calcWithoutTax)
-    |            }
-    |        }
-    |    }
-    |____________________________________________________
+        func calcWithTax(price float64) float64 {
+            return price + (price * 0.2)
+        }
+        func calcWithoutTax(price float64) float64 {
+            return price
+        }
+        func printPrice(product string, price float64, calculator func(float64) float64 ) {
+            fmt.Println("Product:", product, "Price:", calculator(price))
+        }
+        func main() {
+            products := map[string]float64 {
+                "Kayak" : 275,
+                "Lifejacket": 48.95,
+            }
+            for product, price := range products {
+                if (price > 100) {
+                    printPrice(product, price, calcWithTax)
+                } else {
+                    printPrice(product, price, calcWithoutTax)
+                }
+            }
+        }
+    
 
 81.Functions as Results
     example:
-    |    func calcWithTax(price float64) float64 {
-    |        return price + (price * 0.2)
-    |    }
-    |    func calcWithoutTax(price float64) float64 {
-    |        return price
-    |    }
-    |    func printPrice(product string, price float64, calculator func(float64) float64 ) {
-    |        fmt.Println("Product:", product, "Price:", calculator(price))
-    |    }
-    |    func selectCalculator(price float64) func(float64) float64 {
-    |        if (price > 100) {
-    |            return calcWithTax
-    |        }
-    |        return calcWithoutTax
-    |    }
-    |    func main() {
-    |        products := map[string]float64 {
-    |            "Kayak" : 275,
-    |            "Lifejacket": 48.95,
-    |        }
-    |        for product, price := range products {
-    |            printPrice(product, price, selectCalculator(price))
-    |        }
-    |    }
-    |_________________________________________________
+        func calcWithTax(price float64) float64 {
+            return price + (price * 0.2)
+        }
+        func calcWithoutTax(price float64) float64 {
+            return price
+        }
+        func printPrice(product string, price float64, calculator func(float64) float64 ) {
+            fmt.Println("Product:", product, "Price:", calculator(price))
+        }
+        func selectCalculator(price float64) func(float64) float64 {
+            if (price > 100) {
+                return calcWithTax
+            }
+            return calcWithoutTax
+        }
+        func main() {
+            products := map[string]float64 {
+                "Kayak" : 275,
+                "Lifejacket": 48.95,
+            }
+            for product, price := range products {
+                printPrice(product, price, selectCalculator(price))
+            }
+        }
+    
 
 82.Function Type Aliases
     Go supports type aliases, which can be used to assign a name to
     a function signature so that the parameter and result types are not specified every time the function type is
     used.
     example:
-    |    type calcFunc func(float64) float64
-    |    func calcWithTax(price float64) float64 {
-    |        return price + (price * 0.2)
-    |    }
-    |    func calcWithoutTax(price float64) float64 {
-    |        return price
-    |    }
-    |    func printPrice(product string, price float64, calculator calcFunc) {
-    |        fmt.Println("Product:", product, "Price:", calculator(price))
-    |    }
-    |    func selectCalculator(price float64) calcFunc {
-    |        if (price > 100) {
-    |            return calcWithTax
-    |        }
-    |        return calcWithoutTax
-    |    }
-    |    func main() {
-    |        products := map[string]float64 {
-    |            "Kayak" : 275,
-    |            "Lifejacket": 48.95,
-    |        }
-    |        for product, price := range products {
-    |            printPrice(product, price, selectCalculator(price))
-    |        }
-    |    }
-    |___________________________________________________
+        type calcFunc func(float64) float64
+        func calcWithTax(price float64) float64 {
+            return price + (price * 0.2)
+        }
+        func calcWithoutTax(price float64) float64 {
+            return price
+        }
+        func printPrice(product string, price float64, calculator calcFunc) {
+            fmt.Println("Product:", product, "Price:", calculator(price))
+        }
+        func selectCalculator(price float64) calcFunc {
+            if (price > 100) {
+                return calcWithTax
+            }
+            return calcWithoutTax
+        }
+        func main() {
+            products := map[string]float64 {
+                "Kayak" : 275,
+                "Lifejacket": 48.95,
+            }
+            for product, price := range products {
+                printPrice(product, price, selectCalculator(price))
+            }
+        }
+    
 
 83.the Literal Function Syntax
     example:
-    |    func selectCalculator(price float64) calcFunc {
-    |        if (price > 100) {
-    |            var withTax calcFunc = func (price float64) float64 {
-    |                return price + (price * 0.2)
-    |            }
-    |            return withTax
-    |        }
-    |________________________________________________
+        func selectCalculator(price float64) calcFunc {
+            if (price > 100) {
+                var withTax calcFunc = func (price float64) float64 {
+                    return price + (price * 0.2)
+                }
+                return withTax
+            }
+    
 
 84.Function Variable Scope
     example:
-    |    func selectCalculator(price float64) calcFunc {
-    |        if (price > 100) {
-    |            var withTax calcFunc = func (price float64) float64 {
-    |                return price + (price * 0.2)
-    |            }
-    |            return withTax
-    |        } else if (price < 10) {
-    |            return withTax
-    |        }
-    |         withoutTax := func (price float64) float64 {
-    |                return price
-    |            }
-    |        return withoutTax
-    |    }
-    |_____________________________________________________
+        func selectCalculator(price float64) calcFunc {
+            if (price > 100) {
+                var withTax calcFunc = func (price float64) float64 {
+                    return price + (price * 0.2)
+                }
+                return withTax
+            } else if (price < 10) {
+                return withTax
+            }
+             withoutTax := func (price float64) float64 {
+                    return price
+                }
+            return withoutTax
+        }
+    
 
 85.Functions Values Directly
     example:
-    |    func selectCalculator(price float64) calcFunc {
-    |        if (price > 100) {
-    |            return func (price float64) float64 {
-    |                return price + (price * 0.2)
-    |            }
-    |        }
-    |         return func (price float64) float64 {
-    |            return price
-    |        }
-    |    }
-    |____________________________________________________
+        func selectCalculator(price float64) calcFunc {
+            if (price > 100) {
+                return func (price float64) float64 {
+                    return price + (price * 0.2)
+                }
+            }
+             return func (price float64) float64 {
+                return price
+            }
+        }
+    
 
 
 
 86.Literal Function Argument
     example:
-    |    func main() {
-    |        products := map[string]float64 {
-    |            "Kayak" : 275,
-    |            "Lifejacket": 48.95,
-    |        }
-    |        for product, price := range products {
-    |            printPrice(product, price, func (price float64) float64 {
-    |                return price + (price * 0.2)
-    |            })
-    |        }
-    |    }
-    |____________________________________________________
+        func main() {
+            products := map[string]float64 {
+                "Kayak" : 275,
+                "Lifejacket": 48.95,
+            }
+            for product, price := range products {
+                printPrice(product, price, func (price float64) float64 {
+                    return price + (price * 0.2)
+                })
+            }
+        }
+    
 
 87.Function Closure
     Functions defined using the literal syntax can reference variables from the surrounding code, a feature
     known as closure.
 
     example:
-    |    type calcFunc func(float64) float64
-    |    func printPrice(product string, price float64, calculator calcFunc) {
-    |        fmt.Println("Product:", product, "Price:", calculator(price))
-    |    }
-    |    func main() {
-    |        watersportsProducts := map[string]float64 {
-    |            "Kayak" : 275,
-    |            "Lifejacket": 48.95,
-    |        }
-    |        soccerProducts := map[string] float64 {
-    |            "Soccer Ball": 19.50,
-    |            "Stadium": 79500,
-    |        }
-    |        calc := func(price float64) float64 {
-    |            if (price > 100) {
-    |                return price + (price * 0.2)
-    |            }
-    |            return price;
-    |        }
-    |        for product, price := range watersportsProducts {
-    |            printPrice(product, price, calc)
-    |        }
-    |        calc = func(price float64) float64 {
-    |            if (price > 50) {
-    |                return price + (price * 0.1)
-    |            }
-    |            return price
-    |        }
-    |        for product, price := range soccerProducts {
-    |            printPrice(product, price, calc)
-    |        }
-    |    }
-    |_____________________________________________________________
+        type calcFunc func(float64) float64
+        func printPrice(product string, price float64, calculator calcFunc) {
+            fmt.Println("Product:", product, "Price:", calculator(price))
+        }
+        func main() {
+            watersportsProducts := map[string]float64 {
+                "Kayak" : 275,
+                "Lifejacket": 48.95,
+            }
+            soccerProducts := map[string] float64 {
+                "Soccer Ball": 19.50,
+                "Stadium": 79500,
+            }
+            calc := func(price float64) float64 {
+                if (price > 100) {
+                    return price + (price * 0.2)
+                }
+                return price;
+            }
+            for product, price := range watersportsProducts {
+                printPrice(product, price, calc)
+            }
+            calc = func(price float64) float64 {
+                if (price > 50) {
+                    return price + (price * 0.1)
+                }
+                return price
+            }
+            for product, price := range soccerProducts {
+                printPrice(product, price, calc)
+            }
+        }
+    
 
         
 88.struct
@@ -1247,21 +1247,21 @@ Converting a String to Runes
     A struct can mix regular and embedded field types.
 
     example:
-    |    func main() {
-    |        type Product struct {
-    |            name, category string
-    |            price float64
-    |        }
-    |        kayak := Product {
-    |            name: "Kayak",
-    |            category: "Watersports",
-    |            price: 275,
-    |        }
-    |        fmt.Println(kayak.name, kayak.category, kayak.price)
-    |        kayak.price = 300
-    |        fmt.Println("Changed price:", kayak.price)
-    |    }
-    |_________________________________________________________________
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            kayak := Product {
+                name: "Kayak",
+                category: "Watersports",
+                price: 275,
+            }
+            fmt.Println(kayak.name, kayak.category, kayak.price)
+            kayak.price = 300
+            fmt.Println("Changed price:", kayak.price)
+        }
+    
 
     Go doesn't differentiate between structs and classes, in the way that other languages do. All custom
     data types are defined as structs, and the decision to pass them by reference or by value is made
@@ -1279,17 +1279,17 @@ Converting a String to Runes
     Values do not have to be provided for all fields when creating a struct value
     
     example:
-    |    func main() {
-    |        type Product struct {
-    |            name, category string
-    |            price float64
-    |        }
-    |        kayak := Product {
-    |                name: "Kayak",
-    |                category: "Watersports",
-    |        }
-    |    }
-    |_________________________________________________________
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            kayak := Product {
+                    name: "Kayak",
+                    category: "Watersports",
+            }
+        }
+    
 
 91.new 
     the new function to create struct values
@@ -1304,149 +1304,149 @@ Converting a String to Runes
 
 92.Field Positions to Create Struct Values
     example:
-    |    func main() {
-    |        type Product struct {
-    |            name, category string
-    |            price float64
-    |        }
-    |        var kayak = Product { "Kayak", "Watersports", 275.00 }
-    |        fmt.Println("Name:", kayak.name)
-    |        fmt.Println("Category:", kayak.category)
-    |        fmt.Println("Price:", kayak.price)
-    |    }
-    |_____________________________________________________________
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            var kayak = Product { "Kayak", "Watersports", 275.00 }
+            fmt.Println("Name:", kayak.name)
+            fmt.Println("Category:", kayak.category)
+            fmt.Println("Price:", kayak.price)
+        }
+    
 
 93.Defining Embedded Fields
     If a field is defined without a name, 
     it is known as an embedded field, and it is accessed using the name of its type.
 
     example:
-    |    func main() {
-    |            type Product struct {
-    |                name, category string
-    |                price float64
-    |            }
-    |            type StockLevel struct {
-    |                Product
-    |                count int
-    |            }
-    |            stockItem := StockLevel {
-    |                Product: Product { "Kayak", "Watersports", 275.00 },
-    |                count: 100,
-    |            }
-    |            fmt.Println("Name:", stockItem.Product.name)
-    |            fmt.Println("Count:", stockItem.count)
-    |    }
-    |____________________________________________________________
+        func main() {
+                type Product struct {
+                    name, category string
+                    price float64
+                }
+                type StockLevel struct {
+                    Product
+                    count int
+                }
+                stockItem := StockLevel {
+                    Product: Product { "Kayak", "Watersports", 275.00 },
+                    count: 100,
+                }
+                fmt.Println("Name:", stockItem.Product.name)
+                fmt.Println("Count:", stockItem.count)
+        }
+    
 
 94.Defining an Additional Field
     example:
-    |    func main() {
-    |        type Product struct {
-    |            name, category string
-    |            price float64
-    |        }
-    |        type StockLevel struct {
-    |            Product
-    |            Alternate Product
-    |            count int
-    |        }
-    |        stockItem := StockLevel {
-    |            Product: Product { "Kayak", "Watersports", 275.00 },
-    |            Alternate: Product{"Lifejacket", "Watersports", 48.95 },
-    |            count: 100,
-    |        }
-    |        fmt.Println("Name:", stockItem.Product.name)
-    |        fmt.Println("Alt Name:", stockItem.Alternate.name)
-    |    }
-    |__________________________________________________________________________
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            type StockLevel struct {
+                Product
+                Alternate Product
+                count int
+            }
+            stockItem := StockLevel {
+                Product: Product { "Kayak", "Watersports", 275.00 },
+                Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+                count: 100,
+            }
+            fmt.Println("Name:", stockItem.Product.name)
+            fmt.Println("Alt Name:", stockItem.Alternate.name)
+        }
+    
 
 95.Comparing Struct Values
     example:
-    |    func main() {
-    |        type Product struct {
-    |            name, category string
-    |            price float64
-    |        }
-    |        p1 := Product { name: "Kayak", category: "Watersports", price: 275.00 }
-    |        p2 := Product { name: "Kayak", category: "Watersports", price: 275.00 }
-    |        p3 := Product { name: "Kayak", category: "Boats", price: 275.00 }
-    |        fmt.Println("p1 == p2:", p1 == p2)
-    |        fmt.Println("p1 == p3:", p1 == p3)
-    |    }
-    |__________________________________________________________________________
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            p1 := Product { name: "Kayak", category: "Watersports", price: 275.00 }
+            p2 := Product { name: "Kayak", category: "Watersports", price: 275.00 }
+            p3 := Product { name: "Kayak", category: "Boats", price: 275.00 }
+            fmt.Println("p1 == p2:", p1 == p2)
+            fmt.Println("p1 == p3:", p1 == p3)
+        }
+    
 
 
 96.Anonymous Struct Types
     Anonymous struct types are defined without using a name
     example:
-    |    package main
-    |    import "fmt"
-    |    func writeName(val struct {
-    |            name, category string
-    |            price float64}) {
-    |        fmt.Println("Name:", val.name)
-    |    }
-    |    func main() {
-    |        type Product struct {
-    |            name, category string
-    |            price float64
-    |            //otherNames []string
-    |        }
-    |        type Item struct {
-    |            name string
-    |            category string
-    |            price float64
-    |        }
-    |        prod := Product { name: "Kayak", category: "Watersports", price: 275.00 }
-    |        item := Item { name: "Stadium", category: "Soccer", price: 75000 }
-    |        writeName(prod)
-    |        writeName(item)
-    |    }
-    |_________________________________________________________________________
+        package main
+        import "fmt"
+        func writeName(val struct {
+                name, category string
+                price float64}) {
+            fmt.Println("Name:", val.name)
+        }
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+                //otherNames []string
+            }
+            type Item struct {
+                name string
+                category string
+                price float64
+            }
+            prod := Product { name: "Kayak", category: "Watersports", price: 275.00 }
+            item := Item { name: "Stadium", category: "Soccer", price: 75000 }
+            writeName(prod)
+            writeName(item)
+        }
+    
 
 97.Creating Arrays, Slices, and Maps Containing Struct Values
     Omitting the Struct Type
     example:
-    |    package main
-    |    import "fmt"
-    |    func main() {
-    |        type Product struct {
-    |            name, category string
-    |            price float64
-    |            //otherNames []string
-    |        }
-    |        type StockLevel struct {
-    |            Product
-    |            Alternate Product
-    |            count int
-    |        }
-    |        array := [1]StockLevel {
-    |            {
-    |                Product: Product { "Kayak", "Watersports", 275.00 },
-    |                Alternate: Product{"Lifejacket", "Watersports", 48.95 },
-    |                count: 100,
-    |            },
-    |        }
-    |        fmt.Println("Array:", array[0].Product.name)
-    |        slice := []StockLevel {
-    |            {
-    |                Product: Product { "Kayak", "Watersports", 275.00 },
-    |                Alternate: Product{"Lifejacket", "Watersports", 48.95 },
-    |                count: 100,
-    |            },
-    |        }
-    |        fmt.Println("Slice:", slice[0].Product.name)
-    |        kvp := map[string]StockLevel {
-    |            "kayak": {
-    |                Product: Product { "Kayak", "Watersports", 275.00 },
-    |                Alternate: Product{"Lifejacket", "Watersports", 48.95 },
-    |                count: 100,
-    |            },
-    |        }
-    |        fmt.Println("Map:", kvp["kayak"].Product.name)
-    |    }
-    |_________________________________________________________________________________________
+        package main
+        import "fmt"
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+                //otherNames []string
+            }
+            type StockLevel struct {
+                Product
+                Alternate Product
+                count int
+            }
+            array := [1]StockLevel {
+                {
+                    Product: Product { "Kayak", "Watersports", 275.00 },
+                    Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+                    count: 100,
+                },
+            }
+            fmt.Println("Array:", array[0].Product.name)
+            slice := []StockLevel {
+                {
+                    Product: Product { "Kayak", "Watersports", 275.00 },
+                    Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+                    count: 100,
+                },
+            }
+            fmt.Println("Slice:", slice[0].Product.name)
+            kvp := map[string]StockLevel {
+                "kayak": {
+                    Product: Product { "Kayak", "Watersports", 275.00 },
+                    Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+                    count: 100,
+                },
+            }
+            fmt.Println("Map:", kvp["kayak"].Product.name)
+        }
+    
 
 98.Structs and Pointers
     Assigning a struct to a new variable or using a struct as a function parameter 
@@ -1454,74 +1454,74 @@ Converting a String to Runes
 
 99.Copying a Struct Value
     example:
-    |    package main
-    |    import "fmt"
-    |    func main() {
-    |        type Product struct {
-    |            name, category string
-    |            price float64
-    |        }
-    |        p1 := Product {
-    |            name: "Kayak",
-    |            category: "Watersports",
-    |            price: 275,
-    |        }
-    |        p2 := p1
-    |        p1.name = "Original Kayak"
-    |        fmt.Println("P1:", p1.name)
-    |        fmt.Println("P2:", p2.name)
-    |    }
-    |_______________________________________________
+        package main
+        import "fmt"
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            p1 := Product {
+                name: "Kayak",
+                category: "Watersports",
+                price: 275,
+            }
+            p2 := p1
+            p1.name = "Original Kayak"
+            fmt.Println("P1:", p1.name)
+            fmt.Println("P2:", p2.name)
+        }
+    
 
 
 100.Using a Pointer to a Struct
     example:
-    |    package main
-    |    import "fmt"
-    |    func main() {
-    |        type Product struct {
-    |            name, category string
-    |            price float64
-    |        }
-    |        p1 := Product {
-    |            name: "Kayak",
-    |            category: "Watersports",
-    |            price: 275,
-    |        }
-    |        p2 := &p1
-    |        p1.name = "Original Kayak"
-    |        fmt.Println("P1:", p1.name)
-    |        fmt.Println("P2:", (*p2).name)
-    |    }
-    |_______________________________________________
+        package main
+        import "fmt"
+        func main() {
+            type Product struct {
+                name, category string
+                price float64
+            }
+            p1 := Product {
+                name: "Kayak",
+                category: "Watersports",
+                price: 275,
+            }
+            p2 := &p1
+            p1.name = "Original Kayak"
+            fmt.Println("P1:", p1.name)
+            fmt.Println("P2:", (*p2).name)
+        }
+    
 
 101.the Struct Pointer Convenience Syntax
     example:
-    |    package main
-    |    import "fmt"
-    |    
-    |    type Product struct {
-    |        name, category string
-    |        price float64
-    |    }
-    |    
-    |    func calcTax(product *Product) {
-    |        if ((*product).price > 100) {
-    |            (*product).price += (*product).price * 0.2
-    |        }
-    |    }
-    |    
-    |    func main() {
-    |        kayak := Product {
-    |            name: "Kayak",
-    |            category: "Watersports",
-    |            price: 275,
-    |        }
-    |        calcTax(&kayak)
-    |        fmt.Println("Name:", kayak.name, "Category:",
-    |        kayak.category, "Price", kayak.price)
-    |    }
-    |_______________________________________________________________
+        package main
+        import "fmt"
+        
+        type Product struct {
+            name, category string
+            price float64
+        }
+        
+        func calcTax(product *Product) {
+            if ((*product).price > 100) {
+                (*product).price += (*product).price * 0.2
+            }
+        }
+        
+        func main() {
+            kayak := Product {
+                name: "Kayak",
+                category: "Watersports",
+                price: 275,
+            }
+            calcTax(&kayak)
+            fmt.Println("Name:", kayak.name, "Category:",
+            kayak.category, "Price", kayak.price)
+        }
+    
 
 
 102.Struct Constructor Functions
@@ -1531,27 +1531,27 @@ Converting a String to Runes
     is named newProduct.
 
     example:
-    |    package main
-    |    import "fmt"
-    |    type Product struct {
-    |        name, category string
-    |        price float64
-    |    }
-    |    
-    |    func newProduct(name, category string, price float64) *Product {
-    |        return &Product{name, category, price}
-    |    }
-    |    
-    |    func main() {
-    |        products := [2]*Product {
-    |            newProduct("Kayak", "Watersports", 275),
-    |            newProduct("Hat", "Skiing", 42.50),
-    |        }
-    |        for _, p := range products {
-    |            fmt.Println("Name:", p.name, "Category:",  p.category, "Price", p.price)
-    |        }
-    |    }
-    |______________________________________________________________________________
+        package main
+        import "fmt"
+        type Product struct {
+            name, category string
+            price float64
+        }
+        
+        func newProduct(name, category string, price float64) *Product {
+            return &Product{name, category, price}
+        }
+        
+        func main() {
+            products := [2]*Product {
+                newProduct("Kayak", "Watersports", 275),
+                newProduct("Hat", "Skiing", 42.50),
+            }
+            for , p := range products {
+                fmt.Println("Name:", p.name, "Category:",  p.category, "Price", p.price)
+            }
+        }
+    
 
 
 103.Modifying a Constructor
@@ -1560,69 +1560,69 @@ Converting a String to Runes
     process are reflected in all the struct values created by the function.
 
     example:
-    |    func newProduct(name, category string, price float64) *Product {
-    |        return &Product{name, category, price - 10}
-    |    }
-    |____________________________________________________________________________
+        func newProduct(name, category string, price float64) *Product {
+            return &Product{name, category, price - 10}
+        }
+    
 
 104.Pointer Types for Struct Fields
     example:
-    |    package main
-    |    import "fmt"
-    |    type Product struct {
-    |        name, category string
-    |        price float64
-    |        *Supplier
-    |    }
-    |    type Supplier struct {
-    |        name, city string
-    |    }
-    |    func newProduct(name, category string, price float64, supplier *Supplier) *Product {
-    |        return &Product{name, category, price -10, supplier}
-    |    }
-    |    func main() {
-    |        acme := &Supplier { "Acme Co", "New York"}
-    |        products := [2]*Product {
-    |            newProduct("Kayak", "Watersports", 275, acme),
-    |            newProduct("Hat", "Skiing", 42.50, acme),
-    |        }
-    |        for _, p := range products {
-    |            fmt.Println("Name:", p.name, "Supplier:",
-    |                p.Supplier.name, p.Supplier.city)
-    |        }
-    |    }
-    |________________________________________________________________________________________
+        package main
+        import "fmt"
+        type Product struct {
+            name, category string
+            price float64
+            *Supplier
+        }
+        type Supplier struct {
+            name, city string
+        }
+        func newProduct(name, category string, price float64, supplier *Supplier) *Product {
+            return &Product{name, category, price -10, supplier}
+        }
+        func main() {
+            acme := &Supplier { "Acme Co", "New York"}
+            products := [2]*Product {
+                newProduct("Kayak", "Watersports", 275, acme),
+                newProduct("Hat", "Skiing", 42.50, acme),
+            }
+            for , p := range products {
+                fmt.Println("Name:", p.name, "Supplier:",
+                    p.Supplier.name, p.Supplier.city)
+            }
+        }
+    
 
 
 105.Pointer Field Copying
     Care must be taken when copying structs to consider the effect on pointer fields
     
     example:
-    |    package main
-    |    import "fmt"
-    |    type Product struct {
-    |        name, category string
-    |        price float64
-    |        *Supplier
-    |    }
-    |    type Supplier struct {
-    |        name, city string
-    |    }
-    |    func newProduct(name, category string, price float64, supplier *Supplier) *Product {
-    |        return &Product{name, category, price -10, supplier}
-    |    }
-    |    func main() {
-    |        acme := &Supplier { "Acme Co", "New York"}
-    |        p1 := newProduct("Kayak", "Watersports", 275, acme)
-    |        p2 := *p1
-    |        p1.name = "Original Kayak"
-    |        p1.Supplier.name = "BoatCo"
-    |        for _, p := range []Product { *p1, p2 } {
-    |            fmt.Println("Name:", p.name, "Supplier:",
-    |                p.Supplier.name, p.Supplier.city)
-    |        }
-    |    }
-    |______________________________________________________________________________________________
+        package main
+        import "fmt"
+        type Product struct {
+            name, category string
+            price float64
+            *Supplier
+        }
+        type Supplier struct {
+            name, city string
+        }
+        func newProduct(name, category string, price float64, supplier *Supplier) *Product {
+            return &Product{name, category, price -10, supplier}
+        }
+        func main() {
+            acme := &Supplier { "Acme Co", "New York"}
+            p1 := newProduct("Kayak", "Watersports", 275, acme)
+            p2 := *p1
+            p1.name = "Original Kayak"
+            p1.Supplier.name = "BoatCo"
+            for , p := range []Product { *p1, p2 } {
+                fmt.Println("Name:", p.name, "Supplier:",
+                    p.Supplier.name, p.Supplier.city)
+            }
+        }
+    
 
 
 106.Method
@@ -1645,58 +1645,58 @@ Converting a String to Runes
 
 107.Defining and Using Method
     example:
-    |    package main
-    |    import "fmt"
-    |    type Product struct {
-    |        name, category string
-    |        price float64
-    |    }
-    |    func newProduct(name, category string, price float64) *Product {
-    |            return &Product{ name, category, price }
-    |        }
-    |        func (product *Product) printDetails() {
-    |            fmt.Println("Name:", product.name, "Category:", product.category,
-    |                "Price", product.price)
-    |        }
-    |    func main() {
-    |        products := []*Product {
-    |            newProduct("Kayak", "Watersports", 275),
-    |            newProduct("Lifejacket", "Watersports", 48.95),
-    |            newProduct("Soccer Ball", "Soccer", 19.50),
-    |        }
-    |        for _, p := range products {
-    |            p.printDetails()
-    |        }
-    |    }
-    |____________________________________________________________________________
+        package main
+        import "fmt"
+        type Product struct {
+            name, category string
+            price float64
+        }
+        func newProduct(name, category string, price float64) *Product {
+                return &Product{ name, category, price }
+            }
+            func (product *Product) printDetails() {
+                fmt.Println("Name:", product.name, "Category:", product.category,
+                    "Price", product.price)
+            }
+        func main() {
+            products := []*Product {
+                newProduct("Kayak", "Watersports", 275),
+                newProduct("Lifejacket", "Watersports", 48.95),
+                newProduct("Soccer Ball", "Soccer", 19.50),
+            }
+            for , p := range products {
+                p.printDetails()
+            }
+        }
+    
 
 
 108.Defining Method Parameters and Results
     example:
-    |    package main
-    |    import "fmt"
-    |    type Product struct {
-    |        name, category string
-    |        price float64
-    |    }
-    |    func newProduct(name, category string, price float64) *Product {
-    |            return &Product{ name, category, price }
-    |        }
-    |        func (product *Product) printDetails() {
-    |            fmt.Println("Name:", product.name, "Category:", product.category,
-    |                "Price", product.price)
-    |        }
-    |    func main() {
-    |        products := []*Product {
-    |            newProduct("Kayak", "Watersports", 275),
-    |            newProduct("Lifejacket", "Watersports", 48.95),
-    |            newProduct("Soccer Ball", "Soccer", 19.50),
-    |        }
-    |        for _, p := range products {
-    |            p.calcTax(0.2, 100) //<-------------------------------here
-    |        }
-    |    }
-    |_____________________________________________________________________________________
+        package main
+        import "fmt"
+        type Product struct {
+            name, category string
+            price float64
+        }
+        func newProduct(name, category string, price float64) *Product {
+                return &Product{ name, category, price }
+            }
+            func (product *Product) printDetails() {
+                fmt.Println("Name:", product.name, "Category:", product.category,
+                    "Price", product.price)
+            }
+        func main() {
+            products := []*Product {
+                newProduct("Kayak", "Watersports", 275),
+                newProduct("Lifejacket", "Watersports", 48.95),
+                newProduct("Soccer Ball", "Soccer", 19.50),
+            }
+            for , p := range products {
+                p.calcTax(0.2, 100) //<-------------------------------here
+            }
+        }
+    
 
 109.Defining and Using Interfaces
     One interface can enclose another, with the effect that types must implement all the methods defined
@@ -1705,81 +1705,81 @@ Converting a String to Runes
     and enclosed types.
     
     example:
-    |    package main
-    |    import "fmt"
-    |    type Expense interface {
-    |        getName() string
-    |        getCost(annual bool) float64
-    |    }
-    |    func main() {
-    |        expenses := []Expense {
-    |            Product { "Kayak", "Watersports", 275 },
-    |            Service {"Boat Cover", 12, 89.50 },
-    |        }
-    |        for _, expense := range expenses {
-    |            fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
-    |        }
-    |    }
-    |______________________________________________________________________
+        package main
+        import "fmt"
+        type Expense interface {
+            getName() string
+            getCost(annual bool) float64
+        }
+        func main() {
+            expenses := []Expense {
+                Product { "Kayak", "Watersports", 275 },
+                Service {"Boat Cover", 12, 89.50 },
+            }
+            for , expense := range expenses {
+                fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
+            }
+        }
+    
 
 110.an Interface in a Function
     example:
-    |    package main
-    |    import "fmt"
-    |    type Expense interface {
-    |        getName() string
-    |        getCost(annual bool) float64
-    |    }
-    |    func calcTotal(expenses []Expense) (total float64) {
-    |        for _, item := range expenses {
-    |            total += item.getCost(true)
-    |        }
-    |        return
-    |    }
-    |    func main() {
-    |        expenses := []Expense {
-    |            Product { "Kayak", "Watersports", 275 },
-    |            Service {"Boat Cover", 12, 89.50 },
-    |        }
-    |        for _, expense := range expenses {
-    |            fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
-    |        }
-    |        fmt.Println("Total:", calcTotal(expenses))
-    |    }
-    |___________________________________________________________________
+        package main
+        import "fmt"
+        type Expense interface {
+            getName() string
+            getCost(annual bool) float64
+        }
+        func calcTotal(expenses []Expense) (total float64) {
+            for , item := range expenses {
+                total += item.getCost(true)
+            }
+            return
+        }
+        func main() {
+            expenses := []Expense {
+                Product { "Kayak", "Watersports", 275 },
+                Service {"Boat Cover", 12, 89.50 },
+            }
+            for , expense := range expenses {
+                fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
+            }
+            fmt.Println("Total:", calcTotal(expenses))
+        }
+    
 
 111.an Interface for Struct Fields
     example:
-    |    package main
-    |    import "fmt"
-    |    type Expense interface {
-    |        getName() string
-    |        getCost(annual bool) float64
-    |    }
-    |    func calcTotal(expenses []Expense) (total float64) {
-    |        for _, item := range expenses {
-    |            total += item.getCost(true)
-    |        }
-    |        return
-    |    }
-    |    type Account struct {
-    |        accountNumber int
-    |        expenses []Expense
-    |    }
-    |    func main() {
-    |        account := Account {
-    |            accountNumber: 12345,
-    |            expenses: []Expense {
-    |                Product { "Kayak", "Watersports", 275 },
-    |                Service {"Boat Cover", 12, 89.50 },
-    |            },
-    |        }
-    |        for _, expense := range account.expenses {
-    |            fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
-    |        }
-    |        fmt.Println("Total:", calcTotal(account.expenses))
-    |    }
-    |___________________________________________________________________________
+        package main
+        import "fmt"
+        type Expense interface {
+            getName() string
+            getCost(annual bool) float64
+        }
+        func calcTotal(expenses []Expense) (total float64) {
+            for , item := range expenses {
+                total += item.getCost(true)
+            }
+            return
+        }
+        type Account struct {
+            accountNumber int
+            expenses []Expense
+        }
+        func main() {
+            account := Account {
+                accountNumber: 12345,
+                expenses: []Expense {
+                    Product { "Kayak", "Watersports", 275 },
+                    Service {"Boat Cover", 12, 89.50 },
+                },
+            }
+            for , expense := range account.expenses {
+                fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
+            }
+            fmt.Println("Total:", calcTotal(account.expenses))
+        }
+    
 
 112.Comparing Interface Values
     Care must be taken when comparing interface values, and inevitably, some knowledge of the dynamic
@@ -1789,26 +1789,26 @@ Converting a String to Runes
     type, and pointers are equal only if they point to the same memory location
     
     example:
-    |    package main
-    |    import "fmt"
-    |    type Expense interface {
-    |        getName() string
-    |        getCost(annual bool) float64
-    |    }
-    |    func main() {
-    |        var e1 Expense = &Product { name: "Kayak" }
-    |        var e2 Expense = &Product { name: "Kayak" }
-    |        var e3 Expense = Service { description: "Boat Cover" }
-    |        var e4 Expense = Service { description: "Boat Cover" }
-    |        fmt.Println("e1 == e2", e1 == e2)
-    |        fmt.Println("e3 == e4", e3 == e4)
-    |    }
-    |_____________________________________________________________________
+        package main
+        import "fmt"
+        type Expense interface {
+            getName() string
+            getCost(annual bool) float64
+        }
+        func main() {
+            var e1 Expense = &Product { name: "Kayak" }
+            var e2 Expense = &Product { name: "Kayak" }
+            var e3 Expense = Service { description: "Boat Cover" }
+            var e4 Expense = Service { description: "Boat Cover" }
+            fmt.Println("e1 == e2", e1 == e2)
+            fmt.Println("e3 == e4", e3 == e4)
+        }
+    
 
     Output:
-    |    e1 == e2 false
-    |    e3 == e4 true
-    |_________________________________________________
+        e1 == e2 false
+        e3 == e4 true
+    
 
 
 113.Empty Interface
@@ -1822,51 +1822,51 @@ Converting a String to Runes
     any value
     
     example:
-    |    package main
-    |    import "fmt"
-    |    type Expense interface {
-    |        getName() string
-    |        getCost(annual bool) float64
-    |    }
-    |    type Person struct {
-    |        name, city string
-    |    }
-    |    func processItem(item interface{}) {
-    |            switch value := item.(type) {
-    |                case Product:
-    |                    fmt.Println("Product:", value.name, "Price:", value.price)
-    |                case *Product:
-    |                    fmt.Println("Product Pointer:", value.name, "Price:", value.price)
-    |                case Service:
-    |                    fmt.Println("Service:", value.description, "Price:",
-    |                        value.monthlyFee * float64(value.durationMonths))
-    |                case Person:
-    |                    fmt.Println("Person:", value.name, "City:", value.city)
-    |                case *Person:
-    |                    fmt.Println("Person Pointer:", value.name, "City:", value.city)
-    |                case string, bool, int:
-    |                    fmt.Println("Built-in type:", value)
-    |                default:
-    |                    fmt.Println("Default:", value)
-    |            }
-    |        }
-    |    func main() {
-    |        var expense Expense = &Product { "Kayak", "Watersports", 275 }
-    |        data := []interface{} {
-    |            expense,
-    |            Product { "Lifejacket", "Watersports", 48.95 },
-    |            Service {"Boat Cover", 12, 89.50, []string{} },
-    |            Person { "Alice", "London"},
-    |            &Person { "Bob", "New York"},
-    |            "This is a string",
-    |            100,
-    |            true,
-    |        }
-    |        for _, item := range data {
-    |            processItem(item)
-    |        }
-    |    }
-    |_________________________________________________________________________________
+        package main
+        import "fmt"
+        type Expense interface {
+            getName() string
+            getCost(annual bool) float64
+        }
+        type Person struct {
+            name, city string
+        }
+        func processItem(item interface{}) {
+                switch value := item.(type) {
+                    case Product:
+                        fmt.Println("Product:", value.name, "Price:", value.price)
+                    case *Product:
+                        fmt.Println("Product Pointer:", value.name, "Price:", value.price)
+                    case Service:
+                        fmt.Println("Service:", value.description, "Price:",
+                            value.monthlyFee * float64(value.durationMonths))
+                    case Person:
+                        fmt.Println("Person:", value.name, "City:", value.city)
+                    case *Person:
+                        fmt.Println("Person Pointer:", value.name, "City:", value.city)
+                    case string, bool, int:
+                        fmt.Println("Built-in type:", value)
+                    default:
+                        fmt.Println("Default:", value)
+                }
+            }
+        func main() {
+            var expense Expense = &Product { "Kayak", "Watersports", 275 }
+            data := []interface{} {
+                expense,
+                Product { "Lifejacket", "Watersports", 48.95 },
+                Service {"Boat Cover", 12, 89.50, []string{} },
+                Person { "Alice", "London"},
+                &Person { "Bob", "New York"},
+                "This is a string",
+                100,
+                true,
+            }
+            for , item := range data {
+                processItem(item)
+            }
+        }
+    
 
 115.Package
     Packages are the Go feature that allows projects to be structured so that related functionality can be grouped
@@ -1930,23 +1930,23 @@ Converting a String to Runes
     path. 
 
     example:
-    |    Create the packages/store/cart folder 
-    |    and add to it a file named cart.go with the contents:
-    |    #1
-    |    contents:
-    |        package cart
-    |        import "packages/store"
-    |        type Cart struct {
-    |            CustomerName string
-    |            Products []store.Product
-    |        }
-    |        func (cart *Cart) GetTotal() (total float64) {
-    |            for _, p := range cart.Products {
-    |                total += p.Price()
-    |            }
-    |            return
-    |        }
-    |_______________________________________________________________________________________________
+        Create the packages/store/cart folder 
+        and add to it a file named cart.go with the contents:
+        #1
+        contents:
+            package cart
+            import "packages/store"
+            type Cart struct {
+                CustomerName string
+                Products []store.Product
+            }
+            func (cart *Cart) GetTotal() (total float64) {
+                for , p := range cart.Products {
+                    total += p.Price()
+                }
+                return
+            }
+    
 
     The features defined by the nested package are accessed using the package name, just like any other
     package. When importing a nested package, the package path starts with the module name and lists the
@@ -1992,7 +1992,7 @@ Converting a String to Runes
             "packages/store"
             . "packages/fmt"
             "packages/store/cart"
-            _ "packages/data"
+             "packages/data"
         )
 
 123.Finding Go Packages
@@ -2091,7 +2091,7 @@ Converting a String to Runes
 
         // use the literal syntax:
         lifejacket := &store.Product{ Name: "Lifejacket", Category:  "Watersports"}
-        for _, p := range []*store.Product { kayak, lifejacket} {
+        for , p := range []*store.Product { kayak, lifejacket} {
             fmt.Println("Name:", p.Name, "Category:", p.Category, "Price:", p.Price(0.2))
         }
     }
@@ -2121,63 +2121,63 @@ Converting a String to Runes
 
     example:
     product.go:
-    |    // struct:
-    |    type Product struct {
-    |            Name, Category string
-    |            price float64
-    |    }
-    |    // method:
-    |    func (p *Product) Price(taxRate float64) float64 {
-    |        return p.price + (p.price * taxRate)
-    |    }
-    |    // Constructor:
-    |    func NewProduct(name, category string, price float64) *Product {
-    |        return &Product{ name, category, price }
-    |    }
-    |________________________________
+        // struct:
+        type Product struct {
+                Name, Category string
+                price float64
+        }
+        // method:
+        func (p *Product) Price(taxRate float64) float64 {
+            return p.price + (p.price * taxRate)
+        }
+        // Constructor:
+        func NewProduct(name, category string, price float64) *Product {
+            return &Product{ name, category, price }
+        }
+    
 
     boat.go:
-    |   package store
-    |
-    |   The Boat struct type defines an embedded *Product field
-    |   type Boat struct {
-    |       *Product       -------------------> Embedded Type
-    |       Capacity int   -----------------> Reguler Fields
-    |       Motorized bool ________________|
-    |   }
-    |
-    |   func NewBoat(name string, price float64, capacity int, motorized bool) *Boat {
-    |           return &Boat {
-    |               NewProduct(name, "Watersports", price), capacity, motorized,
-    |           }
-    |       }
-    |_________________________________
+       package store
+    
+       The Boat struct type defines an embedded *Product field
+       type Boat struct {
+           *Product       -------------------> Embedded Type
+           Capacity int   -----------------> Reguler Fields
+           Motorized bool 
+       }
+    
+       func NewBoat(name string, price float64, capacity int, motorized bool) *Boat {
+               return &Boat {
+                   NewProduct(name, "Watersports", price), capacity, motorized,
+               }
+           }
+    
 
     main.go:
-    |    package main
-    |    import (
-    |        "fmt"
-    |        "composition/store"
-    |    )
-    |
-    |    func main() {
-    |       boats := []*store.Boat {
-    |           store.NewBoat("Kayak", 275, 1, false),
-    |           store.NewBoat("Canoe", 400, 3, false),
-    |           store.NewBoat("Tender", 650.25, 2, true),
-    |       }
-    |       for _, b := range boats {
-    |            fmt.Println("Conventional:", b.Product.Name, "Direct:", b.Name)
-    |        }
-    |    }
-    |
-    |_____________________________________________________________________
+        package main
+        import (
+            "fmt"
+            "composition/store"
+        )
+    
+        func main() {
+           boats := []*store.Boat {
+               store.NewBoat("Kayak", 275, 1, false),
+               store.NewBoat("Canoe", 400, 3, false),
+               store.NewBoat("Tender", 650.25, 2, true),
+           }
+           for , b := range boats {
+                fmt.Println("Conventional:", b.Product.Name, "Direct:", b.Name)
+            }
+        }
+    
+    
     
     Output:
-    |    Conventional: Kayak Direct: Kayak
-    |    Conventional: Canoe Direct: Canoe
-    |    Conventional: Tender Direct: Tender
-    |___________________________________________
+        Conventional: Kayak Direct: Kayak
+        Conventional: Canoe Direct: Canoe
+        Conventional: Tender Direct: Tender
+    
 
 
     If the field type is a value, such as Product, then any methods defined with Product or *Product
@@ -2187,28 +2187,28 @@ Converting a String to Runes
     *Product receiver.
 
     Calling a Method in the main.go:
-    |    package main
-    |    import (
-    |        "fmt"
-    |        "composition/store"
-    |    )
-    |    func main() {
-    |        boats := []*store.Boat {
-    |            store.NewBoat("Kayak", 275, 1, false),
-    |            store.NewBoat("Canoe", 400, 3, false),
-    |            store.NewBoat("Tender", 650.25, 2, true),
-    |        }
-    |        for _, b := range boats {
-    |            fmt.Println("Boat:", b.Name, "Price:", b.Price(0.2))
-    |        }
-    |    }
-    |____________________________________________________________________
+        package main
+        import (
+            "fmt"
+            "composition/store"
+        )
+        func main() {
+            boats := []*store.Boat {
+                store.NewBoat("Kayak", 275, 1, false),
+                store.NewBoat("Canoe", 400, 3, false),
+                store.NewBoat("Tender", 650.25, 2, true),
+            }
+            for , b := range boats {
+                fmt.Println("Boat:", b.Name, "Price:", b.Price(0.2))
+            }
+        }
+    
 
     Output:
-    |    Boat: Kayak Price: 330
-    |    Boat: Canoe Price: 480
-    |    Boat: Tender Price: 780.3
-    |___________________________________________
+        Boat: Kayak Price: 330
+        Boat: Canoe Price: 480
+        Boat: Tender Price: 780.3
+    
 
 
 
@@ -2228,127 +2228,127 @@ Converting a String to Runes
 
     example:
     rentalboats.go:
-    |    package store
-    |
-    |    type RentalBoat struct {
-    |       *Boat
-    |       IncludeCrew bool
-    |    }
-    |
-    |    func NewRentalBoat(name string, price float64, capacity int,
-    |          motorized, crewed bool) *RentalBoat {
-    |       return &RentalBoat{NewBoat(name, price, capacity, motorized), crewed}
-    |    }
-    |__________________________________________________________
+        package store
+    
+        type RentalBoat struct {
+           *Boat
+           IncludeCrew bool
+        }
+    
+        func NewRentalBoat(name string, price float64, capacity int,
+              motorized, crewed bool) *RentalBoat {
+           return &RentalBoat{NewBoat(name, price, capacity, motorized), crewed}
+        }
+    
 
     
     Accessing Nested Fields Directly in the main.go:
-    |    package main
-    |    import (
-    |        "fmt"
-    |        "composition/store"
-    |    )
-    |    func main() {
-    |        rentals := []*store.RentalBoat {
-    |            store.NewRentalBoat("Rubber Ring", 10, 1, false, false),
-    |            store.NewRentalBoat("Yacht", 50000, 5, true, true),
-    |            store.NewRentalBoat("Super Yacht", 100000, 15, true, true),
-    |        }
-    |        for _, r := range rentals {
-    |            fmt.Println("Rental Boat:", r.Name, "Rental Price:", r.Price(0.2))
-    |        }
-    |    }
-    |__________________________________________________________________
+        package main
+        import (
+            "fmt"
+            "composition/store"
+        )
+        func main() {
+            rentals := []*store.RentalBoat {
+                store.NewRentalBoat("Rubber Ring", 10, 1, false, false),
+                store.NewRentalBoat("Yacht", 50000, 5, true, true),
+                store.NewRentalBoat("Super Yacht", 100000, 15, true, true),
+            }
+            for , r := range rentals {
+                fmt.Println("Rental Boat:", r.Name, "Rental Price:", r.Price(0.2))
+            }
+        }
+    
         
     Output:
-    |    Rental Boat: Rubber Ring Rental Price: 12
-    |    Rental Boat: Yacht Rental Price: 60000
-    |    Rental Boat: Super Yacht Rental Price: 120000
-    |_______________________________________________________________
+        Rental Boat: Rubber Ring Rental Price: 12
+        Rental Boat: Yacht Rental Price: 60000
+        Rental Boat: Super Yacht Rental Price: 120000
+    
 
 130.Multiple Nested Types in the Same Struct
     example:
     rentalboats.go:
-    |    package store
-    |    type Crew struct {
-    |        Captain, FirstOfficer string
-    |    }
-    |    type RentalBoat struct {
-    |        *Boat
-    |        IncludeCrew bool
-    |        *Crew
-    |    }
-    |    func NewRentalBoat(name string, price float64, capacity int,
-    |            motorized, crewed bool, captain, firstOfficer string) *RentalBoat {
-    |        return &RentalBoat{NewBoat(name, price, capacity, motorized), crewed,
-    |            &Crew{captain, firstOfficer}}
-    |    }
-    |________________________________________________________________
+        package store
+        type Crew struct {
+            Captain, FirstOfficer string
+        }
+        type RentalBoat struct {
+            *Boat
+            IncludeCrew bool
+            *Crew
+        }
+        func NewRentalBoat(name string, price float64, capacity int,
+                motorized, crewed bool, captain, firstOfficer string) *RentalBoat {
+            return &RentalBoat{NewBoat(name, price, capacity, motorized), crewed,
+                &Crew{captain, firstOfficer}}
+        }
+    
 
     Using Promoted Fields in the main.go:
-    |    package main
-    |    import (
-    |       "fmt"
-    |       "composition/store"
-    |    )
-    |    func main() {
-    |       rentals := []*store.RentalBoat {
-    |          store.NewRentalBoat("Rubber Ring", 10, 1, false, false, "N/A", "N/A"),
-    |          store.NewRentalBoat("Yacht", 50000, 5, true, true, "Bob", "Alice"),
-    |          store.NewRentalBoat("Super Yacht", 100000, 15, true, true,
-    |             "Dora", "Charlie"),
-    |       }
-    |       for _, r := range rentals {
-    |          fmt.Println("Rental Boat:", r.Name, "Rental Price:", r.Price(0.2),
-    |             "Captain:", r.Captain)
-    |       }
-    |    }
-    |___________________________________________________________________
+        package main
+        import (
+           "fmt"
+           "composition/store"
+        )
+        func main() {
+           rentals := []*store.RentalBoat {
+              store.NewRentalBoat("Rubber Ring", 10, 1, false, false, "N/A", "N/A"),
+              store.NewRentalBoat("Yacht", 50000, 5, true, true, "Bob", "Alice"),
+              store.NewRentalBoat("Super Yacht", 100000, 15, true, true,
+                 "Dora", "Charlie"),
+           }
+           for , r := range rentals {
+              fmt.Println("Rental Boat:", r.Name, "Rental Price:", r.Price(0.2),
+                 "Captain:", r.Captain)
+           }
+        }
+    
 
     Output:
-    |    Rental Boat: Rubber Ring Rental Price: 12 Captain: N/A
-    |    Rental Boat: Yacht Rental Price: 60000 Captain: Bob
-    |    Rental Boat: Super Yacht Rental Price: 120000 Captain: Dora
-    |___________________________________________________________________
+        Rental Boat: Rubber Ring Rental Price: 12 Captain: N/A
+        Rental Boat: Yacht Rental Price: 60000 Captain: Bob
+        Rental Boat: Super Yacht Rental Price: 120000 Captain: Dora
+    
 
 131.When Promotion Cannot Be Performed
     example:
     specialdeal.go File in the store Folder:
-    |    package store
-    |    type SpecialDeal struct {
-    |       Name string
-    |       *Product
-    |       price float64
-    |    }
-    |    func NewSpecialDeal(name string, p *Product, discount float64) *SpecialDeal {
-    |       return &SpecialDeal{ name, p, p.price - discount }
-    |    }
-    |    func (deal *SpecialDeal ) GetDetails() (string, float64, float64) {
-    |       return deal.Name, deal.price, deal.Price(0)
-    |    }
-    |____________________________________________________________________
+        package store
+        type SpecialDeal struct {
+           Name string
+           *Product
+           price float64
+        }
+        func NewSpecialDeal(name string, p *Product, discount float64) *SpecialDeal {
+           return &SpecialDeal{ name, p, p.price - discount }
+        }
+        func (deal *SpecialDeal ) GetDetails() (string, float64, float64) {
+           return deal.Name, deal.price, deal.Price(0)
+        }
+    
 
     Using a New Type in the main.go:
-    |    package main
-    |    import (
-    |        "fmt"
-    |        "composition/store"
-    |    )
-    |    func main() {
-    |        product := store.NewProduct("Kayak", "Watersports", 279)
-    |        deal := store.NewSpecialDeal("Weekend Special", product, 50)
-    |        Name, price, Price := deal.GetDetails()
-    |        fmt.Println("Name:", Name)
-    |        fmt.Println("Price field:", price)
-    |        fmt.Println("Price method:", Price)
-    |    }
-    |_____________________________________________________________________
+        package main
+        import (
+            "fmt"
+            "composition/store"
+        )
+        func main() {
+            product := store.NewProduct("Kayak", "Watersports", 279)
+            deal := store.NewSpecialDeal("Weekend Special", product, 50)
+            Name, price, Price := deal.GetDetails()
+            fmt.Println("Name:", Name)
+            fmt.Println("Price field:", price)
+            fmt.Println("Price method:", Price)
+        }
+    
 
     Output:
-    |    Name: Weekend Special
-    |    Price field: 229
-    |    Price method: 279
-    |______________________________________________
+        Name: Weekend Special
+        Price field: 229
+        Price method: 279
+    
 
     is a more concise way of expressing this statement:
         return deal.Name, deal.price, deal.Product.Price(0)
@@ -2356,79 +2356,79 @@ Converting a String to Runes
     The new Price method stops Go from promoting the Product method 
     and produces the following result
     Defining a Method in the specialdeal.go:
-    |    package store
-    |    type SpecialDeal struct {
-    |       Name string
-    |       *Product
-    |       price float64
-    |    }
-    |    func NewSpecialDeal(name string, p *Product, discount float64) *SpecialDeal {
-    |       return &SpecialDeal{ name, p, p.price - discount }
-    |    }
-    |    func (deal *SpecialDeal ) GetDetails() (string, float64, float64) {
-    |       return deal.Name, deal.price, deal.Price(0)
-    |    }
-    |    func (deal *SpecialDeal) Price(taxRate float64) float64 {
-    |       return deal.price
-    |    }
-    |_____________________________________________________
+        package store
+        type SpecialDeal struct {
+           Name string
+           *Product
+           price float64
+        }
+        func NewSpecialDeal(name string, p *Product, discount float64) *SpecialDeal {
+           return &SpecialDeal{ name, p, p.price - discount }
+        }
+        func (deal *SpecialDeal ) GetDetails() (string, float64, float64) {
+           return deal.Name, deal.price, deal.Price(0)
+        }
+        func (deal *SpecialDeal) Price(taxRate float64) float64 {
+           return deal.price
+        }
+    
     
     Output:
-    |    Name: Weekend Special
-    |    Price field: 229
-    |    Price method: 229
-    |_________________________________
+        Name: Weekend Special
+        Price field: 229
+        Price method: 229
+    
 
 132.Promotion Ambiguity
     A related issue arises when two embedded fields use the same field or method names
     example:
     An Ambiguous Method in the main.go:
-    |    package main
-    |    import (
-    |       "fmt"
-    |       "composition/store"
-    |    )
-    |    func main() {
-    |       kayak := store.NewProduct("Kayak", "Watersports", 279)
-    |       type OfferBundle struct {
-    |          *store.SpecialDeal
-    |          *store.Product
-    |       }
-    |       bundle := OfferBundle {
-    |          store.NewSpecialDeal("Weekend Special", kayak, 50),
-    |          store.NewProduct("Lifrejacket", "Watersports", 48.95),
-    |       }
-    |       fmt.Println("Price:", bundle.Price(0))
-    |    }
-    |___________________________________________________
+        package main
+        import (
+           "fmt"
+           "composition/store"
+        )
+        func main() {
+           kayak := store.NewProduct("Kayak", "Watersports", 279)
+           type OfferBundle struct {
+              *store.SpecialDeal
+              *store.Product
+           }
+           bundle := OfferBundle {
+              store.NewSpecialDeal("Weekend Special", kayak, 50),
+              store.NewProduct("Lifrejacket", "Watersports", 48.95),
+           }
+           fmt.Println("Price:", bundle.Price(0))
+        }
+    
 
     Output:
-    |    .\main.go:22:33: ambiguous selector bundle.Price    
-    |________________________________________________________       
+        .\main.go:22:33: ambiguous selector bundle.Price    
+           
 
 133.Composition and Interfaces
     example:
     Mixing Types in the main.go:
-    |    package main
-    |    import (
-    |        "fmt"
-    |        "composition/store"
-    |    )
-    |    func main() {
-    |        products := map[string]*store.Product {
-    |            "Kayak": store.NewBoat("Kayak", 279, 1, false),
-    |            "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
-    |        }
-    |        for _, p := range products {
-    |            fmt.Println("Name:", p.Name, "Category:", p.Category, "Price:", p.Price(0.2))
-    |        }
-    |    }
-    |__________________________________________
+        package main
+        import (
+            "fmt"
+            "composition/store"
+        )
+        func main() {
+            products := map[string]*store.Product {
+                "Kayak": store.NewBoat("Kayak", 279, 1, false),
+                "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+            }
+            for , p := range products {
+                fmt.Println("Name:", p.Name, "Category:", p.Category, "Price:", p.Price(0.2))
+            }
+        }
+    
 
     Output:
-    |    .\main.go:11:9: cannot use store.NewBoat("Kayak", 279, 1, false) (type *store.Boat) as
-    |    type *store.Product in map value
-    |____________________________________________
+        .\main.go:11:9: cannot use store.NewBoat("Kayak", 279, 1, false) (type *store.Boat) as
+        type *store.Product in map value
+    
 
 134.Composition to Implement Interfaces
     Go takes promoted methods into account when determining whether a type conforms to an interface,
@@ -2436,179 +2436,179 @@ Converting a String to Runes
 
     add a file named forsale.go to the store folder:
     The Contents of the forsale.go:
-    |    package store
-    |    type ItemForSale interface {
-    |        Price(taxRate float64) float64
-    |    }
-    |__________________________________________        
+        package store
+        type ItemForSale interface {
+            Price(taxRate float64) float64
+        }
+            
 
     Using an Interface in the main.go:
-    |    package main
-    |    import (
-    |       "fmt"
-    |       "composition/store"
-    |    )
-    |    func main() {
-    |       products := map[string]store.ItemForSale {
-    |          "Kayak": store.NewBoat("Kayak", 279, 1, false),
-    |          "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
-    |       }
-    |       for key, p := range products {
-    |          fmt.Println("Key:", key, "Price:", p.Price(0.2))
-    |       }
-    |    }
-    |____________________________________________
+        package main
+        import (
+           "fmt"
+           "composition/store"
+        )
+        func main() {
+           products := map[string]store.ItemForSale {
+              "Kayak": store.NewBoat("Kayak", 279, 1, false),
+              "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+           }
+           for key, p := range products {
+              fmt.Println("Key:", key, "Price:", p.Price(0.2))
+           }
+        }
+    
 
     Output:
-    |    Key: Kayak Price: 334.8
-    |    Key: Ball Price: 23.4
-    |____________________________________
+        Key: Kayak Price: 334.8
+        Key: Ball Price: 23.4
+    
 
 135.the Type Switch Limitation
     
     example:
     main.go:
-    |    package main
-    |    import (
-    |        "fmt"
-    |        "composition/store"
-    |    )
-    |    func main() {
-    |        products := map[string]store.ItemForSale {
-    |            "Kayak": store.NewBoat("Kayak", 279, 1, false),
-    |            "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
-    |        }
-    |        for key, p := range products {
-    |            switch item := p.(type) {
-    |                case *store.Product, *store.Boat:
-    |                    fmt.Println("Name:", item.Name, "Category:", item.Category,
-    |                        "Price:", item.Price(0.2))
-    |                default:
-    |                    fmt.Println("Key:", key, "Price:", p.Price(0.2))
-    |            }
-    |        }
-    |    }
-    |________________________________________________________________
+        package main
+        import (
+            "fmt"
+            "composition/store"
+        )
+        func main() {
+            products := map[string]store.ItemForSale {
+                "Kayak": store.NewBoat("Kayak", 279, 1, false),
+                "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+            }
+            for key, p := range products {
+                switch item := p.(type) {
+                    case *store.Product, *store.Boat:
+                        fmt.Println("Name:", item.Name, "Category:", item.Category,
+                            "Price:", item.Price(0.2))
+                    default:
+                        fmt.Println("Key:", key, "Price:", p.Price(0.2))
+                }
+            }
+        }
+    
 
     Output:
-    |    .\main.go:21:42: item.Name undefined (type store.ItemForSale has no field or method Name)
-    |    .\main.go:21:66: item.Category undefined (type store.ItemForSale has no field or method
-    |    Category)
-    |_____________________________________________________________________________
+        .\main.go:21:42: item.Name undefined (type store.ItemForSale has no field or method Name)
+        .\main.go:21:66: item.Category undefined (type store.ItemForSale has no field or method
+        Category)
+    
 
     Using Separate case Statements in the main.go:
-    |    package main
-    |    import (
-    |       "fmt"
-    |       "composition/store"
-    |    )
-    |    func main() {
-    |       products := map[string]store.ItemForSale {
-    |          "Kayak": store.NewBoat("Kayak", 279, 1, false),
-    |          "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
-    |       }
-    |       for key, p := range products {
-    |          switch item := p.(type) {
-    |             case *store.Product:
-    |                fmt.Println("Name:", item.Name, "Category:", item.Category,
-    |                   "Price:", item.Price(0.2))
-    |             case *store.Boat:
-    |                fmt.Println("Name:", item.Name, "Category:", item.Category,
-    |                   "Price:", item.Price(0.2))
-    |             default:
-    |                fmt.Println("Key:", key, "Price:", p.Price(0.2))
-    |          }
-    |       }
-    |    }
-    |__________________________________________________________________________________
+        package main
+        import (
+           "fmt"
+           "composition/store"
+        )
+        func main() {
+           products := map[string]store.ItemForSale {
+              "Kayak": store.NewBoat("Kayak", 279, 1, false),
+              "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+           }
+           for key, p := range products {
+              switch item := p.(type) {
+                 case *store.Product:
+                    fmt.Println("Name:", item.Name, "Category:", item.Category,
+                       "Price:", item.Price(0.2))
+                 case *store.Boat:
+                    fmt.Println("Name:", item.Name, "Category:", item.Category,
+                       "Price:", item.Price(0.2))
+                 default:
+                    fmt.Println("Key:", key, "Price:", p.Price(0.2))
+              }
+           }
+        }
+    
 
     Output:
-    |    Name: Kayak Category: Watersports Price: 334.8
-    |    Name: Soccer Ball Category: Soccer Price: 23.4
-    |__________________________________________________________________
+        Name: Kayak Category: Watersports Price: 334.8
+        Name: Soccer Ball Category: Soccer Price: 23.4
+    
 
 136.the Type Switch Limitation An alternative solution
     example:
     Defining an Interface in the product.go:
-    |    package store
-    |    type Product struct {
-    |        Name, Category string
-    |        price float64
-    |    }
-    |    func NewProduct(name, category string, price float64) *Product {
-    |        return &Product{ name, category, price }
-    |    }
-    |    func (p *Product) Price(taxRate float64) float64 {
-    |        return p.price + (p.price * taxRate)
-    |    }
-    |    type Describable interface  {
-    |        GetName() string
-    |        GetCategory() string
-    |    }
-    |    func (p *Product) GetName() string {
-    |        return p.Name
-    |    }
-    |    func (p *Product) GetCategory() string {
-    |        return p.Category
-    |    }
-    |__________________________________________________________________
+        package store
+        type Product struct {
+            Name, Category string
+            price float64
+        }
+        func NewProduct(name, category string, price float64) *Product {
+            return &Product{ name, category, price }
+        }
+        func (p *Product) Price(taxRate float64) float64 {
+            return p.price + (p.price * taxRate)
+        }
+        type Describable interface  {
+            GetName() string
+            GetCategory() string
+        }
+        func (p *Product) GetName() string {
+            return p.Name
+        }
+        func (p *Product) GetCategory() string {
+            return p.Category
+        }
+    
 
     Using Interfaces in the main.go:
-    |    package main
-    |    import (
-    |       "fmt"
-    |       "composition/store"
-    |    )
-    |    func main() {
-    |       products := map[string]store.ItemForSale {
-    |          "Kayak": store.NewBoat("Kayak", 279, 1, false),
-    |          "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
-    |       }
-    |       for key, p := range products {
-    |          switch item := p.(type) {
-    |             case store.Describable:
-    |                fmt.Println("Name:", item.GetName(), "Category:", item.GetCategory(),
-    |                   "Price:", item.(store.ItemForSale).Price(0.2))
-    |             default:
-    |                fmt.Println("Key:", key, "Price:", p.Price(0.2))
-    |          }
-    |       }
-    |    }
-    |____________________________________________________________________
+        package main
+        import (
+           "fmt"
+           "composition/store"
+        )
+        func main() {
+           products := map[string]store.ItemForSale {
+              "Kayak": store.NewBoat("Kayak", 279, 1, false),
+              "Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+           }
+           for key, p := range products {
+              switch item := p.(type) {
+                 case store.Describable:
+                    fmt.Println("Name:", item.GetName(), "Category:", item.GetCategory(),
+                       "Price:", item.(store.ItemForSale).Price(0.2))
+                 default:
+                    fmt.Println("Key:", key, "Price:", p.Price(0.2))
+              }
+           }
+        }
+    
 
     Output:
-    |    Name: Kayak Category: Watersports Price: 334.8
-    |    Name: Soccer Ball Category: Soccer Price: 23.4
-    |_________________________________________________________________
+        Name: Kayak Category: Watersports Price: 334.8
+        Name: Soccer Ball Category: Soccer Price: 23.4
+    
 
 137.Composing Interfaces
     Go allows interfaces to be composed from other interfaces
     
     example:
     Composing an Interface in the product.go:
-    |    package store
-    |    type Product struct {
-    |        Name, Category string
-    |        price float64
-    |    }
-    |    func NewProduct(name, category string, price float64) *Product {
-    |        return &Product{ name, category, price }
-    |    }
-    |    func (p *Product) Price(taxRate float64) float64 {
-    |        return p.price + (p.price * taxRate)
-    |    }
-    |    type Describable interface  {
-    |        GetName() string
-    |        GetCategory() string
-    |        ItemForSale
-    |    }
-    |    func (p *Product) GetName() string {
-    |        return p.Name
-    |    }
-    |    func (p *Product) GetCategory() string {
-    |        return p.Category
-    |    }
-    |_______________________________________________________________
+        package store
+        type Product struct {
+            Name, Category string
+            price float64
+        }
+        func NewProduct(name, category string, price float64) *Product {
+            return &Product{ name, category, price }
+        }
+        func (p *Product) Price(taxRate float64) float64 {
+            return p.price + (p.price * taxRate)
+        }
+        type Describable interface  {
+            GetName() string
+            GetCategory() string
+            ItemForSale
+        }
+        func (p *Product) GetName() string {
+            return p.Name
+        }
+        func (p *Product) GetCategory() string {
+            return p.Category
+        }
+    
 
 138.Goroutines and Channels
     What are they?
@@ -2734,27 +2734,27 @@ Converting a String to Runes
     function can be executed by a goroutine with the result being sent through a channel.
 
     example:
-    |    ...
-    |    calcTax := func(price float64) float64 {
-    |        return price + (price * 0.2)
-    |    }
-    |    wrapper := func (price float64, c chan float64)  {
-    |        c <- calcTax(price)
-    |    }
-    |    resultChannel := make(chan float64)
-    |    go wrapper(275, resultChannel)
-    |    result := <- resultChannel
-    |    fmt.Println("Result:", result)
-    |    ...
-    |    The wrapper function receives a channel, which it uses to send the value received from executing the
-    |    calcTax function synchronously. This can be expressed more concisely by defining a function without
-    |    assigning it to a variable, like this:
-    |    ...
-    |    go func (price float64, c chan float64) {
-    |        c <- calcTax(price)
-    |    }(275, resultChannel)
-    |    ...
-    |_____________________________________________________________________________
+        ...
+        calcTax := func(price float64) float64 {
+            return price + (price * 0.2)
+        }
+        wrapper := func (price float64, c chan float64)  {
+            c <- calcTax(price)
+        }
+        resultChannel := make(chan float64)
+        go wrapper(275, resultChannel)
+        result := <- resultChannel
+        fmt.Println("Result:", result)
+        ...
+        The wrapper function receives a channel, which it uses to send the value received from executing the
+        calcTax function synchronously. This can be expressed more concisely by defining a function without
+        assigning it to a variable, like this:
+        ...
+        go func (price float64, c chan float64) {
+            c <- calcTax(price)
+        }(275, resultChannel)
+        ...
+    
 
 
 145.Coordinating Channels
@@ -2765,15 +2765,15 @@ Converting a String to Runes
     that receive values will block until another goroutine sends one.
 
     example:
-    |    If Bob has a message for Alice, the default channel behavior requires 
-    |    Alice and Bob to agree on a meeting place, and
-    |    whoever gets there first will wait for the other to arrive. 
-    |    Bob will only give the message to Alice when they are
-    |    both present. When Charlie also has a message for Alice, he will form a queue behind Bob. 
-    |    Everyone waits patiently, messages are transferred only when the sender 
-    |    and receiver are both available, and messages are
-    |    processed sequentially.
-    |_________________________________________________________________________________________
+        If Bob has a message for Alice, the default channel behavior requires 
+        Alice and Bob to agree on a meeting place, and
+        whoever gets there first will wait for the other to arrive. 
+        Bob will only give the message to Alice when they are
+        both present. When Charlie also has a message for Alice, he will form a queue behind Bob. 
+        Everyone waits patiently, messages are transferred only when the sender 
+        and receiver are both available, and messages are
+        processed sequentially.
+    
 
 146.Buffered Channel
     The default channel behavior can lead to bursts of activity as goroutines do their work, followed by a long
@@ -2789,20 +2789,20 @@ Converting a String to Runes
     for a receiver. 
     
     example:
-    |    This is similar to Alice having an inbox on her desk. Senders come to Alice's office and put
-    |    their message into the inbox, leaving it for Alice to read when she is ready. But, if the inbox is full, then they
-    |    will have to wait until she has processed some of her backlog before sending a new message.
-    |_____________________________________________________________________________________________________
+        This is similar to Alice having an inbox on her desk. Senders come to Alice's office and put
+        their message into the inbox, leaving it for Alice to read when she is ready. But, if the inbox is full, then they
+        will have to wait until she has processed some of her backlog before sending a new message.
+    
 
     Creating a Buffered Channel
     example:
-    |    var channel chan float64 = make(chan float64, 2)
-    |___________________________________________________________
+        var channel chan float64 = make(chan float64, 2)
+    
 
     Result explain:
-    |    For this example, I have set the size of the buffer to 2, meaning that two senders will be able to send
-    |    values through the channel without having to wait for them to be received.
-    |____________________________________________________________________
+        For this example, I have set the size of the buffer to 2, meaning that two senders will be able to send
+        values through the channel without having to wait for them to be received.
+    
 
 
 
@@ -2827,8 +2827,8 @@ Converting a String to Runes
     Go doesn't require channels to be closed to free up resources or perform any kind of housekeeping task.
 
     example:
-    |    close(channel)
-    |_______________________________________
+        close(channel)
+    
 
 
     The receive operator can be used to obtain two values. 
@@ -2837,14 +2837,14 @@ Converting a String to Runes
     It is illegal to send values to a channel once it has been closed.
 
     example:
-    |    if details, open := <- dispatchChannel; open {
-    |            fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
-    |            "x", details.Product.Name)
-    |        } else {
-    |            fmt.Println("Channel has been closed")
-    |        break
-    |    }
-    |____________________________________________________
+        if details, open := <- dispatchChannel; open {
+                fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
+                "x", details.Product.Name)
+            } else {
+                fmt.Println("Channel has been closed")
+            break
+        }
+    
 
 
 149.Enumerating Channel Values
@@ -2856,13 +2856,13 @@ Converting a String to Runes
     channel that isn't closed, in which case the loop will never exit.)
 
     example:
-    |    go DispatchOrders(dispatchChannel)
-    |    for details := range dispatchChannel {
-    |        fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
-    |            "x", details.Product.Name)
-    |    }
-    |    fmt.Println("Channel has been closed")
-    |________________________________________________________
+        go DispatchOrders(dispatchChannel)
+        for details := range dispatchChannel {
+            fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
+                "x", details.Product.Name)
+        }
+        fmt.Println("Channel has been closed")
+    
 
 
 150.Restricting Channel Direction
@@ -2880,10 +2880,10 @@ Converting a String to Runes
     Attempting to receive from a send-only (and vice versa) channel is a compile-time error,
 
     example:
-    |    # concurrency
-    |    .\orderdispatch.go:29:29: invalid operation: <-channel (receive from send-only type chan<-
-    |    DispatchNotification)
-    |___________________________________________________________________
+        # concurrency
+        .\orderdispatch.go:29:29: invalid operation: <-channel (receive from send-only type chan<-
+        DispatchNotification)
+    
 
 
 151.Restricting Channel Argument Direction
@@ -2966,7 +2966,7 @@ Converting a String to Runes
             "time"
         )
         func enumerateProducts(channel chan<- *Product) {
-            for _, p := range ProductList[:3] {
+            for , p := range ProductList[:3] {
                 channel <- p
                 time.Sleep(time.Millisecond * 800)
             }
@@ -3013,7 +3013,7 @@ Converting a String to Runes
 
     example:
         func enumerateProducts(channel chan<- *Product) {
-            for _, p := range ProductList {
+            for , p := range ProductList {
                 select {
                     case channel <- p:
                         fmt.Println("Sent product:", p.Name)
@@ -3040,7 +3040,7 @@ Converting a String to Runes
 
     example:
         func enumerateProducts(channel1, channel2 chan<- *Product) {
-            for _, p := range ProductList {
+            for , p := range ProductList {
                 select {
                     case channel1 <- p:
                         fmt.Println("Send via channel 1")
@@ -3100,27 +3100,27 @@ Converting a String to Runes
     Defining an Error
     
     example:
-    |    package main
-    |    import "fmt"
-    |    func main() {
-    |        categories := []string { "Watersports", "Chess", "Running" }
-    |        for _, cat := range categories {
-    |            total, err := Products.TotalPrice(cat)
-    |            if (err == nil) {
-    |                fmt.Println(cat, "Total:", ToCurrency(total))
-    |            } else {
-    |                fmt.Println(cat, "(no such category)")
-    |            }
-    |        }
-    |    }
-    |___________________________________________________________________
+        package main
+        import "fmt"
+        func main() {
+            categories := []string { "Watersports", "Chess", "Running" }
+            for , cat := range categories {
+                total, err := Products.TotalPrice(cat)
+                if (err == nil) {
+                    fmt.Println(cat, "Total:", ToCurrency(total))
+                } else {
+                    fmt.Println(cat, "(no such category)")
+                }
+            }
+        }
+    
 
 
     Output:
-    |    Watersports Total: $328.95
-    |    Chess Total: $1291.00
-    |    Running (no such category)
-    |_____________________________________________
+        Watersports Total: $328.95
+        Chess Total: $1291.00
+        Running (no such category)
+    
 
 
 158.Ignoring Error Results
@@ -3135,8 +3135,8 @@ Converting a String to Runes
         import "fmt"
         func main() {
             categories := []string { "Watersports", "Chess", "Running" }
-            for _, cat := range categories {
-                total, _ := Products.TotalPrice(cat)
+            for , cat := range categories {
+                total,  := Products.TotalPrice(cat)
                 fmt.Println(cat, "Total:", ToCurrency(total))
             }
         }
@@ -3144,69 +3144,69 @@ Converting a String to Runes
 159.Reporting Errors via Channels
     example:
     operations.go:
-    |    package main
-    |    type CategoryError struct {
-    |       requestedCategory string
-    |    }
-    |    func (e *CategoryError) Error() string {
-    |       return "Category " + e.requestedCategory + " does not exist"
-    |    }
-    |    type ChannelMessage struct {
-    |       Category string
-    |       Total float64
-    |       *CategoryError
-    |    }
-    |    func (slice ProductSlice) TotalPrice(category string) (total float64,
-    |          err *CategoryError) {
-    |       productCount := 0
-    |       for _, p := range slice {
-    |          if (p.Category == category) {
-    |             total += p.Price
-    |             productCount++
-    |          }
-    |       }
-    |       if (productCount == 0) {
-    |          err = &CategoryError{ requestedCategory: category}
-    |       }
-    |       return
-    |    }
-    |    func (slice ProductSlice) TotalPriceAsync (categories []string,
-    |          channel chan<- ChannelMessage) {
-    |       for _, c := range categories {
-    |          total, err := slice.TotalPrice(c)
-    |          channel <- ChannelMessage{
-    |             Category: c,
-    |             Total: total,
-    |             CategoryError: err,
-    |          }
-    |       }
-    |       close(channel)
-    |    }
-    |________________________________________________________________________________
+        package main
+        type CategoryError struct {
+           requestedCategory string
+        }
+        func (e *CategoryError) Error() string {
+           return "Category " + e.requestedCategory + " does not exist"
+        }
+        type ChannelMessage struct {
+           Category string
+           Total float64
+           *CategoryError
+        }
+        func (slice ProductSlice) TotalPrice(category string) (total float64,
+              err *CategoryError) {
+           productCount := 0
+           for , p := range slice {
+              if (p.Category == category) {
+                 total += p.Price
+                 productCount++
+              }
+           }
+           if (productCount == 0) {
+              err = &CategoryError{ requestedCategory: category}
+           }
+           return
+        }
+        func (slice ProductSlice) TotalPriceAsync (categories []string,
+              channel chan<- ChannelMessage) {
+           for , c := range categories {
+              total, err := slice.TotalPrice(c)
+              channel <- ChannelMessage{
+                 Category: c,
+                 Total: total,
+                 CategoryError: err,
+              }
+           }
+           close(channel)
+        }
+    
 
     main.go:
         package main
-    |    import "fmt"
-    |    func main() {
-    |       categories := []string { "Watersports", "Chess", "Running" }
-    |       channel := make(chan ChannelMessage, 10)
-    |       go Products.TotalPriceAsync(categories, channel)
-    |       for message := range channel {
-    |          if message.CategoryError == nil {
-    |             fmt.Println(message.Category, "Total:", ToCurrency(message.Total))
-    |          } else {
-    |             fmt.Println(message.Category, "(no such category)")
-    |          }
-    |       }
-    |    }
-    |___________________________________________________________________________________
+        import "fmt"
+        func main() {
+           categories := []string { "Watersports", "Chess", "Running" }
+           channel := make(chan ChannelMessage, 10)
+           go Products.TotalPriceAsync(categories, channel)
+           for message := range channel {
+              if message.CategoryError == nil {
+                 fmt.Println(message.Category, "Total:", ToCurrency(message.Total))
+              } else {
+                 fmt.Println(message.Category, "(no such category)")
+              }
+           }
+        }
+    
 
 
     Output:
-    |    Watersports Total: $328.95
-    |    Chess Total: $1291.00
-    |    Running (no such category)
-    |_______________________________________
+        Watersports Total: $328.95
+        Chess Total: $1291.00
+        Running (no such category)
+    
 
 160.String Processing and Regular Expressions
     What are they?
@@ -3277,51 +3277,51 @@ Converting a String to Runes
     HasSuffix(s, suffix)        This function returns true if the string ends with the string suffix.
 
     example:
-    |    package main
-    |    import (
-    |        "fmt"
-    |        "strings"
-    |    )
-    |    func main() {
-    |        product := "Kayak"
-    |        fmt.Println("Contains:", strings.Contains(product, "yak"))
-    |        fmt.Println("ContainsAny:", strings.ContainsAny(product, "abc"))
-    |        fmt.Println("ContainsRune:", strings.ContainsRune(product, 'K'))
-    |        fmt.Println("EqualFold:", strings.EqualFold(product, "KAYAK"))
-    |        fmt.Println("HasPrefix:", strings.HasPrefix(product, "Ka"))
-    |        fmt.Println("HasSuffix:", strings.HasSuffix(product, "yak"))
-    |    }
-    |________________________________________________________________________
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            product := "Kayak"
+            fmt.Println("Contains:", strings.Contains(product, "yak"))
+            fmt.Println("ContainsAny:", strings.ContainsAny(product, "abc"))
+            fmt.Println("ContainsRune:", strings.ContainsRune(product, 'K'))
+            fmt.Println("EqualFold:", strings.EqualFold(product, "KAYAK"))
+            fmt.Println("HasPrefix:", strings.HasPrefix(product, "Ka"))
+            fmt.Println("HasSuffix:", strings.HasSuffix(product, "yak"))
+        }
+    
 
     Output:
-    |    Contains: true
-    |    ContainsAny: true
-    |    ContainsRune: true
-    |    HasPrefix: true
-    |    HasSuffix: true
-    |    EqualFold: true
-    |___________________________
+        Contains: true
+        ContainsAny: true
+        ContainsRune: true
+        HasPrefix: true
+        HasSuffix: true
+        EqualFold: true
+    
 
 162.Using The Byte-Oriented Functions
     example:
-    |    package main
-    |    import (
-    |        "fmt"
-    |        "strings"
-    |        "bytes"
-    |    )
-    |    func main() {
-    |        price := "€100"
-    |        fmt.Println("Strings Prefix:", strings.HasPrefix(price, "€"))
-    |        fmt.Println("Bytes Prefix:", bytes.HasPrefix([]byte(price),
-    |            []byte { 226, 130 }))
-    |    }
-    |____________________________________________
+        package main
+        import (
+            "fmt"
+            "strings"
+            "bytes"
+        )
+        func main() {
+            price := "€100"
+            fmt.Println("Strings Prefix:", strings.HasPrefix(price, "€"))
+            fmt.Println("Bytes Prefix:", bytes.HasPrefix([]byte(price),
+                []byte { 226, 130 }))
+        }
+    
 
     Output:
-    |    Strings Prefix: true
-    |    Bytes Prefix: true
-    |____________________________________________
+        Strings Prefix: true
+        Bytes Prefix: true
+    
 
 163.Converting String Case
     The Case Functions in the strings Package
@@ -3339,8 +3339,22 @@ Converting a String to Runes
     ToTitle(str)    This function returns a new string containing the characters in the specified string
                     mapped to title case.
 
-                    
 
+    Care must be taken with the Title and ToTitle functions, which don't work the way you might expect.
+    The Title function returns a string that is suitable for use as a title, but it treats all words the same
+
+    Creating a Title:
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            description := "A boat for sailing"
+            fmt.Println("Original:", description)
+            fmt.Println("Title:", strings.Title(description))
+        }
 
 
 
