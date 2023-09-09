@@ -3025,9 +3025,26 @@ Converting a String to Runes
             close(channel)
         }
 
+155.Sending to Multiple Channels
+    If there are multiple channels available, a select statement can be used to find a channel for which sending
+    will not block
+    You can combine case statements with send and receive operations in the same select statement.
+    When the select statement is executed, the Go runtime builds a combined list of case statements that can be
+    executed without blocking and picks one at random, which can be either a send or a receive statement.
 
-
-
+    example:
+        func enumerateProducts(channel1, channel2 chan<- *Product) {
+            for _, p := range ProductList {
+                select {
+                    case channel1 <- p:
+                        fmt.Println("Send via channel 1")
+                    case channel2 <- p:
+                        fmt.Println("Send via channel 2")
+                }
+            }
+            close(channel1)
+            close(channel2)
+        }
 
 
 
