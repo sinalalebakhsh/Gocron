@@ -3244,11 +3244,18 @@ Converting a String to Runes
 
     Find content in strings     Use the functions provided by the strings or regexp package
 
-    
+    Split a string              Use the Fields or Split* function in the strings and regexp packages
 
+    Join strings                Use the Join or Repeat function in the strings package
 
+    Trim characters from        Use the Trim* functions in the strings package
+    a string
 
+    Perform a substitution      Use the Replace* or Map function in the strings package,
+    تعویض انجام دهید            use a Replacer, or use the Replace* functions in the regexp package
 
+    Efficiently build a         Use the Builder type in the strings package
+    string
 
 
 
