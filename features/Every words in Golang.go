@@ -2952,6 +2952,13 @@ Converting a String to Runes
     rates. A select statement will allow the receiver to obtain values from whichever channel has them, without
     blocking on any single channel
 
+
+    In this example, the select statement is used to receive values from two channels, one that carries
+    DispatchNofitication values and one that carries Product values. Each time the select statement is
+    executed, it works its way through the case statements, building up a list of the ones from which a value can
+    be read without blocking. One of the case statements is selected from the list at random and executed. If
+    none of the case statements can be performed, the default clause is executed.
+
     example:
         package main
         import (
@@ -3001,7 +3008,7 @@ Converting a String to Runes
             alldone: fmt.Println("All values received")
         }
 
-
+154.Sending Without Blocking
 
 
 
