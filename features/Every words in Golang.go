@@ -3354,7 +3354,62 @@ Converting a String to Runes
             description := "A boat for sailing"
             fmt.Println("Original:", description)
             fmt.Println("Title:", strings.Title(description))
+    	fmt.Println("Title:", strings.ToTitle(description))
         }
+    Output:
+        Original: A boat for sailing
+        Title: A Boat For Sailing
+        Title: A BOAT FOR SAILING
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
