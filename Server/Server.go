@@ -7,12 +7,13 @@ import (
 	"github.com/sinalalebakhsh/Gocron/features"
 	"github.com/gorilla/mux"
 
-
+	"html/template"
 )
 
+var templates *template.Template
+
 func HandlerAllFeatures(w http.ResponseWriter, r *http.Request) {
-	Gold := fmt.Sprint(features.OriginalFeatures)
-	fmt.Fprint(w, Gold)
+	templates.ExecuteTemplate(w, "index.html", nil)
 }
 
 func HandlerSingleDefinitions(w http.ResponseWriter, r *http.Request) {
@@ -21,12 +22,17 @@ func HandlerSingleDefinitions(w http.ResponseWriter, r *http.Request) {
 }
 
 
+
 func Servers() {
+	templates = template.Must(template.ParseGlob("templates/*.html"))
+
+
 	router := mux.NewRouter()
+	http.Handle("/", router)
 
 	router.HandleFunc("/", HandlerAllFeatures).Methods("GET")
-	router.HandleFunc("/example", HandlerSingleDefinitions).Methods("GET")
-	http.Handle("/", router)
+	router.HandleFunc("/SingleDefinitions", HandlerSingleDefinitions).Methods("GET")
+
 	http.ListenAndServe(":8080", nil)
 }
 

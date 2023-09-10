@@ -7,16 +7,10 @@ import (
 
 func main()  {
 
-
 	getuserinput.GetFirstArg()
-
 
 	getuserinput.GetUserInput()
 
-
 	server.Servers()
-
-
-
 	
 }
