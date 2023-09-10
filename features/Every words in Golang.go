@@ -3783,9 +3783,12 @@ Converting a String to Runes
            elements := strings.Fields(text)
             joined := strings.Join(elements, "--")
             fmt.Println("Joined:", joined)
+            esplited := strings.Split(text, " ")
+            fmt.Printf("%q\n",esplited)
         }
     Output:
-        
+        Joined: It--was--a--boat.--A--small--boat.
+        ["It" "was" "a" "boat." "A" "small" "boat."]
 
 
 
