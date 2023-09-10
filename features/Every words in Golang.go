@@ -3671,8 +3671,17 @@ Converting a String to Runes
 
 179.Altering Strings
     تغییر رشته‌ها 
+    
+    The Functions for Altering Strings in the strings Package
+    Function                    Description
+    ----------------            -----------------------------------
+    Replace(s, old, new, n)     This function alters the string s by replacing occurrences of the string old with the
+                                string new. The maximum number of occurrences that will be replaced is specified by
+                                the int argument n.
 
-
+    ReplaceAll(s, old, new)     This function alters the string s by replacing all occurrences of the string old with
+                                the string new. Unlike the Replace function, there is no limit on the number of
+                                occurrences that will be replaced.
 
 
 
