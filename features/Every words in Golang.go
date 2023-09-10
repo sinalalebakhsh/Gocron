@@ -3710,9 +3710,27 @@ Converting a String to Runes
         Replace: It was a canoe. A small boat.
         Replace All: It was a truck. A small truck.
 
-
-
-
+181.Map function
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+        text := "It was a boat. A small boat."
+        mapper := func(r rune) rune {
+                if r == 'b' {
+                    return 'c'
+                }
+                return r
+            }
+            mapped := strings.Map(mapper, text)
+            fmt.Println("Mapped:", mapped)
+        }
+    Output:
+        Mapped: It was a coat. A small coat.
+    
 
 
 
