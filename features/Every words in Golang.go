@@ -3731,7 +3731,26 @@ Converting a String to Runes
     Output:
         Mapped: It was a coat. A small coat.
     
-
+182.NewReplacer function
+    The strings package exports a struct type named Replacer that is used to replace strings
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            text := "It was a boat. A small boat.   111"
+            replacer := strings.NewReplacer("boat", "kayak", 
+            "small", "huge",
+            "111", "222",
+        )
+            replaced := replacer.Replace(text)
+            fmt.Println("Replaced:", replaced)
+        }
+    Output:
+        Replaced: It was a kayak. A huge kayak.   222
+        
 
 
 
