@@ -25,14 +25,10 @@ func HandlerSingleDefinitions(w http.ResponseWriter, r *http.Request) {
 
 func Servers() {
 	templates = template.Must(template.ParseGlob("templates/*.html"))
-
-
 	router := mux.NewRouter()
 	http.Handle("/", router)
-
 	router.HandleFunc("/", HandlerAllFeatures).Methods("GET")
 	router.HandleFunc("/SingleDefinitions", HandlerSingleDefinitions).Methods("GET")
-
 	http.ListenAndServe(":8080", nil)
 }
 
