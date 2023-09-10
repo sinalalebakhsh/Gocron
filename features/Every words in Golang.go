@@ -3771,7 +3771,21 @@ Converting a String to Runes
 
     Repeat(s, count)    This function generates a string by repeating the string s for a specified number of times.
 
-
+185.Join and Repeat functions
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            text := "It was a boat. A small boat."
+           elements := strings.Fields(text)
+            joined := strings.Join(elements, "--")
+            fmt.Println("Joined:", joined)
+        }
+    Output:
+        
 
 
 
