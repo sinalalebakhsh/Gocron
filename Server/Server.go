@@ -2,39 +2,36 @@ package server
 
 import (
 	"fmt"
-	"github.com/sinalalebakhsh/Gocron/features"
-	"github.com/sinalalebakhsh/Gocron/GetUserInput"
 	"net/http"
-	"os"
-	"strings"
+
+	"github.com/sinalalebakhsh/Gocron/features"
+	"github.com/gorilla/mux"
+
+
 )
 
 func HandlerAllFeatures(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, features.OriginalFeatures)
+	Gold := fmt.Sprint(features.OriginalFeatures)
+	fmt.Fprint(w, Gold)
 }
 
-func HandletSingleDefinition(w http.ResponseWriter, r *http.Request){
-	firstArg := fmt.Sprint(getuserinput.GetUserInput())
-
-	fmt.Fprint(w, firstArg)
+func HandlerSingleDefinitions(w http.ResponseWriter, r *http.Request) {
+	Gold := fmt.Sprint(features.OriginSingleDef)
+	fmt.Fprint(w, Gold)
 }
+
 
 func Servers() {
-	if len(os.Args) == 1 {
-		HOME := "/"
-		http.HandleFunc(HOME, HandlerAllFeatures)
-	} else if len(os.Args) > 1 {
-		HOME := "/"
-		go http.HandleFunc(HOME, HandlerAllFeatures)
-		AllArgs := os.Args
-		FirstArg := strings.ToLower(AllArgs[1])
-		HELP := FirstArg
-		go http.HandleFunc(HELP, HandletSingleDefinition)
-	}
+	router := mux.NewRouter()
+
+	router.HandleFunc("/", HandlerAllFeatures).Methods("GET")
+	router.HandleFunc("/example", HandlerSingleDefinitions).Methods("GET")
+	http.Handle("/", router)
 	http.ListenAndServe(":8080", nil)
 }
 
-// Future possibilities
-// For flexible URL:
-// "github.com/sinalalebakhsh/Gocron/GetUserInput"
-// getuserinput.GetUserInput()
+
+// Future possibilities 
+	// For flexible URL:
+		// "github.com/sinalalebakhsh/Gocron/GetUserInput"
+		// getuserinput.GetUserInput()
