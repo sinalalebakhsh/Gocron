@@ -3791,6 +3791,20 @@ Converting a String to Runes
         ["It" "was" "a" "boat." "A" "small" "boat."]
 
 
+186.Building Strings
+    The strings.Builder Methods
+    Name                Description
+    ---------------     --------------------------------------------
+    WriteString(s)      This method appends the string s to the string being built.
+    WriteRune(r)        This method appends the character r to the string being built.
+    WriteByte(b)        This method appends the byte b to the string being built.
+    String()            This method returns the string that has been created by the builder.
+    Reset()             This method resets the string created by the builder.
+    Len()               This method returns the number of bytes used to store the string created by the builder.
+    Cap()               This method returns the number of bytes that have been allocated by the builder.
+    Grow(size)          This method increases the number of bytes used allocated by the builder to store the
+                        string that is being built.
+
 
 
 
