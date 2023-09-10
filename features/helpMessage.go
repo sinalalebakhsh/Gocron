@@ -2,7 +2,7 @@ package features
 
 import (
 	"fmt"
-	"github.com/fatih/color"
+	// "github.com/fatih/color"
 )
 
 var Message string = fmt.Sprintln(`Gocron Project:
@@ -16,7 +16,7 @@ like this:
 	map slice
 -------------------------------------------------------`)
 
-func HelpMessage(){
-	color.HiBlue(Message)
+func HelpMessage() (Message string){
+	return Message
 }
 

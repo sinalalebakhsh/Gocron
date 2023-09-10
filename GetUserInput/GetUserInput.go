@@ -6,11 +6,11 @@ import (
 	"os"
 	"sort"
 	"strings"
-	"github.com/fatih/color"
+
 	"github.com/sinalalebakhsh/Gocron/features"
 )
 
-func GetUserInput() {
+func GetUserInput() (string, error) {
 	UserInput := bufio.NewReader(os.Stdin)
 	FinalInput, _ := UserInput.ReadString('\n')
 	FinalInput = strings.TrimSuffix(FinalInput, "\n")
@@ -23,23 +23,21 @@ func GetUserInput() {
 
 	sort.Strings(SliceOfMap)
 
-	Regulators := false
+	// Regulators := false
 
 	for _, value := range SliceOfMap {
 		if FinalInput == value {
-			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-			color.Green(fmt.Sprintln(features.OriginSingleDef.SingleDefinition[value]))
-			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+			SingleDefinition := features.OriginSingleDef.SingleDefinition[value]
+			
+			return SingleDefinition, nil
 
-			Regulators = true
-			break
+			// Regulators = true
+			// break
 		}
 	}
 
-	if Regulators == false {
-		color.Red(fmt.Sprintln("---------------------"))
-		color.Red(fmt.Sprintf("Do not add %s yet.", FinalInput))
-		color.Red(fmt.Sprintln("---------------------"))
-	}
+	// if Regulators == false {
+	// }
+	return "", fmt.Errorf("do not add %s yet", FinalInput)
 
 }

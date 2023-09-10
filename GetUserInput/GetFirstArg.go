@@ -1,13 +1,13 @@
 package getuserinput
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"strings"
 	"time"
-
-	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/features"
+	"net/http"
 )
 
 func GetFirstArg() {
@@ -19,7 +19,8 @@ func GetFirstArg() {
 		FirstArg == "help" || 
 		FirstArg == "-help" ||
 		FirstArg == "--help" {
-			features.HelpMessage()
+		features.HelpMessage()
+		
 		} else if FirstArg == "all" || 
 		FirstArg == "-all" || 
 		FirstArg == "--all" || 
@@ -32,10 +33,13 @@ func GetFirstArg() {
 		FirstArg == "allcode" || 
 		FirstArg == "everyexample" || 
 		FirstArg == "examples" {
-			features.HelpMessage()
-			time.Sleep(time.Second * 2)
-			color.Yellow(fmt.Sprintln(features.OriginalFeatures))			
+			time.Sleep(time.Second * 2)		
+			fmt.Sprint(features.HelpMessage(),features.OriginalFeatures)
 		} 
-	}
+	} else {
+		errors.New("this Argument not add yet")
+	} 
+
+
 }
 
