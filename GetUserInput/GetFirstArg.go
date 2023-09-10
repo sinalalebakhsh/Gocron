@@ -7,7 +7,6 @@ import (
 	"strings"
 	"time"
 	"github.com/sinalalebakhsh/Gocron/features"
-	"net/http"
 )
 
 func GetFirstArg() {
@@ -20,7 +19,7 @@ func GetFirstArg() {
 		FirstArg == "-help" ||
 		FirstArg == "--help" {
 		features.HelpMessage()
-		
+
 		} else if FirstArg == "all" || 
 		FirstArg == "-all" || 
 		FirstArg == "--all" || 
@@ -33,13 +32,14 @@ func GetFirstArg() {
 		FirstArg == "allcode" || 
 		FirstArg == "everyexample" || 
 		FirstArg == "examples" {
-			time.Sleep(time.Second * 2)		
-			fmt.Sprint(features.HelpMessage(),features.OriginalFeatures)
+		time.Sleep(time.Second * 2)		
+		fmt.Println(features.OriginalFeatures)
 		} 
 	} else {
-		errors.New("this Argument not add yet")
+		fmt.Println(errors.New("this Argument not add yet"))
 	} 
 
+	fmt.Println("not add yet")
 
 }
 

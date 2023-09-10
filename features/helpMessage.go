@@ -16,7 +16,7 @@ like this:
 	map slice
 -------------------------------------------------------`)
 
-func HelpMessage() (Message string){
-	return Message
+func HelpMessage() {
+	fmt.Println(Message)
 }
 
