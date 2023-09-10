@@ -3805,7 +3805,30 @@ Converting a String to Runes
     Grow(size)          This method increases the number of bytes used allocated by the builder to store the
                         string that is being built.
 
-
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+187.builder.String()
+    Creating the string using the Builder is more efficient than using the concatenation operator on regular
+    string values, especially if the Grow method is used to allocate storage in advance.
+    Care must be taken to use pointers when passing Builder values to and from functions and
+    methods; otherwise, the efficiency gains will be lost when the Builder is copied.
+    example:
+        package main
+        import (
+            "fmt"
+            "strings"
+        )
+        func main() {
+            text := "It was a boat. A small boat."
+            var builder strings.Builder
+            for _, sub := range strings.Fields(text) {
+                if (sub == "small") {
+                    builder.WriteString("very ")
+                }
+                builder.WriteString(sub)
+                builder.WriteRune(' ')
+            }
+            fmt.Println("String:", builder.String())
+        }
 
 
 

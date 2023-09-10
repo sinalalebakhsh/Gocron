@@ -5,7 +5,16 @@ import (
 	"github.com/fatih/color"
 )
 
-var Message string = fmt.Sprintln(`Gocron Project:
+var Message string = fmt.Sprintln(`
+
+█████████  █████████  ████████  █████████  █████████  ███      ██
+█          █       █  █         █       █  █       █  ████     ██
+█          █       █  █         █       █  █       █  ██ ██    ██
+█     ███  █       █  █         █████████  █       █  ██  ██   ██
+█       █  █       █  █         █    ██    █       █  ██   ██  ██
+█       █  █       █  █         █     ██   █       █  ██    ██ ██
+█████████  █████████  ████████  █      ██  █████████  ██     ████
+Gocron Project:
 -------------------------------------------------------
 is a API for learning GO language with example.
 -------------------------------------------------------
