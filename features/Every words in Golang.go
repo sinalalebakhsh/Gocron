@@ -7,7 +7,6 @@ type Features struct {
 
 var OriginalFeatures Features = Features{
 	EveryWordsInGolang: `
-
 █████████  █████████  ████████  █████████  █████████  ███      ██
 █          █       █  █         █       █  █       █  ████     ██
 █          █       █  █         █       █  █       █  ██ ██    ██
