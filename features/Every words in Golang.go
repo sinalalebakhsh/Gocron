@@ -8,6 +8,17 @@ type Features struct {
 var OriginalFeatures Features = Features{
 	EveryWordsInGolang: `
 
+█████████  █████████  ████████  █████████  █████████  ███      ██
+█          █       █  █         █       █  █       █  ████     ██
+█          █       █  █         █       █  █       █  ██ ██    ██
+█     ███  █       █  █         █████████  █       █  ██  ██   ██
+█       █  █       █  █         █    ██    █       █  ██   ██  ██
+█       █  █       █  █         █     ██   █       █  ██    ██ ██
+█████████  █████████  ████████  █      ██  █████████  ██     ████
+Gocron Project:
+-------------------------------------------------------
+is a API for learning GO language with example.
+-------------------------------------------------------
 in Command Line Interface Go:
 1- go mod init YOURNAME
 2- go work init YOURWORKDIRECTORY
