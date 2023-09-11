@@ -3700,10 +3700,64 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Match: true
 ████████████████████████████████████████████████████████████████████████
 190.Compiling and Reusing Patterns
+    The MatchString function is simple and convenient, 
+    but the full power of regular expressions is accessed
+    through the Compile function
 ████████████████████████████████████████████████████████████████████████
-191.
+191.regexp.Compile() function
+    This is more efficient because the pattern has to be compiled only once. 
+    The result of the Compile
+    function is an instance of the RegExp type, 
+    which defines the MatchString function.
+
+    example:
+        package main
+        import (
+            "fmt"
+            "regexp"
+        )
+        func main() {
+            pattern, compileErr := regexp.Compile("[A-z]oat")
+            description := "A boat for one person"
+            question := "Is that a goat?"
+            preference := "I like oats"
+            if (compileErr == nil) {
+                fmt.Println("Description:", pattern.MatchString(description))
+                fmt.Println("Question:", pattern.MatchString(question))
+                fmt.Println("Preference:", pattern.MatchString(preference))
+            } else {
+                fmt.Println("Error:", compileErr)
+            }
+        }
+    Output:
+        Description: true
+        Question: true
+        Preference: false
 ████████████████████████████████████████████████████████████████████████
-192.
+192.Useful Basic Regexp Methods
+    Function                    Description
+    ---------------             ----------------------------------------------------------------------
+    MatchString(s)              This method returns true if the string s matches the compiled pattern.
+
+    FindStringIndex(s)          This method returns an int slice containing the location for the left-
+                                most match made by the compiled pattern in the string s. A nil result
+                                indicates that no matches were made.
+
+    FindAllStringIndex(s, max)  This method returns a slice of int slices that contain the location for all
+                                the matches made by the compiled pattern in the string s. A nil result
+                                indicates that no matches were made.
+
+    FindString(s)               This method returns a string containing the left-most match made by the
+                                compiled pattern in the string s. An empty string will be returned if no
+                                match is made.
+                                
+    FindAllString(s, max)       This method returns a string slice containing the matches made by the
+                                compiled pattern in the string s. The int argument max specifies the
+                                maximum number of matches, with -1 specifying no limit. A nil result is
+                                returned if there are no matches.
+
+    Split(s, max)               This method splits the string s using matches from the compiled pattern
+                                as separators and returns a slice containing the split substrings.
 ████████████████████████████████████████████████████████████████████████
 193.
 ████████████████████████████████████████████████████████████████████████
