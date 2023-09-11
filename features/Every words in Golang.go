@@ -1214,11 +1214,10 @@ Converting a String to Runes
             }
         }
     
-
+████████████████████████████████████████████████████████████████████████
 87.Function Closure
     Functions defined using the literal syntax can reference variables from the surrounding code, a feature
     known as closure.
-
     example:
         type calcFunc func(float64) float64
         func printPrice(product string, price float64, calculator calcFunc) {
@@ -1252,22 +1251,18 @@ Converting a String to Runes
                 printPrice(product, price, calc)
             }
         }
-    
-
-        
+████████████████████████████████████████████████████████████████████████    
 88.struct
     What are they?
     Structs are data types, comprised of fields.
     
     Why are they useful?
     Structs allow custom data types to be defined.
-    
+
     How are they used?
     The type and struct keywords are used to define a type, 
     allowing field names and types to be specified.
-    
     A struct can mix regular and embedded field types.
-
     example:
         func main() {
             type Product struct {
@@ -1283,20 +1278,18 @@ Converting a String to Runes
             kayak.price = 300
             fmt.Println("Changed price:", kayak.price)
         }
-    
-
     Go doesn't differentiate between structs and classes, in the way that other languages do. All custom
     data types are defined as structs, and the decision to pass them by reference or by value is made
     depending on whether a pointer is used.
 
     Go doesn't allow structs to be used with the const keyword, and the compiler will report an error if
     you try to define a constant struct.
-
+████████████████████████████████████████████████████████████████████████
 89.struct tag
     The struct type can be defined with tags, which provide additional information about how a field should
     be processed. Struct tags are just strings that are interpreted by the code that processes struct values,
     using the features provided by the reflect package.
-
+████████████████████████████████████████████████████████████████████████
 90.struct values
     Values do not have to be provided for all fields when creating a struct value
     
@@ -1311,8 +1304,7 @@ Converting a String to Runes
                     category: "Watersports",
             }
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 91.new 
     the new function to create struct values
         var lifejacket = new(Product)
@@ -1323,7 +1315,7 @@ Converting a String to Runes
         var lifejacket = &Product{}
 
     These approaches are interchangeable, and choosing between them is a matter of preference.
-
+████████████████████████████████████████████████████████████████████████
 92.Field Positions to Create Struct Values
     example:
         func main() {
@@ -1336,12 +1328,10 @@ Converting a String to Runes
             fmt.Println("Category:", kayak.category)
             fmt.Println("Price:", kayak.price)
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 93.Defining Embedded Fields
     If a field is defined without a name, 
     it is known as an embedded field, and it is accessed using the name of its type.
-
     example:
         func main() {
                 type Product struct {
@@ -1359,8 +1349,7 @@ Converting a String to Runes
                 fmt.Println("Name:", stockItem.Product.name)
                 fmt.Println("Count:", stockItem.count)
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 94.Defining an Additional Field
     example:
         func main() {
@@ -1381,8 +1370,7 @@ Converting a String to Runes
             fmt.Println("Name:", stockItem.Product.name)
             fmt.Println("Alt Name:", stockItem.Alternate.name)
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 95.Comparing Struct Values
     example:
         func main() {
@@ -1396,9 +1384,7 @@ Converting a String to Runes
             fmt.Println("p1 == p2:", p1 == p2)
             fmt.Println("p1 == p3:", p1 == p3)
         }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 96.Anonymous Struct Types
     Anonymous struct types are defined without using a name
     example:
@@ -1425,8 +1411,7 @@ Converting a String to Runes
             writeName(prod)
             writeName(item)
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 97.Creating Arrays, Slices, and Maps Containing Struct Values
     Omitting the Struct Type
     example:
@@ -1468,12 +1453,11 @@ Converting a String to Runes
             }
             fmt.Println("Map:", kvp["kayak"].Product.name)
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 98.Structs and Pointers
     Assigning a struct to a new variable or using a struct as a function parameter 
     creates a new value that copies the field values.
-
+████████████████████████████████████████████████████████████████████████
 99.Copying a Struct Value
     example:
         package main
@@ -1493,9 +1477,7 @@ Converting a String to Runes
             fmt.Println("P1:", p1.name)
             fmt.Println("P2:", p2.name)
         }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 100.Using a Pointer to a Struct
     example:
         package main
@@ -1515,8 +1497,7 @@ Converting a String to Runes
             fmt.Println("P1:", p1.name)
             fmt.Println("P2:", (*p2).name)
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 101.the Struct Pointer Convenience Syntax
     example:
         package main
@@ -1543,15 +1524,12 @@ Converting a String to Runes
             fmt.Println("Name:", kayak.name, "Category:",
             kayak.category, "Price", kayak.price)
         }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 102.Struct Constructor Functions
     A constructor function is responsible for creating struct values using values received through parameters
     Constructor functions are used to create struct values consistently. Constructor functions are usually
     named new or New followed by the struct type so that the constructor function for creating Product values
     is named newProduct.
-
     example:
         package main
         import "fmt"
