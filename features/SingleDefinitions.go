@@ -176,6 +176,29 @@ in Command Line Interface Go:
 1- go mod init YOURNAME
 2- go work init YOURWORKDIRECTORY
 3- go run main.go  OR  go run projectName.go`,
+// ██████████████████████████████████████████████████████████████████████
+    "new() function":`188.new() function
+example:
+    package main
+    import "fmt"
+    func main() {
+        // 1.
+        var ChannelName1 string = "AcronProject"
+        fmt.Println("Value=", ChannelName1, "memory address=", &ChannelName1)
+        // 2.
+        var ChannelName2 *string = new(string)
+        fmt.Println("Value ??? = ", ChannelName2, "memory address=", &ChannelName2)
+        var ChannelName3 *string = new(string)
+        fmt.Println("Value ??? = ", ChannelName3, "memory address=", &ChannelName3)
+        fmt.Printf("%q \n",*ChannelName2 + *ChannelName3)
+    }
+Output:
+Value= AcronProject memory address= 0xc000014070
+Value ??? =  0xc000014090 memory address= 0xc00004e028
+Value ??? =  0xc0000140a0 memory address= 0xc00004e030
+""
+`,
+// ██████████████████████████████████████████████████████████████████████
 
 
 },
