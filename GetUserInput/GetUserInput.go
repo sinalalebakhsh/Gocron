@@ -16,7 +16,10 @@ func GetUserInput() {
 	FinalInput = strings.TrimSuffix(FinalInput, "\n")
 
 	SliceOfMap := make([]string, 0, len(features.OriginSingleDef.SingleDefinition))
-	for key, _ := range features.OriginSingleDef.SingleDefinition {
+	for key, NotUsed:= range features.OriginSingleDef.SingleDefinition {
+		if NotUsed == "nil" {
+			fmt.Println(NotUsed, "!!!!!!")
+		}
 		SliceOfMap = append(SliceOfMap, key)
 	}
 	sort.Strings(SliceOfMap)
@@ -41,8 +44,7 @@ func GetUserInput() {
 	}
 
 
-
-	if Regulators == false {
+	if !Regulators {
 		color.Red(fmt.Sprintln("---------------------"))
 		color.Red(fmt.Sprintf("Do not add %s yet.", FinalInput))
 		color.Red(fmt.Sprintln("---------------------"))
