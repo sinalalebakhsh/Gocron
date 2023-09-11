@@ -156,6 +156,14 @@ Enumerate the values received           Use a for loop with the range keyword
 from a channel
 `,
 
+"Create Environment GO":`0.Create Environment GO
+in Command Line Interface Go:
+1- go mod init YOURNAME
+2- go work init YOURWORKDIRECTORY
+3- go run main.go  OR  go run projectName.go
+`,
+
+
 },
 
 }
