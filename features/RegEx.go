@@ -6,6 +6,48 @@ type AllRegEx struct {
 
 var OriginalAllRegex AllRegEx = AllRegEx{
 	allRegex: `
+
+189.Regular Expressions
+    The regular expressions used in this section perform basic matches, but the regexp package
+    supports an extensive pattern syntax, which is described at https://pkg.go.dev/regexp/syntax@go1.17.1.
+    
+    The Basic Functions Provided by the regexp Package
+    Function                Description
+    -----------------       --------------------------------------------------------------------------
+    Match(pattern, b)       This function returns a bool that indicates whether a pattern is matched by
+                            the byte slice b.
+    
+    MatchString(patten, s)  This function returns a bool that indicates whether a pattern is matched by
+                            the string s.
+    
+    Compile(pattern)        This function returns a RegExp that can be used to perform repeated pattern
+                            matching with the specified pattern.
+    
+    MustCompile(pattern)    This function provides the same feature as Compile but panics, 
+                            if the specified pattern cannot be compiled.
+    
+    example:
+        package main
+        import (
+            "fmt"
+            //"strings"
+            "regexp"
+        )
+        func main() {
+            description := "A boat for one person"
+            match, err := regexp.MatchString("[A-z]oat", description)
+            if (err == nil) {
+                fmt.Println("Match:", match)
+            } else {
+                fmt.Println("Error:", err)
+            }
+        }
+    Output:
+        Match: true
+    
+    
+
+████████████████████████████████████████████████████████████████████████
 160.String Processing and Regular Expressions
     What are they?
     String processing includes a wide range of operations, from trimming
@@ -54,7 +96,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
 
     Efficiently build a         Use the Builder type in the strings package
     string
-
+████████████████████████████████████████████████████████████████████████
 161.Comparing Strings
     The strings Functions for Comparing Strings
 
@@ -96,8 +138,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         HasPrefix: true
         HasSuffix: true
         EqualFold: true
-    
-
+████████████████████████████████████████████████████████████████████████
 162.Using The Byte-Oriented Functions
     example:
         package main
@@ -115,8 +156,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
     Output:
         Strings Prefix: true
         Bytes Prefix: true
-    
-
+████████████████████████████████████████████████████████████████████████
 163.Converting String Case
     The Case Functions in the strings Package
     Function        Description
@@ -147,13 +187,13 @@ var OriginalAllRegex AllRegEx = AllRegEx{
             description := "A boat for sailing"
             fmt.Println("Original:", description)
             fmt.Println("Title:", strings.Title(description))
-    	fmt.Println("Title:", strings.ToTitle(description))
+        fmt.Println("Title:", strings.ToTitle(description))
         }
     Output:
         Original: A boat for sailing
         Title: A Boat For Sailing
         Title: A BOAT FOR SAILING
-    
+████████████████████████████████████████████████████████████████████████
 164.Title Case
     example:
         package main
@@ -173,7 +213,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         Original: ǉ [199 137]
         Upper: Ǉ [199 135]
         Title: ǈ [199 136]
-
+████████████████████████████████████████████████████████████████████████
 165.Working with Character Case
     The unicode package provides functions that can be used to determine or change the case of individual
     characters
@@ -186,7 +226,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
     ToUpper(rune)   This function returns the upper rune associated with the specified rune.
     IsTitle(rune)   This function returns true if the specified rune is title case.
     ToTitle(rune)   This function returns the title case rune associated with the specified rune.
-
+████████████████████████████████████████████████████████████████████████
 166.the Rune Case Functions
     example:
         package main
@@ -206,7 +246,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         y Upper case: false
         a Upper case: false
         k Upper case: false        
-
+████████████████████████████████████████████████████████████████████████
 167.Inspecting Strings
     The strings Functions for Inspecting Strings
     Function                Description
@@ -249,8 +289,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         IndexAny: 2
         LastIndex: 19
         LastIndexAny: 4
-
-
+████████████████████████████████████████████████████████████████████████
 168.IndexFunc and LastIndexFunc functions 
     Inspecting Strings with Custom Functions
     The IndexFunc and LastIndexFunc functions use a custom function to inspect strings, using custom functions
@@ -275,11 +314,9 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         }
     Output:
         IndexFunc: 2
-
-
+████████████████████████████████████████████████████████████████████████
 169.Splitting Strings
     The Functions for Splitting Strings in the strings Package
-
     Function                    Description
     ---------------             --------------------------------
     Fields(s)                   This function splits a string on whitespace characters and returns a slice
@@ -301,7 +338,6 @@ var OriginalAllRegex AllRegEx = AllRegEx{
 
     SplitAfterN(s, sub, max)    This function is similar to SplitAfter, but accepts an additional int argument
                                 that specifies the maximum number of substrings to return.
-
 
     example:
         package main
@@ -331,12 +367,11 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         SplitAfter >>for <<
         SplitAfter >>one <<
         SplitAfter >>person<<
-
+████████████████████████████████████████████████████████████████████████
 170.SplitN and SplitAfterN functions 
     Restricting the Number of Results
     The SplitN and SplitAfterN functions accept an int argument that specifies the maximum number of
     results that should be included in the results
-
     Restricting the Results
     example:
         package main
@@ -355,8 +390,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         Split >>A<<
         Split >>boat<<
         Split >>for one person<<
-
-
+████████████████████████████████████████████████████████████████████████
 171.strings.SplitN function
     Splitting on Whitespace Characters
     One limitation of the Split, SplitN, SplitAfter, and SplitAfterN functions is they do not deal with
@@ -381,7 +415,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         Split >>This<<
         Split >><<
         Split >>is  double  spaced<<    
-
+████████████████████████████████████████████████████████████████████████
 172.Fields Function
     The Fields function doesn't support a limit on the number of results 
     but does deal with the double spaces properly.
@@ -405,7 +439,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         Field >>is<<
         Field >>double<<
         Field >>spaced<<
-
+████████████████████████████████████████████████████████████████████████
 173.FieldsFunc function
     Splitting Using a Custom Function to Split Strings
     The FieldsFunc function splits a string by passing each character to a custom function and splitting when
@@ -433,7 +467,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         Field >>is<<
         Field >>double<<
         Field >>spaced<<
-
+████████████████████████████████████████████████████████████████████████
 174.Trimming Strings
     The Functions for Trimming Strings in the strings Package
     
@@ -468,7 +502,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
 
     TrimRightFunc(s, func)  This function returns the string s from which any trailing character for
                             which a custom function returns true are removed.
-
+████████████████████████████████████████████████████████████████████████
 175.TrimSpace function
     Trimming Whitespace
     example:
@@ -484,10 +518,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         }
     Output:
         Trimmed: >>Alice<<
-
 ████████████████████████████████████████████████████████████████████████
-
-
 176.Trim, TrimLeft, and TrimRight functions
     example:
         package main
@@ -502,9 +533,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         }
     Ourput:
         Trimmed:>>boat for one pers<<
-
 ████████████████████████████████████████████████████████████████████████
-
 177.TrimPrefix and TrimSuffix functions
     example:
         package main
@@ -522,9 +551,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
     Output:
         Trimmed: for one person
         Not trimmed: A boat for one person
-
 ████████████████████████████████████████████████████████████████████████
-
 178.TrimFunc, TrimLeftFunc, and TrimRightFunc functions
     example:
         package main
@@ -542,10 +569,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         }
     Output:
         Trimmed:  boat for one perso
-
 ████████████████████████████████████████████████████████████████████████
-
-
 179.Altering Strings
     تغییر رشته‌ها 
     
@@ -563,15 +587,11 @@ var OriginalAllRegex AllRegEx = AllRegEx{
     Map(func, s)                This function generates a string by invoking the custom function for each character in
                                 the string s and concatenating the results. If the function produces a negative value,
                                 the current character is dropped without a replacement.
-
 ████████████████████████████████████████████████████████████████████████
-
-
 180.Replace and ReplaceAll functions
     The Replace function allows a maximum number of changes to be specified, 
     while the ReplaceAll function will replace all the
     occurrences of the substring it finds
-
     example:
         package main
         import (
@@ -588,10 +608,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
     Output:
         Replace: It was a canoe. A small boat.
         Replace All: It was a truck. A small truck.
-
 ████████████████████████████████████████████████████████████████████████
-
-
 181.Map function
     example:
         package main
@@ -612,10 +629,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         }
     Output:
         Mapped: It was a coat. A small coat.
-    
 ████████████████████████████████████████████████████████████████████████
-
-
 182.NewReplacer function
     The strings package exports a struct type named Replacer that is used to replace strings
     example:
@@ -635,10 +649,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         }
     Output:
         Replaced: It was a kayak. A huge kayak.   222
-
 ████████████████████████████████████████████████████████████████████████
-		
-
 183.The Replacer Methods
     Name                    Description
     -------------------     --------------------------------------------
@@ -647,10 +658,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
 
     WriteString(writer, s)  This method is used to perform the replacements specified with the constructor
                             and write the results to an io.Writer
-
 ████████████████████████████████████████████████████████████████████████
-
-
 184.Building and Generating Strings
     The strings Functions for Generating Strings
     Function            Description
@@ -659,11 +667,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
                         separator string placed between elements.
 
     Repeat(s, count)    This function generates a string by repeating the string s for a specified number of times.
-
-
 ████████████████████████████████████████████████████████████████████████
-
-
 185.Join and Repeat functions
     example:
         package main
@@ -673,7 +677,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
         )
         func main() {
             text := "It was a boat. A small boat."
-           elements := strings.Fields(text)
+            elements := strings.Fields(text)
             joined := strings.Join(elements, "--")
             fmt.Println("Joined:", joined)
             esplited := strings.Split(text, " ")
@@ -682,11 +686,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
     Output:
         Joined: It--was--a--boat.--A--small--boat.
         ["It" "was" "a" "boat." "A" "small" "boat."]
-
-
 ████████████████████████████████████████████████████████████████████████
-
-
 186.Building Strings
     The strings.Builder Methods
     Name                Description
@@ -700,9 +700,7 @@ var OriginalAllRegex AllRegEx = AllRegEx{
     Cap()               This method returns the number of bytes that have been allocated by the builder.
     Grow(size)          This method increases the number of bytes used allocated by the builder to store the
                         string that is being built.
-
 ████████████████████████████████████████████████████████████████████████
-
 187.builder.String()
     Creating the string using the Builder is more efficient than using the concatenation operator on regular
     string values, especially if the Grow method is used to allocate storage in advance.
@@ -726,5 +724,6 @@ var OriginalAllRegex AllRegEx = AllRegEx{
             }
             fmt.Println("String:", builder.String())
         }
-`,
+        
+        `,
 }

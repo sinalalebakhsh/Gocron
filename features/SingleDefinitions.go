@@ -199,7 +199,45 @@ Value ??? =  0xc0000140a0 memory address= 0xc00004e030
 ""
 `,
 // ██████████████████████████████████████████████████████████████████████
+"Regular Expressions":`189.Regular Expressions
+The regular expressions used in this section perform basic matches, but the regexp package
+supports an extensive pattern syntax, which is described at https://pkg.go.dev/regexp/syntax@go1.17.1.
 
+The Basic Functions Provided by the regexp Package
+Function                Description
+-----------------       --------------------------------------------------------------------------
+Match(pattern, b)       This function returns a bool that indicates whether a pattern is matched by
+                        the byte slice b.
+
+MatchString(patten, s)  This function returns a bool that indicates whether a pattern is matched by
+                        the string s.
+
+Compile(pattern)        This function returns a RegExp that can be used to perform repeated pattern
+                        matching with the specified pattern.
+
+MustCompile(pattern)    This function provides the same feature as Compile but panics, 
+                        if the specified pattern cannot be compiled.
+
+example:
+    package main
+    import (
+        "fmt"
+        //"strings"
+        "regexp"
+    )
+    func main() {
+        description := "A boat for one person"
+        match, err := regexp.MatchString("[A-z]oat", description)
+        if (err == nil) {
+            fmt.Println("Match:", match)
+        } else {
+            fmt.Println("Error:", err)
+        }
+    }
+Output:
+    Match: true`,
+
+// ██████████████████████████████████████████████████████████████████████
 
 },
 

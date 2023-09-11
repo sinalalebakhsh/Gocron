@@ -3679,9 +3679,27 @@ go mod tidy126.Putting Type and Interface Composition in Context
 
     MustCompile(pattern)    This function provides the same feature as Compile but panics, 
                             if the specified pattern cannot be compiled.
-
+    
+    example:
+        package main
+        import (
+            "fmt"
+            //"strings"
+            "regexp"
+        )
+        func main() {
+            description := "A boat for one person"
+            match, err := regexp.MatchString("[A-z]oat", description)
+            if (err == nil) {
+                fmt.Println("Match:", match)
+            } else {
+                fmt.Println("Error:", err)
+            }
+        }
+    Output:
+        Match: true
 ████████████████████████████████████████████████████████████████████████
-190.
+190.Compiling and Reusing Patterns
 ████████████████████████████████████████████████████████████████████████
 191.
 ████████████████████████████████████████████████████████████████████████
