@@ -3784,9 +3784,32 @@ go mod tidy126.Putting Type and Interface Composition in Context
         First index 0 - 5 = Kayak
         Index 0 = 0 - 5 = Kayak
         Index 1 = 9 - 13 = boat
-        
+
 ████████████████████████████████████████████████████████████████████████
-193.
+193.FindString and FindAllString methods
+    If you dont need to know the location of the matches, then the FindString and FindAllString
+    methods are more useful because their results are the substrings matched by the regular expression
+    Getting Match Substrings
+    example:
+        package main
+        import (
+            "fmt"
+            "regexp"
+        )
+        func main() {
+            pattern := regexp.MustCompile("K[a-z]{4}|[A-z]oat")
+            description := "Kayak. A boat for one person."
+            firstMatch := pattern.FindString(description)
+            allMatches := pattern.FindAllString(description, -1)
+            fmt.Println("First match:", firstMatch)
+            for i, m := range allMatches {
+                fmt.Println("Match", i, "=", m)
+            }
+        }
+    Output:
+        First match: Kayak
+        Match 0 = Kayak
+        Match 1 = boat
 ████████████████████████████████████████████████████████████████████████
 194.
 ████████████████████████████████████████████████████████████████████████
