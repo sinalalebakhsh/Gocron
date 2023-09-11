@@ -3758,6 +3758,33 @@ go mod tidy126.Putting Type and Interface Composition in Context
 
     Split(s, max)               This method splits the string s using matches from the compiled pattern
                                 as separators and returns a slice containing the split substrings.
+
+    example:
+        package main
+        import (
+            "fmt"
+            "regexp"
+        )
+        func getSubstring(s string, indices []int) string {
+            return string(s[indices[0]:indices[1]])
+        }
+        func main() {
+            pattern := regexp.MustCompile("K[a-z]{4}|[A-z]oat")
+            description := "Kayak. A boat for one person."
+            firstIndex := pattern.FindStringIndex(description)
+            allIndices := pattern.FindAllStringIndex(description, -1)
+            fmt.Println("First index", firstIndex[0], "-", firstIndex[1],
+                "=", getSubstring(description, firstIndex))
+            for i, idx := range allIndices {
+                fmt.Println("Index", i, "=", idx[0], "-",
+                    idx[1], "=", getSubstring(description, idx))
+            }
+        }
+    Output:
+        First index 0 - 5 = Kayak
+        Index 0 = 0 - 5 = Kayak
+        Index 1 = 9 - 13 = boat
+        
 ████████████████████████████████████████████████████████████████████████
 193.
 ████████████████████████████████████████████████████████████████████████
