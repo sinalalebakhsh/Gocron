@@ -18,41 +18,28 @@ Gocron Project:
 -------------------------------------------------------
 is a API for learning GO language with example.
 -------------------------------------------------------
-
+████████████████████████████████████████████████████████████████████████
 0.Create Environment GO
     in Command Line Interface Go:
     1- go mod init YOURNAME
     2- go work init YOURWORKDIRECTORY
     3- go run main.go  OR  go run projectName.go
-    
 ████████████████████████████████████████████████████████████████████████
-
-
 1.build
     Using the Go Command
     The go build command compiles the source code in the current directory 
     and generates an executable file.
-
 ████████████████████████████████████████████████████████████████████████
-
-
 2.clean
     The go clean command removes the output produced by the go build command, 
     including the executable and any temporary files that were created during the build.
-
 ████████████████████████████████████████████████████████████████████████
-
 3.doc
     The go doc command generates documentation from source code.
-
 ████████████████████████████████████████████████████████████████████████
-
 4.fmt
     The go fmt command ensures consistent indentation and alignment in source code files.
-
 ████████████████████████████████████████████████████████████████████████
-
-
 5.get
     The go get command downloads and installs external packages.
     flag
@@ -61,105 +48,65 @@ is a API for learning GO language with example.
     For example, in wc -l the -l is a command-line flag.
     Go provides a flag package supporting basic command-line flag parsing.
     We'll use this package to implement our example command-line program.
-
 ████████████████████████████████████████████████████████████████████████
-
 6.install
     The go install command downloads packages and is usually used to install tool packages.
-
 ████████████████████████████████████████████████████████████████████████
-
 7.help
     The go help command displays help information for other Go features. The command go
     help build, for example, displays information about the build argument.
-
 ████████████████████████████████████████████████████████████████████████
-
 8.mod
     The go mod command is used to create and manage a Go module.
-
 ████████████████████████████████████████████████████████████████████████
-
 9.run
     The go run command builds and executes the source code in a specified folder without
     creating an executable output
-
 ████████████████████████████████████████████████████████████████████████
-
 10.test
     The go test command executes unit tests
-
 ████████████████████████████████████████████████████████████████████████
-
 11.version
     The go version command writes out the Go version number.
-
 ████████████████████████████████████████████████████████████████████████
-
 12.vet
     The go vet command detects common problems in Go code
-
 ████████████████████████████████████████████████████████████████████████
-    
-
 13.print <expr>
     Useful Debugger State Commands
     This command evaluates an expression and displays the result. It can
     be used to display a value (print i) or perform a more complex test
     (print i > 0).
-
 ████████████████████████████████████████████████████████████████████████
-
-
 14.set <variable> = <value>
     This command changes the value of the specified variable.
     این دستور مقدار متغیر مشخص شده را تغییر می دهد.
-
 ████████████████████████████████████████████████████████████████████████
-
 15.locals
     This command prints the value of all local variables.
-
 ████████████████████████████████████████████████████████████████████████
-
 16.whatis <expr>
     This command prints the type of the specified expression such as whatis
-
 ████████████████████████████████████████████████████████████████████████
-
-
 17.continue
     Useful Debugger Commands for Controlling Execution
     This command resumes execution of the application.
-
 ████████████████████████████████████████████████████████████████████████
-
 18.next
     This command moves to the next statement.
-
 ████████████████████████████████████████████████████████████████████████
-
 19.step
     This command steps into the current statement.
-
 ████████████████████████████████████████████████████████████████████████
-
 20.stepout
     This command steps out of the current statement.
-
 ████████████████████████████████████████████████████████████████████████
-
 21.restart
     This command restarts the process. Use the continue command to begin execution.
-
 ████████████████████████████████████████████████████████████████████████
-    
 22.exit
     This command exits the debugger.
-
-    ████████████████████████████████████████████████████████████████████████
-
-
+████████████████████████████████████████████████████████████████████████
 23.int = integers
     Understanding the Basic Data Types
     This type represents a whole number, which can be positive or negative. The
@@ -170,57 +117,51 @@ is a API for learning GO language with example.
     Literal Value Examples:
         20, -20. Values can also be expressed in hex (0x14), octal (0o24), and binary notation
         (0b0010100).
-
 ████████████████████████████████████████████████████████████████████████
-
 24.unit
     uint8,  uint16,  uint32,  uint64,int8,  int16,  int32
     This type represents a positive whole number. The uint type size is platform-
     dependent and will be either 32 or 64 bits. There are also unsigned integer
     types that have a specific size, such as uint8, uint16, uint32, and uint64, but
     the uint type should be used unless you need a specific size.
-
     Literal Value Examples:
         There are no uint literals. All literal whole numbers are treated as int values.
-
+████████████████████████████████████████████████████████████████████████
 25.byte = uint8
     This type is an alias for uint8 and is typically used to represent a byte of data.
     byte = 8 bits, 
     1024bytes = 1 kilobyte
     1024 kilobytes = 1 megabyte
-
     Literal Value Examples:
         There are no byte literals. Bytes are typically expressed as integer literals (such as 101) or run
         literals ('e') since the byte type is an alias for the uint8 type.
-
+████████████████████████████████████████████████████████████████████████
 26.float32, float64
     Floating Point Numbers. e.g 3.14, 123.541, 100.4020401
     These types represent numbers with a fraction. These types allocate 32 or 64
     bits to store the value.
-
     Literal Value Examples:
         20.2, -20.2, 1.2e10, 1.2e-10. Values can also be expressed in hex notation (0x2p10), although
         the exponent is expressed in decimal digits.
-
+████████████████████████████████████████████████████████████████████████
 27.complex64, complex128
     These types represent numbers that have real and imaginary components.
     These types allocate 64 or 128 bits to store the value.
-
+████████████████████████████████████████████████████████████████████████
 28.bool 
     bolean
     This type represents a Boolean truth with the values true and false.
 
     Literal Value Examples:
         true, false.
-
+████████████████████████████████████████████████████████████████████████
 29.string
     This type represents a sequence of characters.
-
     Literal Value Examples:
         "Hello". Character sequences escaped with a backslash are interpreted if the value is enclosed
         in double quotes ("Hello\n"). Escape sequences are not interpreted if the value is enclosed in
         backquotes ('Hello\n').
-
+████████████████████████████████████████████████████████████████████████
 30.rune = int32
     This type represents a single Unicode code point. Unicode is complicated,
     but—loosely—this is the representation of a single character. The rune type is
@@ -229,14 +170,13 @@ is a API for learning GO language with example.
     Literal Value Examples:
         'A', '\n', '\u00A5', '¥'. Characters, glyphs, and escape sequences are enclosed in single
         quotes (the ' character).
-
+████████████████████████████████████████████████████████████████████████
 31.var = variable 
     Variables are defined using the var keyword, and, unlike constants, the value assigned to a variable can be
     changed
-
+████████████████████████████████████████████████████████████████████████
 32.const = constant
     Constants are basically variables whose values cannot be changed later.
-
 
     The Zero Values for the Basic Data Types
     Type    Zero Value
@@ -248,30 +188,26 @@ is a API for learning GO language with example.
     bool        false
     string      “” (the empty string)
     rune        0
-
-
-
-
-
-Operations and Conversions
+████████████████████████████████████████████████████████████████████████
 33.+, -, *, /, %
+    Operations and Conversions
     These operators are used to perform arithmetic using numeric values.
-
+████████████████████████████████████████████████████████████████████████
 34.==, !=, <, <=, >, >=
     These operators compare two values.
-
+████████████████████████████████████████████████████████████████████████
 35., &&, !
     These are the logical operators, which are applied to bool values and return a bool value.
-
+████████████████████████████████████████████████████████████████████████
 36.=, :=
     These are the assignment operators. The standard assignment operator (=) is used to set
     the initial value when a constant or variable is defined, or to change the value assigned to
     a previously defined variable. The shorthand operator (:=) is used to define a variable and
     assign a value.
-
+████████████████████████████████████████████████████████████████████████
 37.-=, +=, ++, --
     These operators increment and decrement numeric values.
-
+████████████████████████████████████████████████████████████████████████
 38.&, , ^, &^, <<, >>
     These are the bitwise operators, which can be applied to integer values. These operators are
     not often required in mainstream development
@@ -313,65 +249,62 @@ Operations and Conversions
     !        This operator is used with a single operand. 
                 It returns true if the operand is false and false if
                 the operand is true.
-
-            
-Converting Floating-Point Values to Integers
-Functions in the math Package for Converting Numeric Types
+████████████████████████████████████████████████████████████████████████
 39.Ceil(value)
+    Converting Floating-Point Values to Integers
+    Functions in the math Package for Converting Numeric Types
     This function returns the smallest integer that is greater than the specified floating-
     point value. The smallest integer that is greater than 27.1, for example, is 28.
-
+████████████████████████████████████████████████████████████████████████
 40.Floor(value)
     This function returns the largest integer that is less than the specified floating-point
     value. The largest integer that is less than 27.1, for example, is 28.
-
+████████████████████████████████████████████████████████████████████████
 41.Round(value)
     This function rounds the specified floating-point value to the nearest integer.
-
+████████████████████████████████████████████████████████████████████████
 42.RoundToEven(value)
     This function rounds the specified floating-point value to the nearest even integer.
-
-
-
+████████████████████████████████████████████████████████████████████████
 Parsing from Strings
 Functions for Parsing Strings into Other Data Types
 43.ParseBool(str)
     This function parses a string into a bool value. Recognized string values are "true",
     "false", "TRUE", "FALSE", "True", "False", "T", "F", "0", and "1".
-
+████████████████████████████████████████████████████████████████████████
 44.ParseFloat(str,size)
     This function parses a string into a floating-point value with the specified size, as
     described in the “Parsing Floating-Point Numbers” section.
-
+████████████████████████████████████████████████████████████████████████
 45.ParseInt(str,base, size)
     This function parses a string into an int64 with the specified base and size. Acceptable
     base values are 2 for binary, 8 for octal, 16 for hex, and 10.
-
+████████████████████████████████████████████████████████████████████████
 46.ParseUint(str,base, size)
     This function parses a string into an unsigned integer value with the specified base and size.
-
+████████████████████████████████████████████████████████████████████████
 47.Atoi(str)
     This function parses a string into a base 10 int and is equivalent to calling
     ParseInt(str, 10, 0)
-
-Formatting Values as Strings
-The strconv Functions for Converting Values into Strings
+████████████████████████████████████████████████████████████████████████
 48.FormatBool(val)
+    Formatting Values as Strings
+    The strconv Functions for Converting Values into Strings
     This function returns the string true or false based on the value of the
     specified bool.
-
+████████████████████████████████████████████████████████████████████████
 49.FormatInt(val, base)
     This function returns a string representation of the specified int64 value,
     expressed in the specified base.
-
+████████████████████████████████████████████████████████████████████████
 50.FormatUint(val, base)
     This function returns a string representation of the specified uint64 value,
     expressed in the specified base.
-
+████████████████████████████████████████████████████████████████████████
 51.FormatFloat(val, format, precision, size) 
     This function returns a string representation of the specified float64 value,
     expressed using the specified format, precision, and size.
-
+████████████████████████████████████████████████████████████████████████
 52.Itoa(val)
     This function returns a string representation of the specified int value,
     expressed using base 10.
@@ -390,37 +323,32 @@ The strconv Functions for Converting Values into Strings
     g, G
         The floating-point value will be expressed using format e/E for large exponents or format f for
         smaller values.
-
-
-Understanding Flow Control
+████████████████████████████████████████████████████████████████████████
 53.if
+    Understanding Flow Control
     The if keyword is followed by the expression and then the group of statements to be executed,
     surrounded by braces
-
+████████████████████████████████████████████████████████████████████████
 54.else
     The else keyword can be used to create additional clauses in an if statement
-    
+████████████████████████████████████████████████████████████████████████
 55.else if
     The else/if combination can be repeated to create a sequence of clauses
-
+████████████████████████████████████████████████████████████████████████
 56.for
     Go allows loops only inside of functions.
     The for keyword is used to create loops that repeatedly execute statements. The most basic for loops will
     repeat indefinitely unless interrupted by the break keyword
-
     Incorporating the Condition into the Loop
     
     example: 
         for (counter <= 3) {}
     
-
     Enumerating Sequences:
         for index, character := range product {
                     fmt.Println("Index:", index, "Character:", string(character))
                 }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 57.switch
     A switch statement provides an alternative way to control execution flow, based on matching the result of an
     expression to a specific value, as opposed to evaluating a true or false result
@@ -432,7 +360,6 @@ Understanding Flow Control
                 fmt.Println("y at position", index)
         }
     
-
     Matching Multiple Values:
     example:
         switch (character) {
@@ -442,7 +369,6 @@ Understanding Flow Control
                 fmt.Println("y at position", index)
         }
     
-
     Terminate case Statement Execution:
     example:
         switch (character) {
@@ -455,13 +381,10 @@ Understanding Flow Control
             case 'y':
         fmt.Println("y at position", index)
         }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 58.Falling Through
     Go switch statements don't automatically fall through, but this behavior can be enabled using the
     fallthrough keyword
-
     example:
         switch (character) {
             case 'K':
@@ -472,9 +395,7 @@ Understanding Flow Control
             case 'y':
                 fmt.Println("y at position", index)
             }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 59.default
     The default keyword is used to define a clause that will be executed when none of the case statements
     matches the switch statement's value
@@ -492,8 +413,7 @@ Understanding Flow Control
                 default:
                 fmt.Println("Character", string(character), "at position", index)
             }
-    
-
+████████████████████████████████████████████████████████████████████████
 60.goto label 
     Label statements allow execution to jump to a different point, 
     giving greater flexibility than other flow control features
@@ -504,9 +424,7 @@ Understanding Flow Control
         if (counter < 5) {
                 goto target
         }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 61.Array
     Go arrays are a fixed length and contain elements of a single type, which are accessed by index
     var names [3]string
@@ -523,9 +441,7 @@ Understanding Flow Control
         for index, value := range names {
             fmt.Println("Index:", index, "Value:", value)
         }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 62.Slices
     The slice type in this example is []string
     The best way to think of slices is as a variable-length array because they are useful when you don't know how
@@ -541,9 +457,7 @@ Understanding Flow Control
     Literal Syntax:
     example:
         names := []string {"Kayak", "Lifejacket", "Paddle"}
-    
-
-
+████████████████████████████████████████████████████████████████████████
 63.append
     If you define a slice variable but don't initialize it, then the result is a slice that has a length of zero
     and a capacity of zero, and this will cause an error when an element is appended to it.
@@ -553,14 +467,12 @@ Understanding Flow Control
     example:
         names := []string {"Kayak", "Lifejacket", "Paddle"}
         names = append(names, "Hat", "Gloves")
-    
 
     Appending Items to a Slice:
     example:
         names := []string {"Kayak", "Lifejacket", "Paddle"}
         appendedNames := append(names, "Hat", "Gloves")
         names[0] = "Canoe"
-    
 
     Allocating Additional Slice Capacity:
     example:
@@ -568,7 +480,6 @@ Understanding Flow Control
         names[0] = "Kayak"
         names[1] = "Lifejacket"
         names[2] = "Paddle"
-    
 
     Adding Elements to a Slice:
     example:
@@ -598,7 +509,6 @@ Understanding Flow Control
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         someNames := products[1:3]
         allNames := products[:]
-    
 
     Specifying Capacity When Creating a Slice from an Array:
     example:
@@ -607,7 +517,6 @@ Understanding Flow Control
         allNames := products[:]
         someNames = append(someNames, "Gloves")
     
-
     Creating Slices from Other Slices:
     example:
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
@@ -615,7 +524,6 @@ Understanding Flow Control
         someNames := allNames[1:3]
         allNames = append(allNames, "Gloves")
         allNames[1] = "Canoe"
-    
 
     Comparing Slices:
     example:
@@ -625,8 +533,7 @@ Understanding Flow Control
             fmt.Println("Equal:", p1 == p2)
     Output:
         .\main.go:13:30: invalid operation: p1 == p2 (slice can only be compared to nil)
-    
-
+████████████████████████████████████████████████████████████████████████
 64.copy
     The copy function is used to copy elements between slices. This function can be used to ensure that slices
     have separate arrays and to create slices that combine elements from different sources.
@@ -641,7 +548,6 @@ Understanding Flow Control
     Output:
         allNames [Lifejacket Paddle Hat]
         someNames: [Lifejacket Paddle]
-    
 
     the Uninitialized Slice Pitfall:
     the copy function doesn't resize the destination slice. A common
@@ -654,7 +560,6 @@ Understanding Flow Control
     Output:
         someNames: []
         allNames [Lifejacket Paddle Hat]
-    
 
     Specifying Ranges When Copying Slices:
     Fine-grained control over the elements that are copied can be achieved using ranges
@@ -667,14 +572,12 @@ Understanding Flow Control
         allNames [Lifejacket Paddle Hat]
         someNames: [Boots Hat]
     
-
     Copying Slices with Different Sizes:
         products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         replacementProducts := []string { "Canoe", "Boots"}
         copy(products, replacementProducts)
     Output:
         products: [Canoe Boots Paddle Hat]
-       
 
     Copying a Larger Source Slice
     example:
@@ -684,14 +587,10 @@ Understanding Flow Control
             fmt.Println("products:", products)
     Output:
         products: [Canoe Lifejacket Paddle Hat]
-    
-
     Deleting Slice Elements:
         products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
         deleted := append(products[:2], products[3:]...)
         fmt.Println("Deleted:", deleted)
-
-    
     Enumerating Slices:
     example:
         products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
@@ -701,9 +600,7 @@ Understanding Flow Control
     Output:
         Index: 0 Value: Paddle
         Index: 1 Value: Hat
-    
-
-
+████████████████████████████████████████████████████████████████████████
 65.sort
     There is no built-in support for sorting slices, but the standard library includes the sort package, which
     defines functions for sorting different types of slice.
@@ -719,8 +616,7 @@ Understanding Flow Control
         Index: 1 Value: Kayak
         Index: 2 Value: Lifejacket
         Index: 3 Value: Paddle
-    
-
+████████████████████████████████████████████████████████████████████████
 66.DeepEqual
     The DeepEqual function can be used to compare a wider range of data types than the
     equality operator, including slices.
@@ -738,9 +634,7 @@ Understanding Flow Control
         }    
     Output:
         Equal: true
-    
-
-
+████████████████████████████████████████████████████████████████████████
 67.map
     Maps are a built-in data structure that associates data values with keys. 
     Unlike arrays, where values are associated with sequential integer locations, 
@@ -751,13 +645,11 @@ Understanding Flow Control
         products["Kayak"] = 279
         products["Lifejacket"] = 48.95
     
-
     Map Literal Syntax:
         products := map[string]float64 {
             "Kayak" : 279,
             "Lifejacket": 48.95,
         }
-
     Checking for Items in a Map:
     example:
         products := map[string]float64 {
@@ -771,7 +663,6 @@ Understanding Flow Control
                 } else {
                     fmt.Println("No stored value")
                 }
-    
 
     Removing Items from a Map:
     example:
@@ -780,9 +671,7 @@ Understanding Flow Control
             "Lifejacket": 48.95,
             "Hat": 0,
         }
-        delete(products, "Hat")            
-    
-
+        delete(products, "Hat")
 
     Enumerating the Contents of a Map:
     example:
@@ -794,7 +683,6 @@ Understanding Flow Control
         for key, value := range products {
             fmt.Println("Key:", key, "Value:", value)
         }
-    
 
     Enumerating a Map in Order:
     example:
@@ -817,11 +705,9 @@ Understanding Flow Control
                 fmt.Println("Key:", key, "Value:", products[key])
             }
         }
-    
-        
-
-Understanding the Dual Nature of Strings
+████████████████████████████████████████████████████████████████████████
 68.strconv
+    Understanding the Dual Nature of Strings
     Indexing and Slicing a String:
         var price string = "$48.95"
         var currency byte = price[0]
@@ -851,7 +737,6 @@ Understanding the Dual Nature of Strings
     Output:
         Currency: $
         Amount: 48.95
-
     Changing the Currency Symbol:
     example:
        var price string = "€48.95"
@@ -868,14 +753,13 @@ Understanding the Dual Nature of Strings
         Currency: â
         Parse Error: strconv.ParseFloat: parsing "\x82\xac48.95": invalid syntax
     
-    
     Obtaining the Length:
         fmt.Println("Length:", len(price))
     Output:
         Length: 8
-
-Converting a String to Runes
+████████████████████████████████████████████████████████████████████████
 69.rune
+    Converting a String to Runes
     The rune type represents a Unicode code point, 
     which is essentially a single character. 
     To avoid slicing strings in the middle of characters, 
@@ -883,12 +767,9 @@ Converting a String to Runes
     Unicode is incredibly complex, as you would expect 
     from any standard that aims to describe multiple
     writing systems evolved over thousands of years.
-
     Converting to Runes:
         var price []rune = []rune("€48.95")
         var amountString string = string(price[1:])
-
-
 
     Enumerating Strings        
     example:
@@ -904,7 +785,6 @@ Converting a String to Runes
         6 57 9
         7 53 5
     
-
     Enumerating the Bytes
     example:
         var price = "€48.95"
@@ -920,12 +800,11 @@ Converting a String to Runes
         5 46
         6 57
         7 53
-    
-
+████████████████████████████████████████████████████████████████████████
 70.func
     Functions are groups of code statements that are executed only when the function is
     invoked during the flow of execution.
-
+████████████████████████████████████████████████████████████████████████
 71.Function Parameters
     Parameters allow a function to receive data values when it is called, 
     allowing its behavior to be altered.
@@ -933,14 +812,12 @@ Converting a String to Runes
     values can be provided each time the function is called. Arguments are provided between the parentheses
     that follow the function name, separated by commas and in the same order in which the parameters have
     been defined
-
     example:
         func printPrice(product string, price float64, taxRate float64) {
             taxAmount := price * taxRate
             fmt.Println(product, "price:", price, "Tax:", taxAmount)
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 72.Defining Variadic Parameters
     example:
         func printSuppliers(product string, suppliers []string ) {
@@ -948,16 +825,13 @@ Converting a String to Runes
                 fmt.Println("Product:", product, "Supplier:", supplier)
             }
         }
-    
-
     example:
         func printSuppliers(product string, suppliers ...string ) {
             for , supplier := range suppliers {
                 fmt.Println("Product:", product, "Supplier:", supplier)
             }
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 73.Dealing with No Arguments for a Variadic Parameter
     example:
         func printSuppliers(product string, suppliers ...string ) {
@@ -975,15 +849,13 @@ Converting a String to Runes
         Product: Kayak Supplier: Bob's Boats
         Product: Kayak Supplier: Crazy Canoes
         Product: Lifejacket Supplier: Sail Safe Co
-    
-
+████████████████████████████████████████████████████████████████████████
 74.return Function Results
     example:
         func calcTax(price float64) float64 {
             return price + (price * 0.2)
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 75.Returning Multiple Function Results
     example:
         func swapValues(first, second int) (int, int) {
@@ -995,8 +867,7 @@ Converting a String to Runes
             val1, val2 = swapValues(val1, val2)
             fmt.Println("After calling function", val1, val2)
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 76.Using Named Results
     example:
         func calcTax(price float64) (float64, bool) {
@@ -1018,8 +889,7 @@ Converting a String to Runes
             }
             return
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 77.defer
     The defer keyword is used to schedule a function call that will be performed immediately before the current
     function returns
@@ -1029,7 +899,7 @@ Converting a String to Runes
     a single function can use the defer keyword multiple times.
     Immediately before the function returns, Go will perform the
     calls scheduled with the defer keyword in the order in which they were defined.
-
+████████████████████████████████████████████████████████████████████████
 78.Function Types
     Functions in Go have a data type, which describes the combination of parameters the
     function consumes and the results the function produces. This type can be specified
@@ -1040,7 +910,7 @@ Converting a String to Runes
     Go does not support arrow functions, where functions are expressed more concisely using the =>
     operator, without the func keyword and a code block surrounded by braces. In Go, functions must always be
     defined with the keyword and a body.
-
+████████████████████████████████████████████████████████████████████████
 79.Function Comparisons and the Zero Type
     example:
         func calcWithTax(price float64) float64 {
@@ -1067,8 +937,7 @@ Converting a String to Runes
                 fmt.Println("Product:", product, "Price:", totalPrice)
             }
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 80.Functions as Arguments
     example:
         func calcWithTax(price float64) float64 {
@@ -1093,8 +962,7 @@ Converting a String to Runes
                 }
             }
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 81.Functions as Results
     example:
         func calcWithTax(price float64) float64 {
@@ -1121,8 +989,7 @@ Converting a String to Runes
                 printPrice(product, price, selectCalculator(price))
             }
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 82.Function Type Aliases
     Go supports type aliases, which can be used to assign a name to
     a function signature so that the parameter and result types are not specified every time the function type is
@@ -1153,8 +1020,7 @@ Converting a String to Runes
                 printPrice(product, price, selectCalculator(price))
             }
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 83.the Literal Function Syntax
     example:
         func selectCalculator(price float64) calcFunc {
@@ -1164,8 +1030,7 @@ Converting a String to Runes
                 }
                 return withTax
             }
-    
-
+████████████████████████████████████████████████████████████████████████
 84.Function Variable Scope
     example:
         func selectCalculator(price float64) calcFunc {
@@ -1182,8 +1047,7 @@ Converting a String to Runes
                 }
             return withoutTax
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 85.Functions Values Directly
     example:
         func selectCalculator(price float64) calcFunc {
@@ -1196,10 +1060,7 @@ Converting a String to Runes
                 return price
             }
         }
-    
-
-
-
+████████████████████████████████████████████████████████████████████████
 86.Literal Function Argument
     example:
         func main() {
@@ -1213,7 +1074,6 @@ Converting a String to Runes
                 })
             }
         }
-    
 ████████████████████████████████████████████████████████████████████████
 87.Function Closure
     Functions defined using the literal syntax can reference variables from the surrounding code, a feature
