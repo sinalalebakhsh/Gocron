@@ -1836,7 +1836,7 @@ Converting a String to Runes
     any type, which can be a useful way to group disparate types that share no common features
     The empty interface represents all types, including the built-in types and any structs and interfaces
     that have been defined.
-
+████████████████████████████████████████████████████████████████████████
 114.Empty Interface for Function Parameters
     The empty interface can be used as the type for a function parameter, allowing a function to be called with
     any value
@@ -1886,8 +1886,7 @@ Converting a String to Runes
                 processItem(item)
             }
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 115.Package
     Packages are the Go feature that allows projects to be structured so that related functionality can be grouped
     together, without the need to put all the code into a single file or folder.
@@ -1902,12 +1901,12 @@ Converting a String to Runes
     How are they used?
     Packages are defined by creating code files in folders and using the package
     keyword to denote which package they belong to.
-
+████████████████████████████████████████████████████████████████████████
 116.the Module File
     This name is important because it is used to import features from other packages created within
     the same project and third-party packages
     The go statement specifies the version of Go that is used.
-
+████████████████████████████████████████████████████████████████████████
 117.Package Access Control
     Go has an unusual approach to access control. Instead of relying on dedicated keywords, like public
     and private, Go examines the first letter of the names given to the features in a code file, such as types,
@@ -1917,12 +1916,11 @@ Converting a String to Runes
     The access control rules do not apply to individual function or method parameters, which means that
     the NewProduct function has to have an uppercase first character to be exported, but the parameter names
     can be lowercase.
-
-
+████████████████████████████████████████████████████████████████████████
 118.Adding Code Files to Packages
     Packages can contain multiple code files, and to simplify development, access control rules and package
     prefixes do not apply when accessing features defined in the same package.
-
+████████████████████████████████████████████████████████████████████████
 119.func init()
     Each code file can contain an initialization function that is executed only when all packages have been
     loaded and all other initialization—such as defining constants and variables—has been done. The most
@@ -1941,7 +1939,7 @@ Converting a String to Runes
     the a.go file will be executed before the function in the b.go file, and so on.
     But this order is not part of the Go language specification and should not be relied on. Your initialization
     functions should be self-contained and not rely on other init functions having been invoked previously.
-
+████████████████████████████████████████████████████████████████████████
 120.Creating Nested Packages
     Packages can be defined within other packages, making it easy to break up complex features into as many
     units as possible.
@@ -1966,8 +1964,6 @@ Converting a String to Runes
                 }
                 return
             }
-    
-
     The features defined by the nested package are accessed using the package name, just like any other
     package. When importing a nested package, the package path starts with the module name and lists the
     sequence of packages.
@@ -1988,8 +1984,7 @@ Converting a String to Runes
             fmt.Println("Name:", cart.CustomerName)
             fmt.Println("Total:",  ToCurrency(cart.GetTotal()))
         }
-
-
+████████████████████████████████████████████████████████████████████████
 121.Initialization Function
     example:
         func init() {
@@ -1997,7 +1992,7 @@ Converting a String to Runes
                     categoryMaxPrices[category] = price + (price * defaultTaxRate)
                 }
         }
-
+████████████████████████████████████████████████████████████████████████
 122.Importing a Package Only for Initialization Effects
     Go prevents packages from being imported but not used, 
     which can be a problem if you rely on the effect of
@@ -2014,7 +2009,7 @@ Converting a String to Runes
             "packages/store/cart"
              "packages/data"
         )
-
+████████████████████████████████████████████████████████████████████████
 123.Finding Go Packages
     #1 https://pkg.go.dev
     #2 https://github.com/golang/go/wiki/Projects
@@ -2023,7 +2018,7 @@ Converting a String to Runes
     to solve a problem and then published for anyone else to use. 
     This creates a rich module ecosystem,
     but it does mean that maintenance and support can be inconsistent.
-
+████████████████████████████████████████████████████████████████████████
 124.indirect
     The indirect comment at the end of the statements is added automatically because
     the packages are not used by the code in the project. A file named go.sum is created when the module is
@@ -2049,15 +2044,12 @@ Converting a String to Runes
         go: downloading github.com/mattn/go-isatty v0.0.12
         go: downloading github.com/mattn/go-colorable v0.1.8
         go: downloading golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae
-
-
+████████████████████████████████████████████████████████████████████████
 125.Managing External Packages
     Removing a Package
     To update the go.mod file to reflect the change, run the command:
-        go mod tidy
-
-
-126.Putting Type and Interface Composition in Context
+████████████████████████████████████████████████████████████████████████
+go mod tidy126.Putting Type and Interface Composition in Context
     What is it?
     Composition is the process by which new types are created by combining
     structs and interfaces.
@@ -2096,7 +2088,7 @@ Converting a String to Runes
         func NewProduct(name, category string, price float64) *Product {
             return &Product{ name, category, price }
         }
-        
+████████████████████████████████████████████████████████████████████████
 127.Creating Struct Values in Packages
     example:
     package main
@@ -2115,16 +2107,12 @@ Converting a String to Runes
             fmt.Println("Name:", p.Name, "Category:", p.Category, "Price:", p.Price(0.2))
         }
     }
-    
-
+████████████████████████████████████████████████████████████████████████
 128.Steps of composition
-    
     1-Defining the Base Type -> struct - method 
     2-Defining a Constructor -> for create struct
     3-Composing Types
     4-Using the Boat Struct in the main.go
-
-
     A struct can mix regular and embedded field types, but the embedded fields are an important part of
     the composition feature
 
@@ -2158,20 +2146,17 @@ Converting a String to Runes
 
     boat.go:
        package store
-    
        The Boat struct type defines an embedded *Product field
        type Boat struct {
            *Product       -------------------> Embedded Type
            Capacity int   -----------------> Reguler Fields
            Motorized bool 
        }
-    
        func NewBoat(name string, price float64, capacity int, motorized bool) *Boat {
                return &Boat {
                    NewProduct(name, "Watersports", price), capacity, motorized,
                }
            }
-    
 
     main.go:
         package main
@@ -2194,8 +2179,6 @@ Converting a String to Runes
         Conventional: Kayak Direct: Kayak
         Conventional: Canoe Direct: Canoe
         Conventional: Tender Direct: Tender
-    
-
 
     If the field type is a value, such as Product, then any methods defined with Product or *Product
     receivers will be promoted. If the field type is a pointer, such as *Product, then only methods with *Product
@@ -2223,10 +2206,7 @@ Converting a String to Runes
         Boat: Kayak Price: 330
         Boat: Canoe Price: 480
         Boat: Tender Price: 780.3
-    
-
-
-
+████████████████████████████████████████████████████████████████████████
 129.Creating a Chain of Nested Types
     The composition feature can be used to create complex chains of nested types, 
     whose fields and methods are promoted to the top-level enclosing type.
@@ -2277,8 +2257,7 @@ Converting a String to Runes
         Rental Boat: Rubber Ring Rental Price: 12
         Rental Boat: Yacht Rental Price: 60000
         Rental Boat: Super Yacht Rental Price: 120000
-    
-
+████████████████████████████████████████████████████████████████████████
 130.Multiple Nested Types in the Same Struct
     example:
     rentalboats.go:
@@ -2320,8 +2299,7 @@ Converting a String to Runes
         Rental Boat: Rubber Ring Rental Price: 12 Captain: N/A
         Rental Boat: Yacht Rental Price: 60000 Captain: Bob
         Rental Boat: Super Yacht Rental Price: 120000 Captain: Dora
-    
-
+████████████████████████████████████████████████████████████████████████
 131.When Promotion Cannot Be Performed
     example:
     specialdeal.go File in the store Folder:
@@ -2384,8 +2362,7 @@ Converting a String to Runes
         Name: Weekend Special
         Price field: 229
         Price method: 229
-    
-
+████████████████████████████████████████████████████████████████████████
 132.Promotion Ambiguity
     A related issue arises when two embedded fields use the same field or method names
     example:
@@ -2409,8 +2386,7 @@ Converting a String to Runes
         }
     Output:
         .\main.go:22:33: ambiguous selector bundle.Price    
-           
-
+████████████████████████████████████████████████████████████████████████
 133.Composition and Interfaces
     example:
     Mixing Types in the main.go:
@@ -2431,8 +2407,7 @@ Converting a String to Runes
     Output:
         .\main.go:11:9: cannot use store.NewBoat("Kayak", 279, 1, false) (type *store.Boat) as
         type *store.Product in map value
-    
-
+████████████████████████████████████████████████████████████████████████
 134.Composition to Implement Interfaces
     Go takes promoted methods into account when determining whether a type conforms to an interface,
     which avoids the need to duplicate methods that are already present through an embedded field.
@@ -2463,8 +2438,7 @@ Converting a String to Runes
     Output:
         Key: Kayak Price: 334.8
         Key: Ball Price: 23.4
-    
-
+████████████████████████████████████████████████████████████████████████
 135.the Type Switch Limitation
     
     example:
@@ -2522,8 +2496,7 @@ Converting a String to Runes
     Output:
         Name: Kayak Category: Watersports Price: 334.8
         Name: Soccer Ball Category: Soccer Price: 23.4
-    
-
+████████████████████████████████████████████████████████████████████████
 136.the Type Switch Limitation An alternative solution
     example:
     Defining an Interface in the product.go:
@@ -2576,8 +2549,7 @@ Converting a String to Runes
     Output:
         Name: Kayak Category: Watersports Price: 334.8
         Name: Soccer Ball Category: Soccer Price: 23.4
-    
-
+████████████████████████████████████████████████████████████████████████
 137.Composing Interfaces
     Go allows interfaces to be composed from other interfaces
     
@@ -2606,7 +2578,7 @@ Converting a String to Runes
             return p.Category
         }
     
-
+████████████████████████████████████████████████████████████████████████
 138.Goroutines and Channels
     What are they?
     Goroutines are lightweight threads created and managed by the Go runtime.
@@ -2633,7 +2605,6 @@ Converting a String to Runes
     meaning that execution will not continue until a value
     has been received
     
-
     Problem                                 Solution
     ---------------------------------       -------------------------
     Execute a function asynchronously       Create a goroutine
@@ -2649,10 +2620,7 @@ Converting a String to Runes
 
     Enumerate the values received           Use a for loop with the range keyword 
     from a channel
-
-
-
-
+████████████████████████████████████████████████████████████████████████
 139.How Go Executes Code
     All Go programs use at least one goroutine because this is how Go executes the code in the
     main function.
@@ -2667,7 +2635,7 @@ Converting a String to Runes
     which means that it waits
     for the statement to complete before moving on to the next statement. 
     The statements in the main function
-
+████████████████████████████████████████████████████████████████████████
 140.Creating Additional Goroutines
     Go allows the developer to create additional goroutines, 
     which execute code at the same time as the main
@@ -2690,7 +2658,7 @@ Converting a String to Runes
             fmt.Println("first statement")
 
         }
-
+████████████████████████████████████████████████████████████████████████
 141.Returning Results from Goroutines
     Receiving from a channel is a blocking operation, 
     meaning that execution will not continue until a value
@@ -2705,16 +2673,14 @@ Converting a String to Runes
     Defining a Channel:
     example:
         var channel chan float64 = make(chan float64)
-
-
+████████████████████████████████████████████████████████████████████████
 142.Sending a Result Using a Channel
     Receiving from a channel is a blocking operation, 
     meaning that execution will not continue until a value
     has been received
-
     example:
         resultChannel <- total
-
+████████████████████████████████████████████████████████████████████████
 143.Receiving a Result Using a Channel
     Receiving from a channel is a blocking operation, 
     meaning that execution will not continue until a value
@@ -2722,7 +2688,7 @@ Converting a String to Runes
     
     example:
         storeTotal += <- channel
-
+████████████████████████████████████████████████████████████████████████
 144.using adapters to execute functions asynchronously
     It isn't always possible to rewrite existing functions or methods to use channels, but it is a simple matter
     to execute synchronous functions asynchronously in a wrapper, like this:
@@ -2751,9 +2717,7 @@ Converting a String to Runes
             c <- calcTax(price)
         }(275, resultChannel)
         ...
-    
-
-
+████████████████████████████████████████████████████████████████████████
 145.Coordinating Channels
     By default, sending and receiving through a channel are blocking operations. This means a goroutine that
     sends a value will not execute any further statements until another goroutine receives the value from the
