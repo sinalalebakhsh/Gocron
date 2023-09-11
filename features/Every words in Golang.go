@@ -18,26 +18,40 @@ Gocron Project:
 -------------------------------------------------------
 is a API for learning GO language with example.
 -------------------------------------------------------
-in Command Line Interface Go:
-1- go mod init YOURNAME
-2- go work init YOURWORKDIRECTORY
-3- go run main.go  OR  go run projectName.go
+
+0.Create Environment GO
+    in Command Line Interface Go:
+    1- go mod init YOURNAME
+    2- go work init YOURWORKDIRECTORY
+    3- go run main.go  OR  go run projectName.go
+    
+████████████████████████████████████████████████████████████████████████
 
 
-Using the Go Command
 1.build
+    Using the Go Command
     The go build command compiles the source code in the current directory 
     and generates an executable file.
+
+████████████████████████████████████████████████████████████████████████
+
 
 2.clean
     The go clean command removes the output produced by the go build command, 
     including the executable and any temporary files that were created during the build.
 
+████████████████████████████████████████████████████████████████████████
+
 3.doc
     The go doc command generates documentation from source code.
 
+████████████████████████████████████████████████████████████████████████
+
 4.fmt
     The go fmt command ensures consistent indentation and alignment in source code files.
+
+████████████████████████████████████████████████████████████████████████
+
 
 5.get
     The go get command downloads and installs external packages.
@@ -48,71 +62,106 @@ Using the Go Command
     Go provides a flag package supporting basic command-line flag parsing.
     We'll use this package to implement our example command-line program.
 
+████████████████████████████████████████████████████████████████████████
+
 6.install
     The go install command downloads packages and is usually used to install tool packages.
+
+████████████████████████████████████████████████████████████████████████
 
 7.help
     The go help command displays help information for other Go features. The command go
     help build, for example, displays information about the build argument.
 
+████████████████████████████████████████████████████████████████████████
+
 8.mod
     The go mod command is used to create and manage a Go module.
+
+████████████████████████████████████████████████████████████████████████
 
 9.run
     The go run command builds and executes the source code in a specified folder without
     creating an executable output
 
+████████████████████████████████████████████████████████████████████████
+
 10.test
     The go test command executes unit tests
+
+████████████████████████████████████████████████████████████████████████
 
 11.version
     The go version command writes out the Go version number.
 
+████████████████████████████████████████████████████████████████████████
+
 12.vet
     The go vet command detects common problems in Go code
 
+████████████████████████████████████████████████████████████████████████
     
 
-Useful Debugger State Commands
 13.print <expr>
+    Useful Debugger State Commands
     This command evaluates an expression and displays the result. It can
     be used to display a value (print i) or perform a more complex test
     (print i > 0).
+
+████████████████████████████████████████████████████████████████████████
+
 
 14.set <variable> = <value>
     This command changes the value of the specified variable.
     این دستور مقدار متغیر مشخص شده را تغییر می دهد.
 
+████████████████████████████████████████████████████████████████████████
+
 15.locals
     This command prints the value of all local variables.
+
+████████████████████████████████████████████████████████████████████████
 
 16.whatis <expr>
     This command prints the type of the specified expression such as whatis
 
+████████████████████████████████████████████████████████████████████████
 
-Useful Debugger Commands for Controlling Execution
+
 17.continue
+    Useful Debugger Commands for Controlling Execution
     This command resumes execution of the application.
+
+████████████████████████████████████████████████████████████████████████
 
 18.next
     This command moves to the next statement.
 
+████████████████████████████████████████████████████████████████████████
+
 19.step
     This command steps into the current statement.
+
+████████████████████████████████████████████████████████████████████████
 
 20.stepout
     This command steps out of the current statement.
 
+████████████████████████████████████████████████████████████████████████
+
 21.restart
     This command restarts the process. Use the continue command to begin execution.
+
+████████████████████████████████████████████████████████████████████████
     
 22.exit
     This command exits the debugger.
 
+    ████████████████████████████████████████████████████████████████████████
 
 
-Understanding the Basic Data Types
 23.int = integers
+    Understanding the Basic Data Types
     This type represents a whole number, which can be positive or negative. The
     int type size is platform-dependent and will be either 32 or 64 bits. There are
     also integer types that have a specific size, such as int8, int16, int32, and
@@ -121,6 +170,8 @@ Understanding the Basic Data Types
     Literal Value Examples:
         20, -20. Values can also be expressed in hex (0x14), octal (0o24), and binary notation
         (0b0010100).
+
+████████████████████████████████████████████████████████████████████████
 
 24.unit
     uint8,  uint16,  uint32,  uint64,int8,  int16,  int32
@@ -3643,6 +3694,8 @@ Converting a String to Runes
     Ourput:
         Trimmed:>>boat for one pers<<
 
+████████████████████████████████████████████████████████████████████████
+
 177.TrimPrefix and TrimSuffix functions
     example:
         package main
@@ -3660,6 +3713,8 @@ Converting a String to Runes
     Output:
         Trimmed: for one person
         Not trimmed: A boat for one person
+
+████████████████████████████████████████████████████████████████████████
 
 178.TrimFunc, TrimLeftFunc, and TrimRightFunc functions
     example:
@@ -3679,6 +3734,8 @@ Converting a String to Runes
     Output:
         Trimmed:  boat for one perso
 
+████████████████████████████████████████████████████████████████████████
+
 179.Altering Strings
     تغییر رشته‌ها 
     
@@ -3696,6 +3753,8 @@ Converting a String to Runes
     Map(func, s)                This function generates a string by invoking the custom function for each character in
                                 the string s and concatenating the results. If the function produces a negative value,
                                 the current character is dropped without a replacement.
+
+████████████████████████████████████████████████████████████████████████
 
 
 180.Replace and ReplaceAll functions
@@ -3720,6 +3779,9 @@ Converting a String to Runes
         Replace: It was a canoe. A small boat.
         Replace All: It was a truck. A small truck.
 
+████████████████████████████████████████████████████████████████████████
+
+
 181.Map function
     example:
         package main
@@ -3741,6 +3803,9 @@ Converting a String to Runes
     Output:
         Mapped: It was a coat. A small coat.
     
+████████████████████████████████████████████████████████████████████████
+
+
 182.NewReplacer function
     The strings package exports a struct type named Replacer that is used to replace strings
     example:
@@ -3760,6 +3825,8 @@ Converting a String to Runes
         }
     Output:
         Replaced: It was a kayak. A huge kayak.   222
+
+████████████████████████████████████████████████████████████████████████
         
 
 183.The Replacer Methods
@@ -3771,6 +3838,8 @@ Converting a String to Runes
     WriteString(writer, s)  This method is used to perform the replacements specified with the constructor
                             and write the results to an io.Writer
 
+████████████████████████████████████████████████████████████████████████
+
 
 184.Building and Generating Strings
     The strings Functions for Generating Strings
@@ -3780,6 +3849,9 @@ Converting a String to Runes
                         separator string placed between elements.
 
     Repeat(s, count)    This function generates a string by repeating the string s for a specified number of times.
+
+████████████████████████████████████████████████████████████████████████
+
 
 185.Join and Repeat functions
     example:
@@ -3800,6 +3872,8 @@ Converting a String to Runes
         Joined: It--was--a--boat.--A--small--boat.
         ["It" "was" "a" "boat." "A" "small" "boat."]
 
+████████████████████████████████████████████████████████████████████████
+
 
 186.Building Strings
     The strings.Builder Methods
@@ -3815,7 +3889,9 @@ Converting a String to Runes
     Grow(size)          This method increases the number of bytes used allocated by the builder to store the
                         string that is being built.
 
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+████████████████████████████████████████████████████████████████████████
+
+
 187.builder.String()
     Creating the string using the Builder is more efficient than using the concatenation operator on regular
     string values, especially if the Grow method is used to allocate storage in advance.
