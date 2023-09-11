@@ -1573,9 +1573,7 @@ Converting a String to Runes
                 fmt.Println("Name:", p.name, "Category:",  p.category, "Price", p.price)
             }
         }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 103.Modifying a Constructor
     The benefit of using constructor functions is consistency, 
     ensuring that changes to the construction
@@ -1585,8 +1583,7 @@ Converting a String to Runes
         func newProduct(name, category string, price float64) *Product {
             return &Product{name, category, price - 10}
         }
-    
-
+████████████████████████████████████████████████████████████████████████  
 104.Pointer Types for Struct Fields
     example:
         package main
@@ -1613,12 +1610,9 @@ Converting a String to Runes
                     p.Supplier.name, p.Supplier.city)
             }
         }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 105.Pointer Field Copying
-    Care must be taken when copying structs to consider the effect on pointer fields
-    
+    Care must be taken when copying structs to consider the effect on pointer fields    
     example:
         package main
         import "fmt"
@@ -1644,9 +1638,7 @@ Converting a String to Runes
                     p.Supplier.name, p.Supplier.city)
             }
         }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 106.Method
     What are they?
     Methods are functions that are invoked on a struct and have access to all of the
@@ -1664,7 +1656,7 @@ Converting a String to Runes
     Are there any pitfalls or limitations?
     Careful use of pointers is important when creating methods, and care must be taken
     when using interfaces to avoid problems with the underlying dynamic types.
-
+████████████████████████████████████████████████████████████████████████
 107.Defining and Using Method
     example:
         package main
@@ -1690,9 +1682,7 @@ Converting a String to Runes
                 p.printDetails()
             }
         }
-    
-
-
+████████████████████████████████████████████████████████████████████████
 108.Defining Method Parameters and Results
     example:
         package main
@@ -1718,8 +1708,7 @@ Converting a String to Runes
                 p.calcTax(0.2, 100) //<-------------------------------here
             }
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 109.Defining and Using Interfaces
     One interface can enclose another, with the effect that types must implement all the methods defined
     by the enclosing and enclosed interfaces. Interfaces are simpler than structs, and there are no fields or
@@ -1741,9 +1730,8 @@ Converting a String to Runes
             for , expense := range expenses {
                 fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
             }
-        }
-    
-
+        }    
+████████████████████████████████████████████████████████████████████████
 110.an Interface in a Function
     example:
         package main
@@ -1768,8 +1756,7 @@ Converting a String to Runes
             }
             fmt.Println("Total:", calcTotal(expenses))
         }
-    
-
+████████████████████████████████████████████████████████████████████████
 111.an Interface for Struct Fields
     example:
         package main
@@ -1800,9 +1787,8 @@ Converting a String to Runes
                 fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
             }
             fmt.Println("Total:", calcTotal(account.expenses))
-        }
-    
-
+        }    
+████████████████████████████████████████████████████████████████████████
 112.Comparing Interface Values
     Care must be taken when comparing interface values, and inevitably, some knowledge of the dynamic
     types is required.
@@ -1828,9 +1814,7 @@ Converting a String to Runes
     Output:
         e1 == e2 false
         e3 == e4 true
-    
-
-
+████████████████████████████████████████████████████████████████████████
 113.Empty Interface
     Go allows the user of the empty interface—which means an interface that defines no methods—to represent
     any type, which can be a useful way to group disparate types that share no common features
