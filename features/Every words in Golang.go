@@ -2770,8 +2770,7 @@ Converting a String to Runes
         Everyone waits patiently, messages are transferred only when the sender 
         and receiver are both available, and messages are
         processed sequentially.
-    
-
+████████████████████████████████████████████████████████████████████████
 146.Buffered Channel
     The default channel behavior can lead to bursts of activity as goroutines do their work, followed by a long
     idle period waiting for messages to be received. This doesn't have an impact on the example application
@@ -2789,20 +2788,13 @@ Converting a String to Runes
         This is similar to Alice having an inbox on her desk. Senders come to Alice's office and put
         their message into the inbox, leaving it for Alice to read when she is ready. But, if the inbox is full, then they
         will have to wait until she has processed some of her backlog before sending a new message.
-    
-
     Creating a Buffered Channel
     example:
         var channel chan float64 = make(chan float64, 2)
-    
-
     Result explain:
         For this example, I have set the size of the buffer to 2, meaning that two senders will be able to send
         values through the channel without having to wait for them to be received.
-    
-
-
-
+████████████████████████████████████████████████████████████████████████
 147.Inspecting a Channel Buffer
     You can determine the size of a channel's buffer using 
     the built-in cap function and determine how many
@@ -2813,7 +2805,7 @@ Converting a String to Runes
 
     example:
         len(channel), "items in buffer, size", cap(channel))
-
+████████████████████████████████████████████████████████████████████████
 148.Closing a Channel
     The solution for this problem is for the sender to indicate when no further values are coming through the
     channel, which is done by closing the channel
@@ -2840,10 +2832,8 @@ Converting a String to Runes
             } else {
                 fmt.Println("Channel has been closed")
             break
-        }
-    
-
-
+        }    
+████████████████████████████████████████████████████████████████████████
 149.Enumerating Channel Values
     A for loop can be used with the range keyword to enumerate the values sent through a channel, allowing
     the values to be received more easily and terminating the loop when the channel is closed
@@ -2859,9 +2849,7 @@ Converting a String to Runes
                 "x", details.Product.Name)
         }
         fmt.Println("Channel has been closed")
-    
-
-
+████████████████████████████████████████████████████████████████████████
 150.Restricting Channel Direction
     By default, channels can be used to send and receive data, but this can be restricted when using channels
     as arguments, such that only send or receive operations can be performed.
@@ -2880,13 +2868,10 @@ Converting a String to Runes
         # concurrency
         .\orderdispatch.go:29:29: invalid operation: <-channel (receive from send-only type chan<-
         DispatchNotification)
-    
-
-
+████████████████████████████████████████████████████████████████████████
 151.Restricting Channel Argument Direction
     Go allows bidirectional channels to be assigned to unidirectional channel variables, 
     allowing restrictions to be applied
-
     example:
         func receiveDispatches(channel <-chan DispatchNotification) {
             for details := range channel {
@@ -2895,8 +2880,6 @@ Converting a String to Runes
             }
             fmt.Println("Channel has been closed")
         }
-
-
     
     Restrictions on channel direction can also be created through explicit conversion
     The explicit conversion for the receive-only channel requires parentheses around the channel type
@@ -2908,7 +2891,7 @@ Converting a String to Runes
             go DispatchOrders(chan<- DispatchNotification(dispatchChannel))
             receiveDispatches((<-chan DispatchNotification)(dispatchChannel))
         }
-
+████████████████████████████████████████████████████████████████████████
 152.Select Statements
     The select keyword is used to group operations that will send or receive from channels, 
     which allows for complex arrangements of goroutines and channels to be created. 
@@ -2940,9 +2923,7 @@ Converting a String to Runes
             }
         }
         alldone: fmt.Println("All values received")
-
-        
-
+████████████████████████████████████████████████████████████████████████
 153.Receiving from Multiple Channels
     A select statement can be used to receive without blocking,
     when there are multiple channels, through which values are sent at different
@@ -3004,7 +2985,7 @@ Converting a String to Runes
             }
             alldone: fmt.Println("All values received")
         }
-
+████████████████████████████████████████████████████████████████████████
 154.Sending Without Blocking
     A select statement can also be used to send to a channel without blocking
 
@@ -3021,7 +3002,7 @@ Converting a String to Runes
             }
             close(channel)
         }
-
+████████████████████████████████████████████████████████████████████████
 155.Sending to Multiple Channels
     If there are multiple channels available, a select statement can be used to find a channel for which sending
     will not block
@@ -3048,7 +3029,7 @@ Converting a String to Runes
             close(channel1)
             close(channel2)
         }
-
+████████████████████████████████████████████████████████████████████████
 156.Error Handling
     What is it?
     Go's error handling allows exceptional conditions and failures to be represented and dealt with.
@@ -3090,12 +3071,10 @@ Converting a String to Runes
 
     Recover from a panic                    Use the defer keyword to register a function that
                                             calls the recover function
-
-                                            
+████████████████████████████████████████████████████████████████████████
 157.Generating Errors
     Functions and methods can express exceptional or unexpected outcomes by producing error responses
     Defining an Error
-    
     example:
         package main
         import "fmt"
@@ -3114,9 +3093,7 @@ Converting a String to Runes
         Watersports Total: $328.95
         Chess Total: $1291.00
         Running (no such category)
-    
-
-
+████████████████████████████████████████████████████████████████████████
 158.Ignoring Error Results
     I don't recommend ignoring error results because it means you will lose important information.
 
@@ -3134,7 +3111,7 @@ Converting a String to Runes
                 fmt.Println(cat, "Total:", ToCurrency(total))
             }
         }
-
+████████████████████████████████████████████████████████████████████████
 159.Reporting Errors via Channels
     example:
     operations.go:
@@ -3197,8 +3174,7 @@ Converting a String to Runes
         Watersports Total: $328.95
         Chess Total: $1291.00
         Running (no such category)
-    
-
+████████████████████████████████████████████████████████████████████████
 160.String Processing and Regular Expressions
     What are they?
     String processing includes a wide range of operations, from trimming
@@ -3247,7 +3223,7 @@ Converting a String to Runes
 
     Efficiently build a         Use the Builder type in the strings package
     string
-
+████████████████████████████████████████████████████████████████████████
 161.Comparing Strings
     The strings Functions for Comparing Strings
 
@@ -3289,8 +3265,7 @@ Converting a String to Runes
         HasPrefix: true
         HasSuffix: true
         EqualFold: true
-    
-
+████████████████████████████████████████████████████████████████████████
 162.Using The Byte-Oriented Functions
     example:
         package main
@@ -3308,8 +3283,7 @@ Converting a String to Runes
     Output:
         Strings Prefix: true
         Bytes Prefix: true
-    
-
+████████████████████████████████████████████████████████████████████████
 163.Converting String Case
     The Case Functions in the strings Package
     Function        Description
@@ -3346,7 +3320,7 @@ Converting a String to Runes
         Original: A boat for sailing
         Title: A Boat For Sailing
         Title: A BOAT FOR SAILING
-    
+████████████████████████████████████████████████████████████████████████
 164.Title Case
     example:
         package main
@@ -3366,7 +3340,7 @@ Converting a String to Runes
         Original: ǉ [199 137]
         Upper: Ǉ [199 135]
         Title: ǈ [199 136]
-
+████████████████████████████████████████████████████████████████████████
 165.Working with Character Case
     The unicode package provides functions that can be used to determine or change the case of individual
     characters
@@ -3379,7 +3353,7 @@ Converting a String to Runes
     ToUpper(rune)   This function returns the upper rune associated with the specified rune.
     IsTitle(rune)   This function returns true if the specified rune is title case.
     ToTitle(rune)   This function returns the title case rune associated with the specified rune.
-
+████████████████████████████████████████████████████████████████████████
 166.the Rune Case Functions
     example:
         package main
@@ -3399,7 +3373,7 @@ Converting a String to Runes
         y Upper case: false
         a Upper case: false
         k Upper case: false        
-
+████████████████████████████████████████████████████████████████████████
 167.Inspecting Strings
     The strings Functions for Inspecting Strings
     Function                Description
@@ -3442,8 +3416,7 @@ Converting a String to Runes
         IndexAny: 2
         LastIndex: 19
         LastIndexAny: 4
-
-
+████████████████████████████████████████████████████████████████████████
 168.IndexFunc and LastIndexFunc functions 
     Inspecting Strings with Custom Functions
     The IndexFunc and LastIndexFunc functions use a custom function to inspect strings, using custom functions
@@ -3468,11 +3441,9 @@ Converting a String to Runes
         }
     Output:
         IndexFunc: 2
-
-
+████████████████████████████████████████████████████████████████████████
 169.Splitting Strings
     The Functions for Splitting Strings in the strings Package
-
     Function                    Description
     ---------------             --------------------------------
     Fields(s)                   This function splits a string on whitespace characters and returns a slice
@@ -3494,7 +3465,6 @@ Converting a String to Runes
 
     SplitAfterN(s, sub, max)    This function is similar to SplitAfter, but accepts an additional int argument
                                 that specifies the maximum number of substrings to return.
-
 
     example:
         package main
@@ -3524,12 +3494,11 @@ Converting a String to Runes
         SplitAfter >>for <<
         SplitAfter >>one <<
         SplitAfter >>person<<
-
+████████████████████████████████████████████████████████████████████████
 170.SplitN and SplitAfterN functions 
     Restricting the Number of Results
     The SplitN and SplitAfterN functions accept an int argument that specifies the maximum number of
     results that should be included in the results
-
     Restricting the Results
     example:
         package main
@@ -3548,8 +3517,7 @@ Converting a String to Runes
         Split >>A<<
         Split >>boat<<
         Split >>for one person<<
-
-
+████████████████████████████████████████████████████████████████████████
 171.strings.SplitN function
     Splitting on Whitespace Characters
     One limitation of the Split, SplitN, SplitAfter, and SplitAfterN functions is they do not deal with
@@ -3574,7 +3542,7 @@ Converting a String to Runes
         Split >>This<<
         Split >><<
         Split >>is  double  spaced<<    
-
+████████████████████████████████████████████████████████████████████████
 172.Fields Function
     The Fields function doesn't support a limit on the number of results 
     but does deal with the double spaces properly.
@@ -3598,7 +3566,7 @@ Converting a String to Runes
         Field >>is<<
         Field >>double<<
         Field >>spaced<<
-
+████████████████████████████████████████████████████████████████████████
 173.FieldsFunc function
     Splitting Using a Custom Function to Split Strings
     The FieldsFunc function splits a string by passing each character to a custom function and splitting when
@@ -3626,7 +3594,7 @@ Converting a String to Runes
         Field >>is<<
         Field >>double<<
         Field >>spaced<<
-
+████████████████████████████████████████████████████████████████████████
 174.Trimming Strings
     The Functions for Trimming Strings in the strings Package
     
@@ -3661,7 +3629,7 @@ Converting a String to Runes
 
     TrimRightFunc(s, func)  This function returns the string s from which any trailing character for
                             which a custom function returns true are removed.
-
+████████████████████████████████████████████████████████████████████████
 175.TrimSpace function
     Trimming Whitespace
     example:
@@ -3677,8 +3645,7 @@ Converting a String to Runes
         }
     Output:
         Trimmed: >>Alice<<
-
-
+████████████████████████████████████████████████████████████████████████
 176.Trim, TrimLeft, and TrimRight functions
     example:
         package main
@@ -3693,9 +3660,7 @@ Converting a String to Runes
         }
     Ourput:
         Trimmed:>>boat for one pers<<
-
 ████████████████████████████████████████████████████████████████████████
-
 177.TrimPrefix and TrimSuffix functions
     example:
         package main
@@ -3713,9 +3678,7 @@ Converting a String to Runes
     Output:
         Trimmed: for one person
         Not trimmed: A boat for one person
-
 ████████████████████████████████████████████████████████████████████████
-
 178.TrimFunc, TrimLeftFunc, and TrimRightFunc functions
     example:
         package main
@@ -3733,9 +3696,7 @@ Converting a String to Runes
         }
     Output:
         Trimmed:  boat for one perso
-
 ████████████████████████████████████████████████████████████████████████
-
 179.Altering Strings
     تغییر رشته‌ها 
     
@@ -3753,15 +3714,11 @@ Converting a String to Runes
     Map(func, s)                This function generates a string by invoking the custom function for each character in
                                 the string s and concatenating the results. If the function produces a negative value,
                                 the current character is dropped without a replacement.
-
 ████████████████████████████████████████████████████████████████████████
-
-
 180.Replace and ReplaceAll functions
     The Replace function allows a maximum number of changes to be specified, 
     while the ReplaceAll function will replace all the
     occurrences of the substring it finds
-
     example:
         package main
         import (
@@ -3778,10 +3735,7 @@ Converting a String to Runes
     Output:
         Replace: It was a canoe. A small boat.
         Replace All: It was a truck. A small truck.
-
 ████████████████████████████████████████████████████████████████████████
-
-
 181.Map function
     example:
         package main
@@ -3802,10 +3756,7 @@ Converting a String to Runes
         }
     Output:
         Mapped: It was a coat. A small coat.
-    
 ████████████████████████████████████████████████████████████████████████
-
-
 182.NewReplacer function
     The strings package exports a struct type named Replacer that is used to replace strings
     example:
@@ -3825,10 +3776,7 @@ Converting a String to Runes
         }
     Output:
         Replaced: It was a kayak. A huge kayak.   222
-
 ████████████████████████████████████████████████████████████████████████
-        
-
 183.The Replacer Methods
     Name                    Description
     -------------------     --------------------------------------------
@@ -3837,10 +3785,7 @@ Converting a String to Runes
 
     WriteString(writer, s)  This method is used to perform the replacements specified with the constructor
                             and write the results to an io.Writer
-
 ████████████████████████████████████████████████████████████████████████
-
-
 184.Building and Generating Strings
     The strings Functions for Generating Strings
     Function            Description
@@ -3849,10 +3794,7 @@ Converting a String to Runes
                         separator string placed between elements.
 
     Repeat(s, count)    This function generates a string by repeating the string s for a specified number of times.
-
 ████████████████████████████████████████████████████████████████████████
-
-
 185.Join and Repeat functions
     example:
         package main
@@ -3871,10 +3813,7 @@ Converting a String to Runes
     Output:
         Joined: It--was--a--boat.--A--small--boat.
         ["It" "was" "a" "boat." "A" "small" "boat."]
-
 ████████████████████████████████████████████████████████████████████████
-
-
 186.Building Strings
     The strings.Builder Methods
     Name                Description
@@ -3888,10 +3827,7 @@ Converting a String to Runes
     Cap()               This method returns the number of bytes that have been allocated by the builder.
     Grow(size)          This method increases the number of bytes used allocated by the builder to store the
                         string that is being built.
-
 ████████████████████████████████████████████████████████████████████████
-
-
 187.builder.String()
     Creating the string using the Builder is more efficient than using the concatenation operator on regular
     string values, especially if the Grow method is used to allocate storage in advance.
