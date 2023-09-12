@@ -4020,6 +4020,16 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Formatting is the process of composing a new string from one or more data values, 
     while scanning is the process of parsing values from a string.
     
+    What are they?
+    Formatting is the process of composing values into a string. Scanning is the process
+    of parsing a string for the values it contains.
+
+    Why are they useful?
+    Formatting a string is a common requirement and is used to produce strings for
+    everything from logging and debugging to presenting the user with information.
+    Scanning is useful for extracting data from strings, such as from HTTP requests or
+    user input.
+    
 ████████████████████████████████████████████████████████████████████████
 203.
 ████████████████████████████████████████████████████████████████████████
