@@ -3811,7 +3811,55 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Match 0 = Kayak
         Match 1 = boat
 ████████████████████████████████████████████████████████████████████████
-194.
+194.Splitting Strings Using a Regular Expression
+    The Split method splits a string using the matches made by a regular expression, which can provide a more
+    flexible alternative to the splitting functions
+    example:
+        package main
+        import (
+            "fmt"
+            "regexp"
+        )
+        func main() {
+            pattern := regexp.MustCompile(" |boat|one")
+            description := "Kayak. A boat for one person."
+            split := pattern.Split(description, -1)
+            for _, s := range split {
+                if s != "" {
+                    fmt.Println("Substring:", s)
+                }
+            }
+        }
+    Output:
+        Substring: Kayak.
+        Substring: A
+        Substring: for
+        Substring: person.
+    example:
+        package main
+        import (
+            "fmt"
+            "regexp"
+        )
+        func main() {
+            pattern := regexp.MustCompile(" |boat|one")
+            description := "Kayak. A boat | | | | for one person."
+            split := pattern.Split(description, -2)
+            for _, s := range split {
+                if s != "" {
+                    fmt.Println("Substring:", s)
+                }
+            }
+        }
+    Output:
+        Substring: Kayak.
+        Substring: A
+        Substring: |
+        Substring: |
+        Substring: |
+        Substring: |
+        Substring: for
+        Substring: person.
 ████████████████████████████████████████████████████████████████████████
 195.
 ████████████████████████████████████████████████████████████████████████
