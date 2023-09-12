@@ -4029,6 +4029,15 @@ go mod tidy126.Putting Type and Interface Composition in Context
     everything from logging and debugging to presenting the user with information.
     Scanning is useful for extracting data from strings, such as from HTTP requests or
     user input.
+
+    How are they used?
+    Both sets of features are provided through functions defined in the fmt package.
+
+    Are there any pitfalls or limitations?
+    The templates used to format strings can be hard to read, and there is no built-in
+    function that allows a formatted string to be created to which a newline character
+    is appended automatically.
+
     
 ████████████████████████████████████████████████████████████████████████
 203.
