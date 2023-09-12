@@ -4056,8 +4056,12 @@ go mod tidy126.Putting Type and Interface Composition in Context
                                 their values to the standard out, separated by spaces and followed by a
                                 newline character.
 
-    Fprint(writer, ...vals)     This function writes out a variable number of arguments to the specified
-    writer
+    Fprint(writer, ...vals)     This function writes out a variable number of arguments to the specified writer,
+                                Spaces are added between values that are not strings.
+
+    Fprintln(writer, ...vals)   This function writes out a variable number of arguments to the specified writer
+                                followed by a newline character. Spaces are added between all values.
+                                
 ████████████████████████████████████████████████████████████████████████
 204.
 ████████████████████████████████████████████████████████████████████████
