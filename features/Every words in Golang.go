@@ -4306,7 +4306,16 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Value: Product: Kayak, Price: $275.00
         Value with fields: Product: Kayak, Price: $275.00
 ████████████████████████████████████████████████████████████████████████
-211.
+211.Formating Arrays, Slices, Maps
+    When arrays and slices are represented as strings, the output is a set of square brackets, within which
+    are the individual elements, like this:
+    example:
+        [Kayak Lifejacket Paddle]
+    
+    Notice that no commas are separating the elements. When maps are represented as strings, the key-
+    value pairs are displayed within square brackets, preceded by the map keyword, like this:
+    example:
+        map[1:Kayak 2:Lifejacket 3:Paddle]
 ████████████████████████████████████████████████████████████████████████
 212.
 ████████████████████████████████████████████████████████████████████████
