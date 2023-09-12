@@ -4061,9 +4061,23 @@ go mod tidy126.Putting Type and Interface Composition in Context
 
     Fprintln(writer, ...vals)   This function writes out a variable number of arguments to the specified writer
                                 followed by a newline character. Spaces are added between all values.
-                                
 ████████████████████████████████████████████████████████████████████████
-204.
+204.Println and Fprintln functions
+    The Println and Fprintln functions add spaces between all the values, but the
+    Print and Fprint functions only add spaces between values that are not strings.
+
+    since the Print function adds spaces only between pairs of nonstring values, the results are different.
+    
+    example:
+        package main
+        import "fmt"
+        func main() {
+            fmt.Println("Product:", 1234 , "Price:", 5555)
+            fmt.Print("Product:", 1234 , "Price:", 5555, "\n")
+        }
+    Output:
+        Product: 1234 Price: 5555
+        Product:1234Price:5555
 ████████████████████████████████████████████████████████████████████████
 205.
 ████████████████████████████████████████████████████████████████████████
