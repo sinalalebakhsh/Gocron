@@ -4016,7 +4016,10 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Output:
         Kayak. This is the replacement content.
 ████████████████████████████████████████████████████████████████████████
-202.
+202.Formatting and Scanning Strings
+    Formatting is the process of composing a new string from one or more data values, 
+    while scanning is the process of parsing values from a string.
+    
 ████████████████████████████████████████████████████████████████████████
 203.
 ████████████████████████████████████████████████████████████████████████
