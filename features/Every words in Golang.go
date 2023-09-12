@@ -4136,7 +4136,53 @@ go mod tidy126.Putting Type and Interface Composition in Context
                                     The remaining arguments are used as values for the template verbs. The
                                     result is an error value whose Error method returns the formatted string.
 ████████████████████████████████████████████████████████████████████████
-207.
+207.fmt.Sprintf
+    Both of the formatted strings in this example use the %v value, 
+    which writes out values in their default form.
+    
+    example:
+        package main
+
+        import "fmt"
+        
+        type Product struct {
+            Name, Category string
+            Price          float64
+        }
+        
+        var Kayak = Product{
+            Name:     "Kayak",
+            Category: "Watersports",
+            Price:    275,
+        }
+        var Products = []Product{
+            {"Kayak", "Watersports", 279},
+            {"Lifejacket", "Watersports", 49.95},
+            {"Soccer Ball", "Soccer", 19.50},
+            {"Corner Flags", "Soccer", 34.95},
+            {"Stadium", "Soccer", 79500},
+            {"Thinking Cap", "Chess", 16},
+            {"Unsteady Chair", "Chess", 75},
+            {"Bling-Bling King", "Chess", 1200},
+        }
+        
+        func getProductName(index int) (name string, err error) {
+            if len(Products) > index {
+                name = fmt.Sprintf("Name of product: %v", Products[index].Name)
+            } else {
+                err = fmt.Errorf("error for index %v", index)
+            }
+            return
+        }
+        func main() {
+            name, _ := getProductName(1)
+            fmt.Println(name)
+            _, err := getProductName(10)
+            fmt.Println(err.Error())
+        }
+    Output:
+        Name of product: Lifejacket
+        error for index 10
 ████████████████████████████████████████████████████████████████████████
 208.
 ████████████████████████████████████████████████████████████████████████
