@@ -3931,7 +3931,10 @@ go mod tidy126.Putting Type and Interface Composition in Context
     he syntax for assigning names to subexpressions is awkward: within the parentheses, a question mark,
     followed by an uppercase P, followed by the name within angle brackets.
     pattern := regexp.MustCompile("A (?P<type>[A-z]*) for (?P<capacity>[A-z]*) person")
-
+    The subexpressions are given the names type and capacity. The SubexpIndex method returns the
+    position of a named subexpression in the results, which allows me to get the substrings matched by the type
+    and capacity subexpressions.
+    
     example:
         package main
         import (
