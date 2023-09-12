@@ -3970,6 +3970,10 @@ go mod tidy126.Putting Type and Interface Composition in Context
 ████████████████████████████████████████████████████████████████████████
 200.ReplaceAllString() method
     The result from the ReplaceAllString method is a string with the replaced content.
+    Notice that the template is responsible for only part of the result from the ReplaceAllString method,
+    The first part of the description string—the word Kayak, followed by a period and a space, is
+    not matched by the regular expression and is included in the result without being modified.
+
     example:
         package main
         import (
