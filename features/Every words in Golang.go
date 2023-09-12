@@ -4196,6 +4196,11 @@ go mod tidy126.Putting Type and Interface Composition in Context
     %#v     This verb displays a value in a format that could be used to re-create the value in a Go code file.
 
     %T      This verb displays the Go type of a value.
+
+    example:
+    
+    Output:
+
 ████████████████████████████████████████████████████████████████████████
 209.
 ████████████████████████████████████████████████████████████████████████
