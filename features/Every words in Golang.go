@@ -3861,9 +3861,46 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Substring: for
         Substring: person.
 ████████████████████████████████████████████████████████████████████████
-195.
+195.Subexpressions
+    Subexpressions allow parts of a regular expression to be accessed, which can make it easier to extract
+    substrings from within a matched region.
+    The pattern in this example matches a specific sentence structure.
+    example:
+        package main
+        import (
+            "fmt"
+            "regexp"
+        )
+        func main() {
+            pattern := regexp.MustCompile("A [A-z]* for [A-z]* person")
+            description := "Kayak. A boat for one person."
+            str := pattern.FindString(description)
+            fmt.Println("Match:", str)
+        }
+    Output:
+        Match: A boat for one person
 ████████████████████████████████████████████████████████████████████████
-196.
+196.FindStringSubmatch() method
+    The FindStringSubmatch method performs the same
+    task as FindString, but also includes the substrings matched by the expressions in its result.
+    example:
+        package main
+        import (
+            "fmt"
+            "regexp"
+        )
+        func main() {
+            pattern := regexp.MustCompile("A ([A-z]*) for ([A-z]*) person")
+            description := "Kayak. A boat for one person."
+            subs := pattern.FindStringSubmatch(description)
+            for _, s := range subs {
+                fmt.Println("Match:", s)
+            }
+        }
+    Output:
+        Match: A boat for one person
+        Match: boat
+        Match: one
 ████████████████████████████████████████████████████████████████████████
 197.
 ████████████████████████████████████████████████████████████████████████
