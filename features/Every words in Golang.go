@@ -3927,7 +3927,29 @@ go mod tidy126.Putting Type and Interface Composition in Context
     SubexpNames()                   This method returns the names of the subexpressions, expressed in
                                     the order in which they are defined.
 ████████████████████████████████████████████████████████████████████████
-198.
+198.SubexpIndex(name) method
+    he syntax for assigning names to subexpressions is awkward: within the parentheses, a question mark,
+    followed by an uppercase P, followed by the name within angle brackets.
+    pattern := regexp.MustCompile("A (?P<type>[A-z]*) for (?P<capacity>[A-z]*) person")
+
+    example:
+        package main
+        import (
+            "fmt"
+            "regexp"
+        )
+        func main() {
+            pattern := regexp.MustCompile(
+                "A (?P<type>[A-z]*) for (?P<capacity>[A-z]*) person")
+            description := "Kayak. A boat for one person."
+            subs := pattern.FindStringSubmatch(description)
+            for _, name := range []string { "type", "capacity" } {
+                fmt.Println(name, "=", subs[pattern.SubexpIndex(name)])
+            }
+        }
+    Output:
+        type = boat
+        capacity = one
 ████████████████████████████████████████████████████████████████████████
 199.
 ████████████████████████████████████████████████████████████████████████
