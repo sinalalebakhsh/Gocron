@@ -3968,7 +3968,24 @@ go mod tidy126.Putting Type and Interface Composition in Context
     ReplaceAllStringFunc(s, func)       This method replaces the matched portion of the string s with the result
                                         produced by the specified function.
 ████████████████████████████████████████████████████████████████████████
-200.
+200.ReplaceAllString() method
+    The result from the ReplaceAllString method is a string with the replaced content.
+    example:
+        package main
+        import (
+            "fmt"
+            "regexp"
+        )
+        func main() {
+            pattern := regexp.MustCompile(
+                "A (?P<type>[A-z]*) for (?P<capacity>[A-z]*) person")
+            description := "Kayak. A boat for one person."
+           template := "(type: ${type}, capacity: ${capacity})"
+            replaced := pattern.ReplaceAllString(description, template)
+            fmt.Println(replaced)
+        }
+    Output:
+        Kayak. (type: boat, capacity: one).
 ████████████████████████████████████████████████████████████████████████
 201.
 ████████████████████████████████████████████████████████████████████████
