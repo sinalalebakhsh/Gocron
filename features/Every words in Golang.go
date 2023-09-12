@@ -4139,7 +4139,7 @@ go mod tidy126.Putting Type and Interface Composition in Context
 207.fmt.Sprintf
     Both of the formatted strings in this example use the %v value, 
     which writes out values in their default form.
-    
+
     example:
         package main
 
@@ -4184,7 +4184,18 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Name of product: Lifejacket
         error for index 10
 ████████████████████████████████████████████████████████████████████████
-208.
+208.the General-Purpose Formatting Verbs
+    The general-purpose verbs can be used to display any value.
+    The Formatting Verbs for Any Value
+
+    Verb    Description
+    ------  -----------------------------------------------
+    %v      This verb displays the default format for the value. Modifying the verb with a plus sign (%+v) includes
+            field names when writing out struct values.
+
+    %#v     This verb displays a value in a format that could be used to re-create the value in a Go code file.
+
+    %T      This verb displays the Go type of a value.
 ████████████████████████████████████████████████████████████████████████
 209.
 ████████████████████████████████████████████████████████████████████████
