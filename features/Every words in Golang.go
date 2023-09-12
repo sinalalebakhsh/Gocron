@@ -3902,7 +3902,30 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Match: boat
         Match: one
 ████████████████████████████████████████████████████████████████████████
-197.
+197.The Regexp Methods for Subexpressions
+    Name                            Description
+    ---------------------------     ------------------------------------------------------------------
+    FindStringSubmatch(s)           This method returns a slice containing the first match made by the
+                                    pattern and the text for the subexpressions that the pattern defines.
+
+    FindAllStringSubmatch(s, max)   This method returns a slice containing all the matches and the text
+                                    for the subexpressions. The int argument is used to specify the
+                                    maximum number of matches. A value of -1 specifies all matches.
+
+    FindStringSubmatchIndex(s)      This method is equivalent to FindStringSubmatch but returns
+                                    indices rather than substrings.
+                                    FindAllStringSubmatchIndex
+
+    (s, max)                        This method is equivalent to FindAllStringSubmatch but returns
+                                    indices rather than substrings.
+
+    NumSubexp()                     This method returns the number of subexpressions.
+
+    SubexpIndex(name)               This method returns the index of the subexpression with the
+                                    specified name or -1 if there is no such subexpression.
+
+    SubexpNames()                   This method returns the names of the subexpressions, expressed in
+                                    the order in which they are defined.
 ████████████████████████████████████████████████████████████████████████
 198.
 ████████████████████████████████████████████████████████████████████████
