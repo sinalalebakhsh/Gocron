@@ -4119,6 +4119,22 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Product: Kayak, Price: $275.00  
 ████████████████████████████████████████████████████████████████████████
 206.The fmt Functions for Formatting Strings
+    Name                            Description
+    ---------------------------     -----------------------------------------
+    Sprintf(t, ...vals)             This function returns a string, which is created by processing the template t.
+                                    The remaining arguments are used as values for the template verbs.
+
+    Printf(t, ...vals)              This function creates a string by processing the template t.
+                                    The remaining arguments are used as values for the template verbs.
+                                    The string is written to the standard out.
+
+    Fprintf(writer, t, ...vals)     This function creates a string by processing the template t.
+                                    The remaining arguments are used as values for the template verbs.
+                                    The string is written to a Writer, which is described in Chapter 20.
+
+    Errorf(t, ...values)            This function creates an error by processing the template t.
+                                    The remaining arguments are used as values for the template verbs. The
+                                    result is an error value whose Error method returns the formatted string.
 ████████████████████████████████████████████████████████████████████████
 207.
 ████████████████████████████████████████████████████████████████████████
