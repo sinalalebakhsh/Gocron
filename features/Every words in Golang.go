@@ -4317,7 +4317,18 @@ go mod tidy126.Putting Type and Interface Composition in Context
     example:
         map[1:Kayak 2:Lifejacket 3:Paddle]
 ████████████████████████████████████████████████████████████████████████
-212.
+212.Integer Formatting Verbs
+    Verb    Description
+    ------  ------------------------------------
+    %b      This verb displays an integer value as a binary string.
+
+    %d      This verb displays an integer value as a decimal string. This is the default format for integer
+            values, applied when the %v verb is used.
+
+    %o, %O  These verbs display an integer value as an octal string. The %O verb adds the 0o prefix.
+
+    %x, %X  These verbs display an integer value as a hexadecimal string. The letters A–F are displayed in
+            lowercase by the %x verb and in uppercase by the %X verb.
 ████████████████████████████████████████████████████████████████████████
 213.
 ████████████████████████████████████████████████████████████████████████
