@@ -4038,9 +4038,26 @@ go mod tidy126.Putting Type and Interface Composition in Context
     function that allows a formatted string to be created to which a newline character
     is appended automatically.
 
-    
+    Are there any alternatives?
+    Larger amounts of text and HTML content can be generated using the template features.
 ████████████████████████████████████████████████████████████████████████
-203.
+203.fmt package
+    The fmt package provides functions for composing and writing strings.
+    Some of these functions use writers, which are part of the Go support for input/output.
+    The Basic fmt Functions for Composing and Writing Strings.
+
+    Name                        Description
+    --------------------------  --------------------------------------------------------------------
+    Print(...vals)              This function accepts a variable number of arguments and writes out their
+                                values to the standard out. Spaces are added between values that are not
+                                strings.
+
+    Println(...vals)            This function accepts a variable number of arguments and writes out
+                                their values to the standard out, separated by spaces and followed by a
+                                newline character.
+
+    Fprint(writer, ...vals)     This function writes out a variable number of arguments to the specified
+    writer
 ████████████████████████████████████████████████████████████████████████
 204.
 ████████████████████████████████████████████████████████████████████████
