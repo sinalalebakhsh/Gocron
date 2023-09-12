@@ -4116,10 +4116,9 @@ go mod tidy126.Putting Type and Interface Composition in Context
             fmt.Printf("Product: %v, Price: $%4.2f", Kayak.Name, Kayak.Price)
         }
     Output:
-            
-
+        Product: Kayak, Price: $275.00  
 ████████████████████████████████████████████████████████████████████████
-206.
+206.The fmt Functions for Formatting Strings
 ████████████████████████████████████████████████████████████████████████
 207.
 ████████████████████████████████████████████████████████████████████████
