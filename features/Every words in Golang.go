@@ -4303,7 +4303,8 @@ go mod tidy126.Putting Type and Interface Composition in Context
             Printfln("Value with fields: %+v", Kayak)
         }
     Output:
-    
+        Value: Product: Kayak, Price: $275.00
+        Value with fields: Product: Kayak, Price: $275.00
 ████████████████████████████████████████████████████████████████████████
 211.
 ████████████████████████████████████████████████████████████████████████
