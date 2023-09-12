@@ -4232,7 +4232,11 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Go syntax: main.Product{Name:"Kayak", Category:"Watersports", Price:275}
         Type: main.Product
 ████████████████████████████████████████████████████████████████████████
-209.
+209.Controlling Struct Formatting
+    Go has a default format for all data types that the %v verb relies on. 
+    For structs, the default value lists the field values within curly braces. 
+    The default verb can be modified with a plus sign to include the field names in the output.
+    
 ████████████████████████████████████████████████████████████████████████
 210.
 ████████████████████████████████████████████████████████████████████████
