@@ -3934,7 +3934,7 @@ go mod tidy126.Putting Type and Interface Composition in Context
     The subexpressions are given the names type and capacity. The SubexpIndex method returns the
     position of a named subexpression in the results, which allows me to get the substrings matched by the type
     and capacity subexpressions.
-    
+
     example:
         package main
         import (
@@ -3954,7 +3954,19 @@ go mod tidy126.Putting Type and Interface Composition in Context
         type = boat
         capacity = one
 ████████████████████████████████████████████████████████████████████████
-199.
+199.Replacing Substrings Using a Regular Expression
+    Name                                Description
+    -----------------------------       ---------------------------------------------------------
+    ReplaceAllString(s, template)       This method replaces the matched portion of the string s with the
+                                        specified template, which is expanded before it is included in the result to
+                                        incorporate subexpressions.
+
+    ReplaceAllLiteralString(s, sub)     This method replaces the matched portion of the string s with the
+                                        specified content, which is included in the result without being expanded
+                                        for subexpressions.
+
+    ReplaceAllStringFunc(s, func)       This method replaces the matched portion of the string s with the result
+                                        produced by the specified function.
 ████████████████████████████████████████████████████████████████████████
 200.
 ████████████████████████████████████████████████████████████████████████
