@@ -3974,6 +3974,10 @@ go mod tidy126.Putting Type and Interface Composition in Context
     The first part of the description string—the word Kayak, followed by a period and a space, is
     not matched by the regular expression and is included in the result without being modified.
 
+    ■ Tip
+        Use the ReplaceAllLiteralString method if you want to replace content without the new
+        substring being interpreted for subexpressions.
+
     example:
         package main
         import (
