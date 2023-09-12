@@ -3880,7 +3880,7 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Output:
         Match: A boat for one person
 ████████████████████████████████████████████████████████████████████████
-196.FindStringSubmatch() method
+196.FindStringSubmatch method
     The FindStringSubmatch method performs the same
     task as FindString, but also includes the substrings matched by the expressions in its result.
     example:
@@ -3968,7 +3968,7 @@ go mod tidy126.Putting Type and Interface Composition in Context
     ReplaceAllStringFunc(s, func)       This method replaces the matched portion of the string s with the result
                                         produced by the specified function.
 ████████████████████████████████████████████████████████████████████████
-200.ReplaceAllString() method
+200.ReplaceAllString method
     The result from the ReplaceAllString method is a string with the replaced content.
     Notice that the template is responsible for only part of the result from the ReplaceAllString method,
     The first part of the description string—the word Kayak, followed by a period and a space, is
@@ -3995,7 +3995,7 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Output:
         Kayak. (type: boat, capacity: one).
 ████████████████████████████████████████████████████████████████████████
-201.
+201.ReplaceAllStringFunc method
 ████████████████████████████████████████████████████████████████████████
 202.
 ████████████████████████████████████████████████████████████████████████
