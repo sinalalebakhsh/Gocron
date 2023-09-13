@@ -4390,7 +4390,18 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Decimal without exponent: 279.000000
         Hexadecimal: 0x1.17p+08, 0X1.17P+08
 ████████████████████████████████████████████████████████████████████████
-214.
+214.Controlling Formatting
+    example:
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+        func main() {
+            number := 279.00
+            Printfln("Decimal without exponent: >>%8.2f<<", number)
+        }
+    Output:
 ████████████████████████████████████████████████████████████████████████
 215.
 ████████████████████████████████████████████████████████████████████████
