@@ -4729,7 +4729,19 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Round: 49
         RoundToEven: 49
 ████████████████████████████████████████████████████████████████████████
-227.
+227.The Limit Constants
+    Name        Description
+    --------    -----------------------------
+    MaxInt8     These constants represent the largest and smallest values that can be stored
+    MinInt8     using an int8.
+
+    MaxInt16    These constants represent the largest and smallest values that can be stored
+    MinInt16    using an int16.
+
+    MaxInt32    These constants represent the largest and smallest values that can be stored
+    MinInt32    using an int32.
+
+    
 ████████████████████████████████████████████████████████████████████████
 228.
 ████████████████████████████████████████████████████████████████████████
