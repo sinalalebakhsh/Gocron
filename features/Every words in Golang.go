@@ -4402,6 +4402,7 @@ go mod tidy126.Putting Type and Interface Composition in Context
             Printfln("Decimal without exponent: >>%8.2f<<", number)
         }
     Output:
+        Decimal without exponent: >>  279.00<<
 ████████████████████████████████████████████████████████████████████████
 215.
 ████████████████████████████████████████████████████████████████████████
