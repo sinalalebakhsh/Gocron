@@ -4801,9 +4801,27 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Value 3 : 4037200794235010051
         Value 4 : 3916589616287113937
 ████████████████████████████████████████████████████████████████████████
-230.
+230.rand.Seed()
+    Example:
+        package main
+        import (
+            "math/rand"
+            "time"
+        )
+        func main() {
+            rand.Seed(time.Now().UnixNano())
+            for i := 0; i < 5; i++ {
+                Printfln("Value %v : %v", i, rand.Int())
+            }
+        }
+    Output:
+        Value 0 : 8113726196145714527
+        Value 1 : 3479565125812279859
+        Value 2 : 8074476402089812953
+        Value 3 : 3916870404047362448
+        Value 4 : 8226545715271170755
 ████████████████████████████████████████████████████████████████████████
-231.
+231.Generating a Random Number Within a Specific Range
 ████████████████████████████████████████████████████████████████████████
 232.
 ████████████████████████████████████████████████████████████████████████
