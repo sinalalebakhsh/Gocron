@@ -4514,7 +4514,39 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Output:
         Pointer: 0xc00004a240
 ████████████████████████████████████████████████████████████████████████
-220.
+220.The fmt Functions for Scanning Strings
+    Name                        Description
+    ------------------------    ---------------------------------------------------------------------
+    Scan(...vals)               This function reads text from the standard in and stores the space-
+                                separated values into specified arguments. Newlines are treated as
+                                spaces, and the function reads until it has received values for all of its
+                                arguments. The result is the number of values that have been read and an
+                                error that describes any problems.
+
+    Scanln(...vals)             This function works in the same way as Scan but stops reading when it
+                                encounters a newline character.
+
+    Scanf(template, ...vals)    This function works in the same way as Scan but uses a template string
+                                to select the values from the input it receives.
+                                
+    Fscan(reader, ...vals)This function reads space-separated values from the specified reader,
+    which is described in Chapter 20. Newlines are treated as spaces, and
+    the function returns the number of values that have been read and an
+    error that describes any problems.
+    Fscanln(reader, ...vals)This function works in the same way as Fscan but stops reading when it
+    encounters a newline character.
+    Fscanf(reader, template,
+    ...vals)This function works in the same way as Fscan but uses a template to
+    select the values from the input it receives.
+    Sscan(str, ...vals)This function scans the specified string for space-separated values,
+    which are assigned to the remaining arguments. The result is the
+    number of values scanned and an error that describes any problems.
+    Sscanf(str, template,
+    ...vals)This function works in the same way as Sscan but uses a template to
+    select values from the string.
+    Sscanln(str, template,
+    ...vals)This function works in the same way as Sscanf but stops scanning the
+    string as soon as a newline character is encountered.
 ████████████████████████████████████████████████████████████████████████
 221.
 ████████████████████████████████████████████████████████████████████████
