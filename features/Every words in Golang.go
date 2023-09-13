@@ -4549,6 +4549,7 @@ go mod tidy126.Putting Type and Interface Composition in Context
 
     Sscanln(str, template, ...vals)     This function works in the same way as Sscanf but stops scanning the
                                         string as soon as a newline character is encountered.
+                                        
 ████████████████████████████████████████████████████████████████████████
 221.
 ████████████████████████████████████████████████████████████████████████
