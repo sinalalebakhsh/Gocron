@@ -4821,7 +4821,27 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Value 3 : 3916870404047362448
         Value 4 : 8226545715271170755
 ████████████████████████████████████████████████████████████████████████
-231.Generating a Random Number Within a Specific Range
+231.rand.Intn(rangeNumber)
+    Generating a Random Number Within a Specific Range
+
+    example:
+        package main
+        import (
+            "math/rand"
+            "time"
+        )
+        func main() {
+            rand.Seed(time.Now().UnixNano())
+            for i := 0; i < 5; i++ {
+                Printfln("Value %v : %v", i, rand.Intn(10))
+            }
+        }
+    Output:
+        Value 0 : 7
+        Value 1 : 5
+        Value 2 : 4
+        Value 3 : 0
+        Value 4 : 7
 ████████████████████████████████████████████████████████████████████████
 232.
 ████████████████████████████████████████████████████████████████████████
