@@ -4650,7 +4650,12 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Scanned 3 values
         Name: Lifejacket, Category: Watersports, Price: 48.95
 ████████████████████████████████████████████████████████████████████████
-225.
+225.Putting Math Functions and Sorting Data in Context
+    What are they?
+    The math functions allow common calculations to be performed. Random
+    numbers are numbers generated in a sequence that is difficult to predict. Sorting
+    is the process of placing a sequence of values in a predetermined order.
+    
 ████████████████████████████████████████████████████████████████████████
 226.
 ████████████████████████████████████████████████████████████████████████
