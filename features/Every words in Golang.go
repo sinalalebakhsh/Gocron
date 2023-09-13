@@ -4430,8 +4430,23 @@ go mod tidy126.Putting Type and Interface Composition in Context
                 the left.
     
     example:
-    
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+        func main() {
+            number := 279.00
+            Printfln("Sign: >>%+.2f<<", number)
+            Printfln("Zeros for Padding: >>%07.2f<<", number)
+            Printfln("Zeros for Padding: >>%08.2f<<", number)
+            Printfln("Right Padding: >>%-8.2f<<", number)
+        }
     Output:
+        Sign: >>+279.00<<
+        Zeros for Padding: >>0279.00<<
+        Zeros for Padding: >>00279.00<<
+        Right Padding: >>279.00  <<
 ████████████████████████████████████████████████████████████████████████
 217.
 ████████████████████████████████████████████████████████████████████████
