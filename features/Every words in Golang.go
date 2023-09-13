@@ -4667,7 +4667,8 @@ go mod tidy126.Putting Type and Interface Composition in Context
     package are not random.
 
     Are there any alternatives?
-    
+    You could implement both sets of features from scratch, although these packages
+    are provided so that this is not required.
 ████████████████████████████████████████████████████████████████████████
 226.
 ████████████████████████████████████████████████████████████████████████
