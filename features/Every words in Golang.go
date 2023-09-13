@@ -4576,7 +4576,28 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Scanned 3 values
         Name: asd, Category: asd, Price: 123.00
 ████████████████████████████████████████████████████████████████████████
-222.
+222.Scanln Function
+    example:
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+        func main() {
+            var name string
+            var category string
+            var price float64
+            fmt.Print("Enter text to scan: ")
+            n, err := fmt.Scanln(&name, &category, &price)
+            if (err == nil) {
+                Printfln("Scanned %v values", n)
+                Printfln("Name: %v, Category: %v, Price: %.2f", name, category, price)
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+      Error: unexpected newline
 ████████████████████████████████████████████████████████████████████████
 223.
 ████████████████████████████████████████████████████████████████████████
