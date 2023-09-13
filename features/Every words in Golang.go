@@ -4572,7 +4572,9 @@ go mod tidy126.Putting Type and Interface Composition in Context
             }
         }
     Output:
-        
+        Enter text to scan: asd asd 123
+        Scanned 3 values
+        Name: asd, Category: asd, Price: 123.00
 ████████████████████████████████████████████████████████████████████████
 222.
 ████████████████████████████████████████████████████████████████████████
