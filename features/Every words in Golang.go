@@ -4763,7 +4763,27 @@ go mod tidy126.Putting Type and Interface Composition in Context
     SmallestNonzeroFloat32      represented using float32 and float64 values.
 
 ████████████████████████████████████████████████████████████████████████
-228.
+228.Generating Random Numbers
+    Useful math/rand Functions
+    Name                    Description
+    --------------------    ---------------------------------------
+    Seed(s)                 This function sets the seed value using the specified int64 value.
+
+    Float32()               This function generates a random float32 value between 0 and 1.
+
+    Float64()               This function generates a random float64 value between 0 and 1.
+
+    Int()                   This function generates a random int value.
+
+    Intn(max)               This function generates a random int smaller than a specified value, as
+                            described after the table.
+
+    UInt32()                This function generates a random uint32 value.
+
+    UInt64()                This function generates a random uint64 value.
+    
+    Shuffle(count, func)    This function is used to randomize the order of elements, as described after
+                            the table.
 ████████████████████████████████████████████████████████████████████████
 ████████████████████████████████████████████████████████████████████████
 ████████████████████████████████████████████████████████████████████████
