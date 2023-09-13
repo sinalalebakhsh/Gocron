@@ -4699,6 +4699,35 @@ go mod tidy126.Putting Type and Interface Composition in Context
     RoundToEven(val)    This function rounds the specified value to the nearest integer, rounding half values
                         to the nearest even number. The result is a float64 value, even though it represents
                         an integer.
+
+    example:
+        package main
+        import "math"
+        func main() {
+            val1 := 279.00
+            val2 := 48.95
+            Printfln("Abs: %v", math.Abs(val1))
+            Printfln("Ceil: %v", math.Ceil(val2))
+            Printfln("Copysign: %v", math.Copysign(val1, -5))
+            Printfln("Floor: %v", math.Floor(val2))
+            Printfln("Max: %v", math.Max(val1, val2))
+            Printfln("Min: %v", math.Min(val1, val2))
+            Printfln("Mod: %v", math.Mod(val1, val2))
+            Printfln("Pow: %v", math.Pow(val1, 2))
+            Printfln("Round: %v", math.Round(val2))
+            Printfln("RoundToEven: %v", math.RoundToEven(val2))
+        }
+    Output:
+        Abs: 279
+        Ceil: 49
+        Copysign: -279
+        Floor: 48
+        Max: 279
+        Min: 48.95
+        Mod: 34.249999999999986
+        Pow: 77841
+        Round: 49
+        RoundToEven: 49
 ████████████████████████████████████████████████████████████████████████
 227.
 ████████████████████████████████████████████████████████████████████████
