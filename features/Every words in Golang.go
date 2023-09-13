@@ -4496,7 +4496,23 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Bool: true
         Bool: false
 ████████████████████████████████████████████████████████████████████████
-219.
+219.The Pointer Formatting Verb
+    Verb    Description
+    ----    -----------------
+    %p      This verb displays a hexadecimal representation of the pointer's storage location.
+
+    example:
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+        func main() {
+            name := "Kayak"
+            Printfln("Pointer: %p", &name)
+        }
+    Output:
+        Pointer: 0xc00004a240
 ████████████████████████████████████████████████████████████████████████
 220.
 ████████████████████████████████████████████████████████████████████████
