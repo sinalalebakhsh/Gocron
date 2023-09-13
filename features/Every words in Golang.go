@@ -4404,7 +4404,19 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Output:
         Decimal without exponent: >>  279.00<<
 ████████████████████████████████████████████████████████████████████████
-215.
+215.Specifying Precision
+    example:
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+        func main() {
+            number := 279.00
+            Printfln("Decimal without exponent: >>%.2f<<", number)
+        }
+    Output:
+    
 ████████████████████████████████████████████████████████████████████████
 216.
 ████████████████████████████████████████████████████████████████████████
