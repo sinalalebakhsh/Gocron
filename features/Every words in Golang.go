@@ -4661,6 +4661,12 @@ go mod tidy126.Putting Type and Interface Composition in Context
 
     How are they used?
     These features are provided in the math, math/rand, and sort packages.
+
+    Are there any pitfalls or limitations?
+    Unless initialized with a seed value, the numbers produced by the math/rand
+    package are not random.
+
+    Are there any alternatives?
     
 ████████████████████████████████████████████████████████████████████████
 226.
