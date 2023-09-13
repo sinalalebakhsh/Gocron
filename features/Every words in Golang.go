@@ -4482,8 +4482,19 @@ go mod tidy126.Putting Type and Interface Composition in Context
     %t      This verb formats bool values and displays true or false.
 
     example:
-    
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+        func main() {
+            name := "Kayak"
+            Printfln("Bool: %t", len(name) > 1)
+            Printfln("Bool: %t", len(name) > 100)
+        }
     Output:
+        Bool: true
+        Bool: false
 ████████████████████████████████████████████████████████████████████████
 219.
 ████████████████████████████████████████████████████████████████████████
