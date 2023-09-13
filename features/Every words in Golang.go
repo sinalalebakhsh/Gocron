@@ -4458,6 +4458,23 @@ go mod tidy126.Putting Type and Interface Composition in Context
 
     %U      This verb displays a character in the Unicode format so that the output begins with U+ followed by
             a hexadecimal character code.
+    
+    example:
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+        func main() {
+            name := "Kayak"
+            Printfln("String: %s", name)
+            Printfln("Character: %c", []rune(name)[0])
+            Printfln("Unicode: %U", []rune(name)[0])
+        }
+    Output:
+        String: Kayak
+        Character: K
+        Unicode: U+004B
 ████████████████████████████████████████████████████████████████████████
 218.
 ████████████████████████████████████████████████████████████████████████
