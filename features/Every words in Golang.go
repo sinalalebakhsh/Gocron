@@ -4476,7 +4476,14 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Character: K
         Unicode: U+004B
 ████████████████████████████████████████████████████████████████████████
-218.
+218.The bool Formatting Verb
+    Verb    Description
+    ----    -------------
+    %t      This verb formats bool values and displays true or false.
+
+    example:
+    
+    Output:
 ████████████████████████████████████████████████████████████████████████
 219.
 ████████████████████████████████████████████████████████████████████████
