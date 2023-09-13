@@ -4418,7 +4418,20 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Output:
         Decimal without exponent: >>279.00<<
 ████████████████████████████████████████████████████████████████████████
-216.
+216.The Formatting Verb Modifiers
+    Modifier    Description
+    --------    --------------------------
+    +           This modifier (the plus sign) always prints a sign, positive or negative, for numeric values.
+
+    0           This modifier uses zeros, rather than spaces, as padding when the width is greater than the
+                number of characters required to display the value.
+
+    -           This modifier (the subtracts symbol) adds padding to the right of the number, rather than
+                the left.
+    
+    example:
+    
+    Output:
 ████████████████████████████████████████████████████████████████████████
 217.
 ████████████████████████████████████████████████████████████████████████
