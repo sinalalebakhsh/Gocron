@@ -4623,7 +4623,32 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Scanned 3 values
         Name: Lifejacket, Category: Watersports, Price: 48.95   
 ████████████████████████████████████████████████████████████████████████
-224.
+224.Scanning Template
+    The template ignores the term Product, skipping that part of the string and
+    allowing the scanning to begin with the next term.
+    example:
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+        func main() {
+            var name string
+            var category string
+            var price float64
+            source := "Product Lifejacket Watersports 48.95"
+            template := "Product %s %s %f"
+            n, err := fmt.Sscanf(source, template, &name, &category, &price)
+            if (err == nil) {
+                Printfln("Scanned %v values", n)
+                Printfln("Name: %v, Category: %v, Price: %.2f", name, category, price)
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        Scanned 3 values
+        Name: Lifejacket, Category: Watersports, Price: 48.95
 ████████████████████████████████████████████████████████████████████████
 225.
 ████████████████████████████████████████████████████████████████████████
