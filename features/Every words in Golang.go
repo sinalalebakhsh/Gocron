@@ -4448,7 +4448,16 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Zeros for Padding: >>00279.00<<
         Right Padding: >>279.00  <<
 ████████████████████████████████████████████████████████████████████████
-217.
+217.The Formatting Verbs for Strings and Runes
+    Verb    Description
+    ----    ----------------------------------------------------
+    %s      This verb displays a string. This is the default format, applied when the %v verb is used.
+
+    %c      This verb displays a character. Care must be taken to avoid slicing strings into individual bytes, as
+            explained in the text after the table.
+
+    %U      This verb displays a character in the Unicode format so that the output begins with U+ followed by
+            a hexadecimal character code.
 ████████████████████████████████████████████████████████████████████████
 218.
 ████████████████████████████████████████████████████████████████████████
