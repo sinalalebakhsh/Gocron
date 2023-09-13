@@ -4730,38 +4730,38 @@ go mod tidy126.Putting Type and Interface Composition in Context
         RoundToEven: 49
 ████████████████████████████████████████████████████████████████████████
 227.The Limit Constants
-    Name        Description
-    --------    -----------------------------
-    MaxInt8     These constants represent the largest and smallest values that can be stored
-    MinInt8     using an int8.
+    Name                        Description
+    ----------------            -----------------------------
+    MaxInt8                     These constants represent the largest and smallest values that can be stored
+    MinInt8                     using an int8.
 
-    MaxInt16    These constants represent the largest and smallest values that can be stored
-    MinInt16    using an int16.
+    MaxInt16                    These constants represent the largest and smallest values that can be stored
+    MinInt16                    using an int16.
 
-    MaxInt32    These constants represent the largest and smallest values that can be stored
-    MinInt32    using an int32.
+    MaxInt32                    These constants represent the largest and smallest values that can be stored
+    MinInt32                    using an int32.
 
-    MaxInt64    These constants represent the largest and smallest values that can be stored
-    MinInt64    using an int64.
+    MaxInt64                    These constants represent the largest and smallest values that can be stored
+    MinInt64                    using an int64.
 
-    MaxUint8    This constant represents the largest value that can be represented using a
-                uint8.The smallest value is zero.
+    MaxUint8                    This constant represents the largest value that can be represented using a
+                                uint8.The smallest value is zero.
 
-    MaxUint16   This constant represents the largest value that can be represented using a
-                uint16. The smallest value is zero.
+    MaxUint16                   This constant represents the largest value that can be represented using a
+                                uint16. The smallest value is zero.
 
-    MaxUint32   This constant represents the largest value that can be represented using a
-                uint32. The smallest value is zero.
+    MaxUint32                   This constant represents the largest value that can be represented using a
+                                uint32. The smallest value is zero.
 
-    MaxUint64   This constant represents the largest value that can be represented using a
-                uint64. The smallest value is zero.
+    MaxUint64                   This constant represents the largest value that can be represented using a
+                                uint64. The smallest value is zero.
 
-    MaxFloat32  These constants represent the largest values that can be represented using
-    MaxFloat64  float32 and float64 values.
+    MaxFloat32                  These constants represent the largest values that can be represented using
+    MaxFloat64                  float32 and float64 values.
 
     SmallestNonzeroFloat32      These constants represent the smallest nonzero values that can be
     SmallestNonzeroFloat32      represented using float32 and float64 values.
-    
+
 ████████████████████████████████████████████████████████████████████████
 228.
 ████████████████████████████████████████████████████████████████████████
