@@ -4349,7 +4349,30 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Octal: 372, 0o372
         Hexadecimal: fa, FA
 ████████████████████████████████████████████████████████████████████████
-213.
+213.Floating-Point Formatting Verbs
+    The Formatting Verbs for Floating-Point Values
+    Verb    Description
+    -----   ------------------------------------
+    %b      This verb displays a floating-point value with an exponent and without a decimal place.
+    
+    %e, %E  These verbs display a floating-point value with an exponent and a decimal place. The %e uses a
+            lowercase exponent indicator, while %E uses an uppercase indicator.
+
+    %f, %F  These verbs display a floating-point value with a decimal place but no exponent. The %f and %F
+            verbs produce the same output.
+
+    %g      This verb adapts to the value it displays. The %e format is used for values with large exponents,
+            and the %f format is used otherwise. This is the default format, applied when the %v verb is
+            used.
+
+    %G      This verb adapts to the value it displays. The %E format is used for values with large exponents,
+            and the %f format is used otherwise.
+
+    %x, %X  These verbs display a floating-point value in hexadecimal notation, with lowercase (%x) or
+            uppercase (%X) letters.
+
+    example:
+    Output:
 ████████████████████████████████████████████████████████████████████████
 214.
 ████████████████████████████████████████████████████████████████████████
