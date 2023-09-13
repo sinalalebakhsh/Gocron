@@ -4385,7 +4385,10 @@ go mod tidy126.Putting Type and Interface Composition in Context
             Printfln("Hexadecimal: %x, %X", number, number)
         }
     Output:
-        
+        Decimalless with exponent: 4908219906392064p-44
+        Decimal with exponent: 2.790000e+02
+        Decimal without exponent: 279.000000
+        Hexadecimal: 0x1.17p+08, 0X1.17P+08
 ████████████████████████████████████████████████████████████████████████
 214.
 ████████████████████████████████████████████████████████████████████████
