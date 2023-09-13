@@ -4539,16 +4539,16 @@ go mod tidy126.Putting Type and Interface Composition in Context
 
     Fscanf(reader, template, ...vals)   This function works in the same way as Fscan but uses a template to
                                         select the values from the input it receives.
-                                        
-    Sscan(str, ...vals)This function scans the specified string for space-separated values,
-    which are assigned to the remaining arguments. The result is the
-    number of values scanned and an error that describes any problems.
-    Sscanf(str, template,
-    ...vals)This function works in the same way as Sscan but uses a template to
-    select values from the string.
-    Sscanln(str, template,
-    ...vals)This function works in the same way as Sscanf but stops scanning the
-    string as soon as a newline character is encountered.
+
+    Sscan(str, ...vals)                 This function scans the specified string for space-separated values,
+                                        which are assigned to the remaining arguments. The result is the
+                                        number of values scanned and an error that describes any problems.
+
+    Sscanf(str, template, ...vals)      This function works in the same way as Sscan but uses a template to
+                                        select values from the string.
+
+    Sscanln(str, template, ...vals)     This function works in the same way as Sscanf but stops scanning the
+                                        string as soon as a newline character is encountered.
 ████████████████████████████████████████████████████████████████████████
 221.
 ████████████████████████████████████████████████████████████████████████
