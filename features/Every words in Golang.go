@@ -4620,7 +4620,8 @@ go mod tidy126.Putting Type and Interface Composition in Context
             }
         }
     Output:
-        
+        Scanned 3 values
+        Name: Lifejacket, Category: Watersports, Price: 48.95   
 ████████████████████████████████████████████████████████████████████████
 224.
 ████████████████████████████████████████████████████████████████████████
