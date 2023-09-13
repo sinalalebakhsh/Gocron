@@ -4549,9 +4549,30 @@ go mod tidy126.Putting Type and Interface Composition in Context
 
     Sscanln(str, template, ...vals)     This function works in the same way as Sscanf but stops scanning the
                                         string as soon as a newline character is encountered.
-                                        
+
 ████████████████████████████████████████████████████████████████████████
-221.
+221.Scanning a String
+    example:
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+        func main() {
+            var name string
+            var category string
+            var price float64
+            fmt.Print("Enter text to scan: ")
+            n, err := fmt.Scan(&name, &category, &price)
+            if (err == nil) {
+                Printfln("Scanned %v values", n)
+                Printfln("Name: %v, Category: %v, Price: %.2f", name, category, price)
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        
 ████████████████████████████████████████████████████████████████████████
 222.
 ████████████████████████████████████████████████████████████████████████
