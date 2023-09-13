@@ -4670,7 +4670,35 @@ go mod tidy126.Putting Type and Interface Composition in Context
     You could implement both sets of features from scratch, although these packages
     are provided so that this is not required.
 ████████████████████████████████████████████████████████████████████████
-226.
+226.Useful Functions from the math Package
+    Name                Description
+    --------------      ----------------------------------------------------------
+    Abs(val)            This function returns the absolute value of a float64 value, meaning the distance
+                        from zero without considering direction.
+
+    Ceil(val)           This function returns the smallest integer that is equal to or greater than the specified
+                        float64 value. The result is also a float64 value, even though it represents an integer
+                        number.
+
+    Copysign(x, y)      This function returns a float64 value, which is the absolute value of x with the sign of y.
+
+    Floor(val)          This function returns the largest integer that is smaller or equal to the specified
+                        float64 value. The result is also a float64 value, even though it represents an integer number.
+
+    Max(x, y)           This function returns whichever of the specified float64 value is the largest.
+
+    Min(x, y)           This function returns whichever of the specified float64 value is smallest.
+
+    Mod(x, y)           This function returns the remainder of x/y.
+
+    Pow(x, y)           This function returns x raised to the exponent y.
+
+    Round(val)          This function rounds the specified value to the nearest integer, rounding half values
+                        up. The result is a float64 value, even though it represents an integer.
+
+    RoundToEven(val)    This function rounds the specified value to the nearest integer, rounding half values
+                        to the nearest even number. The result is a float64 value, even though it represents
+                        an integer.
 ████████████████████████████████████████████████████████████████████████
 227.
 ████████████████████████████████████████████████████████████████████████
