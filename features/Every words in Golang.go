@@ -4655,6 +4655,12 @@ go mod tidy126.Putting Type and Interface Composition in Context
     The math functions allow common calculations to be performed. Random
     numbers are numbers generated in a sequence that is difficult to predict. Sorting
     is the process of placing a sequence of values in a predetermined order.
+
+    Why are they useful?
+    These are features that are used throughout development.
+
+    How are they used?
+    These features are provided in the math, math/rand, and sort packages.
     
 ████████████████████████████████████████████████████████████████████████
 226.
