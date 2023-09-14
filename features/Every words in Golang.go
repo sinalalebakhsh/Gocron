@@ -4843,7 +4843,24 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Value 3 : 0
         Value 4 : 7
 ████████████████████████████████████████████████████████████████████████
-232.
+232.Specifying a Lower Bound
+    example:
+    package main
+    import (
+        "math/rand"
+        "time"
+    )
+    func IntRange(min, max int) int {
+        return rand.Intn(max - min) + min
+    }
+    func main() {
+        rand.Seed(time.Now().UnixNano())
+        for i := 0; i < 5; i++ {
+            Printfln("Value %v : %v", i, IntRange(10, 20))
+        }
+    }
+    Output:
+        
 ████████████████████████████████████████████████████████████████████████
 233.
 ████████████████████████████████████████████████████████████████████████
