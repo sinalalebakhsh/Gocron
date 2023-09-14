@@ -4951,9 +4951,34 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Floats Sorted: [19.5 48.95 279]
         Strings: [Kayak Lifejacket Stadium]
         Strings Already Sorted: [Kayak Lifejacket Stadium]
-        
 ████████████████████████████████████████████████████████████████████████
-236.
+236.Creating a Sorted Copy of a Slice
+    example:
+        package main
+        import (
+            "fmt"
+            "sort"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            ints := []int{9, 4, 2, -1, 10}
+            
+            sortedInts := make([]int, len(ints))
+            
+            copy(sortedInts, ints)
+            
+            sort.Ints(sortedInts)
+            
+            
+            Printfln("Ints: %v", ints)
+            Printfln("Ints Sorted: %v", sortedInts)
+        }
+    Output:
+        Ints: [9 4 2 -1 10]
+        Ints Sorted: [-1 2 4 9 10]
+        
 ████████████████████████████████████████████████████████████████████████
 237.
 ████████████████████████████████████████████████████████████████████████
