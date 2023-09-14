@@ -4894,7 +4894,21 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Index 3: Name: Alice
         Index 4: Name: Bob
 ████████████████████████████████████████████████████████████████████████
-234.
+234.The Basic Functions for Sorting
+    Name                        Description
+    --------------------        -------------------------------------------
+    Float64s(slice)             This function sorts a slice of float64 values. The elements are sorted in place.
+
+    Float64sAreSorted(slice)    This function returns true if the elements in the specified float64 slice are in order.
+
+    Ints(slice)                 This function sorts a slice of int values. The elements are sorted in place.
+
+    IntsAreSorted(slice)        This function returns true if the elements in the specified int slice are in order.
+
+    Strings(slice)              This function sorts a slice of string values. The elements are sorted in place.
+
+    StringsAreSorted(slice)     This function returns true if the elements in the specified string slice are in order.
+    
 ████████████████████████████████████████████████████████████████████████
 235.
 ████████████████████████████████████████████████████████████████████████
