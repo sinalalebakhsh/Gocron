@@ -4908,9 +4908,50 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Strings(slice)              This function sorts a slice of string values. The elements are sorted in place.
 
     StringsAreSorted(slice)     This function returns true if the elements in the specified string slice are in order.
-    
+
 ████████████████████████████████████████████████████████████████████████
-235.
+235.Sorting Slices
+    example:
+        package main
+        import (
+            "fmt"
+            "sort"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            ints := []int{9, 4, 2, -1, 10}
+            Printfln("Ints: %v", ints)
+            
+            sort.Ints(ints)
+            Printfln("Ints Sorted: %v", ints)
+            
+            floats := []float64{279, 48.95, 19.50}
+            Printfln("Floats: %v", floats)
+            
+            sort.Float64s(floats)
+            Printfln("Floats Sorted: %v", floats)
+            
+            strings := []string{"Kayak", "Lifejacket", "Stadium"}
+            Printfln("Strings: %v", strings)
+            
+            
+            if !sort.StringsAreSorted(strings) {
+                sort.Strings(strings)
+                Printfln("Strings Sorted: %v", strings)
+            } else {
+                Printfln("Strings Already Sorted: %v", strings)
+            }
+        }
+    Output:
+        Ints: [9 4 2 -1 10]
+        Ints Sorted: [-1 2 4 9 10]
+        Floats: [279 48.95 19.5]
+        Floats Sorted: [19.5 48.95 279]
+        Strings: [Kayak Lifejacket Stadium]
+        Strings Already Sorted: [Kayak Lifejacket Stadium]
+        
 ████████████████████████████████████████████████████████████████████████
 236.
 ████████████████████████████████████████████████████████████████████████
