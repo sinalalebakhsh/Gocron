@@ -4872,11 +4872,15 @@ go mod tidy126.Putting Type and Interface Composition in Context
         import (
             "math/rand"
             "time"
+            "fmt"
         )
-        var names = []string { "Alice", "Bob", "Charlie", "Dora", "Edith"}
+        var names = []string{"Alice", "Bob", "Charlie", "Dora", "Edith"}
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
         func main() {
             rand.Seed(time.Now().UnixNano())
-            rand.Shuffle(len(names), func (first, second int) {
+            rand.Shuffle(len(names), func(first, second int) {
                 names[first], names[second] = names[second], names[first]
             })
             for i, name := range names {
