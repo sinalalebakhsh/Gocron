@@ -4866,7 +4866,29 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Value 3 : 10
         Value 4 : 17
 ████████████████████████████████████████████████████████████████████████
-233.
+233.Shuffling Elements
+    example:
+        package main
+        import (
+            "math/rand"
+            "time"
+        )
+        var names = []string { "Alice", "Bob", "Charlie", "Dora", "Edith"}
+        func main() {
+            rand.Seed(time.Now().UnixNano())
+            rand.Shuffle(len(names), func (first, second int) {
+                names[first], names[second] = names[second], names[first]
+            })
+            for i, name := range names {
+                Printfln("Index %v: Name: %v", i, name)
+            }
+        }
+    Output:
+        Index 0: Name: Edith
+        Index 1: Name: Dora
+        Index 2: Name: Charlie
+        Index 3: Name: Alice
+        Index 4: Name: Bob
 ████████████████████████████████████████████████████████████████████████
 234.
 ████████████████████████████████████████████████████████████████████████
