@@ -5222,6 +5222,31 @@ Output:
                                         
 ████████████████████████████████████████████████████████████████████████
 245.The Methods for Accessing Time Components
+    Name            Description
+    --------        ----------------------------
+    Date()          This method returns the year, month, and day components. The year and day are
+                    expressed as int values and the month as a Month value.
+
+    Clock()         This method returns the hour, minutes, and seconds components of the Time.
+                                                
+    Year()          This method returns the year component, expressed as an int.
+                                                
+    YearDay()       This method returns the day of the year, expressed as an int between 1 and 366 (to accommodate leap years).
+
+    Month()         This method returns the month component, expressed using the Month type.
+
+    Day()           This method returns the day of the month, expressed as an int.
+
+    Weekday()       This method returns the day of the week, expressed as a Weekday.
+
+    Hour()          This method returns the hour of the day, expressed as an int between 0 and 23.
+
+    Minute()        This method returns the number of minutes elapsed into the hour of the day, expressed as an int between 0 and 59.
+
+    Second()        This method returns the number of seconds elapsed into the minute of the hour, expressed as an int between 0 and 59.
+                                                
+    Nanosecond()    This method returns the number of nanoseconds elapsed into the second of the minute,
+                    expressed as an int between 0 and 999,999,999.
 ████████████████████████████████████████████████████████████████████████
 246.
 ████████████████████████████████████████████████████████████████████████
