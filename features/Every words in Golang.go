@@ -5205,11 +5205,23 @@ Output:
 
     Are there any alternatives?
     These are optional features, and their use is not required.
-    
+
 ████████████████████████████████████████████████████████████████████████
-244.
+244.The Functions in the time Package for Creating Time Values
+    Name                                    Description
+    --------                                -----------------------------
+    Now()                                   This function creates a Time representing the current moment in time.
+
+    Date(y, m, d, h, min, sec, nsec, loc)   This function creates a Time representing a specified moment in time, which is
+                                            expressed by the year, month, day, hour, minute, second, nanosecond, and Location
+                                            arguments. (The Location type is described in the “Parsing Time Values from Strings”
+                                            section.)
+
+    Unix(sec, nsec)                         This function creates a Time value from the number of seconds and nanoseconds since
+                                            January 1, 1970, UTC, commonly known as Unix time.
+                                        
 ████████████████████████████████████████████████████████████████████████
-245.
+245.The Methods for Accessing Time Components
 ████████████████████████████████████████████████████████████████████████
 246.
 ████████████████████████████████████████████████████████████████████████
