@@ -5075,10 +5075,20 @@ Output:
     Less(i, j)      This method returns true if the element at index i should appear in the sorted sequence
                     before the element j. If Less(i,j) and Less(j, i) are both false, then the elements are
                     considered equal.
-                    
+
     Swap(i, j)      This method swaps the elements at the specified indices.
 ████████████████████████████████████████████████████████████████████████
-241.
+241.The Functions for Sorting Types That Implement Interface
+    Name            Description
+    ----------      ---------------------
+    Sort(data)      This function uses the methods described in 240 Number to sort the specified data.
+
+    Stable(data)    This function uses the methods described in 240 Number to sort the specified data
+                    without changing the order of elements of equal value.
+
+    IsSorted(data)  This function returns true if the data is in sorted order.
+
+    Reverse(data)   This function reverses the order of the data.
 ████████████████████████████████████████████████████████████████████████
 242.
 ████████████████████████████████████████████████████████████████████████
