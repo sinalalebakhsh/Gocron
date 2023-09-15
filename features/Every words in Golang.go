@@ -5002,7 +5002,36 @@ go mod tidy126.Putting Type and Interface Composition in Context
                                 If there is no match, then the result is the index at which the specified
                                 value can be inserted to maintain the sorted order.
 ████████████████████████████████████████████████████████████████████████
-238.
+238.sort.SearchInts()
+    example:
+        package main
+    import (
+        "fmt"
+        "sort"
+    )
+    func Printfln(template string, values ...interface{}) {
+        fmt.Printf(template+"\n", values...)
+    }
+    func main() {
+        ints := []int{9, 1, 2, -1, 10,5}
+        sortedInts := make([]int, len(ints))
+        copy(sortedInts, ints)
+        sort.Ints(sortedInts)
+        Printfln("Ints: %v", ints)
+        Printfln("Ints Sorted: %v", sortedInts)
+        
+        // ===========================================
+        indexOf4 := sort.SearchInts(sortedInts, 4)
+        Printfln("Index of 4: %v", indexOf4)
+        
+        indexOf3 := sort.SearchInts(sortedInts, 3)
+        Printfln("Index of 3: %v", indexOf3)
+    }
+Output:
+    Ints: [9 1 2 -1 10 5]
+    Ints Sorted: [-1 1 2 5 9 10]
+    Index of 4: 3
+    Index of 3: 3
 ████████████████████████████████████████████████████████████████████████
 239.
 ████████████████████████████████████████████████████████████████████████
