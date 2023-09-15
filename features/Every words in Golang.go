@@ -4986,7 +4986,21 @@ go mod tidy126.Putting Type and Interface Composition in Context
     SearchInts(slice, val)      This function searches the sorted slice for the specified int value. The
                                 result is the index of the specified value or, if the value is not found, the
                                 index at which the value can be inserted while maintaining the sorted order.
-                                
+    
+    SearchFloat64s(slice, val)  This function searches the sorted slice for the specified float64 value.
+                                The result is the index of the specified value or, if the value is not found,
+                                the index at which the value can be inserted while maintaining the
+                                sorted order.
+
+    SearchStrings(slice, val)   This function searches the sorted slice for the specified string value.
+                                The result is the index of the specified value or, if the value is not found,
+                                the index at which the value can be inserted while maintaining the
+                                sorted order.
+
+    Search(count, testFunc)     This function invokes the test function for the specified number of
+                                elements. The result is the index for which the function returns true.
+                                If there is no match, then the result is the index at which the specified
+                                value can be inserted to maintain the sorted order.
 ████████████████████████████████████████████████████████████████████████
 238.
 ████████████████████████████████████████████████████████████████████████
