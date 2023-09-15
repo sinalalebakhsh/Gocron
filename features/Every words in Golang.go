@@ -5295,10 +5295,11 @@ Output:
             PrintTime("Specific", &specific)
             PrintTime("UNIX", &unix)
         }
+    Output:
         Current: Day: 15: Month: September Year: 2023
         Specific: Day: 31: Month: May Year: 1993
         UNIX: Day: 31: Month: December Year: 1969
-    
+
 ████████████████████████████████████████████████████████████████████████
 248.
 ████████████████████████████████████████████████████████████████████████
