@@ -5123,7 +5123,65 @@ Output:
 
 
 ████████████████████████████████████████████████████████████████████████
-242.
+242.Sorting with a Comparison Function
+    go mod init
+    AND
+    main.go File:
+        package main
+        import (
+            "fmt"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            products := []Product{
+                {"Kayak", 279},
+                {"Lifejacket", 49.95},
+                {"Soccer Ball", 19.50},
+            }
+            SortWith(products, func(p1, p2 Product) bool {
+                return p1.Name < p2.Name
+            })
+            for _, p := range products {
+                Printfln("Name: %v, Price: %.2f", p.Name, p.Price)
+            }    
+        }
+        
+    productsort.go File:
+        package main
+        import "sort"
+        type Product struct {
+            Name  string
+            Price float64
+        }
+        type ProductSlice []Product
+        func ProductSlices(p []Product) {
+            sort.Sort(ProductSlice(p))
+        }
+        func ProductSlicesAreSorted(p []Product) {
+            sort.IsSorted(ProductSlice(p))
+        }
+        func (products ProductSlice) Len() int {
+            return len(products)
+        }
+        func (products ProductSlice) Less(i, j int) bool {
+            return products[i].Price < products[j].Price
+        }
+        func (products ProductSlice) Swap(i, j int) {
+            products[i], products[j] = products[j], products[i]
+        }
+        type ProductComparison func(p1, p2 Product) bool
+        type ProductSliceFlex struct {
+		ProductSlice
+		ProductComparison
+	}
+	func (flex ProductSliceFlex) Less(i, j int) bool {
+		return flex.ProductComparison(flex.ProductSlice[i], flex.ProductSlice[j])
+	}
+	func SortWith(prods []Product, f ProductComparison) {
+		sort.Sort(ProductSliceFlex{ prods, f})
+	}
 ████████████████████████████████████████████████████████████████████████
 243.
 ████████████████████████████████████████████████████████████████████████
