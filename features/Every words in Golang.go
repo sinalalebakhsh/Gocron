@@ -5006,7 +5006,7 @@ go mod tidy126.Putting Type and Interface Composition in Context
     When a value is located, the functions return its position in the slice. 
     But unusually, if the value is not found, then the result is the position it can be
     inserted while maintaining the sort order.
-    
+
     example:
         package main
     import (
@@ -5037,7 +5037,35 @@ Output:
     Index of 4: 3
     Index of 3: 3
 ████████████████████████████████████████████████████████████████████████
-239.
+239.sort.SearchInts() bool returned
+    example:
+        package main
+        import (
+            "fmt"
+            "sort"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            ints := []int{9, 1, 2, -1, 10,5}
+            sortedInts := make([]int, len(ints))
+            copy(sortedInts, ints)
+            sort.Ints(sortedInts)
+            Printfln("Ints: %v", ints)
+            Printfln("Ints Sorted: %v", sortedInts)	
+            // =========================
+            indexOf4:= sort.SearchInts(sortedInts, 4)
+            indexOf3 := sort.SearchInts(sortedInts, 3)
+            Printfln("Index of 4: %v (present: %v)", indexOf4, sortedInts[indexOf4] == 4)
+            Printfln("Index of 3: %v (present: %v)", indexOf3, sortedInts[indexOf3] == 3)
+        }
+Output:
+    Ints: [9 1 2 -1 10 5]
+    Ints Sorted: [-1 1 2 5 9 10]
+    Index of 4: 3 (present: false)
+    Index of 3: 3 (present: false)
+
 ████████████████████████████████████████████████████████████████████████
 240.
 ████████████████████████████████████████████████████████████████████████
