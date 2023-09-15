@@ -5248,7 +5248,16 @@ Output:
     Nanosecond()    This method returns the number of nanoseconds elapsed into the second of the minute,
                     expressed as an int between 0 and 999,999,999.
 ████████████████████████████████████████████████████████████████████████
-246.
+246.The Types Used to Describe Time Components
+    Name        Description
+    -------     ------------------------------------------------------------------------
+    Month       This type represents a month, and the time package defines constant values for the English-
+                language month names: January, February, etc. The Month type defines a String method that
+                uses these names when formatting strings.
+
+    Weekday     This type represents a day of the week, and the time package defines constant values for the
+                English-language weekday names: Sunday, Monday, etc. The Weekday type defines a String
+                method that uses these names when formatting strings.
 ████████████████████████████████████████████████████████████████████████
 247.
 ████████████████████████████████████████████████████████████████████████
