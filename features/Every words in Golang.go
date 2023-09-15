@@ -5259,7 +5259,27 @@ Output:
                 English-language weekday names: Sunday, Monday, etc. The Weekday type defines a String
                 method that uses these names when formatting strings.
 ████████████████████████████████████████████████████████████████████████
-247.
+247.Creating Time Values
+    example:
+        package main
+        import "time"
+        func PrintTime(label string, t *time.Time) {
+            Printfln("%s: Day: %v: Month: %v Year: %v",
+                label, t.Day(), t.Month(), t.Year())
+        }
+        func main() {
+            current := time.Now()
+            specific := time.Date(1995, time.June, 9, 0, 0, 0, 0, time.Local)
+            unix := time.Unix(1433228090, 0)
+            PrintTime("Current", &current)
+            PrintTime("Specific", &specific)
+            PrintTime("UNIX", &unix)
+        }
+    Output:
+        Current: Day: 15: Month: September Year: 2023
+        Specific: Day: 9: Month: June Year: 1995
+        UNIX: Day: 2: Month: June Year: 2015
+        
 ████████████████████████████████████████████████████████████████████████
 248.
 ████████████████████████████████████████████████████████████████████████
