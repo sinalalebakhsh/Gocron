@@ -5003,6 +5003,10 @@ go mod tidy126.Putting Type and Interface Composition in Context
                                 value can be inserted to maintain the sorted order.
 ████████████████████████████████████████████████████████████████████████
 238.sort.SearchInts()
+    When a value is located, the functions return its position in the slice. 
+    But unusually, if the value is not found, then the result is the position it can be
+    inserted while maintaining the sort order.
+    
     example:
         package main
     import (
