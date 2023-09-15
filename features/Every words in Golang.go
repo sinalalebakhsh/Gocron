@@ -5198,6 +5198,11 @@ Output:
     The time package defines data types for representing dates and
     individual units of time and functions for manipulating them. There
     are also features integrated into the Go channel system.
+
+    Are there any pitfalls or limitations?
+    Dates can be complex, and care must be taken to deal with calendar
+    and time zone issues.
+
     
 ████████████████████████████████████████████████████████████████████████
 244.
