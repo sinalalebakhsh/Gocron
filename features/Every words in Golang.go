@@ -5089,6 +5089,39 @@ Output:
     IsSorted(data)  This function returns true if the data is in sorted order.
 
     Reverse(data)   This function reverses the order of the data.
+
+
+    example:
+    main.go:
+        package main
+
+        import (
+            "fmt"
+        )
+
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+
+        func main() {
+            products := []Product{
+                {"Kayak", 279},
+                {"Lifejacket", 49.95},
+                {"Soccer Ball", 19.50},
+            }
+            ProductSlices(products)
+            
+            for _, p := range products {
+                Printfln("Name: %v, Price: %.2f", p.Name, p.Price)
+            }
+
+        }
+
+        Name: Soccer Ball, Price: 19.50
+        Name: Lifejacket, Price: 49.95
+        Name: Kayak, Price: 279.00
+
+
 ████████████████████████████████████████████████████████████████████████
 242.
 ████████████████████████████████████████████████████████████████████████
