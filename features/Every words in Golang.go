@@ -4980,7 +4980,13 @@ go mod tidy126.Putting Type and Interface Composition in Context
         Ints Sorted: [-1 2 4 9 10]
         
 ████████████████████████████████████████████████████████████████████████
-237.
+237.The Functions for Searching Sorted Data
+    Name                        Description
+    ----------------------      ----------------------------------
+    SearchInts(slice, val)      This function searches the sorted slice for the specified int value. The
+                                result is the index of the specified value or, if the value is not found, the
+                                index at which the value can be inserted while maintaining the sorted order.
+                                
 ████████████████████████████████████████████████████████████████████████
 238.
 ████████████████████████████████████████████████████████████████████████
