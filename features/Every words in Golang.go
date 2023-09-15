@@ -5193,6 +5193,11 @@ Output:
     These features are useful in any application that needs to deal with
     calendaring or alarm and for the development of any feature that
     requires delays or notifications in the future.
+
+    How are they used?
+    The time package defines data types for representing dates and
+    individual units of time and functions for manipulating them. There
+    are also features integrated into the Go channel system.
     
 ████████████████████████████████████████████████████████████████████████
 244.
