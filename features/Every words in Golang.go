@@ -5279,7 +5279,26 @@ Output:
         Current: Day: 15: Month: September Year: 2023
         Specific: Day: 9: Month: June Year: 1995
         UNIX: Day: 2: Month: June Year: 2015
-        
+
+    example:
+        package main
+        import "time"
+        func PrintTime(label string, t *time.Time) {
+            Printfln("%s: Day: %v: Month: %v Year: %v",
+                label, t.Day(), t.Month(), t.Year())
+        }
+        func main() {
+            current := time.Now()
+            specific := time.Date(1993, time.June, 0, 0, 0, 0, 0, time.Local)
+            unix := time.Unix(0, 0)
+            PrintTime("Current", &current)
+            PrintTime("Specific", &specific)
+            PrintTime("UNIX", &unix)
+        }
+        Current: Day: 15: Month: September Year: 2023
+        Specific: Day: 31: Month: May Year: 1993
+        UNIX: Day: 31: Month: December Year: 1969
+    
 ████████████████████████████████████████████████████████████████████████
 248.
 ████████████████████████████████████████████████████████████████████████
