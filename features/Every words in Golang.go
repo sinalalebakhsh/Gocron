@@ -5067,7 +5067,16 @@ Output:
     Index of 3: 3 (present: false)
 
 ████████████████████████████████████████████████████████████████████████
-240.
+240.The Methods Defined by the sort.Interface Interface
+    Name            Description
+    ----------      ----------------
+    Len()           This method returns the number of items that will be sorted.
+
+    Less(i, j)      This method returns true if the element at index i should appear in the sorted sequence
+                    before the element j. If Less(i,j) and Less(j, i) are both false, then the elements are
+                    considered equal.
+                    
+    Swap(i, j)      This method swaps the elements at the specified indices.
 ████████████████████████████████████████████████████████████████████████
 241.
 ████████████████████████████████████████████████████████████████████████
