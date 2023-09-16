@@ -5353,9 +5353,38 @@ Output:
     --------------------------------------      -----------------------------------
     Parse(layout, str)                          This function parses a string using the specified layout to create a Time value.
                                                 An error is returned to indicate problems parsing the string.
+
     ParseInLocation(layout, str, location)      This function parses a string, using the specified layout and using the
                                                 Location if no time zone is included in the string. An error is returned to
                                                 indicate problems parsing the string.
+
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func PrintTime(label string, t *time.Time) {
+            fmt.Println(label, t.Format(time.RFC822Z))
+        }
+        func main() {
+            dates := []string{
+                "09 Jun 95 00:00 GMT",
+                "02 Jun 15 00:00 GMT",
+            }
+            
+            for _, d := range dates {
+                time, err := time.Parse(time.RFC822, d)
+                if err == nil {
+                    PrintTime("Parsed", &time)
+                } else {
+                    Printfln("Error: %s", err.Error())
+                }
+            }
+        }
+    Output:
+        Parsed 09 Jun 95 00:00 +0000
+        Parsed 02 Jun 15 00:00 +0000
 ████████████████████████████████████████████████████████████████████████
 251.
 ████████████████████████████████████████████████████████████████████████
