@@ -18,3 +18,17 @@ in Terminal write:
 ./Gocron 
 
 just this!
+
+
+GO installation:
+
+1-The first way:
+	Linux:
+		rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
+		export PATH=$PATH:/usr/local/go/bin
+	Verify that:
+		go version
+
+
+2-The second way:
+

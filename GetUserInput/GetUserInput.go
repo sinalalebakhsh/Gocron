@@ -15,6 +15,8 @@ func GetUserInput() {
 	FinalInput, _ := UserInput.ReadString('\n')
 	FinalInput = strings.TrimSuffix(FinalInput, "\n")
 
+	FinalInput = strings.ToLower(FinalInput)
+
 	SliceOfMap := make([]string, 0, len(features.OriginSingleDef.SingleDefinition))
 	for key, NotUsed:= range features.OriginSingleDef.SingleDefinition {
 		if NotUsed == "nil" {
@@ -23,8 +25,17 @@ func GetUserInput() {
 		SliceOfMap = append(SliceOfMap, key)
 	}
 	sort.Strings(SliceOfMap)
+
+	EXIT := strings.ToLower("exit")
+	ExitCounter := false
+
 	Regulators := false
 	for _, value := range SliceOfMap {
+		if FinalInput == EXIT {
+			ExitCounter = true
+			Regulators = true
+			break
+		}
 		if FinalInput == value {
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			color.Green(fmt.Sprintln(features.OriginSingleDef.SingleDefinition[value]))
@@ -40,6 +51,15 @@ func GetUserInput() {
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			Regulators = true
 			break
+		 } else if FinalInput == "time" || 
+		 FinalInput == "datatime" ||
+		 FinalInput == "alldatatime" ||
+		 FinalInput == "thetime" {
+			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+			color.Green(fmt.Sprintln(features.OriginalTimeData))
+			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+			Regulators = true
+			break
 		 }
 	}
 
@@ -48,6 +68,10 @@ func GetUserInput() {
 		color.Red(fmt.Sprintln("---------------------"))
 		color.Red(fmt.Sprintf("Do not add %s yet.", FinalInput))
 		color.Red(fmt.Sprintln("---------------------"))
+	} else if ExitCounter {
+		color.Red(fmt.Sprintln("======================"))
+		color.Red(fmt.Sprintln("	Goodbye"))
+		color.Red(fmt.Sprintln("======================"))	
 	}
 
 }
