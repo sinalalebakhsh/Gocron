@@ -5386,7 +5386,47 @@ Output:
         Parsed 09 Jun 95 00:00 +0000
         Parsed 02 Jun 15 00:00 +0000
 ████████████████████████████████████████████████████████████████████████
-251.
+251.time.ParseInLocation()
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func PrintTime(label string, t *time.Time) {
+            //layout := "Day: 02 Month: Jan Year: 2006"
+            fmt.Println(label, t.Format(time.RFC822Z))
+        }
+        func main() {
+            layout := "02 Jan 06 15:04"
+            date := "09 Jun 95 19:30"
+            london, lonerr := time.LoadLocation("Europe/London")
+            newyork, nycerr := time.LoadLocation("America/New_York")
+            Tehran, TehranErr := time.LoadLocation("Asia/Tehran")
+        
+            if lonerr == nil && nycerr == nil  && TehranErr == nil{
+        
+                TehranTime, _ := time.ParseInLocation(layout, date, Tehran)
+                PrintTime("Tehran:",&TehranTime)
+        
+                nolocation, _ := time.Parse(layout, date)
+                PrintTime("No location:", &nolocation)
+        
+                londonTime, _ := time.ParseInLocation(layout, date, london)
+                PrintTime("London:", &londonTime)
+        
+                newyorkTime, _ := time.ParseInLocation(layout, date, newyork)
+                PrintTime("New York:", &newyorkTime)
+        
+            } else {
+                fmt.Println(lonerr.Error(), nycerr.Error())
+            }
+        }
+    Output:
+        Tehran: 09 Jun 95 19:30 +0430
+        No location: 09 Jun 95 19:30 +0000
+        London: 09 Jun 95 19:30 +0100
+        New York: 09 Jun 95 19:30 -0400
 ████████████████████████████████████████████████████████████████████████
 252.
 ████████████████████████████████████████████████████████████████████████
