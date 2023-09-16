@@ -5428,7 +5428,18 @@ Output:
         London: 09 Jun 95 19:30 +0100
         New York: 09 Jun 95 19:30 -0400
 ████████████████████████████████████████████████████████████████████████
-252.
+252.The Functions for Creating Locations
+    Name                                Description
+    -------------------------           -----------------------------------------
+    LoadLocation(name)                  This function returns a *Location for the specified name and an
+                                        error that indicates any problems.
+
+                                        LoadLocationFromTZData(name,data)   This function returns a *Location from a byte slice that contains a
+                                        formatted time zone database.
+
+    FixedZone(name, offset)             This function returns a *Location that always uses the specified
+                                        name and offset from UTC.
+
 ████████████████████████████████████████████████████████████████████████
 253.
 ████████████████████████████████████████████████████████████████████████
