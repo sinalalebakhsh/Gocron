@@ -32,7 +32,7 @@ func GetUserInput() {
 	Regulators := false
 	for _, value := range SliceOfMap {
 		if FinalInput == EXIT {
-			ExitCounter = true
+			ExitCounter = false
 			Regulators = true
 			break
 		}
