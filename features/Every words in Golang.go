@@ -5440,6 +5440,11 @@ Output:
     FixedZone(name, offset)             This function returns a *Location that always uses the specified
                                         name and offset from UTC.
 
+    The place names are defined in the IANA time zone database, 
+    https://www.iana.org/time-zones , 
+    and are listed by 
+    https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+    
 ████████████████████████████████████████████████████████████████████████
 253.
 ████████████████████████████████████████████████████████████████████████
