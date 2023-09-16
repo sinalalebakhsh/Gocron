@@ -5348,7 +5348,14 @@ Output:
     StampMicro      Jan _2 15:04:05.000000
     StampNano       Jan _2 15:04:05.000000000
 ████████████████████████████████████████████████████████████████████████
-250.
+250.The time Package Functions for Parsing Strings into Time Values
+    Name                                        Description
+    --------------------------------------      -----------------------------------
+    Parse(layout, str)                          This function parses a string using the specified layout to create a Time value.
+                                                An error is returned to indicate problems parsing the string.
+    ParseInLocation(layout, str, location)      This function parses a string, using the specified layout and using the
+                                                Location if no time zone is included in the string. An error is returned to
+                                                indicate problems parsing the string.
 ████████████████████████████████████████████████████████████████████████
 251.
 ████████████████████████████████████████████████████████████████████████
