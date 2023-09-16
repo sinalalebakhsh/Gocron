@@ -5301,7 +5301,11 @@ Output:
         UNIX: Day: 31: Month: December Year: 1969
 
 ████████████████████████████████████████████████████████████████████████
-248.
+248.The Time Method for Creating Formatted Strings
+    Name                Description
+    --------------      --------------------
+    Format(layout)      This method returns a formatted string, which is created using the specified layout.
+    
 ████████████████████████████████████████████████████████████████████████
 249.
 ████████████████████████████████████████████████████████████████████████
