@@ -5478,7 +5478,39 @@ Output:
         Local: 09 Jun 95 19:30 -0400
         No location: 09 Jun 95 19:30 +0000
 ████████████████████████████████████████████████████████████████████████
-254.
+254.Specifying Time Zones
+    The arguments to the FixedZone function are a name and the number of seconds offset from UTC. This
+    example creates three fixed time zones, one of which is an hour ahead of UTC, one of which is four hours
+    behind, and one of which has no offset.
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func PrintTime(label string, t *time.Time) {
+            //layout := "Day: 02 Month: Jan Year: 2006"
+            fmt.Println(label, t.Format(time.RFC822Z))
+        }
+        func main() {
+            layout := "02 Jan 06 15:04"
+            date := "09 Jun 95 19:30"
+            london := time.FixedZone("BST", 1*60*60)
+            newyork := time.FixedZone("EDT", -4*60*60)
+            local := time.FixedZone("Local", 0)
+            
+            nolocation, _ := time.Parse(layout, date)
+            londonTime, _ := time.ParseInLocation(layout, date, london)
+            newyorkTime, _ := time.ParseInLocation(layout, date, newyork)
+            localTime, _ := time.ParseInLocation(layout, date, local)
+            
+            PrintTime("No location:", &nolocation)
+            PrintTime("London:", &londonTime)
+            PrintTime("New York:", &newyorkTime)
+            PrintTime("Local:", &localTime)
+        }
+    Output:
+    
 ████████████████████████████████████████████████████████████████████████
 255.
 ████████████████████████████████████████████████████████████████████████
