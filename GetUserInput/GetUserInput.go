@@ -35,10 +35,14 @@ func GetUserInput() {
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			Regulators = true
 			break
-		} else if FinalInput == "regEx" ||
-			FinalInput == "REGEX" ||
-			FinalInput == "RegGex" ||
-			FinalInput == "Regular Expression" {
+		} else if FinalInput == "regex" ||
+			FinalInput == "allregex" ||
+			FinalInput == "all regex" ||
+			FinalInput == "regexs" ||
+			FinalInput == "allregexs" ||
+			FinalInput == "all regexs" ||
+			FinalInput == "regula rexpression" ||
+			FinalInput == "regularexpression" {
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			color.Green(fmt.Sprintln(features.OriginalAllRegex))
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
