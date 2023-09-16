@@ -5447,7 +5447,36 @@ Output:
 
 ████████████████████████████████████████████████████████████████████████
 253.Embedding The Time Zone Database
-    
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func PrintTime(label string, t *time.Time) {
+            //layout := "Day: 02 Month: Jan Year: 2006"
+            fmt.Println(label, t.Format(time.RFC822Z))
+        }
+        func main() {
+            layout := "02 Jan 06 15:04"
+            date := "09 Jun 95 19:30"
+            Tehran, TehranErr := time.LoadLocation("Asia/Tehran")
+            local, _ := time.LoadLocation("Local")
+            if TehranErr == nil{
+                TehranTime, _ := time.ParseInLocation(layout, date, Tehran)
+                PrintTime("Tehran:",&TehranTime)
+                localTime, _ := time.ParseInLocation(layout, date, local)
+                PrintTime("Local:", &localTime)
+                nolocation, _ := time.Parse(layout, date)
+                PrintTime("No location:", &nolocation)
+            } else {
+                fmt.Println(TehranErr.Error())
+            }
+        }
+    Output:
+        Tehran: 09 Jun 95 19:30 +0430
+        Local: 09 Jun 95 19:30 -0400
+        No location: 09 Jun 95 19:30 +0000
 ████████████████████████████████████████████████████████████████████████
 254.
 ████████████████████████████████████████████████████████████████████████
