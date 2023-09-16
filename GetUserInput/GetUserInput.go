@@ -26,16 +26,8 @@ func GetUserInput() {
 	}
 	sort.Strings(SliceOfMap)
 
-	EXIT := strings.ToLower("exit")
-	ExitCounter := false
-
 	Regulators := false
 	for _, value := range SliceOfMap {
-		if FinalInput == EXIT {
-			ExitCounter = false
-			Regulators = true
-			break
-		}
 		if FinalInput == value {
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			color.Green(fmt.Sprintln(features.OriginSingleDef.SingleDefinition[value]))
@@ -43,35 +35,32 @@ func GetUserInput() {
 			Regulators = true
 			break
 		} else if FinalInput == "regEx" ||
-		 FinalInput == "REGEX" ||
-		 FinalInput == "RegGex" ||
-		 FinalInput == "Regular Expression" {
+			FinalInput == "REGEX" ||
+			FinalInput == "RegGex" ||
+			FinalInput == "Regular Expression" {
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			color.Green(fmt.Sprintln(features.OriginalAllRegex))
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			Regulators = true
 			break
-		 } else if FinalInput == "time" || 
-		 FinalInput == "datatime" ||
-		 FinalInput == "alldatatime" ||
-		 FinalInput == "thetime" {
+			} else if FinalInput == "time" || 
+			FinalInput == "datatime" ||
+			FinalInput == "alldatatime" ||
+			FinalInput == "thetime" {
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			color.Green(fmt.Sprintln(features.OriginalTimeData))
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			Regulators = true
 			break
-		 }
+			}
 	}
+	
 
 
 	if !Regulators {
 		color.Red(fmt.Sprintln("---------------------"))
 		color.Red(fmt.Sprintf("Do not add %s yet.", FinalInput))
 		color.Red(fmt.Sprintln("---------------------"))
-	} else if ExitCounter {
-		color.Red(fmt.Sprintln("======================"))
-		color.Red(fmt.Sprintln("	Goodbye"))
-		color.Red(fmt.Sprintln("======================"))	
-	}
+	} 
 
 }
