@@ -5305,7 +5305,30 @@ Output:
     Name                Description
     --------------      --------------------
     Format(layout)      This method returns a formatted string, which is created using the specified layout.
-    
+
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func PrintTime(label string, t *time.Time) {
+            layout := "Day: 02 Month: Jan Year: 2006"
+            fmt.Println(label, t.Format(layout))
+        }
+        func main() {
+            current := time.Now()
+            specific := time.Date(1993, time.June, 0, 0, 0, 0, 0, time.Local)
+            unix := time.Unix(0, 0)
+            PrintTime("Current", &current)
+            PrintTime("Specific", &specific)
+            PrintTime("UNIX", &unix)
+        }
+    Output:
+        Current Day: 16 Month: Sep Year: 2023
+        Specific Day: 31 Month: May Year: 1993
+        UNIX Day: 31 Month: Dec Year: 1969
+
 ████████████████████████████████████████████████████████████████████████
 249.
 ████████████████████████████████████████████████████████████████████████
