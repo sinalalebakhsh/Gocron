@@ -27,6 +27,7 @@ func GetUserInput() {
 	sort.Strings(SliceOfMap)
 
 	Regulators := false
+	
 	for _, value := range SliceOfMap {
 		if FinalInput == value {
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
