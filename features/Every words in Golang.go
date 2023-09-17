@@ -5978,7 +5978,7 @@ Output:
 
     Preparing for This Chapter:
     product.go:
-        package mai
+        package main
         type Product struct {
             Name, Category string
             Price          float64
@@ -6009,6 +6009,7 @@ Output:
     main.go:
         package main
         func main() {
+            Printfln("Product: %v, Price : %v", Kayak.Name, Kayak.Price)
         }
 ████████████████████████████████████████████████████████████████████████
 274.
