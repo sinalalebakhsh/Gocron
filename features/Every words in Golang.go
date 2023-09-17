@@ -5782,6 +5782,9 @@ Output:
 ████████████████████████████████████████████████████████████████████████
 269.NewTimer(duration)
     This function returns a *Timer with the specified period.
+    Caution Be careful when stopping a timer. 
+    The timer's channel is not closed, which means that reads from
+    the channel will continue to block even after the timer has stopped.
 
     The Methods Defined by the Timer Struct:
     Name                Description
