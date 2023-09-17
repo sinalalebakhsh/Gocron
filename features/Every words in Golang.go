@@ -5781,6 +5781,19 @@ Output:
         Starting channel read
 ████████████████████████████████████████████████████████████████████████
 269.NewTimer(duration)
+    This function returns a *Timer with the specified period.
+
+    The Methods Defined by the Timer Struct:
+    Name                Description
+    ------------        -------------------------------------------
+    C                   This field returns the channel over which the Time will send its Time value.
+    Stop()              This method stops the timer. The result is a bool that will be true if the timer has been
+                        stopped and false if the timer had already sent its message.
+    Reset(duration)     This method stops a timer and resets it so that its interval is the specified Duration.
+    
+    example:
+        
+    Output:
 ████████████████████████████████████████████████████████████████████████
 270.
 ████████████████████████████████████████████████████████████████████████
