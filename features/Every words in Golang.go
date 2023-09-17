@@ -5891,15 +5891,25 @@ Output:
         Read name: Charlie
         Read name: Dora
         ...
-        
-    
-    
-    
-    
+            
 ████████████████████████████████████████████████████████████████████████
-271.
+271.NewTicker(duration)
+    The result of the NewTicker function is a pointer to a Ticker struct, which defines the field and methods
+
+    The time Function for Creating a Ticker:
+    Name                    Description
+    ---------------------   ---------------------------------
+    NewTicker(duration)     This function returns a *Ticker with the specified period.
+
+    The Field and Methods Defined by the Ticker Struct:
+    Name                Description
+    ----------------    --------------------------------
+    C                   This field returns the channel over which the Ticker will send its Time values.
+    Stop()              This method stops the ticker (but does not close the channel returned by the C field).
+    Reset(duration)     This method stops a ticker and resets it so that its interval is the specified Duration.
 ████████████████████████████████████████████████████████████████████████
-272.
+272.Creating a Ticker in the main.go
+    
 ████████████████████████████████████████████████████████████████████████
 273.
 ████████████████████████████████████████████████████████████████████████
