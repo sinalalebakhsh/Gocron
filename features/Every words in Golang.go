@@ -5678,7 +5678,7 @@ Output:
     specified duration, when a Time value is sent, indicating the duration has passed. In this example, the
     value sent over the channel acts as a signal and is not used directly, which is why it is assigned to the blank
     identifier, like this:
-    
+
     example:
         package main
         import (
@@ -5716,9 +5716,14 @@ Output:
         Read name: Charlie  // wait for 1 second
         Read name: Dora     // wait for 1 second
 ████████████████████████████████████████████████████████████████████████
-268.
+268.time.Sleep(time.Second * 3) with select statement
+    Using a Timeout in a Select Statement
+
+    example:
+        
+    Output:
 ████████████████████████████████████████████████████████████████████████
-269.
+269.NewTimer(duration)
 ████████████████████████████████████████████████████████████████████████
 270.
 ████████████████████████████████████████████████████████████████████████
