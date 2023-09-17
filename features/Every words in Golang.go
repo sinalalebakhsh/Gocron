@@ -5401,7 +5401,27 @@ Output:
     Truncate(duration)  This method rounds the Time down to the nearest interval represented by a
                         Duration value.
 ████████████████████████████████████████████████████████████████████████
-256.
+256.time.Parse()
+    example:
+        package main
+        import (
+            "time"
+            "fmt"
+        )
+        func main() {
+            t, err := time.Parse(time.RFC822, "09 Jun 95 04:59 BST")
+            if (err == nil) {
+                Printfln("After: %v", t.After(time.Now()))
+                Printfln("Round: %v", t.Round(time.Hour))
+                Printfln("Truncate: %v", t.Truncate(time.Hour))
+            } else {
+                fmt.Println(err.Error())
+            }
+        }
+    Output:
+        After: false
+        Round: 1995-06-09 05:00:00 +0100 BST
+        Truncate: 1995-06-09 04:00:00 +0100 BST
 ████████████████████████████████████████████████████████████████████████
 257.
 ████████████████████████████████████████████████████████████████████████
