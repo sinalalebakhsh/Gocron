@@ -6016,6 +6016,10 @@ Output:
         }
 ████████████████████████████████████████████████████████████████████████
 274.The Reader interface
+    The Reader interface doesn't include any detail about where data comes from or how it is obtained—it
+    just defines the Read method. The details are left to the types that implement the interface, and there are
+    reader implementations in the standard library for different data sources.
+
     defines a single method:
     Name                Description
     --------------      -------------------------
