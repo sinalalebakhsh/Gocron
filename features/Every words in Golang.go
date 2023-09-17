@@ -5596,7 +5596,44 @@ Output:
     Tick(duration)              This function returns a channel that periodically sends a Time value, where the
                                 period is specified as a duration.
 ████████████████████████████████████████████████████████████████████████
-265.
+265.time.Sleep(time.Second * 1)
+    Pausing a Goroutine
+    The Sleep function pauses execution of the current goroutine for a specified duration
+
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(channel chan<- string) {
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            for _, name := range names {
+                channel <- name
+                time.Sleep(time.Second * 1)
+            }
+            close(channel)
+        }
+        func main() {
+            nameChannel := make(chan string)
+            
+            go writeToChannel(nameChannel)
+            
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+        }
+    Output:
+    Read name: Alice
+                        // 1 second delaying
+    Read name: Bob
+                        // 1 second delaying
+    Read name: Charlie
+                        // 1 second delaying
+    Read name: Dora
 ████████████████████████████████████████████████████████████████████████
 266.
 ████████████████████████████████████████████████████████████████████████
