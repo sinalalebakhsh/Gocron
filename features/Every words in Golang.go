@@ -5457,7 +5457,19 @@ Output:
     Microsecond     This constant represents 1 microsecond.
     Nanosecond      This constant represents 1 nanosecond.
 ████████████████████████████████████████████████████████████████████████
-259.
+259.The Duration Methods
+    Name                Description
+    ----------------    ---------------------------------------------
+    Hours()             This method returns a float64 that represents the Duration in hours.
+    Minutes()           This method returns a float64 that represents the Duration in minutes.
+    Seconds()           This method returns a float64 that represents the Duration in seconds.
+    Milliseconds()      This method returns an int64 that represents the Duration in milliseconds.
+    Microseconds()      This method returns an int64 that represents the Duration in microseconds.
+    Nanoseconds()       This method returns an int64 that represents the Duration in nanoseconds.
+    Round(duration)     This method returns a Duration, which is rounded to the nearest multiple of the
+                        specified Duration.
+    Truncate(duration)  This method returns a Duration, which is rounded down to the nearest multiple of
+                        the specified Duration.
 ████████████████████████████████████████████████████████████████████████
 260.
 ████████████████████████████████████████████████████████████████████████
