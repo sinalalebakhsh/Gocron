@@ -43,11 +43,11 @@ func GetUserInput() {
 			FinalInput == "all regexs" ||
 			FinalInput == "regula rexpression" ||
 			FinalInput == "regularexpression" {
-			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-			color.Green(fmt.Sprintln(features.OriginalAllRegex))
-			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-			Regulators = true
-			break
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				color.Green(fmt.Sprintln(features.OriginalAllRegex))
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				Regulators = true
+				break
 			} else if FinalInput == "time" || 
 			FinalInput == "datatime" ||
 			FinalInput == "data time" ||
@@ -56,11 +56,24 @@ func GetUserInput() {
 			FinalInput == "all data times" ||
 			FinalInput == "thetime" ||
 			FinalInput == "the time" {
-			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-			color.Green(fmt.Sprintln(features.OriginalTimeData))
-			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-			Regulators = true
-			break
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				color.Green(fmt.Sprintln(features.OriginalTimeData))
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				Regulators = true
+				break
+			} else if FinalInput == "reading and writing data" || 
+			FinalInput == "readingandwritingdata" ||
+			FinalInput == "readingwritingdata" ||
+			FinalInput == "readingwriting" ||
+			FinalInput == "reading writing" ||
+			FinalInput == "reading writing datas" ||
+			FinalInput == "reading & writing data" ||
+			FinalInput == "reading & writing"{
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				color.Green(fmt.Sprintln(features.OriginalReadingandWriting))	
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				Regulators = true
+				break
 			}
 	}
 	

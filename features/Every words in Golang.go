@@ -5957,6 +5957,11 @@ Output:
     What are they?
     These interfaces define the basic methods required to read and write data.
 
+    Why are they useful?
+    This approach means that just about any data source can be used
+    in the same way, while still allowing specialized features to be
+    defined using the composition features.
+
     
 ████████████████████████████████████████████████████████████████████████
 274.
