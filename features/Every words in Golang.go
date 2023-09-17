@@ -5471,7 +5471,41 @@ Output:
     Truncate(duration)  This method returns a Duration, which is rounded down to the nearest multiple of
                         the specified Duration.
 ████████████████████████████████████████████████████████████████████████
-260.
+260.Hours() and Minutes()
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            var d time.Duration = time.Hour + (30 * time.Minute)
+            Printfln("Hours: %v", d.Hours())
+            Printfln("Mins: %v", d.Minutes())
+            Printfln("Seconds: %v", d.Seconds())
+            Printfln("Millseconds: %v", d.Milliseconds())
+        
+        
+            rounded := d.Round(time.Hour)
+            Printfln("Rounded Hours: %v", rounded.Hours())
+            Printfln("Rounded Mins: %v", rounded.Minutes())
+        
+            trunc := d.Truncate(time.Hour)
+            Printfln("Truncated Hours: %v", trunc.Hours())
+            Printfln("Rounded Mins: %v", trunc.Minutes())
+        }
+    Output:
+        Hours: 1.5
+        Mins: 90
+        Seconds: 5400
+        Millseconds: 5400000
+        Rounded Hours: 2
+        Rounded Mins: 120
+        Truncated Hours: 1
+        Rounded Mins: 60
 ████████████████████████████████████████████████████████████████████████
 261.
 ████████████████████████████████████████████████████████████████████████
