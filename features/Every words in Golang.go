@@ -5975,6 +5975,9 @@ Output:
     The use of these interfaces is optional, but they are hard to avoid
     because they are used throughout the standard library.
 
+    The Reader and Writer interfaces are defined by the io package and 
+    provide abstract ways to read and write data, 
+    without being tied to where the data is coming from or going to.
 
     Preparing for This Chapter:
     product.go:
@@ -6012,7 +6015,12 @@ Output:
             Printfln("Product: %v, Price : %v", Kayak.Name, Kayak.Price)
         }
 ████████████████████████████████████████████████████████████████████████
-274.
+274.The Reader interface
+    defines a single method:
+    Name                Description
+    --------------      -------------------------
+    Read(byteSlice)     This method reads data into the specified []byte. The method returns the number of
+                        bytes that were read, expressed as an int, and an error.
 ████████████████████████████████████████████████████████████████████████
 275.
 ████████████████████████████████████████████████████████████████████████
