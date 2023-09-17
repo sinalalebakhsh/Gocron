@@ -5673,7 +5673,43 @@ Output:
     Read name: Charlie
     Read name: Dora
 ████████████████████████████████████████████████████████████████████████
-267.
+267.time.After(time.Second * 2)
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(channel chan<- string) {
+        
+            Printfln("Waiting for initial duration...")
+            _ = <-time.After(time.Second * 2)
+            Printfln("Initial duration elapsed.")
+        
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            for _, name := range names {
+                channel <- name
+                time.Sleep(time.Second * 1)
+            }
+            close(channel)
+        }
+        func main() {
+            nameChannel := make(chan string)
+            go writeToChannel(nameChannel)
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+        }
+    Output:
+        Waiting for initial duration... // Wait for 2 seconds
+        Initial duration elapsed.
+        Read name: Alice    // wait for 1 second
+        Read name: Bob      // wait for 1 second
+        Read name: Charlie  // wait for 1 second
+        Read name: Dora     // wait for 1 second
 ████████████████████████████████████████████████████████████████████████
 268.
 ████████████████████████████████████████████████████████████████████████
