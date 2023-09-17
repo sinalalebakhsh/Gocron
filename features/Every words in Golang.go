@@ -5471,7 +5471,7 @@ Output:
     Truncate(duration)  This method returns a Duration, which is rounded down to the nearest multiple of
                         the specified Duration.
 ████████████████████████████████████████████████████████████████████████
-260.Hours() and Minutes()
+260.Hours() - Minutes() - Seconds() - rounded.Hours() - rounded.Minutes()
     example:
         package main
         import (
