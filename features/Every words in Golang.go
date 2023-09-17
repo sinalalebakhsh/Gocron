@@ -5553,9 +5553,48 @@ Output:
     ms          This unit denotes milliseconds.
     us or μs    These units denotes microseconds.
     ns          This unit denotes nanoseconds.
-    
+
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            d, err := time.ParseDuration("1h30m")
+            if err == nil {
+                Printfln("Hours: %v", d.Hours())
+                Printfln("Mins: %v", d.Minutes())
+                Printfln("Seconds: %v", d.Seconds())
+                Printfln("Millseconds: %v", d.Milliseconds())
+            } else {
+                fmt.Println(err.Error())
+            }
+        }
+    Output:
+        Hours: 1.5
+        Mins: 90
+        Seconds: 5400
+        Millseconds: 5400000
 ████████████████████████████████████████████████████████████████████████
-264.
+264.Using the Time Features for Goroutines and Channels
+    
+    The time package provides a small set of functions that are useful for working with goroutines and channels.
+
+    The time Package Functions:
+    Name                        Description
+    ----------------------      ----------------------------------------
+    Sleep(duration)             This function pauses the current goroutine for at least the specified duration.
+    AfterFunc(duration,func)    This function executes the specified function in its own goroutine after the
+                                specified duration. The result is a *Timer, whose Stop method can be used to
+                                cancel the execution of the function before the duration elapses.
+    After(duration)             This function returns a channel that blocks for the specified duration and then
+                                yields a Time value. See the “Receiving Timed Notifications” section for details.
+    Tick(duration)              This function returns a channel that periodically sends a Time value, where the
+                                period is specified as a duration.
 ████████████████████████████████████████████████████████████████████████
 265.
 ████████████████████████████████████████████████████████████████████████
