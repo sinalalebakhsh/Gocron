@@ -5447,7 +5447,15 @@ Output:
         Equal Method: true
         Equality Operator: false
 ████████████████████████████████████████████████████████████████████████
-258.
+258.The Duration Constants in the time Package
+    Name            Description
+    ------------    ----------------------------------------
+    Hour            This constant represents 1 hour.
+    Minute          This constant represents 1 minute.
+    Second          This constant represents 1 second.
+    Millisecond     This constant represents 1 millisecond.
+    Microsecond     This constant represents 1 microsecond.
+    Nanosecond      This constant represents 1 nanosecond.
 ████████████████████████████████████████████████████████████████████████
 259.
 ████████████████████████████████████████████████████████████████████████
