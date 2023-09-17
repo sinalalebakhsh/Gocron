@@ -5909,6 +5909,40 @@ Output:
     Reset(duration)     This method stops a ticker and resets it so that its interval is the specified Duration.
 ████████████████████████████████████████████████████████████████████████
 272.Creating a Ticker in the main.go
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(nameChannel chan<- string) {
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            ticker := time.NewTicker(time.Second / 10)
+            index := 0
+            for {
+                <-ticker.C
+                nameChannel <- names[index]
+                index++
+                if index == len(names) {
+                    ticker.Stop()
+                    close(nameChannel)
+                    break
+                }
+            }
+        }
+        func main() {
+            nameChannel := make(chan string)
+        
+            go writeToChannel(nameChannel)
+        
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+        }
+    Output:
     
 ████████████████████████████████████████████████████████████████████████
 273.
