@@ -5970,6 +5970,46 @@ Output:
     These interfaces don't entirely hide the detail of sources or
     destinations for data and additional methods are often required,
     provided by interfaces that build on Reader and Writer.
+
+    Are there any alternatives?
+    The use of these interfaces is optional, but they are hard to avoid
+    because they are used throughout the standard library.
+
+
+    Preparing for This Chapter:
+    product.go:
+        package mai
+        type Product struct {
+            Name, Category string
+            Price          float64
+        }
+        var Kayak = Product{
+            Name:     "Kayak",
+            Category: "Watersports",
+            Price:    279,
+        }
+        var Products = []Product{
+            {"Kayak", "Watersports", 279},
+            {"Lifejacket", "Watersports", 49.95},
+            {"Soccer Ball", "Soccer", 19.50},
+            {"Corner Flags", "Soccer", 34.95},
+            {"Stadium", "Soccer", 79500},
+            {"Thinking Cap", "Chess", 16},
+            {"Unsteady Chair", "Chess", 75},
+            {"Bling-Bling King", "Chess", 1200},
+        }
+    printer.go:
+        package main
+        import (
+            "fmt"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+    main.go:
+        package main
+        func main() {
+        }
 ████████████████████████████████████████████████████████████████████████
 274.
 ████████████████████████████████████████████████████████████████████████
