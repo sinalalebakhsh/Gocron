@@ -5507,7 +5507,12 @@ Output:
         Truncated Hours: 1
         Rounded Mins: 60
 ████████████████████████████████████████████████████████████████████████
-261.
+261.The time Functions for Creating Duration Values relative to a Time
+    Name            Description
+    -----------     ----------------------------------------
+    Since(time)     This function returns a Duration expressing the elapsed time since the specified Time value.
+    Until(time)     This function returns a Duration expressing the elapsed time until the specified Time value.
+
 ████████████████████████████████████████████████████████████████████████
 262.
 ████████████████████████████████████████████████████████████████████████
