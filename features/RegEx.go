@@ -6,7 +6,6 @@ type AllRegEx struct {
 
 var OriginalAllRegex AllRegEx = AllRegEx{
 	allRegex: `
-
 189.Regular Expressions
     The regular expressions used in this section perform basic matches, but the regexp package
     supports an extensive pattern syntax, which is described at https://pkg.go.dev/regexp/syntax@go1.17.1.

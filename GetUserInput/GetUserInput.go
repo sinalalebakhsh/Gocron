@@ -50,8 +50,12 @@ func GetUserInput() {
 			break
 			} else if FinalInput == "time" || 
 			FinalInput == "datatime" ||
+			FinalInput == "data time" ||
 			FinalInput == "alldatatime" ||
-			FinalInput == "thetime" {
+			FinalInput == "all data time" ||
+			FinalInput == "all data times" ||
+			FinalInput == "thetime" ||
+			FinalInput == "the time" {
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			color.Green(fmt.Sprintln(features.OriginalTimeData))
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
