@@ -5512,9 +5512,33 @@ Output:
     -----------     ----------------------------------------
     Since(time)     This function returns a Duration expressing the elapsed time since the specified Time value.
     Until(time)     This function returns a Duration expressing the elapsed time until the specified Time value.
-
 ████████████████████████████████████████████████████████████████████████
-262.
+262.time.Until(time) - Since(time)
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            toYears := func(d time.Duration) int {
+                return int(d.Hours() / (24 * 365))
+            }
+            
+            future := time.Date(2051, 0, 0, 0, 0, 0, 0, time.Local)
+            past := time.Date(1965, 0, 0, 0, 0, 0, 0, time.Local)
+            
+            Printfln("this year is %v.",time.Now().Year())
+            Printfln("Future: %v is %v.", toYears(time.Until(future)), future.Year())
+            Printfln("Past: %v is %v.", toYears(time.Since(past)), past.Year())
+        }
+    Output:
+        this year is 2023.
+        Future: 27 is 2050.
+        Past: 58 is 1964.
 ████████████████████████████████████████████████████████████████████████
 263.
 ████████████████████████████████████████████████████████████████████████
