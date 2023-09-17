@@ -5962,7 +5962,14 @@ Output:
     in the same way, while still allowing specialized features to be
     defined using the composition features.
 
-    
+    How is it used?
+    The io package defines these interfaces, but the implementations
+    are available from a range of other packages
+
+    Are there any pitfalls or limitations?
+    These interfaces don't entirely hide the detail of sources or
+    destinations for data and additional methods are often required,
+    provided by interfaces that build on Reader and Writer.
 ████████████████████████████████████████████████████████████████████████
 274.
 ████████████████████████████████████████████████████████████████████████
