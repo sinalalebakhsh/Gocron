@@ -5426,7 +5426,26 @@ Output:
         Round: 1995-06-09 05:00:00 +0100 BST
         Truncate: 1995-06-09 04:00:00 +0100 BST
 ████████████████████████████████████████████████████████████████████████
-257.
+257.Comparing Time Values
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            t1, _ := time.Parse(time.RFC822Z, "09 Jun 95 04:59 +0100")
+            t2, _ := time.Parse(time.RFC822Z, "08 Jun 95 23:59 -0400")
+            
+            Printfln("Equal Method: %v", t1.Equal(t2))
+            Printfln("Equality Operator: %v", t1 == t2)
+        }
+    Output:
+        Equal Method: true
+        Equality Operator: false
 ████████████████████████████████████████████████████████████████████████
 258.
 ████████████████████████████████████████████████████████████████████████
