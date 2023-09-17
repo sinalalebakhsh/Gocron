@@ -337,5 +337,576 @@ Output:
 	London: 09 Jun 95 19:30 +0100
 	New York: 09 Jun 95 19:30 -0400
 	Local: 09 Jun 95 19:30 +0000
-████████████████████████████████████████████████████████████████████████`,
+████████████████████████████████████████████████████████████████████████
+255.The Methods for Working with Time Values
+    Name                Description
+    ----------------    -------------------------------------------------
+    Add(duration)       This method adds the specified Duration to the Time and returns the result.
+    Sub(time)           This method returns a Duration that expresses the difference between the Time on
+                        which the method has been called and the Time provided as the argument.
+    AddDate(y, m, d)    This method adds the specified number of years, months, and days to the Time and
+                        returns the result.
+    After(time)         This method returns true if the Time on which the method has been called occurs
+                        after the Time provided as the argument.
+    Before(time)        This method returns true if the Time on which the method has been called occurs
+                        before the Time provided as the argument.
+    Equal(time)         This method returns true if the Time on which the method has been called is equal
+                        to the Time provided as the argument.
+    IsZero()            This method returns true if the Time on which the method has been called
+                        represents the zero-time instant, which is January 1, year 1, 00:00:00 UTC.
+    In(loc)             This method returns the Time value, expressed in the specified Location.
+    Location()          This method returns the Location that is associated with the Time, effectively
+                        allowing a time to be expressed in a different time zone.
+    Round(duration)     This method rounds the Time to the nearest interval represented by a Duration
+                        value.
+    Truncate(duration)  This method rounds the Time down to the nearest interval represented by a
+                        Duration value.
+████████████████████████████████████████████████████████████████████████
+256.time.Parse()
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            t, err := time.Parse(time.RFC822, "09 Jun 95 04:59 BST")
+            if err == nil {
+                Printfln("After: %v", t.After(time.Now()))
+                Printfln("Round: %v", t.Round(time.Hour))
+                Printfln("Truncate: %v", t.Truncate(time.Hour))
+            } else {
+                fmt.Println(err.Error())
+            }
+        }
+    Output:
+        After: false
+        Round: 1995-06-09 05:00:00 +0100 BST
+        Truncate: 1995-06-09 04:00:00 +0100 BST
+████████████████████████████████████████████████████████████████████████
+257.Comparing Time Values
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            t1, _ := time.Parse(time.RFC822Z, "09 Jun 95 04:59 +0100")
+            t2, _ := time.Parse(time.RFC822Z, "08 Jun 95 23:59 -0400")
+            
+            Printfln("Equal Method: %v", t1.Equal(t2))
+            Printfln("Equality Operator: %v", t1 == t2)
+        }
+    Output:
+        Equal Method: true
+        Equality Operator: false
+████████████████████████████████████████████████████████████████████████
+258.The Duration Constants in the time Package
+    Name            Description
+    ------------    ----------------------------------------
+    Hour            This constant represents 1 hour.
+    Minute          This constant represents 1 minute.
+    Second          This constant represents 1 second.
+    Millisecond     This constant represents 1 millisecond.
+    Microsecond     This constant represents 1 microsecond.
+    Nanosecond      This constant represents 1 nanosecond.
+████████████████████████████████████████████████████████████████████████
+259.The Duration Methods
+    Name                Description
+    ----------------    ---------------------------------------------
+    Hours()             This method returns a float64 that represents the Duration in hours.
+    Minutes()           This method returns a float64 that represents the Duration in minutes.
+    Seconds()           This method returns a float64 that represents the Duration in seconds.
+    Milliseconds()      This method returns an int64 that represents the Duration in milliseconds.
+    Microseconds()      This method returns an int64 that represents the Duration in microseconds.
+    Nanoseconds()       This method returns an int64 that represents the Duration in nanoseconds.
+    Round(duration)     This method returns a Duration, which is rounded to the nearest multiple of the
+                        specified Duration.
+    Truncate(duration)  This method returns a Duration, which is rounded down to the nearest multiple of
+                        the specified Duration.
+████████████████████████████████████████████████████████████████████████
+260.Hours() - Minutes() - Seconds() - rounded.Hours() - rounded.Minutes()
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            var d time.Duration = time.Hour + (30 * time.Minute)
+            Printfln("Hours: %v", d.Hours())
+            Printfln("Mins: %v", d.Minutes())
+            Printfln("Seconds: %v", d.Seconds())
+            Printfln("Millseconds: %v", d.Milliseconds())
+        
+        
+            rounded := d.Round(time.Hour)
+            Printfln("Rounded Hours: %v", rounded.Hours())
+            Printfln("Rounded Mins: %v", rounded.Minutes())
+        
+            trunc := d.Truncate(time.Hour)
+            Printfln("Truncated Hours: %v", trunc.Hours())
+            Printfln("Rounded Mins: %v", trunc.Minutes())
+        }
+    Output:
+        Hours: 1.5
+        Mins: 90
+        Seconds: 5400
+        Millseconds: 5400000
+        Rounded Hours: 2
+        Rounded Mins: 120
+        Truncated Hours: 1
+        Rounded Mins: 60
+████████████████████████████████████████████████████████████████████████
+261.The time Functions for Creating Duration Values relative to a Time
+    Name            Description
+    -----------     ----------------------------------------
+    Since(time)     This function returns a Duration expressing the elapsed time since the specified Time value.
+    Until(time)     This function returns a Duration expressing the elapsed time until the specified Time value.
+████████████████████████████████████████████████████████████████████████
+262.time.Until(time) - Since(time)
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            toYears := func(d time.Duration) int {
+                return int(d.Hours() / (24 * 365))
+            }
+            
+            future := time.Date(2051, 0, 0, 0, 0, 0, 0, time.Local)
+            past := time.Date(1965, 0, 0, 0, 0, 0, 0, time.Local)
+            
+            Printfln("this year is %v.",time.Now().Year())
+            Printfln("Future: %v is %v.", toYears(time.Until(future)), future.Year())
+            Printfln("Past: %v is %v.", toYears(time.Since(past)), past.Year())
+        }
+    Output:
+        this year is 2023.
+        Future: 27 is 2050.
+        Past: 58 is 1964.
+████████████████████████████████████████████████████████████████████████
+263.time.ParseDuration function
+    This function returns a Duration and an error, indicating if there were problems
+    parsing the specified string.
+    The format of the strings supported by the ParseDuration function is a sequence of number values
+    followed by the unit indicators:
+    Unit        Description
+    -----       --------------------
+    h           This unit denotes hours.
+    m           This unit denotes minutes.
+    s           This unit denotes seconds.
+    ms          This unit denotes milliseconds.
+    us or μs    These units denotes microseconds.
+    ns          This unit denotes nanoseconds.
+
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            d, err := time.ParseDuration("1h30m")
+            if err == nil {
+                Printfln("Hours: %v", d.Hours())
+                Printfln("Mins: %v", d.Minutes())
+                Printfln("Seconds: %v", d.Seconds())
+                Printfln("Millseconds: %v", d.Milliseconds())
+            } else {
+                fmt.Println(err.Error())
+            }
+        }
+    Output:
+        Hours: 1.5
+        Mins: 90
+        Seconds: 5400
+        Millseconds: 5400000
+████████████████████████████████████████████████████████████████████████
+264.Using the Time Features for Goroutines and Channels
+    
+    The time package provides a small set of functions that are useful for working with goroutines and channels.
+
+    The time Package Functions:
+    Name                        Description
+    ----------------------      ----------------------------------------
+    Sleep(duration)             This function pauses the current goroutine for at least the specified duration.
+    AfterFunc(duration,func)    This function executes the specified function in its own goroutine after the
+                                specified duration. The result is a *Timer, whose Stop method can be used to
+                                cancel the execution of the function before the duration elapses.
+    After(duration)             This function returns a channel that blocks for the specified duration and then
+                                yields a Time value. See the “Receiving Timed Notifications” section for details.
+    Tick(duration)              This function returns a channel that periodically sends a Time value, where the
+                                period is specified as a duration.
+████████████████████████████████████████████████████████████████████████
+265.time.Sleep(time.Second * 1)
+    Pausing a Goroutine
+    The Sleep function pauses execution of the current goroutine for a specified duration
+
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(channel chan<- string) {
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            for _, name := range names {
+                channel <- name
+                time.Sleep(time.Second * 1)
+            }
+            close(channel)
+        }
+        func main() {
+            nameChannel := make(chan string)
+            
+            go writeToChannel(nameChannel)
+            
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+        }
+    Output:
+    Read name: Alice
+                        // 1 second delaying
+    Read name: Bob
+                        // 1 second delaying
+    Read name: Charlie
+                        // 1 second delaying
+    Read name: Dora
+████████████████████████████████████████████████████████████████████████
+266.time.AfterFunc() function
+    The AfterFunc function is used to defer the execution of a function for a specified period
+    Deferring a Function:
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(channel chan<- string) {
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            for _, name := range names {
+                channel <- name
+                // time.Sleep(time.Second * 1)
+            }
+            close(channel)
+        }
+        func main() {
+            nameChannel := make(chan string)
+        
+            time.AfterFunc(time.Second*5, func() {
+                writeToChannel(nameChannel)
+            })
+        
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+        }
+    Output:
+    // It waits for 5 seconds and then continues the program.
+    Read name: Alice
+    Read name: Bob
+    Read name: Charlie
+    Read name: Dora
+████████████████████████████████████████████████████████████████████████
+267.time.After(time.Second * 2)
+    The result from the After function is a channel that carries Time values. The channel blocks for the
+    specified duration, when a Time value is sent, indicating the duration has passed. In this example, the
+    value sent over the channel acts as a signal and is not used directly, which is why it is assigned to the blank
+    identifier, like this:
+
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(channel chan<- string) {
+        
+            Printfln("Waiting for initial duration...")
+            _ = <-time.After(time.Second * 2)
+            Printfln("Initial duration elapsed.")
+        
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            for _, name := range names {
+                channel <- name
+                time.Sleep(time.Second * 1)
+            }
+            close(channel)
+        }
+        func main() {
+            nameChannel := make(chan string)
+            go writeToChannel(nameChannel)
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+        }
+    Output:
+        Waiting for initial duration... // Wait for 2 seconds
+        Initial duration elapsed.
+        Read name: Alice    // wait for 1 second
+        Read name: Bob      // wait for 1 second
+        Read name: Charlie  // wait for 1 second
+        Read name: Dora     // wait for 1 second
+████████████████████████████████████████████████████████████████████████
+268.time.Sleep(time.Second * 3) with select statement
+    Using a Timeout in a Select Statement
+
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(channel chan<- string) {
+            Printfln("Waiting for initial duration...")
+            _ = <-time.After(time.Second * 2)
+            Printfln("Initial duration elapsed.")
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            for _, name := range names {
+                channel <- name
+                time.Sleep(time.Second * 3)
+            }
+            close(channel)
+        }
+        func main() {
+            nameChannel := make(chan string)
+            go writeToChannel(nameChannel)
+            channelOpen := true
+            for channelOpen {
+                Printfln("Starting channel read")
+                select {
+                case name, ok := <-nameChannel:
+                    if !ok {
+                        channelOpen = false
+                    } else {
+                        Printfln("Read name: %v", name)
+                    }
+                case <-time.After(time.Second * 2):
+                    Printfln("Timeout")
+                }
+            }
+        }
+    Output:
+        Starting channel read
+        Waiting for initial duration...
+        Timeout
+        Starting channel read
+        Initial duration elapsed.
+        Read name: Alice
+        Starting channel read
+        Timeout
+        Starting channel read
+        Read name: Bob
+        Starting channel read
+        Timeout
+        Starting channel read
+        Read name: Charlie
+        Starting channel read
+        Timeout
+        Starting channel read
+        Read name: Dora
+        Starting channel read
+        Timeout
+        Starting channel read
+████████████████████████████████████████████████████████████████████████
+269.NewTimer(duration)
+    This function returns a *Timer with the specified period.
+    Caution Be careful when stopping a timer. 
+    The timer's channel is not closed, which means that reads from
+    the channel will continue to block even after the timer has stopped.
+
+    The Methods Defined by the Timer Struct:
+    Name                Description
+    ------------        -------------------------------------------
+    C                   This field returns the channel over which the Time will send its Time value.
+    Stop()              This method stops the timer. The result is a bool that will be true if the timer has been
+                        stopped and false if the timer had already sent its message.
+    Reset(duration)     This method stops a timer and resets it so that its interval is the specified Duration.
+    
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(channel chan<- string) {
+            timer := time.NewTimer(time.Minute * 10)
+            go func() {
+                time.Sleep(time.Second * 2)
+                Printfln("Resetting timer")
+                timer.Reset(time.Second)
+            }()
+            Printfln("Waiting for initial duration...")
+            <-timer.C
+            Printfln("Initial duration elapsed.")
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            for _, name := range names {
+                channel <- name
+            }
+            close(channel)
+        }
+        func main() {
+            nameChannel := make(chan string)
+            go writeToChannel(nameChannel)
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+        }
+    Output:
+        Waiting for initial duration...
+        Resetting timer
+        Initial duration elapsed.
+        Read name: Alice
+        Read name: Bob
+        Read name: Charlie
+        Read name: Dora
+████████████████████████████████████████████████████████████████████████
+270.time.Tick(time.Second)
+    Receiving Recurring Notifications دریافت اعلان های مکرر
+    The Tick function returns a channel over which Time values are sent at a specified interval
+    
+    Tick is a convenience wrapper for NewTicker providing access to the ticking channel only. 
+    While Tick is useful for clients that have no need to shut down the Ticker, 
+    be aware that without a way to shut it down the underlying
+    Ticker cannot be recovered by the garbage collector; it "leaks".
+    Unlike NewTicker, Tick will return nil if d <= 0.
+
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(nameChannel chan<- string) {
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            tickChannel := time.Tick(time.Second)
+            index := 0
+            for {
+                <-tickChannel
+                nameChannel <- names[index]
+                index++
+                if index == len(names) {
+                    index = 0
+                }
+            }
+        }
+        func main() {
+            nameChannel := make(chan string)
+
+            go writeToChannel(nameChannel)
+
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+            
+        }
+    Output:
+        Read name: Alice
+        Read name: Bob
+        Read name: Charlie
+        Read name: Dora
+        Read name: Alice
+        Read name: Bob
+        Read name: Charlie
+        Read name: Dora
+        Read name: Alice
+        Read name: Bob
+        Read name: Charlie
+        Read name: Dora
+        ...
+            
+████████████████████████████████████████████████████████████████████████
+271.NewTicker(duration)
+    The result of the NewTicker function is a pointer to a Ticker struct, which defines the field and methods
+
+    The time Function for Creating a Ticker:
+    Name                    Description
+    ---------------------   ---------------------------------
+    NewTicker(duration)     This function returns a *Ticker with the specified period.
+
+    The Field and Methods Defined by the Ticker Struct:
+    Name                Description
+    ----------------    --------------------------------
+    C                   This field returns the channel over which the Ticker will send its Time values.
+    Stop()              This method stops the ticker (but does not close the channel returned by the C field).
+    Reset(duration)     This method stops a ticker and resets it so that its interval is the specified Duration.
+████████████████████████████████████████████████████████████████████████
+272.Creating a Ticker in the main.go
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(nameChannel chan<- string) {
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            ticker := time.NewTicker(time.Second / 10)
+            index := 0
+            for {
+                <-ticker.C
+                nameChannel <- names[index]
+                index++
+                if index == len(names) {
+                    ticker.Stop()
+                    close(nameChannel)
+                    break
+                }
+            }
+        }
+        func main() {
+            nameChannel := make(chan string)
+        
+            go writeToChannel(nameChannel)
+        
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+        }
+    Output: 
+        // This is printed after milliseconds
+        Read name: Alice
+        Read name: Bob
+        Read name: Charlie
+        Read name: Dora`,
 } 
