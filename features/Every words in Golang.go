@@ -2432,16 +2432,12 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Problem                                 Solution
     ---------------------------------       -------------------------
     Execute a function asynchronously       Create a goroutine
-    
     Produce a result from a function        Use a channel 
     executed asynchronously
-
     Send and receive values                 Use arrow expressions 
     using a channel
-
     Indicate that no further values         Use the close function
     will be sent over a channel
-
     Enumerate the values received           Use a for loop with the range keyword 
     from a channel
 ████████████████████████████████████████████████████████████████████████
@@ -2850,13 +2846,10 @@ go mod tidy126.Putting Type and Interface Composition in Context
     ----------------------------------      ---------------------------------------------------
     Indicate that an error has occurred     Create a struct that implements the error interface
                                             and return it as a function result
-
     Report an error over a channel          Add an error field to the struct type used for
                                             channel messages
-    
     Indicate that an unrecoverable          Call the panic function 
     error has occurred
-
     Recover from a panic                    Use the defer keyword to register a function that
                                             calls the recover function
 ████████████████████████████████████████████████████████████████████████
@@ -2990,27 +2983,20 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Problem                     Solution
     -------------------         -------------------------------------------------------------------
     Compare strings             Use the Contains, EqualFold, or Has* function in the strings package
-
     Convert string case         Use the ToLower, ToUpper, Title, or ToTitle function in the
                                 strings package
-
     Check or change             Use the functions provided by the unicode package
     character case
-
     Find content in strings     Use the functions provided by the strings or regexp package
-
     Split a string              Use the Fields or Split* function in the strings and regexp packages
-
     Join strings                Use the Join or Repeat function in the strings package
-
     Trim characters from        Use the Trim* functions in the strings package
     a string
-
     Perform a substitution      Use the Replace* or Map function in the strings package,
     تعویض انجام دهید            use a Replacer, or use the Replace* functions in the regexp package
-
     Efficiently build a         Use the Builder type in the strings package
     string
+
 ████████████████████████████████████████████████████████████████████████
 161.Comparing Strings
     The strings Functions for Comparing Strings
@@ -3018,17 +3004,12 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Function                    Description
     -------------               ------------------------
     Contains(s, substr)         This function returns true if the string s contains substr and false if it does not.
-
     ContainsAny(s, substr)      This function returns true if the string s contains any of the characters
                                 contained in the string substr.
-
     ContainsRune(s, rune)       This function returns true if the string s contains a specific rune.
-
     EqualFold(s1, s2)           This function performs a case-insensitive comparison and returns true of
                                 strings s1 and s2 are the same.
-
     HasPrefix(s, prefix)        This function returns true if the string s begins with the string prefix.
-
     HasSuffix(s, suffix)        This function returns true if the string ends with the string suffix.
 
     example:
@@ -3078,13 +3059,10 @@ go mod tidy126.Putting Type and Interface Composition in Context
     --------------  ------------------------------------------------------
     ToLower(str)    This function returns a new string containing the characters in the specified string
                     mapped to lowercase.
-
     ToUpper(str)    This function returns a new string containing the characters in the specified string
                     mapped to lowercase.
-
     Title(str)      This function converts the specific string so that the first character of each word is
                     uppercase and the remaining characters are lowercase.
-
     ToTitle(str)    This function returns a new string containing the characters in the specified string
                     mapped to title case.
 
@@ -3170,13 +3148,10 @@ go mod tidy126.Putting Type and Interface Composition in Context
                             substring is found in the string s.
     Index(s, sub)           These functions return the index of the first or last occurrence of a specified
     LastIndex(s, sub)       substring string within the string s, or -1 if there is no occurrence.
-
     IndexAny(s, chars)      These functions return the first or last occurrence of any character in the
     LastIndexAny(s, chars)  specified string within the string s, or -1 if there is no occurrence.
-
     IndexByte(s, b)         These functions return the index of the first or last occurrence of a specified
     LastIndexByte(s, b)     byte within the string s, or -1 if there is no occurrence.
-
     IndexFunc(s, func)      These functions return the index of the first or last occurrence of the
     LastIndexFunc(s, func)  character in the string s for which the specified function returns true, as
                             described in the “Inspecting Strings with Custom Functions” section.
@@ -3236,21 +3211,15 @@ go mod tidy126.Putting Type and Interface Composition in Context
     ---------------             --------------------------------
     Fields(s)                   This function splits a string on whitespace characters and returns a slice
                                 containing the nonwhitespace sections of the string s.
-
     FieldsFunc(s, func)         This function splits the string s on the characters for which a custom function
                                 returns true and returns a slice containing the remaining sections of the string.
-
     Split(s, sub)               This function splits the string s on every occurrence of the specified substring,
                                 returning a string slice. If the separator is the empty string, then the slice will
                                 contain strings for each character.
-
     SplitN(s, sub, max)         This function is similar to Split, but accepts an additional int argument that
                                 specifies the maximum number of substrings to return. The last substring in the
                                 result slice will contain the unsplit portion of the source string.
-
     SplitAfter(s, sub)          This function is similar to Split but includes the substring used in the results.
-
-
     SplitAfterN(s, sub, max)    This function is similar to SplitAfter, but accepts an additional int argument
                                 that specifies the maximum number of substrings to return.
 
@@ -3389,32 +3358,24 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Function                Description
     ------------            ---------------------------------------
     TrimSpace(s)            This function returns the string s without leading or trailing whitespace characters.
-
     Trim(s, set)            This function returns a string from which any leading or trailing characters
                             contained in the string set are removed from the string s.
-
     TrimLeft(s, set)        This function returns the string s without any leading character contained
                             in the string set. This function matches any of the specified characters—use
                             the TrimPrefix function to remove a complete substring.
-
     TrimRight(s, set)       This function returns the string s without any trailing character contained
                             in the string set. This function matches any of the specified characters—use
                             the TrimSuffix function to remove a complete substring.
-
     TrimPrefix(s, prefix)   This function returns the string s after removing the specified prefix string.
                             This function removes the complete prefix string—use the TrimLeft
                             function to remove characters from a set.
-
     TrimSuffix(s, suffix)   This function returns the string s after removing the specified suffix string.
                             This function removes the complete suffix string—use the TrimRight
                             function to remove characters from a set.
-
     TrimFunc(s, func)       This function returns the string s from which any leading or trailing
                             character for which a custom function returns true are removed.
-
     TrimLeftFunc(s, func)   This function returns the string s from which any leading character for
                             which a custom function returns true are removed.
-
     TrimRightFunc(s, func)  This function returns the string s from which any trailing character for
                             which a custom function returns true are removed.
 ████████████████████████████████████████████████████████████████████████
@@ -3494,11 +3455,9 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Replace(s, old, new, n)     This function alters the string s by replacing occurrences of the string old with the
                                 string new. The maximum number of occurrences that will be replaced is specified by
                                 the int argument n.
-
     ReplaceAll(s, old, new)     This function alters the string s by replacing all occurrences of the string old with
                                 the string new. Unlike the Replace function, there is no limit on the number of
                                 occurrences that will be replaced.
-
     Map(func, s)                This function generates a string by invoking the custom function for each character in
                                 the string s and concatenating the results. If the function produces a negative value,
                                 the current character is dropped without a replacement.
@@ -3670,13 +3629,10 @@ go mod tidy126.Putting Type and Interface Composition in Context
     -----------------       --------------------------------------------------------------------------
     Match(pattern, b)       This function returns a bool that indicates whether a pattern is matched by
                             the byte slice b.
-
     MatchString(patten, s)  This function returns a bool that indicates whether a pattern is matched by
                             the string s.
-
     Compile(pattern)        This function returns a RegExp that can be used to perform repeated pattern
                             matching with the specified pattern.
-
     MustCompile(pattern)    This function provides the same feature as Compile but panics, 
                             if the specified pattern cannot be compiled.
     
@@ -3738,24 +3694,19 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Function                    Description
     ---------------             ----------------------------------------------------------------------
     MatchString(s)              This method returns true if the string s matches the compiled pattern.
-
     FindStringIndex(s)          This method returns an int slice containing the location for the left-
                                 most match made by the compiled pattern in the string s. A nil result
                                 indicates that no matches were made.
-
     FindAllStringIndex(s, max)  This method returns a slice of int slices that contain the location for all
                                 the matches made by the compiled pattern in the string s. A nil result
                                 indicates that no matches were made.
-
     FindString(s)               This method returns a string containing the left-most match made by the
                                 compiled pattern in the string s. An empty string will be returned if no
                                 match is made.
-                                
     FindAllString(s, max)       This method returns a string slice containing the matches made by the
                                 compiled pattern in the string s. The int argument max specifies the
                                 maximum number of matches, with -1 specifying no limit. A nil result is
                                 returned if there are no matches.
-
     Split(s, max)               This method splits the string s using matches from the compiled pattern
                                 as separators and returns a slice containing the split substrings.
 
@@ -3907,23 +3858,17 @@ go mod tidy126.Putting Type and Interface Composition in Context
     ---------------------------     ------------------------------------------------------------------
     FindStringSubmatch(s)           This method returns a slice containing the first match made by the
                                     pattern and the text for the subexpressions that the pattern defines.
-
     FindAllStringSubmatch(s, max)   This method returns a slice containing all the matches and the text
                                     for the subexpressions. The int argument is used to specify the
                                     maximum number of matches. A value of -1 specifies all matches.
-
     FindStringSubmatchIndex(s)      This method is equivalent to FindStringSubmatch but returns
                                     indices rather than substrings.
                                     FindAllStringSubmatchIndex
-
     (s, max)                        This method is equivalent to FindAllStringSubmatch but returns
                                     indices rather than substrings.
-
     NumSubexp()                     This method returns the number of subexpressions.
-
     SubexpIndex(name)               This method returns the index of the subexpression with the
                                     specified name or -1 if there is no such subexpression.
-
     SubexpNames()                   This method returns the names of the subexpressions, expressed in
                                     the order in which they are defined.
 ████████████████████████████████████████████████████████████████████████
@@ -3960,11 +3905,9 @@ go mod tidy126.Putting Type and Interface Composition in Context
     ReplaceAllString(s, template)       This method replaces the matched portion of the string s with the
                                         specified template, which is expanded before it is included in the result to
                                         incorporate subexpressions.
-
     ReplaceAllLiteralString(s, sub)     This method replaces the matched portion of the string s with the
                                         specified content, which is included in the result without being expanded
                                         for subexpressions.
-
     ReplaceAllStringFunc(s, func)       This method replaces the matched portion of the string s with the result
                                         produced by the specified function.
 ████████████████████████████████████████████████████████████████████████
@@ -4051,14 +3994,11 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Print(...vals)              This function accepts a variable number of arguments and writes out their
                                 values to the standard out. Spaces are added between values that are not
                                 strings.
-
     Println(...vals)            This function accepts a variable number of arguments and writes out
                                 their values to the standard out, separated by spaces and followed by a
                                 newline character.
-
     Fprint(writer, ...vals)     This function writes out a variable number of arguments to the specified writer,
                                 Spaces are added between values that are not strings.
-
     Fprintln(writer, ...vals)   This function writes out a variable number of arguments to the specified writer
                                 followed by a newline character. Spaces are added between all values.
 ████████████████████████████████████████████████████████████████████████
@@ -4123,15 +4063,12 @@ go mod tidy126.Putting Type and Interface Composition in Context
     ---------------------------     -----------------------------------------
     Sprintf(t, ...vals)             This function returns a string, which is created by processing the template t.
                                     The remaining arguments are used as values for the template verbs.
-
     Printf(t, ...vals)              This function creates a string by processing the template t.
                                     The remaining arguments are used as values for the template verbs.
                                     The string is written to the standard out.
-
     Fprintf(writer, t, ...vals)     This function creates a string by processing the template t.
                                     The remaining arguments are used as values for the template verbs.
                                     The string is written to a Writer, which is described in Chapter 20.
-
     Errorf(t, ...values)            This function creates an error by processing the template t.
                                     The remaining arguments are used as values for the template verbs. The
                                     result is an error value whose Error method returns the formatted string.
@@ -4192,9 +4129,7 @@ go mod tidy126.Putting Type and Interface Composition in Context
     ------  -----------------------------------------------
     %v      This verb displays the default format for the value. Modifying the verb with a plus sign (%+v) includes
             field names when writing out struct values.
-
     %#v     This verb displays a value in a format that could be used to re-create the value in a Go code file.
-
     %T      This verb displays the Go type of a value.
 
     example:
@@ -4321,12 +4256,9 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Verb    Description
     ------  ------------------------------------
     %b      This verb displays an integer value as a binary string.
-
     %d      This verb displays an integer value as a decimal string. This is the default format for integer
             values, applied when the %v verb is used.
-
     %o, %O  These verbs display an integer value as an octal string. The %O verb adds the 0o prefix.
-
     %x, %X  These verbs display an integer value as a hexadecimal string. The letters A–F are displayed in
             lowercase by the %x verb and in uppercase by the %X verb.
     
@@ -4354,20 +4286,15 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Verb    Description
     -----   ------------------------------------
     %b      This verb displays a floating-point value with an exponent and without a decimal place.
-    
     %e, %E  These verbs display a floating-point value with an exponent and a decimal place. The %e uses a
             lowercase exponent indicator, while %E uses an uppercase indicator.
-
     %f, %F  These verbs display a floating-point value with a decimal place but no exponent. The %f and %F
             verbs produce the same output.
-
     %g      This verb adapts to the value it displays. The %e format is used for values with large exponents,
             and the %f format is used otherwise. This is the default format, applied when the %v verb is
             used.
-
     %G      This verb adapts to the value it displays. The %E format is used for values with large exponents,
             and the %f format is used otherwise.
-
     %x, %X  These verbs display a floating-point value in hexadecimal notation, with lowercase (%x) or
             uppercase (%X) letters.
 
@@ -4522,34 +4449,25 @@ go mod tidy126.Putting Type and Interface Composition in Context
                                         spaces, and the function reads until it has received values for all of its
                                         arguments. The result is the number of values that have been read and an
                                         error that describes any problems.
-
     Scanln(...vals)                     This function works in the same way as Scan but stops reading when it
                                         encounters a newline character.
-
     Scanf(template, ...vals)            This function works in the same way as Scan but uses a template string
                                         to select the values from the input it receives.
-
     Fscan(reader, ...vals)              This function reads space-separated values from the specified reader,
                                         which is described in Chapter 20. Newlines are treated as spaces, and
                                         the function returns the number of values that have been read and an
                                         error that describes any problems.
-
     Fscanln(reader, ...vals)            This function works in the same way as Fscan but stops reading when it
                                         encounters a newline character.
-
     Fscanf(reader, template, ...vals)   This function works in the same way as Fscan but uses a template to
                                         select the values from the input it receives.
-
     Sscan(str, ...vals)                 This function scans the specified string for space-separated values,
                                         which are assigned to the remaining arguments. The result is the
                                         number of values scanned and an error that describes any problems.
-
     Sscanf(str, template, ...vals)      This function works in the same way as Sscan but uses a template to
                                         select values from the string.
-
     Sscanln(str, template, ...vals)     This function works in the same way as Sscanf but stops scanning the
                                         string as soon as a newline character is encountered.
-
 ████████████████████████████████████████████████████████████████████████
 221.Scanning a String
     example:
@@ -4675,27 +4593,18 @@ go mod tidy126.Putting Type and Interface Composition in Context
     --------------      ----------------------------------------------------------
     Abs(val)            This function returns the absolute value of a float64 value, meaning the distance
                         from zero without considering direction.
-
     Ceil(val)           This function returns the smallest integer that is equal to or greater than the specified
                         float64 value. The result is also a float64 value, even though it represents an integer
                         number.
-
     Copysign(x, y)      This function returns a float64 value, which is the absolute value of x with the sign of y.
-
     Floor(val)          This function returns the largest integer that is smaller or equal to the specified
                         float64 value. The result is also a float64 value, even though it represents an integer number.
-
     Max(x, y)           This function returns whichever of the specified float64 value is the largest.
-
     Min(x, y)           This function returns whichever of the specified float64 value is smallest.
-
     Mod(x, y)           This function returns the remainder of x/y.
-
     Pow(x, y)           This function returns x raised to the exponent y.
-
     Round(val)          This function rounds the specified value to the nearest integer, rounding half values
                         up. The result is a float64 value, even though it represents an integer.
-
     RoundToEven(val)    This function rounds the specified value to the nearest integer, rounding half values
                         to the nearest even number. The result is a float64 value, even though it represents
                         an integer.
@@ -4734,54 +4643,37 @@ go mod tidy126.Putting Type and Interface Composition in Context
     ----------------            -----------------------------
     MaxInt8                     These constants represent the largest and smallest values that can be stored
     MinInt8                     using an int8.
-
     MaxInt16                    These constants represent the largest and smallest values that can be stored
     MinInt16                    using an int16.
-
     MaxInt32                    These constants represent the largest and smallest values that can be stored
     MinInt32                    using an int32.
-
     MaxInt64                    These constants represent the largest and smallest values that can be stored
     MinInt64                    using an int64.
-
     MaxUint8                    This constant represents the largest value that can be represented using a
                                 uint8.The smallest value is zero.
-
     MaxUint16                   This constant represents the largest value that can be represented using a
                                 uint16. The smallest value is zero.
-
     MaxUint32                   This constant represents the largest value that can be represented using a
                                 uint32. The smallest value is zero.
-
     MaxUint64                   This constant represents the largest value that can be represented using a
                                 uint64. The smallest value is zero.
-
     MaxFloat32                  These constants represent the largest values that can be represented using
     MaxFloat64                  float32 and float64 values.
-
     SmallestNonzeroFloat32      These constants represent the smallest nonzero values that can be
     SmallestNonzeroFloat32      represented using float32 and float64 values.
-
 ████████████████████████████████████████████████████████████████████████
 228.Generating Random Numbers
     Useful math/rand Functions
     Name                    Description
     --------------------    ---------------------------------------
     Seed(s)                 This function sets the seed value using the specified int64 value.
-
     Float32()               This function generates a random float32 value between 0 and 1.
-
     Float64()               This function generates a random float64 value between 0 and 1.
-
     Int()                   This function generates a random int value.
-
     Intn(max)               This function generates a random int smaller than a specified value, as
                             described after the table.
-
     UInt32()                This function generates a random uint32 value.
-
     UInt64()                This function generates a random uint64 value.
-
     Shuffle(count, func)    This function is used to randomize the order of elements, as described after
                             the table.
 ████████████████████████████████████████████████████████████████████████
@@ -4898,17 +4790,11 @@ go mod tidy126.Putting Type and Interface Composition in Context
     Name                        Description
     --------------------        -------------------------------------------
     Float64s(slice)             This function sorts a slice of float64 values. The elements are sorted in place.
-
     Float64sAreSorted(slice)    This function returns true if the elements in the specified float64 slice are in order.
-
     Ints(slice)                 This function sorts a slice of int values. The elements are sorted in place.
-
     IntsAreSorted(slice)        This function returns true if the elements in the specified int slice are in order.
-
     Strings(slice)              This function sorts a slice of string values. The elements are sorted in place.
-
     StringsAreSorted(slice)     This function returns true if the elements in the specified string slice are in order.
-
 ████████████████████████████████████████████████████████████████████████
 235.Sorting Slices
     example:
@@ -4986,17 +4872,14 @@ go mod tidy126.Putting Type and Interface Composition in Context
     SearchInts(slice, val)      This function searches the sorted slice for the specified int value. The
                                 result is the index of the specified value or, if the value is not found, the
                                 index at which the value can be inserted while maintaining the sorted order.
-    
     SearchFloat64s(slice, val)  This function searches the sorted slice for the specified float64 value.
                                 The result is the index of the specified value or, if the value is not found,
                                 the index at which the value can be inserted while maintaining the
                                 sorted order.
-
     SearchStrings(slice, val)   This function searches the sorted slice for the specified string value.
                                 The result is the index of the specified value or, if the value is not found,
                                 the index at which the value can be inserted while maintaining the
                                 sorted order.
-
     Search(count, testFunc)     This function invokes the test function for the specified number of
                                 elements. The result is the index for which the function returns true.
                                 If there is no match, then the result is the index at which the specified
@@ -5071,23 +4954,18 @@ Output:
     Name            Description
     ----------      ----------------
     Len()           This method returns the number of items that will be sorted.
-
     Less(i, j)      This method returns true if the element at index i should appear in the sorted sequence
                     before the element j. If Less(i,j) and Less(j, i) are both false, then the elements are
                     considered equal.
-
     Swap(i, j)      This method swaps the elements at the specified indices.
 ████████████████████████████████████████████████████████████████████████
 241.The Functions for Sorting Types That Implement Interface
     Name            Description
     ----------      ---------------------
     Sort(data)      This function uses the methods described in 240 Number to sort the specified data.
-
     Stable(data)    This function uses the methods described in 240 Number to sort the specified data
                     without changing the order of elements of equal value.
-
     IsSorted(data)  This function returns true if the data is in sorted order.
-
     Reverse(data)   This function reverses the order of the data.
 
 
@@ -5211,12 +5089,10 @@ Output:
     Name                                    Description
     --------                                -----------------------------
     Now()                                   This function creates a Time representing the current moment in time.
-
     Date(y, m, d, h, min, sec, nsec, loc)   This function creates a Time representing a specified moment in time, which is
                                             expressed by the year, month, day, hour, minute, second, nanosecond, and Location
                                             arguments. (The Location type is described in the “Parsing Time Values from Strings”
                                             section.)
-
     Unix(sec, nsec)                         This function creates a Time value from the number of seconds and nanoseconds since
                                             January 1, 1970, UTC, commonly known as Unix time.
                                         
@@ -5226,25 +5102,15 @@ Output:
     --------        ----------------------------
     Date()          This method returns the year, month, and day components. The year and day are
                     expressed as int values and the month as a Month value.
-
     Clock()         This method returns the hour, minutes, and seconds components of the Time.
-                                                
     Year()          This method returns the year component, expressed as an int.
-                                                
     YearDay()       This method returns the day of the year, expressed as an int between 1 and 366 (to accommodate leap years).
-
     Month()         This method returns the month component, expressed using the Month type.
-
     Day()           This method returns the day of the month, expressed as an int.
-
     Weekday()       This method returns the day of the week, expressed as a Weekday.
-
     Hour()          This method returns the hour of the day, expressed as an int between 0 and 23.
-
     Minute()        This method returns the number of minutes elapsed into the hour of the day, expressed as an int between 0 and 59.
-
     Second()        This method returns the number of seconds elapsed into the minute of the hour, expressed as an int between 0 and 59.
-                                                
     Nanosecond()    This method returns the number of nanoseconds elapsed into the second of the minute,
                     expressed as an int between 0 and 999,999,999.
 ████████████████████████████████████████████████████████████████████████
@@ -5254,7 +5120,6 @@ Output:
     Month       This type represents a month, and the time package defines constant values for the English-
                 language month names: January, February, etc. The Month type defines a String method that
                 uses these names when formatting strings.
-
     Weekday     This type represents a day of the week, and the time package defines constant values for the
                 English-language weekday names: Sunday, Monday, etc. The Weekday type defines a String
                 method that uses these names when formatting strings.
@@ -5353,7 +5218,6 @@ Output:
     --------------------------------------      -----------------------------------
     Parse(layout, str)                          This function parses a string using the specified layout to create a Time value.
                                                 An error is returned to indicate problems parsing the string.
-
     ParseInLocation(layout, str, location)      This function parses a string, using the specified layout and using the
                                                 Location if no time zone is included in the string. An error is returned to
                                                 indicate problems parsing the string.
@@ -5433,10 +5297,8 @@ Output:
     -------------------------           -----------------------------------------
     LoadLocation(name)                  This function returns a *Location for the specified name and an
                                         error that indicates any problems.
-
-                                        LoadLocationFromTZData(name,data)   This function returns a *Location from a byte slice that contains a
+    LoadLocationFromTZData(name,data)   This function returns a *Location from a byte slice that contains a
                                         formatted time zone database.
-
     FixedZone(name, offset)             This function returns a *Location that always uses the specified
                                         name and offset from UTC.
 
@@ -5516,6 +5378,28 @@ Output:
         Local: 09 Jun 95 19:30 +0000
 ████████████████████████████████████████████████████████████████████████
 255.The Methods for Working with Time Values
+    Name                Description
+    ----------------    -------------------------------------------------
+    Add(duration)       This method adds the specified Duration to the Time and returns the result.
+    Sub(time)           This method returns a Duration that expresses the difference between the Time on
+                        which the method has been called and the Time provided as the argument.
+    AddDate(y, m, d)    This method adds the specified number of years, months, and days to the Time and
+                        returns the result.
+    After(time)         This method returns true if the Time on which the method has been called occurs
+                        after the Time provided as the argument.
+    Before(time)        This method returns true if the Time on which the method has been called occurs
+                        before the Time provided as the argument.
+    Equal(time)         This method returns true if the Time on which the method has been called is equal
+                        to the Time provided as the argument.
+    IsZero()            This method returns true if the Time on which the method has been called
+                        represents the zero-time instant, which is January 1, year 1, 00:00:00 UTC.
+    In(loc)             This method returns the Time value, expressed in the specified Location.
+    Location()          This method returns the Location that is associated with the Time, effectively
+                        allowing a time to be expressed in a different time zone.
+    Round(duration)     This method rounds the Time to the nearest interval represented by a Duration
+                        value.
+    Truncate(duration)  This method rounds the Time down to the nearest interval represented by a
+                        Duration value.
 ████████████████████████████████████████████████████████████████████████
 256.
 ████████████████████████████████████████████████████████████████████████
