@@ -5540,7 +5540,20 @@ Output:
         Future: 27 is 2050.
         Past: 58 is 1964.
 ████████████████████████████████████████████████████████████████████████
-263.
+263.time.ParseDuration function
+    This function returns a Duration and an error, indicating if there were problems
+    parsing the specified string.
+    The format of the strings supported by the ParseDuration function is a sequence of number values
+    followed by the unit indicators:
+    Unit        Description
+    -----       --------------------
+    h           This unit denotes hours.
+    m           This unit denotes minutes.
+    s           This unit denotes seconds.
+    ms          This unit denotes milliseconds.
+    us or μs    These units denotes microseconds.
+    ns          This unit denotes nanoseconds.
+    
 ████████████████████████████████████████████████████████████████████████
 264.
 ████████████████████████████████████████████████████████████████████████
