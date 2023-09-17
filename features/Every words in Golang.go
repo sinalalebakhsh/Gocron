@@ -5942,8 +5942,12 @@ Output:
                 Printfln("Read name: %v", name)
             }
         }
-    Output:
-    
+    Output: 
+        // This is printed after milliseconds
+        Read name: Alice
+        Read name: Bob
+        Read name: Charlie
+        Read name: Dora
 ████████████████████████████████████████████████████████████████████████
 273.
 ████████████████████████████████████████████████████████████████████████
