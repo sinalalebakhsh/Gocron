@@ -5758,6 +5758,27 @@ Output:
             }
         }
     Output:
+        Starting channel read
+        Waiting for initial duration...
+        Timeout
+        Starting channel read
+        Initial duration elapsed.
+        Read name: Alice
+        Starting channel read
+        Timeout
+        Starting channel read
+        Read name: Bob
+        Starting channel read
+        Timeout
+        Starting channel read
+        Read name: Charlie
+        Starting channel read
+        Timeout
+        Starting channel read
+        Read name: Dora
+        Starting channel read
+        Timeout
+        Starting channel read
 ████████████████████████████████████████████████████████████████████████
 269.NewTimer(duration)
 ████████████████████████████████████████████████████████████████████████
