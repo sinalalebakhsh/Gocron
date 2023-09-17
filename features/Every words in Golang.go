@@ -5635,7 +5635,43 @@ Output:
                         // 1 second delaying
     Read name: Dora
 ████████████████████████████████████████████████████████████████████████
-266.
+266.time.AfterFunc() function
+    The AfterFunc function is used to defer the execution of a function for a specified period
+    Deferring a Function:
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(channel chan<- string) {
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            for _, name := range names {
+                channel <- name
+                // time.Sleep(time.Second * 1)
+            }
+            close(channel)
+        }
+        func main() {
+            nameChannel := make(chan string)
+        
+            time.AfterFunc(time.Second*5, func() {
+                writeToChannel(nameChannel)
+            })
+        
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+        }
+    Output:
+    // It waits for 5 seconds and then continues the program.
+    Read name: Alice
+    Read name: Bob
+    Read name: Charlie
+    Read name: Dora
 ████████████████████████████████████████████████████████████████████████
 267.
 ████████████████████████████████████████████████████████████████████████
