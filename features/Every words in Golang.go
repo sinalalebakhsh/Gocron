@@ -5845,6 +5845,56 @@ Output:
     Ticker cannot be recovered by the garbage collector; it "leaks".
     Unlike NewTicker, Tick will return nil if d <= 0.
 
+    example:
+        package main
+        import (
+            "fmt"
+            "time"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func writeToChannel(nameChannel chan<- string) {
+            names := []string{"Alice", "Bob", "Charlie", "Dora"}
+            tickChannel := time.Tick(time.Second)
+            index := 0
+            for {
+                <-tickChannel
+                nameChannel <- names[index]
+                index++
+                if index == len(names) {
+                    index = 0
+                }
+            }
+        }
+        func main() {
+            nameChannel := make(chan string)
+
+            go writeToChannel(nameChannel)
+
+            for name := range nameChannel {
+                Printfln("Read name: %v", name)
+            }
+            
+        }
+    Output:
+        Read name: Alice
+        Read name: Bob
+        Read name: Charlie
+        Read name: Dora
+        Read name: Alice
+        Read name: Bob
+        Read name: Charlie
+        Read name: Dora
+        Read name: Alice
+        Read name: Bob
+        Read name: Charlie
+        Read name: Dora
+        ...
+        
+    
+    
+    
     
 ████████████████████████████████████████████████████████████████████████
 271.
