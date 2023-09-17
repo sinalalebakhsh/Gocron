@@ -5821,13 +5821,10 @@ Output:
         }
         func main() {
             nameChannel := make(chan string)
-        
             go writeToChannel(nameChannel)
-        
             for name := range nameChannel {
                 Printfln("Read name: %v", name)
             }
-        
         }
     Output:
         Waiting for initial duration...
@@ -5838,7 +5835,17 @@ Output:
         Read name: Charlie
         Read name: Dora
 ████████████████████████████████████████████████████████████████████████
-270.
+270.time.Tick(time.Second)
+    Receiving Recurring Notifications دریافت اعلان های مکرر
+    The Tick function returns a channel over which Time values are sent at a specified interval
+    
+    Tick is a convenience wrapper for NewTicker providing access to the ticking channel only. 
+    While Tick is useful for clients that have no need to shut down the Ticker, 
+    be aware that without a way to shut it down the underlying
+    Ticker cannot be recovered by the garbage collector; it "leaks".
+    Unlike NewTicker, Tick will return nil if d <= 0.
+
+    
 ████████████████████████████████████████████████████████████████████████
 271.
 ████████████████████████████████████████████████████████████████████████
