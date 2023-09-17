@@ -5674,6 +5674,11 @@ Output:
     Read name: Dora
 ████████████████████████████████████████████████████████████████████████
 267.time.After(time.Second * 2)
+    The result from the After function is a channel that carries Time values. The channel blocks for the
+    specified duration, when a Time value is sent, indicating the duration has passed. In this example, the
+    value sent over the channel acts as a signal and is not used directly, which is why it is assigned to the blank
+    identifier, like this:
+    
     example:
         package main
         import (
