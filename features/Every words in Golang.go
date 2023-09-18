@@ -6173,7 +6173,7 @@ Output:
     LimitReader(r, limit)       This function creates a Reader that will EOF after the specified number of bytes, as
                                 described in the “Limiting Read Data” section.
 ████████████████████████████████████████████████████████████████████████
-282.Pipes
+282.Pipe
     Pipes are used to connect code that consumes data through a Reader 
     and code that produces code through a Writer.
 
@@ -6245,7 +6245,14 @@ Output:
         Wrote 1 byte(s): t
         Read data: Kayak, Lifejacket
 ████████████████████████████████████████████████████████████████████████
-283.
+283.PipeReader and a PipeWriter
+    The io.Pipe function returns a PipeReader and a PipeWriter. The PipeReader and PipeWriter structs
+    implement the Closer interface
+    Name        Description
+    -------     -----------------------
+    Close()     This method closes the reader or writer. The details are implementation specific, but, in
+                general, any subsequent reads from a closed Reader will return zero bytes and the EOF error,
+                while any subsequent writes to a closed Writer will return an error.
 ████████████████████████████████████████████████████████████████████████
 284.
 ████████████████████████████████████████████████████████████████████████
