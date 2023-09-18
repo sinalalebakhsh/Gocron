@@ -6110,6 +6110,12 @@ Output:
 279.the Utility Functions for Readers and Writers
     توابع مفید برای خوانندگان و نویسندگان
     
+    Functions in the io Package for Readng and Writing Data
+    Name            Description
+    -----------     -------------------------------------------------------
+    Copy(w, r)      This function copies data from a Reader to a Writer until EOF is returned or
+                    another error is encountered. The results are the number of bytes copies and an
+                    error used to describe any problems.
 ████████████████████████████████████████████████████████████████████████
 280.
 ████████████████████████████████████████████████████████████████████████
