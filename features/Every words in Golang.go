@@ -6131,7 +6131,30 @@ Output:
                                     before enough bytes to fill the slice were read.
     WriteString(w, str)             This function writes the specified string to a writer.
 ████████████████████████████████████████████████████████████████████████
-280.
+280.io.Copy(writer, reader)
+    example:
+        package main
+        import(
+            "io"
+            "asd/asd"
+            "strings"
+        )
+        func processData(reader io.Reader, writer io.Writer) {
+            count, err := io.Copy(writer, reader)
+                if (err == nil) {
+                    asd.Printfln("Read %v bytes", count)
+                } else {
+                    asd.Printfln("Error: %v", err.Error())
+                }
+        }
+        func main() {
+
+            r := strings.NewReader("Kayak .")
+            var builder strings.Builder
+            processData(r, &builder)
+            asd.Printfln("String builder contents: %s", builder.String())
+        }
+    Output:
 ████████████████████████████████████████████████████████████████████████
 281.
 ████████████████████████████████████████████████████████████████████████
