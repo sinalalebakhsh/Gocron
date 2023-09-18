@@ -6368,9 +6368,59 @@ Output:
         Read data: KayakLifejacketCanoe
         Echo data: KayakLifejacketCanoe
 ████████████████████████████████████████████████████████████████████████
-287.
+287.io.LimitReader(concatReader, 5)
+    The LimitReader function is used to restrict the amount of data that can be obtained from a Reader
+
+    example:
+        package main
+        import (
+            "io"
+            "strings"
+        )
+        func main() {
+            r1 := strings.NewReader("Kayak")
+            r2 := strings.NewReader("Lifejacket")
+            r3 := strings.NewReader("Canoe")
+            concatReader := io.MultiReader(r1, r2, r3)
+            limited := io.LimitReader(concatReader, 5)
+            ConsumeData(limited)
+        }
+    Output:
+        Read data: Ka
+        Read data: ya
+        Read data: k
+        Read data: Kayak
 ████████████████████████████████████████████████████████████████████████
-288.
+288.bufio
+    The bufio package provides support for adding buffers to readers and writers.
+
+    example:
+        This code defined a struct type named CustomReader that acts as a wrapper around a Reader. 
+        The implementation of the Read method generates output that reports how much data is read and
+        how many read operations are performed overall. 
+        custom.go:
+            package main
+            import (
+                "io"
+                "asd/asd"
+            )
+            type CustomReader struct {
+                reader    io.Reader
+                readCount int
+            }
+            func NewCustomReader(reader io.Reader) *CustomReader {
+                return &CustomReader{reader, 0}
+            }
+            func (cr *CustomReader) Read(slice []byte) (count int, err error) {
+                count, err = cr.reader.Read(slice)
+                cr.readCount++
+                asd.Printfln("Custom Reader: %v bytes", count)
+                if err == io.EOF {
+                    asd.Printfln("Total Reads: %v", cr.readCount)
+                }
+                return
+            }
+        
 ████████████████████████████████████████████████████████████████████████
 289.
 ████████████████████████████████████████████████████████████████████████
