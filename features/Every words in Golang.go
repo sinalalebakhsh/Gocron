@@ -6504,6 +6504,10 @@ Output:
     NewReaderSize(r, size)      This function returns a buffered Reader with the specified buffer size.
 ████████████████████████████████████████████████████████████████████████
 290.bufio.NewReader(reader)
+    The default buffer size is 4,096 bytes, which means that the buffered reader was able to read all the data
+    in a single read operation, plus an additional read to produce the EOF result. Introducing the buffer reduces
+    the overhead associated with the read operations, albeit at the cost of the memory used to buffer the data.
+
     example:
         package main
         import (
@@ -6534,11 +6538,62 @@ Output:
     Total Reads: 2
     Read data: It was a boat. A small boat.
 ████████████████████████████████████████████████████████████████████████
-291.
+291.Additional Buffered Reader Methods
+    The NewReader and NewReaderSize functions return bufio.Reader values, which implement the io.
+    Reader interface and which can be used as drop-in wrappers for other types of Reader methods, seamlessly
+    introducing a read buffer.
+
+
 ████████████████████████████████████████████████████████████████████████
-292.
+292.The Methods Defined by the Buffered Reader
+    Name                Description
+    --------------      ------------------------------------------
+    Buffered()          This method returns an int that indicates the number of bytes that can be read from the buffer.
+    Discard(count)      This method discards the specified number of bytes.
+    Peek(count)         This method returns the specified number of bytes without removing them from the
+                        buffer, meaning they will be returned by subsequent calls to the Read method.
+    Reset(reader)       This method discards the data in the buffer and performs subsequent reads from the
+                        specified Reader.
+    Size()              This method returns the size of the buffer, expressed int.
 ████████████████████████████████████████████████████████████████████████
-293.
+293.buffered.Read(slice)
+    example:
+        package main
+        import (
+            "io"
+            "strings"
+            "bufio"
+        )
+        func main() {
+            text := "It was a boat. A small boat."
+            var reader io.Reader = NewCustomReader(strings.NewReader(text))
+            var writer strings.Builder
+            slice := make([]byte, 5)
+            buffered := bufio.NewReader(reader)
+            for {
+                count, err := buffered.Read(slice)
+                if (count > 0) {
+                    Printfln("Buffer size: %v, buffered: %v",
+                        buffered.Size(), buffered.Buffered())
+                    writer.Write(slice[0:count])
+                }
+                if (err != nil) {
+                        break
+                    }
+            }
+            Printfln("Read data: %v", writer.String())
+        }
+    Output:
+        Custom Reader: 28 bytes
+        Buffer size: 4096, buffered: 23
+        Buffer size: 4096, buffered: 18
+        Buffer size: 4096, buffered: 13
+        Buffer size: 4096, buffered: 8
+        Buffer size: 4096, buffered: 3
+        Buffer size: 4096, buffered: 0
+        Custom Reader: 0 bytes
+        Total Reads: 2
+        Read data: It was a boat. A small boat.
 ████████████████████████████████████████████████████████████████████████
 294.
 ████████████████████████████████████████████████████████████████████████
