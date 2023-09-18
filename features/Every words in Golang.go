@@ -6303,8 +6303,70 @@ Output:
         Read data: KayakLifejacketCanoe
 ████████████████████████████████████████████████████████████████████████
 285.io.MultiWriter()
+example:
+    package main
+    import (
+        "io"
+        "strings"
+        "asd/asd"
+    )
+    func main() {
+        var w1 strings.Builder
+        var w2 strings.Builder
+        var w3 strings.Builder
+        combinedWriter := io.MultiWriter(&w1, &w2, &w3)
+        GenerateData(combinedWriter)
+        asd.Printfln("Writer #1: %v", w1.String())
+        asd.Printfln("Writer #2: %v", w2.String())
+        asd.Printfln("Writer #3: %v", w3.String())
+    }
+Output:
+    Wrote 4 byte(s): Kaya
+    Wrote 4 byte(s): k, L
+    Wrote 4 byte(s): ifej
+    Wrote 4 byte(s): acke
+    Wrote 1 byte(s): t
+    Writer #1: Kayak, Lifejacket
+    Writer #2: Kayak, Lifejacket
+    Writer #3: Kayak, Lifejacket
 ████████████████████████████████████████████████████████████████████████
-286.
+286.io.TeeReader(concatReader, &writer)
+    Echoing Reads to a Writer
+
+    The TeeReader function returns a Reader that echoes the data that it receives to a Writer.
+
+    example:
+        package main
+        import (
+            "asd/asd"
+            "io"
+            "strings"
+        )
+        func main() {
+        
+            r1 := strings.NewReader("Kayak")
+            r2 := strings.NewReader("Lifejacket")
+            r3 := strings.NewReader("Canoe")
+            concatReader := io.MultiReader(r1, r2, r3)
+            var writer strings.Builder
+            teeReader := io.TeeReader(concatReader, &writer)
+            ConsumeData(teeReader)
+            asd.Printfln("Echo data: %v", writer.String())
+        }
+    Output:
+        Read data: Ka
+        Read data: ya
+        Read data: k
+        Read data: Li
+        Read data: fe
+        Read data: ja
+        Read data: ck
+        Read data: et
+        Read data: Ca
+        Read data: no
+        Read data: e
+        Read data: KayakLifejacketCanoe
+        Echo data: KayakLifejacketCanoe
 ████████████████████████████████████████████████████████████████████████
 287.
 ████████████████████████████████████████████████████████████████████████
