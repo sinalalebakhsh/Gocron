@@ -6155,6 +6155,8 @@ Output:
             asd.Printfln("String builder contents: %s", builder.String())
         }
     Output:
+        Read 7 bytes
+        String builder contents: Kayak .
 ████████████████████████████████████████████████████████████████████████
 281.
 ████████████████████████████████████████████████████████████████████████
