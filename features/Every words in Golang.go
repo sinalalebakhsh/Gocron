@@ -26,6 +26,8 @@ var OriginalFeatures Features = Features{
     1- go mod init YOURNAME
     2- go work init YOURWORKDIRECTORY
     3- go run main.go  OR  go run projectName.go
+    
+    package main = first executable file main.go
 ████████████████████████████████████████████████████████████████████████
 1.build
     Using the Go Command
@@ -6943,7 +6945,7 @@ Output:
 
 
 
-    package main = first executable file main.go
+    
 func main() {} = every execute files in "package main"
     fmt = for printing in CLI
 import = for importing another package
