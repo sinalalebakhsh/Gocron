@@ -6116,7 +6116,14 @@ Output:
     Copy(w, r)                  This function copies data from a Reader to a Writer until EOF is returned or
                                 another error is encountered. The results are the number of bytes copies and an
                                 error used to describe any problems.
-    CopyBuffer(w, r, buffer)    
+    CopyBuffer(w, r, buffer)    This function performs the same task as Copy but reads the data into the
+                                specified buffer before it is passed to the Writer.
+    CopyN(w, r, count)          This function copies count bytes from the Reader to the Writer. The results are
+                                the number of bytes copies and an error used to describe any problems.
+    ReadAll(r)                  This function reads data from the specified Reader until EOF is reached. The
+                                results are a byte slice containing the read data and an error, which is used to
+                                describe any problems.
+                                
 ████████████████████████████████████████████████████████████████████████
 280.
 ████████████████████████████████████████████████████████████████████████
