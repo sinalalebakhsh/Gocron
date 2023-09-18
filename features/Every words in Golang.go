@@ -6095,7 +6095,17 @@ Output:
         Read 1 bytes: k
         String builder contents: Kayak
 ████████████████████████████████████████████████████████████████████████
-278.
+278.io.EOF
+    The io package defines a special error named EOF, 
+    which is used to signal when the Reader reaches the end of the data. 
+    If the error result from the Read function is equal to the EOF error, 
+    then I break out of the for
+    loop that has been reading data from the Reader:
+    ...
+    if err == io.EOF {
+        break
+    }
+    ...
 ████████████████████████████████████████████████████████████████████████
 279.
 ████████████████████████████████████████████████████████████████████████
