@@ -6213,7 +6213,25 @@ Output:
                 }
             }
             asd.Printfln("Read data: %v", string(data))
-        }    
+        }
+    main.go:
+
+    Output:
+        Read data: Ka
+        Read data: ya
+        Wrote 4 byte(s): Kaya
+        Read data: k,
+        Read data:  L
+        Wrote 4 byte(s): k, L
+        Read data: if
+        Read data: ej
+        Wrote 4 byte(s): ifej
+        Read data: ac
+        Read data: ke
+        Wrote 4 byte(s): acke
+        Read data: t
+        Wrote 1 byte(s): t
+        Read data: Kayak, Lifejacket
 ████████████████████████████████████████████████████████████████████████
 283.
 ████████████████████████████████████████████████████████████████████████
