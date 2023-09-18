@@ -6595,9 +6595,22 @@ Output:
         Total Reads: 2
         Read data: It was a boat. A small boat.
 ████████████████████████████████████████████████████████████████████████
-294.
+294.bufio Functions for Creating Buffered Writers
+    Name                        Description
+    -----------------------     --------------------------------------
+    NewWriter(w)                This function returns a buffered Writer with the default buffer size (which is
+                                4,096 bytes at the time of writing).
+    NewWriterSize(w, size)      This function returns a buffered Writer with the specified buffer size.
 ████████████████████████████████████████████████████████████████████████
-295.
+295.Methods Defined by the bufio.Writer Struct
+    Name                Description
+    --------------      -----------------------------------
+    Available()         This method returns the number of available bytes in the buffer.
+    Buffered()          This method returns the number of bytes that have been written to the buffer.
+    Flush()             This method writes the contents of the buffer to the underlying Writer.
+    Reset(writer)       This method discards the data in the buffer and performs subsequent writes to the
+                        specified Writer.
+    Size()              This method returns the capacity of the buffer in bytes.
 ████████████████████████████████████████████████████████████████████████
 296.
 ████████████████████████████████████████████████████████████████████████
