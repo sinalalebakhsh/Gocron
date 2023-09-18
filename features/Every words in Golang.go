@@ -6289,9 +6289,20 @@ Output:
             ConsumeData(concatReader)
         }
     Output:
-        
+        Read data: Ka
+        Read data: ya
+        Read data: k
+        Read data: Li
+        Read data: fe
+        Read data: ja
+        Read data: ck
+        Read data: et
+        Read data: Ca
+        Read data: no
+        Read data: e
+        Read data: KayakLifejacketCanoe
 ████████████████████████████████████████████████████████████████████████
-285.
+285.io.MultiWriter()
 ████████████████████████████████████████████████████████████████████████
 286.
 ████████████████████████████████████████████████████████████████████████
