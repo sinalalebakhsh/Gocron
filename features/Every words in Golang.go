@@ -6062,7 +6062,38 @@ Output:
         The Writer interface doesn't include any details of how the written data is stored, transmitted, or
         processed, all of which is left to the types that implement the interface.
 ████████████████████████████████████████████████████████████████████████
-277.
+277.io.Writer
+    example:
+        package main
+        import(
+            "io"
+            "strings"
+            "asd/asd"
+        )
+        func processData(reader io.Reader, writer io.Writer) {
+            b := make([]byte, 2)
+            for {
+                count, err := reader.Read(b)
+                if count > 0 {
+                    writer.Write(b[0:count])
+                    asd.Printfln("Read %v bytes: %v", count, string(b[0:count]))
+                }
+                if err == io.EOF {
+                    break
+                }
+            }
+        }
+        func main() {
+            r := strings.NewReader("Kayak")
+            var builder strings.Builder
+            processData(r, &builder)
+            asd.Printfln("String builder contents: %s", builder.String())
+        }
+    Output:
+        Read 2 bytes: Ka
+        Read 2 bytes: ya
+        Read 1 bytes: k
+        String builder contents: Kayak
 ████████████████████████████████████████████████████████████████████████
 278.
 ████████████████████████████████████████████████████████████████████████
