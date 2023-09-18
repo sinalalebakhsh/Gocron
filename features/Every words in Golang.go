@@ -26,8 +26,12 @@ var OriginalFeatures Features = Features{
     1- go mod init YOURNAME
     2- go work init YOURWORKDIRECTORY
     3- go run main.go  OR  go run projectName.go
-    
+
     package main = first executable file main.go
+
+    func main() {} = every execute files in "package main"
+
+    import = for importing another package
 ████████████████████████████████████████████████████████████████████████
 1.build
     Using the Go Command
@@ -43,6 +47,8 @@ var OriginalFeatures Features = Features{
 ████████████████████████████████████████████████████████████████████████
 4.fmt
     The go fmt command ensures consistent indentation and alignment in source code files.
+    fmt = for printing in CLI
+    fmt.Printf("%v %s %f", variable, string, float32)
 ████████████████████████████████████████████████████████████████████████
 5.get
     The go get command downloads and installs external packages.
@@ -352,6 +358,9 @@ Functions for Parsing Strings into Other Data Types
         for index, character := range product {
                     fmt.Println("Index:", index, "Character:", string(character))
                 }
+    
+    range : is for variable like slice or array like this :
+    for name := range sliceOfNames
 ████████████████████████████████████████████████████████████████████████
 57.switch
     A switch statement provides an alternative way to control execution flow, based on matching the result of an
@@ -433,6 +442,9 @@ Functions for Parsing Strings into Other Data Types
     Go arrays are a fixed length and contain elements of a single type, which are accessed by index
     var names [3]string
 
+    An array is a numbered sequence of elements of a sin-gle type with a fixed length.
+
+
     Array Literal Syntax:
         names := [3]string { "Kayak", "Lifejacket", "Paddle" }
 
@@ -450,7 +462,10 @@ Functions for Parsing Strings into Other Data Types
     The slice type in this example is []string
     The best way to think of slices is as a variable-length array because they are useful when you don't know how
     many values you need to store or when the number changes over time. One way to define a slice is to use the
-    built-in make function
+    built-in make function.
+
+    A slice is a segment of an array. Like arrays slices areindexable and have a length. 
+    Unlike arrays this lengthis allowed to change.
 
     example:
         names := make([]string, 3)
@@ -6946,36 +6961,21 @@ Output:
 
 
     
-func main() {} = every execute files in "package main"
-    fmt = for printing in CLI
-import = for importing another package
-    string
-e.g
-    Format String like: fmt.Printf("%v %s %f", variable, string, float32)
-    Scope
-    Go is lexically scoped using blocks.
 
-    Defining Multiple Variables
-    fmt.Scanf("%f", &input)
-    We use another function from the fmt package to readthe   user   input   (Scanf).
-    for 
-    loop
-    if
-    else
-    switch
-    default
-    array
-    An array is a numbered sequence of elements of a sin-gle type with a fixed length.
-    target
-    value
-    range
-    len(x)
-    length
+    
 
-27.
-    slice
-    A slice is a segment of an array. Like arrays slices areindexable and have a length. 
-    Unlike arrays this lengthis allowed to change.
+  
+  
+  
+ 
+
+
+
+    
+    
+    
+
+    
 
 28.
     make
