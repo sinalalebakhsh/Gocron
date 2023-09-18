@@ -6111,19 +6111,25 @@ Output:
     توابع مفید برای خوانندگان و نویسندگان
     
     Functions in the io Package for Readng and Writing Data
-    Name                        Description
-    ------------------------    -------------------------------------------------------
-    Copy(w, r)                  This function copies data from a Reader to a Writer until EOF is returned or
-                                another error is encountered. The results are the number of bytes copies and an
-                                error used to describe any problems.
-    CopyBuffer(w, r, buffer)    This function performs the same task as Copy but reads the data into the
-                                specified buffer before it is passed to the Writer.
-    CopyN(w, r, count)          This function copies count bytes from the Reader to the Writer. The results are
-                                the number of bytes copies and an error used to describe any problems.
-    ReadAll(r)                  This function reads data from the specified Reader until EOF is reached. The
-                                results are a byte slice containing the read data and an error, which is used to
-                                describe any problems.
-                                
+    Name                            Description
+    ------------------------        -------------------------------------------------------
+    Copy(w, r)                      This function copies data from a Reader to a Writer until EOF is returned or
+                                    another error is encountered. The results are the number of bytes copies and an
+                                    error used to describe any problems.
+    CopyBuffer(w, r, buffer)        This function performs the same task as Copy but reads the data into the
+                                    specified buffer before it is passed to the Writer.
+    CopyN(w, r, count)              This function copies count bytes from the Reader to the Writer. The results are
+                                    the number of bytes copies and an error used to describe any problems.
+    ReadAll(r)                      This function reads data from the specified Reader until EOF is reached. The
+                                    results are a byte slice containing the read data and an error, which is used to
+                                    describe any problems.
+    ReadAtLeast(r, byteSlice, min)  This function reads at least the specified number of bytes from the reader,
+                                    placing them into the byte slice. An error is reported if fewer bytes than specified
+                                    are read.
+    ReadFull(r, byteSlice)          This function fills the specified byte slice with data. The result is the number
+                                    of bytes read and an error. An error will be reported if EOF was encountered
+                                    before enough bytes to fill the slice were read.
+    WriteString(w, str)             This function writes the specified string to a writer.
 ████████████████████████████████████████████████████████████████████████
 280.
 ████████████████████████████████████████████████████████████████████████
