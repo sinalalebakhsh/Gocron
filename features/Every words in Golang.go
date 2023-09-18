@@ -6158,7 +6158,15 @@ Output:
         Read 7 bytes
         String builder contents: Kayak .
 ████████████████████████████████████████████████████████████████████████
-281.
+281.The io Package Functions for Specialized Readers and Writers
+    Name                        Description
+    -----------                 ----------------------------------------
+    Pipe()                      This function returns a PipeReader and a PipeWriter, which can be used to connect
+                                functions that require a Reader and a Writer, as described in the “Using Pipes” section.
+    MultiReader(...readers)     This function defines a variadic parameter that allows an arbitrary number of Reader
+                                values to be specified. The result is a Reader that passes on the content from each of
+                                its parameters in the sequence they are defined, as described in the “Concatenating
+                                Multiple Readers” section.
 ████████████████████████████████████████████████████████████████████████
 282.
 ████████████████████████████████████████████████████████████████████████
