@@ -6054,7 +6054,11 @@ Output:
         Read 2 bytes: ya
         Read 1 bytes: k
 ████████████████████████████████████████████████████████████████████████
-276.
+276.Writer interface
+    Write(byteSlice)
+        This method writes the data from the specified byte slice. The method returns the
+        number of bytes that were written and an error. The error will be non-nil if the
+        number of bytes written is less than the length of the slice.
 ████████████████████████████████████████████████████████████████████████
 277.
 ████████████████████████████████████████████████████████████████████████
