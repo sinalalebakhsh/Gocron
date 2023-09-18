@@ -6496,9 +6496,43 @@ Output:
             Total Reads: 7
             Read data: It was a boat. A small boat.
 ████████████████████████████████████████████████████████████████████████
-289.
+289.bufio Functions for Creating Buffered Readers
+    Name                        Description
+    ----------------------      ---------------------------------
+    NewReader(r)                This function returns a buffered Reader with the default buffer size (which is
+                                4,096 bytes at the time of writing).
+    NewReaderSize(r, size)      This function returns a buffered Reader with the specified buffer size.
 ████████████████████████████████████████████████████████████████████████
-290.
+290.bufio.NewReader(reader)
+    example:
+        package main
+        import (
+            "io"
+            "strings"
+            "bufio"
+        )
+        func main() {
+            text := "It was a boat. A small boat."
+            var reader io.Reader = NewCustomReader(strings.NewReader(text))
+            var writer strings.Builder
+            slice := make([]byte, 5)
+            reader = bufio.NewReader(reader)
+            for {
+                count, err := reader.Read(slice)
+                if (count > 0) {
+                    writer.Write(slice[0:count])
+                }
+                if (err != nil) {
+                    break
+                }
+            }
+            Printfln("Read data: %v", writer.String())
+        }
+Output:
+    Custom Reader: 28 bytes
+    Custom Reader: 0 bytes
+    Total Reads: 2
+    Read data: It was a boat. A small boat.
 ████████████████████████████████████████████████████████████████████████
 291.
 ████████████████████████████████████████████████████████████████████████
