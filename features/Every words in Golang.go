@@ -6173,7 +6173,47 @@ Output:
     LimitReader(r, limit)       This function creates a Reader that will EOF after the specified number of bytes, as
                                 described in the “Limiting Read Data” section.
 ████████████████████████████████████████████████████████████████████████
-282.
+282.Pipes
+    Pipes are used to connect code that consumes data through a Reader 
+    and code that produces code through a Writer.
+
+    The GenerateData function defines a Writer parameter, which it uses to write bytes from a string.
+    data.go:
+        package main
+        import (
+            "io"
+            "asd/asd"
+        )
+        func GenerateData(writer io.Writer) {
+            data := []byte("Kayak, Lifejacket")
+            writeSize := 4
+            for i := 0; i < len(data); i += writeSize {
+                    end := i + writeSize;
+                    if (end > len(data)) {
+                        end = len(data)
+                    }
+                    count, err := writer.Write(data[i: end])
+                    asd.Printfln("Wrote %v byte(s): %v", count, string(data[i: end]))
+                    if (err != nil)  {
+                        asd.Printfln("Error: %v", err.Error())
+                    }
+                }
+            }
+        func ConsumeData(reader io.Reader) {
+            data := make([]byte, 0, 10)
+            slice := make([]byte, 2)
+            for {
+                count, err := reader.Read(slice)
+                if (count > 0) {
+                    asd.Printfln("Read data: %v", string(slice[0:count]))
+                    data = append(data, slice[0:count]...)
+                }
+                if (err == io.EOF) {
+                    break
+                }
+            }
+            asd.Printfln("Read data: %v", string(data))
+        }    
 ████████████████████████████████████████████████████████████████████████
 283.
 ████████████████████████████████████████████████████████████████████████
