@@ -6420,7 +6420,42 @@ Output:
                 }
                 return
             }
-        
+
+        main.go:
+            package main
+            import (
+                "asd/asd"
+                "io"
+                "strings"
+            )
+            func main() {
+                text := "It was a boat. A small boat."
+                var reader io.Reader = NewCustomReader(strings.NewReader(text))
+                var writer strings.Builder
+                slice := make([]byte, 5)
+                for {
+                    count, err := reader.Read(slice)
+                    if count > 0 {
+                        writer.Write(slice[0:count])
+                    }
+                    if err != nil {
+                        break
+                    }
+                }
+                asd.Printfln("Read data: %v", writer.String())
+            }
+        The NewCustomreader function is used to create a CustomReader that reads from a string and uses a for
+        loop to consume the data using a byte slice.
+        Output:
+            Custom Reader: 5 bytes
+            Custom Reader: 5 bytes
+            Custom Reader: 5 bytes
+            Custom Reader: 5 bytes
+            Custom Reader: 5 bytes
+            Custom Reader: 3 bytes
+            Custom Reader: 0 bytes
+            Total Reads: 7
+            Read data: It was a boat. A small boat.
 ████████████████████████████████████████████████████████████████████████
 289.
 ████████████████████████████████████████████████████████████████████████
