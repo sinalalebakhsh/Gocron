@@ -6178,6 +6178,7 @@ Output:
     and code that produces code through a Writer.
 
     The GenerateData function defines a Writer parameter, which it uses to write bytes from a string.
+    example:
     data.go:
         package main
         import (
@@ -6233,7 +6234,7 @@ Output:
         }
 
 
-        
+
     The output highlights the fact that pipes are synchronous. The GenerateData function calls the writer’s
     Write method and then blocks until the data is read. This is why the first message in the output is from the
     reader: the reader is consuming the data two bytes at a time, which means that two read operations are
@@ -6272,7 +6273,23 @@ Output:
     PipeReader. When the GenerateData function is complete, the Close method is called on the PipeWriter,
     which causes the next read by the PipeReader to produce EOF.
 ████████████████████████████████████████████████████████████████████████
-284.
+284.io.MultiReader()
+    example:
+    main.go:
+        package main
+        import (
+            "io"
+            "strings"
+        )
+        func main() {
+            r1 := strings.NewReader("Kayak")
+            r2 := strings.NewReader("Lifejacket")
+            r3 := strings.NewReader("Canoe")
+            concatReader := io.MultiReader(r1, r2, r3)
+            ConsumeData(concatReader)
+        }
+    Output:
+        
 ████████████████████████████████████████████████████████████████████████
 285.
 ████████████████████████████████████████████████████████████████████████
