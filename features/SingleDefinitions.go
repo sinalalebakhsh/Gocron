@@ -268,11 +268,20 @@ function to remove characters from a set.`,
 This function removes the complete suffix string—use the TrimRight
 function to remove characters from a set.`,
 // ██████████████████████████████████████████████████████████████████████
-
+"TrimFunc(s, func)":`This function returns the string s from which any leading or trailing
+character for which a custom function returns true are removed.`,
 // ██████████████████████████████████████████████████████████████████████
+"TrimLeftFunc(s, func)":`function returns the string s from which any leading character for
+which a custom function returns true are removed.`,
 // ██████████████████████████████████████████████████████████████████████
+"TrimRightFunc(s, func)":`function returns the string s from which any trailing character for
+which a custom function returns true are removed.`,
 // ██████████████████████████████████████████████████████████████████████
+"Join(slice, sep)":`function combines the elements in the specified string slice, with the specified
+separator string placed between elements.`,
 // ██████████████████████████████████████████████████████████████████████
+"Repeat(s, count)":`function generates a string by repeating the string s for a specified number
+of times.`,
 // ██████████████████████████████████████████████████████████████████████
 // ██████████████████████████████████████████████████████████████████████
 // ██████████████████████████████████████████████████████████████████████
