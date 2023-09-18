@@ -6215,7 +6215,19 @@ Output:
             asd.Printfln("Read data: %v", string(data))
         }
     main.go:
-
+        package main
+        import (
+            "io"
+        )
+        func main() {
+        
+            pipeReader, pipeWriter := io.Pipe()
+            go func() {
+                GenerateData(pipeWriter)
+                pipeWriter.Close()
+            }()
+            ConsumeData(pipeReader)
+        }
     Output:
         Read data: Ka
         Read data: ya
