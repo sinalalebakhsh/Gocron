@@ -6231,6 +6231,14 @@ Output:
             }()
             ConsumeData(pipeReader)
         }
+
+
+        
+    The output highlights the fact that pipes are synchronous. The GenerateData function calls the writer’s
+    Write method and then blocks until the data is read. This is why the first message in the output is from the
+    reader: the reader is consuming the data two bytes at a time, which means that two read operations are
+    required before the initial call to the Write method, which is used to send four bytes, completes, and the
+    message from the GenerateData function is displayed.
     Output:
         Read data: Ka
         Read data: ya
