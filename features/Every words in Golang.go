@@ -6214,6 +6214,9 @@ Output:
             }
             asd.Printfln("Read data: %v", string(data))
         }
+
+    Notice the parentheses at the end of this statement. These are required when creating a goroutine for an
+    anonymous function, but it is easy to forget them.
     main.go:
         package main
         import (
@@ -6253,6 +6256,13 @@ Output:
     Close()     This method closes the reader or writer. The details are implementation specific, but, in
                 general, any subsequent reads from a closed Reader will return zero bytes and the EOF error,
                 while any subsequent writes to a closed Writer will return an error.
+
+    The PipeReader struct implements the Reader interface, which means I can use it as the argument to
+    the ConsumeData function. The ConsumeData function is executed in the main goroutine, which means that
+    the application won't exit until the function completes.
+    The effect is that data is written into the pipe using the PipeWriter and read from the pipe using the
+    PipeReader. When the GenerateData function is complete, the Close method is called on the PipeWriter,
+    which causes the next read by the PipeReader to produce EOF.
 ████████████████████████████████████████████████████████████████████████
 284.
 ████████████████████████████████████████████████████████████████████████
