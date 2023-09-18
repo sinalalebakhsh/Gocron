@@ -6059,6 +6059,8 @@ Output:
         This method writes the data from the specified byte slice. The method returns the
         number of bytes that were written and an error. The error will be non-nil if the
         number of bytes written is less than the length of the slice.
+        The Writer interface doesn't include any details of how the written data is stored, transmitted, or
+        processed, all of which is left to the types that implement the interface.
 ████████████████████████████████████████████████████████████████████████
 277.
 ████████████████████████████████████████████████████████████████████████
