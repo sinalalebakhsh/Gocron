@@ -6167,6 +6167,11 @@ Output:
                                 values to be specified. The result is a Reader that passes on the content from each of
                                 its parameters in the sequence they are defined, as described in the “Concatenating
                                 Multiple Readers” section.
+    MultiWriter(...writers)     This function defines a variadic parameter that allows an arbitrary number of Writer
+                                values to be specified. The result is a Writer that sends the same data to all the
+                                specified writers, as described in the “Combining Multiple Writers” section.
+    LimitReader(r, limit)       This function creates a Reader that will EOF after the specified number of bytes, as
+                                described in the “Limiting Read Data” section.
 ████████████████████████████████████████████████████████████████████████
 282.
 ████████████████████████████████████████████████████████████████████████
