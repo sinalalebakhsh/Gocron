@@ -74,6 +74,24 @@ func GetUserInput() {
 				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 				Regulators = true
 				break
+			} else if FinalInput == "jsondata" ||
+			FinalInput == "work with json data" || 
+			FinalInput == "workwithjsondata" || 
+			FinalInput == "working with json data" || 
+			FinalInput == "workingwithjsondata" || 
+			FinalInput == "working json data" || 
+			FinalInput == "workingjsondata" || 
+			FinalInput == "json datas" || 
+			FinalInput == "jsondatas" || 
+			FinalInput == "data json" || 
+			FinalInput == "datajson" || 
+			FinalInput == "json" || 
+			FinalInput == "jsons" {
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				color.Green(fmt.Sprintln(features.OriginalJSONData))	
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				Regulators = true
+				break
 			}
 	}
 	
