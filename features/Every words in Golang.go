@@ -6717,13 +6717,120 @@ Output:
         Custom Writer: 8 bytes
         Written data: It was a boat. A small boat.
 ████████████████████████████████████████████████████████████████████████
-298.
+298.Scanning from a Reader
+    example:
+    main.go
+        package main
+        import (
+            "io"
+            "strings"
+            "asd/asd"
+            "fmt"
+        )
+        func scanFromReader(reader io.Reader, template string,
+            vals ...interface{}) (int, error) {
+            return fmt.Fscanf(reader, template, vals...)
+        }
+        func main() {
+            reader := strings.NewReader("Kayak Watersports $279.00")
+            var name, category string
+            var price float64
+            scanTemplate := "%s %s $%f"
+            _, err := scanFromReader(reader, scanTemplate, &name, &category, &price)
+            if err != nil {
+                asd.Printfln("Error: %v", err.Error())
+            } else {
+                asd.Printfln("Name: %v", name)
+                asd.Printfln("Category: %v", category)
+                asd.Printfln("Price: %.2f", price)
+            }
+        }
+    Output:
+        Name: Kayak
+        Category: Watersports
+        Price: 279.00
 ████████████████████████████████████████████████████████████████████████
-299.
+299.Scanning Gradually اسکن به تدریج
+    example:
+    main.go
+        package main
+        import (
+            "io"
+            "strings"
+            "asd/asd"
+            "fmt"
+        )
+        func scanSingle(reader io.Reader, val interface{}) (int, error) {
+            return fmt.Fscan(reader, val)
+        }
+        func main() {
+            reader := strings.NewReader("Kayak Watersports $279.00")
+            for {
+                var str string
+                _, err := scanSingle(reader, &str)
+                if err != nil {
+                    if err != io.EOF {
+                        asd.Printfln("Error: %v", err.Error())
+                    }
+                    break
+                }
+                asd.Printfln("Value: %v", str)
+            }
+        }
+    Output:
+        Value: Kayak
+        Value: Watersports
+        Value: $279.00
 ████████████████████████████████████████████████████████████████████████
-300.
+300.Writing Formatted Strings to a Writer
+    The fmt package also provides functions for writing formatted strings to a Writer
+    The writeFormatted function uses the fmt.Fprintf function to write a string formatted with a template
+    to a Writer.
+
+    example:
+    main.go:
+        package main
+        import (
+            "io"
+            "strings"
+            "fmt"
+        )
+        func writeFormatted(writer io.Writer, template string, vals ...interface{}) {
+            fmt.Fprintf(writer, template, vals...)
+        }
+        func main() {
+            var writer strings.Builder
+            template := "Name: %s, Category: %s, Price: $%.2f"
+            writeFormatted(&writer, template, "Kayak", "Watersports", float64(279))
+            fmt.Println(writer.String())
+        }
+    Output:
+        Name: Kayak, Category: Watersports, Price: $279.00
 ████████████████████████████████████████████████████████████████████████
-301.
+301.strings.Replacer struct
+    The strings.Replacer struct can be used to perform replacements on a string and output the modified
+    result to a Writer.
+
+    example:
+        package main
+        import (
+            "fmt"
+            "io"
+            "strings"
+        )
+        func writeReplaced(writer io.Writer, str string, subs ...string) {
+            replacer := strings.NewReplacer(subs...)
+            replacer.WriteString(writer, str)
+        }
+        func main() {
+            text := "It was a boat. A small boat."
+            subs := []string{"boat", "kayak", "small", "huge"}
+            var writer strings.Builder
+            writeReplaced(&writer, text, subs...)
+            fmt.Println(writer.String())
+        }    
+    Output:
+        It was a kayak. A huge kayak.
 ████████████████████████████████████████████████████████████████████████
 302.
 ████████████████████████████████████████████████████████████████████████
