@@ -6833,8 +6833,41 @@ Output:
         It was a kayak. A huge kayak.
 ████████████████████████████████████████████████████████████████████████
 302.Working with JSON Data
+    Putting Working with JSON Data in Context
+
+    What is it?
+    JSON data is the de facto standard for exchanging data, especially in HTTP applications.
+
+    Why is it useful?
+    JSON is simple enough to be supported by any language but can represent
+    relatively complex data.
+
+    How is it used?
+    The encoding/json package provides support for encoding and decoding JSON data.
+
+    Are there any pitfalls or limitations?
+    Not all Go data types can be represented in JSON, which requires the developer
+    to be mindful of how Go data types will be expressed.
+
+    Are there any alternatives?
+    There are many other data encodings available, some of which are supported by
+    the Go standard library.
+
+
+    Problem                     Solution
+    -----------                 ------------------------
+    Encode JSON                 dataCreate an Encoder with a Writer and invoke the Encode method
+    Control struct encoding     Use JSON struct tags or implement the Mashaler interface
+    Decode JSON data            Create a Decoder with a Reader and invoke the Decode method
+    Control struct decoding     Use JSON struct tags or implement the Unmarshaler interface
 ████████████████████████████████████████████████████████████████████████
-303.
+303.he encoding/json Constructor Functions for JSON Data
+    Name                    Description
+    -------------------     --------------------------------------------
+    NewEncoder(writer)      This function returns an Encoder, which can be used to encode JSON data and
+                            write it to the specified Writer.
+    NewDecoder(reader)      This function returns a Decoder, which can be used to read JSON data from the
+                            specified Reader and decode it.
 ████████████████████████████████████████████████████████████████████████
 304.
 ████████████████████████████████████████████████████████████████████████

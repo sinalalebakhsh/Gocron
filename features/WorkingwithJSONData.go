@@ -6,5 +6,7 @@ type WorkingwithJSONData struct {
 
 
 var OriginalJSONData WorkingwithJSONData = WorkingwithJSONData{
-	allJSONData: ``,
+	allJSONData: `
+302.Working with JSON Data
+`,
 }
