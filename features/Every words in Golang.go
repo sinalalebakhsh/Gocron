@@ -6932,7 +6932,35 @@ Output:
         200
         200
 ████████████████████████████████████████████████████████████████████████
-308.
+308.Encoding Slices and Arrays
+    package main
+    import (
+        "encoding/json"
+        "fmt"
+        "strings"
+    )
+    func main() {
+        names := []string{"Kayak", "Lifejacket", "Soccer Ball"}
+        numbers := [3]int{10, 20, 30}
+        var byteArray [5]byte
+        copy(byteArray[0:], []byte(names[0]))
+        byteSlice := []byte(names[0])
+        
+        var writer strings.Builder
+        encoder := json.NewEncoder(&writer)
+        
+        encoder.Encode(names)
+        encoder.Encode(numbers)
+        encoder.Encode(byteArray)
+        encoder.Encode(byteSlice)
+        fmt.Print(writer.String())
+}
+Output:
+    ["Kayak","Lifejacket","Soccer Ball"]
+    [10,20,30]
+    [75,97,121,97,107]
+    "S2F5YWs="
+
 ████████████████████████████████████████████████████████████████████████
 309.
 ████████████████████████████████████████████████████████████████████████
