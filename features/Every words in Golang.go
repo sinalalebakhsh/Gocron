@@ -7050,7 +7050,7 @@ Output:
     discount.go:
         package main
         type DiscountedProduct struct {
-            *Product ^json:"product"^  // ------------------------->   Use the symbol ^ above the Tab button instead
+            *Product ^json:"product"^           // ------------------------->   Use the symbol ^ above the Tab button instead
             Discount float64
         }
     
@@ -7058,9 +7058,73 @@ Output:
         {"product":{"Name":"Kayak","Category":"Watersports","Price":279},"Discount":10.5}
 
 ████████████████████████████████████████████████████████████████████████
-313.
+313.Omitting a Field حذف یک فیلد
+    The Encoder skips fields decorated with a tag that specifies a hyphen (the - character) for the name
+    The new tag tells the Encoder to skip the Discount field when creating the JSON representation of a
+    DIscountedProduct value.
+
+    exampe:
+    discount.go:
+        package main
+        type DiscountedProduct struct {
+            *Product ^json:"product"^           // ------------------------->   Use the symbol ^ above the Tab button instead
+            Discount float64 ^json:"-"^         // ------------------------->   Use the symbol ^ above the Tab button instead
+        }        
+    Output:
+        {"product":{"Name":"Kayak","Category":"Watersports","Price":279}}
 ████████████████████████████████████████████████████████████████████████
-314.
+314.Omitting Unassigned Fields
+    By default, the JSON Encoder includes struct fields, even when they have not been assigned a value
+    
+    example:
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "fmt"
+            "strings"
+        )
+        func main() {
+            var writer strings.Builder
+            encoder := json.NewEncoder(&writer)
+            dp := DiscountedProduct{
+                Product:  &Kayak,
+                Discount: 10.50,
+            }
+            encoder.Encode(&dp)
+            dp2 := DiscountedProduct { Discount: 10.50 }
+            encoder.Encode(&dp2)
+            fmt.Print(writer.String())
+        }
+    Output:
+        {"product":{"Name":"Kayak","Category":"Watersports","Price":279}}
+        {"product":null}
+
+    To omit a nil field, the omitempty keyword is added to the tag for the field
+    discount.go:
+        package main
+        type DiscountedProduct struct {
+            // *Product ^json:"product"^                   // ------------------------->   Use the symbol ^ above the Tab button instead
+            *Product ^json:"product,omitempty"^            // ------------------------->   Use the symbol ^ above the Tab button instead
+            Discount float64 ^json:"-"^
+        }
+    Output:
+        {"product":{"Name":"Kayak","Category":"Watersports","Price":279}}
+        {}
+
+
+    To skip a nil field without changing the name or field promotion, specify the omitempty keyword without a name
+    discount.go:
+        package main
+        type DiscountedProduct struct {
+            // *Product ^json:"product"^
+            // *Product ^json:"product,omitempty"^
+            *Product ^json:",omitempty"^                    // ------------------------->   Use the symbol ^ above the Tab button instead
+            Discount float64 ^json:"-"^                     // ------------------------->   Use the symbol ^ above the Tab button instead
+        }
+    Output:
+        {"Name":"Kayak","Category":"Watersports","Price":279}
+        {}
 ████████████████████████████████████████████████████████████████████████
 315.
 ████████████████████████████████████████████████████████████████████████
