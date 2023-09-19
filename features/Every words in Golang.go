@@ -6612,7 +6612,80 @@ Output:
                         specified Writer.
     Size()              This method returns the capacity of the buffer in bytes.
 ████████████████████████████████████████████████████████████████████████
-296.
+296.Defining a Custom Writer example
+    The NewCustomWriter constructor wraps a Writer with a CustomWriter struct, which reports on its
+    write operations.
+    custom.go:
+        package main
+        import (
+            "asd/asd"
+            "io"
+        )
+        type CustomReader struct {
+            reader    io.Reader
+            readCount int
+        }
+        func NewCustomReader(reader io.Reader) *CustomReader {
+            return &CustomReader{reader, 0}
+        }
+        func (cr *CustomReader) Read(slice []byte) (count int, err error) {
+            count, err = cr.reader.Read(slice)
+            cr.readCount++
+            asd.Printfln("Custom Reader: %v bytes", count)
+            if err == io.EOF {
+                asd.Printfln("Total Reads: %v", cr.readCount)
+            }
+            return
+        }
+        type CustomWriter struct {
+            writer     io.Writer
+            writeCount int
+        }
+        func NewCustomWriter(writer io.Writer) *CustomWriter {
+            return &CustomWriter{writer, 0}
+        }
+        func (cw *CustomWriter) Write(slice []byte) (count int, err error) {
+            count, err = cw.writer.Write(slice)
+            cw.writeCount++
+            asd.Printfln("Custom Writer: %v bytes", count)
+            return
+        }
+        func (cw *CustomWriter) Close() (err error) {
+            if closer, ok := cw.writer.(io.Closer); ok {
+                closer.Close()
+            }
+            asd.Printfln("Total Writes: %v", cw.writeCount)
+            return
+        }    
+    main.go:
+        package main
+        import (
+            "strings"
+            "asd/asd"
+        )
+        func main() {
+            text := "It was a boat. A small boat."
+            var builder strings.Builder
+            var writer = NewCustomWriter(&builder)
+            for i := 0; true; {
+                end := i + 5
+                if end >= len(text) {
+                    writer.Write([]byte(text[i:]))
+                    break
+                }
+                writer.Write([]byte(text[i:end]))
+                i = end
+            }
+            asd.Printfln("Written data: %v", builder.String())
+        }
+    Output:
+        Custom Writer: 5 bytes
+        Custom Writer: 5 bytes
+        Custom Writer: 5 bytes
+        Custom Writer: 5 bytes
+        Custom Writer: 5 bytes
+        Custom Writer: 3 bytes
+        Written data: It was a boat. A small boat.
 ████████████████████████████████████████████████████████████████████████
 297.
 ████████████████████████████████████████████████████████████████████████
