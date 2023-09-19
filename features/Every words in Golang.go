@@ -6933,42 +6933,130 @@ Output:
         200
 ████████████████████████████████████████████████████████████████████████
 308.Encoding Slices and Arrays
-    package main
-    import (
-        "encoding/json"
-        "fmt"
-        "strings"
-    )
-    func main() {
-        names := []string{"Kayak", "Lifejacket", "Soccer Ball"}
-        numbers := [3]int{10, 20, 30}
-        var byteArray [5]byte
-        copy(byteArray[0:], []byte(names[0]))
-        byteSlice := []byte(names[0])
-        
-        var writer strings.Builder
-        encoder := json.NewEncoder(&writer)
-        
-        encoder.Encode(names)
-        encoder.Encode(numbers)
-        encoder.Encode(byteArray)
-        encoder.Encode(byteSlice)
-        fmt.Print(writer.String())
-}
-Output:
-    ["Kayak","Lifejacket","Soccer Ball"]
-    [10,20,30]
-    [75,97,121,97,107]
-    "S2F5YWs="
+    Example:
+        package main
+        import (
+            "encoding/json"
+            "fmt"
+            "strings"
+        )
+        func main() {
+            names := []string{"Kayak", "Lifejacket", "Soccer Ball"}
+            numbers := [3]int{10, 20, 30}
+            var byteArray [5]byte
+            copy(byteArray[0:], []byte(names[0]))
+            byteSlice := []byte(names[0])
+            
+            var writer strings.Builder
+            encoder := json.NewEncoder(&writer)
+            
+            encoder.Encode(names)
+            encoder.Encode(numbers)
+            encoder.Encode(byteArray)
+            encoder.Encode(byteSlice)
+            fmt.Print(writer.String())
+    }
+    Output:
+        ["Kayak","Lifejacket","Soccer Ball"]
+        [10,20,30]
+        [75,97,121,97,107]
+        "S2F5YWs="
+████████████████████████████████████████████████████████████████████████
+309.Encoding Maps
+    Go maps are encoded as JSON objects, with the map keys used as the object keys. The values contained in
+    the map are encoded based on their type.
+    Maps can also be useful for creating custom JSON representations of Go data.
+
+
+    encoder.Encode()
+    example:
+        package main
+        import (
+            "encoding/json"
+            "fmt"
+            "strings"
+        )
+        func main() {
+            m := map[string]float64{
+                "Kayak":      279,
+                "Lifejacket": 49.95,
+            }
+            var writer strings.Builder
+            encoder := json.NewEncoder(&writer)
+            encoder.Encode(m)
+            fmt.Print(writer.String())
+        }
+    Output:
+            {"Kayak":279,"Lifejacket":49.95}
 
 ████████████████████████████████████████████████████████████████████████
-309.
+310.Encoding Structs
+    The Encoder expresses struct values as JSON objects, using the exported struct field names as the object’s
+    keys and the field values as the object's values
+
+    example:
+        package main
+        import (
+            "encoding/json"
+            "fmt"
+            "strings"
+        )
+        func main() {
+            
+            var writer strings.Builder
+            encoder := json.NewEncoder(&writer)
+            encoder.Encode(Kayak)
+            fmt.Print(writer.String())
+        }
+    Output:
+        {"Name":"Kayak","Category":"Watersports","Price":279}
 ████████████████████████████████████████████████████████████████████████
-310.
+311.Effect of Promotion in JSON in Encoding
+    When a struct defines an embedded field that is also a struct, the fields of the embedded struct are promoted
+    and encoded as though they are defined by the enclosing type.
+    discount.go:
+        package main
+        type DiscountedProduct struct {
+            *Product
+            Discount float64
+        }
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "fmt"
+            "strings"
+        )
+        func main() {
+            
+            var writer strings.Builder
+            encoder := json.NewEncoder(&writer)
+            dp := DiscountedProduct {
+                Product: &Kayak,
+                Discount: 10.50,
+            }
+            encoder.Encode(&dp)
+            fmt.Print(writer.String())
+        }
+    Output:
+        {"Name":"Kayak","Category":"Watersports","Price":279,"Discount":10.5}
 ████████████████████████████████████████████████████████████████████████
-311.
-████████████████████████████████████████████████████████████████████████
-312.
+312.Customizing the JSON Encoding of Structs
+    How a struct is encoded can be customized using struct tags, which are string literals that follow fields. Struct
+    tags are part of the Go support for reflection, 
+    that tags follow fields and can be used to alter two aspects of how a field is encoded in JSON.
+
+    example:
+    discount.go:
+        package main
+        type DiscountedProduct struct {
+            *Product ^json:"product"^  // ------------------------->   Use the symbol ^ above the Tab button instead
+            Discount float64
+        }
+    
+    Output:
+        {"product":{"Name":"Kayak","Category":"Watersports","Price":279},"Discount":10.5}
+
 ████████████████████████████████████████████████████████████████████████
 313.
 ████████████████████████████████████████████████████████████████████████
