@@ -6687,7 +6687,35 @@ Output:
         Custom Writer: 3 bytes
         Written data: It was a boat. A small boat.
 ████████████████████████████████████████████████████████████████████████
-297.
+297.Using a Buffered Writer in the main.go example
+    example:
+    main.go:
+        package main
+        import (
+            "strings"
+            "asd/asd"
+            "bufio"
+        )
+        func main() {
+            text := "It was a boat. A small boat."
+            var builder strings.Builder
+            var writer = bufio.NewWriterSize(NewCustomWriter(&builder), 20)
+            for i := 0; true; {
+                end := i + 5
+                if end >= len(text) {
+                    writer.Write([]byte(text[i:]))
+                    writer.Flush()
+                    break
+                }
+                writer.Write([]byte(text[i:end]))
+                i = end
+            }
+            asd.Printfln("Written data: %v", builder.String())
+        }
+    Output:
+        Custom Writer: 20 bytes
+        Custom Writer: 8 bytes
+        Written data: It was a boat. A small boat.
 ████████████████████████████████████████████████████████████████████████
 298.
 ████████████████████████████████████████████████████████████████████████
