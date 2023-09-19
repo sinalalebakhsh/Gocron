@@ -6861,7 +6861,7 @@ Output:
     Decode JSON data            Create a Decoder with a Reader and invoke the Decode method
     Control struct decoding     Use JSON struct tags or implement the Unmarshaler interface
 ████████████████████████████████████████████████████████████████████████
-303.he encoding/json Constructor Functions for JSON Data
+303.The encoding/json Constructor Functions for JSON Data
     Name                    Description
     -------------------     --------------------------------------------
     NewEncoder(writer)      This function returns an Encoder, which can be used to encode JSON data and
@@ -6869,13 +6869,68 @@ Output:
     NewDecoder(reader)      This function returns a Decoder, which can be used to read JSON data from the
                             specified Reader and decode it.
 ████████████████████████████████████████████████████████████████████████
-304.
+304.The Functions for Creating and Parsing JSON Data
+    Name                            Description
+    ------------------------        -----------------------------------------------
+    Marshal(value)                  This function encodes the specified value as JSON. The results are the
+                                    JSON content expressed in a byte slice and an error, which indicates any
+                                    encoding problems.
+    Unmarshal(byteSlice, val)       This function parses JSON data contained in the specified slice of bytes
+                                    and assigns the result to the specified value.
 ████████████████████████████████████████████████████████████████████████
-305.
+305.The Encoder Methods
+    The NewEncoder constructor function is used to create an Encoder, which can be used to write JSON data to a Writer.
+
+    Name                            Description
+    -------------------------       --------------------------------------------------
+    Encode(val)                     This method encodes the specified value as JSON and writes it to the Writer.
+    SetEscapeHTML(on)               This method accepts a bool argument that, when true, encodes
+                                    characters that would be dangerous in HTML to be escaped. The default
+                                    behavior is to escape these characters.
+    SetIndent(prefix, indent)       This method specifies a prefix and indentation that is applied to the name
+                                    of each field in the JSON output.
 ████████████████████████████████████████████████████████████████████████
-306.
+306.Expressing the Basic Go Data Types in JSON
+    Data                TypeDescription
+    ----------------    ------------------------------------
+    bool                Go bool values are expressed as JSON true or false.
+    string              Go string values are expressed as JSON strings. By default, unsafe HTML
+                        characters are escaped.
+    float32, float64    Go floating-point values are expressed as JSON numbers.
+    int, int<size>      Go integer values are expressed as JSON numbers.
+    uint, uint<size>    Go integer values are expressed as JSON numbers.
+    byte                Go bytes are expressed as JSON numbers.
+    rune                Go runes are expressed as JSON numbers.
+    nil                 The Go nil value is expressed as the JSON null value.
+    Pointers            The JSON encoder follows pointers and encodes the value at the pointer's location.
 ████████████████████████████████████████████████████████████████████████
-307.
+307.encoding/json
+    example:
+        package main
+        import (
+            "encoding/json"
+            "fmt"
+            "strings"
+        )
+        func main() {
+            var b bool = true
+            var str string = "Hello"
+            var fval float64 = 99.99
+            var ival int = 200
+            var pointer *int = &ival
+            var writer strings.Builder
+            encoder := json.NewEncoder(&writer)
+            for _, val := range []interface{}{b, str, fval, ival, pointer} {
+                encoder.Encode(val)
+            }
+            fmt.Print(writer.String())
+        }
+    Output:
+        true
+        "Hello"
+        99.99
+        200
+        200
 ████████████████████████████████████████████████████████████████████████
 308.
 ████████████████████████████████████████████████████████████████████████
