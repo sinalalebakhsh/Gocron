@@ -6853,6 +6853,9 @@ Output:
     There are many other data encodings available, some of which are supported by
     the Go standard library.
 
+    The safest approach is to define a map with string keys and empty interface values, which ensures that
+    all the key-value pairs in the JSON data can be decoded into the map
+
 
     Problem                     Solution
     -----------                 ------------------------
@@ -7051,6 +7054,7 @@ Output:
         package main
         type DiscountedProduct struct {
             *Product ^json:"product"^           // ------------------------->   Use the symbol ^ above the Tab button instead
+            
             Discount float64
         }
     
@@ -7068,7 +7072,9 @@ Output:
         package main
         type DiscountedProduct struct {
             *Product ^json:"product"^           // ------------------------->   Use the symbol ^ above the Tab button instead
+
             Discount float64 ^json:"-"^         // ------------------------->   Use the symbol ^ above the Tab button instead
+
         }        
     Output:
         {"product":{"Name":"Kayak","Category":"Watersports","Price":279}}
@@ -7105,7 +7111,9 @@ Output:
         package main
         type DiscountedProduct struct {
             // *Product ^json:"product"^                   // ------------------------->   Use the symbol ^ above the Tab button instead
+
             *Product ^json:"product,omitempty"^            // ------------------------->   Use the symbol ^ above the Tab button instead
+
             Discount float64 ^json:"-"^
         }
     Output:
@@ -7120,7 +7128,9 @@ Output:
             // *Product ^json:"product"^
             // *Product ^json:"product,omitempty"^
             *Product ^json:",omitempty"^                    // ------------------------->   Use the symbol ^ above the Tab button instead
+
             Discount float64 ^json:"-"^                     // ------------------------->   Use the symbol ^ above the Tab button instead
+
         }
     Output:
         {"Name":"Kayak","Category":"Watersports","Price":279}
@@ -7136,7 +7146,9 @@ Output:
         type DiscountedProduct struct {
             *Product ^json:",omitempty"^
             // Discount float64 ^json:"-"^              // ------------------------->   Use the symbol ^ above the Tab button                
+
             Discount float64 ^json:",string"^           // ------------------------->   Use the symbol ^ above the Tab button    
+
         }
     Output:
         {"Name":"Kayak","Category":"Watersports","Price":279,"Discount":"10.5"}
@@ -7270,6 +7282,7 @@ Output:
         )
         func main() {
             reader := strings.NewReader(^true "Hello" 99.99 200^)   // ------------------------->   Use the symbol ^ above the Tab button    
+
             vals := []interface{}{}
             decoder := json.NewDecoder(reader)
             for {
@@ -7321,7 +7334,8 @@ Output:
             "strings"
         )
         func main() {
-            reader := strings.NewReader(^true "Hello" 99.99 200^) // ------------------------->   Use the symbol ^ above the Tab button 
+            reader := strings.NewReader(^true "Hello" 99.99 200^)   // ------------------------->   Use the symbol ^ above the Tab button 
+
             vals := []interface{}{}
             decoder := json.NewDecoder(reader)
             for {
@@ -7364,7 +7378,8 @@ Output:
             "strings"
         )
         func main() {
-            reader := strings.NewReader(^true "Hello" 99.99 200^) // ------------------------->   Use the symbol ^ above the Tab button 
+            reader := strings.NewReader(^true "Hello" 99.99 200^)   // ------------------------->   Use the symbol ^ above the Tab button 
+
             var bval bool
             var sval string
             var fpval float64
@@ -7405,7 +7420,8 @@ Output:
             "strings"
         )
         func main() {
-            reader := strings.NewReader(^[10,20,30]["Kayak","Lifejacket",279]^) // ------------------------->   Use the symbol ^ above the Tab button 
+            reader := strings.NewReader(^[10,20,30]["Kayak","Lifejacket",279]^)     // ------------------------->   Use the symbol ^ above the Tab button 
+
             vals := []interface{}{}
             decoder := json.NewDecoder(reader)
             for {
@@ -7427,9 +7443,72 @@ Output:
         Decoded ([]interface {}): [10 20 30]
         Decoded ([]interface {}): [Kayak Lifejacket 279]
 ████████████████████████████████████████████████████████████████████████
-325.
+325.Specifying the Decoded Array Type
+    The second array contains a mix of values, which means that I have to specify
+    the empty interface as the target type. The literal slice syntax is awkward when using the empty interface
+    because two sets of braces are required:
+    ...
+    mixed := []interface{} {}
+
+
+    example:
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "strings"
+        )
+        func main() {
+            reader := strings.NewReader(^[10,20,30]["Kayak","Lifejacket",279]^) // ------------------------->   Use the symbol ^ above the Tab button 
+
+            ints := []int {}
+            mixed := []interface{} {}
+            vals := []interface{} { &ints, &mixed}
+            decoder := json.NewDecoder(reader)
+            for i := 0; i < len(vals); i++ {
+                err := decoder.Decode(vals[i])
+                if err != nil {
+                    Printfln("Error: %v", err.Error())
+                    break
+                }
+            }
+            Printfln("Decoded (%T): %v", ints, ints)
+            Printfln("Decoded (%T): %v", mixed, mixed)
+        }
+    Output:
+        Decoded ([]int): [10 20 30]
+        Decoded ([]interface {}): [Kayak Lifejacket 279]
 ████████████████████████████████████████████████████████████████████████
-326.
+326.Decoding Maps
+    The safest approach is to define a map with string keys and empty interface values, which ensures that
+    all the key-value pairs in the JSON data can be decoded into the map
+    JavaScript objects are expressed as key-value pairs, which makes it easy to decode them into Go maps
+    example:
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "strings"
+        )
+        func main() {
+            reader := strings.NewReader(^{"Kayak" : 279, "Lifejacket" : 49.95}^)// ------------------------->   Use the symbol ^ above the Tab button 
+ 
+            m := map[string]interface{}{}
+            decoder := json.NewDecoder(reader)
+            err := decoder.Decode(&m)
+            if err != nil {
+                Printfln("Error: %v", err.Error())
+            } else {
+                Printfln("Map: %T, %v", m, m)
+                for k, v := range m {
+                    Printfln("Key: %v, Value: %v", k, v)
+                }
+            }
+        }
+    Output:
+        Map: map[string]interface {}, map[Kayak:279 Lifejacket:49.95]
+        Key: Kayak, Value: 279
+        Key: Lifejacket, Value: 49.95
 ████████████████████████████████████████████████████████████████████████
 327.
 ████████████████████████████████████████████████████████████████████████
