@@ -18,7 +18,6 @@ func GetUserInput() {
 		UserInput := bufio.NewReader(os.Stdin)
 		FinalInput, _ := UserInput.ReadString('\n')
 		FinalInput = strings.TrimSuffix(FinalInput, "\n")
-		FinalInput = strings.ToLower(FinalInput)
 
 		if FinalInput == "exit" {
 			break
@@ -38,14 +37,11 @@ func GetUserInput() {
 		Regulators := false
 	
 		for _, value := range SliceOfMap {
+			FinalInput = strings.ToLower(FinalInput)
 			if FinalInput == value {
-				color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-				color.HiBlue(features.Logo)
 				words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[value])
 				features.PrintWordByWord(words)
-				// color.Green(fmt.Sprintln(features.OriginSingleDef.SingleDefinition[value]))
 				fmt.Println()
-				color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 				Regulators = true
 				break
 			}
@@ -55,9 +51,9 @@ func GetUserInput() {
 			for _, Value := range features.TitleOfRegEx {
 				FinalInput = strings.ToUpper(FinalInput)
 				if FinalInput == Value {
-					color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-					color.Green(fmt.Sprintln(features.OriginalAllRegex))
-					color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln(features.OriginalAllRegex))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					Regulators = true
 	
 				}
@@ -68,9 +64,9 @@ func GetUserInput() {
 			for _, value := range features.TitleOfTimeData {
 				FinalInput = strings.ToUpper(FinalInput)
 				if FinalInput == value {
-					color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-					color.Green(fmt.Sprintln(features.OriginalTimeData))
-					color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln(features.OriginalTimeData))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					Regulators = true
 				}
 			}
@@ -80,9 +76,9 @@ func GetUserInput() {
 			for _, value := range features.TitleOfReadingWriting {
 				FinalInput = strings.ToUpper(FinalInput)
 				if FinalInput == value {
-					color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-					color.Green(fmt.Sprintln(features.OriginalReadingandWriting))
-					color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln(features.OriginalReadingandWriting))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					Regulators = true
 				}
 			}
@@ -92,9 +88,9 @@ func GetUserInput() {
 			for _, Value := range features.TitleOfSlice {
 				FinalInput = strings.ToUpper(FinalInput)
 				if FinalInput == Value {
-					color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-					color.Green(fmt.Sprintln(features.OriginalJSONData))
-					color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln(features.OriginalJSONData))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					Regulators = true
 				}
 			}
@@ -104,9 +100,9 @@ func GetUserInput() {
 			for _, value := range features.TitleOfWorkingFiles {
 				FinalInput = strings.ToUpper(FinalInput)
 				if FinalInput == value {
-					color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-					color.Green(fmt.Sprintln(features.OriginalWorkWithFiles))
-					color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln(features.OriginalWorkWithFiles))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					Regulators = true
 				}
 			}	

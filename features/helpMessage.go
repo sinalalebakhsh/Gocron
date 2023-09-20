@@ -3,11 +3,9 @@ package features
 import (
 	"fmt"
 	"github.com/fatih/color"
-	"strings"
-	"time"
 )
 
-var Logo string = fmt.Sprintln(`┌────────────────────────────────────────────────────────────────────┐ 
+var LOGO string = fmt.Sprintln(`┌────────────────────────────────────────────────────────────────────┐ 
 │                       GoCron v2.49.1                               │
 │ █████████  █████████  ████████  █████████  █████████  ███      ██  │
 │ █          █       █  █         █       █  █       █  ████     ██  │
@@ -27,36 +25,12 @@ like this:
 	map slice`)
 
 func HelpMessage(){
-	color.HiBlue(Logo)
+	color.HiBlue(LOGO)
 	words := SplitIntoWords(Message)
 	PrintWordByWord(words)
 
 }
 
 
-func SplitIntoWords(text string) []string {
-	// Split the text into words
-	return splitAndTrim(text, " ")
-}
 
-func splitAndTrim(s, sep string) []string {
-	words := strings.Fields(s)
-	for i, word := range words {
-		words[i] = strings.TrimSpace(word)
-	}
-	return words
-}
-
-func PrintWordByWord(words []string) {
-	counter := 0
-	for _, word := range words {
-		counter ++
-		if counter == 12 {
-			fmt.Println()
-			counter = 0
-		}
-		fmt.Print(word + " ")
-		time.Sleep(85 * time.Millisecond) // Adjust the delay as needed
-	}
-}
 
