@@ -7795,8 +7795,38 @@ Output:
                         the file.
     Open(name)          This function opens the specified file for reading. The result is a File struct and an
                         error that indicates problems opening the file.
+
+    One of the most common reasons to read a file is to load configuration data. The JSON format is well-
+    suited for configuration files because it is simple to process, has good support in the Go standard library
+    The Contents of the config.json File in the files Folder:
+        {
+            "Username": "Alice",
+            "AdditionalProducts": [
+                {"name": "Hat", "category": "Skiing", "price": 10},
+                {"name": "Boots", "category":"Skiing", "price": 220.51 },
+                {"name": "Gloves", "category":"Skiing", "price": 40.20 }
+            ]
+        }
 ████████████████████████████████████████████████████████████████████████
-336.
+336.os.ReadFile()
+    example:
+    main.go:
+        package main
+        import "os"
+        func LoadConfig() (err error) {
+            data, err := os.ReadFile("config.json")
+            if err == nil {
+                Printfln(string(data))
+            }
+            return
+        }
+        func init() {
+            err := LoadConfig()
+            if err != nil {
+                Printfln("Error Loading Config: %v", err.Error())
+            }
+        }
+    
 ████████████████████████████████████████████████████████████████████████
 337.
 ████████████████████████████████████████████████████████████████████████
