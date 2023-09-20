@@ -7054,7 +7054,7 @@ Output:
         package main
         type DiscountedProduct struct {
             *Product ^json:"product"^           // ------------------------->   Use the symbol ^ above the Tab button instead
-            
+
             Discount float64
         }
     
@@ -7491,7 +7491,7 @@ Output:
             "strings"
         )
         func main() {
-            reader := strings.NewReader(^{"Kayak" : 279, "Lifejacket" : 49.95}^)// ------------------------->   Use the symbol ^ above the Tab button 
+            reader := strings.NewReader(^{"Kayak" : 279, "Lifejacket" : 49.95}^)    // ------------------------->   Use the symbol ^ above the Tab button 
  
             m := map[string]interface{}{}
             decoder := json.NewDecoder(reader)
@@ -7510,13 +7510,104 @@ Output:
         Key: Kayak, Value: 279
         Key: Lifejacket, Value: 49.95
 ████████████████████████████████████████████████████████████████████████
-327.
+327.a Specific Value Type 
+    A single JSON object can be used for multiple data types as values, but if you know in advance that you
+    will be decoding a JSON object that has a single value type, then you can be more specific when defining the
+    map into which the data will be decoded.
+
+    example:
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "strings"
+        )
+        func main() {
+            reader := strings.NewReader(^{"Kayak" : 279, "Lifejacket" : 49.95}^)    // ------------------------->   Use the symbol ^ above the Tab button 
+ 
+            m := map[string]float64 {}
+            decoder := json.NewDecoder(reader)
+            err := decoder.Decode(&m)
+            if err != nil {
+                Printfln("Error: %v", err.Error())
+            } else {
+                Printfln("Map: %T, %v", m, m)
+                for k, v := range m {
+                    Printfln("Key: %v, Value: %v", k, v)
+                }
+            }
+        }
+    Output:
+        Map: map[string]float64, map[Kayak:279 Lifejacket:49.95]
+        Key: Kayak, Value: 279
+        Key: Lifejacket, Value: 49.95
 ████████████████████████████████████████████████████████████████████████
-328.
+328.Decoding Structs
+
+    The Decoder decodes the JSON object and uses the keys to set the values of the exported struct fields.
+    The capitalization of the fields and JSON keys don't have to match, and the Decoder will ignore any JSON
+    key for which there isn't a struct field and ignore any struct field for which there is no JSON key.
+    The JSON objectscontain different capitalization and have more or fewer keys than the Product struct
+    fields. The Decoder processes the data as best as it can.
+
+    example:
+    main.go:
+        package main
+        import (
+            "strings"
+            "encoding/json"
+            "io"
+        )
+        func main() {
+            reader := strings.NewReader(^    // ------------------------->   Use the symbol ^ above the Tab button 
+ 
+                {"Name":"Kayak","Category":"Watersports","Price":279}
+                {"Name":"Lifejacket","Category":"Watersports" }
+                {"name":"Canoe","category":"Watersports", "price": 100, "inStock": true }
+            ^)                                          // ------------------------->   Use the symbol ^ above the Tab button 
+ 
+            decoder := json.NewDecoder(reader)
+            for {
+                var val Product
+                err := decoder.Decode(&val)
+                if err != nil {
+                    if err != io.EOF {
+                        Printfln("Error: %v", err.Error())
+                    }
+                    break
+                } else {
+                    Printfln("Name: %v, Category: %v, Price: %v",
+                        val.Name, val.Category, val.Price)
+                }
+            }
+        }
+    Output:
+        Name: Kayak, Category: Watersports, Price: 279
+        Name: Lifejacket, Category: Watersports, Price: 0
+        Name: Canoe, Category: Watersports, Price: 100
+
 ████████████████████████████████████████████████████████████████████████
-329.
+329.Decoding to Interface Types
+    As I explained earlier in the chapter, the JSON encoder deals with interfaces by encoding the value
+    using the exported fields of the dynamic type. This is because JSON deals with key-value pairs and
+    has no way to express methods. As a consequence, you cannot decode directly to an interface variable
+    from JSON. Instead, you must decode to a struct or map and then assign the value that is created to an
+    interface variable.
 ████████████████████████████████████████████████████████████████████████
-330.
+330.Disallowing Unused Keys غیر مجاز کردن
+    By default, the Decoder will ignore JSON keys for which there is no corresponding struct field. This behavior
+    can be changed by calling the DisallowUnknownFields method
+
+    example:
+    Disallowing Unused Keys in the main.go
+        ...
+        decoder := json.NewDecoder(reader)
+        decoder.DisallowUnknownFields()
+        ...
+    output:
+        Name: Kayak, Category: Watersports, Price: 279
+        Name: Lifejacket, Category: Watersports, Price: 0
+        Error: json: unknown field "inStock"
 ████████████████████████████████████████████████████████████████████████
 331.
 ████████████████████████████████████████████████████████████████████████
