@@ -7963,14 +7963,14 @@ Output:
     ReadAt(slice, offset)       This method is defined by the ReaderAt interface and performs a read into the
                                 specific slice at the specified position offset in the file.
     Seek(offset, how)           This method is defined by the Seeker interface and moves the offset into
-                                the file for the next read. The offset is determined by the combination of the
+    جستجو کنید                  the file for the next read. The offset is determined by the combination of the
                                 two arguments: the first argument specifies the number of bytes to offset,
                                 and the second argument determines how the offset is applied—a value of 0
                                 means the offset is relative to the start of the file, a value of 1 means the offset
                                 is relative to the current read position, and a value of 2 means the offset is
                                 relative to the end of the file.
 ████████████████████████████████████████████████████████████████████████
-340.
+340.Reading from Specific Locations
 ████████████████████████████████████████████████████████████████████████
 341.
 ████████████████████████████████████████████████████████████████████████

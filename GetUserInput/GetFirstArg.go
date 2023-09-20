@@ -15,6 +15,7 @@ func GetFirstArg() {
 	if len(os.Args) > 1 {
 		AllArgs := os.Args
 		FirstArg := strings.ToLower(AllArgs[1])
+		
 		if FirstArg == "-h" || 
 		FirstArg == "help" || 
 		FirstArg == "-help" ||
