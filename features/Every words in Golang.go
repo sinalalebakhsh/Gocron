@@ -7609,13 +7609,124 @@ Output:
         Name: Lifejacket, Category: Watersports, Price: 0
         Error: json: unknown field "inStock"
 ████████████████████████████████████████████████████████████████████████
-331.
+331.Struct Tags 
+    The tag applied to the Discount field tells the Decoder that the value for this field should be obtained
+    from the JSON key named offer and that the value will be parsed from a string, instead of the JSON
+    number that would usually be expected for a Go float64 value.
+
+    example:
+    discount.go:
+        package main
+        import "encoding/json"
+        type DiscountedProduct struct {
+            *Product ^json:",omitempty"^                 // ------------------------->   Use the symbol ^ above the Tab button 
+ 
+            Discount float64 ^json:"offer,string"^       // ------------------------->   Use the symbol ^ above the Tab button 
+ 
+        }
+        func (dp *DiscountedProduct) MarshalJSON() (jsn []byte, err error) {
+            if (dp.Product != nil) {
+                m := map[string]interface{} {
+                    "product": dp.Name,
+                    "cost": dp.Price - dp.Discount,
+                }
+                jsn, err = json.Marshal(m)
+            }
+            return
+        }    
+    main.go:
+        package main
+        import (
+            "strings"
+            "encoding/json"
+            "io"
+        )
+        func main() {
+            reader := strings.NewReader(^
+                {"Name":"Kayak","Category":"Watersports","Price":279, "Offer": "10"}^)   // ------------------------->   Use the symbol ^ above the Tab button 
+ 
+            decoder := json.NewDecoder(reader)
+            for {
+                var val DiscountedProduct
+                err := decoder.Decode(&val)
+                if err != nil {
+                    if err != io.EOF {
+                        Printfln("Error: %v", err.Error())
+                    }
+                    break
+                } else {
+                    Printfln("Name: %v, Category: %v, Price: %v, Discount: %v",
+                        val.Name, val.Category, val.Price, val.Discount)
+                }
+            }
+        }
+    Output:
+        Name: Kayak, Category: Watersports, Price: 279, Discount: 10
 ████████████████████████████████████████████████████████████████████████
-332.
+332.Creating Completely Custom JSON Decoders
+    The Unmarshaler Method
+    Name                            Description
+    ------------------------        ------------------------------------------
+    UnmarshalJSON(byteSlice)        This method is invoked to decode JSON data contained in the specified
+                                    byte slice. The result is an error indicating encoding problems.
 ████████████████████████████████████████████████████████████████████████
-333.
+333.Defining a Custom Decoder
+    This implementation of the UnmarshalJSON method uses the Unmarshal method to decode the JSON
+    data into a map and then checks the type of each value required for the DiscountedProduct struct.
+
+
+    example:
+    discount.go:
+        package main
+        import (
+            "encoding/json"
+            "strconv"
+        )
+        type DiscountedProduct struct {
+            *Product ^json:",omitempty"^               // ------------------------->   Use the symbol ^ above the Tab button 
+    
+            Discount float64 ^json:"offer,string"^         // ------------------------->   Use the symbol ^ above the Tab button 
+    
+        }
+        func (dp *DiscountedProduct) MarshalJSON() (jsn []byte, err error) {
+            if dp.Product != nil {
+                m := map[string]interface{}{
+                    "product": dp.Name,
+                    "cost":    dp.Price - dp.Discount,
+                }
+                jsn, err = json.Marshal(m)
+            }
+            return
+        }
+        func (dp *DiscountedProduct) UnmarshalJSON(data []byte) (err error) {
+            mdata := map[string]interface{}{}
+            err = json.Unmarshal(data, &mdata)
+            if dp.Product == nil {
+                dp.Product = &Product{}
+            }
+            if err == nil {
+                if name, ok := mdata["Name"].(string); ok {
+                    dp.Name = name
+                }
+                if category, ok := mdata["Category"].(string); ok {
+                    dp.Category = category
+                }
+                if price, ok := mdata["Price"].(float64); ok {
+                    dp.Price = price
+                }
+                if discount, ok := mdata["Offer"].(string); ok {
+                    fpval, fperr := strconv.ParseFloat(discount, 64)
+                    if fperr == nil {
+                        dp.Discount = fpval
+                    }
+                }
+            }
+            return
+        }
+    Output:
+        Name: Kayak, Category: Watersports, Price: 279, Discount: 10
 ████████████████████████████████████████████████████████████████████████
-334.
+334.Working with Files
 ████████████████████████████████████████████████████████████████████████
 335.
 ████████████████████████████████████████████████████████████████████████
