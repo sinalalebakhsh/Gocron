@@ -16,11 +16,9 @@ var TitleOfSlice = []string{
 	"jsons",
 }
 
-
 type WorkingwithJSONData struct {
 	allJSONData string
 }
-
 
 var OriginalJSONData = WorkingwithJSONData{
 	allJSONData: `
