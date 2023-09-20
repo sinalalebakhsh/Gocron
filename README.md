@@ -1,6 +1,7 @@
 # Gocron
 
-##Gocron Project:
+## Gocron Project:
+
 -------------------------------------------------------
 is a API for learning GO language with example.
 -------------------------------------------------------
@@ -22,7 +23,7 @@ just this!
 
 GO installation:
 
-1-The first way:
+### 1-The first way:
 	Linux:
 		rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
 		export PATH=$PATH:/usr/local/go/bin
@@ -30,5 +31,5 @@ GO installation:
 		go version
 
 
-2-The second way:
+### 2-The second way:
 
