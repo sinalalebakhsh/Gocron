@@ -1,9 +1,21 @@
 package features
 
+var TitleOfTimeData = []string{
+    "TIME",
+    "TIMES",
+	"THE TIME",
+	"THETIME",
+	"DATA TIME",
+	"DATATIME",
+	"ALL DATA TIME",
+	"ALLDATATIME",
+	"ALL DATA TIMES",
+	"ALLDATATIMES",
+}
+
 type TimeData struct {
 	alltimeData string
 }
-
 
 var OriginalTimeData TimeData = TimeData{
 	alltimeData: `
@@ -909,4 +921,4 @@ Output:
         Read name: Bob
         Read name: Charlie
         Read name: Dora`,
-} 
+}

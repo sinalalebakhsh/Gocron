@@ -1,9 +1,26 @@
 package features
 
+var TitleOfReadingWriting = []string{
+	"READING",
+	"WRITING",
+    "READING AND WRITING DATA",
+    "READINGANDWRITINGDATA",
+	"READINGWRITINGDATA",
+	"READING WRITING",
+	"READINGWRITING",
+	"READING WRITING DATAS",
+	"READINGWRITINGDATAS",
+	"READING & WRITING DATA",
+	"READING&WRITINGDATA",
+	"READING & WRITING DATAS",
+	"READING&WRITINGDATAS",
+	"READING & WRITING",
+	"READING&WRITING",
+}
+
 type ReadingandWriting struct {
 	allReadingandWriting string
 }
-
 
 var OriginalReadingandWriting ReadingandWriting = ReadingandWriting{
 	allReadingandWriting: `

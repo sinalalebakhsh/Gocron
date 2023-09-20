@@ -37,33 +37,6 @@ func GetUserInput() {
 			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 			Regulators = true
 			break
-			// 	} else if FinalInput == "time" ||
-			// 	FinalInput == "datatime" ||
-			// 	FinalInput == "data time" ||
-			// 	FinalInput == "alldatatime" ||
-			// 	FinalInput == "all data time" ||
-			// 	FinalInput == "all data times" ||
-			// 	FinalInput == "thetime" ||
-			// 	FinalInput == "the time" {
-			// 		color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-			// 		color.Green(fmt.Sprintln(features.OriginalTimeData))
-			// 		color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-			// 		Regulators = true
-			// 		break
-			// 	} else if FinalInput == "reading and writing data" ||
-			// 	FinalInput == "readingandwritingdata" ||
-			// 	FinalInput == "readingwritingdata" ||
-			// 	FinalInput == "readingwriting" ||
-			// 	FinalInput == "reading writing" ||
-			// 	FinalInput == "reading writing datas" ||
-			// 	FinalInput == "reading & writing data" ||
-			// 	FinalInput == "reading & writing"{
-			// 		color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-			// 		color.Green(fmt.Sprintln(features.OriginalReadingandWriting))
-			// 		color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-			// 		Regulators = true
-			// 		break
-
 		}
 	}
 
@@ -80,8 +53,19 @@ func GetUserInput() {
 		}
 	}()
 
+	// color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+	// color.Green(fmt.Sprintln(features.OriginalTimeData))
+	// color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+	// Regulators = true
+	
+	// color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+	// color.Green(fmt.Sprintln(features.OriginalReadingandWriting))
+	// color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+	// Regulators = true
+
 	go func() {
 		for _, Value := range features.TitleOfSlice {
+			FinalInput = strings.ToUpper(FinalInput)
 			if FinalInput == Value {
 				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
 				color.Green(fmt.Sprintln(features.OriginalJSONData))
