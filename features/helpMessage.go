@@ -7,8 +7,7 @@ import (
 	"time"
 )
 
-var Logo string = fmt.Sprintln(`
-┌────────────────────────────────────────────────────────────────────┐ 
+var Logo string = fmt.Sprintln(`┌────────────────────────────────────────────────────────────────────┐ 
 │                       GoCron v2.49.1                               │
 │ █████████  █████████  ████████  █████████  █████████  ███      ██  │
 │ █          █       █  █         █       █  █       █  ████     ██  │
@@ -29,13 +28,13 @@ like this:
 
 func HelpMessage(){
 	color.HiBlue(Logo)
-	words := splitIntoWords(Message)
-	printWordByWord(words)
+	words := SplitIntoWords(Message)
+	PrintWordByWord(words)
 
 }
 
 
-func splitIntoWords(text string) []string {
+func SplitIntoWords(text string) []string {
 	// Split the text into words
 	return splitAndTrim(text, " ")
 }
@@ -48,7 +47,7 @@ func splitAndTrim(s, sep string) []string {
 	return words
 }
 
-func printWordByWord(words []string) {
+func PrintWordByWord(words []string) {
 	counter := 0
 	for _, word := range words {
 		counter ++

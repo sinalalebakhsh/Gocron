@@ -32,9 +32,13 @@ func GetUserInput() {
 
 	for _, value := range SliceOfMap {
 		if FinalInput == value {
-			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-			color.Green(fmt.Sprintln(features.OriginSingleDef.SingleDefinition[value]))
-			color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+			color.HiBlue(features.Logo)
+			words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[value])
+			features.PrintWordByWord(words)
+			// color.Green(fmt.Sprintln(features.OriginSingleDef.SingleDefinition[value]))
+			fmt.Println()
+			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 			Regulators = true
 			break
 		}
