@@ -26,6 +26,7 @@ in Terminal write:
 Use it
 just this!
 
+44444
 
 GO installation:
 
