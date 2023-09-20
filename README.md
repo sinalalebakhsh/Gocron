@@ -1,6 +1,9 @@
 # Gocron
+Date:2023-9-20-Sunday-September
 
--------------------------------------------------------
+V1.0.4
+	Add Goroutines for searching concurently in data
+
 is a API for learning GO language with example.
 -------------------------------------------------------
 
@@ -8,36 +11,31 @@ is a API for learning GO language with example.
 	after running program, write your single word about any of GO language.
 	if your perpuse is more than one word, for convenience searching, just write keywords.
 	like this:
+	map slice
 
-map slice
 
--------------------------------------------------------
+#### 1.
+	Download Gocron
 
-Date:2023-9-20-Sunday-September
+#### 2.
+	in Terminal write:
+	./Gocron 
 
-1.
-Download Gocron
+#### 3.
+	Use it
+	just this!
 
-2.
-in Terminal write:
-./Gocron 
 
-3.
-Use it
-just this!
 
-44444
-
-GO installation:
+## GO installation
 
 ### 1-The first way
 
 Linux:
-	rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
+#### rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
 	export PATH=$PATH:/usr/local/go/bin
-Verify that:
+
+#### Verify that:
 	go version
 
-
-### 2-The second way
 
