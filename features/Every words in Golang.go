@@ -6274,7 +6274,7 @@ Output:
 
 
 
-    The output highlights the fact that pipes are synchronous. The GenerateData function calls the writer’s
+    The output highlights the fact that pipes are synchronous. The GenerateData function calls the writer's
     Write method and then blocks until the data is read. This is why the first message in the output is from the
     reader: the reader is consuming the data two bytes at a time, which means that two read operations are
     required before the initial call to the Write method, which is used to send four bytes, completes, and the
@@ -6994,7 +6994,7 @@ Output:
 
 ████████████████████████████████████████████████████████████████████████
 310.Encoding Structs
-    The Encoder expresses struct values as JSON objects, using the exported struct field names as the object’s
+    The Encoder expresses struct values as JSON objects, using the exported struct field names as the object's
     keys and the field values as the object's values
 
     example:
@@ -7409,7 +7409,7 @@ Output:
     values of different types, which conflicts with the strict type rules enforced by Go.
 
     The source JSON data contains two arrays, one of which contains only numbers and one of which mixes
-    numbers and strings. The Decoder doesn’t try to figure out if a JSON array can be represented using a single
+    numbers and strings. The Decoder doesn't try to figure out if a JSON array can be represented using a single
     Go type and decodes every array into an empty interface slice:
     example:
     main.go:
@@ -7674,7 +7674,6 @@ Output:
     This implementation of the UnmarshalJSON method uses the Unmarshal method to decode the JSON
     data into a map and then checks the type of each value required for the DiscountedProduct struct.
 
-
     example:
     discount.go:
         package main
@@ -7727,6 +7726,18 @@ Output:
         Name: Kayak, Category: Watersports, Price: 279, Discount: 10
 ████████████████████████████████████████████████████████████████████████
 334.Working with Files
+    Putting Working with Files in Context
+        
+    Answer                                  Question
+    ---------------------------             -------------------------------------------------------
+    What are they?                          These features provide access to the file system so that files can be read and written.
+    Why are they useful?                    Files are used for everything from logging to configuration files.
+    How are they used?                      These features are accessed through the os package, which provides platform-
+                                            neutral access to the file system.
+    Are there any pitfallsor limitations?   Some consideration of the underlying file system must be made, especially when
+                                            dealing with paths.
+    Are there any alternatives?             Go supports alternative ways of storing data, such as databases, but there are no
+                                            alternative mechanisms for accessing files.
 ████████████████████████████████████████████████████████████████████████
 335.
 ████████████████████████████████████████████████████████████████████████
