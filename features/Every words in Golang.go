@@ -7126,15 +7126,137 @@ Output:
         {"Name":"Kayak","Category":"Watersports","Price":279}
         {}
 ████████████████████████████████████████████████████████████████████████
-315.
+315.Forcing Fields to be Encoded as Strings
+    Struct tags can be used to force a field value to be encoded as a string, overriding the normal encoding for
+    the field type
+    
+    example:
+    discount.go:
+     package main
+        type DiscountedProduct struct {
+            *Product ^json:",omitempty"^
+            // Discount float64 ^json:"-"^              // ------------------------->   Use the symbol ^ above the Tab button                
+            Discount float64 ^json:",string"^           // ------------------------->   Use the symbol ^ above the Tab button    
+        }
+    Output:
+        {"Name":"Kayak","Category":"Watersports","Price":279,"Discount":"10.5"}
+        {"Discount":"10.5"}
 ████████████████████████████████████████████████████████████████████████
-316.
+316.Encoding Interfaces
+    The JSON encoder can be used on values assigned to interface variables, but it is the dynamic type that
+    is encoded.
+
+    No aspect(جنبه) of the interface is used to adapt the JSON, and all the exported fields of each value in the slice
+    are included in the JSON. This can be a useful feature, but care must be taken when decoding this kind of
+    JSON, because each value can have a different set of fields
+
+    example:
+    interface.go:
+        package main
+        type Named interface{ GetName() string }
+        type Person struct{ PersonName string }
+        func (p *Person) GetName() string { return p.PersonName }
+        func (p *DiscountedProduct) GetName() string { return p.Name }
+
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "fmt"
+            "strings"
+        )
+        func main() {
+            var writer strings.Builder
+            encoder := json.NewEncoder(&writer)
+            dp := DiscountedProduct{
+                Product:  &Kayak,
+                Discount: 10.50,
+            }
+            namedItems := []Named { &dp, &Person{ PersonName: "Alice"}}
+            encoder.Encode(namedItems)
+            fmt.Print(writer.String())
+        }
+    Output:
+        [{"Name":"Kayak","Category":"Watersports","Price":279,"Discount":"10.5"},{"PersonName":"Alice"}]
+
 ████████████████████████████████████████████████████████████████████████
-317.
+317.The Marshaler Method
+    Creating Completely Custom JSON Encodings
+    The Encoder checks to see whether a struct implements the Marshaler interface, which denotes a type that
+    has a custom encoding and which defines the method.
+
+    Name                Description
+    --------------      ------------------------------------------
+    MarshalJSON()       This method is invoked to create a JSON representation of a value and returns a byte
+                        slice containing the JSON and an error indicating encoding problems.
 ████████████████████████████████████████████████████████████████████████
-318.
+318.json.Marshal()
+    The MarshalJSON method can generate JSON in any way that suits the project.
+
+    I define a map with string keys and use the
+    empty interface for the values. This allows me to build the JSON by adding key-value pairs to the map
+    and then pass the map to the Marshal function, which uses the built-in support
+    to encode each of the values contained in the map.
+
+    example:
+    discount.go:
+        package main
+        import "encoding/json"
+        type DiscountedProduct struct {
+            *Product ^json:",omitempty"^
+            Discount float64 ^json:",string"^
+        }
+        func (dp *DiscountedProduct) MarshalJSON() (jsn []byte, err error) {
+            if dp.Product != nil {
+                m := map[string]interface{}{
+                    "product": dp.Name,
+                    "cost":    dp.Price - dp.Discount,
+                }
+                jsn, err = json.Marshal(m)
+            }
+            return
+        }
+
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "fmt"
+            "strings"
+        )
+        func main() {
+            var writer strings.Builder
+            encoder := json.NewEncoder(&writer)
+            dp := DiscountedProduct{
+                Product:  &Kayak,
+                Discount: 10.50,
+            }
+            namedItems := []Named { &dp, &Person{ PersonName: "Alice"}}
+            encoder.Encode(namedItems)
+            fmt.Print(writer.String())
+        }
+        
+    Output:
+        [{"cost":268.5,"product":"Kayak"},{"PersonName":"Alice"}]
+    
 ████████████████████████████████████████████████████████████████████████
-319.
+319.Decoding JSON Data
+    The NewDecoder constructor function creates a Decoder, which can be used to decode JSON data obtained
+    from a Reader.
+
+    The Decoder Methods:
+
+    Name                        Description
+    ---------------------       --------------------------------------------
+    Decode(value)               This method reads and decodes data, which is used to create the specified
+                                value. The method returns an error that indicates problems decoding the
+                                data to the required type or EOF.
+    DisallowUnknownFields()     By default, when decoding a struct type, the Decoder ignores any key in
+                                the JSON data for which there is no corresponding struct field. Calling this
+                                method causes the Decode to return an error, rather than ignoring the key.
+    UseNumber()                 By default, JSON number values are decoded into float64 values. Calling
+                                this method uses the Number type instead, as described in the “Decoding
+                                Number Values” section.
 ████████████████████████████████████████████████████████████████████████
 320.
 ████████████████████████████████████████████████████████████████████████
