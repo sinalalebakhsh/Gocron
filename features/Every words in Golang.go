@@ -7738,6 +7738,54 @@ Output:
                                             dealing with paths.
     Are there any alternatives?             Go supports alternative ways of storing data, such as databases, but there are no
                                             alternative mechanisms for accessing files.
+
+    Preparing
+    printer.go:
+        package main
+        import (
+            "fmt"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+    product.go:
+        package main
+        type Product struct {
+            Name, Category string
+            Price          float64
+        }
+        var Kayak = Product{
+            Name:     "Kayak",
+            Category: "Watersports",
+            Price:    279,
+        }
+        var Products = []Product{
+            {"Kayak", "Watersports", 279},
+            {"Lifejacket", "Watersports", 49.95},
+            {"Soccer Ball", "Soccer", 19.50},
+            {"Corner Flags", "Soccer", 34.95},
+            {"Stadium", "Soccer", 79500},
+            {"Thinking Cap", "Chess", 16},
+            {"Unsteady Chair", "Chess", 75},
+            {"Bling-Bling King", "Chess", 1200},
+        }    
+    main.go:
+        package main
+        func main() {
+            for _, p := range Products {
+                Printfln("Product: %v, Category: %v, Price: $%.2f",
+                    p.Name, p.Category, p.Price)
+            }
+        }
+    Output:
+        Product: Kayak, Category: Watersports, Price: $279.00
+        Product: Lifejacket, Category: Watersports, Price: $49.95
+        Product: Soccer Ball, Category: Soccer, Price: $19.50
+        Product: Corner Flags, Category: Soccer, Price: $34.95
+        Product: Stadium, Category: Soccer, Price: $79500.00
+        Product: Thinking Cap, Category: Chess, Price: $16.00
+        Product: Unsteady Chair, Category: Chess, Price: $75.00
+        Product: Bling-Bling King, Category: Chess, Price: $1200.00
 ████████████████████████████████████████████████████████████████████████
 335.
 ████████████████████████████████████████████████████████████████████████
