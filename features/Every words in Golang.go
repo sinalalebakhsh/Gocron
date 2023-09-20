@@ -7787,7 +7787,14 @@ Output:
         Product: Unsteady Chair, Category: Chess, Price: $75.00
         Product: Bling-Bling King, Category: Chess, Price: $1200.00
 ████████████████████████████████████████████████████████████████████████
-335.
+335.The os Package Functions for Reading Files
+    Name                Description
+    -------------       -------------------------------------
+    ReadFile(name)      This function opens the specified file and reads its contents. The results are a byte
+                        slice containing the file content and an error indicating problems opening or reading
+                        the file.
+    Open(name)          This function opens the specified file for reading. The result is a File struct and an
+                        error that indicates problems opening the file.
 ████████████████████████████████████████████████████████████████████████
 336.
 ████████████████████████████████████████████████████████████████████████
