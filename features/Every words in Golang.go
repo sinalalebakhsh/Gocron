@@ -7896,9 +7896,79 @@ Output:
         Product: Boots, Category: Skiing, Price: $220.51
         Product: Gloves, Category: Skiing, Price: $40.20
 ████████████████████████████████████████████████████████████████████████
-338.
+338.os.Open("config.json")
+    Using the File Struct to Read a File
+    The Open function opens a file for reading and returns a File value, which represents the open file, and an
+    error, which is used to indicate problems opening the file. The File struct implements the Reader interface,
+    which makes it simple to read and process the example JSON data, without reading the entire file into a byte
+    slice.
+    The File struct also implements the Closer interface, which defines a Close method.
+    
+    The defer keyword can be used to call the Close method when the enclosing function completes,
+    like this:
+        defer file.Close()
+    using the defer keyword ensures that the file is closed even when a function returns early.
+
+    example:
+    readconfig.go:
+        package main
+        import (
+            "encoding/json"
+            "os"
+            "time"
+        )
+        type ConfigData struct {
+            UserName           string
+            AdditionalProducts []Product
+        }
+        var Config ConfigData
+        func LoadConfig() (err error) {
+            file, err := os.Open("config.json")
+            if (err == nil) {
+                defer file.Close()
+                decoder := json.NewDecoder(file)
+                err = decoder.Decode(&Config)
+            }
+            return
+        }
+        func init() {
+            time.Sleep(time.Second)
+        }
+        func init() {
+            err := LoadConfig()
+            if err != nil {
+                Printfln("Error Loading Config: %v", err.Error())
+            } else {
+                Printfln("Username: %v", Config.UserName)
+                Products = append(Products, Config.AdditionalProducts...)
+            }
+        }
+    Output:
+        Username: Alice
+        Product: Kayak, Category: Watersports, Price: $279.00
+        Product: Lifejacket, Category: Watersports, Price: $49.95
+        Product: Soccer Ball, Category: Soccer, Price: $19.50
+        Product: Corner Flags, Category: Soccer, Price: $34.95
+        Product: Stadium, Category: Soccer, Price: $79500.00
+        Product: Thinking Cap, Category: Chess, Price: $16.00
+        Product: Unsteady Chair, Category: Chess, Price: $75.00
+        Product: Bling-Bling King, Category: Chess, Price: $1200.00
+        Product: Hat, Category: Skiing, Price: $10.00
+        Product: Boots, Category: Skiing, Price: $220.51
+        Product: Gloves, Category: Skiing, Price: $40.20
 ████████████████████████████████████████████████████████████████████████
-339.
+339.Methods Defined by the File Struct for Reading at a Specific Location
+    Name                        Description
+    --------------------        ------------------------------------------
+    ReadAt(slice, offset)       This method is defined by the ReaderAt interface and performs a read into the
+                                specific slice at the specified position offset in the file.
+    Seek(offset, how)           This method is defined by the Seeker interface and moves the offset into
+                                the file for the next read. The offset is determined by the combination of the
+                                two arguments: the first argument specifies the number of bytes to offset,
+                                and the second argument determines how the offset is applied—a value of 0
+                                means the offset is relative to the start of the file, a value of 1 means the offset
+                                is relative to the current read position, and a value of 2 means the offset is
+                                relative to the end of the file.
 ████████████████████████████████████████████████████████████████████████
 340.
 ████████████████████████████████████████████████████████████████████████
