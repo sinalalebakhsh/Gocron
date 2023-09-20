@@ -7809,6 +7809,13 @@ Output:
         }
 ████████████████████████████████████████████████████████████████████████
 336.os.ReadFile()
+    The LoadConfig function uses the ReadFile function to read the contents of the config.json file. 
+    The file will be read from the current working directory when the application is executed, 
+    which means that I can open the file just with its name.
+
+    The contents of the file are returned as a byte slice, which is converted to a string and written out. The
+    LoadConfig function is invoked by an initialization function, which ensures the configuration file is read.
+
     example:
     readconfig.go:
         package main
@@ -7844,7 +7851,50 @@ Output:
         Product: Unsteady Chair, Category: Chess, Price: $75.00
         Product: Bling-Bling King, Category: Chess, Price: $1200.00
 ████████████████████████████████████████████████████████████████████████
-337.
+337.Decoding the JSON Data
+    example:
+    readconfig.go:
+        package main
+        import (
+            "encoding/json"
+            "os"
+            "strings"
+        )
+        type ConfigData struct {
+            UserName           string
+            AdditionalProducts []Product
+        }
+        var Config ConfigData
+        func LoadConfig() (err error) {
+            data, err := os.ReadFile("config.json")
+            if err == nil {
+                decoder := json.NewDecoder(strings.NewReader(string(data)))
+                err = decoder.Decode(&Config)
+            }
+            return
+        }
+        func init() {
+            err := LoadConfig()
+            if err != nil {
+                Printfln("Error Loading Config: %v", err.Error())
+            } else {
+                Printfln("Username: %v", Config.UserName)
+                Products = append(Products, Config.AdditionalProducts...)
+            }
+        }
+    Output:
+        Username: Alice
+        Product: Kayak, Category: Watersports, Price: $279.00
+        Product: Lifejacket, Category: Watersports, Price: $49.95
+        Product: Soccer Ball, Category: Soccer, Price: $19.50
+        Product: Corner Flags, Category: Soccer, Price: $34.95
+        Product: Stadium, Category: Soccer, Price: $79500.00
+        Product: Thinking Cap, Category: Chess, Price: $16.00
+        Product: Unsteady Chair, Category: Chess, Price: $75.00
+        Product: Bling-Bling King, Category: Chess, Price: $1200.00
+        Product: Hat, Category: Skiing, Price: $10.00
+        Product: Boots, Category: Skiing, Price: $220.51
+        Product: Gloves, Category: Skiing, Price: $40.20
 ████████████████████████████████████████████████████████████████████████
 338.
 ████████████████████████████████████████████████████████████████████████
