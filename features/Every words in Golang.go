@@ -7258,15 +7258,174 @@ Output:
                                 this method uses the Number type instead, as described in the “Decoding
                                 Number Values” section.
 ████████████████████████████████████████████████████████████████████████
-320.
+320.Decoding Basic Data Types
+    example:
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "io"
+            "strings"
+            "asd/asd"
+        )
+        func main() {
+            reader := strings.NewReader(^true "Hello" 99.99 200^)   // ------------------------->   Use the symbol ^ above the Tab button    
+            vals := []interface{}{}
+            decoder := json.NewDecoder(reader)
+            for {
+                var decodedVal interface{}
+                err := decoder.Decode(&decodedVal)
+                if err != nil {
+                    if err != io.EOF {
+                        asd.Printfln("Error: %v", err.Error())
+                    }
+                    break
+                }
+                vals = append(vals, decodedVal)
+            }
+            for _, val := range vals {
+                asd.Printfln("Decoded (%T): %v", val, val)
+            }
+        }
+    Output:
+        Decoded (bool): true
+        Decoded (string): Hello
+        Decoded (float64): 99.99
+        Decoded (float64): 200
+    
 ████████████████████████████████████████████████████████████████████████
-321.
+321.Decoding Number Values
+    The Methods Defined by the Number Type
+    Name            Description
+    ---------       ------------------------------------
+    Int64()         This method returns the decoded value as a int64 and an error that indicates if the value
+                    cannot be converted.
+    Float64()       This method returns the decoded value as a float64 and an error that indicates if the
+                    value cannot be converted.
+    String()        This method returns the unconverted string from the JSON data.
+
+    Not all JSON number values can be expressed as
+    Go int64 values, so this is the method that is typically called first. 
+    If attempting to convert to an integer
+    fails, then the Float64 method can be called. 
+    If a number cannot be converted to either Go type, then the
+    String method can be used to get the unconverted string from the JSON data.
 ████████████████████████████████████████████████████████████████████████
-322.
+322.Decoding Numbers
+    example:
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "io"
+            "strings"
+        )
+        func main() {
+            reader := strings.NewReader(^true "Hello" 99.99 200^) // ------------------------->   Use the symbol ^ above the Tab button 
+            vals := []interface{}{}
+            decoder := json.NewDecoder(reader)
+            for {
+                var decodedVal interface{}
+                err := decoder.Decode(&decodedVal)
+                if err != nil {
+                    if err != io.EOF {
+                        Printfln("Error: %v", err.Error())
+                    }
+                    break
+                }
+                vals = append(vals, decodedVal)
+            }
+            for _, val := range vals {
+                if num, ok := val.(json.Number); ok {
+                    if ival, err := num.Int64(); err == nil {
+                        Printfln("Decoded Integer: %v", ival)
+                    } else if fpval, err := num.Float64(); err == nil {
+                        Printfln("Decoded Floating Point: %v", fpval)
+                    } else {
+                        Printfln("Decoded String: %v", num.String())
+                    }
+                } else {
+                    Printfln("Decoded (%T): %v", val, val)
+                }
+            }
+        }
+    Output:
+        Decoded (bool): true
+        Decoded (string): Hello
+        Decoded (float64): 99.99
+        Decoded (float64): 200
 ████████████████████████████████████████████████████████████████████████
-323.
+323.Specifying Types for Decoding
+    example:
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "strings"
+        )
+        func main() {
+            reader := strings.NewReader(^true "Hello" 99.99 200^) // ------------------------->   Use the symbol ^ above the Tab button 
+            var bval bool
+            var sval string
+            var fpval float64
+            var ival int
+            vals := []interface{}{&bval, &sval, &fpval, &ival}
+            decoder := json.NewDecoder(reader)
+            for i := 0; i < len(vals); i++ {
+                err := decoder.Decode(vals[i])
+                if err != nil {
+                    Printfln("Error: %v", err.Error())
+                    break
+                }
+            }
+            Printfln("Decoded (%T): %v", bval, bval)
+            Printfln("Decoded (%T): %v", sval, sval)
+            Printfln("Decoded (%T): %v", fpval, fpval)
+            Printfln("Decoded (%T): %v", ival, ival)
+        }
+    Output:
+        Decoded (bool): true
+        Decoded (string): Hello
+        Decoded (float64): 99.99
+        Decoded (int): 200
 ████████████████████████████████████████████████████████████████████████
-324.
+324.Decoding Arrays
+    The Decoder processes arrays automatically, but care must be taken because JSON allows arrays to contain
+    values of different types, which conflicts with the strict type rules enforced by Go.
+
+    The source JSON data contains two arrays, one of which contains only numbers and one of which mixes
+    numbers and strings. The Decoder doesn’t try to figure out if a JSON array can be represented using a single
+    Go type and decodes every array into an empty interface slice:
+    example:
+    main.go:
+        package main
+        import (
+            "encoding/json"
+            "io"
+            "strings"
+        )
+        func main() {
+            reader := strings.NewReader(^[10,20,30]["Kayak","Lifejacket",279]^) // ------------------------->   Use the symbol ^ above the Tab button 
+            vals := []interface{}{}
+            decoder := json.NewDecoder(reader)
+            for {
+                var decodedVal interface{}
+                err := decoder.Decode(&decodedVal)
+                if err != nil {
+                    if err != io.EOF {
+                        Printfln("Error: %v", err.Error())
+                    }
+                    break
+                }
+                vals = append(vals, decodedVal)
+            }
+            for _, val := range vals {
+                Printfln("Decoded (%T): %v", val, val)
+            }
+        }
+    Output:
+        Decoded ([]interface {}): [10 20 30]
+        Decoded ([]interface {}): [Kayak Lifejacket 279]
 ████████████████████████████████████████████████████████████████████████
 325.
 ████████████████████████████████████████████████████████████████████████
