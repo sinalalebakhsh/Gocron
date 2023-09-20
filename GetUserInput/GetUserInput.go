@@ -53,15 +53,29 @@ func GetUserInput() {
 		}
 	}()
 
-	// color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-	// color.Green(fmt.Sprintln(features.OriginalTimeData))
-	// color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-	// Regulators = true
+	go func(){
+		for _, value := range features.TitleOfTimeData {
+			FinalInput = strings.ToUpper(FinalInput)
+			if FinalInput == value {
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				color.Green(fmt.Sprintln(features.OriginalTimeData))
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				Regulators = true
+			}
+		}
+	}()
 	
-	// color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-	// color.Green(fmt.Sprintln(features.OriginalReadingandWriting))
-	// color.Green(fmt.Sprintln("---------------------------------------------------------------"))
-	// Regulators = true
+	go func(){
+		for _, value := range features.TitleOfReadingWriting {
+			FinalInput = strings.ToUpper(FinalInput)
+			if FinalInput == value {
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				color.Green(fmt.Sprintln(features.OriginalReadingandWriting))
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				Regulators = true
+			}
+		}
+	}()
 
 	go func() {
 		for _, Value := range features.TitleOfSlice {
