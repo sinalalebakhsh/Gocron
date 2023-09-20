@@ -89,6 +89,18 @@ func GetUserInput() {
 		}
 	}()
 
+	go func()  {
+		for _, value := range features.TitleOfWorkingFiles {
+			FinalInput = strings.ToUpper(FinalInput)
+			if FinalInput == value {
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				color.Green(fmt.Sprintln(features.OriginalWorkWithFiles))
+				color.Green(fmt.Sprintln("---------------------------------------------------------------"))
+				Regulators = true
+			}
+		}	
+	}()
+
 	time.Sleep(time.Second)
 	if !Regulators {
 		color.Red(fmt.Sprintln("---------------------"))
