@@ -7810,7 +7810,7 @@ Output:
 ████████████████████████████████████████████████████████████████████████
 336.os.ReadFile()
     example:
-    main.go:
+    readconfig.go:
         package main
         import "os"
         func LoadConfig() (err error) {
@@ -7826,7 +7826,23 @@ Output:
                 Printfln("Error Loading Config: %v", err.Error())
             }
         }
-    
+    Output:
+        {
+            "Username": "Alice",
+            "AdditionalProducts": [
+                {"name": "Hat", "category": "Skiing", "price": 10},
+                {"name": "Boots", "category":"Skiing", "price": 220.51 },
+                {"name": "Gloves", "category":"Skiing", "price": 40.20 }
+            ]
+        }
+        Product: Kayak, Category: Watersports, Price: $279.00
+        Product: Lifejacket, Category: Watersports, Price: $49.95
+        Product: Soccer Ball, Category: Soccer, Price: $19.50
+        Product: Corner Flags, Category: Soccer, Price: $34.95
+        Product: Stadium, Category: Soccer, Price: $79500.00
+        Product: Thinking Cap, Category: Chess, Price: $16.00
+        Product: Unsteady Chair, Category: Chess, Price: $75.00
+        Product: Bling-Bling King, Category: Chess, Price: $1200.00
 ████████████████████████████████████████████████████████████████████████
 337.
 ████████████████████████████████████████████████████████████████████████
