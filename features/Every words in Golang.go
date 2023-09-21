@@ -8174,7 +8174,38 @@ Output:
                                 converts the string to a byte slice, invokes the Write method, and returns the
                                 results it receives.
 ████████████████████████████████████████████████████████████████████████
-346.
+346.Writing JSON Data to a File
+    example:
+    main.go:
+        package main
+        import (
+            // "fmt"
+            // "time"
+            "encoding/json"
+            "os"
+        )
+        func main() {
+            cheapProducts := []Product{}
+            for _, p := range Products {
+                if p.Price < 100 {
+                    cheapProducts = append(cheapProducts, p)
+                }
+            }
+            file, err := os.OpenFile("cheap.json", os.O_WRONLY|os.O_CREATE, 0666)
+            if err == nil {
+                defer file.Close()
+                encoder := json.NewEncoder(file)
+                encoder.Encode(cheapProducts)
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        create file = cheap.json
+        content of this:
+    
+            [{"Name":"Lifejacket","Category":"Watersports","Price":49.95},{"Name":"Soccer Ball","Category":"Soccer","Price":19.5},{"Name":"Corner Flags","Category":"Soccer","Price":34.95},{"Name":"Thinking Cap","Category":"Chess","Price":16},{"Name":"Unsteady Chair","Category":"Chess","Price":75}]
+
 ████████████████████████████████████████████████████████████████████████
 347.
 ████████████████████████████████████████████████████████████████████████
