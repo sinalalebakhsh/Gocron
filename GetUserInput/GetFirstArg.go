@@ -1,7 +1,7 @@
 package getuserinput
 
 import (
-	// "fmt"
+	"fmt"
 	"os"
 	"strings"
 	// "time"
@@ -25,23 +25,17 @@ func GetFirstArg() {
 			}
 		}()
 		
+
 	
-		// } else if FirstArg == "all" || 
-		// FirstArg == "-all" || 
-		// FirstArg == "--all" || 
-		// FirstArg == "everything" || 
-		// FirstArg == "fullexplaination" || 
-		// FirstArg == "explain" || 
-		// FirstArg == "example" || 
-		// FirstArg == "allexample" || 
-		// FirstArg == "allcodes" || 
-		// FirstArg == "allcode" || 
-		// FirstArg == "everyexample" || 
-		// FirstArg == "examples" {
-		// 	features.HelpMessage()
-		// 	time.Sleep(time.Second * 2)
-		// 	color.Yellow(fmt.Sprintln(features.OriginalFeatures))			
-		// } 
+		go func(){
+			for _, value := range features.TitleOfEveryWords {
+				FirstArg := strings.ToLower(AllArgs[1])
+				if value == FirstArg {
+						features.HelpMessage()
+						color.HiBlue(fmt.Sprintln(features.OriginalFeatures))			
+				}
+			}
+		}()
 	}
 }
 
