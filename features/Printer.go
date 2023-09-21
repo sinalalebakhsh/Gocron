@@ -35,8 +35,5 @@ func PrintWordByWord(words []string) {
 }
 
 func init() {
-	color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 	color.HiBlue(LOGO)
-	fmt.Println()
-	color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 }
