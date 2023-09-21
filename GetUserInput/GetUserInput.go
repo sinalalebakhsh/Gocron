@@ -7,17 +7,31 @@ import (
 	"sort"
 	"strings"
 	"time"
-
 	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/features"
 )
 
+
+// after ensure user dont wrote arg more than one like -h or --help
+// get user input in this condition
 func GetUserInput() {
+
+	// I use For loop for getting user input for Repeatedly.
+	// if you want just get one more time delete this loop
 	for {
+
+
+		// use bufio Package and os Package for reading and get clear, good and clean,
+		// user input. maybe you want use fmt.Scan or another ways
+		// You can do it. :)
 		UserInput := bufio.NewReader(os.Stdin)
 		FinalInput, _ := UserInput.ReadString('\n')
 		FinalInput = strings.TrimSuffix(FinalInput, "\n")
 
+
+		// Checks for each entry into the loop
+		// if user input was "exit" so break loop and log out
+		// from Gocron program. 
 		if FinalInput == "exit" {
 			break
 		}
@@ -117,11 +131,5 @@ func GetUserInput() {
 			color.Red(fmt.Sprintf("Do not add %s yet.", FinalInput))
 			color.Red(fmt.Sprintln("---------------------"))
 		}
-		
-
-	
 	}
-
-	
-
 }
