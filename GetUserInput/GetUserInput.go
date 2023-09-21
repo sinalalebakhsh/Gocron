@@ -36,16 +36,25 @@ func GetUserInput() {
 			break
 		}
 
+		// get length of map from Single Definition in side file here
 		SliceOfMap := make([]string, 0, len(features.OriginSingleDef.SingleDefinition))
+
+
+		// in here processing on the map for getting keys and ignore values 
 		for key, NotUsed := range features.OriginSingleDef.SingleDefinition {
 			if NotUsed == "nil" {
 				fmt.Println(NotUsed, "!!!!!!")
 			}
+			// converting map keys to slice for iteration
 			SliceOfMap = append(SliceOfMap, key)
 		}
+		// sort for iteration convenience 
 		sort.Strings(SliceOfMap)
 	
+
+		
 		Regulators := false
+		
 		for _, value := range SliceOfMap {
 			FinalInput = strings.ToLower(FinalInput)
 			if FinalInput == value {
