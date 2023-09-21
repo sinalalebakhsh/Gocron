@@ -8266,14 +8266,52 @@ Output:
     Output:
     tempfile-1982129407.json:
         [{"Name":"Lifejacket","Category":"Watersports","Price":49.95},{"Name":"Soccer Ball","Category":"Soccer","Price":19.5},{"Name":"Corner Flags","Category":"Soccer","Price":34.95},{"Name":"Thinking Cap","Category":"Chess","Price":16},{"Name":"Unsteady Chair","Category":"Chess","Price":75}]
+████████████████████████████████████████████████████████████████████████
+349.Working with File Paths
+    If you want to read and write files in
+    other locations, then you must specify file paths. The issue is that not all of the operating systems that Go
+    supports express file paths in the same way. For example, the path to a file named mydata.json in my home
+    directory on a Linux system might be expressed like this:
+        /home/adam/mydata.json
 
-
+    where the path to the same in my home directory is expressed like this:
+        C:\Users\adam\mydata.json
 ████████████████████████████████████████████████████████████████████████
-349.
+350.The Common Location Functions Defined by the os Package
+    Name                Description
+    --------------      ------------------------------------
+    Getwd()             This function returns the current working directory, expressed as a string, and an
+                        error that indicates problems obtaining the value.
+    UserHomeDir()       This function returns the user's home directory and an error that indicates problems
+                        obtaining the path.
+    UserCacheDir()      This function returns the default directory for user-specific cached data and an error
+                        that indicates problems obtaining the path.
+    UserConfigDir()     This function returns the default directory for user-specific configuration data and an
+                        error that indicates problems obtaining the path.
+    TempDir()           This function returns the default directory for temporary files and an error that
+                        indicates problems obtaining the path.
 ████████████████████████████████████████████████████████████████████████
-350.
-████████████████████████████████████████████████████████████████████████
-351.
+351.The path/filepath Functions for Paths
+    Name                    Description
+    ------------            ------------------------------------------
+    Abs(path)               This function returns an absolute path, which is useful if you have a relative path,
+                            such as a filename.
+    IsAbs(path)             This function returns true if the specified path is absolute.
+    Base(path)              This function returns the last element from the path.
+    Clean(path)             This function tidies up path strings by removing duplicate separators and relative references.
+    Dir(path)               This function returns all but the last element of the path.
+    EvalSymlinks(path)      This function evaluates a symbolic link and returns the resulting path.
+    Ext(path)               This function returns the file extension from the specified path, which is
+                            assumed to be the suffix following the final period in the path string.
+    FromSlash(path)         This function replaces each forward slash with the platform's file separator character.
+    ToSlash(path)           This function replaces the platform's file separator with forward slashes.
+    Join(...elements)       This function combines multiple elements using the platform's file separator.
+    Match(pattern, path)    This function returns true if the path is matched by the specified pattern.
+    Split(path)             This function returns the components on either side of the final path separator in
+                            the specified path.
+    SplitList(path)         This function splits a path into its components, which are returned as a string slice.
+    VolumeName(path)        This function returns the volume component of the specified path or the empty
+                            string if the path does not contain a volume.
 ████████████████████████████████████████████████████████████████████████
 352.
 ████████████████████████████████████████████████████████████████████████
