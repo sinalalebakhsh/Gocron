@@ -8207,7 +8207,25 @@ Output:
             [{"Name":"Lifejacket","Category":"Watersports","Price":49.95},{"Name":"Soccer Ball","Category":"Soccer","Price":19.5},{"Name":"Corner Flags","Category":"Soccer","Price":34.95},{"Name":"Thinking Cap","Category":"Chess","Price":16},{"Name":"Unsteady Chair","Category":"Chess","Price":75}]
 
 ████████████████████████████████████████████████████████████████████████
-347.
+347.the Convenience Functions to Create New Files
+    The os Package Functions for Creating Files
+        The CreateTemp function can be useful, but it is important to understand that the purpose of this
+        function is to generate a random filename and that in all other respects, the file that is created is just a
+        regular file. The file that is created isn't removed automatically and will remain on the storage device after
+        the application has been executed.
+    Name                                Description
+    -------------------------           --------------------------------------------
+    Create(name)                        This function is equivalent to calling OpenFile with the O_RDWR, O_CREATE, and
+                                        O_TRUNC flags. The results are the File, which can be used for reading and writing,
+                                        and an error that is used to indicate problems creating the file. Note that this
+                                        combination of flags means that if a file exists with the specified name, it will be
+                                        opened, and its contents will be deleted.
+    CreateTemp(dirName, fileName)       This function creates a new file in the directory with the specified name. If the
+                                        name is the empty string, then the system temporary directory is used, obtained
+                                        using the TempDir function. The file is created with a
+                                        name that contains a random sequence of characters, as demonstrated in the text
+                                        after the table. The file is opened with the O_RDWR, O_CREATE, and O_EXCL flags.
+                                        The file isn't removed when it is closed.
 ████████████████████████████████████████████████████████████████████████
 348.
 ████████████████████████████████████████████████████████████████████████
