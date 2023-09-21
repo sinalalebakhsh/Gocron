@@ -7962,18 +7962,217 @@ Output:
                                 means the offset is relative to the start of the file, a value of 1 means the offset
                                 is relative to the current read position, and a value of 2 means the offset is
                                 relative to the end of the file.
+    
+    
+    Reading from specific locations requires knowledge of the file structure.
+    In this example, I know the location of the data I want to read, 
+    which allows me to use the ReadAt method to read the username value
+    and the Seek method to jump to the start of the product data.
+    
+    example:
+    readconfig.go:
+        package main
+        import (
+            "os"
+            "encoding/json"
+            //"strings"
+        )
+        type ConfigData struct {
+            UserName string
+            AdditionalProducts []Product
+        }
+        var Config ConfigData
+        func LoadConfig() (err error) {
+            file, err := os.Open("config.json")
+            if (err == nil) {
+                defer file.Close()
+                nameSlice := make([]byte, 5)
+                file.ReadAt(nameSlice, 19)
+                Config.UserName = string(nameSlice)
+                file.Seek(55, 0)
+                decoder := json.NewDecoder(file)
+                err = decoder.Decode(&Config.AdditionalProducts)
+            }
+            return
+        }
+        func init() {
+            err := LoadConfig()
+            if err != nil {
+                Printfln("Username: %v", Config.UserName)
+                Products = append(Products, Config.AdditionalProducts...)
+            } else {
+                Printfln("Error Loading Config: %v", err.Error())
+            }
+        }
+    Output:
+        Username: Alice
+        Product: Kayak, Category: Watersports, Price: $279.00
+        Product: Lifejacket, Category: Watersports, Price: $49.95
+        Product: Soccer Ball, Category: Soccer, Price: $19.50
+        Product: Corner Flags, Category: Soccer, Price: $34.95
+        Product: Stadium, Category: Soccer, Price: $79500.00
+        Product: Thinking Cap, Category: Chess, Price: $16.00
+        Product: Unsteady Chair, Category: Chess, Price: $75.00
+        Product: Bling-Bling King, Category: Chess, Price: $1200.00
 ████████████████████████████████████████████████████████████████████████
-340.Reading from Specific Locations
+340.The os Package Function for Writing Files
+    Name                                    Description
+    -------------------------------         ----------------------------------------
+    WriteFile(name,slice, modePerms)        This function creates a file with the specified name, mode, and permissions and
+                                            writes the content of the specified byte slice. If the file already exists, its contents
+                                            will be replaced with the byte slice. The result is an error that reports any problems
+                                            creating the file or writing the data.
+    OpenFile(name, flag, modePerms)         The function opens the file with the specified name, using the flags to control how
+                                            the file is opened. If a new file is created, then the specified mode and permissions
+                                            are applied. The result is a File value that provides access to the file contents and
+                                            an error that indicates problems opening the file.
 ████████████████████████████████████████████████████████████████████████
-341.
+341.the Write Convenience Function
+    The file mode is used to specify special characteristics for the file, 
+    but a value of zero is used for regular files, as in the example. 
+    You can find a list of the file mode values and their settings at 
+    
+    https://golang.org/pkg/io/fs/#FileMode
+
+
+    https://cs.opensource.google/go/go/+/go1.21.1:src/io/fs/fs.go;l=165
+    
+    type FileMode 
+    type FileMode uint32
+    A FileMode represents a file's mode and permission bits. 
+    The bits have the same definition on all systems, 
+    so that information about files can be moved from one system to another portably. 
+    Not all bits apply to all systems. 
+    The only required bit is ModeDir for directories.
+    
+    
+    const (
+        // The single letters are the abbreviations
+        // used by the String method's formatting.
+        ModeDir        FileMode = 1 << (32 - 1 - iota) // d: is a directory
+        ModeAppend                                     // a: append-only
+        ModeExclusive                                  // l: exclusive use
+        ModeTemporary                                  // T: temporary file; Plan 9 only
+        ModeSymlink                                    // L: symbolic link
+        ModeDevice                                     // D: device file
+        ModeNamedPipe                                  // p: named pipe (FIFO)
+        ModeSocket                                     // S: Unix domain socket
+        ModeSetuid                                     // u: setuid
+        ModeSetgid                                     // g: setgid
+        ModeCharDevice                                 // c: Unix character device, when ModeDevice is set
+        ModeSticky                                     // t: sticky
+        ModeIrregular                                  // ?: non-regular file; nothing else is known about this file
+    
+        // Mask for the type bits. For regular files, none will be set.
+        ModeType = ModeDir | ModeSymlink | ModeNamedPipe | ModeSocket | ModeDevice | ModeCharDevice | ModeIrregular
+    
+        ModePerm FileMode = 0777 // Unix permission bits
+    )
+
+    The defined file mode bits are the most significant bits of the FileMode. 
+    The nine least-significant bits are the standard Unix rwxrwxrwx permissions. 
+    The values of these bits should be considered part of the public API and 
+    may be used in wire protocols or disk representations: they must not be changed, 
+    although new bits might be added.
+
+
+    example:
+    main.go:
+        package main
+        import (
+            "fmt"
+            "os"
+            "time"
+        )
+        func main() {
+            total := 0.0
+            for _, p := range Products {
+                total += p.Price
+            }
+            dataStr := fmt.Sprintf("Time: %v, Total: $%.2f\n",time.Now().Format("Mon 15:04:05"), total)
+            err := os.WriteFile("output.txt", []byte(dataStr), 0666)
+            if err == nil {
+                fmt.Println("Output file created")
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output: a file create with this name= output.txt
+        Time: Thu 07:27:34, Total: $279.00
 ████████████████████████████████████████████████████████████████████████
-342.
+342.Using the File Struct to Write to a File
+    The OpenFile function opens a file and returns a File value. 
+    Unlike the Open function, the OpenFile function accepts one or 
+    more flags that specify how the file should be opened. 
+    The flags are defined as constants in the os package,
+    Care must be taken with these flags, not all of which are supported by every operating system.
+
 ████████████████████████████████████████████████████████████████████████
-343.
+343.The File Opening Flags
+    Name            Description
+    --------        ------------------------------------------
+    O_RDONLY        This flag opens the file read-only so that it can be read from but not written to.
+    O_WRONLY        This flag opens the file write-only so that it can be written to but not read from.
+    O_RDWR          This flag opens the file read-write so that it can be written to and read from.
+    O_APPEND        This flag will append writes to the end of the file.
+    O_CREATE        This flag will create the file if it doesn't exist.
+    O_EXCL          This flag is used in conjunction with O_CREATE to ensure that a new file is created. If the file
+                    already exists, this flag will trigger an error.
+    O_SYNC          This flag enables synchronous writes, such that data is written to the storage device before
+                    the write function/method returns.
+    O_TRUNC         This flag truncates the existing content in the file.
 ████████████████████████████████████████████████████████████████████████
-344.
+344.Writing to a File
+    example:
+    main.go:
+        package main
+        import (
+            "fmt"
+            "time"
+            "os"
+        )
+        func main() {
+            total := 0.0
+            for _, p := range Products {
+                total += p.Price
+            }
+            dataStr := fmt.Sprintf("Time: %v, Total: $%.2f\n",
+                time.Now().Format("Mon 15:04:05"), total)
+        
+                
+            file, err := os.OpenFile("output.txt",os.O_WRONLY | os.O_CREATE | os.O_APPEND, 0666)
+            
+            if (err == nil) {
+                defer file.Close()
+                file.WriteString(dataStr)
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    
+
+    I combined the O_WRONLY flag to open the file for writing, 
+    the O_CREATE file to create if it doesn't already
+    exist, and the O_APPEND flag to append any written data to the end of the file.
+    Output:
+        appended to file exist:
+            Time: Thu 07:27:34, Total: $279.00
+            Time: Thu 08:17:05, Total: $81174.40
+            Time: Thu 08:17:09, Total: $81174.40
+        
 ████████████████████████████████████████████████████████████████████████
-345.
+345.The File Methods for Writing Data
+    Name                        Description
+    -----------------------     ---------------------------------------------------
+    Seek(offset, how)           This method sets the location for subsequent operations.
+    Write(slice)                This method writes the contents of the specified byte slice to the file.
+                                The results are the number of bytes written and an error that indicates
+                                problems writing the data.
+    WriteAt(slice, offset)      This method writes the data in the slice at the specified location and is the
+                                counterpart to the ReadAt method.
+    WriteString(str)            This method writes a string to the file. This is a convenience method that
+                                converts the string to a byte slice, invokes the Write method, and returns the
+                                results it receives.
 ████████████████████████████████████████████████████████████████████████
 346.
 ████████████████████████████████████████████████████████████████████████
