@@ -47,6 +47,9 @@ func GetUserInput() {
 			}
 		}
 	
+		
+
+
 		go func() {
 			for _, Value := range features.TitleOfRegEx {
 				FinalInput = strings.ToUpper(FinalInput)

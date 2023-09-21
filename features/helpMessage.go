@@ -22,15 +22,22 @@ my name is Sina LalehBakhsh, I hope this API is useful for you
 after running program, write your single word about any of GO language.
 if your perpuse is more than one word, for convenience searching, just write keywords.
 like this:
-	map slice`)
+	map slice
+	`)
 
-func HelpMessage(){
+func HelpMessage() {
 	color.HiBlue(LOGO)
 	words := SplitIntoWords(Message)
 	PrintWordByWord(words)
-
+	fmt.Println()
 }
 
-
-
-
+var TitleOfHelp = []string{
+	"-h",
+	"help",
+	"-help",
+	"--help",
+	"help me",
+	"instruction",
+	"instructions",
+}
