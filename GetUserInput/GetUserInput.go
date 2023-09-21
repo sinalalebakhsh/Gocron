@@ -14,7 +14,6 @@ import (
 
 func GetUserInput() {
 	for {
-
 		UserInput := bufio.NewReader(os.Stdin)
 		FinalInput, _ := UserInput.ReadString('\n')
 		FinalInput = strings.TrimSuffix(FinalInput, "\n")
@@ -22,8 +21,6 @@ func GetUserInput() {
 		if FinalInput == "exit" {
 			break
 		}
-
-
 
 		SliceOfMap := make([]string, 0, len(features.OriginSingleDef.SingleDefinition))
 		for key, NotUsed := range features.OriginSingleDef.SingleDefinition {
@@ -35,7 +32,6 @@ func GetUserInput() {
 		sort.Strings(SliceOfMap)
 	
 		Regulators := false
-	
 		for _, value := range SliceOfMap {
 			FinalInput = strings.ToLower(FinalInput)
 			if FinalInput == value {
@@ -47,9 +43,6 @@ func GetUserInput() {
 			}
 		}
 	
-		
-
-
 		go func() {
 			for _, Value := range features.TitleOfRegEx {
 				FinalInput = strings.ToUpper(FinalInput)
@@ -58,7 +51,7 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln(features.OriginalAllRegex))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					Regulators = true
-	
+					break
 				}
 			}
 		}()
@@ -71,6 +64,7 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln(features.OriginalTimeData))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					Regulators = true
+					break
 				}
 			}
 		}()
@@ -83,6 +77,7 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln(features.OriginalReadingandWriting))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					Regulators = true
+					break
 				}
 			}
 		}()
@@ -95,6 +90,7 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln(features.OriginalJSONData))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					Regulators = true
+					break
 				}
 			}
 		}()
@@ -107,12 +103,16 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln(features.OriginalWorkWithFiles))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					Regulators = true
+					break
 				}
 			}	
 		}()
 	
 		time.Sleep(time.Second)
-		if !Regulators {
+		FinalInput = strings.ToLower(FinalInput)
+		if FinalInput == "help" {
+			features.HelpMessage()
+		}else if !Regulators {
 			color.Red(fmt.Sprintln("---------------------"))
 			color.Red(fmt.Sprintf("Do not add %s yet.", FinalInput))
 			color.Red(fmt.Sprintln("---------------------"))

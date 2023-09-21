@@ -37,7 +37,4 @@ var TitleOfHelp = []string{
 	"help",
 	"-help",
 	"--help",
-	"help me",
-	"instruction",
-	"instructions",
 }

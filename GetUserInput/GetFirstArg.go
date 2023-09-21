@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	// "time"
 	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/features"
 )
