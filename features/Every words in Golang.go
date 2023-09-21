@@ -8313,11 +8313,106 @@ Output:
     VolumeName(path)        This function returns the volume component of the specified path or the empty
                             string if the path does not contain a volume.
 ████████████████████████████████████████████████████████████████████████
-352.
+352.Working with a Path
+    example:
+    main.go
+        package main
+        import (
+            // "fmt"
+            // "time"
+            "os"
+            //"encoding/json"
+            "path/filepath"
+        )
+        func main() {
+            path, err := os.UserHomeDir()
+            if (err == nil) {
+                path = filepath.Join(path, "MyApp", "MyTempFile.json")
+            }
+            Printfln("Full path: %v", path)
+            Printfln("Volume name: %v", filepath.VolumeName(path))
+            Printfln("Dir component: %v", filepath.Dir(path))
+            Printfln("File component: %v", filepath.Base(path))
+            Printfln("File extension: %v", filepath.Ext(path))
+        }
+    Output:
+        Username: Alice
+        Full path: /home/sina/MyApp/MyTempFile.json
+        Volume name: 
+        Dir component: /home/sina/MyApp
+        File component: MyTempFile.json
+        File extension: .json
+    
+    received on the Windows machine:
+        Username: Alice
+        Full path: C:\Users\adam\MyApp\MyTempFile.json
+        Volume name: C:
+        Dir component: C:\Users\adam\MyApp
+        File component: MyTempFile.json
+        File extension: .json
 ████████████████████████████████████████████████████████████████████████
-353.
+353.The os Package Functions for Managing Files and Directories
+    Name                            Description
+    -----------------               ------------------------------------------
+    Chdir(dir)                      This function changes the current working directory to the specified directory.
+                                    The result is an error that indicates problems making the change.
+    Mkdir(name, modePerms)          This function creates a directory with the specified name and mode/
+                                    permissions. The result is an error that is nil if the directory is created or that
+                                    describes a problem if one arises.
+    MkdirAll(name, modePerms)       This function performs the same task as Mkdir but creates any parent directories
+                                    in the specified path.
+    MkdirTemp(parentDir, name)      This function is similar to CreateTemp but creates a directory rather than a file.
+                                    A random string is added to the end of the specified name or in place of an
+                                    asterisk, and the new directory is created within the specified parent. The results
+                                    are the name of the directory and an error indicating problems.
+    Remove(name)                    This function removes the specified file or directory. The result is an error that
+                                    describes any problems that arise.
+    RemoveAll(name)                 This function removes the specified file or directory. If the name specifies a
+                                    directory, then any children it contains are also removed. The result is an error
+                                    that describes any problems that arise.
+    Rename(old, new)                This function renames the specified file or folder. The result is an error that
+                                    describes any problems that arise.
+    Symlink(old, new)               This function creates a symbolic link to the specified file. The result is an error
+                                    that describes any problems that arise.
 ████████████████████████████████████████████████████████████████████████
-354.
+354.Creating Directories
+    example:
+    main.go:
+        package main
+        import (
+            // "fmt"
+            // "time"
+            "encoding/json"
+            "os"
+            "path/filepath"
+        )
+        func main() {
+            path, err := os.UserHomeDir()
+            if err == nil {
+                path = filepath.Join(path, "0-Repo/TEST-2/MyApp", "MyTempFile.json")
+            }
+            Printfln("Full path: %v", path)
+            err = os.MkdirAll(filepath.Dir(path), 0766)
+            if err == nil {
+                file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY, 0666)
+                if err == nil {
+                    defer file.Close()
+                    encoder := json.NewEncoder(file)
+                    encoder.Encode(Products)
+                }
+            }
+            if err != nil {
+                Printfln("Error %v", err.Error())
+            }
+        }
+    Output:
+        print this:
+            Username: Alice
+            Full path: /home/sina/0-Repo/TEST-2/MyApp/MyTempFile.json
+
+        Create this:
+            MyTempFile.json in that directory with content:
+                [{"Name":"Kayak","Category":"Watersports","Price":279},{"Name":"Lifejacket","Category":"Watersports","Price":49.95},{"Name":"Soccer Ball","Category":"Soccer","Price":19.5},{"Name":"Corner Flags","Category":"Soccer","Price":34.95},{"Name":"Stadium","Category":"Soccer","Price":79500},{"Name":"Thinking Cap","Category":"Chess","Price":16},{"Name":"Unsteady Chair","Category":"Chess","Price":75},{"Name":"Bling-Bling King","Category":"Chess","Price":1200}]
 ████████████████████████████████████████████████████████████████████████
 355.
 ████████████████████████████████████████████████████████████████████████
