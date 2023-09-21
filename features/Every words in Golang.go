@@ -8227,7 +8227,47 @@ Output:
                                         after the table. The file is opened with the O_RDWR, O_CREATE, and O_EXCL flags.
                                         The file isn't removed when it is closed.
 ████████████████████████████████████████████████████████████████████████
-348.
+348.Creating a Temporary File
+    The location of the temporary file is specified with a period, meaning the current working directory.
+    if the empty string is used, then the file will be created in the default temporary
+    directory, which is obtained using the TempDir function described.
+    The name of the file can include an asterisk (the * character), 
+    and if this is present, the random part of the filename will replace it. 
+    If the filename does not contain an asterisk, 
+    then the random part of the filename will be added to the end of the name.
+
+    ompile and execute the project, and once execution is complete, you will see a new file in the files
+    folder. The file in my project is named tempfile-1732419518.json, but your filename will be different, and
+    you will see a new file and a unique name each time the program is executed.
+
+    example:
+    main.go:
+        package main
+        import (
+            "os"
+            "encoding/json"
+        )
+        func main() {
+            cheapProducts := []Product {}
+            for _, p := range Products {
+                if (p.Price < 100) {
+                    cheapProducts = append(cheapProducts, p)
+                }
+            }
+            file, err := os.CreateTemp(".", "tempfile-*.json")
+            if (err == nil) {
+                defer file.Close()
+                encoder := json.NewEncoder(file)
+                encoder.Encode(cheapProducts)
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+    tempfile-1982129407.json:
+        [{"Name":"Lifejacket","Category":"Watersports","Price":49.95},{"Name":"Soccer Ball","Category":"Soccer","Price":19.5},{"Name":"Corner Flags","Category":"Soccer","Price":34.95},{"Name":"Thinking Cap","Category":"Chess","Price":16},{"Name":"Unsteady Chair","Category":"Chess","Price":75}]
+
+
 ████████████████████████████████████████████████████████████████████████
 349.
 ████████████████████████████████████████████████████████████████████████
