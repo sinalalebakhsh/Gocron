@@ -8690,11 +8690,58 @@ Output:
         }
     
 ████████████████████████████████████████████████████████████████████████
-367.
+367.Creating HTML Templates
+    The html/template package provides support for creating templates that are processed using a data
+    structure to generate dynamic HTML output.
+    Templates contain static content mixed with expressions that are enclosed in double curly braces,
+    known as actions.
+
+    The template uses the simplest action, which is a period (the . character)
+    and which prints out the data used to execute the template, 
+    which I explain in the next section.
+
+    example:
+    template.html:
+        <h1>Template Value: {{ . }}</h1>
+    
+    A project can contain multiple templates files.
+    extras.html:
+        <h1>Extras Template Value: {{ . }}</h1>
+    
+    The new template uses the same action as the previous example but has different static content to make
+    it clear which template has been executed in the next section. Once I have described the basic techniques for
+    using templates, I'll introduce more complex template actions.
 ████████████████████████████████████████████████████████████████████████
-368.
+368.Loading and Executing Templates
+    Using templates is a two-step process. 
+    First, the templates files are loaded and processed to create Template values.
+
+    The html/template Functions for Loading Template Files:
+    Name                        Description
+    ---------------------       --------------------------------------------
+    ParseFiles(...files)        This function loads one or more files, which are specified by name. The result
+                                is a Template that can be used to generate content and an error that reports
+                                problems loading the templates.
+    ParseGlob(pattern)          This function loads one or more files, which are selected with a pattern. The
+                                result is a Template that can be used to generate content and an error that
+                                reports problems loading the templates.
+
+    If you name your template files consistently, 
+    then you can use the ParseGlob function to load them with a simple pattern. 
+    If you want specific files—or the files are not named consistently—then you can specify
+    individual files using the ParseFiles function.
 ████████████████████████████████████████████████████████████████████████
-369.
+369.The Template Methods for Selecting and Executing Templates
+    Name                                            Description
+    ----------------------------                    -------------------------------------------
+    Templates()                                     This function returns a slice containing pointers to the Template values that
+                                                    have been loaded.
+    Lookup(name)                                    This function returns a *Template for the specified loaded template.
+    Name()                                          This method returns the name of the Template.
+    Execute(writer, data)                           This function executes the Template, using the specified data and writes
+                                                    the output to the specified Writer.
+    ExecuteTemplate(writer, templateName, data)     This function executes the template with the specified name and data and
+                                                    writes the output to the specified Writer.
 ████████████████████████████████████████████████████████████████████████
 370.
 ████████████████████████████████████████████████████████████████████████
