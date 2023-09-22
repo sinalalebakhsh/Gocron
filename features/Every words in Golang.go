@@ -8481,17 +8481,122 @@ Output:
         Entry name: readconfig.go, IsDir: false
 ████████████████████████████████████████████████████████████████████████
 360.Determining Whether a File Exists تعیین اینکه آیا یک فایل وجود دارد یا خیر
-    
+    Checking Whether a File Exists:
+    main.go:
+        package main
+        import (
+            "os"
+        )
+        func main() {
+            targetFiles := []string { "no_such_file.txt", "config.json" }
+            for _, name := range targetFiles {
+                info, err := os.Stat(name)
+                if os.IsNotExist(err) {
+                    Printfln("File does not exist: %v", name)
+                } else if err != nil  {
+                    Printfln("Other error: %v", err.Error())
+                } else {
+                    Printfln("File %v, Size: %v", info.Name(), info.Size())
+                }
+            }
+        }
+    Output:
+        Username: Alice
+        File does not exist: no_such_file.txt
+        File config.json, Size: 253
 ████████████████████████████████████████████████████████████████████████
-361.
+361.The path/filepath Function for Locating Files with a Pattern
+    Name                        Description
+    --------------------        -------------------------------
+    Match(pattern, name)        This function matches a single path against a pattern. The results are a bool,
+                                which indicates if there is a match, and an error, which indicates problems
+                                with the pattern or with performing the match.
+    Glob(pathPatten)            This function finds all the files that match the specified pattern. The results
+                                are a string slice containing the matched paths and an error that indicates
+                                problems with performing the search.
 ████████████████████████████████████████████████████████████████████████
-362.
+362.The Search Pattern Syntax for the path/filepath Functions
+    Term        Description
+    --------    -------------------
+     *          This term matches any sequence of characters, excluding the path separator.
+     ?          This term matches any single character, excluding the path separator.
+     [a-Z]      This term matches any character in the specified range.
 ████████████████████████████████████████████████████████████████████████
-363.
+363.Locating Files
+    example:
+    main.go:
+        package main
+        import (
+            "os"
+            "path/filepath"
+        )
+        func main() {
+            path, err := os.Getwd()
+            if err == nil {
+                matches, err := filepath.Glob(filepath.Join(path, "*.json"))
+                if err == nil {
+                    for _, m := range matches {
+                        Printfln("Match: %v", m)
+                    }
+                }
+            }
+            if err != nil {
+                Printfln("Error %v", err.Error())
+            }
+        }
+    Output:
+        Username: Alice
+        Match: /home/sina/0-Repo/TEST-2/cheap.json
+        Match: /home/sina/0-Repo/TEST-2/config.json
 ████████████████████████████████████████████████████████████████████████
-364.
+364.The Function Provided by the path/filepath Package
+    Name                        Description
+    -----------------------     ----------------------------------
+    WalkDir(directory, func)    This function calls the specified function for each file and directory in the
+                                specified directory.
 ████████████████████████████████████████████████████████████████████████
-365.
+365.Walking a Directory قدم زدن در یک فهرست
+    example:
+    main.go:
+        package main
+        import (
+            "os"
+            "path/filepath"
+        )
+        func callback(path string, dir os.DirEntry, dirErr error) (err error) {
+            info, _ := dir.Info()
+            Printfln("Path %v, Size: %v", path, info.Size())
+            return
+        }
+        func main() {
+            path, err := os.Getwd()
+            if err == nil {
+                err = filepath.WalkDir(path, callback)
+            } else {
+                Printfln("Error %v", err.Error())
+            }
+        }
+    Output:
+        Username: Alice
+        Path /home/sina/0-Repo/TEST-2, Size: 4096
+        Path /home/sina/0-Repo/TEST-2/.git, Size: 4096
+        Path /home/sina/0-Repo/TEST-2/.git/COMMIT_EDITMSG, Size: 4
+        Path /home/sina/0-Repo/TEST-2/.git/FETCH_HEAD, Size: 92
+        Path /home/sina/0-Repo/TEST-2/.git/refs/remotes/origin/main, Size: 41
+        Path /home/sina/0-Repo/TEST-2/.git/refs/tags, Size: 4096
+        Path /home/sina/0-Repo/TEST-2/.vscode, Size: 4096
+        Path /home/sina/0-Repo/TEST-2/.vscode/extensions.json, Size: 79
+        Path /home/sina/0-Repo/TEST-2/.vscode/settings.json, Size: 405
+        Path /home/sina/0-Repo/TEST-2/README.md, Size: 9
+        Path /home/sina/0-Repo/TEST-2/U.sh, Size: 68
+        Path /home/sina/0-Repo/TEST-2/cheap.json, Size: 487
+        Path /home/sina/0-Repo/TEST-2/config.json, Size: 253
+        Path /home/sina/0-Repo/TEST-2/go.mod, Size: 22
+        Path /home/sina/0-Repo/TEST-2/main.go, Size: 8579
+        Path /home/sina/0-Repo/TEST-2/output.txt, Size: 109
+        Path /home/sina/0-Repo/TEST-2/printer.go, Size: 129
+        Path /home/sina/0-Repo/TEST-2/product.go, Size: 474
+        Path /home/sina/0-Repo/TEST-2/readconfig.go, Size: 704
 ████████████████████████████████████████████████████████████████████████
 366.
 ████████████████████████████████████████████████████████████████████████
