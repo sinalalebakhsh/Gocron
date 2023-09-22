@@ -8598,7 +8598,97 @@ Output:
         Path /home/sina/0-Repo/TEST-2/product.go, Size: 474
         Path /home/sina/0-Repo/TEST-2/readconfig.go, Size: 704
 ████████████████████████████████████████████████████████████████████████
-366.
+366.Putting HTML and Text Templates in Context
+    Question Answer:
+
+    What are they?
+    These templates allow HTML and text content to be generated dynamically
+    from Go data values.
+    
+    Why are they useful?
+    Templates are useful when large amounts of content are required, such that
+    defining the content as strings would be unmanageable.
+    
+    How are they used?
+    The templates are HTML or text files, which are annotated with instructions
+    for the template processing engine. When a template is rendered, the
+    instructions are processed to generate HTML or text content.
+
+    Are there any pitfalls or limitations?
+    The template syntax is counterintuitive and is not checked by the Go
+    compiler. This means that care must be taken to use the correct syntax,
+    which can be a frustrating process.
+
+    Are there any alternatives?
+    Templates are optional, and smaller amounts of content can be produced
+    using strings.
+
+    Summary:
+    Problem                                         Solution
+    ------------------                              -----------------------------------
+    Generate an HTML document                       Define an HTML template with actions that
+                                                    incorporate data values into the output. Load and
+                                                    execute the templates, providing data for the actions.
+    Enumerate loaded templates                      Enumerate the results of the Templates method.
+    Locate a specific template                      Use the Lookup method.
+    Produce dynamic content                         Use a template action.
+    Format a data value                             Use the formatting functions.
+    Suppress whitespace                             Add hyphens to the template.
+    Process a slice                                 Use the slice functions.
+    Conditionally execute template content          Use the conditional actions and functions.
+    Create a nested template                        Use the define and template actions.
+    Define a default template                       Use the block and template actions.
+    Create functions for use in a template          Define template functions.
+    Disable encoding for function results           Return one of the type aliases defined by the html/template package.
+    Store data values for later use in a template   Define template variables.
+    Generate a text document                        Use the text/template package.
+
+
+
+    Preparing for This Chapter:
+    1- go mod init htmltext
+    2- printer.go:
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+    3- product.go:
+        package main
+        type Product struct {
+            Name, Category string
+            Price float64
+        }
+        var Kayak = Product {
+            Name: "Kayak",
+            Category: "Watersports",
+            Price: 279,
+        }
+        var Products = []Product {
+            { "Kayak", "Watersports", 279 },
+            { "Lifejacket", "Watersports", 49.95 },
+            { "Soccer Ball", "Soccer", 19.50 },
+            { "Corner Flags", "Soccer", 34.95 },
+            { "Stadium", "Soccer", 79500 },
+            { "Thinking Cap", "Chess", 16 },
+            { "Unsteady Chair", "Chess", 75 },
+            { "Bling-Bling King", "Chess", 1200 },
+        }
+        func (p *Product) AddTax() float64 {
+            return p.Price * 1.2
+        }
+        func (p * Product) ApplyDiscount(amount float64) float64 {
+            return p.Price - amount
+        }
+    4- main.go:
+        package main
+        func main() {
+            for _, p := range Products {
+                Printfln("Product: %v, Category: %v, Price: $%.2f",
+                    p.Name, p.Category, p.Price)
+            }
+        }
+    
 ████████████████████████████████████████████████████████████████████████
 367.
 ████████████████████████████████████████████████████████████████████████
