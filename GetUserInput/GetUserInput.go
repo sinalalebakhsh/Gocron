@@ -29,12 +29,7 @@ func GetUserInput() {
 		FinalInput = strings.TrimSuffix(FinalInput, "\n")
 
 
-		// Checks for each entry into the loop
-		// if user input was "exit" so break loop and log out
-		// from Gocron program. 
-		if FinalInput == "exit" {
-			break
-		}
+		
 
 		// get length of map from Single Definition in side file here
 		SliceOfMap := make([]string, 0, len(features.OriginSingleDef.SingleDefinition))
@@ -130,7 +125,30 @@ func GetUserInput() {
 				}
 			}	
 		}()
+
+
+		go func(){
+			for _, value := range features.TitleOfUsingHTMLAndTextTemplates {
+				FinalInput = strings.ToUpper(FinalInput)
+				if FinalInput == value {
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln(features.OriginalHTMLAndTemplates))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+					Regulators = true
+					break
+				}
+			}
+		}()
 	
+		// Checks for each entry into the loop
+		// if user input was "exit" so break loop and log out
+		// from Gocron program. 
+		Exit := "exit"
+		if FinalInput == strings.ToLower(Exit) {
+			Regulators = true
+			break
+		}
+
 		time.Sleep(time.Second)
 		FinalInput = strings.ToLower(FinalInput)
 		if FinalInput == "help" {
