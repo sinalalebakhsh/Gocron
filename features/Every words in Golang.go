@@ -8801,6 +8801,13 @@ Output:
     The filename is used as the template name, 
     which means that the templates in this example are named template.html and extras.html.
 
+    You can call the Execute method on the Template returned by the ParseFiles or ParseGlob
+    function, and the first template that was loaded will be selected 
+    and used to produce the output. 
+    Take care when using the ParseGlob function because 
+    the first template loaded—and therefore the template that will be
+    executed—may not be the file you expect.
+
     example:
     main.go:
         package main
@@ -8823,7 +8830,30 @@ Output:
         <h1>Template Value: {Kayak Watersports 279}</h1>
         <h1>Extras Template Value: {Kayak Watersports 279}</h1>
 ████████████████████████████████████████████████████████████████████████
-373.
+373.Enumerating Loaded Templates
+    It can be useful to enumerate the templates that have been loaded, 
+    especially when using the ParseGlob function, 
+    to make sure that all the expected files have been discovered.
+
+    example:
+    main.go:
+        package main
+        import (
+            "html/template"
+        )
+        func main() {
+                allTemplates, err := template.ParseGlob("templates/*.html")
+            if (err == nil) {
+                for _, t := range allTemplates.Templates() {
+                    Printfln("Template name: %v", t.Name())
+                }
+            } else {
+                Printfln("Error: %v %v", err.Error())
+            }
+        }
+    Output:
+        Template name: extras.html
+        Template name: template.html
 ████████████████████████████████████████████████████████████████████████
 374.
 ████████████████████████████████████████████████████████████████████████
