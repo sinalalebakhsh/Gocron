@@ -8855,11 +8855,87 @@ Output:
         Template name: extras.html
         Template name: template.html
 ████████████████████████████████████████████████████████████████████████
-374.
+374.Looking Up a Specific Template
+    An alternative to specifying a name is to use the Lookup method to select a template, 
+    which is useful when
+    you want to pass a template as an argument to a function
+
+    example:
+    main.go:
+        package main
+        import (
+            "html/template"
+            "os"
+        )
+        func Exec(t *template.Template) error {
+            return t.Execute(os.Stdout, &Kayak)
+        }
+        func main() {
+            allTemplates, err := template.ParseGlob("templates/*.html")
+            if err == nil {
+                selectedTemplated := allTemplates.Lookup("template.html")
+                err = Exec(selectedTemplated)
+            }
+            if err != nil {
+                Printfln("Error: %v %v", err.Error())
+            }
+        }
+    Output:
+        <h1>Template Value: {Kayak Watersports 279}</h1>
 ████████████████████████████████████████████████████████████████████████
-375.
+375.The Template Actions
+    Action                      Description
+    ------------                -----------------------------------------
+    {{ value }}                 This action inserts a data value or the result of an expression into the
+    {{ expr }}                  template. A period is used to refer to the data value passed to the Execute or
+                                ExecuteTemplate function. See the “Inserting Data Values” section for details.
+
+    {{ value.fieldname }}       This action inserts the value of a struct field. See the “Inserting Data Values” section for details.
+    {{ value.method arg }}      This action invokes a method and inserts the result into the template
+                                output. Parentheses are not used, and arguments are separated by
+                                spaces. See the “Inserting Data Values” section for details.
+
+    {{ func arg }}              This action invokes a function and inserts the result into the output.
+                                There are built-in functions for common tasks, such as formatting
+                                data values, and custom functions can be defined, as described in the
+                                “Defining Template Functions” section.
+
+    {{ expr | value.method }}   Expressions can be chained together using a vertical bar so that the result
+    {{ expr | func              of the first expression is used as the last argument in the second expression.
+    {{ range value }}           This action iterates through the specified slice and adds the content
+    ...                         between the range and end keyword for each element. The actions within
+    {{ end }}                   the nested content are executed, with the current element accessible
+                                through the period. See the “Using Slices in Templates” section for details.
+
+    {{ range value }}           This action is similar to the range/end combination but defines a section
+    ...                         of nested content that is used if the slice contains no elements.
+    {{ else }}
+    ...
+    {{ end }}
+
+    {{ if expr }}               This action evaluates an expression and executes the nested template
+    ...                         content if the result is true, as demonstrated in the “Conditionally
+    {{ end }}                   Executing Template Content” section. This action can be used with
+                                optional else and else if clauses.
+
+    {{ with expr }}             This action evaluates an expression and executes the nested template
+    ...                         content if the result isn't nil or the empty string. This action can be used
+    {{ end }}                   with optional clauses.
+
+    {{ define "name" }}         This action defines a template with the specified name
+    ...
+    {{ end }}
+
+    {{ template "name" expr }}  This action executes the template with the specified name and data and
+                                inserts the result in the output.
+
+    {{ block "name" expr }}     This action defines a template with the specified name and invokes it
+    ...                         with the specified data. This is typically used to define a template that
+    {{ end }}                   can be replaced by one loaded from another file, as demonstrated in the
+                                “Defining Template Blocks” section.
 ████████████████████████████████████████████████████████████████████████
-376.
+376.Inserting Data Values
+    
 ████████████████████████████████████████████████████████████████████████
 377.
 ████████████████████████████████████████████████████████████████████████
@@ -8909,7 +8985,79 @@ Output:
 ████████████████████████████████████████████████████████████████████████
 400.
 ████████████████████████████████████████████████████████████████████████
+401.
 ████████████████████████████████████████████████████████████████████████
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ████████████████████████████████████████████████████████████████████████
 ████████████████████████████████████████████████████████████████████████
 ████████████████████████████████████████████████████████████████████████
