@@ -8743,7 +8743,26 @@ Output:
     ExecuteTemplate(writer, templateName, data)     This function executes the template with the specified name and data and
                                                     writes the output to the specified Writer.
 ████████████████████████████████████████████████████████████████████████
-370.
+370.Loading and Executing a Template
+    example:
+    main.go:
+        package main
+        import (
+            "fmt"
+            "html/template"
+            "os"
+        )
+        func main() {
+            t, err := template.ParseFiles("templates/template.html")
+            if (err == nil) {
+                t.Execute(os.Stdout, &Kayak)
+                fmt.Println()
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        
 ████████████████████████████████████████████████████████████████████████
 371.
 ████████████████████████████████████████████████████████████████████████
