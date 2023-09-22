@@ -8762,11 +8762,66 @@ Output:
             }
         }
     Output:
-        
+        <h1>Template Value: {Kayak Watersports 279}</h1>
 ████████████████████████████████████████████████████████████████████████
-371.
+371.Loading Multiple Templates
+    There are two approaches to working with multiple templates. 
+    The first is to create a separate Template value
+    for each of them and execute them separately.
+
+    example:
+    Using Separate Templates:
+    main.go:
+        package main
+        import (
+            "fmt"
+            "html/template"
+            "os"
+        )
+        func main() {
+            t1, err1 := template.ParseFiles("templates/template.html")
+            t2, err2 := template.ParseFiles("templates/extras.html")
+            if (err1 == nil && err2 == nil) {
+                t1.Execute(os.Stdout, &Kayak)
+                os.Stdout.WriteString("\n")
+                t2.Execute(os.Stdout, &Kayak)
+                os.Stdout.WriteString("\n")
+            } else {
+                Printfln("Error: %v %v", err1.Error(), err2.Error())
+            }
+        }
+    Output:
+        <h1>Template Value: {Kayak Watersports 279}</h1>
+        <h1>Extras Template Value: {Kayak Watersports 279}</h1>
 ████████████████████████████████████████████████████████████████████████
-372.
+372.Using a Combined Template
+    When multiple files are loaded with the ParseFiles, 
+    the result is a Template value on which the
+    ExecuteTemplate method can be called to execute a specified template. 
+    The filename is used as the template name, 
+    which means that the templates in this example are named template.html and extras.html.
+
+    example:
+    main.go:
+        package main
+        import (
+            "html/template"
+            "os"
+        )
+        func main() {
+                allTemplates, err1 := template.ParseFiles("templates/template.html",
+                    "templates/extras.html")
+                if (err1 == nil) {
+                    allTemplates.ExecuteTemplate(os.Stdout, "template.html", &Kayak)
+                    os.Stdout.WriteString("\n")
+                    allTemplates.ExecuteTemplate(os.Stdout, "extras.html", &Kayak)
+                } else {
+                    Printfln("Error: %v %v", err1.Error())
+                }
+            }
+    Output:
+        <h1>Template Value: {Kayak Watersports 279}</h1>
+        <h1>Extras Template Value: {Kayak Watersports 279}</h1>
 ████████████████████████████████████████████████████████████████████████
 373.
 ████████████████████████████████████████████████████████████████████████
