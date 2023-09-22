@@ -8414,17 +8414,74 @@ Output:
             MyTempFile.json in that directory with content:
                 [{"Name":"Kayak","Category":"Watersports","Price":279},{"Name":"Lifejacket","Category":"Watersports","Price":49.95},{"Name":"Soccer Ball","Category":"Soccer","Price":19.5},{"Name":"Corner Flags","Category":"Soccer","Price":34.95},{"Name":"Stadium","Category":"Soccer","Price":79500},{"Name":"Thinking Cap","Category":"Chess","Price":16},{"Name":"Unsteady Chair","Category":"Chess","Price":75},{"Name":"Bling-Bling King","Category":"Chess","Price":1200}]
 ████████████████████████████████████████████████████████████████████████
-355.
+355.ReadDir(name)
+    The os Package Function for Listing Directories
+    This function reads the specified directory and returns a DirEntry slice, each of which
+    describes an item in the directory.
+    The result of the ReadDir function is a slice of values that implement the DirEntry interface, which
+    defines the methods.
 ████████████████████████████████████████████████████████████████████████
-356.
+356.The Methods Defined by the DirEntry Interface
+    Name        Description
+    --------    --------------------------
+    Name()      This method returns the name of the file or directory described by the DirEntry value.
+    IsDir()     This method returns true if the DirEntry value represents a directory.
+    Type()      This method returns a FileMode value, which is an alias to uint32, which describes the file more
+                and the permissions of the file or directory represented by the DirEntry value.
+    Info()      This method returns a FileInfo value that provides additional details about the file or directory
+                represented by the DirEntry value.
 ████████████████████████████████████████████████████████████████████████
-357.
+357.Useful Methods Defined by the FileInfo Interface
+    Name            Description
+    ----------      ------------------------------------
+    Name()          This method returns a string containing the name of the file or directory.
+    Size()          This method returns the size of the file, expressed as an int64 value.
+    Mode()          This method returns the file mode and permission settings for the file or directory.
+    ModTime()       This method returns the last modified time of the file or directory.
 ████████████████████████████████████████████████████████████████████████
-358.
+358.Stat(path)
+    The os Package Function for Inspecting a File
+    This function accepts a path string. It returns a FileInfo value that describes the file and an
+    error, which indicates problems inspecting the file.
 ████████████████████████████████████████████████████████████████████████
-359.
+359.Enumerating Files
+    example:
+    main.go:
+        package main
+        import (
+            "os"
+        )
+        func main() {
+            path, err := os.Getwd()
+            if err == nil {
+                dirEntries, err := os.ReadDir(path)
+                if err == nil {
+                    for _, dentry := range dirEntries {
+                        Printfln("Entry name: %v, IsDir: %v", dentry.Name(), dentry.IsDir())
+                    }
+                }
+            }
+            if err != nil {
+                Printfln("Error %v", err.Error())
+            }
+        }
+    Output:
+        Username: Alice
+        Entry name: .git, IsDir: true
+        Entry name: .vscode, IsDir: true
+        Entry name: README.md, IsDir: false
+        Entry name: U.sh, IsDir: false
+        Entry name: cheap.json, IsDir: false
+        Entry name: config.json, IsDir: false
+        Entry name: go.mod, IsDir: false
+        Entry name: main.go, IsDir: false
+        Entry name: output.txt, IsDir: false
+        Entry name: printer.go, IsDir: false
+        Entry name: product.go, IsDir: false
+        Entry name: readconfig.go, IsDir: false
 ████████████████████████████████████████████████████████████████████████
-360.
+360.Determining Whether a File Exists تعیین اینکه آیا یک فایل وجود دارد یا خیر
+    
 ████████████████████████████████████████████████████████████████████████
 361.
 ████████████████████████████████████████████████████████████████████████
