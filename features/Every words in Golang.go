@@ -9030,9 +9030,29 @@ Output:
         <h1>Tax: $334.80</h1>
         <h1>Discount Price: $269.00</h1>
 ████████████████████████████████████████████████████████████████████████
-381.
+381.Using Parentheses in html 
+    Chaining can be used only for the last argument provided to a function. 
+    An alternative approach—and
+    one that can be used to set other function arguments is to use parentheses
+    
+    example:
+    template.html:
+        <h1>Template Value: {{ . }}</h1>
+        <h1>Name: {{ .Name }}</h1>
+        <h1>Category: {{ .Category }}</h1>
+        <h1>Price: {{ printf "$%.2f" .Price }}</h1>
+        <h1>Tax: {{ printf "$%.2f" .AddTax }}</h1>
+        <h1>Discount Price: {{ printf "$%.2f" (.ApplyDiscount 10) }}</h1>
+    Output:
+        <h1>Template Value: {Kayak Watersports 279}</h1>
+        <h1>Name: Kayak</h1>
+        <h1>Category: Watersports</h1>
+        <h1>Price: $279.00</h1>
+        <h1>Tax: $334.80</h1>
+        <h1>Discount Price: $269.00</h1>
 ████████████████████████████████████████████████████████████████████████
-382.
+382.Trimming Whitespace
+    
 ████████████████████████████████████████████████████████████████████████
 383.
 ████████████████████████████████████████████████████████████████████████
