@@ -9220,7 +9220,54 @@ Output:
     way I chose to structure the template.
     
 ████████████████████████████████████████████████████████████████████████
-388.
+388.Using the Optional Conditional Actions
+    The if action can be used with optional else and else if keywords
+
+    example:
+    template.html:
+        <h1>There are {{ len . }} products in the source data.</h1>
+        <h1>First product: {{ index . 0 }}</h1>
+        {{ range . -}}
+            {{ if lt .Price 100.00 -}}
+                <h1>Name: {{ .Name }}, Category: {{ .Category }}, Price,
+                    {{- printf "$%.2f" .Price }}</h1>
+            {{ else if gt .Price 1500.00 -}}
+                <h1>Expensive Product {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
+            {{ else -}}
+                <h1>Midrange Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
+            {{ end -}}
+        {{ end }}
+    main.go:
+        package main
+        import (
+            "html/template"
+            "os"
+        )
+        func Exec(t *template.Template) error {
+            return t.Execute(os.Stdout, Products)
+        }
+        func main() {
+            allTemplates, err := template.ParseGlob("templates/*.html")
+            if err == nil {
+                selectedTemplated := allTemplates.Lookup("template.html")
+                err = Exec(selectedTemplated)
+            }
+            if err != nil {
+                Printfln("Error: %v %v", err.Error())
+            }
+        }
+    Output:
+        <h1>There are 8 products in the source data.</h1>
+        <h1>First product: {Kayak Watersports 279}</h1>
+        <h1>Midrange Product: Kayak ($279.00)</h1>
+            <h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
+            <h1>Name: Soccer Ball, Category: Soccer, Price,$19.50</h1>
+            <h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+            <h1>Expensive Product Stadium ($79500.00)</h1>
+            <h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+            <h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>
+            <h1>Midrange Product: Bling-Bling King ($1200.00)</h1>
+                
 ████████████████████████████████████████████████████████████████████████
 389.
 ████████████████████████████████████████████████████████████████████████
