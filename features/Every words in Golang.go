@@ -8934,16 +8934,101 @@ Output:
     {{ end }}                   can be replaced by one loaded from another file, as demonstrated in the
                                 “Defining Template Blocks” section.
 ████████████████████████████████████████████████████████████████████████
-376.Inserting Data Values
+376.The Template Expressions for Inserting Values into Templates
+    Inserting Data Values
+
+    Expression          Description
+    ------------        -----------------------------------------------
+    .                   This expression inserts the value passed to the Execute or ExecuteTemplate method into the
+                        template output.
+    .Field              This expression inserts the value of the specified field into the template output.
+    .Method             This expression calls the specified method without arguments and inserts the result into the
+                        template output.
+    .Method             This expression calls the specified method with the specified argument and inserts the result
+    arg                 into the template output.
+    call                This expression invokes a struct function field, using the specified arguments, which are
+    .Field arg          separated by spaces. The result from the function is inserted into the template output.
     
 ████████████████████████████████████████████████████████████████████████
-377.
+377.Inserting Data Values in the template.html
+    Unlike Go code, methods are not invoked with parentheses, and arguments
+    are simply specified after the name, separated by spaces. 
+    It is the responsibility of the developer to ensure
+    that arguments are of a type that can be used by the method or function.
+
+    example:
+    templates/template.html:
+        <h1>Template Value: {{ . }}</h1>
+        <h1>Name: {{ .Name }}</h1>
+        <h1>Category: {{ .Category }}</h1>
+        <h1>Price: {{ .Price }}</h1>
+        <h1>Tax: {{ .AddTax }}</h1>
+        <h1>Discount Price: {{ .ApplyDiscount 10 }}</h1>
+    Output:
+        <h1>Template Value: {Kayak Watersports 279}</h1>
+        <h1>Name: Kayak</h1>
+        <h1>Category: Watersports</h1>
+        <h1>Price: 279</h1>
+        <h1>Tax: 334.8</h1>
+        <h1>Discount Price: 269</h1>
 ████████████████████████████████████████████████████████████████████████
-378.
+378.Understanding Contextual Escaping
+    Values are automatically escaped to make them safe for inclusion in HTML, CSS, and JavaScript code,
+    with the appropriate escaping rules applied based on context. For example, a string value such as
+    "It was a <big> boat" used as the text content of an HTML element would be inserted into the
+    template as "It was a <big> boat" but as "It was a \u003cbig\u003e boat" when used
+    as a string literal value in JavaScript code. Full details of how values are escaped can be found at
+
+    https://golang.org/pkg/html/template.
+
 ████████████████████████████████████████████████████████████████████████
-379.
+379.The Built-in Templates Functions for Formatting Data
+    Name        Description
+    -------     --------------------------------
+    print       This is an alias to the fmt.Sprint function.
+    printf      This is an alias to the fmt.Sprintf function.
+    println     This is an alias to the fmt.Sprintln function.
+    html        This function encodes a value for safe inclusion in an HTML document.
+    js          This function encodes a value for safe inclusion in a JavaScript document.
+    urlquery    This function encodes a value for use in a URL query string.
+
+
+    example:
+    template.html:
+        <h1>Template Value: {{ . }}</h1>
+        <h1>Name: {{ .Name }}</h1>
+        <h1>Category: {{ .Category }}</h1>
+        <h1>Price: {{ printf "$%.3f" .Price }}</h1>
+        <h1>Tax: {{ printf "$%.2f" .AddTax }}</h1>
+        <h1>Discount Price: {{ .ApplyDiscount 10 }}</h1>
+    Output:
+        <h1>Template Value: {Kayak Watersports 279}</h1>
+        <h1>Name: Kayak</h1>
+        <h1>Category: Watersports</h1>
+        <h1>Price: $279.000</h1>
+        <h1>Tax: $334.80</h1>
+        <h1>Discount Price: 269</h1>
 ████████████████████████████████████████████████████████████████████████
-380.
+380.Chaining Expressions
+    Chaining expressions creates a pipeline for values, 
+    which allows the output from one method or function
+    to be used as the input for another.
+
+    example:
+    template.html:
+        <h1>Template Value: {{ . }}</h1>
+        <h1>Name: {{ .Name }}</h1>
+        <h1>Category: {{ .Category }}</h1>
+        <h1>Price: {{ printf "$%.2f" .Price }}</h1>
+        <h1>Tax: {{ printf "$%.2f" .AddTax }}</h1>
+        <h1>Discount Price: {{ .ApplyDiscount 10 | printf "$%.2f" }}</h1>
+    Output:
+        <h1>Template Value: {Kayak Watersports 279}</h1>
+        <h1>Name: Kayak</h1>
+        <h1>Category: Watersports</h1>
+        <h1>Price: $279.00</h1>
+        <h1>Tax: $334.80</h1>
+        <h1>Discount Price: $269.00</h1>
 ████████████████████████████████████████████████████████████████████████
 381.
 ████████████████████████████████████████████████████████████████████████
