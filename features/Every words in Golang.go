@@ -9162,8 +9162,63 @@ Output:
     slice       This function creates a new slice. Its arguments are the original slice, the start index, and the end index.
     index       This function returns the element at the specified index.
     len         This function returns the length of the specified slice.
+
+    example:
+    Built-in Functions in the template.html:
+        <h1>There are {{ len . }} products in the source data.</h1>
+        <h1>First product: {{ index . 0 }}</h1>
+        {{ range slice . 3 6 -}} 
+            <h1>Name: {{ .Name }}, Category: {{ .Category }}, Price,
+                {{- printf "$%.2f" .Price }}</h1>
+        {{ end }}
+    Output:
+        <h1>There are 8 products in the source data.</h1>
+        <h1>First product: {Kayak Watersports 279}</h1>
+        <h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+        <h1>Name: Stadium, Category: Soccer, Price,$79500.00</h1>
+        <h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+    
 ████████████████████████████████████████████████████████████████████████
-387.
+387.Conditionally Executing Template Content
+    Actions can be used to conditionally insert content into the output based on the evaluation of their
+    expressions.
+
+    The Template Conditional Functions:
+        Function            Description
+        ------------        -----------------------------------------------
+        eq arg1 arg2        This function returns true if arg1 == arg2.
+        ne arg1 arg2        This function returns true if arg1 != arg2.
+        lt arg1 arg2        This function returns true if arg1 < arg2.
+        le arg1 arg2        This function returns true if arg1 <= arg2.
+        gt arg1 arg2        This function returns true if arg1 > arg2.
+        ge arg1 arg2        This function returns true if arg1 >= arg2.
+        and arg1 arg2       This function returns true if both arg1 and arg2 are true.
+        not arg1            This function returns true if arg1 is false, and false if it is true.
+
+    example:
+    a Conditional Action in the template.html:
+        <h1>There are {{ len . }} products in the source data.</h1>
+        <h1>First product: {{ index . 0 }}</h1>
+        {{ range . -}}
+            {{ if lt .Price 100.00 -}}
+                <h1>Name: {{ .Name }}, Category: {{ .Category }}, Price,
+                    {{- printf "$%.2f" .Price }}</h1>
+            {{ end -}}
+        {{ end }}
+
+    Output:
+        <h1>There are 8 products in the source data.</h1>
+        <h1>First product: {Kayak Watersports 279}</h1>
+        <h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
+            <h1>Name: Soccer Ball, Category: Soccer, Price,$19.50</h1>
+            <h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+            <h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+            <h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>        
+
+    Despite the use of the minus sign to trim whitespace, 
+    the output is oddly formatted because of the
+    way I chose to structure the template.
+    
 ████████████████████████████████████████████████████████████████████████
 388.
 ████████████████████████████████████████████████████████████████████████
