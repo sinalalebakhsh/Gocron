@@ -9052,15 +9052,116 @@ Output:
         <h1>Discount Price: $269.00</h1>
 ████████████████████████████████████████████████████████████████████████
 382.Trimming Whitespace
-    
+    HTML isn't sensitive to the whitespace between elements, 
+    but whitespace can still cause problems for text content and attribute values, 
+    especially when you want to structure the content
+    of a template to make it easy to read.
+
+    example:
+    template.html
+        <h1>
+            Name: {{ .Name }}, Category: {{ .Category }}, Price,
+                {{ printf "$%.2f" .Price }}
+        </h1>
+    Output:
+        <h1>
+            Name: Kayak, Category: Watersports, Price,
+                $279.00
+        </h1>
 ████████████████████████████████████████████████████████████████████████
-383.
+383.The minus sign must
+    The effect is to remove all of the whitespace to before or after the action.
+
+    The minus sign can be used to trim whitespace, 
+    applied immediately after or before the braces
+    that open or close an action.
+
+    example:
+    template.html:
+        <h1>
+                Name: {{ .Name }}, Category: {{ .Category }}, Price,
+                    {{ printf "$%.2f" .Price }}
+        </h1>
+
+        <h1>
+                Name: {{ .Name }}, Category: {{ .Category }}, Price,
+                    {{- printf "$%.2f" .Price -}}
+        </h1>
+
+
+    Output:
+        <h1>
+                Name: Kayak, Category: Watersports, Price,
+                    $279.00
+        </h1>
+
+        <h1>
+                Name: Kayak, Category: Watersports, Price,$279.00</h1>
 ████████████████████████████████████████████████████████████████████████
-384.
+384.Trimming Additional Whitespace
+    The whitespace around the final action has been removed, 
+    but there is still a newline character after
+    the opening h1 tag because the whitespace trimming applies only to actions.
+
+    example:
+    template.html:
+        <h1>
+            {{- "" -}} Name: {{ .Name }}, Category: {{ .Category }}, Price,
+                {{- printf "$%.2f" .Price -}}
+        </h1>
+    Output:
+        <h1>Name: Kayak, Category: Watersports, Price,$279.00</h1>
 ████████████████████████████████████████████████████████████████████████
-385.
+385.Slices in Templates
+    Template actions can be used to generate content for slices
+
+    example:
+    Processing a Slice in the template.html
+        {{ range . -}}
+            <h1>Name: {{ .Name }}, Category: {{ .Category }}, Price,
+                {{- printf "$%.2f" .Price }}</h1>
+        {{ end }}
+    main.go:
+        package main
+
+        import (
+            "html/template"
+            "os"
+        )
+        
+        func Exec(t *template.Template) error {
+            return t.Execute(os.Stdout, Products)
+        }
+        func main() {
+            allTemplates, err := template.ParseGlob("templates/*.html")
+            if err == nil {
+                selectedTemplated := allTemplates.Lookup("template.html")
+                err = Exec(selectedTemplated)
+            }
+        
+            
+            if err != nil {
+                Printfln("Error: %v %v", err.Error())
+            }
+        }
+    Output:
+        <h1>Name: Kayak, Category: Watersports, Price,$279.00</h1>
+        <h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
+        <h1>Name: Soccer Ball, Category: Soccer, Price,$19.50</h1>
+        <h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+        <h1>Name: Stadium, Category: Soccer, Price,$79500.00</h1>
+        <h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+        <h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>
+        <h1>Name: Bling-Bling King, Category: Chess, Price,$1200.00</h1>
 ████████████████████████████████████████████████████████████████████████
-386.
+386.The Built-in Template Functions for Slices
+    Go text templates support the built-in functions
+
+    Name        Description
+    ------      --------------
+    slice       This function creates a new slice. Its arguments are the original slice, the start index, and the end index.
+    index       This function returns the element at the specified index.
+    len         This function returns the length of the specified slice.
 ████████████████████████████████████████████████████████████████████████
 387.
 ████████████████████████████████████████████████████████████████████████
