@@ -9346,6 +9346,9 @@ Output:
                 {{ end -}}
             {{ end }}
         {{- end}}
+    
+    
+    ===============
     main.go:
         package main
         import (
@@ -9366,6 +9369,7 @@ Output:
             }
         }
     
+    ========
     Any of the named templates can be executed directly, but I have selected the mainTemplate
     Output:
         <h1>There are 8 products in the source data.</h1>
@@ -9379,9 +9383,101 @@ Output:
             <h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>
             <h1>Midrange Product: Bling-Bling King ($1200.00)</h1>
 ████████████████████████████████████████████████████████████████████████
-391.
+391.Defining Template Blocks
+    Template blocks are used to define a template with default content that can be overridden in another
+    template file, which requires multiple templates to be loaded and executed together. 
+
+    This is often used to common content, such as a layout.
+
+    The templates must be loaded so that the file that contains the block action is loaded before the file that
+    contains the define action that redefines the template. 
+    
+    When the templates are loaded, the template defined
+    in the list.html file redefines the template named body so that the content in the list.html file replaces
+    the content in the template.html file.
+
+
+    example:
+    template.html File in the templates Folder
+        {{ define "mainTemplate" -}}
+            <h1>This is the layout header</h1>
+            {{ block "body" . }}
+                <h2>There are {{ len . }} products in the source data.</h2>
+            {{ end }}
+            <h1>This is the layout footer</h1>
+        {{ end }}
+
+    Output:
+        <h1>This is the layout header</h1>
+        
+                <h2>There are 8 products in the source data.</h2>
+
+            <h1>This is the layout footer</h1>
+    
+
+    When used alone, the output from the template file includes the content in the block. 
+    But this content can be redefined by another template file.
+    example:
+    list.html:
+        {{ define "body" }}
+            {{ range . }}
+                <h2>Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h2>
+            {{ end -}}
+        {{ end }}
+    
+    ========================
+    main.go:
+        package main
+
+        import (
+            "html/template"
+            "os"
+        )
+        
+        func Exec(t *template.Template) error {
+            return t.Execute(os.Stdout, Products)
+        }
+        func main() {
+            
+            allTemplates, err := template.ParseFiles("templates/template.html","templates/list.html")
+        
+        
+        
+            if err == nil {
+                selectedTemplated := allTemplates.Lookup("mainTemplate")
+                err = Exec(selectedTemplated)
+            }
+            if err != nil {
+                Printfln("Error: %v %v", err.Error())
+            }
+        }
+    
+    ========================
+    Output:
+        <h1>This is the layout header</h1>
+        
+            
+            <h2>Product: Kayak ($279.00)</h2>
+
+            <h2>Product: Lifejacket ($49.95)</h2>
+
+            <h2>Product: Soccer Ball ($19.50)</h2>
+
+            <h2>Product: Corner Flags ($34.95)</h2>
+
+            <h2>Product: Stadium ($79500.00)</h2>
+
+            <h2>Product: Thinking Cap ($16.00)</h2>
+
+            <h2>Product: Unsteady Chair ($75.00)</h2>
+
+            <h2>Product: Bling-Bling King ($1200.00)</h2>
+
+        <h1>This is the layout footer</h1>    
 ████████████████████████████████████████████████████████████████████████
-392.
+392.Defining Template Functions
+    Page617
+
 ████████████████████████████████████████████████████████████████████████
 393.
 ████████████████████████████████████████████████████████████████████████
