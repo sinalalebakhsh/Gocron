@@ -9269,7 +9269,33 @@ Output:
             <h1>Midrange Product: Bling-Bling King ($1200.00)</h1>
                 
 ████████████████████████████████████████████████████████████████████████
-389.
+389.Creating Named Nested Templates
+    The define action is used to create a nested template that can be executed by name, 
+    which allows content to
+    be defined once and used repeatedly with the template action
+
+    example:
+    template.html:
+        {{ define "currency" }}{{ printf "$%.2f" . }}{{ end }}
+        {{ define "basicProduct" -}}
+            Name: {{ .Name }}, Category: {{ .Category }}, Price,
+                {{- template "currency" .Price }}
+        {{- end }}
+        {{ define "expensiveProduct" -}}
+            Expensive Product {{ .Name }} ({{ template "currency" .Price }})
+        {{- end }}
+        <h1>There are {{ len . }} products in the source data.</h1>
+        <h1>First product: {{ index . 0 }}</h1>
+        {{ range . -}}
+            {{ if lt .Price 100.00 -}}
+                <h1>{{ template "basicProduct" . }}</h1>
+            {{ else if gt .Price 1500.00 -}}
+                <h1>{{ template "expensiveProduct" . }}</h1>
+            {{ else -}}
+                <h1>Midrange Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
+            {{ end -}}
+        {{ end }}
+    
 ████████████████████████████████████████████████████████████████████████
 390.
 ████████████████████████████████████████████████████████████████████████
