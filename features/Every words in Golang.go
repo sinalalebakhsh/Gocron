@@ -9272,14 +9272,7 @@ Output:
 389.Creating Named Nested Templates
     The define action is used to create a nested template that can be executed by name, 
     which allows content to
-<<<<<<< HEAD
     be defined once and used repeatedly with the template action
-=======
-    be defined once and used repeatedly with the template action.
-    A named template can invoke other named templates.
-    demonstrates, with the basicProduct and expensiveProduct templates executing the currency template.
-    Nested named templates can exacerbate whitespace issues because the whitespace around the templates.
->>>>>>> 18c8adc3000f80ef9b481a5ed78998f5164aa126
 
     example:
     template.html:
