@@ -9272,7 +9272,14 @@ Output:
 389.Creating Named Nested Templates
     The define action is used to create a nested template that can be executed by name, 
     which allows content to
+<<<<<<< HEAD
     be defined once and used repeatedly with the template action
+=======
+    be defined once and used repeatedly with the template action.
+    A named template can invoke other named templates.
+    demonstrates, with the basicProduct and expensiveProduct templates executing the currency template.
+    Nested named templates can exacerbate whitespace issues because the whitespace around the templates.
+>>>>>>> 18c8adc3000f80ef9b481a5ed78998f5164aa126
 
     example:
     template.html:
@@ -9295,9 +9302,92 @@ Output:
                 <h1>Midrange Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
             {{ end -}}
         {{ end }}
+<<<<<<< HEAD
     
+=======
+    Output:
+
+
+
+        <h1>There are 8 products in the source data.</h1>
+        <h1>First product: {Kayak Watersports 279}</h1>
+        <h1>Midrange Product: Kayak ($279.00)</h1>
+            <h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
+            <h1>Name: Soccer Ball, Category: Soccer, Price,$19.50</h1>
+            <h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+            <h1>Expensive Product Stadium ($79500.00)</h1>
+            <h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+            <h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>
+            <h1>Midrange Product: Bling-Bling King ($1200.00)</h1>
+
+
+    The define keyword is followed by the template name in quotes, 
+    and the template is terminated by the end keyword. 
+    The template keyword is used to execute a named template, 
+    specifying the template name and a data value:
+        ...
+        {{- template "currency" .Price }}
+        ...
+>>>>>>> 18c8adc3000f80ef9b481a5ed78998f5164aa126
 ████████████████████████████████████████████████████████████████████████
-390.
+390.Selecting a Named Template in the main.go
+    Using the define and end keywords for the main template content excludes the whitespace used to
+    separate the other named templates.
+
+    Adding a Named Template in the template.html:
+        {{ define "currency" }}{{ printf "$%.2f" . }}{{ end }}
+        {{ define "basicProduct" -}}
+            Name: {{ .Name }}, Category: {{ .Category }}, Price,
+                {{- template "currency" .Price }}
+        {{- end }}
+        {{ define "expensiveProduct" -}}
+            Expensive Product {{ .Name }} ({{ template "currency" .Price }})
+        {{- end }}
+        {{ define "mainTemplate" -}}
+            <h1>There are {{ len . }} products in the source data.</h1>
+            <h1>First product: {{ index . 0 }}</h1>
+            {{ range . -}}
+                {{ if lt .Price 100.00 -}}
+                    <h1>{{ template "basicProduct" . }}</h1>
+                {{ else if gt .Price 1500.00 -}}
+                    <h1>{{ template "expensiveProduct" . }}</h1>
+                {{ else -}}
+                    <h1>Midrange Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
+                {{ end -}}
+            {{ end }}
+        {{- end}}
+    main.go:
+        package main
+        import (
+            "html/template"
+            "os"
+        )
+        func Exec(t *template.Template) error {
+            return t.Execute(os.Stdout, Products)
+        }
+        func main() {
+            allTemplates, err := template.ParseGlob("templates/*.html")
+            if (err == nil) {
+                selectedTemplated := allTemplates.Lookup("mainTemplate")
+                err = Exec(selectedTemplated)
+            }
+            if (err != nil) {
+                Printfln("Error: %v %v", err.Error())
+            }
+        }
+    
+    Any of the named templates can be executed directly, but I have selected the mainTemplate
+    Output:
+        <h1>There are 8 products in the source data.</h1>
+        <h1>First product: {Kayak Watersports 279}</h1>
+        <h1>Midrange Product: Kayak ($279.00)</h1>
+            <h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
+            <h1>Name: Soccer Ball, Category: Soccer, Price,$19.50</h1>
+            <h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+            <h1>Expensive Product Stadium ($79500.00)</h1>
+            <h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+            <h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>
+            <h1>Midrange Product: Bling-Bling King ($1200.00)</h1>
 ████████████████████████████████████████████████████████████████████████
 391.
 ████████████████████████████████████████████████████████████████████████
