@@ -9302,9 +9302,7 @@ Output:
                 <h1>Midrange Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
             {{ end -}}
         {{ end }}
-<<<<<<< HEAD
     
-=======
     Output:
 
 
@@ -9328,7 +9326,6 @@ Output:
         ...
         {{- template "currency" .Price }}
         ...
->>>>>>> 18c8adc3000f80ef9b481a5ed78998f5164aa126
 ████████████████████████████████████████████████████████████████████████
 390.Selecting a Named Template in the main.go
     Using the define and end keywords for the main template content excludes the whitespace used to
