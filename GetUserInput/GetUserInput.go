@@ -62,6 +62,9 @@ func GetUserInput() {
 				FirstInput , SecondInput := SliceOfWords[0], SliceOfWords[1]
 				for Index := range features.OriginalSingleDefExamples.MapSingleDefEx {
 					if FirstInput == Index && SecondInput == "example" {
+						words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[FirstInput])
+						features.PrintWordByWord(words)
+						fmt.Println()
 						color.HiMagenta(fmt.Sprintln("⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐"))
 						color.HiMagenta(fmt.Sprintln(features.OriginalSingleDefExamples.MapSingleDefEx[Index]))
 						color.HiMagenta(fmt.Sprintln("⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐"))
