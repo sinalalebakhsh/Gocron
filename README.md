@@ -6,15 +6,14 @@ Date:2023-9-20-Sunday-September
 ## Features In Versions
 
 <details>
-  <summary>V1.0.4 
+  <summary>⭐ V1.0.4 
   </summary>
 	Add Goroutines for searching concurently in data
 </details>
-
 <details>
-  <summary>V1.0.5 
+  <summary>⭐ V1.0.5 
   </summary>
-		⭐⭐⭐⭐ Add Single Examples for better learning.
+		Add Single Examples for better learning.
 </details>
 
 
