@@ -8500,6 +8500,7 @@ Output:
                 }
             }
         }
+    =============================
     Output:
         Username: Alice
         File does not exist: no_such_file.txt
@@ -8544,6 +8545,7 @@ Output:
                 Printfln("Error %v", err.Error())
             }
         }
+    =============================
     Output:
         Username: Alice
         Match: /home/sina/0-Repo/TEST-2/cheap.json
@@ -8576,6 +8578,7 @@ Output:
                 Printfln("Error %v", err.Error())
             }
         }
+    =============================
     Output:
         Username: Alice
         Path /home/sina/0-Repo/TEST-2, Size: 4096
@@ -8761,6 +8764,7 @@ Output:
                 Printfln("Error: %v", err.Error())
             }
         }
+    =============================
     Output:
         <h1>Template Value: {Kayak Watersports 279}</h1>
 ████████████████████████████████████████████████████████████████████████
@@ -8790,6 +8794,7 @@ Output:
                 Printfln("Error: %v %v", err1.Error(), err2.Error())
             }
         }
+    =============================
     Output:
         <h1>Template Value: {Kayak Watersports 279}</h1>
         <h1>Extras Template Value: {Kayak Watersports 279}</h1>
@@ -8826,6 +8831,7 @@ Output:
                     Printfln("Error: %v %v", err1.Error())
                 }
             }
+    =============================
     Output:
         <h1>Template Value: {Kayak Watersports 279}</h1>
         <h1>Extras Template Value: {Kayak Watersports 279}</h1>
@@ -8851,6 +8857,7 @@ Output:
                 Printfln("Error: %v %v", err.Error())
             }
         }
+    =============================
     Output:
         Template name: extras.html
         Template name: template.html
@@ -8880,6 +8887,7 @@ Output:
                 Printfln("Error: %v %v", err.Error())
             }
         }
+    =============================
     Output:
         <h1>Template Value: {Kayak Watersports 279}</h1>
 ████████████████████████████████████████████████████████████████████████
@@ -8964,6 +8972,7 @@ Output:
         <h1>Price: {{ .Price }}</h1>
         <h1>Tax: {{ .AddTax }}</h1>
         <h1>Discount Price: {{ .ApplyDiscount 10 }}</h1>
+    =============================
     Output:
         <h1>Template Value: {Kayak Watersports 279}</h1>
         <h1>Name: Kayak</h1>
@@ -9001,6 +9010,7 @@ Output:
         <h1>Price: {{ printf "$%.3f" .Price }}</h1>
         <h1>Tax: {{ printf "$%.2f" .AddTax }}</h1>
         <h1>Discount Price: {{ .ApplyDiscount 10 }}</h1>
+    =============================
     Output:
         <h1>Template Value: {Kayak Watersports 279}</h1>
         <h1>Name: Kayak</h1>
@@ -9022,6 +9032,7 @@ Output:
         <h1>Price: {{ printf "$%.2f" .Price }}</h1>
         <h1>Tax: {{ printf "$%.2f" .AddTax }}</h1>
         <h1>Discount Price: {{ .ApplyDiscount 10 | printf "$%.2f" }}</h1>
+    =============================
     Output:
         <h1>Template Value: {Kayak Watersports 279}</h1>
         <h1>Name: Kayak</h1>
@@ -9043,6 +9054,7 @@ Output:
         <h1>Price: {{ printf "$%.2f" .Price }}</h1>
         <h1>Tax: {{ printf "$%.2f" .AddTax }}</h1>
         <h1>Discount Price: {{ printf "$%.2f" (.ApplyDiscount 10) }}</h1>
+    =============================
     Output:
         <h1>Template Value: {Kayak Watersports 279}</h1>
         <h1>Name: Kayak</h1>
@@ -9063,6 +9075,7 @@ Output:
             Name: {{ .Name }}, Category: {{ .Category }}, Price,
                 {{ printf "$%.2f" .Price }}
         </h1>
+    =============================
     Output:
         <h1>
             Name: Kayak, Category: Watersports, Price,
@@ -9087,8 +9100,7 @@ Output:
                 Name: {{ .Name }}, Category: {{ .Category }}, Price,
                     {{- printf "$%.2f" .Price -}}
         </h1>
-
-
+    =============================
     Output:
         <h1>
                 Name: Kayak, Category: Watersports, Price,
@@ -9109,6 +9121,7 @@ Output:
             {{- "" -}} Name: {{ .Name }}, Category: {{ .Category }}, Price,
                 {{- printf "$%.2f" .Price -}}
         </h1>
+    =============================
     Output:
         <h1>Name: Kayak, Category: Watersports, Price,$279.00</h1>
 ████████████████████████████████████████████████████████████████████████
@@ -9144,6 +9157,7 @@ Output:
                 Printfln("Error: %v %v", err.Error())
             }
         }
+    =============================
     Output:
         <h1>Name: Kayak, Category: Watersports, Price,$279.00</h1>
         <h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
@@ -9171,6 +9185,7 @@ Output:
             <h1>Name: {{ .Name }}, Category: {{ .Category }}, Price,
                 {{- printf "$%.2f" .Price }}</h1>
         {{ end }}
+    =============================
     Output:
         <h1>There are 8 products in the source data.</h1>
         <h1>First product: {Kayak Watersports 279}</h1>
@@ -9205,7 +9220,7 @@ Output:
                     {{- printf "$%.2f" .Price }}</h1>
             {{ end -}}
         {{ end }}
-
+    =============================
     Output:
         <h1>There are 8 products in the source data.</h1>
         <h1>First product: {Kayak Watersports 279}</h1>
@@ -9256,6 +9271,7 @@ Output:
                 Printfln("Error: %v %v", err.Error())
             }
         }
+    =============================
     Output:
         <h1>There are 8 products in the source data.</h1>
         <h1>First product: {Kayak Watersports 279}</h1>
@@ -9295,7 +9311,7 @@ Output:
                 <h1>Midrange Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
             {{ end -}}
         {{ end }}
-    
+    =============================
     Output:
 
 
@@ -9345,10 +9361,8 @@ Output:
                     <h1>Midrange Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
                 {{ end -}}
             {{ end }}
-        {{- end}}
-    
-    
-    ===============
+        {{- end}}    
+    =============================
     main.go:
         package main
         import (
@@ -9368,8 +9382,7 @@ Output:
                 Printfln("Error: %v %v", err.Error())
             }
         }
-    
-    ========
+    =============================
     Any of the named templates can be executed directly, but I have selected the mainTemplate
     Output:
         <h1>There are 8 products in the source data.</h1>
@@ -9424,7 +9437,6 @@ Output:
                 <h2>Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h2>
             {{ end -}}
         {{ end }}
-    
     ========================
     main.go:
         package main
@@ -9451,8 +9463,7 @@ Output:
                 Printfln("Error: %v %v", err.Error())
             }
         }
-    
-    ========================
+    =============================
     Output:
         <h1>This is the layout header</h1>
         
@@ -9476,8 +9487,47 @@ Output:
         <h1>This is the layout footer</h1>    
 ████████████████████████████████████████████████████████████████████████
 392.Defining Template Functions
-    Page617
+    example:
+    main.go File in the htmltext Folder:
+        package main
+        import (
+            "html/template"
+            "os"
+        )
+        func GetCategories(products []Product) (categories []string) {
+            catMap := map[string]string {}
+            for _, p := range products {
+                if (catMap[p.Category] == "") {
+                    catMap[p.Category] = p.Category
+                    categories = append(categories, p.Category)
+                }
+            }
+            return
+        }
+        func Exec(t *template.Template) error {
+            return t.Execute(os.Stdout, Products)
+        }
+        func main() {
+            allTemplates := template.New("allTemplates")
+            allTemplates.Funcs(map[string]interface{} {
+                "getCats": GetCategories,
+            })
+            allTemplates, err := allTemplates.ParseGlob("templates/*.html")
+            if (err == nil) {
+                selectedTemplated := allTemplates.Lookup("mainTemplate")
+                err = Exec(selectedTemplated)
+            }
+            if (err != nil) {
+                Printfln("Error: %v %v", err.Error())
+            }
+        }
+    =============================
+    Output:
+        <h1>This is the layout header</h1>
+        
+            <h2>There are 8 products in the source data.</h2>
 
+        <h1>This is the layout footer</h1>    
 ████████████████████████████████████████████████████████████████████████
 393.
 ████████████████████████████████████████████████████████████████████████
