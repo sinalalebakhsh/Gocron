@@ -43,10 +43,7 @@ func GetUserInput() {
 		// sort for iteration convenience 
 		sort.Strings(SliceOfMap)
 	
-		Regulators := make(chan bool )
-		// REGEX
-		Regulators <- SINA(FinalInput)
-
+		
 		go func(){
 			for _, value := range SliceOfMap {
 				FinalInput = strings.ToLower(FinalInput)
@@ -72,6 +69,18 @@ func GetUserInput() {
 				}
 			}
 		}()
+
+		go func(){
+			for _, Value := range features.TitleOfRegEx {
+				FinalInput = strings.ToUpper(FinalInput)
+				if FinalInput == Value {
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+					color.HiBlue(fmt.Sprintln(features.OriginalAllRegex))
+					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+					break
+				}
+			}
+		}()
 		go func() {
 			for _, value := range features.TitleOfTimeData {
 				FinalInput = strings.ToUpper(FinalInput)
@@ -79,7 +88,7 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					color.HiBlue(fmt.Sprintln(features.OriginalTimeData))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					// Regulators = false
+					
 					break
 				}
 			}
@@ -91,7 +100,7 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					color.HiBlue(fmt.Sprintln(features.OriginalReadingandWriting))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					// Regulators = false
+					
 					break
 				}
 			}
@@ -103,7 +112,7 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					color.HiBlue(fmt.Sprintln(features.OriginalJSONData))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					// Regulators = false
+					
 					break
 				}
 			}
@@ -115,7 +124,7 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					color.HiBlue(fmt.Sprintln(features.OriginalWorkWithFiles))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					// Regulators = false
+					
 					break
 				}
 			}	
@@ -127,7 +136,7 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					color.HiBlue(fmt.Sprintln(features.OriginalHTMLAndTemplates))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					// Regulators = false
+					
 					break
 				}
 			}
@@ -147,29 +156,8 @@ func GetUserInput() {
 			features.HelpMessage()
 		}
 		
-		// if !Regulators {
-		// 	color.Red(fmt.Sprintln("---------------------"))
-		// 	color.Red(fmt.Sprintf("Do not add %s yet.", FinalInput))
-		// 	color.Red(fmt.Sprintln("---------------------"))
-		// }
+		
 		
 	}
 }
 
-
-func SINA(FinalInput string)  bool {
-	myFalse := true
-	for _, Value := range features.TitleOfRegEx {
-		FinalInput = strings.ToUpper(FinalInput)
-		if FinalInput == Value {
-			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-			color.HiBlue(fmt.Sprintln(features.OriginalAllRegex))
-			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-			// Regulators = false
-			myFalse = false
-			return myFalse
-			// break
-		}
-	}
-	return myFalse
-}

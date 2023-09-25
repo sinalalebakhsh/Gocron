@@ -1,14 +1,8 @@
 package features
 
 var TitleOfRegEx = []string{
-	"REGEX",
-	"ALLREGEX",
 	"ALL REGEX",
-	"REGEXS",
-	"ALLREGEXS",
-	"ALL REGEXS",
-	"REGULAREXPRESSION",
-	"REGULAR EXPRESSION",
+	"ALL REGULAR EXPRESSION",
 }
 
 type AllRegEx struct {

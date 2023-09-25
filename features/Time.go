@@ -1,16 +1,8 @@
 package features
 
 var TitleOfTimeData = []string{
-    "TIME",
-    "TIMES",
-	"THE TIME",
-	"THETIME",
-	"DATA TIME",
-	"DATATIME",
-	"ALL DATA TIME",
-	"ALLDATATIME",
-	"ALL DATA TIMES",
-	"ALLDATATIMES",
+    "ALL TIME",
+    "ALLTIME",
 }
 
 type TimeData struct {
