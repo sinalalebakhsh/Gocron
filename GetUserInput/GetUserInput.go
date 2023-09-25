@@ -36,9 +36,9 @@ func GetUserInput() {
 
 
 		// in here processing on the map for getting keys and ignore values 
-		for key, NotUsed := range features.OriginSingleDef.SingleDefinition {
-			if NotUsed == "nil" {
-				fmt.Println(NotUsed, "!!!!!!")
+		for key, error1 := range features.OriginSingleDef.SingleDefinition {
+			if error1 == "nil" {
+				fmt.Println(error1, "!!!!!!")
 			}
 			// converting map keys to slice for iteration
 			SliceOfMap = append(SliceOfMap, key)
@@ -50,16 +50,38 @@ func GetUserInput() {
 		
 		Regulators := false
 		
-		for _, value := range SliceOfMap {
-			FinalInput = strings.ToLower(FinalInput)
-			if FinalInput == value {
-				words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[value])
-				features.PrintWordByWord(words)
-				fmt.Println()
-				Regulators = true
-				break
+		go func ()  {
+			for _, value := range SliceOfMap {
+				FinalInput = strings.ToLower(FinalInput)
+				if FinalInput == value {
+					words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[value])
+					features.PrintWordByWord(words)
+					fmt.Println()
+					Regulators = true
+					break
+				}
 			}
-		}
+
+			FinalInput = strings.ToLower(FinalInput)
+			FinalInput = strings.TrimSpace(FinalInput)
+			SliceOfWords := strings.Split(FinalInput, " ")
+			if len(SliceOfWords) == 2  {
+				FirstInput , SecondInput := SliceOfWords[0], SliceOfWords[1]
+				for Index := range features.OriginalSingleDefExamples.MapSingleDefEx {
+					if FirstInput == Index && SecondInput == "example" {
+						color.HiMagenta(fmt.Sprintln("⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐"))
+						color.HiMagenta(fmt.Sprintln(features.OriginalSingleDefExamples.MapSingleDefEx[Index]))
+						color.HiMagenta(fmt.Sprintln("⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐"))
+
+					}
+
+
+				}
+			}
+
+
+
+		}()
 	
 		go func() {
 			for _, Value := range features.TitleOfRegEx {
@@ -149,7 +171,7 @@ func GetUserInput() {
 			break
 		}
 
-		time.Sleep(time.Second)
+		time.Sleep(time.Second * 2)
 		FinalInput = strings.ToLower(FinalInput)
 		if FinalInput == "help" {
 			features.HelpMessage()

@@ -1,16 +1,10 @@
 package features
 
 type SingleDefinitions struct {
-	SliceSingleDefinitions []string
 	SingleDefinition       map[string]string
 }
 
 var OriginSingleDef SingleDefinitions = SingleDefinitions{
-	SliceSingleDefinitions: []string{
-		"build",
-		"flag",
-		"flag package",
-	},
 
 	SingleDefinition: map[string]string{
 		"create environment go":      `0.Create Environment GO in Command Line Interface Go: 1- go mod init YOURNAME 2- go work init YOURWORKDIRECTORY 3- go run main.go  OR  go run projectName.go`,
