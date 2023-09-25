@@ -4,12 +4,21 @@ Date:2023-9-20-Sunday-September
 
 
 ## Features In Versions
-V1.0.4	
-Add Goroutines for searching concurently in data
 
-V1.0.5
+<details>
+  <summary>V1.0.4 
+  </summary>
+	Add Goroutines for searching concurently in data
+</details>
+
+<details>
+  <summary>V1.0.5 
+  </summary>
+		⭐⭐⭐⭐ Add Single Examples for better learning.
+</details>
+
+
 	
-	⭐⭐⭐⭐ Add Single Examples for better learning.
 
 ### Indtroduction 
 	is a API for learning GO language with example.
