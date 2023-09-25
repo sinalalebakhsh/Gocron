@@ -9,34 +9,34 @@ var OriginalSingleDefExamples = SingleDefinitionExamples{
 		"for":`
 56.for-1:
 example: 
-	main.go
-		package main
+main.go
+	package main
 
-		import (
-			"fmt"
-		)
+	import (
+		"fmt"
+	)
 
-		func main() {
+	func main() {
 
-			counter := "EXAMPLE"
+		counter := "EXAMPLE"
 
-			// Enumerating Sequences:
-			for index, character := range counter {
-				fmt.Println("Index:", index, "Character:", string(character))
-			}
-
+		// Enumerating Sequences:
+		for index, character := range counter {
+			fmt.Println("Index:", index, "Character:", string(character))
 		}
-	===========================
-	in Terminal: go run .
-	===========================
-	Output:
-		Index: 0 Character: E
-		Index: 1 Character: X
-		Index: 2 Character: A
-		Index: 3 Character: M
-		Index: 4 Character: P
-		Index: 5 Character: L
-		Index: 6 Character: E`,
+
+	}
+===========================
+in Terminal: go run .
+===========================
+Output:
+	Index: 0 Character: E
+	Index: 1 Character: X
+	Index: 2 Character: A
+	Index: 3 Character: M
+	Index: 4 Character: P
+	Index: 5 Character: L
+	Index: 6 Character: E`,
 	},
 }
 
