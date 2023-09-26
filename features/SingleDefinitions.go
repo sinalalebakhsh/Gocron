@@ -43,7 +43,7 @@ var OriginSingleDef SingleDefinitions = SingleDefinitions{
 		"trimrightFunc(s, func)":     "TrimRightFunc(s, func): function returns the string s from which any trailing character for which a custom function returns true are removed.",
 		"join(slice, sep)":           "Join(slice, sep): function combines the elements in the specified string slice, with the specified separator string placed between elements.",
 		"repeat(s, count)":           "Repeat(s, count): function generates a string by repeating the string s for a specified number of times.",
-		"for":                        "56.for:	Go allows loops only inside of functions.\nThe for keyword is used to create loops that repeatedly execute statements. The most basic for loops will repeat indefinitely unless interrupted by the break keyword Incorporating the Condition into the Loop",
+		"for":                        "56.for: Go allows loops only inside of functions. The for keyword is used to create loops that repeatedly execute statements. The most basic for loops will repeat indefinitely unless interrupted by the break keyword Incorporating the Condition into the Loop",
 	},
 }
 

@@ -6,9 +6,6 @@ import (
 	"os"
 	"sort"
 	"strings"
-	// "time"
-
-	// "time"
 	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/features"
 )
@@ -65,9 +62,9 @@ func GetUserInput() {
 						words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[FirstInput])
 						features.PrintWordByWord(words)
 						fmt.Println()
-						color.HiMagenta(fmt.Sprintln("⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐"))
+						color.HiMagenta(fmt.Sprintln("============================================◉🧭🧭🧭🧭🧭🧭🧭◉=========================================="))
 						color.HiMagenta(fmt.Sprintln(features.OriginalSingleDefExamples.MapSingleDefEx[Index]))
-						color.HiMagenta(fmt.Sprintln("⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐"))
+						color.HiMagenta(fmt.Sprintln("============================================◉⭐⭐⭐⭐⭐⭐⭐◉=========================================="))
 					}
 				}
 			}
@@ -81,7 +78,7 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln(features.OriginalAllRegex))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					break
-				}
+				} 
 			}
 		}()
 		go func() {
@@ -91,9 +88,8 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					color.HiBlue(fmt.Sprintln(features.OriginalTimeData))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					
 					break
-				}
+				} 
 			}
 		}()
 		go func() {
@@ -103,9 +99,8 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					color.HiBlue(fmt.Sprintln(features.OriginalReadingandWriting))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					
 					break
-				}
+				} 
 			}
 		}()
 		go func() {
@@ -115,9 +110,8 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					color.HiBlue(fmt.Sprintln(features.OriginalJSONData))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					
 					break
-				}
+				} 
 			}
 		}()
 		go func() {
@@ -127,9 +121,8 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					color.HiBlue(fmt.Sprintln(features.OriginalWorkWithFiles))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					
 					break
-				}
+				} 
 			}	
 		}()
 		go func() {
@@ -139,9 +132,8 @@ func GetUserInput() {
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
 					color.HiBlue(fmt.Sprintln(features.OriginalHTMLAndTemplates))
 					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					
 					break
-				}
+				} 
 			}
 		}()
 	
@@ -158,9 +150,12 @@ func GetUserInput() {
 		if FinalInput == "help" {
 			features.HelpMessage()
 		}
-		
-		
-		
 	}
 }
 
+
+func PrintNotAddYet(FinalInput string){
+	color.HiRed(fmt.Sprintln("================================="))
+	color.HiRed(fmt.Sprintf("Not add %v yet.",FinalInput))
+	color.HiRed(fmt.Sprintln("================================="))
+}
