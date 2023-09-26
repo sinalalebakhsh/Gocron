@@ -1,16 +1,12 @@
 package features
 
 var TitleOfRegEx = []string{
-	"ALL REGEX",
-	"ALL REGULAR EXPRESSION",
+    "ALL REGEX", 
+    "ALL REGULAR EXPRESSION",
 }
 
-type AllRegEx struct {
-	allRegex string
-}
-
-var OriginalAllRegex AllRegEx = AllRegEx{
-	allRegex: `
+var OriginalAllRegex = DataBase{
+	alldatafield: `
 
 189.Regular Expressions
     The regular expressions used in this section perform basic matches, but the regexp package

@@ -159,3 +159,5 @@ func PrintNotAddYet(FinalInput string){
 	color.HiRed(fmt.Sprintf("Not add %v yet.",FinalInput))
 	color.HiRed(fmt.Sprintln("================================="))
 }
+
+
