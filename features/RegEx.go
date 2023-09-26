@@ -2,11 +2,11 @@ package features
 
 var TitleOfRegEx = []string{
     "ALL REGEX", 
-    "ALL REGULAR EXPRESSION",
+    "ALLREGEX", 
 }
 
 var OriginalAllRegex = DataBase{
-	alldatafield: `
+	Alldatafield: `
 
 189.Regular Expressions
     The regular expressions used in this section perform basic matches, but the regexp package

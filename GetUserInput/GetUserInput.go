@@ -3,11 +3,11 @@ package getuserinput
 import (
 	"bufio"
 	"fmt"
-	"os"
-	"sort"
-	"strings"
 	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/features"
+	"os"
+	// "sort"
+	"strings"
 )
 
 // after ensure user dont wrote arg more than one like -h or --help
@@ -18,7 +18,6 @@ func GetUserInput() {
 	// if you want just get one more time delete this loop
 	for {
 
-
 		// use bufio Package and os Package for reading and get clear, good and clean,
 		// user input. maybe you want use fmt.Scan or another ways
 		// You can do it. :)
@@ -26,138 +25,128 @@ func GetUserInput() {
 		FinalInput, _ := UserInput.ReadString('\n')
 		FinalInput = strings.TrimSuffix(FinalInput, "\n")
 
-		// get length of map from Single Definition in side file here
-		SliceOfMap := make([]string, 0, len(features.OriginSingleDef.SingleDefinition))
+		FinalInput = strings.ToLower(FinalInput)
+		FinalInput = strings.TrimSpace(FinalInput)
+		SliceOfWords := strings.Split(FinalInput, " ")
 
-		// in here processing on the map for getting keys and ignore values 
-		for key, error1 := range features.OriginSingleDef.SingleDefinition {
-			if error1 == "nil" {
-				fmt.Println(error1, "!!!!!!")
-			}
-			// converting map keys to slice for iteration
-			SliceOfMap = append(SliceOfMap, key)
-		}
-		// sort for iteration convenience 
-		sort.Strings(SliceOfMap)
-	
-		
-		go func(){
-			for _, value := range SliceOfMap {
-				FinalInput = strings.ToLower(FinalInput)
-				if FinalInput == value {
-					words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[value])
-					features.PrintWordByWord(words)
-					fmt.Println()
-					// Regulators = false
-					break
-				}
-			}
-			FinalInput = strings.ToLower(FinalInput)
-			FinalInput = strings.TrimSpace(FinalInput)
-			SliceOfWords := strings.Split(FinalInput, " ")
-			if len(SliceOfWords) == 2  {
-				FirstInput , SecondInput := SliceOfWords[0], SliceOfWords[1]
-				for Index := range features.OriginalSingleDefExamples.MapSingleDefEx {
-					if FirstInput == Index && SecondInput == "example" {
-						words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[FirstInput])
-						features.PrintWordByWord(words)
-						fmt.Println()
-						color.HiMagenta(fmt.Sprintln("============================================◉🧭🧭🧭🧭🧭🧭🧭◉=========================================="))
-						color.HiMagenta(fmt.Sprintln(features.OriginalSingleDefExamples.MapSingleDefEx[Index]))
-						color.HiMagenta(fmt.Sprintln("============================================◉⭐⭐⭐⭐⭐⭐⭐◉=========================================="))
-					}
-				}
-			}
-		}()
-
-		go func(){
-			for _, Value := range features.TitleOfRegEx {
-				FinalInput = strings.ToUpper(FinalInput)
-				if FinalInput == Value {
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					color.HiBlue(fmt.Sprintln(features.OriginalAllRegex))
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					break
-				} 
-			}
-		}()
-		go func() {
-			for _, value := range features.TitleOfTimeData {
-				FinalInput = strings.ToUpper(FinalInput)
-				if FinalInput == value {
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					color.HiBlue(fmt.Sprintln(features.OriginalTimeData))
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					break
-				} 
-			}
-		}()
-		go func() {
-			for _, value := range features.TitleOfReadingWriting {
-				FinalInput = strings.ToUpper(FinalInput)
-				if FinalInput == value {
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					color.HiBlue(fmt.Sprintln(features.OriginalReadingandWriting))
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					break
-				} 
-			}
-		}()
-		go func() {
-			for _, Value := range features.TitleOfSlice {
-				FinalInput = strings.ToUpper(FinalInput)
-				if FinalInput == Value {
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					color.HiBlue(fmt.Sprintln(features.OriginalJSONData))
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					break
-				} 
-			}
-		}()
-		go func() {
-			for _, value := range features.TitleOfWorkingFiles {
-				FinalInput = strings.ToUpper(FinalInput)
-				if FinalInput == value {
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					color.HiBlue(fmt.Sprintln(features.OriginalWorkWithFiles))
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					break
-				} 
-			}	
-		}()
-		go func() {
-			for _, value := range features.TitleOfUsingHTMLAndTextTemplates {
-				FinalInput = strings.ToUpper(FinalInput)
-				if FinalInput == value {
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					color.HiBlue(fmt.Sprintln(features.OriginalHTMLAndTemplates))
-					color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-					break
-				} 
-			}
-		}()
-	
 		// Checks for each entry into the loop
 		// if user input was "exit" so break loop and log out
-		// from Gocron program. 
+		// from Gocron program.
 		Exit := "exit"
+		Help := "help"
 		if FinalInput == strings.ToLower(Exit) {
-			// Regulators = false
-			break
-		}
-		// time.Sleep(time.Second * 3)
-		FinalInput = strings.ToLower(FinalInput)
-		if FinalInput == "help" {
+			features.GoodByePrint()
+			os.Exit(0)
+		} else if FinalInput == strings.ToLower(Help) {
 			features.HelpMessage()
+		} else if len(SliceOfWords) == 2 {
+			FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
+			for Index := range features.OriginalSingleDefExamples.MapSingleDefEx {
+				if FirstInput == Index && SecondInput == "example" {
+					words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[FirstInput])
+					features.PrintWordByWord(words)
+					fmt.Println()
+					color.HiMagenta(fmt.Sprintln("============================================◉🧭🧭🧭🧭🧭🧭🧭◉=========================================="))
+					color.HiMagenta(fmt.Sprintln(features.OriginalSingleDefExamples.MapSingleDefEx[Index]))
+					color.HiMagenta(fmt.Sprintln("============================================◉⭐⭐⭐⭐⭐⭐⭐◉=========================================="))
+				}
+			}
+
 		}
 	}
+
 }
 
-
-func PrintNotAddYet(FinalInput string){
+func PrintNotAddYet(FinalInput string) {
 	color.HiRed(fmt.Sprintln("================================="))
-	color.HiRed(fmt.Sprintf("Not add %v yet.",FinalInput))
+	color.HiRed(fmt.Sprintf("Not add %v yet.", FinalInput))
 	color.HiRed(fmt.Sprintln("================================="))
 }
 
+func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBase) {
 
+	// ===============================================
+	// ALLREGEX
+	if result := searchSlice(FinalInput, features.TitleOfRegEx, features.OriginalAllRegex); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+
+	// // ===============================================
+	// // Time
+	// go func() {
+	// 	for _, value := range features.TitleOfTimeData {
+	// 		FinalInput = strings.ToUpper(FinalInput)
+	// 		if FinalInput == value {
+	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+	// 			color.HiBlue(fmt.Sprintln(features.OriginalTimeData))
+	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+	// 			break
+	// 		}
+	// 	}
+	// }()
+	// // ===============================================
+	// // Read & Writing
+	// go func() {
+	// 	for _, value := range features.TitleOfReadingWriting {
+	// 		FinalInput = strings.ToUpper(FinalInput)
+	// 		if FinalInput == value {
+	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+	// 			color.HiBlue(fmt.Sprintln(features.OriginalReadingandWriting))
+	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+	// 			break
+	// 		}
+	// 	}
+	// }()
+	// // ===============================================
+	// // Working with JSON Files
+	// go func() {
+	// 	for _, Value := range features.TitleOfJSON {
+	// 		FinalInput = strings.ToUpper(FinalInput)
+	// 		if FinalInput == Value {
+	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+	// 			color.HiBlue(fmt.Sprintln(features.OriginalJSONData))
+	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+	// 			break
+	// 		}
+	// 	}
+	// }()
+	// // ===============================================
+	// // Working with Files
+	// go func() {
+	// 	for _, value := range features.TitleOfWorkingFiles {
+	// 		FinalInput = strings.ToUpper(FinalInput)
+	// 		if FinalInput == value {
+	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+	// 			color.HiBlue(fmt.Sprintln(features.OriginalWorkWithFiles))
+	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+	// 			break
+	// 		}
+	// 	}
+	// }()
+	// // ===============================================
+	// // HTML & Text Templates
+	// go func() {
+	// 	for _, value := range features.TitleOfUsingHTMLAndTextTemplates {
+	// 		FinalInput = strings.ToUpper(FinalInput)
+	// 		if FinalInput == value {
+	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+	// 			color.HiBlue(fmt.Sprintln(features.OriginalHTMLAndTemplates))
+	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
+	// 			break
+	// 		}
+	// 	}
+	// }()
+
+	MyChann1 <- features.DataBase{} // Return an empty struct if not found
+
+}
+
+func searchSlice(input string, slice []string, obj features.DataBase) features.DataBase {
+	for _, item := range slice {
+		if strings.Contains(item, input) {
+			return obj
+		}
+	}
+	return features.DataBase{}
+}

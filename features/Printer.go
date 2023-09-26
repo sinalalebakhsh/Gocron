@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"strings"
 	"time"
+
+	"github.com/fatih/color"
 )
 
 func SplitIntoWords(text string) []string {
@@ -32,3 +34,10 @@ func PrintWordByWord(words []string) {
 	}
 }
 
+func GoodByePrint(){
+	color.HiBlue(`
+┌─────────────────┐
+|    GoodBye      |
+└─────────────────┘
+	`)
+}

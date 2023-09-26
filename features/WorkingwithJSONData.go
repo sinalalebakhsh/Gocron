@@ -1,6 +1,6 @@
 package features
 
-var TitleOfSlice = []string{
+var TitleOfJSON = []string{
 	"ALL JSON",
 	"ALLJSON",
 	"ALL JSON DATA",

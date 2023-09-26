@@ -5,10 +5,10 @@ var TitleOfTimeData = []string{
     "ALLTIME",
 }
 
-type DataBase struct{ alldatafield string }
+type DataBase struct{ Alldatafield string }
 
 var OriginalTimeData = DataBase{
-	alldatafield: `
+	Alldatafield: `
 243.Putting Dates, Times, and Durations in Context
 What are they?
 The features provided by the time package are used to represent

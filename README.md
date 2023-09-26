@@ -54,3 +54,26 @@ Date:2023-9-20-Sunday-September
 	go version
 
 
+### 2-Using
+-----------------------------------------
+
+You can use this command before start:
+
+#### ◉============ Run
+	go run .
+	
+#### ◉============ Build
+	go build .
+	than:
+	./Gocron
+	
+#### ◉============ Help
+	./Gocron -h 
+	./Gocron help
+	./Gocron -help
+	./Gocron --help
+
+#### ◉============ Show All
+	./Gocron all
+	./Gocron -all
+	./Gocron --all

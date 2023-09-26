@@ -26,10 +26,37 @@ like this:
 	`)
 
 func HelpMessage() {
-	color.HiBlue(LOGO)
+	color.HiBlue(`
+	┌─────────────────┐
+	|  GoCron v1.0.4  |
+	└─────────────────┘
+	`)
 	words := SplitIntoWords(Message)
 	PrintWordByWord(words)
 	fmt.Println()
+	color.HiBlue(fmt.Sprintln(`You can use this command before start:
+	◉============ Run
+	1-
+	go run .
+	
+	◉============ Build
+	1-
+	go build .
+	2-
+	./Gocron
+	
+	◉============ Help
+	./Gocron -h 
+	./Gocron help
+	./Gocron -help
+	./Gocron --help
+
+	◉============ Show All
+	./Gocron all
+	./Gocron -all
+	./Gocron --all
+	`))
+	
 }
 
 var TitleOfHelp = []string{

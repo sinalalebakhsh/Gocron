@@ -8,7 +8,6 @@ var TitleOfEveryWords = []string{
 	"all",
 	"-all",
 	"--all",
-	"everything",
 }
 
 var OriginalFeatures Features = Features{

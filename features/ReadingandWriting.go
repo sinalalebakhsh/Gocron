@@ -10,7 +10,7 @@ var TitleOfReadingWriting = []string{
 
 
 var OriginalReadingandWriting  = DataBase{
-	alldatafield: `
+	Alldatafield: `
 273.Reading and Writing Data
     These interfaces are used wherever data is read or written, which means that any
     source or destination for data can be treated in much the same way so that writing data to a file, for example,
