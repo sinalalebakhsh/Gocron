@@ -6,7 +6,7 @@ import (
 	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/features"
 	"os"
-	// "sort"
+	"sort"
 	"strings"
 )
 
@@ -50,6 +50,20 @@ func GetUserInput() {
 					color.HiMagenta(fmt.Sprintln(features.OriginalSingleDefExamples.MapSingleDefEx[Index]))
 					color.HiMagenta(fmt.Sprintln("============================================◉⭐⭐⭐⭐⭐⭐⭐◉=========================================="))
 				}
+			}
+
+		} else if len(SliceOfWords) < 2 {
+			
+			MyChann1 := make(chan features.DataBase)
+			go GetUserInputSendChannel(FinalInput, MyChann1)
+
+			result := <-MyChann1
+			if result.Alldatafield != "" {
+				color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
+				color.HiBlue(fmt.Sprintln(result))
+				color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
+			} else if result.Alldatafield == "" {
+				PrintNotAddYet(FinalInput)
 			}
 
 		}
