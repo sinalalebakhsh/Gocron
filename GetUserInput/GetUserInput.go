@@ -87,7 +87,6 @@ func PrintNotAddYet(FinalInput string) {
 }
 
 func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBase) {
-
 	// ===============================================
 	// RegEx
 	// for searching on slice = "ALL REGEX", "ALLREGEX",
@@ -95,71 +94,43 @@ func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBas
 		MyChann1 <- result
 		return
 	}
-
-	// // ===============================================
-	// // Time
-	// for searching on slice = "ALL TIME", "ALLTIME",
+	// ===============================================
+	// Time
+	// searching for on slice = "ALL TIME", "ALLTIME",
 	if result := searchSlice(FinalInput, features.TitleOfTimeData, features.OriginalTimeData); result.Alldatafield != "" {
 		MyChann1 <- result
 		return
+	}	
+	// ===============================================
+	// Read & Writing
+	// searching for on slice = "READING AND WRITING DATA", "READINGANDWRITINGDATA", "ALL READING AND WRITING DATA", "ALLREADINGANDWRITINGDATA",
+	if result := searchSlice(FinalInput, features.TitleOfReadingWriting, features.OriginalReadingandWriting); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
 	}
-	
-	
-	// // ===============================================
-	// // Read & Writing
-	// go func() {
-	// 	for _, value := range features.TitleOfReadingWriting {
-	// 		FinalInput = strings.ToUpper(FinalInput)
-	// 		if FinalInput == value {
-	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-	// 			color.HiBlue(fmt.Sprintln(features.OriginalReadingandWriting))
-	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-	// 			break
-	// 		}
-	// 	}
-	// }()
-	// // ===============================================
-	// // Working with JSON Files
-	// go func() {
-	// 	for _, Value := range features.TitleOfJSON {
-	// 		FinalInput = strings.ToUpper(FinalInput)
-	// 		if FinalInput == Value {
-	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-	// 			color.HiBlue(fmt.Sprintln(features.OriginalJSONData))
-	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-	// 			break
-	// 		}
-	// 	}
-	// }()
-	// // ===============================================
-	// // Working with Files
-	// go func() {
-	// 	for _, value := range features.TitleOfWorkingFiles {
-	// 		FinalInput = strings.ToUpper(FinalInput)
-	// 		if FinalInput == value {
-	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-	// 			color.HiBlue(fmt.Sprintln(features.OriginalWorkWithFiles))
-	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-	// 			break
-	// 		}
-	// 	}
-	// }()
-	// // ===============================================
-	// // HTML & Text Templates
-	// go func() {
-	// 	for _, value := range features.TitleOfUsingHTMLAndTextTemplates {
-	// 		FinalInput = strings.ToUpper(FinalInput)
-	// 		if FinalInput == value {
-	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-	// 			color.HiBlue(fmt.Sprintln(features.OriginalHTMLAndTemplates))
-	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-	// 			break
-	// 		}
-	// 	}
-	// }()
+	// ===============================================
+	// Working with JSON Files
+	// searching for on slice = "ALL HTML AND TEMPLATE", "ALLHTMLANDTEMPLATE",
+	if result := searchSlice(FinalInput, features.TitleOfJSON, features.OriginalJSONData); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+	// ===============================================
+	// HTML & Text Templates
+	// searching for on slice = "ALL HTML AND TEMPLATE", "ALLHTMLANDTEMPLATE",
+	if result := searchSlice(FinalInput, features.TitleOfUsingHTMLAndTextTemplates, features.OriginalHTMLAndTemplates); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+	// ===============================================
+	//  Working with Files
+	// searching for on slice = "ALL WORKING WITH FILES", "ALLWORKINGWITHFILES",
+	if result := searchSlice(FinalInput, features.TitleOfWorkingFiles, features.OriginalWorkWithFiles); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
 
 	MyChann1 <- features.DataBase{} // Return an empty struct if not found
-
 }
 
 func searchSlice(input string, slice []string, obj features.DataBase) features.DataBase {

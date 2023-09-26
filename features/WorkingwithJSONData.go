@@ -11,12 +11,8 @@ var TitleOfJSON = []string{
 	"ALLWORKINGWITHJSONDATA",
 }
 
-type WorkingwithJSONData struct {
-	allJSONData string
-}
-
-var OriginalJSONData = WorkingwithJSONData{
-	allJSONData: `
+var OriginalJSONData = DataBase{
+	Alldatafield: `
 302.Working with JSON Data
     Putting Working with JSON Data in Context
 

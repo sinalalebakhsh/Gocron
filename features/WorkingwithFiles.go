@@ -5,13 +5,8 @@ var TitleOfWorkingFiles = []string{
 	"ALLWORKINGWITHFILES",
 }
 
-
-type WorkingWithFiles struct {
-	allWorkWithFiles string
-}
-
-var OriginalWorkWithFiles = WorkingWithFiles{
-	allWorkWithFiles: `
+var OriginalWorkWithFiles = DataBase{
+	Alldatafield: `
 334.Working with Files
     Putting Working with Files in Context
         

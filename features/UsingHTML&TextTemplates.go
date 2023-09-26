@@ -5,13 +5,8 @@ var TitleOfUsingHTMLAndTextTemplates = []string{
 	"ALLHTMLANDTEMPLATE",
 }
 
-
-type UsingHTMLTemplates struct {
-	allHTMLAndTemplates string
-}
-
-var OriginalHTMLAndTemplates = UsingHTMLTemplates {
-	allHTMLAndTemplates: `
+var OriginalHTMLAndTemplates = DataBase {
+	Alldatafield: `
 336.`,
 }
 
