@@ -6,7 +6,7 @@ import (
 	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/features"
 	"os"
-	"sort"
+	// "sort"
 	"strings"
 )
 
@@ -27,6 +27,9 @@ func GetUserInput() {
 
 		FinalInput = strings.ToLower(FinalInput)
 		FinalInput = strings.TrimSpace(FinalInput)
+		FinalInputTrimSpaced := strings.TrimSpace(FinalInput)
+
+		
 		SliceOfWords := strings.Split(FinalInput, " ")
 
 		// Checks for each entry into the loop
@@ -41,6 +44,7 @@ func GetUserInput() {
 			features.HelpMessage()
 		} else if len(SliceOfWords) == 2 {
 			FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
+			
 			for Index := range features.OriginalSingleDefExamples.MapSingleDefEx {
 				if FirstInput == Index && SecondInput == "example" {
 					words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[FirstInput])
@@ -51,22 +55,27 @@ func GetUserInput() {
 					color.HiMagenta(fmt.Sprintln("============================================◉⭐⭐⭐⭐⭐⭐⭐◉=========================================="))
 				}
 			}
+		} 
+	
+	
+		for _, Value := range features.TitleOfAllIndexSlices {
+			FinalInputTrimSpaced = strings.ToUpper(FinalInputTrimSpaced)
+			if FinalInputTrimSpaced == Value {
+				MyChann1 := make(chan features.DataBase)
+				go GetUserInputSendChannel(FinalInputTrimSpaced, MyChann1)
 
-		} else if len(SliceOfWords) < 2 {
-			
-			MyChann1 := make(chan features.DataBase)
-			go GetUserInputSendChannel(FinalInput, MyChann1)
-
-			result := <-MyChann1
-			if result.Alldatafield != "" {
-				color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
-				color.HiBlue(fmt.Sprintln(result))
-				color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
-			} else if result.Alldatafield == "" {
-				PrintNotAddYet(FinalInput)
+				result := <-MyChann1
+				if result.Alldatafield != "" {
+					color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
+					color.HiBlue(fmt.Sprintln(result))
+					color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
+				} else  {
+					PrintNotAddYet(FinalInputTrimSpaced)
+				}
 			}
-
 		}
+
+	
 	}
 
 }
@@ -80,7 +89,8 @@ func PrintNotAddYet(FinalInput string) {
 func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBase) {
 
 	// ===============================================
-	// ALLREGEX
+	// RegEx
+	// for searching on slice = "ALL REGEX", "ALLREGEX",
 	if result := searchSlice(FinalInput, features.TitleOfRegEx, features.OriginalAllRegex); result.Alldatafield != "" {
 		MyChann1 <- result
 		return
@@ -88,17 +98,13 @@ func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBas
 
 	// // ===============================================
 	// // Time
-	// go func() {
-	// 	for _, value := range features.TitleOfTimeData {
-	// 		FinalInput = strings.ToUpper(FinalInput)
-	// 		if FinalInput == value {
-	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-	// 			color.HiBlue(fmt.Sprintln(features.OriginalTimeData))
-	// 			color.HiBlue(fmt.Sprintln("---------------------------------------------------------------"))
-	// 			break
-	// 		}
-	// 	}
-	// }()
+	// for searching on slice = "ALL TIME", "ALLTIME",
+	if result := searchSlice(FinalInput, features.TitleOfTimeData, features.OriginalTimeData); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+	
+	
 	// // ===============================================
 	// // Read & Writing
 	// go func() {

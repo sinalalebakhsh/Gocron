@@ -10,6 +10,29 @@ var TitleOfEveryWords = []string{
 	"--all",
 }
 
+var TitleOfAllIndexSlices = []string{
+    "READING AND WRITING DATA",
+    "READINGANDWRITINGDATA",
+    "ALL READING AND WRITING DATA",
+    "ALLREADINGANDWRITINGDATA",
+    "ALL REGEX", 
+    "ALLREGEX",
+    "ALL TIME",
+    "ALLTIME",
+    "ALL HTML AND TEMPLATE",
+	"ALLHTMLANDTEMPLATE",
+    "ALL WORKING WITH FILES",
+	"ALLWORKINGWITHFILES",
+    "ALL JSON",
+	"ALLJSON",
+	"ALL JSON DATA",
+	"ALLJSONDATA",
+	"ALL WORK WITH JSON DATA",
+	"ALLWORKWITHJSONDATA",
+	"ALL WORKING WITH JSON DATA",
+	"ALLWORKINGWITHJSONDATA",
+}
+
 var OriginalFeatures Features = Features{
 	EveryWordsInGolang: `
 ████████████████████████████████████████████████████████████████████████
