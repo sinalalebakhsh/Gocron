@@ -8,14 +8,18 @@ Date:2023-9-20-Sunday-September
 <details>
   <summary>⭐ V1.0.4 
   </summary>
-	Add Goroutines for searching concurently in data
+		Add Goroutines for searching concurently in data
 </details>
 <details>
   <summary>⭐ V1.0.5 
   </summary>
 		Add Single Examples for better learning.
 </details>
-
+<details>
+	<summary> v1.0.6
+	</summary>
+		Add Channel and rerlation between Gourotines
+</details>
 
 	
 
