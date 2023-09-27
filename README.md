@@ -26,7 +26,13 @@ Date:2023-9-20-Sunday-September
 	</summary>
 		Add message for "not found yet"
 </details>
+<details>
+	<summary>🌍 v1.0.12
+	</summary>
+		Adding => All Creating HTTP Servers
 </details>
+</details>
+
 
 	
 
@@ -112,4 +118,4 @@ You can use this command before start:
 	ALL WORKING WITH JSON DATA
 	ALLWORKINGWITHJSONDATA
 
-🌍🌎🌏🌐🍪🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🥝🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔰🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
+🌎🌏🌐🍪🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🥝🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔰🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
