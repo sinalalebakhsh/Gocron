@@ -164,6 +164,15 @@ func IfUsrisALL(FinalInput string) bool {
 			MyChann1 <- result
 			return
 		}
+		// ===============================================
+		// Creating HTTP Servers
+		// searching for on slice = "ALL HTTP SERVERS", "ALLHTTPSERVERS", "ALL CREATING HTTP SERVERS", "ALLCREATINGHTTPSERVERS",
+		if result := searchSlice(FinalInput, features.TitleHTTPServers, features.OriginalHTTPServers); result.Alldatafield != "" {
+			MyChann1 <- result
+			return
+		}
+
+		
 
 		MyChann1 <- features.DataBase{} // Return an empty struct if not found
 
