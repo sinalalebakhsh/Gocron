@@ -31,6 +31,10 @@ var TitleOfAllIndexSlices = []string{
 	"ALLWORKWITHJSONDATA",
 	"ALL WORKING WITH JSON DATA",
 	"ALLWORKINGWITHJSONDATA",
+    "ALL HTTP SERVERS",
+    "ALLHTTPSERVERS",
+    "ALL CREATING HTTP SERVERS",
+    "ALLCREATINGHTTPSERVERS",
 }
 
 var OriginalFeatures Features = Features{
@@ -9551,25 +9555,265 @@ Output:
 
         <h1>This is the layout footer</h1>    
 ████████████████████████████████████████████████████████████████████████
-393.
+393.Using a Custom Function in the template.html
+    example:
+    template.html:
+        {{ define "mainTemplate" -}}
+            <h1>There are {{ len . }} products in the source data.</h1>
+            {{ range getCats .  -}}
+                <h1>Category: {{ . }}</h1>
+            {{ end }}
+        {{- end }}
+    =============================================
+    Output:
+        <h1>There are 8 products in the source data.</h1>
+            <h1>Category: Watersports</h1>
+            <h1>Category: Soccer</h1>
+            <h1>Category: Chess</h1>
 ████████████████████████████████████████████████████████████████████████
-394.
+394.Creating an HTML Fragment in the main.go
+    example:
+    main.go:
+        ...
+        func GetCategories(products []Product) (categories []string) {
+            catMap := map[string]string {}
+            for _, p := range products {
+                if (catMap[p.Category] == "") {
+                    catMap[p.Category] = p.Category
+                    categories = append(categories, "<b>p.Category</b>")
+                }
+            }
+            return
+        }
+        ...
+    ===============================================================
+    Output:
+        <h1>There are 8 products in the source data.</h1>
+            <h1>Category: &lt;b&gt;p.Category&lt;/b&gt;</h1>
+            <h1>Category: &lt;b&gt;p.Category&lt;/b&gt;</h1>
+            <h1>Category: &lt;b&gt;p.Category&lt;/b&gt;</h1>
 ████████████████████████████████████████████████████████████████████████
-395.
+395.The Types Aliases Used to Denote Content Types
+    Name        Description
+    --------    -----------
+    CSS         This type denotes CSS content.
+    HTML        This type denotes a fragment of HTML.
+    HTMLAttr    This type denotes a value that will be used as the value for an HTML attribute.
+    JS          This type denotes a fragment of JavaScript code.
+    JSStr       This type denotes a value that is intended to appear between quotes in a JavaScript expression.
+    Srcset      This type denotes a value that can be used in the srcset attribute of an img element.
+    URL         This type denotes a URL.
 ████████████████████████████████████████████████████████████████████████
-396.
+396.Returning HTML Content in the main.go
+    example:
+    main.go:
+        ...
+        func GetCategories(products []Product) (categories []template.HTML) {
+            catMap := map[string]string {}
+            for _, p := range products {
+                if (catMap[p.Category] == "") {
+                    catMap[p.Category] = p.Category
+                    categories = append(categories, "<b>p.Category</b>")
+                }
+            }
+            return
+        }
+        ...
+    =======================================================
+    Output:
+        <h1>There are 8 products in the source data.</h1>
+            <h1>Category: <b>p.Category</b></h1>
+            <h1>Category: <b>p.Category</b></h1>
+            <h1>Category: <b>p.Category</b></h1>
 ████████████████████████████████████████████████████████████████████████
-397.
+397.Providing Access to Standard Library Functions
+    Adding a Function Mapping in the main.go
+    example:
+    main.go:
+        package main
+        import (
+            "html/template"
+            "os"
+            "strings"
+        )
+        func GetCategories(products []Product) (categories []string) {
+            catMap := map[string]string{}
+            for _, p := range products {
+                if catMap[p.Category] == "" {
+                    catMap[p.Category] = p.Category
+                    categories = append(categories, p.Category)
+                }
+            }
+            return
+        }
+        func Exec(t *template.Template) error {
+            return t.Execute(os.Stdout, Products)
+        }
+        func main() {
+            allTemplates := template.New("allTemplates")
+            allTemplates.Funcs(map[string]interface{}{
+                "getCats": GetCategories,
+                "lower":   strings.ToLower,
+            })
+            allTemplates, err := allTemplates.ParseGlob("templates/*.html")
+            if err == nil {
+                selectedTemplated := allTemplates.Lookup("mainTemplate")
+                err = Exec(selectedTemplated)
+            }
+            if err != nil {
+                Printfln("Error: %v %v", err.Error())
+            }
+        }
+    =============================================
+    Output:
+        <h1>There are 8 products in the source data.</h1>
+            <h1>Category: Watersports</h1>
+            <h1>Category: Soccer</h1>
+            <h1>Category: Chess</h1>
 ████████████████████████████████████████████████████████████████████████
-398.
+398.Using a Template Function in the template.html
+    example:
+    template.html:
+        {{ define "mainTemplate" -}}
+            <h1>There are {{ len . }} products in the source data.</h1>
+            {{ range getCats .  -}}
+                <h1>Category: {{ lower . }}</h1>
+            {{ end }}
+        {{- end }}
+    =============================================================
+    Output:
+        <h1>There are 8 products in the source data.</h1>
+            <h1>Category: watersports</h1>
+            <h1>Category: soccer</h1>
+            <h1>Category: chess</h1>
 ████████████████████████████████████████████████████████████████████████
-399.
+399.Defining Template Variables
+    Defining and Using a Template Variable in the template.html
+    example:
+    template.html:
+        {{ define "mainTemplate" -}}
+            {{ $length := len . }}
+            <h1>There are {{ $length }} products in the source data.</h1>
+            {{ range getCats .  -}}
+                <h1>Category: {{ lower . }}</h1>
+            {{ end }}
+        {{- end }}
+    =============================================================
+    Output:
+            
+        <h1>There are 8 products in the source data.</h1>
+        <h1>Category: watersports</h1>
+        <h1>Category: soccer</h1>
+        <h1>Category: chess</h1>
 ████████████████████████████████████████████████████████████████████████
-400.
+400.Defining and Using a Template Variable in the template.html
+    example:
+    template.html:
+        {{ define "mainTemplate" -}}
+            <h1>There are {{ len . }} products in the source data.</h1>
+            {{- range getCats .  -}}
+                {{ if ne ($char := slice (lower .) 0 1) "s"  }}
+                    <h1>{{$char}}: {{.}}</h1>
+                {{- end }}
+            {{- end }}
+        {{- end }}
+    ==============================================
+    Output:
+        <h1>There are 8 products in the source data.</h1>
+                    <h1>w: Watersports</h1>
+                    <h1>c: Chess</h1>
 ████████████████████████████████████████████████████████████████████████
-401.
+401.Using Template Variables in Range Actions
+    Enumerating a Map in the template.html
+
+    example:
+    main.go:
+        ...
+        func Exec(t *template.Template) error {
+            productMap := map[string]Product {}
+            for _, p := range Products {
+                productMap[p.Name] = p
+            }
+            return t.Execute(os.Stdout, &productMap)
+        }
+        ...
+    
+    template.html:
+        {{ define "mainTemplate" -}}
+            {{ range $key, $value := . -}}
+                <h1>{{ $key }}: {{ printf "$%.2f" $value.Price }}</h1>
+            {{ end }}
+        {{- end }}
+    Output:
+        <h1>Bling-Bling King: $1200.00</h1>
+            <h1>Corner Flags: $34.95</h1>
+            <h1>Kayak: $279.00</h1>
+            <h1>Lifejacket: $49.95</h1>
+            <h1>Soccer Ball: $19.50</h1>
+            <h1>Stadium: $79500.00</h1>
+            <h1>Thinking Cap: $16.00</h1>
+            <h1>Unsteady Chair: $75.00</h1>
 ████████████████████████████████████████████████████████████████████████
-402.
+402.Creating Text Templates
+    Loading and Executing a Text Template in the main.go
+
+    The Contents of the template.txt
+    example:
+    templates/template.txt:
+        {{ define "mainTemplate" -}}
+            {{ range $key, $value := . -}}
+                {{ $key }}: {{ printf "$%.2f" $value.Price }}
+            {{ end }}
+        {{- end }}
+    ---------------------------------------
+    main.go:
+        package main
+        import (
+            "text/template"
+            "os"
+            "strings"
+        )
+        func GetCategories(products []Product) (categories []string) {
+            catMap := map[string]string {}
+            for _, p := range products {
+                if (catMap[p.Category] == "") {
+                    catMap[p.Category] = p.Category
+                    categories = append(categories, p.Category)
+                }
+            }
+            return
+        }
+        func Exec(t *template.Template) error {
+            productMap := map[string]Product {}
+            for _, p := range Products {
+                productMap[p.Name] = p
+            }
+            return t.Execute(os.Stdout, &productMap)
+        }
+        func main() {
+            allTemplates := template.New("allTemplates")
+            allTemplates.Funcs(map[string]interface{} {
+                "getCats": GetCategories,
+                "lower": strings.ToLower,
+            })
+            allTemplates, err := allTemplates.ParseGlob("templates/*.txt")
+            if (err == nil) {
+                selectedTemplated := allTemplates.Lookup("mainTemplate")
+                err = Exec(selectedTemplated)
+            }
+            if (err != nil) {
+                Printfln("Error: %v %v", err.Error())
+            }
+        }
+    Output:
+        Bling-Bling King: $1200.00
+            Corner Flags: $34.95
+            Kayak: $279.00
+            Lifejacket: $49.95
+            Soccer Ball: $19.50
+            Stadium: $79500.00
+            Thinking Cap: $16.00
+            Unsteady Chair: $75.00
 ████████████████████████████████████████████████████████████████████████
 403.
 ████████████████████████████████████████████████████████████████████████
