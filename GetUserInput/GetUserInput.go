@@ -6,7 +6,6 @@ import (
 	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/features"
 	"os"
-	// "sort"
 	"strings"
 )
 
@@ -17,7 +16,6 @@ func GetUserInput() {
 	// I use For loop for getting user input for Repeatedly.
 	// if you want just get one more time delete this loop
 	for {
-
 		// use bufio Package and os Package for reading and get clear, good and clean,
 		// user input. maybe you want use fmt.Scan or another ways
 		// You can do it. :)
@@ -31,57 +29,88 @@ func GetUserInput() {
 		// Checks for each entry into the loop
 		// if user input was "exit" so break loop and log out
 		// from Gocron program.
-		Exit := "exit"
-		Help := "help"
 		Regular := true
-		
-		if FinalInput == strings.ToLower(Exit) {
-			features.GoodByePrint()
-			os.Exit(0)
-		} 
-		
-		if FinalInput == strings.ToLower(Help) {
-			features.HelpMessage()
-			Regular = false
-		} 
-		
+
+		Regular = IfUsrisEXIT(FinalInput) // If FinalInput is "exit" return os.Exit(0)
+
+		IfUserisHELP(FinalInput) // If FinalInput is or does't "help" return true
+
 		if len(SliceOfWords) == 2 {
 			FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
-			for Index := range features.OriginalSingleDefExamples.MapSingleDefEx {
-				if FirstInput == Index && SecondInput == "example" {
-					words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[FirstInput])
-					features.PrintWordByWord(words)
-					fmt.Println()
-					color.HiMagenta(fmt.Sprintln("============================================◉🧭🧭🧭🧭🧭🧭🧭◉=========================================="))
-					color.HiMagenta(fmt.Sprintln(features.OriginalSingleDefExamples.MapSingleDefEx[Index]))
-					color.HiMagenta(fmt.Sprintln("============================================◉⭐⭐⭐⭐⭐⭐⭐◉=========================================="))
-					Regular = false
-				}
-			}
-		} 
-	
-		for _, Value := range features.TitleOfAllIndexSlices {
-			FinalInput = strings.ToUpper(FinalInput)
-			if FinalInput == Value {
-				MyChann1 := make(chan features.DataBase)
-				go GetUserInputSendChannel(FinalInput, MyChann1)
+			Regular = IfUsris2orMoreWords(FirstInput, SecondInput)
+		}
 
-				result := <-MyChann1
-				if result.Alldatafield != "" {
-					color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
-					color.HiBlue(fmt.Sprintln(result))
-					color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
-					Regular = false
-				}
-			}
+		if Regular {
+			Regular = IfUserWantSingleDefinition(FinalInput)
 		}
 
 		if Regular {
 			PrintNotAddYet(FinalInput)
 		}
 
-
 	}
+}
+
+func IfUsrisEXIT(FinalInput string) bool {
+	Exit := "exit"
+	if FinalInput == strings.ToLower(Exit) {
+		features.GoodByePrint()
+		os.Exit(0)
+	}
+	return true
+}
+
+func IfUserisHELP(FinalInput string) {
+	Help := "help"
+	if FinalInput == strings.ToLower(Help) {
+		features.HelpMessage()
+	}
+}
+
+func IfUsris2orMoreWords(FirstInput, SecondInput string) bool {
+	for Index := range features.OriginalSingleDefExamples.MapSingleDefEx {
+		if FirstInput == Index && SecondInput == "example" {
+			words := features.SplitIntoWords(features.OriginSingleDef.SingleDef[FirstInput])
+			features.PrintWordByWord(words)
+			fmt.Println()
+			color.HiMagenta(fmt.Sprintln("============================================◉🧭🧭🧭🧭🧭🧭🧭◉=========================================="))
+			color.HiMagenta(fmt.Sprintln(features.OriginalSingleDefExamples.MapSingleDefEx[Index]))
+			color.HiMagenta(fmt.Sprintln("============================================◉⭐⭐⭐⭐⭐⭐⭐◉=========================================="))
+			return true
+		}
+	}
+	return false
+}
+
+func IfUserWantSingleDefinition(FinalInput string) bool {
+	for index := range features.OriginSingleDef.SingleDef {
+		if FinalInput == index {
+			words := features.SplitIntoWords(features.OriginSingleDef.SingleDef[FinalInput])
+			features.PrintWordByWord(words)
+			fmt.Println()
+			return true
+		}
+	}
+	return false
+}
+
+func IfUsrisALL(FinalInput string) bool {
+	for _, Value := range features.TitleOfAllIndexSlices {
+		FinalInput = strings.ToUpper(FinalInput)
+		if FinalInput == Value {
+			MyChann1 := make(chan features.DataBase)
+			go GetUserInputSendChannel(FinalInput, MyChann1)
+
+			result := <-MyChann1
+			if result.Alldatafield != "" {
+				color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
+				color.HiBlue(fmt.Sprintln(result))
+				color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
+
+			}
+		}
+	}
+	return false
 }
 
 func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBase) {
@@ -98,7 +127,7 @@ func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBas
 	if result := searchSlice(FinalInput, features.TitleOfTimeData, features.OriginalTimeData); result.Alldatafield != "" {
 		MyChann1 <- result
 		return
-	}	
+	}
 	// ===============================================
 	// Read & Writing
 	// searching for on slice = "READING AND WRITING DATA", "READINGANDWRITINGDATA", "ALL READING AND WRITING DATA", "ALLREADINGANDWRITINGDATA",
@@ -132,11 +161,8 @@ func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBas
 
 }
 
-
 func PrintNotAddYet(FinalInput string) {
-	// color.HiRed(fmt.Sprintln("================================="))
 	color.HiRed(fmt.Sprintf("=================================\nNot add %v yet.\n=================================", FinalInput))
-	// color.HiRed(fmt.Sprintln("================================="))
 }
 
 func searchSlice(input string, slice []string, obj features.DataBase) features.DataBase {

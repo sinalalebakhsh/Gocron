@@ -1,12 +1,12 @@
 package features
 
 type SingleDefinitions struct {
-	SingleDefinition map[string]string
+	SingleDef map[string]string
 }
 
 var OriginSingleDef = SingleDefinitions{
 
-	SingleDefinition: map[string]string{
+	SingleDef: map[string]string{
 		"create environment go":      "0.Create Environment GO in Command Line Interface Go: 1- go mod init YOURNAME 2- go work init YOURWORKDIRECTORY 3- go run main.go  OR  go run projectName.go",
 		"create go project":          "0.Create Environment GO in Command Line Interface Go: 1- go mod init YOURNAME 2- go work init YOURWORKDIRECTORY 3- go run main.go  OR  go run projectName.go",
 		"go project":                 "0.Create Environment GO in Command Line Interface Go: 1- go mod init YOURNAME 2- go work init YOURWORKDIRECTORY 3- go run main.go  OR  go run projectName.go",
