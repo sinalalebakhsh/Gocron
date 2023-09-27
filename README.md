@@ -4,33 +4,45 @@ Date:2023-9-20-Sunday-September
 
 
 <details>
-<summary>Features In Versions
-  </summary>
-<details>
-  <summary>🎭 V1.0.4 
-  </summary>
-		Add Goroutines for searching concurently in data
-</details>
-<details>
-  <summary>🖌 V1.0.5 
-  </summary>
-		Add Single Examples for better learning.
-</details>
-<details>
-	<summary>🎯 v1.0.6
+	<summary>
+		Features In Versions
 	</summary>
-		Add Channel and rerlation between Gourotines
-</details>
-<details>
-	<summary>🧭 v1.0.8
-	</summary>
-		Add message for "not found yet"
-</details>
-<details>
-	<summary>🌍 v1.0.12
-	</summary>
-		Adding => All Creating HTTP Servers
-</details>
+		<details>
+			<summary>
+				🎭 V1.0.4 
+			</summary>
+				Add Goroutines for searching concurently in data
+		</details>
+	<details>
+		<summary>
+			🖌 V1.0.5 
+		</summary>
+			Add Single Examples for better learning.
+	</details>
+	<details>
+		<summary>
+			🎯 v1.0.6
+		</summary>
+			Add Channel and rerlation between Gourotines
+	</details>
+	<details>
+		<summary>
+			🧭 v1.0.8
+		</summary>
+			Add message for "not found yet"
+	</details>
+	<details>
+		<summary>
+			🌍 v1.0.12
+		</summary>
+			Adding => All Creating HTTP Servers
+	</details>
+	<details>
+		<summary>
+			🍪 v1.0.13
+		</summary>
+			Add in everything Inspecting the Request
+	</details>
 </details>
 
 
@@ -122,4 +134,4 @@ You can use this command before start:
     ALL CREATING HTTP SERVERS
     ALLCREATINGHTTPSERVERS
 
-🌎🌏🌐🍪🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🥝🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔰🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
+🌎🌏🌐🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🥝🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔰🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
