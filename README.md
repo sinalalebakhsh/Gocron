@@ -117,5 +117,9 @@ You can use this command before start:
 	ALLWORKWITHJSONDATA
 	ALL WORKING WITH JSON DATA
 	ALLWORKINGWITHJSONDATA
+	ALL HTTP SERVERS
+    ALLHTTPSERVERS
+    ALL CREATING HTTP SERVERS
+    ALLCREATINGHTTPSERVERS
 
 🌎🌏🌐🍪🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🥝🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔰🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
