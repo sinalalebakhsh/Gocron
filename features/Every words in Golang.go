@@ -9815,7 +9815,74 @@ Output:
             Thinking Cap: $16.00
             Unsteady Chair: $75.00
 ████████████████████████████████████████████████████████████████████████
-403.
+403.Creating HTTP Servers
+    What are they?
+    The features described in this chapter make it easy for Go applications to create HTTP servers.
+
+    Why are they useful?
+    HTTP is one of the most widely used protocols and is useful for both user-facing
+    applications and web services.
+
+    How is it used?
+    The features of the net/http package are used to create a server and handle requests.
+
+    Are there any pitfalls or limitations?
+    These features are well-designed and easy to use.
+
+    Are there any alternatives?
+    The standard library includes support for other network protocols and also for
+    opening and using lower-level network connections. 
+    See https://pkg.go.dev/net@go1.17.1 for details of the net package and its subpackages, 
+    such as net/smtp, for example, which implements the SMTP protocol.
+
+    Problem                                 Solution
+    --------                                -------------
+    Create an HTTP or HTTPS server          Use the ListenAndServe or ListenAndServeTLS functions
+    Inspect an HTTP request                 Use the features of the Request struct
+    Produce a response                      Use the ResponseWriter interface or the
+                                            convenience functions
+
+    Handle requests to specific URLs        Use the integrated router
+    Serve static content                    Use the FileServer and StripPrefix function
+    Use a template to produce a response    Write the content to the ResponseWriter
+    or produce a JSON response
+
+    Handle form data                        Use the Request methods
+    Set or read cookies                     Use the Cookie, Cookies, and SetCookie methods
+
+    Preparing for This Chapter:
+    1- go mod init httpserver
+    2- printer.go:
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+    3- product.go:
+        package main
+        type Product struct {
+            Name, Category string
+            Price          float64
+        
+        var Products = []Product{
+            {"Kayak", "Watersports", 279},
+            {"Lifejacket", "Watersports", 49.95},
+            {"Soccer Ball", "Soccer", 19.50},
+            {"Corner Flags", "Soccer", 34.95},
+            {"Stadium", "Soccer", 79500},
+            {"Thinking Cap", "Chess", 16},
+            {"Unsteady Chair", "Chess", 75},
+            {"Bling-Bling King", "Chess", 1200},
+        }
+    4- main.go:
+        package main
+        func main() {
+            for _, p := range Products {
+                Printfln("Product: %v, Category: %v, Price: $%.2f",
+                    p.Name, p.Category, p.Price)
+            }
+        }
+        
 ████████████████████████████████████████████████████████████████████████
 404.
 ████████████████████████████████████████████████████████████████████████
@@ -10103,6 +10170,35 @@ Output:
 ████████████████████████████████████████████████████████████████████████
 546.
 ████████████████████████████████████████████████████████████████████████
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
