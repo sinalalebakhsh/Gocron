@@ -24,12 +24,8 @@ func GetUserInput() {
 		UserInput := bufio.NewReader(os.Stdin)
 		FinalInput, _ := UserInput.ReadString('\n')
 		FinalInput = strings.TrimSuffix(FinalInput, "\n")
-
 		FinalInput = strings.ToLower(FinalInput)
 		FinalInput = strings.TrimSpace(FinalInput)
-		FinalInputTrimSpaced := strings.TrimSpace(FinalInput)
-
-		
 		SliceOfWords := strings.Split(FinalInput, " ")
 
 		// Checks for each entry into the loop
@@ -37,14 +33,20 @@ func GetUserInput() {
 		// from Gocron program.
 		Exit := "exit"
 		Help := "help"
+		Regular := true
+		
 		if FinalInput == strings.ToLower(Exit) {
 			features.GoodByePrint()
 			os.Exit(0)
-		} else if FinalInput == strings.ToLower(Help) {
+		} 
+		
+		if FinalInput == strings.ToLower(Help) {
 			features.HelpMessage()
-		} else if len(SliceOfWords) == 2 {
+			Regular = false
+		} 
+		
+		if len(SliceOfWords) == 2 {
 			FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
-			
 			for Index := range features.OriginalSingleDefExamples.MapSingleDefEx {
 				if FirstInput == Index && SecondInput == "example" {
 					words := features.SplitIntoWords(features.OriginSingleDef.SingleDefinition[FirstInput])
@@ -53,37 +55,33 @@ func GetUserInput() {
 					color.HiMagenta(fmt.Sprintln("============================================◉🧭🧭🧭🧭🧭🧭🧭◉=========================================="))
 					color.HiMagenta(fmt.Sprintln(features.OriginalSingleDefExamples.MapSingleDefEx[Index]))
 					color.HiMagenta(fmt.Sprintln("============================================◉⭐⭐⭐⭐⭐⭐⭐◉=========================================="))
+					Regular = false
 				}
 			}
 		} 
 	
-	
 		for _, Value := range features.TitleOfAllIndexSlices {
-			FinalInputTrimSpaced = strings.ToUpper(FinalInputTrimSpaced)
-			if FinalInputTrimSpaced == Value {
+			FinalInput = strings.ToUpper(FinalInput)
+			if FinalInput == Value {
 				MyChann1 := make(chan features.DataBase)
-				go GetUserInputSendChannel(FinalInputTrimSpaced, MyChann1)
+				go GetUserInputSendChannel(FinalInput, MyChann1)
 
 				result := <-MyChann1
 				if result.Alldatafield != "" {
 					color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
 					color.HiBlue(fmt.Sprintln(result))
 					color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
-				} else  {
-					PrintNotAddYet(FinalInputTrimSpaced)
+					Regular = false
 				}
 			}
 		}
 
-	
+		if Regular {
+			PrintNotAddYet(FinalInput)
+		}
+
+
 	}
-
-}
-
-func PrintNotAddYet(FinalInput string) {
-	color.HiRed(fmt.Sprintln("================================="))
-	color.HiRed(fmt.Sprintf("Not add %v yet.", FinalInput))
-	color.HiRed(fmt.Sprintln("================================="))
 }
 
 func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBase) {
@@ -110,7 +108,7 @@ func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBas
 	}
 	// ===============================================
 	// Working with JSON Files
-	// searching for on slice = "ALL HTML AND TEMPLATE", "ALLHTMLANDTEMPLATE",
+	// searching for on slice = "ALL JSON", "ALLJSON", "ALL JSON DATA", "ALLJSONDATA", "ALL WORK WITH JSON DATA", "ALLWORKWITHJSONDATA", "ALL WORKING WITH JSON DATA", "ALLWORKINGWITHJSONDATA",
 	if result := searchSlice(FinalInput, features.TitleOfJSON, features.OriginalJSONData); result.Alldatafield != "" {
 		MyChann1 <- result
 		return
@@ -131,6 +129,14 @@ func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBas
 	}
 
 	MyChann1 <- features.DataBase{} // Return an empty struct if not found
+
+}
+
+
+func PrintNotAddYet(FinalInput string) {
+	// color.HiRed(fmt.Sprintln("================================="))
+	color.HiRed(fmt.Sprintf("=================================\nNot add %v yet.\n=================================", FinalInput))
+	// color.HiRed(fmt.Sprintln("================================="))
 }
 
 func searchSlice(input string, slice []string, obj features.DataBase) features.DataBase {
