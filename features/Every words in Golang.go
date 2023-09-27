@@ -9882,11 +9882,56 @@ Output:
                     p.Name, p.Category, p.Price)
             }
         }
-        
+    =================================
+    Output:
+        Product: Kayak, Category: Watersports, Price: $279.00
+        Product: Lifejacket, Category: Watersports, Price: $49.95
+        Product: Soccer Ball, Category: Soccer, Price: $19.50
+        Product: Corner Flags, Category: Soccer, Price: $34.95
+        Product: Stadium, Category: Soccer, Price: $79500.00
+        Product: Thinking Cap, Category: Chess, Price: $16.00
+        Product: Unsteady Chair, Category: Chess, Price: $75.00
+        Product: Bling-Bling King, Category: Chess, Price: $1200.00
 ████████████████████████████████████████████████████████████████████████
-404.
+404.Creating a Simple HTTP Server
+    example:
+    main.go:
+        package main
+        import (
+            "net/http"
+            "io"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+                request *http.Request) {
+            io.WriteString(writer, sh.message)
+        }
+        func main() {
+            err := http.ListenAndServe(":5000", StringHandler{ message: "Hello, World"})
+            if (err != nil) {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+        =================================
+        Output: go run .
+        in Web Browser, search localhost:5000/
+            Hello, World
+
 ████████████████████████████████████████████████████████████████████████
-405.
+405.Creating the HTTP Listener and Handler
+    The net/http Convenience Functions
+
+    The ListenAndServe function starts listening for HTTP requests on a specified network address. 
+    The ListenAndServeTLS function does the same for HTTP requests.
+    
+    Name                                            Description
+    ---------                                       ----------------------------------------
+    ListenAndServe(addr, handler)                   This function starts listening for HTTP requests on a specified
+                                                    address and passes requests onto the specified handler.
+    ListenAndServeTLS(addr, cert, key, handler)     This function starts listening for HTTPS requests. The arguments are the address
+
 ████████████████████████████████████████████████████████████████████████
 406.
 ████████████████████████████████████████████████████████████████████████
