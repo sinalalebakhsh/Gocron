@@ -7,8 +7,10 @@ type SingleDefinitionExamples struct {
 var OriginalSingleDefExamples = SingleDefinitionExamples{
 	MapSingleDefEx: map[string]string{
 		"for":`
-56.for:
-==========================example-1 
+56.for
+=================
+example-1 
+------------
 main.go
 	package main
 

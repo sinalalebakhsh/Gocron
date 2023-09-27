@@ -33,7 +33,9 @@ func GetUserInput() {
 
 		Regular = IfUsrisEXIT(FinalInput) // If FinalInput is "exit" return os.Exit(0)
 
-		IfUserisHELP(FinalInput) // If FinalInput is or does't "help" return true
+		if Regular {
+			Regular = IfUserisHELP(FinalInput) // If FinalInput is or does't "help" return true
+		}
 
 		if len(SliceOfWords) == 2 {
 			FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
@@ -42,6 +44,10 @@ func GetUserInput() {
 
 		if Regular {
 			Regular = IfUserWantSingleDefinition(FinalInput)
+		}
+
+		if Regular {
+			Regular = IfUsrisALL(FinalInput)
 		}
 
 		if Regular {
@@ -60,11 +66,13 @@ func IfUsrisEXIT(FinalInput string) bool {
 	return true
 }
 
-func IfUserisHELP(FinalInput string) {
+func IfUserisHELP(FinalInput string) bool {
 	Help := "help"
 	if FinalInput == strings.ToLower(Help) {
 		features.HelpMessage()
+		return false
 	}
+	return true
 }
 
 func IfUsris2orMoreWords(FirstInput, SecondInput string) bool {
@@ -76,10 +84,10 @@ func IfUsris2orMoreWords(FirstInput, SecondInput string) bool {
 			color.HiMagenta(fmt.Sprintln("============================================◉🧭🧭🧭🧭🧭🧭🧭◉=========================================="))
 			color.HiMagenta(fmt.Sprintln(features.OriginalSingleDefExamples.MapSingleDefEx[Index]))
 			color.HiMagenta(fmt.Sprintln("============================================◉⭐⭐⭐⭐⭐⭐⭐◉=========================================="))
-			return true
+			return false
 		}
 	}
-	return false
+	return true
 }
 
 func IfUserWantSingleDefinition(FinalInput string) bool {
@@ -88,10 +96,10 @@ func IfUserWantSingleDefinition(FinalInput string) bool {
 			words := features.SplitIntoWords(features.OriginSingleDef.SingleDef[FinalInput])
 			features.PrintWordByWord(words)
 			fmt.Println()
-			return true
+			return false
 		}
 	}
-	return false
+	return true
 }
 
 func IfUsrisALL(FinalInput string) bool {
@@ -106,70 +114,70 @@ func IfUsrisALL(FinalInput string) bool {
 				color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
 				color.HiBlue(fmt.Sprintln(result))
 				color.HiBlue(fmt.Sprintln("============================================◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉=========================================="))
-
+				return false
 			}
 		}
 	}
-	return false
+	return true
 }
 
-func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBase) {
-	// ===============================================
-	// RegEx
-	// for searching on slice = "ALL REGEX", "ALLREGEX",
-	if result := searchSlice(FinalInput, features.TitleOfRegEx, features.OriginalAllRegex); result.Alldatafield != "" {
-		MyChann1 <- result
-		return
-	}
-	// ===============================================
-	// Time
-	// searching for on slice = "ALL TIME", "ALLTIME",
-	if result := searchSlice(FinalInput, features.TitleOfTimeData, features.OriginalTimeData); result.Alldatafield != "" {
-		MyChann1 <- result
-		return
-	}
-	// ===============================================
-	// Read & Writing
-	// searching for on slice = "READING AND WRITING DATA", "READINGANDWRITINGDATA", "ALL READING AND WRITING DATA", "ALLREADINGANDWRITINGDATA",
-	if result := searchSlice(FinalInput, features.TitleOfReadingWriting, features.OriginalReadingandWriting); result.Alldatafield != "" {
-		MyChann1 <- result
-		return
-	}
-	// ===============================================
-	// Working with JSON Files
-	// searching for on slice = "ALL JSON", "ALLJSON", "ALL JSON DATA", "ALLJSONDATA", "ALL WORK WITH JSON DATA", "ALLWORKWITHJSONDATA", "ALL WORKING WITH JSON DATA", "ALLWORKINGWITHJSONDATA",
-	if result := searchSlice(FinalInput, features.TitleOfJSON, features.OriginalJSONData); result.Alldatafield != "" {
-		MyChann1 <- result
-		return
-	}
-	// ===============================================
-	// HTML & Text Templates
-	// searching for on slice = "ALL HTML AND TEMPLATE", "ALLHTMLANDTEMPLATE",
-	if result := searchSlice(FinalInput, features.TitleOfUsingHTMLAndTextTemplates, features.OriginalHTMLAndTemplates); result.Alldatafield != "" {
-		MyChann1 <- result
-		return
-	}
-	// ===============================================
-	//  Working with Files
-	// searching for on slice = "ALL WORKING WITH FILES", "ALLWORKINGWITHFILES",
-	if result := searchSlice(FinalInput, features.TitleOfWorkingFiles, features.OriginalWorkWithFiles); result.Alldatafield != "" {
-		MyChann1 <- result
-		return
+	func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBase) {
+		// ===============================================
+		// RegEx
+		// for searching on slice = "ALL REGEX", "ALLREGEX",
+		if result := searchSlice(FinalInput, features.TitleOfRegEx, features.OriginalAllRegex); result.Alldatafield != "" {
+			MyChann1 <- result
+			return
+		}
+		// ===============================================
+		// Time
+		// searching for on slice = "ALL TIME", "ALLTIME",
+		if result := searchSlice(FinalInput, features.TitleOfTimeData, features.OriginalTimeData); result.Alldatafield != "" {
+			MyChann1 <- result
+			return
+		}
+		// ===============================================
+		// Read & Writing
+		// searching for on slice = "READING AND WRITING DATA", "READINGANDWRITINGDATA", "ALL READING AND WRITING DATA", "ALLREADINGANDWRITINGDATA",
+		if result := searchSlice(FinalInput, features.TitleOfReadingWriting, features.OriginalReadingandWriting); result.Alldatafield != "" {
+			MyChann1 <- result
+			return
+		}
+		// ===============================================
+		// Working with JSON Files
+		// searching for on slice = "ALL JSON", "ALLJSON", "ALL JSON DATA", "ALLJSONDATA", "ALL WORK WITH JSON DATA", "ALLWORKWITHJSONDATA", "ALL WORKING WITH JSON DATA", "ALLWORKINGWITHJSONDATA",
+		if result := searchSlice(FinalInput, features.TitleOfJSON, features.OriginalJSONData); result.Alldatafield != "" {
+			MyChann1 <- result
+			return
+		}
+		// ===============================================
+		// HTML & Text Templates
+		// searching for on slice = "ALL HTML AND TEMPLATE", "ALLHTMLANDTEMPLATE",
+		if result := searchSlice(FinalInput, features.TitleOfUsingHTMLAndTextTemplates, features.OriginalHTMLAndTemplates); result.Alldatafield != "" {
+			MyChann1 <- result
+			return
+		}
+		// ===============================================
+		//  Working with Files
+		// searching for on slice = "ALL WORKING WITH FILES", "ALLWORKINGWITHFILES",
+		if result := searchSlice(FinalInput, features.TitleOfWorkingFiles, features.OriginalWorkWithFiles); result.Alldatafield != "" {
+			MyChann1 <- result
+			return
+		}
+
+		MyChann1 <- features.DataBase{} // Return an empty struct if not found
+
 	}
 
-	MyChann1 <- features.DataBase{} // Return an empty struct if not found
-
-}
+	func searchSlice(input string, slice []string, obj features.DataBase) features.DataBase {
+		for _, item := range slice {
+			if strings.Contains(item, input) {
+				return obj
+			}
+		}
+		return features.DataBase{}
+	}
 
 func PrintNotAddYet(FinalInput string) {
 	color.HiRed(fmt.Sprintf("=================================\nNot add %v yet.\n=================================", FinalInput))
-}
-
-func searchSlice(input string, slice []string, obj features.DataBase) features.DataBase {
-	for _, item := range slice {
-		if strings.Contains(item, input) {
-			return obj
-		}
-	}
-	return features.DataBase{}
 }

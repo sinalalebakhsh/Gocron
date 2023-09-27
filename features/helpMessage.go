@@ -56,6 +56,13 @@ func HelpMessage() {
 	./Gocron -all
 	./Gocron --all
 	`))
+	color.HiCyan(fmt.Sprintln(`
+	example command after run program:
+	help
+	for example
+	all regex
+	goroutines and channels
+	`))
 	
 }
 
