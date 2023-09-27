@@ -9925,7 +9925,9 @@ Output:
 
     The ListenAndServe function starts listening for HTTP requests on a specified network address. 
     The ListenAndServeTLS function does the same for HTTP requests.
-    
+    The addresses accepted by the functions can be used to restrict the HTTP server so that it
+    only accepts requests on a specific interface or to listen for requests on any interface.
+
     Name                                            Description
     ---------                                       ----------------------------------------
     ListenAndServe(addr, handler)                   This function starts listening for HTTP requests on a specified
@@ -9933,9 +9935,28 @@ Output:
     ListenAndServeTLS(addr, cert, key, handler)     This function starts listening for HTTPS requests. The arguments are the address
 
 ████████████████████████████████████████████████████████████████████████
-406.
+406.The Method Defined by the Handler Interface
+    Name                            Description
+    ServeHTTP(writer, request)      This method is invoked to process a HTTP request. The request is described by a
+                                    Request value, and the response is written using a ResponseWriter, both of which
+                                    are received as parameters.
 ████████████████████████████████████████████████████████████████████████
-407.
+407.Inspecting the Request
+    The Basic Fields Defined by the Request Struct
+    Name        Description
+    -------     ------------------------
+    Method      This field provides the HTTP method (GET, POST, etc.) as a string. The net/http package defines
+                constants for the HTTP methods, such as MethodGet and MethodPost.
+    URL         This field returns the requested URL, expressed as a URL value.
+    Proto       This field returns a string that indicates the version of HTTP used for the request.
+    Host        This field returns a string containing the requested hos.
+    Header      This field returns a Header value, which is an alias to map[string][]string and contains the
+                request headers. The map keys are the names of the headers, and the values are string slices
+                containing the header values.
+    Trailer     This field returns a map[string]string that contains any additional headers that are included in
+                the request after the body.
+    Body        This filed returns a ReadCloser, which is an interface that combines the Read method of the
+                Reader interface with the Close method of the Closer interface
 ████████████████████████████████████████████████████████████████████████
 408.
 ████████████████████████████████████████████████████████████████████████
