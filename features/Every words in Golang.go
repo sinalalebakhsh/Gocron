@@ -9958,7 +9958,11 @@ Output:
     Body        This filed returns a ReadCloser, which is an interface that combines the Read method of the
                 Reader interface with the Close method of the Closer interface
 ████████████████████████████████████████████████████████████████████████
-408.
+408.Writing Request Fields in the main.go
+    example:
+    main.go:
+    Output: Compile and execute the project and request http://localhost:5000.
+        
 ████████████████████████████████████████████████████████████████████████
 409.
 ████████████████████████████████████████████████████████████████████████
