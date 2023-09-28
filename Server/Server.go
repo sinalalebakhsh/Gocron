@@ -1,41 +1,15 @@
 package server
 
 import (
-	"fmt"
-	"github.com/gorilla/mux"
-	"github.com/sinalalebakhsh/Gocron/features"
 	"io"
 	"log"
 	"net/http"
 	"os"
 )
 
-func HandlerAllFeatures(w http.ResponseWriter, r *http.Request) {
-	Gold := fmt.Sprint(features.OriginalFeatures)
-	fmt.Fprint(w, Gold)
-}
-
-func HandlerSingleDefinitions(w http.ResponseWriter, r *http.Request) {
-	Gold := fmt.Sprint(features.OriginSingleDef)
-	fmt.Fprint(w, Gold)
-}
-
-func Servers() {
-	router := mux.NewRouter()
-	http.Handle("/", router)
-	router.HandleFunc("/", HandlerAllFeatures).Methods("GET")
-	router.HandleFunc("/SingleDefinitions", HandlerSingleDefinitions).Methods("GET")
-	http.ListenAndServe(":8080", nil)
-}
-
-// Future possibilities
-// For flexible URL:
-// "github.com/sinalalebakhsh/Gocron/GetUserInput"
-// getuserinput.GetUserInput()
-
 
 type StringHandler struct {
-	message string
+	Message string
 }
 
 func MyServer() {
@@ -46,7 +20,7 @@ func MyServer() {
 	defer logFile.Close()
 	log.SetOutput(logFile)
 
-	err = http.ListenAndServe(":5000", StringHandler{message: "Hello, World"})
+	err = http.ListenAndServe(":5000", StringHandler{Message: "Hello, World"})
 	if err != nil {
 		log.Printf("Error: %v", err.Error())
 	}
@@ -60,6 +34,6 @@ func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Requ
 	for name, val := range request.Header {
 		log.Printf("Header: %v, Value: %v", name, val)
 	}
-	io.WriteString(writer, sh.message)
+	io.WriteString(writer, sh.Message)
 	log.Printf("============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================")
 }
