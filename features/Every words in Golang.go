@@ -10058,6 +10058,7 @@ Output:
 ████████████████████████████████████████████████████████████████████████
 410.Filtering Requests and Generating Responses
     Useful Fields and Methods Defined by the URL Struct
+    The ResponseWriter interface defines the methods that are available when creating a response.
     Name        Description
     -------     -----------------------------
     Scheme      This field returns the scheme component of the URL.
@@ -10073,11 +10074,93 @@ Output:
     User()      This method returns the user information associated with the request.
     String()    This method returns a string representation of the URL.
 ████████████████████████████████████████████████████████████████████████
-411.
+411.The ResponseWriter Methods
+    Name                Description
+    Header()            This method returns a Header, which is an alias to map[string][]string, that can be
+                        used to set the response headers.
+    WriteHeader(code)   This method sets the status code for the response, specified as an int. The net/http
+                        package defines constants for most status codes.
+    Write(data)         This method writes data to the response body and implements the Writer interface.
 ████████████████████████████████████████████████████████████████████████
-412.
+412.Producing Difference Responses in the main.go
+    example:
+    main.go:
+        package main
+        import (
+            "net/http"
+            "io"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+                request *http.Request) {
+            if (request.URL.Path == "/favicon.ico") {
+                Printfln("Request for icon detected - returning 404")
+                writer.WriteHeader(http.StatusNotFound)
+                return
+            }
+            Printfln("Request for %v", request.URL.Path)
+            io.WriteString(writer, sh.message)
+        }
+        func main() {
+            err := http.ListenAndServe(":5000", StringHandler{ message: "Hello, World"})
+            if (err != nil) {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+
 ████████████████████████████████████████████████████████████████████████
-413.
+413.Get Logs and Handle request if URL not Exist:
+        example:
+        main.go:
+            package main
+            import (
+                "io"
+                "log"
+                "net/http"
+                "os"
+            )
+            type StringHandler struct {
+                Message string
+            }
+            func main() {
+                logFile, err := os.OpenFile("LogFile/logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+                if err != nil {
+                    log.Fatal(err)
+                }
+                defer logFile.Close()
+                log.SetOutput(logFile)
+            
+                err = http.ListenAndServe(":5000", StringHandler{Message: "Hello, World"})
+                if err != nil {
+                    log.Printf("Error: %v", err.Error())
+                }
+            }
+            func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+                if (request.URL.Path != "/") {
+                    Printfln("Request for icon detected - returning 404")
+                    writer.WriteHeader(http.StatusNotFound)
+                    return
+                }
+                Printfln("Request for %v", request.URL.Path)
+                io.WriteString(writer, sh.Message)
+            
+            
+            
+                log.Printf("Method: %v", request.Method)
+                log.Printf("URL: %v", request.URL)
+                log.Printf("HTTP Version: %v", request.Proto)
+                log.Printf("Host: %v", request.Host)
+                for name, val := range request.Header {
+                    log.Printf("Header: %v, Value: %v", name, val)
+                }
+                io.WriteString(writer, sh.Message)
+                log.Printf("============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================")
+            }
+        Output: so we have to logs, one of that is logs about user request,
+        another that is about path URL in Terminal
 ████████████████████████████████████████████████████████████████████████
 414.
 ████████████████████████████████████████████████████████████████████████
