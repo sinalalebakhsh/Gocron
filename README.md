@@ -49,6 +49,12 @@ Date:2023-9-20-Sunday-September
 		</summary>
 			⭐⭐⭐ Creating My First Server ⭐⭐⭐
 	</details>
+	<details>
+		<summary>
+			🥝 v1.0.15
+		</summary>
+			⭐ Add example for saving logs in TXT file from Server GO ⭐
+	</details>
 </details>
 
 	
@@ -139,4 +145,4 @@ You can use this command before start:
     ALL CREATING HTTP SERVERS
     ALLCREATINGHTTPSERVERS
 
-🌎🌏🌐🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🥝🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔰🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
+🌎🌏🌐🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔰🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
