@@ -10056,7 +10056,22 @@ Output:
         }
     Output: Create a TXT file in Server/LogFile/logs.txt and save appendation in to it.
 ████████████████████████████████████████████████████████████████████████
-410.
+410.Filtering Requests and Generating Responses
+    Useful Fields and Methods Defined by the URL Struct
+    Name        Description
+    -------     -----------------------------
+    Scheme      This field returns the scheme component of the URL.
+    Host        This field returns the host component of the URL, which may include the port.
+    RawQuery    This field returns the query string from the URL. Use the Query method to process the query
+                string into a map.
+    Path        This field returns the path component of the URL.
+    Fragment    This field returns the fragment component of the URL, without the # character.
+    Hostname()  This method returns the hostname component of the URL as a string.
+    Port()T     his method returns the port component of the URL as a string.
+    Query()     This method returns a map[string][]string (a map with string keys and string slice
+                values), containing the query string fields.
+    User()      This method returns the user information associated with the request.
+    String()    This method returns a string representation of the URL.
 ████████████████████████████████████████████████████████████████████████
 411.
 ████████████████████████████████████████████████████████████████████████
