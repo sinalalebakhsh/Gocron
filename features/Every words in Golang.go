@@ -9961,10 +9961,100 @@ Output:
 408.Writing Request Fields in the main.go
     example:
     main.go:
-    Output: Compile and execute the project and request http://localhost:5000.
-        
+        package main
+        import (
+            "io"
+            "net/http"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+            Printfln("Method: %v", request.Method)
+            Printfln("URL: %v", request.URL)
+            Printfln("HTTP Version: %v", request.Proto)
+            Printfln("Host: %v", request.Host)
+            for name, val := range request.Header {
+                Printfln("Header: %v, Value: %v", name, val)
+            }
+            Printfln("---")
+            io.WriteString(writer, sh.message)
+        }
+        func main() {
+            err := http.ListenAndServe(":5000", StringHandler{message: "Hello, World"})
+            if err != nil {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    ===================================================================================
+    Output: Compile and execute the project and request http://localhost:5000
+        Method: GET
+        URL: /
+        HTTP Version: HTTP/1.1
+        Host: localhost:5000
+        Header: Accept, Value: [text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8]
+        Header: Accept-Language, Value: [en-US,en;q=0.5]
+        Header: Accept-Encoding, Value: [gzip, deflate, br]
+        Header: Sec-Fetch-Mode, Value: [navigate]
+        Header: Sec-Fetch-Site, Value: [none]
+        Header: User-Agent, Value: [Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0]
+        Header: Connection, Value: [keep-alive]
+        Header: Upgrade-Insecure-Requests, Value: [1]
+        Header: Sec-Fetch-Dest, Value: [document]
+        Header: Sec-Fetch-User, Value: [?1]
+        ---
+        Method: GET
+        URL: /favicon.ico
+        HTTP Version: HTTP/1.1
+        Host: localhost:5000
+        Header: Accept-Encoding, Value: [gzip, deflate, br]
+        Header: Connection, Value: [keep-alive]
+        Header: Sec-Fetch-Dest, Value: [image]
+        Header: Sec-Fetch-Mode, Value: [no-cors]
+        Header: Sec-Fetch-Site, Value: [same-origin]
+        Header: User-Agent, Value: [Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0]
+        Header: Accept, Value: [image/avif,image/webp,*/*]
+        Header: Accept-Language, Value: [en-US,en;q=0.5]
+        Header: Referer, Value: [http://localhost:5000/]
+        ---
 ████████████████████████████████████████████████████████████████████████
-409.
+409.Save All Logs in a txt file:
+    Server.go:
+        package server
+        import (
+            "io"
+            "log"
+            "net/http"
+            "os"
+        )
+        type StringHandler struct {
+            Message string
+        }
+        func MyServer() {
+            logFile, err := os.OpenFile("Server/LogFile/logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+            if err != nil {
+                log.Fatal(err)
+            }
+            defer logFile.Close()
+            log.SetOutput(logFile)
+        
+            err = http.ListenAndServe(":5000", StringHandler{Message: "Hello, World"})
+            if err != nil {
+                log.Printf("Error: %v", err.Error())
+            }
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+            log.Printf("Method: %v", request.Method)
+            log.Printf("URL: %v", request.URL)
+            log.Printf("HTTP Version: %v", request.Proto)
+            log.Printf("Host: %v", request.Host)
+            for name, val := range request.Header {
+                log.Printf("Header: %v, Value: %v", name, val)
+            }
+            io.WriteString(writer, sh.Message)
+            log.Printf("============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================")
+        }
+    Output: Create a TXT file in Server/LogFile/logs.txt and save appendation in to it.
 ████████████████████████████████████████████████████████████████████████
 410.
 ████████████████████████████████████████████████████████████████████████
