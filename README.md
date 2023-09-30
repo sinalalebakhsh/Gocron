@@ -95,9 +95,7 @@ Date:2023-9-20-Sunday-September
 ### Debug Installation:
 #### Remove any previous Go installation
 	sudo rm -rf /usr/local/go 
-
 	sudo tar -C /usr/local -xzf go1.20.5.linux-amd64.tar.gz
-
 	echo $PATH | grep "/usr/local/go/bin"
 
 #### for config to all directories:

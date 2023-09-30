@@ -3,10 +3,11 @@ package getuserinput
 import (
 	"bufio"
 	"fmt"
-	"github.com/fatih/color"
-	"github.com/sinalalebakhsh/Gocron/features"
 	"os"
 	"strings"
+
+	"github.com/fatih/color"
+	"github.com/sinalalebakhsh/Gocron/features"
 )
 
 // after ensure user dont wrote arg more than one like -h or --help
@@ -22,7 +23,6 @@ func GetUserInput() {
 		UserInput := bufio.NewReader(os.Stdin)
 		FinalInput, _ := UserInput.ReadString('\n')
 		FinalInput = strings.TrimSuffix(FinalInput, "\n")
-		FinalInput = strings.ToLower(FinalInput)
 		FinalInput = strings.TrimSpace(FinalInput)
 		SliceOfWords := strings.Split(FinalInput, " ")
 
@@ -37,13 +37,15 @@ func GetUserInput() {
 			Regular = IfUserisHELP(FinalInput) // If FinalInput is or does't "help" return true
 		}
 
-		if len(SliceOfWords) == 2 {
-			FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
-			Regular = IfUsris2orMoreWords(FirstInput, SecondInput)
+		if Regular {
+			Regular = IfUserWantSingleDefinition(FinalInput)
 		}
 
 		if Regular {
-			Regular = IfUserWantSingleDefinition(FinalInput)
+			if len(SliceOfWords) >= 2 {
+				FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
+				Regular = IfUsris2orMoreWords(FirstInput, SecondInput)
+			}
 		}
 
 		if Regular {
@@ -91,10 +93,12 @@ func IfUsris2orMoreWords(FirstInput, SecondInput string) bool {
 }
 
 func IfUserWantSingleDefinition(FinalInput string) bool {
-	for index := range features.OriginSingleDef.SingleDef {
-		if FinalInput == index {
-			words := features.SplitIntoWords(features.OriginSingleDef.SingleDef[FinalInput])
+	keys := features.GetMapReturnSlice()
+	for _, Value := range keys {
+		if FinalInput == Value {
+			words := features.SplitIntoWords(features.OriginSingleDef.SingleDef[Value])
 			features.PrintWordByWord(words)
+			// fmt.Println(features.OriginSingleDef.SingleDef[Value])
 			fmt.Println()
 			return false
 		}
@@ -121,71 +125,69 @@ func IfUsrisALL(FinalInput string) bool {
 	return true
 }
 
-	func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBase) {
-		// ===============================================
-		// RegEx
-		// for searching on slice = "ALL REGEX", "ALLREGEX",
-		if result := searchSlice(FinalInput, features.TitleOfRegEx, features.OriginalAllRegex); result.Alldatafield != "" {
-			MyChann1 <- result
-			return
-		}
-		// ===============================================
-		// Time
-		// searching for on slice = "ALL TIME", "ALLTIME",
-		if result := searchSlice(FinalInput, features.TitleOfTimeData, features.OriginalTimeData); result.Alldatafield != "" {
-			MyChann1 <- result
-			return
-		}
-		// ===============================================
-		// Read & Writing
-		// searching for on slice = "READING AND WRITING DATA", "READINGANDWRITINGDATA", "ALL READING AND WRITING DATA", "ALLREADINGANDWRITINGDATA",
-		if result := searchSlice(FinalInput, features.TitleOfReadingWriting, features.OriginalReadingandWriting); result.Alldatafield != "" {
-			MyChann1 <- result
-			return
-		}
-		// ===============================================
-		// Working with JSON Files
-		// searching for on slice = "ALL JSON", "ALLJSON", "ALL JSON DATA", "ALLJSONDATA", "ALL WORK WITH JSON DATA", "ALLWORKWITHJSONDATA", "ALL WORKING WITH JSON DATA", "ALLWORKINGWITHJSONDATA",
-		if result := searchSlice(FinalInput, features.TitleOfJSON, features.OriginalJSONData); result.Alldatafield != "" {
-			MyChann1 <- result
-			return
-		}
-		// ===============================================
-		// HTML & Text Templates
-		// searching for on slice = "ALL HTML AND TEMPLATE", "ALLHTMLANDTEMPLATE",
-		if result := searchSlice(FinalInput, features.TitleOfUsingHTMLAndTextTemplates, features.OriginalHTMLAndTemplates); result.Alldatafield != "" {
-			MyChann1 <- result
-			return
-		}
-		// ===============================================
-		//  Working with Files
-		// searching for on slice = "ALL WORKING WITH FILES", "ALLWORKINGWITHFILES",
-		if result := searchSlice(FinalInput, features.TitleOfWorkingFiles, features.OriginalWorkWithFiles); result.Alldatafield != "" {
-			MyChann1 <- result
-			return
-		}
-		// ===============================================
-		// Creating HTTP Servers
-		// searching for on slice = "ALL HTTP SERVERS", "ALLHTTPSERVERS", "ALL CREATING HTTP SERVERS", "ALLCREATINGHTTPSERVERS",
-		if result := searchSlice(FinalInput, features.TitleHTTPServers, features.OriginalHTTPServers); result.Alldatafield != "" {
-			MyChann1 <- result
-			return
-		}
-
-		
-
-		MyChann1 <- features.DataBase{} // Return an empty struct if not found
-
+func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBase) {
+	// ===============================================
+	// RegEx
+	// for searching on slice = "ALL REGEX", "ALLREGEX",
+	if result := searchSlice(FinalInput, features.TitleOfRegEx, features.OriginalAllRegex); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+	// ===============================================
+	// Time
+	// searching for on slice = "ALL TIME", "ALLTIME",
+	if result := searchSlice(FinalInput, features.TitleOfTimeData, features.OriginalTimeData); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+	// ===============================================
+	// Read & Writing
+	// searching for on slice = "READING AND WRITING DATA", "READINGANDWRITINGDATA", "ALL READING AND WRITING DATA", "ALLREADINGANDWRITINGDATA",
+	if result := searchSlice(FinalInput, features.TitleOfReadingWriting, features.OriginalReadingandWriting); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+	// ===============================================
+	// Working with JSON Files
+	// searching for on slice = "ALL JSON", "ALLJSON", "ALL JSON DATA", "ALLJSONDATA", "ALL WORK WITH JSON DATA", "ALLWORKWITHJSONDATA", "ALL WORKING WITH JSON DATA", "ALLWORKINGWITHJSONDATA",
+	if result := searchSlice(FinalInput, features.TitleOfJSON, features.OriginalJSONData); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+	// ===============================================
+	// HTML & Text Templates
+	// searching for on slice = "ALL HTML AND TEMPLATE", "ALLHTMLANDTEMPLATE",
+	if result := searchSlice(FinalInput, features.TitleOfUsingHTMLAndTextTemplates, features.OriginalHTMLAndTemplates); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+	// ===============================================
+	//  Working with Files
+	// searching for on slice = "ALL WORKING WITH FILES", "ALLWORKINGWITHFILES",
+	if result := searchSlice(FinalInput, features.TitleOfWorkingFiles, features.OriginalWorkWithFiles); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+	// ===============================================
+	// Creating HTTP Servers
+	// searching for on slice = "ALL HTTP SERVERS", "ALLHTTPSERVERS", "ALL CREATING HTTP SERVERS", "ALLCREATINGHTTPSERVERS",
+	if result := searchSlice(FinalInput, features.TitleHTTPServers, features.OriginalHTTPServers); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
 	}
 
-	func searchSlice(input string, slice []string, obj features.DataBase) features.DataBase {
-		for _, item := range slice {
-			if strings.Contains(item, input) {
-				return obj
-			}
+	MyChann1 <- features.DataBase{} // Return an empty struct if not found
+
+}
+
+func searchSlice(input string, slice []string, obj features.DataBase) features.DataBase {
+	for _, item := range slice {
+		if strings.Contains(item, input) {
+			return obj
 		}
-		return features.DataBase{}
 	}
+	return features.DataBase{}
+}
 
 func PrintNotAddYet(FinalInput string) {
 	color.HiRed(fmt.Sprintf("=================================\nNot add %v yet.\n=================================", FinalInput))
