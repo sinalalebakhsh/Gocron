@@ -10181,11 +10181,52 @@ Output:
 415.Convenience Functions in the main.go
     example:
     main.go:
-        
-    Output:
-
+        package main
+        import (
+            "io"
+            "log"
+            "net/http"
+            "os"
+        )
+        type StringHandler struct {
+            Message string
+        }
+        func main() {
+            logFile, err := os.OpenFile("LogFile/logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+            if err != nil {
+                log.Fatal(err)
+            }
+            defer logFile.Close()
+            log.SetOutput(logFile)
+            err = http.ListenAndServe(":5000", StringHandler{Message: "Hello, World"})
+            if err != nil {
+                log.Printf("Error: %v", err.Error())
+            }
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            switch request.URL.Path {
+            case "/favicon.ico":
+                http.NotFound(writer, request)
+            case "/message":
+                io.WriteString(writer, sh.Message)
+            default:
+                http.Redirect(writer, request, "/message", http.StatusTemporaryRedirect)
+            }
+            log.Printf("Method: %v", request.Method)
+            log.Printf("URL: %v", request.URL)
+            log.Printf("HTTP Version: %v", request.Proto)
+            log.Printf("Host: %v", request.Host)
+            for name, val := range request.Header {
+                log.Printf("Header: %v, Value: %v", name, val)
+            }
+            io.WriteString(writer, sh.Message)
+            log.Printf("============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================")
+        }
+    Output: Will write in Terminal and File for feture analyzing.
+    
 ████████████████████████████████████████████████████████████████████████
-416.
+416.Using the Convenience Routing Handler
 ████████████████████████████████████████████████████████████████████████
 417.
 ████████████████████████████████████████████████████████████████████████

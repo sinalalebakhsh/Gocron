@@ -12,3 +12,47 @@
 2023/09/28 11:27:46 Header: Upgrade-Insecure-Requests, Value: [1]
 2023/09/28 11:27:46 Header: Accept-Encoding, Value: [gzip, deflate, br]
 2023/09/28 11:27:46 ============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================
+2023/09/30 15:37:01 Method: GET
+2023/09/30 15:37:01 URL: /message
+2023/09/30 15:37:01 HTTP Version: HTTP/1.1
+2023/09/30 15:37:01 Host: localhost:5000
+2023/09/30 15:37:01 Header: Upgrade-Insecure-Requests, Value: [1]
+2023/09/30 15:37:01 Header: Sec-Fetch-Dest, Value: [document]
+2023/09/30 15:37:01 Header: Sec-Fetch-Mode, Value: [navigate]
+2023/09/30 15:37:01 Header: Sec-Fetch-Site, Value: [cross-site]
+2023/09/30 15:37:01 Header: User-Agent, Value: [Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0]
+2023/09/30 15:37:01 Header: Accept, Value: [text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8]
+2023/09/30 15:37:01 Header: Accept-Encoding, Value: [gzip, deflate, br]
+2023/09/30 15:37:01 Header: Accept-Language, Value: [en-US,en;q=0.5]
+2023/09/30 15:37:01 Header: Connection, Value: [keep-alive]
+2023/09/30 15:37:01 ============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================
+2023/09/30 15:37:19 Method: GET
+2023/09/30 15:37:19 URL: /123123123
+2023/09/30 15:37:19 HTTP Version: HTTP/1.1
+2023/09/30 15:37:19 Host: localhost:5000
+2023/09/30 15:37:19 Header: Sec-Fetch-Site, Value: [none]
+2023/09/30 15:37:19 Header: User-Agent, Value: [Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0]
+2023/09/30 15:37:19 Header: Accept-Language, Value: [en-US,en;q=0.5]
+2023/09/30 15:37:19 Header: Accept-Encoding, Value: [gzip, deflate, br]
+2023/09/30 15:37:19 Header: Connection, Value: [keep-alive]
+2023/09/30 15:37:19 Header: Sec-Fetch-Mode, Value: [navigate]
+2023/09/30 15:37:19 Header: Sec-Fetch-User, Value: [?1]
+2023/09/30 15:37:19 Header: Accept, Value: [text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8]
+2023/09/30 15:37:19 Header: Upgrade-Insecure-Requests, Value: [1]
+2023/09/30 15:37:19 Header: Sec-Fetch-Dest, Value: [document]
+2023/09/30 15:37:19 ============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================
+2023/09/30 15:37:19 Method: GET
+2023/09/30 15:37:19 URL: /message
+2023/09/30 15:37:19 HTTP Version: HTTP/1.1
+2023/09/30 15:37:19 Host: localhost:5000
+2023/09/30 15:37:19 Header: Connection, Value: [keep-alive]
+2023/09/30 15:37:19 Header: Upgrade-Insecure-Requests, Value: [1]
+2023/09/30 15:37:19 Header: Sec-Fetch-Mode, Value: [navigate]
+2023/09/30 15:37:19 Header: Sec-Fetch-Site, Value: [none]
+2023/09/30 15:37:19 Header: Sec-Fetch-User, Value: [?1]
+2023/09/30 15:37:19 Header: User-Agent, Value: [Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0]
+2023/09/30 15:37:19 Header: Accept, Value: [text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8]
+2023/09/30 15:37:19 Header: Accept-Language, Value: [en-US,en;q=0.5]
+2023/09/30 15:37:19 Header: Accept-Encoding, Value: [gzip, deflate, br]
+2023/09/30 15:37:19 Header: Sec-Fetch-Dest, Value: [document]
+2023/09/30 15:37:19 ============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================
