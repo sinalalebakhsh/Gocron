@@ -4,7 +4,7 @@ go 1.21.0
 
 require (
 	github.com/fatih/color v1.15.0
-	github.com/gorilla/mux v1.8.0
+	// github.com/gorilla/mux v1.8.0
 )
 
 require (
