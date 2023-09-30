@@ -55,6 +55,12 @@ Date:2023-9-20-Sunday-September
 		</summary>
 			⭐ Add example for saving logs in TXT file from Server GO ⭐
 	</details>
+	<details>
+		<summary>
+			🔰 v1.0.16
+		</summary>
+			⭐ Will write in Terminal and File for feture analyzing. ⭐
+	</details>
 </details>
 
 	
@@ -162,4 +168,4 @@ You can use this command before start:
     ALL CREATING HTTP SERVERS
     ALLCREATINGHTTPSERVERS
 
-🌎🌏🌐🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔰🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
+🌎🌏🌐🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
