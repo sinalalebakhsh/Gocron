@@ -1,17 +1,17 @@
 package main
 
 import (
-	"github.com/sinalalebakhsh/Gocron/GetUserInput"
-	// "github.com/sinalalebakhsh/Gocron/Server"
+	// "github.com/sinalalebakhsh/Gocron/GetUserInput"
+	"github.com/sinalalebakhsh/Gocron/Server"
 )
 
 func main()  {
 
-	getuserinput.GetFirstArg()
+	// getuserinput.GetFirstArg()
 
-	getuserinput.GetUserInput()
+	// getuserinput.GetUserInput()
 
-	// server.MyServer()
+	server.MyServer()
 	
 	
 }

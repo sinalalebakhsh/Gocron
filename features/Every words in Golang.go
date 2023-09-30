@@ -10109,8 +10109,9 @@ Output:
                 Printfln("Error: %v", err.Error())
             }
         }
-    Output:
-
+    Output: in Terminal
+        Request for /
+        Request for icon detected - returning 404
 ████████████████████████████████████████████████████████████████████████
 413.Get Logs and Handle request if URL not Exist:
         example:
@@ -10162,9 +10163,27 @@ Output:
         Output: so we have to logs, one of that is logs about user request,
         another that is about path URL in Terminal
 ████████████████████████████████████████████████████████████████████████
-414.
+414.Using the Response Convenience Functions
+    Name                                    Description
+    -----------------------                 ----------------------------
+    Error(writer, message, code)            This function sets the header to the specified code, sets the Content-Type header
+                                            to text/plain, and writes the error message to the response. The X-Content-
+                                            Type-Options header is also set to stop browsers from interpreting the response as
+                                            anything other than text.
+    NotFound(writer, request)               This function calls Error and specifies a 404 error code.
+    Redirect(writer, request, url, code)    This function sends a redirection response to the specified URL and with the
+                                            specified status code.
+    ServeFile(writer, request, fileName)    This function sends a response containing the contents of the specified file. The
+                                            Content-Type header is set based on the file name but can be overridden by
+                                            explicitly setting the header before calling the function. See the “Creating a Static
+                                            HTTP Server” section for an example that serves files.
 ████████████████████████████████████████████████████████████████████████
-415.
+415.Convenience Functions in the main.go
+    example:
+    main.go:
+        
+    Output:
+
 ████████████████████████████████████████████████████████████████████████
 416.
 ████████████████████████████████████████████████████████████████████████
