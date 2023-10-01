@@ -61,6 +61,12 @@ Date:2023-9-20-Sunday-September
 		</summary>
 			⭐ Will write in Terminal and File for feture analyzing. ⭐
 	</details>
+	<details>
+		<summary>
+			🔰 v1.0.17
+		</summary>
+			🔰 Will write in Terminal and File for feture analyzing. 🔰
+	</details>
 </details>
 
 	
