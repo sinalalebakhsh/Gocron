@@ -1,4 +1,4 @@
-# <img src="https://github.com/gogs/gogs/raw/master/public/img/favicon.png" width="45" align="left">Gogs - A painless self-hosted Git service
+# <img src="https://github.com/sinalalebakhsh/Gocron/raw/master/public/img/favicon.png" width="45" align="left">Gogs - A painless self-hosted Git service
 
 # Gocron
 Date:2023-9-20-Sunday-September
