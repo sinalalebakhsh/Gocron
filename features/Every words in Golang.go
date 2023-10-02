@@ -10226,15 +10226,93 @@ Output:
     Output: Will write in Terminal and File for feture analyzing.
     
 ████████████████████████████████████████████████████████████████████████
-416.Using the Convenience Routing Handler
+416.Using the Convenience Functions in the main.go
+    example:
+    main.go:
+        package main
+        import (
+            "io"
+            "net/http"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            switch request.URL.Path {
+            case "/favicon.ico":
+                http.NotFound(writer, request)
+            case "/message":
+                io.WriteString(writer, sh.message)
+            default:
+                http.Redirect(writer, request, "/message", http.StatusTemporaryRedirect)
+            }
+        }
+        func main() {
+            err := http.ListenAndServe(":5000", StringHandler{message: "Hello, World"})
+            if err != nil {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        every wrong links redirect to specific link.
+        uses a switch statement to decide how to respond to a request.
 ████████████████████████████████████████████████████████████████████████
-417.
+417.Using the Convenience Routing Handler
+    The process of inspecting the URL and selecting a response can produce complex code that is difficult to
+    read and maintain. 
+    To simplify the process, the net/http package provides a Handler implementation that
+    allows matching the URL to be separated from producing a request.
+
+    example:
+    main.go:
+        package main
+        import (
+            "io"
+            "net/http"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            io.WriteString(writer, sh.message)
+        }
+        func main() {
+            http.Handle("/message", StringHandler{"Hello, World"})
+            http.Handle("/favicon.ico", http.NotFoundHandler())
+            http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+            err := http.ListenAndServe(":5000", nil)
+            if err != nil {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        don't show wrong search.
 ████████████████████████████████████████████████████████████████████████
-418.
+418.The net/http Functions for Creating Routing Rules
+    Name                                Description
+    -----------------                   ---------------------------------
+    Handle(pattern, handler)            This function creates a rule that invokes the specified ServeHTTP method of the
+                                        specified Hander for requests that match the pattern.
+    HandleFunc(pattern, handlerFunc)    This function creates a rule that invokes the specified function for requests that match
+                                        the pattern. The function is invoked with ResponseWriter and Request arguments.
 ████████████████████████████████████████████████████████████████████████
-419.
+419.he net/http Functions for Creating Request Handlers
+    Name                                        Description
+    FileServer(root)                            This function creates a Handler that produces responses using the ServeFile
+                                                function. See the “Creating a Static HTTP Server” section for an example that
+                                                serves files.
+    NotFoundHandler()                           This function creates a Handler that produces responses using the NotFound function.
+    RedirectHandler(url, code)                  This function creates a Handler that produces responses using the Redirect function.
+    StripPrefix(prefix, handler)                This function creates a Handler that removes the specified prefix from the
+                                                request URL and passes on the request to the specified Handler. See the
+                                                “Creating a Static HTTP Server” section for details.
+    TimeoutHandler(handler, duration, message)  This function passes on the request to the specified Handler but generates an error
+                                                response if the response hasn't been produced within the specified duration.
+
 ████████████████████████████████████████████████████████████████████████
-420.
+420.Supporting HTTPS Requests
 ████████████████████████████████████████████████████████████████████████
 421.
 ████████████████████████████████████████████████████████████████████████
