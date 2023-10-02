@@ -10313,8 +10313,32 @@ Output:
 
 ████████████████████████████████████████████████████████████████████████
 420.Supporting HTTPS Requests
+    The net/http package provides integrated support for HTTPS. 
+    To prepare for HTTPS, you will need to add
+    two files to the httpserver folder: 
+        a certificate file and a private key file.
+
 ████████████████████████████████████████████████████████████████████████
-421.
+421.Getting Certificates for HTTPS
+    A good way to get started with HTTPS is with a self-signed certificate, 
+    which can be used for development and testing. 
+    If you don't already have a self-signed certificate, 
+    then you can create one online using sites such as 
+    
+    https://getacert.com 
+    or 
+    https://www.selfsignedcertificate.com
+    
+    both of which will let you create a self-signed certificate easily 
+    and without charge.
+
+    Two files are required to use HTTPS, regardless of whether your certificate 
+    is self-signed or not. The first is the certificate file, 
+    which usually has a cer or cert file extension. 
+    The second is the private key file, which usually has a key file extension.
+
+    after ready to deploy:
+        https://letsencrypt.org
 ████████████████████████████████████████████████████████████████████████
 422.
 ████████████████████████████████████████████████████████████████████████
