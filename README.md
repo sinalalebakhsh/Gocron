@@ -6,10 +6,6 @@
 
 
 <br>
-	Date:2023-9-20-Sunday-September
-</br>
-
-
 
 <details>
 	<summary>
@@ -78,6 +74,10 @@
 </details>
 
 	
+	
+</br>
+
+
 
 ## Indtroduction 
 	is a API for learning GO language with example.
