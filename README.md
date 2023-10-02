@@ -6,77 +6,72 @@
 
 
 <br>
-
-<details>
-	<summary>
-		Features In Versions
-	</summary>
+	<details>
+		<summary>
+			Features In Versions
+		</summary>
+			<details>
+				<summary>
+					🎭 V1.0.4 
+				</summary>
+					Add Goroutines for searching concurently in data
+			</details>
 		<details>
 			<summary>
-				🎭 V1.0.4 
+				🖌 V1.0.5 
 			</summary>
-				Add Goroutines for searching concurently in data
+				Add Single Examples for better learning.
 		</details>
-	<details>
-		<summary>
-			🖌 V1.0.5 
-		</summary>
-			Add Single Examples for better learning.
+		<details>
+			<summary>
+				🎯 v1.0.6
+			</summary>
+				Add Channel and rerlation between Gourotines
+		</details>
+		<details>
+			<summary>
+				🧭 v1.0.8
+			</summary>
+				Add message for "not found yet"
+		</details>
+		<details>
+			<summary>
+				🌍 v1.0.12
+			</summary>
+				Adding => All Creating HTTP Servers
+		</details>
+		<details>
+			<summary>
+				🍪 v1.0.13
+			</summary>
+				Add in everything Inspecting the Request
+		</details>
+		<details>
+			<summary>
+				🥎 v1.0.14
+			</summary>
+				⭐⭐⭐ Creating My First Server ⭐⭐⭐
+		</details>
+		<details>
+			<summary>
+				🥝 v1.0.15
+			</summary>
+				⭐ Add example for saving logs in TXT file from Server GO ⭐
+		</details>
+		<details>
+			<summary>
+				🔰 v1.0.16
+			</summary>
+				⭐ Will write in Terminal and File for feture analyzing. ⭐
+		</details>
+		<details>
+			<summary>
+				🔰 v1.0.17
+			</summary>
+				🔰 Will write in Terminal and File for feture analyzing. 🔰
+		</details>
 	</details>
-	<details>
-		<summary>
-			🎯 v1.0.6
-		</summary>
-			Add Channel and rerlation between Gourotines
-	</details>
-	<details>
-		<summary>
-			🧭 v1.0.8
-		</summary>
-			Add message for "not found yet"
-	</details>
-	<details>
-		<summary>
-			🌍 v1.0.12
-		</summary>
-			Adding => All Creating HTTP Servers
-	</details>
-	<details>
-		<summary>
-			🍪 v1.0.13
-		</summary>
-			Add in everything Inspecting the Request
-	</details>
-	<details>
-		<summary>
-			🥎 v1.0.14
-		</summary>
-			⭐⭐⭐ Creating My First Server ⭐⭐⭐
-	</details>
-	<details>
-		<summary>
-			🥝 v1.0.15
-		</summary>
-			⭐ Add example for saving logs in TXT file from Server GO ⭐
-	</details>
-	<details>
-		<summary>
-			🔰 v1.0.16
-		</summary>
-			⭐ Will write in Terminal and File for feture analyzing. ⭐
-	</details>
-	<details>
-		<summary>
-			🔰 v1.0.17
-		</summary>
-			🔰 Will write in Terminal and File for feture analyzing. 🔰
-	</details>
-</details>
-
-	
-	
 </br>
-
 
 
 ## Indtroduction 
