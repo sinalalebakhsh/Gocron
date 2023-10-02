@@ -10430,9 +10430,106 @@ Output:
     Output:
         Not work for my Browser but you have to try, maybe work it for you.
 ████████████████████████████████████████████████████████████████████████
-424.
+424.Creating a Static HTTP Server
+    The net/http package includes built-in support for responding to requests with the contents of files. 
+    To prepare for the static HTTP server, 
+    create the httpserver/static folder and add to it a file named index.html
+
+    example:
+    static/index.html:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Pro Go</title>
+            <meta name="viewport" content="width=device-width" />
+            <link href="bootstrap.min.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="m-1 p-2 bg-primary text-white h2">
+                Hello, World
+            </div>
+        </body>
+        </html>
+    
+    store.html:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Pro Go</title>
+            <meta name="viewport" content="width=device-width" />
+            <link href="bootstrap.min.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="m-1 p-2 bg-primary text-white h2 text-center">
+                Products
+            </div>
+            <table class="table table-sm table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kayak</td>
+                        <td>Watersports</td>
+                        <td>$279.00</td>
+                    </tr>
+                    <tr>
+                        <td>Lifejacket</td>
+                        <td>Watersports</td>
+                        <td>$49.95</td>
+                    </tr>
+                </tbody>
+            </table>
+        </body>
+        </html>
+
+        The HTML files depend on the Bootstrap CSS package to style the HTML content. Run the command
+        shown in here in the httpserver folder to download the Bootstrap CSS file into the static folder.
+        (You may have to install the curl command.):
+
+            curl https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css --output static/bootstrap.min.css
+
+        Output:
+            ootstrap.min.css
+            % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                            Dload  Upload   Total   Spent    Left  Speed
+            100  152k    0  152k    0     0   163k      0 --:--:-- --:--:-- --:--:--  163k
 ████████████████████████████████████████████████████████████████████████
-425.
+425.Creating the Static File Route
+    example:
+    Defining a Route in the main.go:
+        package main
+        import (
+            "net/http"
+            "io"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+                request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            io.WriteString(writer, sh.message)
+        }
+        func main() {
+            http.Handle("/message", StringHandler{ "Hello, World"})
+            http.Handle("/favicon.ico", http.NotFoundHandler())
+            http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+            fsHandler := http.FileServer(http.Dir("./static"))
+            http.Handle("/files/", http.StripPrefix("/files", fsHandler))
+            err := http.ListenAndServe(":5000", nil)
+            if (err != nil) {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        redirect from => https://localhost:5500/files/store.html
+                   to => static/store.html
+                   
 ████████████████████████████████████████████████████████████████████████
 426.
 ████████████████████████████████████████████████████████████████████████
