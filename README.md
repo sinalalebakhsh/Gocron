@@ -1,4 +1,6 @@
-# <img src="https://github.com/sinalalebakhsh/Gocron/blob/main/Images/Gocron.jpg" width="45" align="left">Gocron - a API for learning GO language in CLI
+# <img src="https://github.com/sinalalebakhsh/Gocron/blob/main/Images/Gocron.jpg" width="45" align="left">
+
+Gocron - a API for learning GO language in CLI
 
 # Gocron
 Date:2023-9-20-Sunday-September
