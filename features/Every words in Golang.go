@@ -10531,7 +10531,90 @@ Output:
                    to => static/store.html
                    
 ████████████████████████████████████████████████████████████████████████
-426.
+426.Using Templates to Generate Responses
+    example:
+    templates/products.html:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>Pro Go</title>
+            <link rel="stylesheet" href="/files/bootstrap.min.css">
+        </head>
+        <body>
+            <h3 class="bg-primary text-white text-center p-2 m-2">Products</h3>
+            <div class="p-2">
+                <table class="table table-sm table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th class="text-end">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range $index, $product := .Data }}
+                        <tr>
+                            <td>{{ $index }}</td>
+                            <td>{{ $product.Name }}</td>
+                            <td>{{ $product.Category }}</td>
+                            <td class="text-end">
+                                {{ printf "$%.2f" $product.Price }}
+                            </td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+            </div>
+        </body>
+        </html>
+    
+    dynamic.go:
+        package main
+        import (
+            "html/template"
+            "net/http"
+            "strconv"
+        )
+        type Context struct {
+            Request *http.Request
+            Data []Product
+        }
+        var htmlTemplates *template.Template
+        func HandleTemplateRequest(writer http.ResponseWriter, request *http.Request) {
+            path := request.URL.Path
+            if (path == "") {
+                path = "products.html"
+            }
+            t := htmlTemplates.Lookup(path)
+            if (t == nil) {
+                http.NotFound(writer, request)
+            } else {
+                err := t.Execute(writer, Context{  request, Products})
+                if (err != nil) {
+                    http.Error(writer, err.Error(), http.StatusInternalServerError)
+                }
+            }
+        }
+        func init() {
+            var err error
+            htmlTemplates = template.New("all")
+            htmlTemplates.Funcs(map[string]interface{} {
+                "intVal": strconv.Atoi,
+            })
+            htmlTemplates, err = htmlTemplates.ParseGlob("templates/*.html")
+            if (err == nil) {
+                http.Handle("/templates/", http.StripPrefix("/templates/",
+                    http.HandlerFunc(HandleTemplateRequest)))
+            } else {
+                panic(err)
+            }
+        }
+
+    
+
+
 ████████████████████████████████████████████████████████████████████████
 427.
 ████████████████████████████████████████████████████████████████████████
