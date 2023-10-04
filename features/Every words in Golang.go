@@ -10768,6 +10768,30 @@ Output:
     ParseMultipart      This method parses a MIME multipart form and populates the MultipartForm field.
     Form(max)           The argument specifies the maximum number of bytes to allocate to the form data,
                         and the result is an error that describes any problems processing the form.
+
+    example:
+    The Contents of the forms.go File in the httpserver Folder:
+        package main
+        import (
+            "net/http"
+            "strconv"
+        )
+        func ProcessFormData(writer http.ResponseWriter, request *http.Request) {
+            if (request.Method == http.MethodPost) {
+                index, _ := strconv.Atoi(request.PostFormValue("index"))
+                p := Product {}
+                p.Name = request.PostFormValue("name")
+                p.Category = request.PostFormValue("category")
+                p.Price, _ = strconv.ParseFloat(request.PostFormValue("price"), 64)
+                Products[index] = p
+            }
+            http.Redirect(writer, request, "/templates", http.StatusTemporaryRedirect)
+        }
+        func init() {
+            http.HandleFunc("/forms/edit", ProcessFormData)
+        }
+    Output:
+        
 ████████████████████████████████████████████████████████████████████████
 431.
 ████████████████████████████████████████████████████████████████████████
