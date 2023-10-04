@@ -10650,11 +10650,88 @@ Output:
         func init() {
             http.HandleFunc("/json", HandleJsonRequest)
         }
+    =========================================================================
+    main.go:
+        package main
+        import (
+            "net/http"
+            "io"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+                request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            io.WriteString(writer, sh.message)
+        }
+        func main() {
+            http.Handle("/message", StringHandler{ "Hello, World"})
+            http.Handle("/favicon.ico", http.NotFoundHandler())
+            http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+
+            fsHandler := http.FileServer(http.Dir("./static"))
+            http.Handle("/files/", http.StripPrefix("/files", fsHandler))
+
+            err := http.ListenAndServe(":5000", nil)
+            if (err != nil) {
+                Printfln("Error: %v", err.Error())
+            }
+        }
     ===================================================================
     Output:
-        
+        The initialization function creates a route, 
+        which means that requests for /json will be processed by the
+        HandleJsonRequest function.
 ████████████████████████████████████████████████████████████████████████
-429.
+429.Handling Form Data
+    The net/http package provides support for easily receiving and processing form data.
+
+    example:
+    edit.html:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>Pro Go</title>
+            <link rel="stylesheet" href="/files/bootstrap.min.css">
+        </head>
+        <body>
+            {{ $index := intVal (index (index .Request.URL.Query "index") 0) }}
+            {{ if lt $index (len .Data)}}
+            {{ with index .Data $index}}
+            <h3 class="bg-primary text-white text-center p-2 m-2">Product</h3>
+            <form method="POST" action="/forms/edit" class="m-2">
+                <div class="form-group">
+                    <label>Index</label>
+                    <input name="index" value="{{$index}}" class="form-control" disabled />
+                    <input name="index" value="{{$index}}" type="hidden" />
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input name="name" value="{{.Name}}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <input name="category" value="{{.Category}}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input name="price" value="{{.Price}}" class="form-control" />
+                </div>
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="/templates/" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+            {{ end }}
+            {{ else }}
+            <h3 class="bg-danger text-white text-center p-2">
+                No Product At Specified Index
+            </h3>
+            {{end }}
+        </body>
+        </html>
 ████████████████████████████████████████████████████████████████████████
 430.
 ████████████████████████████████████████████████████████████████████████
