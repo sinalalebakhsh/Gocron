@@ -10612,13 +10612,27 @@ Output:
             }
         }
 
+    Output:
+        The initialization function loads all the templates with the html extension in the templates folder and
+        sets up a route so that requests that start with /templates/ are processed by the HandleTemplateRequest
+        function. This function looks up the template, falling back to the products.html file if no file path is
+        specified, executes the template, and writes the response.
+
+
+████████████████████████████████████████████████████████████████████████
+427.Understanding Content Type Sniffing
+    which implements the MIME Sniffing algorithm defined by: 
+        
+        https://mimesniff.spec.whatwg.org 
     
-
+    The sniffing process can't detect every content type, 
+    but it does well with standard web types, such as HTML, CSS, and JavaScript.
+    The DetectContentType function returns a MIME type, 
+    which is used as the value for the Content-Type header.
 
 ████████████████████████████████████████████████████████████████████████
-427.
-████████████████████████████████████████████████████████████████████████
-428.
+428.Responding with JSON Data
+    
 ████████████████████████████████████████████████████████████████████████
 429.
 ████████████████████████████████████████████████████████████████████████
