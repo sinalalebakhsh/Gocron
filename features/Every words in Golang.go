@@ -10687,6 +10687,12 @@ Output:
 429.Handling Form Data
     The net/http package provides support for easily receiving and processing form data.
 
+    This template makes use of template variables, expressions, 
+    and functions to get the query string from
+    the request and select the first index value, 
+    which is converted to an int and used to retrieve a Product value
+    from the data provided to the template.
+
     example:
     edit.html:
         <!DOCTYPE html>
@@ -10733,7 +10739,35 @@ Output:
         </body>
         </html>
 ████████████████████████████████████████████████████████████████████████
-430.
+430.Reading Form Data from Requests
+    The Request Form Data Fields and Methods
+    Name                Description
+    --------            ------------------------------
+    Form                This field returns a map[string][]string containing the parsed form data and the
+                        query string parameters. The ParseForm method must be called before this field is read.
+    PostForm            This field is similar to Form but excludes the query string parameters so that only
+                        data from the request body is contained in the map. The ParseForm method must
+                        be called before this field is read.
+    MultipartForm       This field returns a multipart form represented using the Form struct defined in the
+                        mime/multipart package. The ParseMultipartForm method must be called before
+                        this field is read.
+    FormValue(key)      This method returns the first value for the specified form key and returns the
+                        empty string if there is no value. The source of data for this method is the Form
+                        field, and calling the FormValue method automatically calls ParseForm or
+                        ParseMultipartForm to parse the form.
+    PostFormValue(key)  This method returns the first value for the specified form key and returns the
+                        empty string if there is no value. The source of data for this method is the PostForm
+                        field, and calling the PostFormValue method automatically calls ParseForm or
+                        ParseMultipartForm to parse the form.
+    FormFile(key)       This method provides access to the first file with the specified key in the form.
+                        The results are a File and FileHeader, both of which are defined in the mime/
+                        multipart package, and an error. Calling this function causes the ParseForm or
+                        ParseMultipartForm functions to be invoked to parse the form.
+    ParseForm()         This method parses a form and populates the Form and PostForm fields. The result
+                        is an error that describes any parsing problems.
+    ParseMultipart      This method parses a MIME multipart form and populates the MultipartForm field.
+    Form(max)           The argument specifies the maximum number of bytes to allocate to the form data,
+                        and the result is an error that describes any problems processing the form.
 ████████████████████████████████████████████████████████████████████████
 431.
 ████████████████████████████████████████████████████████████████████████
