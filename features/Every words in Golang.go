@@ -10109,8 +10109,9 @@ Output:
                 Printfln("Error: %v", err.Error())
             }
         }
-    Output:
-
+    Output: in Terminal
+        Request for /
+        Request for icon detected - returning 404
 ████████████████████████████████████████████████████████████████████████
 413.Get Logs and Handle request if URL not Exist:
         example:
@@ -10147,7 +10148,7 @@ Output:
                 Printfln("Request for %v", request.URL.Path)
                 io.WriteString(writer, sh.Message)
             
-            
+             
             
                 log.Printf("Method: %v", request.Method)
                 log.Printf("URL: %v", request.URL)
@@ -10162,35 +10163,476 @@ Output:
         Output: so we have to logs, one of that is logs about user request,
         another that is about path URL in Terminal
 ████████████████████████████████████████████████████████████████████████
-414.
+414.Using the Response Convenience Functions
+    Name                                    Description
+    -----------------------                 ----------------------------
+    Error(writer, message, code)            This function sets the header to the specified code, sets the Content-Type header
+                                            to text/plain, and writes the error message to the response. The X-Content-
+                                            Type-Options header is also set to stop browsers from interpreting the response as
+                                            anything other than text.
+    NotFound(writer, request)               This function calls Error and specifies a 404 error code.
+    Redirect(writer, request, url, code)    This function sends a redirection response to the specified URL and with the
+                                            specified status code.
+    ServeFile(writer, request, fileName)    This function sends a response containing the contents of the specified file. The
+                                            Content-Type header is set based on the file name but can be overridden by
+                                            explicitly setting the header before calling the function. See the “Creating a Static
+                                            HTTP Server” section for an example that serves files.
 ████████████████████████████████████████████████████████████████████████
-415.
+415.Convenience Functions in the main.go
+    example:
+    main.go:
+        package main
+        import (
+            "io"
+            "log"
+            "net/http"
+            "os"
+        )
+        type StringHandler struct {
+            Message string
+        }
+        func main() {
+            logFile, err := os.OpenFile("LogFile/logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+            if err != nil {
+                log.Fatal(err)
+            }
+            defer logFile.Close()
+            log.SetOutput(logFile)
+            err = http.ListenAndServe(":5000", StringHandler{Message: "Hello, World"})
+            if err != nil {
+                log.Printf("Error: %v", err.Error())
+            }
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            switch request.URL.Path {
+            case "/favicon.ico":
+                http.NotFound(writer, request)
+            case "/message":
+                io.WriteString(writer, sh.Message)
+            default:
+                http.Redirect(writer, request, "/message", http.StatusTemporaryRedirect)
+            }
+            log.Printf("Method: %v", request.Method)
+            log.Printf("URL: %v", request.URL)
+            log.Printf("HTTP Version: %v", request.Proto)
+            log.Printf("Host: %v", request.Host)
+            for name, val := range request.Header {
+                log.Printf("Header: %v, Value: %v", name, val)
+            }
+            io.WriteString(writer, sh.Message)
+            log.Printf("============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================")
+        }
+    Output: Will write in Terminal and File for feture analyzing.
+    
 ████████████████████████████████████████████████████████████████████████
-416.
+416.Using the Convenience Functions in the main.go
+    example:
+    main.go:
+        package main
+        import (
+            "io"
+            "net/http"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            switch request.URL.Path {
+            case "/favicon.ico":
+                http.NotFound(writer, request)
+            case "/message":
+                io.WriteString(writer, sh.message)
+            default:
+                http.Redirect(writer, request, "/message", http.StatusTemporaryRedirect)
+            }
+        }
+        func main() {
+            err := http.ListenAndServe(":5000", StringHandler{message: "Hello, World"})
+            if err != nil {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        every wrong links redirect to specific link.
+        uses a switch statement to decide how to respond to a request.
 ████████████████████████████████████████████████████████████████████████
-417.
+417.Using the Convenience Routing Handler
+    The process of inspecting the URL and selecting a response can produce complex code that is difficult to
+    read and maintain. 
+    To simplify the process, the net/http package provides a Handler implementation that
+    allows matching the URL to be separated from producing a request.
+
+    example:
+    main.go:
+        package main
+        import (
+            "io"
+            "net/http"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            io.WriteString(writer, sh.message)
+        }
+        func main() {
+            http.Handle("/message", StringHandler{"Hello, World"})
+            http.Handle("/favicon.ico", http.NotFoundHandler())
+            http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+            err := http.ListenAndServe(":5000", nil)
+            if err != nil {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        don't show wrong search.
 ████████████████████████████████████████████████████████████████████████
-418.
+418.The net/http Functions for Creating Routing Rules
+    Name                                Description
+    -----------------                   ---------------------------------
+    Handle(pattern, handler)            This function creates a rule that invokes the specified ServeHTTP method of the
+                                        specified Hander for requests that match the pattern.
+    HandleFunc(pattern, handlerFunc)    This function creates a rule that invokes the specified function for requests that match
+                                        the pattern. The function is invoked with ResponseWriter and Request arguments.
 ████████████████████████████████████████████████████████████████████████
-419.
+419.he net/http Functions for Creating Request Handlers
+    Name                                        Description
+    FileServer(root)                            This function creates a Handler that produces responses using the ServeFile
+                                                function. See the “Creating a Static HTTP Server” section for an example that
+                                                serves files.
+    NotFoundHandler()                           This function creates a Handler that produces responses using the NotFound function.
+    RedirectHandler(url, code)                  This function creates a Handler that produces responses using the Redirect function.
+    StripPrefix(prefix, handler)                This function creates a Handler that removes the specified prefix from the
+                                                request URL and passes on the request to the specified Handler. See the
+                                                “Creating a Static HTTP Server” section for details.
+    TimeoutHandler(handler, duration, message)  This function passes on the request to the specified Handler but generates an error
+                                                response if the response hasn't been produced within the specified duration.
+
 ████████████████████████████████████████████████████████████████████████
-420.
+420.Supporting HTTPS Requests
+    The net/http package provides integrated support for HTTPS. 
+    To prepare for HTTPS, you will need to add
+    two files to the httpserver folder: 
+        a certificate file and a private key file.
+
 ████████████████████████████████████████████████████████████████████████
-421.
+421.Getting Certificates for HTTPS
+    A good way to get started with HTTPS is with a self-signed certificate, 
+    which can be used for development and testing. 
+    If you don't already have a self-signed certificate, 
+    then you can create one online using sites such as 
+    
+    https://getacert.com 
+    or 
+    https://www.selfsignedcertificate.com
+    
+    both of which will let you create a self-signed certificate easily 
+    and without charge.
+
+    Two files are required to use HTTPS, regardless of whether your certificate 
+    is self-signed or not. The first is the certificate file, 
+    which usually has a cer or cert file extension. 
+    The second is the private key file, which usually has a key file extension.
+
+    after ready to deploy:
+        https://letsencrypt.org
+
+    The ListenAndServeTLS function is used to enable HTTPS, 
+    where the additional arguments specify the
+    certificate and private key files, 
+    which are named certificate.cer and certificate.key in my project
 ████████████████████████████████████████████████████████████████████████
-422.
+422.Enabling HTTPS in the main.go
+    example:
+    main.go:
+        package main
+        import (
+            "io"
+            "net/http"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            io.WriteString(writer, sh.message)
+        }
+        func main() {
+            http.Handle("/message", StringHandler{"Hello, World"})
+            http.Handle("/favicon.ico", http.NotFoundHandler())
+            http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+        
+            go func() {
+                err := http.ListenAndServeTLS(":5500", "certificate.cer",
+                    "certificate.key", nil)
+                if err != nil {
+                    Printfln("HTTPS Error: %v", err.Error())
+                }
+            }()
+        
+            err := http.ListenAndServe(":5000", nil)
+            if err != nil {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        HTTPS Error: open certificate.cer: no such file or directory
+        Request for /message
 ████████████████████████████████████████████████████████████████████████
-423.
+423.Redirecting HTTP Requests to HTTPS
+    A common requirement when creating web servers is to redirect HTTP requests to the HTTPS port. 
+    This can be done by creating a custom handler
+    
+    example:
+    Redirecting to HTTPS in the main.go:
+        package main
+        import (
+            "net/http"
+            "io"
+            "strings"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+                request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            io.WriteString(writer, sh.message)
+        }
+        func HTTPSRedirect(writer http.ResponseWriter,
+                request *http.Request) {
+            host := strings.Split(request.Host, ":")[0]
+            target := "https://" + host + ":5500" + request.URL.Path
+            if len(request.URL.RawQuery) > 0 {
+                target += "?" + request.URL.RawQuery
+            }
+            http.Redirect(writer, request, target, http.StatusTemporaryRedirect)
+        }
+        func main() {
+            http.Handle("/message", StringHandler{ "Hello, World"})
+            http.Handle("/favicon.ico", http.NotFoundHandler())
+            http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+            go func () {
+                err := http.ListenAndServeTLS(":5520", "certificate.cer",
+                    "certificate.key", nil)
+                if (err != nil) {
+                    Printfln("HTTPS Error: %v", err.Error())
+                }
+            }()
+            err := http.ListenAndServe(":5000", http.HandlerFunc(HTTPSRedirect))
+            if (err != nil) {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        Not work for my Browser but you have to try, maybe work it for you.
 ████████████████████████████████████████████████████████████████████████
-424.
+424.Creating a Static HTTP Server
+    The net/http package includes built-in support for responding to requests with the contents of files. 
+    To prepare for the static HTTP server, 
+    create the httpserver/static folder and add to it a file named index.html
+
+    example:
+    static/index.html:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Pro Go</title>
+            <meta name="viewport" content="width=device-width" />
+            <link href="bootstrap.min.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="m-1 p-2 bg-primary text-white h2">
+                Hello, World
+            </div>
+        </body>
+        </html>
+    
+    store.html:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Pro Go</title>
+            <meta name="viewport" content="width=device-width" />
+            <link href="bootstrap.min.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="m-1 p-2 bg-primary text-white h2 text-center">
+                Products
+            </div>
+            <table class="table table-sm table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kayak</td>
+                        <td>Watersports</td>
+                        <td>$279.00</td>
+                    </tr>
+                    <tr>
+                        <td>Lifejacket</td>
+                        <td>Watersports</td>
+                        <td>$49.95</td>
+                    </tr>
+                </tbody>
+            </table>
+        </body>
+        </html>
+
+        The HTML files depend on the Bootstrap CSS package to style the HTML content. Run the command
+        shown in here in the httpserver folder to download the Bootstrap CSS file into the static folder.
+        (You may have to install the curl command.):
+
+            curl https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css --output static/bootstrap.min.css
+
+        Output:
+            ootstrap.min.css
+            % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                            Dload  Upload   Total   Spent    Left  Speed
+            100  152k    0  152k    0     0   163k      0 --:--:-- --:--:-- --:--:--  163k
 ████████████████████████████████████████████████████████████████████████
-425.
+425.Creating the Static File Route
+    example:
+    Defining a Route in the main.go:
+        package main
+        import (
+            "net/http"
+            "io"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+                request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            io.WriteString(writer, sh.message)
+        }
+        func main() {
+            http.Handle("/message", StringHandler{ "Hello, World"})
+            http.Handle("/favicon.ico", http.NotFoundHandler())
+            http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+            fsHandler := http.FileServer(http.Dir("./static"))
+            http.Handle("/files/", http.StripPrefix("/files", fsHandler))
+            err := http.ListenAndServe(":5000", nil)
+            if (err != nil) {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        redirect from => https://localhost:5500/files/store.html
+                   to => static/store.html
+                   
 ████████████████████████████████████████████████████████████████████████
-426.
+426.Using Templates to Generate Responses
+    example:
+    templates/products.html:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>Pro Go</title>
+            <link rel="stylesheet" href="/files/bootstrap.min.css">
+        </head>
+        <body>
+            <h3 class="bg-primary text-white text-center p-2 m-2">Products</h3>
+            <div class="p-2">
+                <table class="table table-sm table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th class="text-end">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range $index, $product := .Data }}
+                        <tr>
+                            <td>{{ $index }}</td>
+                            <td>{{ $product.Name }}</td>
+                            <td>{{ $product.Category }}</td>
+                            <td class="text-end">
+                                {{ printf "$%.2f" $product.Price }}
+                            </td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+            </div>
+        </body>
+        </html>
+    
+    dynamic.go:
+        package main
+        import (
+            "html/template"
+            "net/http"
+            "strconv"
+        )
+        type Context struct {
+            Request *http.Request
+            Data []Product
+        }
+        var htmlTemplates *template.Template
+        func HandleTemplateRequest(writer http.ResponseWriter, request *http.Request) {
+            path := request.URL.Path
+            if (path == "") {
+                path = "products.html"
+            }
+            t := htmlTemplates.Lookup(path)
+            if (t == nil) {
+                http.NotFound(writer, request)
+            } else {
+                err := t.Execute(writer, Context{  request, Products})
+                if (err != nil) {
+                    http.Error(writer, err.Error(), http.StatusInternalServerError)
+                }
+            }
+        }
+        func init() {
+            var err error
+            htmlTemplates = template.New("all")
+            htmlTemplates.Funcs(map[string]interface{} {
+                "intVal": strconv.Atoi,
+            })
+            htmlTemplates, err = htmlTemplates.ParseGlob("templates/*.html")
+            if (err == nil) {
+                http.Handle("/templates/", http.StripPrefix("/templates/",
+                    http.HandlerFunc(HandleTemplateRequest)))
+            } else {
+                panic(err)
+            }
+        }
+
+    Output:
+        The initialization function loads all the templates with the html extension in the templates folder and
+        sets up a route so that requests that start with /templates/ are processed by the HandleTemplateRequest
+        function. This function looks up the template, falling back to the products.html file if no file path is
+        specified, executes the template, and writes the response.
+
+
 ████████████████████████████████████████████████████████████████████████
-427.
+427.Understanding Content Type Sniffing
+    which implements the MIME Sniffing algorithm defined by: 
+        
+        https://mimesniff.spec.whatwg.org 
+    
+    The sniffing process can't detect every content type, 
+    but it does well with standard web types, such as HTML, CSS, and JavaScript.
+    The DetectContentType function returns a MIME type, 
+    which is used as the value for the Content-Type header.
+
 ████████████████████████████████████████████████████████████████████████
-428.
+428.Responding with JSON Data
+    
 ████████████████████████████████████████████████████████████████████████
 429.
 ████████████████████████████████████████████████████████████████████████

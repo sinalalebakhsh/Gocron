@@ -27,6 +27,17 @@ func MyServer() {
 }
 
 func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+	Printfln("Request for %v", request.URL.Path)
+	switch request.URL.Path {
+	case "/favicon.ico":
+		http.NotFound(writer, request)
+	case "/message":
+		io.WriteString(writer, sh.Message)
+	default:
+		http.Redirect(writer, request, "/message", http.StatusTemporaryRedirect)
+	}
+
+
 	log.Printf("Method: %v", request.Method)
 	log.Printf("URL: %v", request.URL)
 	log.Printf("HTTP Version: %v", request.Proto)

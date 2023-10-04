@@ -1,80 +1,95 @@
-# Gocron
-Date:2023-9-20-Sunday-September
+# Gocron - a API for learning GO language in CLI
+
+<img src="https://github.com/sinalalebakhsh/Gocron/blob/main/Images/Gocron.jpg" width="100%" align="left">
 
 
 
-<details>
-	<summary>
-		Features In Versions
-	</summary>
+
+<br>
+	<details>
+		<summary>
+			Features In Versions
+		</summary>
+			<details>
+				<summary>
+					🎭 V1.0.4 
+				</summary>
+					Add Goroutines for searching concurently in data
+			</details>
 		<details>
 			<summary>
-				🎭 V1.0.4 
+				🖌 V1.0.5 
 			</summary>
-				Add Goroutines for searching concurently in data
+				Add Single Examples for better learning.
 		</details>
-	<details>
-		<summary>
-			🖌 V1.0.5 
-		</summary>
-			Add Single Examples for better learning.
+		<details>
+			<summary>
+				🎯 v1.0.6
+			</summary>
+				Add Channel and rerlation between Gourotines
+		</details>
+		<details>
+			<summary>
+				🧭 v1.0.8
+			</summary>
+				Add message for "not found yet"
+		</details>
+		<details>
+			<summary>
+				🌍 v1.0.12
+			</summary>
+				Adding => All Creating HTTP Servers
+		</details>
+		<details>
+			<summary>
+				🍪 v1.0.13
+			</summary>
+				Add in everything Inspecting the Request
+		</details>
+		<details>
+			<summary>
+				🥎 v1.0.14
+			</summary>
+				⭐⭐⭐ Creating My First Server ⭐⭐⭐
+		</details>
+		<details>
+			<summary>
+				🥝 v1.0.15
+			</summary>
+				⭐ Add example for saving logs in TXT file from Server GO ⭐
+		</details>
+		<details>
+			<summary>
+				🔰 v1.0.16
+			</summary>
+				⭐ Will write in Terminal and File for feture analyzing. ⭐
+		</details>
+		<details>
+			<summary>
+				🔰 v1.0.17
+			</summary>
+				🔰 Will write in Terminal and File for feture analyzing. 🔰
+		</details>
 	</details>
-	<details>
-		<summary>
-			🎯 v1.0.6
-		</summary>
-			Add Channel and rerlation between Gourotines
-	</details>
-	<details>
-		<summary>
-			🧭 v1.0.8
-		</summary>
-			Add message for "not found yet"
-	</details>
-	<details>
-		<summary>
-			🌍 v1.0.12
-		</summary>
-			Adding => All Creating HTTP Servers
-	</details>
-	<details>
-		<summary>
-			🍪 v1.0.13
-		</summary>
-			Add in everything Inspecting the Request
-	</details>
-	<details>
-		<summary>
-			🥎 v1.0.14
-		</summary>
-			⭐⭐⭐ Creating My First Server ⭐⭐⭐
-	</details>
-	<details>
-		<summary>
-			🥝 v1.0.15
-		</summary>
-			⭐ Add example for saving logs in TXT file from Server GO ⭐
-	</details>
-</details>
-
-	
-
-### Indtroduction 
-	is a API for learning GO language with example.
-	my name is Sina LalehBakhsh, I hope this API is useful for you
-	after running program, write your single word about any of GO language.
-	if your perpuse is more than one word, for convenience searching, just write keywords.
-	like this:
-	map slice
+</br>
 
 
-#### 1.Download Gocron
+# Indtroduction 
+is a API for learning GO language with example.
+my name is Sina LalehBakhsh, I hope this API is useful for you
+after running program, write your single word about any of GO language.
+if your perpuse is more than one word, for convenience searching, just write keywords.
+like this:
+map slice
+
+
+## 1.Download Gocron
 	git clone https://github.com/sinalalebakhsh/Gocron.git
 
-#### 2.in Terminal write current directory dowloaded:
+## 2.in Terminal write current directory dowloaded:
 	./Gocron
 
-#### 3.Use it
+## 3.Use it
 	just this!
 
 
@@ -162,4 +177,4 @@ You can use this command before start:
     ALL CREATING HTTP SERVERS
     ALLCREATINGHTTPSERVERS
 
-🌎🌏🌐🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔰🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
+🌎🌏🌐🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🪙🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🏆🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💎💍🎨
