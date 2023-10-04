@@ -10741,6 +10741,8 @@ Output:
 ████████████████████████████████████████████████████████████████████████
 430.Reading Form Data from Requests
     The Request Form Data Fields and Methods
+
+
     Name                Description
     --------            ------------------------------
     Form                This field returns a map[string][]string containing the parsed form data and the
@@ -10769,6 +10771,15 @@ Output:
     Form(max)           The argument specifies the maximum number of bytes to allocate to the form data,
                         and the result is an error that describes any problems processing the form.
 
+
+
+    The init function sets up a new route so that the ProcessFormData function handles requests whose
+    path is /forms/edit. Within the ProcessFormData function, the request method is checked, and the form
+    data in the request is used to create a Product struct and replace the existing data value. In a real project,
+    validating the data submitted in the form is essential, but for this chapter I trust that the form contains
+    valid data.
+    Processing form data:
+
     example:
     The Contents of the forms.go File in the httpserver Folder:
         package main
@@ -10790,7 +10801,9 @@ Output:
         func init() {
             http.HandleFunc("/forms/edit", ProcessFormData)
         }
+    
     Output:
+        without view of upload you can add data to templates URL.
         
 ████████████████████████████████████████████████████████████████████████
 431.
