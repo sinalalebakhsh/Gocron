@@ -16,7 +16,8 @@ import (
 // get user input in this condition
 func GetUserInput() {
 
-	fmt.Println("Do you want to open the browser? (yes/no)")
+	fmt.Println("Would you like to join the gocron project on GitHub? (yes/no)")
+	FirstCount := true
 
 	// I use For loop for getting user input for Repeatedly.
 	// if you want just get one more time delete this loop
@@ -42,7 +43,10 @@ func GetUserInput() {
 		}
 
 		if Regular {
-			Regular = GetUserForBrowser(FinalInput)
+			if FirstCount {
+				Regular = GetUserForBrowser(FinalInput)	
+				FirstCount = false
+			}
 		}
 
 		if Regular {
@@ -86,15 +90,14 @@ func IfUserisHELP(FinalInput string) bool {
 }
 
 func GetUserForBrowser(userInput string) bool {
-	if strings.ToLower(userInput) == "yes" { // Yes YES
+	if strings.ToLower(userInput) == "yes" {
 		openBrowser()
 		// server.MyServer()
 		return false
+	} else {
+		fmt.Println("Ok. Please search for the topic you are looking for with keywords:")
+		return false
 	}
-
-	fmt.Println("Okay, not opening the browser.")
-	return true
-
 }
 
 func openBrowser() {
@@ -112,7 +115,7 @@ func openBrowser() {
 		return
 	}
 
-	exec.Command(command, "https://github.com/sinalalebakhsh").Start()
+	exec.Command(command, "https://github.com/sinalalebakhsh/Gocron").Start()
 }
 
 func IfUsris2orMoreWords(FirstInput, SecondInput string) bool {
@@ -228,5 +231,5 @@ func searchSlice(input string, slice []string, obj features.DataBase) features.D
 }
 
 func PrintNotAddYet(FinalInput string) {
-	color.HiRed(fmt.Sprintf("=================================\nNot add %v yet.\n=================================", FinalInput))
+	color.HiRed(fmt.Sprintf("=================================\nNot add %q yet.\n=================================", FinalInput))
 }
