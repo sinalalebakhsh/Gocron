@@ -5,14 +5,18 @@ import (
 	"fmt"
 	"os"
 	"strings"
-
 	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/features"
+	"os/exec"
+	"runtime"
+	// "github.com/sinalalebakhsh/Gocron/Server"
 )
 
 // after ensure user dont wrote arg more than one like -h or --help
 // get user input in this condition
 func GetUserInput() {
+
+	fmt.Println("Do you want to open the browser? (yes/no)")
 
 	// I use For loop for getting user input for Repeatedly.
 	// if you want just get one more time delete this loop
@@ -35,6 +39,10 @@ func GetUserInput() {
 
 		if Regular {
 			Regular = IfUserisHELP(FinalInput) // If FinalInput is or does't "help" return true
+		}
+
+		if Regular {
+			Regular = GetUserForBrowser(FinalInput)
 		}
 
 		if Regular {
@@ -75,6 +83,36 @@ func IfUserisHELP(FinalInput string) bool {
 		return false
 	}
 	return true
+}
+
+func GetUserForBrowser(userInput string) bool {
+	if strings.ToLower(userInput) == "yes" { // Yes YES
+		openBrowser()
+		// server.MyServer()
+		return false
+	}
+
+	fmt.Println("Okay, not opening the browser.")
+	return true
+
+}
+
+func openBrowser() {
+	var command string
+
+	switch runtime.GOOS {
+	case "darwin":
+		command = "open"
+	case "windows":
+		command = "start"
+	case "linux":
+		command = "xdg-open"
+	default:
+		fmt.Println("Unsupported platform.")
+		return
+	}
+
+	exec.Command(command, "https://github.com/sinalalebakhsh").Start()
 }
 
 func IfUsris2orMoreWords(FirstInput, SecondInput string) bool {
