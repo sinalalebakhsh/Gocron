@@ -1,11 +1,11 @@
 # Gocron - a API for learning GO language in CLI
 
-# <img src="https://github.com/sinalalebakhsh/Gocron/blob/main/Images/Gocron.jpg" width="100%" align="left">
+<img src="https://github.com/sinalalebakhsh/Gocron/blob/main/Images/Gocron.jpg" width="100%" align="left">
 
 
 
 
-<br>
+## <br>
 	<details>
 		<summary>
 			Features In Versions
