@@ -10632,11 +10632,179 @@ Output:
 
 ████████████████████████████████████████████████████████████████████████
 428.Responding with JSON Data
+    JSON responses are widely used in web services, 
+    which provide access to an application's data for clients
+    that don't want to receive HTML, such as Angular or React JavaScript clients.
+
+    example:
+    json.go:
+        package main
+        import (
+            "net/http"
+            "encoding/json"
+        )
+        func HandleJsonRequest(writer http.ResponseWriter, request *http.Request) {
+            writer.Header().Set("Content-Type", "application/json")
+            json.NewEncoder(writer).Encode(Products)
+        }
+        func init() {
+            http.HandleFunc("/json", HandleJsonRequest)
+        }
+    =========================================================================
+    main.go:
+        package main
+        import (
+            "net/http"
+            "io"
+        )
+        type StringHandler struct {
+            message string
+        }
+        func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+                request *http.Request) {
+            Printfln("Request for %v", request.URL.Path)
+            io.WriteString(writer, sh.message)
+        }
+        func main() {
+            http.Handle("/message", StringHandler{ "Hello, World"})
+            http.Handle("/favicon.ico", http.NotFoundHandler())
+            http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+
+            fsHandler := http.FileServer(http.Dir("./static"))
+            http.Handle("/files/", http.StripPrefix("/files", fsHandler))
+
+            err := http.ListenAndServe(":5000", nil)
+            if (err != nil) {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    ===================================================================
+    Output:
+        The initialization function creates a route, 
+        which means that requests for /json will be processed by the
+        HandleJsonRequest function.
+████████████████████████████████████████████████████████████████████████
+429.Handling Form Data
+    The net/http package provides support for easily receiving and processing form data.
+
+    This template makes use of template variables, expressions, 
+    and functions to get the query string from
+    the request and select the first index value, 
+    which is converted to an int and used to retrieve a Product value
+    from the data provided to the template.
+
+    example:
+    edit.html:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>Pro Go</title>
+            <link rel="stylesheet" href="/files/bootstrap.min.css">
+        </head>
+        <body>
+            {{ $index := intVal (index (index .Request.URL.Query "index") 0) }}
+            {{ if lt $index (len .Data)}}
+            {{ with index .Data $index}}
+            <h3 class="bg-primary text-white text-center p-2 m-2">Product</h3>
+            <form method="POST" action="/forms/edit" class="m-2">
+                <div class="form-group">
+                    <label>Index</label>
+                    <input name="index" value="{{$index}}" class="form-control" disabled />
+                    <input name="index" value="{{$index}}" type="hidden" />
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input name="name" value="{{.Name}}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <input name="category" value="{{.Category}}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input name="price" value="{{.Price}}" class="form-control" />
+                </div>
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="/templates/" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+            {{ end }}
+            {{ else }}
+            <h3 class="bg-danger text-white text-center p-2">
+                No Product At Specified Index
+            </h3>
+            {{end }}
+        </body>
+        </html>
+████████████████████████████████████████████████████████████████████████
+430.Reading Form Data from Requests
+    The Request Form Data Fields and Methods
+
+
+    Name                Description
+    --------            ------------------------------
+    Form                This field returns a map[string][]string containing the parsed form data and the
+                        query string parameters. The ParseForm method must be called before this field is read.
+    PostForm            This field is similar to Form but excludes the query string parameters so that only
+                        data from the request body is contained in the map. The ParseForm method must
+                        be called before this field is read.
+    MultipartForm       This field returns a multipart form represented using the Form struct defined in the
+                        mime/multipart package. The ParseMultipartForm method must be called before
+                        this field is read.
+    FormValue(key)      This method returns the first value for the specified form key and returns the
+                        empty string if there is no value. The source of data for this method is the Form
+                        field, and calling the FormValue method automatically calls ParseForm or
+                        ParseMultipartForm to parse the form.
+    PostFormValue(key)  This method returns the first value for the specified form key and returns the
+                        empty string if there is no value. The source of data for this method is the PostForm
+                        field, and calling the PostFormValue method automatically calls ParseForm or
+                        ParseMultipartForm to parse the form.
+    FormFile(key)       This method provides access to the first file with the specified key in the form.
+                        The results are a File and FileHeader, both of which are defined in the mime/
+                        multipart package, and an error. Calling this function causes the ParseForm or
+                        ParseMultipartForm functions to be invoked to parse the form.
+    ParseForm()         This method parses a form and populates the Form and PostForm fields. The result
+                        is an error that describes any parsing problems.
+    ParseMultipart      This method parses a MIME multipart form and populates the MultipartForm field.
+    Form(max)           The argument specifies the maximum number of bytes to allocate to the form data,
+                        and the result is an error that describes any problems processing the form.
+
+
+
+    The init function sets up a new route so that the ProcessFormData function handles requests whose
+    path is /forms/edit. Within the ProcessFormData function, the request method is checked, and the form
+    data in the request is used to create a Product struct and replace the existing data value. In a real project,
+    validating the data submitted in the form is essential, but for this chapter I trust that the form contains
+    valid data.
+    Processing form data:
+
+    example:
+    The Contents of the forms.go File in the httpserver Folder:
+        package main
+        import (
+            "net/http"
+            "strconv"
+        )
+        func ProcessFormData(writer http.ResponseWriter, request *http.Request) {
+            if (request.Method == http.MethodPost) {
+                index, _ := strconv.Atoi(request.PostFormValue("index"))
+                p := Product {}
+                p.Name = request.PostFormValue("name")
+                p.Category = request.PostFormValue("category")
+                p.Price, _ = strconv.ParseFloat(request.PostFormValue("price"), 64)
+                Products[index] = p
+            }
+            http.Redirect(writer, request, "/templates", http.StatusTemporaryRedirect)
+        }
+        func init() {
+            http.HandleFunc("/forms/edit", ProcessFormData)
+        }
     
-████████████████████████████████████████████████████████████████████████
-429.
-████████████████████████████████████████████████████████████████████████
-430.
+    Output:
+        without view of upload you can add data to templates URL.
+        
 ████████████████████████████████████████████████████████████████████████
 431.
 ████████████████████████████████████████████████████████████████████████
