@@ -10780,6 +10780,9 @@ Output:
     valid data.
     Processing form data:
 
+
+    https://localhost:5500/templates/edit.html?index=2
+
     example:
     The Contents of the forms.go File in the httpserver Folder:
         package main
@@ -10807,8 +10810,77 @@ Output:
         
 ████████████████████████████████████████████████████████████████████████
 431.Reading Multipart Forms
+    example:
+    upload.html:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Pro Go</title>
+            <meta name="viewport" content="width=device-width" />
+            <link href="bootstrap.min.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="m-1 p-2 bg-primary text-white h2 text-center">
+                Upload File
+            </div>
+            <form method="POST" action="/forms/upload" class="p-2"
+                    enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input class="form-control" type="text" name="name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">City</label>
+                    <input class="form-control" type="text" name="city">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Choose Files</label>
+                    <input class="form-control" type="file" name="files" multiple>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Upload</button>
+            </form>
+        </body>
+        </html>
+    ====================================================================================
+    upload.go:
+        package main
+        import (
+            "fmt"
+            "io"
+            "net/http"
+        )
+        func HandleMultipartForm(writer http.ResponseWriter, request *http.Request) {
+            fmt.Fprintf(writer, "Name: %v, City: %v\n", request.FormValue("name"),
+                request.FormValue("city"))
+            fmt.Fprintln(writer, "------")
+            file, header, err := request.FormFile("files")
+            if err == nil {
+                defer file.Close()
+                fmt.Fprintf(writer, "Name: %v, Size: %v\n", header.Filename, header.Size)
+                for k, v := range header.Header {
+                    fmt.Fprintf(writer, "Key: %v, Value: %v\n", k, v)
+                }
+                fmt.Fprintln(writer, "------")
+                io.Copy(writer, file)
+            } else {
+                http.Error(writer, err.Error(), http.StatusInternalServerError)
+            }
+        }
+        func init() {
+            http.HandleFunc("/forms/upload", HandleMultipartForm)
+        }
+    Output:
+
 ████████████████████████████████████████████████████████████████████████
-432.
+432.The FileHeader Fields and Method
+    Name        Description
+    -------     ------------------------------
+    Name        This field returns a string containing the name of the file.
+    Size        This field returns an int64 containing the size of the file.
+    Header      This field returns a map[string][]string, which contains the headers for the MIME part that
+                contains the file.
+    Open()      This method returns a File that can be used to read the content associated with the header, as
+                demonstrated in the next section.
 ████████████████████████████████████████████████████████████████████████
 433.
 ████████████████████████████████████████████████████████████████████████
