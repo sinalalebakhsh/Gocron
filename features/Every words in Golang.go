@@ -10889,6 +10889,20 @@ Output:
     ---------------                 ------------------------------------
     SetCookie(writer, cookie)       This function adds a Set-Cookie header to the specified ResponseWriter. The
                                     cookie is described using a pointer to a Cookie struct, which is described next.
+
+
+
+    Cookies can be complex, and care must be taken to configure them correctly. 
+    The detail of how cookies work is beyond the scope of this book, 
+    but there is a good description available at 
+        
+        https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies 
+
+    and a detailed breakdown of the cookie
+    fields at: 
+
+        https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie.
+
 ████████████████████████████████████████████████████████████████████████
 434.
 ████████████████████████████████████████████████████████████████████████
