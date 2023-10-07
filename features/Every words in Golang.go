@@ -10869,7 +10869,8 @@ Output:
         func init() {
             http.HandleFunc("/forms/upload", HandleMultipartForm)
         }
-    Output:
+    Output: Search in Browser: http://localhost:5000/files/upload.html
+        You Can Upload
 
 ████████████████████████████████████████████████████████████████████████
 432.The FileHeader Fields and Method
