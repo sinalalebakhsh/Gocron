@@ -10883,7 +10883,12 @@ Output:
     Open()      This method returns a File that can be used to read the content associated with the header, as
                 demonstrated in the next section.
 ████████████████████████████████████████████████████████████████████████
-433.
+433.Reading and Setting Cookies
+    The net/http Function for Setting Cookies
+    Name                            Description
+    ---------------                 ------------------------------------
+    SetCookie(writer, cookie)       This function adds a Set-Cookie header to the specified ResponseWriter. The
+                                    cookie is described using a pointer to a Cookie struct, which is described next.
 ████████████████████████████████████████████████████████████████████████
 434.
 ████████████████████████████████████████████████████████████████████████
