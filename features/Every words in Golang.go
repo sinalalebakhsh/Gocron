@@ -10904,7 +10904,19 @@ Output:
         https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie.
 
 ████████████████████████████████████████████████████████████████████████
-434.
+434.The Fields Defined by the Cookie Struct
+    Name        Description
+    -------     --------------------------------
+    Name        This field represents the name of the cookie, expressed as a string.
+    Value       This field represents the cookie value, expressed as a string.
+    Path        This optional field specifies the cookie path.
+    Domain      This optional field specifies the host/domain to which the cookie will be set.
+    Expires     This field specifies the cookie expiry, expressed as a time.Time value.
+    MaxAge      This field specifies the number of seconds until the cookie expires, expressed as an int.
+    Secure      When this bool field is true, the client will only send the cookie over HTTPS connections.
+    HttpOnly    When this bool field is true, the client will prevent JavaScript code from accessing the cookie.
+    SameSite    This field specifies the cross-origin policy for the cookie using the SameSite constants, which
+                defines SameSiteDefaultMode, SameSiteLaxMode, SameSiteStrictMode, and SameSiteNoneMode.
 ████████████████████████████████████████████████████████████████████████
 435.
 ████████████████████████████████████████████████████████████████████████
