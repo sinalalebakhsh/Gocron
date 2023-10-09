@@ -10918,7 +10918,53 @@ Output:
     SameSite    This field specifies the cross-origin policy for the cookie using the SameSite constants, which
                 defines SameSiteDefaultMode, SameSiteLaxMode, SameSiteStrictMode, and SameSiteNoneMode.
 ████████████████████████████████████████████████████████████████████████
-435.
+435.The Request Methods for Cookies
+    Name            Description
+    -----------     ----------------
+    Cookie(name)    This method returns a pointer to the Cookie value with the specified name and an error
+                    that indicates when there is no matching cookie.
+    Cookies()       This method returns a slice of Cookie pointers.
+
+
+    example:
+    cookies.go:
+        package main
+        import (
+            "net/http"
+            "fmt"
+            "strconv"
+        )
+        func GetAndSetCookie(writer http.ResponseWriter, request *http.Request) {
+            counterVal := 1
+            counterCookie, err := request.Cookie("counter")
+            if (err == nil) {
+                counterVal, _ = strconv.Atoi(counterCookie.Value)
+                counterVal++
+            }
+        http.SetCookie(writer, &http.Cookie{
+                Name: "counter", Value: strconv.Itoa(counterVal),
+            })
+            if (len(request.Cookies()) > 0) {
+                for _, c := range request.Cookies() {
+                    fmt.Fprintf(writer, "Cookie Name: %v, Value: %v", c.Name, c.Value)
+                }
+            } else {
+                fmt.Fprintln(writer, "Request contains no cookies")
+            }
+        }
+        func init() {
+            http.HandleFunc("/cookies", GetAndSetCookie)
+        }
+    ======================================================================================
+    Compile and execute the project and use a browser to request http://localhost:5000/cookies
+    Output:
+        search-1:
+            Request contains no cookies
+        search-2:
+            Cookie Name: counter, Value: 1
+        search-3:
+            Cookie Name: counter, Value: 2
+        ...
 ████████████████████████████████████████████████████████████████████████
 436.
 ████████████████████████████████████████████████████████████████████████
