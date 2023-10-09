@@ -84,6 +84,12 @@
 			</summary>
 				🪙 Complete HTTP Servers First Step 🪙
 		</details>
+		<details>
+			<summary>
+				⚽ 1.0.22
+			</summary>
+				⚽ Add Clear Screen in program After Ending for in current running program you can use it ⚽
+		</details>
 	</details>
 </br>
 
@@ -195,4 +201,4 @@ You can use this command before start:
 	ALL CREATING HTTP CLIENTS
 	ALLCREATINGHTTPCLIENTS
 
-🌎🌏🌐🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💍🎨
+🌎🌏🌐🏀⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💍🎨
