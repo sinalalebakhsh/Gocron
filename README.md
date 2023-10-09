@@ -190,5 +190,9 @@ You can use this command before start:
     ALLHTTPSERVERS
     ALL CREATING HTTP SERVERS
     ALLCREATINGHTTPSERVERS
+	ALL HTTP CLIENTS
+	ALLHTTPCLIENTS
+	ALL CREATING HTTP CLIENTS
+	ALLCREATINGHTTPCLIENTS
 
 🌎🌏🌐🏀⚽⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💍🎨

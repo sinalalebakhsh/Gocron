@@ -43,6 +43,11 @@ func GetUserInput() {
 		}
 
 		if Regular {
+			Regular = IfUserisCLEAR(FinalInput)
+		}
+
+
+		if Regular {
 			if FirstCount {
 				Regular = GetUserForBrowser(FinalInput)	
 				FirstCount = false
@@ -75,6 +80,7 @@ func IfUsrisEXIT(FinalInput string) bool {
 	Exit := "exit"
 	if FinalInput == strings.ToLower(Exit) {
 		features.GoodByePrint()
+		features.ClearTerminal()
 		os.Exit(0)
 	}
 	return true
@@ -84,6 +90,14 @@ func IfUserisHELP(FinalInput string) bool {
 	Help := "help"
 	if FinalInput == strings.ToLower(Help) {
 		features.HelpMessage()
+		return false
+	}
+	return true
+}
+
+func IfUserisCLEAR(FinalInput string) bool {
+	if FinalInput == strings.ToLower("clear") {
+		features.ClearTerminal()
 		return false
 	}
 	return true

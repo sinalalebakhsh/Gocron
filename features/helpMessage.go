@@ -2,6 +2,8 @@ package features
 
 import (
 	"fmt"
+	"time"
+
 	"github.com/fatih/color"
 )
 
@@ -25,6 +27,12 @@ var LOGO string = fmt.Sprintln(` ───────────────�
 •                                                                                                             •
 └─────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
  ─────────────────────────────────────────────────────────────────────────────────────────────────────────────`)
+var TitleOfHelp = []string{
+	"-h",
+	"help",
+	"-help",
+	"--help",
+}
 
 var Message string = fmt.Sprintln(`
 my name is Sina LalehBakhsh, I hope this API is useful for you
@@ -36,48 +44,69 @@ like this:
 
 func HelpMessage() {
 	color.HiBlue(`
-	┌───────────────────┐
-	|   GoCron v1.0.16  |
-	└───────────────────┘
-	`)
+┌───────────────────┐
+|   GoCron v1.0.16  |
+└───────────────────┘`)
 	words := SplitIntoWords(Message)
 	PrintWordByWord(words)
 	fmt.Println()
-	color.HiBlue(fmt.Sprintln(`You can use this command before start:
-	◉============ Run
-	1-
-	go run .
-	
-	◉============ Build
-	1-
-	go build .
-	2-
-	./Gocron
-	
-	◉============ Help
-	./Gocron -h 
-	./Gocron help
-	./Gocron -help
-	./Gocron --help
+	time.Sleep(time.Second * 2)
+	color.HiBlue(fmt.Sprintln("You can use this command before start:"))
+	time.Sleep(time.Second * 2)
+	color.HiBlue(fmt.Sprintln(`Run
+  go run .
 
-	◉============ Show All
+Build
+  go build .
+  ./Gocron
+
+Help
+  ./Gocron -h 
+  ./Gocron help
+  ./Gocron -help
+  ./Gocron --help
+
+Show All
 	./Gocron all
 	./Gocron -all
-	./Gocron --all
-	`))
-	color.HiCyan(fmt.Sprintln(`
-	example command after run program:
-	help
+	./Gocron --all`))
+	time.Sleep(time.Second * 2)
+	color.HiCyan(fmt.Sprintln("example command after run program:"))
+	time.Sleep(time.Second * 2)
+	color.HiCyan(fmt.Sprintln(`	help
 	for example
 	all regex
-	goroutines and channels
-	`))
-	
-}
+	goroutines and channels`))
+	time.Sleep(time.Second * 2)
+	color.HiMagenta(fmt.Sprintln("if just write one input you get all about that:"))
+	time.Sleep(time.Second * 2)
+	color.HiMagenta(fmt.Sprintln(`	READING AND WRITING DATA
+	READINGANDWRITINGDATA
+	ALL READING AND WRITING DATA
+	ALLREADINGANDWRITINGDATA
+	ALL REGEX 
+	ALLREGEX
+	ALL TIME
+	ALLTIME
+	ALL HTML AND TEMPLATE
+	ALLHTMLANDTEMPLATE
+	ALL WORKING WITH FILES
+	ALLWORKINGWITHFILES
+	ALL JSON
+	ALLJSON
+	ALL JSON DATA
+	ALLJSONDATA
+	ALL WORK WITH JSON DATA
+	ALLWORKWITHJSONDATA
+	ALL WORKING WITH JSON DATA
+	ALLWORKINGWITHJSONDATA
+	ALL HTTP SERVERS
+	ALLHTTPSERVERS
+	ALL CREATING HTTP SERVERS
+	ALLCREATINGHTTPSERVERS
+	ALL HTTP CLIENTS
+	ALLHTTPCLIENTS
+	ALL CREATING HTTP CLIENTS
+	ALLCREATINGHTTPCLIENTS`))
 
-var TitleOfHelp = []string{
-	"-h",
-	"help",
-	"-help",
-	"--help",
 }
