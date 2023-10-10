@@ -6,3 +6,10 @@ var TitleHTTPClients = []string{
 	"ALL CREATING HTTP CLIENTS",
 	"ALLCREATINGHTTPCLIENTS",
 }
+
+var OriginalHTTPClients = DataBase{
+	Alldatafield: `
+436.=======================
+
+`,
+}

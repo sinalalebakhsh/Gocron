@@ -6,8 +6,7 @@ type SingleDefinitionExamples struct {
 
 var OriginalSingleDefExamples = SingleDefinitionExamples{
 	MapSingleDefEx: map[string]string{
-		"for":`
-56.for
+		"for":`56.for
 =================
 example-1 
 ------------

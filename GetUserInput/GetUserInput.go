@@ -230,6 +230,13 @@ func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBas
 		MyChann1 <- result
 		return
 	}
+	// ===============================================
+	// Creating HTTP Clients
+	// searching for on slice = "ALL HTTP CLIENTS", "ALLHTTPCLIENTS", "ALL CREATING HTTP CLIENTS", "ALLCREATINGHTTPCLIENTS",
+	if result := searchSlice(FinalInput, features.TitleHTTPClients, features.OriginalHTTPClients); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
 
 	MyChann1 <- features.DataBase{} // Return an empty struct if not found
 
