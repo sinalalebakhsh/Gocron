@@ -32,7 +32,7 @@
 			<summary>
 				🧭 v1.0.8
 			</summary>
-				🧭🧭🧭 Add message for "not found yet" 🧭🧭🧭
+				🧭 Add message for "not found yet"
 		</details>
 		<details>
 			<summary>
@@ -50,45 +50,53 @@
 			<summary>
 				🥎 v1.0.14
 			</summary>
-				🥎🥎🥎 Creating My First Server 🥎🥎🥎
+				🥎🥎🥎 Creating My First Server
 		</details>
 		<details>
 			<summary>
 				🥝 v1.0.15
 			</summary>
-				🥝 Add example for saving logs in TXT file from Server GO 🥝
+				🥝 Add example for saving logs in TXT file from Server GO
 		</details>
 		<details>
 			<summary>
 				🏆 v1.0.16
 			</summary>
-				🏆 Will write in Terminal and File for feture analyzing. 🏆
+				🏆 Will write in Terminal and File for feture analyzing. 
 		</details>
 		<details>
 			<summary>
 				🔰 v1.0.17
 			</summary>
-				🔰 Will write in Terminal and File for feture analyzing. 🔰
+				🔰 Will write in Terminal and File for feture analyzing. 
 		</details>
 		<details>
 			<summary>
 				💎 v1.0.20
 			</summary>
 				💎 Add this section:
-				The user is asked if he wants to enter the project page. 💎💎💎
+				The user is asked if he wants to enter the project page. 
 		</details>
 		Complete HTTP Servers First Step
 		<details>
 			<summary>
 				🪙 v1.0.21
 			</summary>
-				🪙 Complete HTTP Servers First Step 🪙
+				🪙 Complete HTTP Servers First Step 
 		</details>
 		<details>
 			<summary>
 				⚽ 1.0.22
 			</summary>
 				⚽ Add Clear Screen in program After Ending for in current running program you can use it ⚽
+		</details>
+				<details>
+			<summary>
+				⏺ v1.0.23
+			</summary>
+				⏺ 1- add build program
+				⏺ 2- debuging
+				⏺ 3- add map instead slice"
 		</details>
 	</details>
 </br>
@@ -201,4 +209,4 @@ You can use this command before start:
 	ALL CREATING HTTP CLIENTS
 	ALLCREATINGHTTPCLIENTS
 
-🌎🌏🌐🏀⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔆⏺⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💍🎨
+🌎🌏🌐🏀⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💍🎨
