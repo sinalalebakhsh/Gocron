@@ -1,13 +1,10 @@
 #!/bin/bash
 go build .
-sleep 1
-echo "*"
-sleep 1
-echo "*"
-sleep 1
-echo "*"
-sleep 1
-echo "*"
+for i in {1..4}
+do
+    echo -n "* "
+    sleep 1
+done
 git add .
 git commit -m " ++ "
 git push -u origin main 
