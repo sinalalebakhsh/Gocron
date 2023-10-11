@@ -11103,7 +11103,27 @@ Output:
         Use a web browser to request http://localhost:5000/html and http://localhost:5000/json,
         To see the echo result, request http://localhost:5000/echo
 ████████████████████████████████████████████████████████████████████████
-437.
+437.Sending Simple HTTP Requests
+    The net/http package provides a set of convenience functions that make basic HTTP requests. 
+    The functions are named after the HTTP method of the request they created.
+    
+    The Convenience Methods for HTTP Requests
+    Name                                Description
+    -----------------                   -----------------------------
+    Get(url)                            This function sends a GET request to the specified HTTP or HTTPS URL. The
+                                        results are a Response and an error that reports problems with the request.
+    Head(url)                           This function sends a HEAD request to the specified HTTP or HTTPS URL.
+                                        A HEAD request returns the headers that would be returned for a GET request.
+                                        The results are a Response and an error that reports problems with the request.
+    Post(url, contentType, reader)      This function sends a POST request to the specified HTTP or HTTPS URL, with
+                                        the specified Content-Type header value. The content for the form is provided
+                                        by the specified Reader. The results are a Response and an error that reports
+                                        problems with the request.
+    PostForm(url, data)                 This function sends a POST request to the specified HTTP or HTTPS URL, with
+                                        the Content-Type header set to application/x-www-form-urlencoded. The
+                                        content for the form is provided by a map[string][]string. The results are a
+                                        Response and an error that reports problems with the request.
+
 ████████████████████████████████████████████████████████████████████████
 438.
 ████████████████████████████████████████████████████████████████████████

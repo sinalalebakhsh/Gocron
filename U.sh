@@ -1,6 +1,6 @@
 #!/bin/bash
 go build .
-for i in {1..4}
+for i in {1..5}
 do
     echo -n "* "
     sleep 1
