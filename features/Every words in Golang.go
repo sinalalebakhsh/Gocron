@@ -10970,7 +10970,138 @@ Output:
             Cookie Name: counter, Value: 2
         ...
 ████████████████████████████████████████████████████████████████████████
-436.
+436.Creating HTTP Clients
+    Putting HTTP Clients in Context
+
+    What are they?
+        HTTP requests are used to retrieve data from HTTP servers
+    
+    Why are they useful?
+        HTTP is one of the most widely used protocols and is commonly used to provide
+        access to content that can be presented to the user as well as data that is consumed
+        programmatically.
+
+    How is it used?
+        The features of the net/http package are used to create and send requests and
+        process responses.
+    
+    Are there any pitfalls or limitations?
+        These features are well-designed and easy to use, although some features require a
+        specific sequence to use.
+    
+    Are there any alternatives?
+        The standard library includes support for other network protocols and also for
+        opening and using lower-level network connections. 
+        See the 
+        
+        https://pkg.go.dev/net@go1.17.1 
+
+        https://pkg.go.dev/net
+        
+        for details of the net package and its subpackages, such as net/smtp,
+        for example, which implements the SMTP protocol.
+
+
+    Chapter Summary:
+    Problem                                     Solution
+    --------                                    ------------
+    Send HTTP requests                          Use the convenience methods for specific HTTP methods
+    Configure HTTP requests                     Use the fields and methods defined by the Client struct
+    Create a preconfigured request              Use the NewRequest convenience functions
+    Use cookies in a request                    Use a cookie jar
+    Configure how redirections are processed    Use the CheckRedirect field to register a function that is
+                                                invoked to deal with a redirection
+    Send multipart forms                        Use the mime/multipart package
+
+
+    Preparing for This Chapter
+    1- go mod init httpclient
+    2- printer.go
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+    3- httpclient folder -> file named product.go
+        package main
+        type Product struct {
+            Name, Category string
+            Price float64
+        }
+        var Products = []Product {
+            { "Kayak", "Watersports", 279 },
+            { "Lifejacket", "Watersports", 49.95 },
+            { "Soccer Ball", "Soccer", 19.50 },
+            { "Corner Flags", "Soccer", 34.95 },
+            { "Stadium", "Soccer", 79500 },
+            { "Thinking Cap", "Chess", 16 },
+            { "Unsteady Chair", "Chess", 75 },
+            { "Bling-Bling King", "Chess", 1200 },
+        }
+    4- The Contents of the index.html File in the httpclient Folder
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Pro Go</title>
+            <meta name="viewport" content="width=device-width" />
+        </head>
+        <body>
+            <h1>Hello, World</div>
+        </body>
+        </html>    
+    5- The Contents of the server.go File in the httpclient Folder
+        package main
+        import (
+            "encoding/json"
+            "fmt"
+            "io"
+            "net/http"
+            "os"
+        )
+        func init() {
+            http.HandleFunc("/html",
+                func(writer http.ResponseWriter, request *http.Request) {
+                    http.ServeFile(writer, request, "./index.html")
+                })
+            http.HandleFunc("/json",
+                func(writer http.ResponseWriter, request *http.Request) {
+                    writer.Header().Set("Content-Type", "application/json")
+                    json.NewEncoder(writer).Encode(Products)
+                })
+            http.HandleFunc("/echo",
+                func(writer http.ResponseWriter, request *http.Request) {
+                    writer.Header().Set("Content-Type", "text/plain")
+                    fmt.Fprintf(writer, "Method: %v\n", request.Method)
+                    for header, vals := range request.Header {
+                        fmt.Fprintf(writer, "Header: %v: %v\n", header, vals)
+                    }
+                    fmt.Fprintln(writer, "----")
+                    data, err := io.ReadAll(request.Body)
+                    if err == nil {
+                        if len(data) == 0 {
+                            fmt.Fprintln(writer, "No body")
+                        } else {
+                            writer.Write(data)
+                        }
+                    } else {
+                        fmt.Fprintf(os.Stdout, "Error reading body: %v\n", err.Error())
+                    }
+                })
+        }
+    6- The Contents of the main.go File in the httpclient Folder
+        package main
+        import (
+            "net/http"
+        )
+        func main() {
+            Printfln("Starting HTTP Server")
+            http.ListenAndServe(":5000", nil)
+        }
+    =======================================================================================
+    Output:
+        The code in httpclient folder will be compiled and executed. 
+        Use a web browser to request http://localhost:5000/html and http://localhost:5000/json,
+        To see the echo result, request http://localhost:5000/echo
 ████████████████████████████████████████████████████████████████████████
 437.
 ████████████████████████████████████████████████████████████████████████
