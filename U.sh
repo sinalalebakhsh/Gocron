@@ -8,7 +8,7 @@ do
 done
 echo ""
 echo "Git is Pushing"
-for i in {1..2}
+for i in {1..5}
 do
     echo -n "* "
     sleep 1
