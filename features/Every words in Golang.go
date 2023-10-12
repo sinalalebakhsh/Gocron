@@ -11125,7 +11125,27 @@ Output:
                                         Response and an error that reports problems with the request.
 
 ████████████████████████████████████████████████████████████████████████
-438.
+438.Sending a GET Request in the main.go
+    main.go:
+        package main
+        import (
+            "net/http"
+            "os"
+            "time"
+        )
+        func main() {
+            go http.ListenAndServe(":5000", nil)
+            time.Sleep(time.Second)
+            response, err := http.Get("http://localhost:5000/html")
+            if (err == nil) {
+                response.Write(os.Stdout)
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    Output:
+        The argument to the Get function is a string that contains the URL to request. 
+        The results are a Response value and an error that reports any problems sending the request.
 ████████████████████████████████████████████████████████████████████████
 439.
 ████████████████████████████████████████████████████████████████████████
