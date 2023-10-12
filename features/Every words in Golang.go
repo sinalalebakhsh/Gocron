@@ -11143,11 +11143,94 @@ Output:
                 Printfln("Error: %v", err.Error())
             }
         }
+    ===================================================================================================
+    The argument to the Get function is a string that contains the URL to request. 
+    The results are a Response value and an error that reports any problems sending the request.
+
     Output:
-        The argument to the Get function is a string that contains the URL to request. 
-        The results are a Response value and an error that reports any problems sending the request.
+        HTTP/1.1 200 OK
+        Content-Length: 171
+        Accept-Ranges: bytes
+        Content-Type: text/html; charset=utf-8
+        Date: Thu, 12 Oct 2023 16:17:10 GMT
+        Last-Modified: Wed, 11 Oct 2023 12:44:50 GMT
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Pro Go</title>
+            <meta name="viewport" content="width=device-width" />
+        </head>
+        <body>
+            <h1>Hello, World</div>
+        </body>
+        </html>
+    
+    ========================================================================================================
+    example-2:
+    main.go:
+    package main
+    import (
+        "net/http"
+        "os"
+        // "time"
+    )
+    func main() {
+        // go http.ListenAndServe(":5000", nil)
+        // time.Sleep(time.Second)
+        response, err := http.Get("https://www.google.com")
+        if (err == nil) {
+            response.Write(os.Stdout)
+        } else {
+            Printfln("Error: %v", err.Error())
+        }
+    }
+
+Output:
+    HTTP/2.0 403 Forbidden
+    Content-Length: 1579
+    Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    Content-Type: text/html; charset=UTF-8
+    Date: Thu, 12 Oct 2023 16:15:23 GMT
+    Referrer-Policy: no-referrer
+    
+    <!DOCTYPE html>
+    <html lang=en>
+    <meta charset=utf-8>
+    <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+    <title>Error 403 (Forbidden)!!1</title>
+    <style>
+        *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+    </style>
+    <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
+    <p><b>403.</b> <ins>That's an error.</ins>
+    <p>Your client does not have permission to get URL <code>/</code> from this server.  <ins>That's all we know.</ins>
+
 ████████████████████████████████████████████████████████████████████████
-439.
+439.The Fields and Methods Defined by the Response Struct
+    Name            Description
+    ----------      -------------------------------------
+    StatusCode      This field returns the response status code, expressed as an int.
+    Status          This field returns a string containing the status description.
+    Proto           This field returns a string containing the response HTTP protocol.
+    Header          This field returns a map[string][]string that contains the response headers.
+    Body            This field returns a ReadCloser, which is a Reader that defines a Close method and
+                    which provides access to the response body.
+    Trailer         This field returns a map[string][]string that contains the response trailers.
+    ContentLength   This field returns the value of the Content-Length header, parsed into an int64 value.
+                    TransferEncoding This field returns the set of Transfer-Encoding header values.
+    Close           This bool field returns true if the response contains a Connection header set to close,
+                    which indicates that the HTTP connection should be closed.
+    Uncompressed    This field returns true if the server sent a compressed response that was
+                    decompressed by the net/http package.
+    Request         This field returns the Request that was used to obtain the response. The Request struct
+                    is described in Chapter 24.
+    TLS             This field provides details of the HTTPS connection.
+    Cookies()       This method returns a []*Cookie, which contains the Set-Cookie headers in the
+                    response. The Cookie struct is described in Chapter 24.
+    Location()      This method returns the URL from the response Location header and an error that
+                    indicates when the response does not contain this header.
+    Write(writer)   This method writes a summary of the response to the specified Writer.
 ████████████████████████████████████████████████████████████████████████
 440.
 ████████████████████████████████████████████████████████████████████████
