@@ -11348,7 +11348,14 @@ Output:
         ----
         category=Watersports&name=Kayak+&price=279
 ████████████████████████████████████████████████████████████████████████
-443.
+443.Posting a Form Using a Reader
+    The Post function sends a POST request 
+    to the server and creates the request body by reading content from a Reader.
+
+    Posting from a Reader in the main.go:
+        
+    ====================================================================
+    Output:
 ████████████████████████████████████████████████████████████████████████
 444.
 ████████████████████████████████████████████████████████████████████████
