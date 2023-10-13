@@ -11232,11 +11232,121 @@ Output:
                     indicates when the response does not contain this header.
     Write(writer)   This method writes a summary of the response to the specified Writer.
 ████████████████████████████████████████████████████████████████████████
-440.
+440.Reading the Response Body in the main.go
+    main.go:
+        package main
+        import (
+            "net/http"
+            "os"
+            "time"
+            "io"
+        )
+        func main() {
+            go http.ListenAndServe(":5000", nil)
+            time.Sleep(time.Second)
+            response, err := http.Get("http://localhost:5000/html")
+            if (err == nil && response.StatusCode == http.StatusOK) {
+                data, err := io.ReadAll(response.Body)
+                if (err == nil) {
+                    defer response.Body.Close()
+                    os.Stdout.Write(data)
+                }
+            } else {
+                Printfln("Error: %v, Status Code: %v", err.Error(), response.StatusCode)
+            }
+        }
+    ====================================================================
+    Output: in Terminal
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Pro Go</title>
+            <meta name="viewport" content="width=device-width" />
+        </head>
+        <body>
+            <h1>Hello, World</div>
+        </body>
+        </html>
 ████████████████████████████████████████████████████████████████████████
-441.
+441.Reading and Parsing Data in the main.go
+    main.go:
+        package main
+        import (
+            "net/http"
+            //"os"
+            "time"
+            //"io"
+            "encoding/json"
+        )
+        func main() {
+            go http.ListenAndServe(":5000", nil)
+            time.Sleep(time.Second)
+            response, err := http.Get("http://localhost:5000/json")
+            if (err == nil && response.StatusCode == http.StatusOK) {
+                defer response.Body.Close()
+                data := []Product {}
+                err = json.NewDecoder(response.Body).Decode(&data)
+                if (err == nil) {
+                    for _, p := range data {
+                        Printfln("Name: %v, Price: $%.2f", p.Name, p.Price)
+                    }
+                } else {
+                    Printfln("Decode error: %v", err.Error())
+                }
+            } else {
+                Printfln("Error: %v, Status Code: %v", err.Error(), response.StatusCode)
+            }
+        }
+    ====================================================================
+    Output: in Terminal
+        Name: Kayak,Price: $279.00
+        Name: Lifejacket,Price: $49.95
+        Name: Soccer Ball,Price: $19.50
+        Name: Corner Flags,Price: $34.95
+        Name: Stadium,Price: $79500.00
+        Name: Thinking Cap,Price: $16.00
+        Name: Unsteady Chair,Price: $75.00
+        Name: Bling-Bling King,Price: $1200.00
 ████████████████████████████████████████████████████████████████████████
-442.
+442.Sending POST Requests
+    The Post and PostForm functions are used to send POST requests. 
+    The PostForm function encodes a map of values as form data.
+
+    Sending a Form in the main.go
+    main.go:
+        package main
+        import (
+            "net/http"
+            "os"
+            "time"
+            "io"
+            //"encoding/json"
+        )
+        func main() {
+            go http.ListenAndServe(":5000", nil)
+            time.Sleep(time.Second)
+            formData := map[string][]string {
+                "name":  { "Kayak "},
+                "category": { "Watersports"},
+                "price":  { "279"},
+            }
+            response, err := http.PostForm("http://localhost:5000/echo", formData)
+            if (err == nil && response.StatusCode == http.StatusOK) {
+                io.Copy(os.Stdout, response.Body)
+                defer response.Body.Close()
+            } else {
+                Printfln("Error: %v, Status Code: %v", err.Error(), response.StatusCode)
+            }
+        }
+    ====================================================================
+    Output: 
+        Method: POST
+        Header: Accept-Encoding: [gzip]
+        Header: User-Agent: [Go-http-client/1.1]
+        Header: Content-Length: [42]
+        Header: Content-Type: [application/x-www-form-urlencoded]
+        ----
+        category=Watersports&name=Kayak+&price=279
 ████████████████████████████████████████████████████████████████████████
 443.
 ████████████████████████████████████████████████████████████████████████
