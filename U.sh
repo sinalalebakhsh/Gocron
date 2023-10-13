@@ -14,6 +14,4 @@ do
     sleep 1
 done
 echo ""
-git add .
-git commit -m " ++ "
-git push -u origin main 
+./Uplus.sh
