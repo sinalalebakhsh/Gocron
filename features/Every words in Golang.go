@@ -11383,6 +11383,13 @@ Output:
         }
     ====================================================================
     Output:
+        Method: POST
+        Header: User-Agent: [Go-http-client/1.1]
+        Header: Content-Length: [54]
+        Header: Content-Type: [application/json]
+        Header: Accept-Encoding: [gzip]
+        ----
+        {"Name":"Kayak","Category":"Watersports","Price":279}
 ████████████████████████████████████████████████████████████████████████
 444.
 ████████████████████████████████████████████████████████████████████████
