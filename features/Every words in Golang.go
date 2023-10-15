@@ -11417,6 +11417,7 @@ Output:
 
     The Client Fields and Methods
     Name                            Description
+    -----------------               -------------------------
     Transport                       This field is used to select the transport that will be used to send the HTTP
                                     request. The net/http package provides a default transport.
     CheckRedirect                   This field is used to specify a custom policy for dealing with repeated
@@ -11432,9 +11433,25 @@ Output:
     Post(url, contentType,reader)   This method is called by the Post function described
     PostForm(url, data)             This method is called by the PostForm function described
 ████████████████████████████████████████████████████████████████████████
-446.
+446.Useful Request Fields and Methods
+    Name                Description
+    ------              ------------------------------
+    Method              This string field specifies the HTTP method that will be used for the request. The net/
+                        http package defines constants for HTTP methods, such as MethodGet and MethodPost.
+    URL                 This URL field specifies the URL to which the request will be sent. The URL struct is
+    Header              This field is used to specify the headers for the request. The headers are specified in a
+                        map[string][]string, and the field will be nil when a Request value is created using the literal struct syntax.
+    ContentLength       This field is used to set the Content-Length header using an int64 value.
+    TransferEncoding    This field is used to set the Transfer-Encoding header using a slice of strings.
+    Body                This ReadCloser field specifies the source for the request body. If you have a Reader
+                        that doesn't define a Close method, then the io.NopCloser function can be used to
+                        create a ReadCloser whose Close method does nothing.
 ████████████████████████████████████████████████████████████████████████
-447.
+447.The Function for Parsing URL Values
+    Name            Description
+    ---------       ---------------------
+    Parse(string)   This method parses a string into a URL. The results are the URL value and an error that
+                    indicates problems parsing the string.
 ████████████████████████████████████████████████████████████████████████
 448.
 ████████████████████████████████████████████████████████████████████████
