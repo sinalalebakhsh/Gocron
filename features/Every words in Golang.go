@@ -11412,7 +11412,25 @@ Output:
 
 ████████████████████████████████████████████████████████████████████████
 445.Configuring HTTP Client Requests
-    
+    The Client struct is used when control is required over an HTTP request 
+    and defines the fields and methods described:
+
+    The Client Fields and Methods
+    Name                            Description
+    Transport                       This field is used to select the transport that will be used to send the HTTP
+                                    request. The net/http package provides a default transport.
+    CheckRedirect                   This field is used to specify a custom policy for dealing with repeated
+                                    redirections, as described in the “Managing Redirections” section.
+    Jar                             This field returns a CookieJar, which is used to manage cookies, as
+                                    described in the “Working with Cookies” section.
+    Timeout                         This field is used to set a timeout for the request, specified as a time.Duration 
+    Do(request)                     This method sends the specified Request, returning a Response and an
+                                    error that indicates problems sending the request.
+    CloseIdleConnections()          This method closes any idle HTTP requests that are currently open and unused.
+    Get(url)                        This method is called by the Get function described
+    Head(url)                       This method is called by the Head function described
+    Post(url, contentType,reader)   This method is called by the Post function described
+    PostForm(url, data)             This method is called by the PostForm function described
 ████████████████████████████████████████████████████████████████████████
 446.
 ████████████████████████████████████████████████████████████████████████
