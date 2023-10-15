@@ -11368,9 +11368,7 @@ Output:
             var builder strings.Builder
             err := json.NewEncoder(&builder).Encode(Products[0])
             if (err == nil) {
-                response, err := http.Post("http://localhost:5000/echo",
-                    "application/json",
-                    strings.NewReader(builder.String()))
+                response, err := http.Post("http://localhost:5000/echo","application/json",strings.NewReader(builder.String()))
                 if (err == nil && response.StatusCode == http.StatusOK) {
                     io.Copy(os.Stdout, response.Body)
                     defer response.Body.Close()
@@ -11391,9 +11389,30 @@ Output:
         ----
         {"Name":"Kayak","Category":"Watersports","Price":279}
 ████████████████████████████████████████████████████████████████████████
-444.
+444.Understanting The Content-Length Header
+    This header is set automatically but is included in requests only when it is
+    possible to determine how much data will be included in the body in advance. 
+    This is done by inspecting the Reader to determine the dynamic type. 
+    When the data is stored in memory using the strings.
+    Reader, bytes.Reader, or bytes.Buffer type, 
+    the built-in len function is used to determine the amount of data, 
+    and the result is used to set the Content-Length header.
+
+    For all other types, the Content-Type head is not set, 
+    and chunked encoding is used instead, which means that 
+    the body is written in blocks of data whose size 
+    is declared as part of the request body. 
+    This approach allows requests to be sent 
+    without needing to read all the data from the Reader just to work
+    out how many bytes there are. 
+    Chunked encoding is described at 
+    
+        https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Transfer-Encoding
+
+
 ████████████████████████████████████████████████████████████████████████
-445.
+445.Configuring HTTP Client Requests
+    
 ████████████████████████████████████████████████████████████████████████
 446.
 ████████████████████████████████████████████████████████████████████████
