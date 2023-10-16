@@ -38,6 +38,59 @@ Output:
 	Index: 4 Character: P
 	Index: 5 Character: L
 	Index: 6 Character: E`,
+
+	"http servers":`403.Creating HTTP Servers
+=================
+example-1 
+------------
+1- go mod init httpserver
+2- printer.go:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+3- product.go:
+	package main
+	type Product struct {
+		Name, Category string
+		Price          float64
+	
+	var Products = []Product{
+		{"Kayak", "Watersports", 279},
+		{"Lifejacket", "Watersports", 49.95},
+		{"Soccer Ball", "Soccer", 19.50},
+		{"Corner Flags", "Soccer", 34.95},
+		{"Stadium", "Soccer", 79500},
+		{"Thinking Cap", "Chess", 16},
+		{"Unsteady Chair", "Chess", 75},
+		{"Bling-Bling King", "Chess", 1200},
+	}
+4- in -> 404.Creating a Simple HTTP Server
+main.go:
+	package main
+	import (
+		"net/http"
+		"io"
+	)
+	type StringHandler struct {
+		message string
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+			request *http.Request) {
+		io.WriteString(writer, sh.message)
+	}
+	func main() {
+		err := http.ListenAndServe(":5000", StringHandler{ message: "Hello, World"})
+		if (err != nil) {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+=================================
+Output: go run .
+	in Web Browser, search localhost:5000/
+	Hello, World
+`,
 	},
 }
 

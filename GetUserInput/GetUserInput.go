@@ -60,8 +60,8 @@ func GetUserInput() {
 
 		if Regular {
 			if len(SliceOfWords) >= 2 {
-				FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
-				Regular = IfUsris2orMoreWords(FirstInput, SecondInput)
+				// FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
+				Regular = IfUsris2orMoreWords(SliceOfWords)
 			}
 		}
 
@@ -132,10 +132,28 @@ func openBrowser() {
 	exec.Command(command, "https://github.com/sinalalebakhsh/Gocron").Start()
 }
 
-func IfUsris2orMoreWords(FirstInput, SecondInput string) bool {
+func IfUsris2orMoreWords(SliceOfWords []string) bool {
+	// Initialize an empty string
+	result := ""
+
+	// Iterate through the slice excluding the last element
+	for i := 0; i < len(SliceOfWords)-1; i++ {
+		result += SliceOfWords[i]
+
+		// Add a separator (comma and space) if it's not the last element
+		if i < len(SliceOfWords)-2 {
+			result += " "
+		}
+	}
+
+	  // Get the last index
+	  lastIndex := len(SliceOfWords) - 1
+	  // Access the last element
+	  lastElement := SliceOfWords[lastIndex]
+
 	for Index := range features.OriginalSingleDefExamples.MapSingleDefEx {
-		if FirstInput == Index && SecondInput == "example" {
-			words := features.SplitIntoWords(features.OriginSingleDef.SingleDef[FirstInput])
+		if result == Index && lastElement == "example" {
+			words := features.SplitIntoWords(features.OriginSingleDef.SingleDef[result])
 			features.PrintWordByWord(words)
 			fmt.Println()
 			color.HiMagenta(fmt.Sprintln("============================================◉🧭🧭🧭🧭🧭🧭🧭◉=========================================="))
