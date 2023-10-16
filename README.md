@@ -90,13 +90,22 @@
 			</summary>
 				⚽ Add Clear Screen in program After Ending for in current running program you can use it ⚽
 		</details>
-				<details>
+		<details>
 			<summary>
 				⏺ v1.0.23
 			</summary>
 				⏺ 1- add build program
 				⏺ 2- debuging
 				⏺ 3- add map instead slice"
+		</details>
+		<details>
+			<summary>
+				✅ v1.0.24
+			</summary>
+				✅ develop searching in examples with more than one or two arguments:
+				✅  this is better for searching like this:
+				✅      http servers example
+				✅  result is true for this.
 		</details>
 	</details>
 </br>
@@ -209,4 +218,4 @@ You can use this command before start:
 	ALL CREATING HTTP CLIENTS
 	ALLCREATINGHTTPCLIENTS
 
-🌎🌏🌐🏀⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠✅🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💍🎨
+🌎🌏🌐🏀⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💍🎨
