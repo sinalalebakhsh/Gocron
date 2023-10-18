@@ -11497,11 +11497,29 @@ Output:
         }
     ====================================================================
     Output:
+        Method: POST
+        Header: User-Agent: [Go-http-client/1.1]
+        Header: Content-Type: [application.json]
+        Header: Accept-Encoding: [gzip]
+        ----
+        {"Name":"Kayak","Category":"Watersports","Price":279}
+████████████████████████████████████████████████████████████████████████
+449.Using the Convenience Functions to Create a Request
+    The net/http Convenience Functions for Creating Requests
+    Name                                                    Description
+    -------------------------                               ----------------------------
+    NewRequest(method, url,reader)                          This function creates a new Reader, configured with the specified method,
+                                                            URL, and body. The function also returns an error that indicates problems
+                                                            creating the value, including parsing the URL, which is expressed as a string.
+    NewRequestWithContext(context, method, url, reader)     This function creates a new Reader that will be sent in the specified context.
+
+████████████████████████████████████████████████████████████████████████
+450.Using the Convenience Function in the main.go
+    example:
         
-████████████████████████████████████████████████████████████████████████
-449.
-████████████████████████████████████████████████████████████████████████
-450.
+    ====================================================================
+    Output:
+      
 ████████████████████████████████████████████████████████████████████████
 451.
 ████████████████████████████████████████████████████████████████████████
