@@ -1,4 +1,6 @@
 #!/bin/bash
+git checkout main
+git merge beforeMergeToMain
 go build .
 echo "Go build is run"
 for i in {1..5}
@@ -14,4 +16,6 @@ do
     sleep 1
 done
 echo ""
-./Uplus.sh
+git add .
+git commit -m " ++ "
+git push -u origin main 
