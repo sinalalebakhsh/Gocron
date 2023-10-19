@@ -2,20 +2,20 @@
 git checkout beforeMergeToMain
 git merge develop
 go build .
-echo "Go build is run"
-for i in {1..5}
+echo -n "Go build is run for 'beforeMergeToMain' branch "
+for i in {1..3}
 do
-    echo -n "* "
+    echo -n ". "
     sleep 1
 done
 echo ""
-echo "Git is Push"
-for i in {1..5}
+echo -n "Git is Push for 'beforeMergeToMain' branch "
+for i in {1..3}
 do
-    echo -n "* "
+    echo -n ". "
     sleep 1
 done
 echo ""
 git add .
 git commit -m " ++ "
-git push -u origin beforeMergeToMain 
+git checkout develop
