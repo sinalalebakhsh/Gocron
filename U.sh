@@ -8,6 +8,7 @@ done
 git add .
 git commit -m " ++ "
 git push -u origin develop
+echo ""
 echo "====================================================================="
 
 
@@ -18,6 +19,7 @@ do
     echo -n ". "
     sleep 1
 done
+echo ""
 echo "====================================================================="
 
 
@@ -28,6 +30,7 @@ do
     echo -n ". "
     sleep 1
 done
+echo ""
 echo "====================================================================="
 
 
@@ -38,6 +41,7 @@ do
     sleep 1
 done
 echo ""
+echo "====================================================================="
 git add .
 git commit -m " ++ "
 git push -u origin beforeMergeToMain
