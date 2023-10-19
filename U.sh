@@ -20,7 +20,7 @@ echo ""
 git checkout beforeMergeToMain
 echo "====================================================================="
 echo -n "git merge develop "
-for i in {1..3}
+for i in {1..5}
 do
     echo -n ". "
     sleep 1
