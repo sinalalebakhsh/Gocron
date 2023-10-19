@@ -57,6 +57,26 @@ done
 echo ""
 git merge beforeMergeToMain
 echo "====================================================================="
+go build .
+echo -n "Go Build "
+for i in {1..6}
+do
+    echo -n "*"
+    sleep 1
+done
+echo ""
+echo "====================================================================="
+echo -n "Git is Push for main "
+for i in {1..3}
+do
+    echo -n ". "
+    sleep 1
+done
+echo ""
+git add .
+git commit -m " ++ "
+git push -u origin main
+echo "====================================================================="
 echo -n "git checkout develop "
 for i in {1..3}
 do
