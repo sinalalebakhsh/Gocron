@@ -39,6 +39,24 @@ git add .
 git commit -m " ++ "
 git push -u origin beforeMergeToMain
 echo "====================================================================="
+echo -n "git checkout main "
+for i in {1..3}
+do
+    echo -n ". "
+    sleep 1
+done
+echo ""
+git checkout main
+echo "====================================================================="
+echo -n "git merge beforeMergeToMain "
+for i in {1..5}
+do
+    echo -n ". "
+    sleep 1
+done
+echo ""
+git merge beforeMergeToMain
+echo "====================================================================="
 echo -n "git checkout develop "
 for i in {1..3}
 do
