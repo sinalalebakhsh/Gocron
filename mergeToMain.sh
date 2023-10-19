@@ -1,5 +1,4 @@
 #!/bin/bash
-
 git checkout beforeMergeToMain
 git merge develop
 go build .
