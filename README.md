@@ -107,6 +107,12 @@
 				✅      http servers example
 				✅  result is true for this.
 		</details>
+		<details>
+			<summary>
+				🔴 v1.0.25
+			</summary>
+				🔴 Add two file .sh for pushing in GitHub
+		</details> 
 	</details>
 </br>
 
@@ -218,4 +224,4 @@ You can use this command before start:
 	ALL CREATING HTTP CLIENTS
 	ALLCREATINGHTTPCLIENTS
 
-🌎🌏🌐🏀⚾🥎🏐🔴🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💍🎨
+🌎🌏🌐🏀⚾🥎🏐🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒🎥📽📹🖥💻🎹🎵🔔💍🎨
