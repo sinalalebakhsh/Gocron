@@ -1,6 +1,6 @@
 #!/bin/bash
-git checkout main
-git merge beforeMergeToMain
+git checkout beforeMergeToMain
+git merge develop
 go build .
 echo "Go build is run"
 for i in {1..5}
