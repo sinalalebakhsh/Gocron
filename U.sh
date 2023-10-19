@@ -13,13 +13,13 @@ echo "====================================================================="
 
 
 echo -n "git checkout beforeMergeToMain "
+echo ""
 for i in {1..3}
 do
     echo -n ". "
     sleep 1
 done
 git checkout beforeMergeToMain
-echo ""
 echo "====================================================================="
 
 
