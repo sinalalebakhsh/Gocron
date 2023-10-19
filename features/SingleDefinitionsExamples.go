@@ -163,8 +163,7 @@ Output: go run main.go
 	in Web Browser, search localhost:3000
 	Welcome to AcronProject Site
 `,
-"simple web application":`
-main.go:
+"simple web application":`main.go:
 	package main
 	import (
 		"fmt"
@@ -184,26 +183,24 @@ Output: go run main.go
 	Welcome to AcronProject Site
 
 	`,
-"simple web app":`
-	main.go:
-		package main
-		import (
-			"fmt"
-			"net/http"
-		)
-		func handlerFunction(w http.ResponseWriter, r *http.Request){
-			fmt.Fprint(w, "<h1>Welcome to AcronProject Site</h1>")
-		}
-		func main() {
-			http.HandleFunc("/", handlerFunction)
-			fmt.Println("Starting the Web Server on http://locanhost:3000")
-			http.ListenAndServe(":3000", nil)
-		}
-	========================================
-	Output: go run main.go
-		in Web Browser, search localhost:3000
-		Welcome to AcronProject Site
-	
+"simple web app":`main.go:
+	package main
+	import (
+		"fmt"
+		"net/http"
+	)
+	func handlerFunction(w http.ResponseWriter, r *http.Request){
+		fmt.Fprint(w, "<h1>Welcome to AcronProject Site</h1>")
+	}
+	func main() {
+		http.HandleFunc("/", handlerFunction)
+		fmt.Println("Starting the Web Server on http://locanhost:3000")
+		http.ListenAndServe(":3000", nil)
+	}
+========================================
+Output: go run main.go
+	in Web Browser, search localhost:3000
+	Welcome to AcronProject Site
 		`,
 	},
 }
