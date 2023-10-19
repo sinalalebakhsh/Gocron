@@ -1,15 +1,5 @@
 #!/bin/bash
-git checkout beforeMergeToMain
-git merge develop
-go build .
-echo -n "Go build is run for 'beforeMergeToMain' branch "
-for i in {1..3}
-do
-    echo -n ". "
-    sleep 1
-done
-echo ""
-echo -n "Git is Push for 'beforeMergeToMain' branch "
+echo -n "Git push on branch develop "
 for i in {1..3}
 do
     echo -n ". "
@@ -18,4 +8,53 @@ done
 echo ""
 git add .
 git commit -m " ++ "
+git push -u origin develop
+echo "====================================================================="
+echo -n "git checkout beforeMergeToMain "
+for i in {1..3}
+do
+    echo -n ". "
+    sleep 1
+done
+echo ""
+git checkout beforeMergeToMain
+echo "====================================================================="
+echo -n "git merge develop "
+for i in {1..5}
+do
+    echo -n ". "
+    sleep 1
+done
+echo ""
+git merge develop
+echo "====================================================================="
+echo -n "Git is Push for beforeMergeToMain "
+for i in {1..3}
+do
+    echo -n ". "
+    sleep 1
+done
+echo ""
+git add .
+git commit -m " ++ "
+git push -u origin beforeMergeToMain
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+echo ""
+=======
+>>>>>>> develop
+echo "====================================================================="
+echo -n "git checkout develop "
+for i in {1..3}
+do
+    echo -n ". "
+    sleep 1
+done
+echo ""
 git checkout develop
+echo "====================================================================="
+
+
+
+>>>>>>> develop
