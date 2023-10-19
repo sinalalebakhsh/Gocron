@@ -40,8 +40,25 @@ do
     echo -n ". "
     sleep 1
 done
-echo ""
-echo "====================================================================="
 git add .
 git commit -m " ++ "
 git push -u origin beforeMergeToMain
+<<<<<<< HEAD
+=======
+echo ""
+echo "====================================================================="
+
+
+git checkout develop
+echo -n "git checkout develop"
+for i in {1..3}
+do
+    echo -n ". "
+    sleep 1
+done
+echo ""
+echo "====================================================================="
+
+
+
+>>>>>>> develop
