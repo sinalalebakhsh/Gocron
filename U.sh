@@ -12,13 +12,13 @@ git push -u origin develop
 echo "====================================================================="
 
 
-git checkout beforeMergeToMain
 echo -n "git checkout beforeMergeToMain "
 for i in {1..3}
 do
     echo -n ". "
     sleep 1
 done
+git checkout beforeMergeToMain
 echo ""
 echo "====================================================================="
 
