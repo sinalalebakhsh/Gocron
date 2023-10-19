@@ -23,18 +23,19 @@ echo ""
 echo "====================================================================="
 
 
-git merge develop
 echo -n "git merge develop "
 for i in {1..3}
 do
     echo -n ". "
     sleep 1
 done
+git merge develop
 echo ""
 echo "====================================================================="
 
 
 echo -n "Git is Push for beforeMergeToMain "
+echo ""
 for i in {1..3}
 do
     echo -n ". "
@@ -44,8 +45,11 @@ git add .
 git commit -m " ++ "
 git push -u origin beforeMergeToMain
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 echo ""
+=======
+>>>>>>> develop
 echo "====================================================================="
 
 
