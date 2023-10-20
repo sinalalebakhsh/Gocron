@@ -40,21 +40,19 @@ var OriginSingleDef = SingleDefinitions{
 		"trimsuffix(s, suffix)":      "function returns the string s after removing the specified suffix string. This function removes the complete suffix string—use the TrimRight function to remove characters from a set.",
 		"trimfunc(s, func)":          "TrimFunc(s, func): This function returns the string s from which any leading or trailing character for which a custom function returns true are removed.",
 		"trimleftFunc(s, func)":      "TrimLeftFunc(s, func): function returns the string s from which any leading character for which a custom function returns true are removed.",
-		"trimrightFunc(s,    func)":     "TrimRightFunc(s, func): function returns the string s from which any trailing character for which a custom function returns true are removed.",
+		"trimrightFunc(s,    func)":  "TrimRightFunc(s, func): function returns the string s from which any trailing character for which a custom function returns true are removed.",
 		"join(slice, sep)":           "Join(slice, sep): function combines the elements in the specified string slice, with the specified separator string placed between elements.",
 		"repeat(s, count)":           "Repeat(s, count): function generates a string by repeating the string s for a specified number of times.",
 		"for":                        "56.for: Go allows loops only inside of functions. The for keyword is used to create loops that repeatedly execute statements. The most basic for loops will repeat indefinitely unless interrupted by the break keyword Incorporating the Condition into the Loop",
-		"packages": "Go applications are organized in packages. A package is a collection of source files located in the same directory. All source files in a directory must share the same package name. When a package is imported, only entities (functions, types, variables, constants) whose names start with a capital letter can be used / accessed. The recommended style of naming in Go is that identifiers will be named using camelCase, except for those meant to be accessible across packages which should be PascalCase. EXAMPLE: || package lasagna || ",
-		"package": "Go applications are organized in packages. A package is a collection of source files located in the same directory. All source files in a directory must share the same package name. When a package is imported, only entities (functions, types, variables, constants) whose names start with a capital letter can be used / accessed. The recommended style of naming in Go is that identifiers will be named using camelCase, except for those meant to be accessible across packages which should be PascalCase. EXAMPLE: || package lasagna || ",
+		"packages":                   "Go applications are organized in packages. A package is a collection of source files located in the same directory. All source files in a directory must share the same package name. When a package is imported, only entities (functions, types, variables, constants) whose names start with a capital letter can be used / accessed. The recommended style of naming in Go is that identifiers will be named using camelCase, except for those meant to be accessible across packages which should be PascalCase. EXAMPLE: || package lasagna || ",
+		"package":                    "Go applications are organized in packages. A package is a collection of source files located in the same directory. All source files in a directory must share the same package name. When a package is imported, only entities (functions, types, variables, constants) whose names start with a capital letter can be used / accessed. The recommended style of naming in Go is that identifiers will be named using camelCase, except for those meant to be accessible across packages which should be PascalCase. EXAMPLE: || package lasagna || ",
 	},
 }
-
-
 
 func GetMapReturnSlice() []string {
 	// Step 2: Initialize a slice to hold the keys
 	var Keys []string
-	
+
 	// Step 3: Iterate over the map and append Keys to the slice
 	for key := range OriginSingleDef.SingleDef {
 		Keys = append(Keys, key)
@@ -62,9 +60,5 @@ func GetMapReturnSlice() []string {
 
 	return Keys
 }
-
-
-
-
 
 // ██████████████████████████████████████████████████████████████████████
