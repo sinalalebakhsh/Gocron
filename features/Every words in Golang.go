@@ -11560,7 +11560,82 @@ Output:
         ----
         {"Name":"Kayak","Category":"Watersports","Price":279}
 ████████████████████████████████████████████████████████████████████████
-451.
+451.Working with Cookies
+    The Client keeps track of the cookies it receives from the server and automatically includes them in
+    subsequent requests.
+
+    example:
+    The Contents of the server_cookie.go:
+        package main
+        import (
+            "fmt"
+            "net/http"
+            "strconv"
+        )
+        func init() {
+            http.HandleFunc("/cookie",
+                func(writer http.ResponseWriter, request *http.Request) {
+                    counterVal := 1
+                    counterCookie, err := request.Cookie("counter")
+                    if err == nil {
+                        counterVal, _ = strconv.Atoi(counterCookie.Value)
+                        counterVal++
+                    }
+                    http.SetCookie(writer, &http.Cookie{
+                        Name: "counter", Value: strconv.Itoa(counterVal),
+                    })
+                    if len(request.Cookies()) > 0 {
+                        for _, c := range request.Cookies() {
+                            fmt.Fprintf(writer, "Cookie Name: %v, Value: %v\n",
+                                c.Name, c.Value)
+                        }
+                    } else {
+                        fmt.Fprintln(writer, "Request contains no cookies")
+                    }
+                })
+        }
+    -----------------------------------
+    Changing URL in the main.go:
+        package main
+        import (
+            "io"
+            "net/http"
+            "os"
+            "time"
+            // "encoding/json"
+            // "strings"
+            //"net/url"
+            "net/http/cookiejar"
+        )
+        func main() {
+            go http.ListenAndServe(":5000", nil)
+            time.Sleep(time.Second)
+            jar, err := cookiejar.New(nil)
+            if err == nil {
+                http.DefaultClient.Jar = jar
+            }
+            for i := 0; i < 3; i++ {
+                req, err := http.NewRequest(http.MethodGet,
+                    "http://localhost:5000/cookie", nil)
+                if err == nil {
+                    response, err := http.DefaultClient.Do(req)
+                    if err == nil && response.StatusCode == http.StatusOK {
+                        io.Copy(os.Stdout, response.Body)
+                        defer response.Body.Close()
+                    } else {
+                        Printfln("Request Error: %v", err.Error())
+                    }
+                } else {
+                    Printfln("Request Init Error: %v", err.Error())
+                }
+            }
+        }
+    ====================================================================
+    Output: in Terminal
+        Request contains no cookies
+        Cookie Name: counter, Value: 1
+        Cookie Name: counter, Value: 2
+
 ████████████████████████████████████████████████████████████████████████
 452.
 ████████████████████████████████████████████████████████████████████████
