@@ -168,6 +168,7 @@ func IfUsris2orMoreWords(SliceOfWords []string) bool {
 func IfUserWantSingleDefinition(FinalInput string) bool {
 	keys := features.GetMapReturnSlice()
 	for _, Value := range keys {
+		FinalInput = strings.ToLower(FinalInput)
 		if FinalInput == Value {
 			words := features.SplitIntoWords(features.OriginSingleDef.SingleDef[Value])
 			features.PrintWordByWord(words)
