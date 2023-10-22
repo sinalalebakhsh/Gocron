@@ -118,6 +118,14 @@
 				🔔 v1.0.25
 			</summary>
 				🔔 Debug single definition for searching by To Lower Function
+				    Clear Key Implementation:
+						Identify the key that will trigger the clearing functionality. This could be a specific keystroke or command.
+						Write the code that listens for this key input and executes the clear action.
+						Ensure that the user is provided with feedback confirming that the data has been cleared.
+					Enhanced Search Functionality:
+						Determine what specific improvements you want to make in the search feature. This could include adding filters (e.g., by category, difficulty level), allowing more complex search queries, or implementing a fuzzy search algorithm.
+						Implement the necessary code to realize these improvements. This might involve changes to the user interface and underlying data structures.
+
 		</details> 
 	</details>
 </br>

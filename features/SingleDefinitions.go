@@ -56,6 +56,9 @@ var OriginSingleDef = SingleDefinitions{
 		"functions":                  "Go functions accept zero or more parameters. Parameters must be explicitly typed, there is no type inference. Values are returned from functions using the return keyword. A function is invoked by specifying the function name and passing arguments for each of the function's parameters.",
 		"comment":                    "Note that Go supports two types of comments. Single line comments are preceded by // and multiline comments are inserted between /* and */.",
 		"comments":                   "Note that Go supports two types of comments. Single line comments are preceded by // and multiline comments are inserted between /* and */.",
+		"bool":                       "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
+		"boolean":                    "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
+		"booleans":                   "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
 	},
 }
 
