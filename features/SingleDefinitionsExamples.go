@@ -202,6 +202,21 @@ Output: go run main.go
 	in Web Browser, search localhost:3000
 	Welcome to AcronProject Site
 		`,
+"bool":`Boolean
+var closed bool    // boolean variable 'closed' implicitly initialized with 'false'
+speeding := true   // boolean variable 'speeding' initialized with 'true'
+hasError := false  // boolean variable 'hasError' initialized with 'false' 
+`,
+"boolean":`Boolean
+var closed bool    // boolean variable 'closed' implicitly initialized with 'false'
+speeding := true   // boolean variable 'speeding' initialized with 'true'
+hasError := false  // boolean variable 'hasError' initialized with 'false' 
+`,
+"booleans":`Boolean
+var closed bool    // boolean variable 'closed' implicitly initialized with 'false'
+speeding := true   // boolean variable 'speeding' initialized with 'true'
+hasError := false  // boolean variable 'hasError' initialized with 'false' 
+`,
 	},
 }
 
