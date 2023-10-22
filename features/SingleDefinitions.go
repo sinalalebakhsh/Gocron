@@ -48,6 +48,13 @@ var OriginSingleDef = SingleDefinitions{
 		"packages":                   "Go applications are organized in packages. A package is a collection of source files located in the same directory. All source files in a directory must share the same package name. When a package is imported, only entities (functions, types, variables, constants) whose names start with a capital letter can be used / accessed. The recommended style of naming in Go is that identifiers will be named using camelCase, except for those meant to be accessible across packages which should be PascalCase. EXAMPLE: || package lasagna || ",
 		"variable":                   "Variables Go is statically-typed, which means all variables must have a defined type at compile-time.Variables can be defined by explicitly specifying a type, EXAMPLE: var explicit int || Explicitly typed||",
 		"variables":                  "Variables Go is statically-typed, which means all variables must have a defined type at compile-time.Variables can be defined by explicitly specifying a type, EXAMPLE: var explicit int || Explicitly typed||",
+		"constant":                   "Constants hold a piece of data just like variables, but their value cannot change during the execution of the program.Constants are defined using the const keyword and can be numbers, characters, strings or booleans. EXAMPLE:	const Age = 21",
+		"constants":                  "Constants hold a piece of data just like variables, but their value cannot change during the execution of the program.Constants are defined using the const keyword and can be numbers, characters, strings or booleans. EXAMPLE:	const Age = 21",
+		"function":                   "Go functions accept zero or more parameters. Parameters must be explicitly typed, there is no type inference. Values are returned from functions using the return keyword. A function is invoked by specifying the function name and passing arguments for each of the function's parameters.",
+		"functions":                  "Go functions accept zero or more parameters. Parameters must be explicitly typed, there is no type inference. Values are returned from functions using the return keyword. A function is invoked by specifying the function name and passing arguments for each of the function's parameters.",
+		"comment":                    "Note that Go supports two types of comments. Single line comments are preceded by // and multiline comments are inserted between /* and */.",
+		"comments":                   "Note that Go supports two types of comments. Single line comments are preceded by // and multiline comments are inserted between /* and */.",
+		
 	},
 }
 
