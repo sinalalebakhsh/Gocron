@@ -106,6 +106,7 @@ func IfUserisCLEAR(FinalInput string) bool {
 func GetUserForBrowser(userInput string) bool {
 	if strings.ToLower(userInput) == "yes" {
 		openBrowser()
+		fmt.Println("Ok. Please search for the topic you are looking for with keywords:")
 		// server.MyServer()
 		return false
 	} else {
