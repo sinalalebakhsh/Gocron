@@ -7,6 +7,8 @@ type SingleDefinitions struct {
 var OriginSingleDef = SingleDefinitions{
 
 	SingleDef: map[string]string{
+		"go":                         "Fans of Go (called gophers) describe Go as having the expressiveness of dynamic languages like Python or Ruby, with the performance of compiled languages like C or C++. The language is open source, and was started by engineers at Google. It's written using a C-style syntax, has statically typed variables, manages memory using garbage collection, and is compiled into stand-alone executables. Go is noted for the concurrent programming features built into the language core, the networking packages in the standard library (such as a web server), fast compilation and execution speed. Its simple, minimalistic and consistent language design make for a delightful experience, while the abundant and thoughtful tooling addresses traditional problems such as consistent formatting and documentation. The home page for Go is go.dev, and there is an excellent interactive tutorial at tour.go.dev.",
+		"about go":                   "Fans of Go (called gophers) describe Go as having the expressiveness of dynamic languages like Python or Ruby, with the performance of compiled languages like C or C++. The language is open source, and was started by engineers at Google. It's written using a C-style syntax, has statically typed variables, manages memory using garbage collection, and is compiled into stand-alone executables. Go is noted for the concurrent programming features built into the language core, the networking packages in the standard library (such as a web server), fast compilation and execution speed. Its simple, minimalistic and consistent language design make for a delightful experience, while the abundant and thoughtful tooling addresses traditional problems such as consistent formatting and documentation. The home page for Go is go.dev, and there is an excellent interactive tutorial at tour.go.dev.",
 		"create environment go":      "0.Create Environment GO in Command Line Interface Go: 1- go mod init YOURNAME 2- go work init YOURWORKDIRECTORY 3- go run main.go  OR  go run projectName.go",
 		"create go project":          "0.Create Environment GO in Command Line Interface Go: 1- go mod init YOURNAME 2- go work init YOURWORKDIRECTORY 3- go run main.go  OR  go run projectName.go",
 		"go project":                 "0.Create Environment GO in Command Line Interface Go: 1- go mod init YOURNAME 2- go work init YOURWORKDIRECTORY 3- go run main.go  OR  go run projectName.go",
@@ -54,7 +56,6 @@ var OriginSingleDef = SingleDefinitions{
 		"functions":                  "Go functions accept zero or more parameters. Parameters must be explicitly typed, there is no type inference. Values are returned from functions using the return keyword. A function is invoked by specifying the function name and passing arguments for each of the function's parameters.",
 		"comment":                    "Note that Go supports two types of comments. Single line comments are preceded by // and multiline comments are inserted between /* and */.",
 		"comments":                   "Note that Go supports two types of comments. Single line comments are preceded by // and multiline comments are inserted between /* and */.",
-		
 	},
 }
 
