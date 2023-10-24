@@ -11637,15 +11637,145 @@ Output:
         Cookie Name: counter, Value: 2
 
 ████████████████████████████████████████████████████████████████████████
-452.
+452.The Methods Defined by the CookieJar Interface
+    Name                        Description
+    ------------------------    ---------------------------------
+    SetCookies(url, cookies)    This method stores a *Cookie slice for the specified URL.
+    Cookes(url)                 This method returns a *Cookie slice containing the cookies that
+                                should be included in a request for the specified URL.
+
+
+    The net/http/cookiejar package contains an implementation of the CookieJar interface that stores
+    cookies in memory. Cookie jars are created with a constructor function
 ████████████████████████████████████████████████████████████████████████
-453.
+453.The Cookie Jar Constructor Function in the net/http/cookiejar Package
+    Name            Description
+    ------------    -------------------------
+    New(options)    This function creates a new CookieJar, configured with an Options struct, described
+                    next. The function also returns an error that reports problems creating the jar.
+
+    The New function accepts a net/http/cookiejar/Options struct, which is used to configure the
+    cookie jar. There is only one Options field, PublicSuffixList, which is used to specify an implementation
+    of the interface with the same name, which provides support for preventing cookies from being set too
+    widely, which can cause privacy violations. The standard library doesn't contain an implementation of the
+    PublicSuffixList interface, but there is an implementation available at 
+    
+        https://pkg.go.dev/golang.org/x/net/publicsuffix
+
 ████████████████████████████████████████████████████████████████████████
-454.
+454.Creating Separate Clients and Cookie Jars
+    A consequence of using the DefaultClient is that all requests share the same cookies, 
+    which can be useful, especially since the cookie jar will ensure that each request 
+    only includes the cookies that are required for each URL.
 ████████████████████████████████████████████████████████████████████████
-455.
+455.Creating Separate Clients in the main.go File
+    example:
+    main.go:
+        package main
+        import (
+            "net/http"
+            "os"
+            "time"
+            "io"
+            //"encoding/json"
+            //"strings"
+            //"net/url"
+            "net/http/cookiejar"
+            "fmt"
+        )
+        func main() {
+            go http.ListenAndServe(":5000", nil)
+            time.Sleep(time.Second)
+            clients := make([]http.Client, 3)
+            for index, client := range clients {
+                jar, err := cookiejar.New(nil)
+                if (err == nil) {
+                    client.Jar = jar
+                }
+                for i := 0; i < 3; i++ {
+                    req, err := http.NewRequest(http.MethodGet,
+                        "http://localhost:5000/cookie", nil)
+                    if (err == nil) {
+                        response, err := client.Do(req)
+                        if (err == nil && response.StatusCode == http.StatusOK) {
+                            fmt.Fprintf(os.Stdout, "Client %v: ", index)
+                            io.Copy(os.Stdout, response.Body)
+                            defer response.Body.Close()
+                        }  else {
+                            Printfln("Request Error: %v", err.Error())
+                        }
+                    } else {
+                        Printfln("Request Init Error: %v", err.Error())
+                    }
+                }
+            }
+        }
+    ====================================================================
+    Output:
+        Client 0: Request contains no cookies
+        Client 0: Cookie Name: counter, Value: 1
+        Client 0: Cookie Name: counter, Value: 2
+        Client 1: Request contains no cookies
+        Client 1: Cookie Name: counter, Value: 1
+        Client 1: Cookie Name: counter, Value: 2
+        Client 2: Request contains no cookies
+        Client 2: Cookie Name: counter, Value: 1
+        Client 2: Cookie Name: counter, Value: 2
 ████████████████████████████████████████████████████████████████████████
-456.
+456.Sharing a CookieJar in the main.go
+    example:
+    main.go:
+        package main
+        import (
+            "io"
+            "net/http"
+            "os"
+            "time"
+            //"encoding/json"
+            //"strings"
+            //"net/url"
+            "fmt"
+            "net/http/cookiejar"
+        )
+        func main() {
+            go http.ListenAndServe(":5000", nil)
+            time.Sleep(time.Second)
+            jar, err := cookiejar.New(nil)
+            clients := make([]http.Client, 3)
+            for index, client := range clients {
+                //jar, err := cookiejar.New(nil)
+                if err == nil {
+                    client.Jar = jar
+                }
+                for i := 0; i < 3; i++ {
+                    req, err := http.NewRequest(http.MethodGet,
+                        "http://localhost:5000/cookie", nil)
+                    if err == nil {
+                        response, err := client.Do(req)
+                        if err == nil && response.StatusCode == http.StatusOK {
+                            fmt.Fprintf(os.Stdout, "Client %v: ", index)
+                            io.Copy(os.Stdout, response.Body)
+                            defer response.Body.Close()
+                        } else {
+                            Printfln("Request Error: %v", err.Error())
+                        }
+                    } else {
+                        Printfln("Request Init Error: %v", err.Error())
+                    }
+                }
+            }
+        }
+    ====================================================================
+    Output:
+        Client 0: Request contains no cookies
+        Client 0: Cookie Name: counter, Value: 1
+        Client 0: Cookie Name: counter, Value: 2
+        Client 1: Cookie Name: counter, Value: 3
+        Client 1: Cookie Name: counter, Value: 4
+        Client 1: Cookie Name: counter, Value: 5
+        Client 2: Cookie Name: counter, Value: 6
+        Client 2: Cookie Name: counter, Value: 7
+        Client 2: Cookie Name: counter, Value: 8
 ████████████████████████████████████████████████████████████████████████
 457.
 ████████████████████████████████████████████████████████████████████████
