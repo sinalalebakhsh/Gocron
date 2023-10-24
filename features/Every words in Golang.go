@@ -11777,17 +11777,181 @@ Output:
         Client 2: Cookie Name: counter, Value: 7
         Client 2: Cookie Name: counter, Value: 8
 ████████████████████████████████████████████████████████████████████████
-457.
+457.Managing Redirections
+    By default, a Client will stop following redirections after ten requests, 
+    but this can be changed by specifying a custom policy.
+
+    example:
+    The Contents of the server_redirects.go File in the httpclient Folder:
+        package main
+        import "net/http"
+        func init() {
+            http.HandleFunc("/redirect1",
+                func(writer http.ResponseWriter, request *http.Request) {
+                    http.Redirect(writer, request, "/redirect2",
+                        http.StatusTemporaryRedirect)
+                })
+            http.HandleFunc("/redirect2",
+                func(writer http.ResponseWriter, request *http.Request) {
+                    http.Redirect(writer, request, "/redirect1",
+                        http.StatusTemporaryRedirect)
+                })
+        }
+    ====================================================================
+    Sending a Request in the main.go File in the httpclient Folder:
+        package main
+        import (
+            "net/http"
+            "os"
+            "io"
+            "time"
+            //"encoding/json"
+            //"strings"
+            //"net/url"
+            //"net/http/cookiejar"
+            //"fmt"
+        )
+        func main() {
+            go http.ListenAndServe(":5000", nil)
+            time.Sleep(time.Second)
+            req, err := http.NewRequest(http.MethodGet,
+                "http://localhost:5000/redirect1", nil)
+            if (err == nil) {
+                var response *http.Response
+                response, err = http.DefaultClient.Do(req)
+                if (err == nil) {
+                    io.Copy(os.Stdout, response.Body)
+                } else {
+                    Printfln("Request Error: %v", err.Error())
+                }
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    ====================================================================
+    Output:
+        Request Error: Get "/redirect1": stopped after 10 redirects
 ████████████████████████████████████████████████████████████████████████
-458.
+458.Defining a Custom Redirection Policy in the main.go
+    example:
+    main.go:
+        package main
+        import (
+            "net/http"
+            "os"
+            "io"
+            "time"
+            //"encoding/json"
+            //"strings"
+            "net/url"
+            //"net/http/cookiejar"
+            //"fmt"
+        )
+        func main() {
+            go http.ListenAndServe(":5000", nil)
+            time.Sleep(time.Second)
+            http.DefaultClient.CheckRedirect = func(req *http.Request,
+                previous []*http.Request) error {
+                if len(previous) == 3 {
+                    url, _ := url.Parse("http://localhost:5000/html")
+                    req.URL = url
+                }
+                return nil
+            }
+            req, err := http.NewRequest(http.MethodGet,
+                "http://localhost:5000/redirect1", nil)
+            if (err == nil) {
+                var response *http.Response
+                response, err = http.DefaultClient.Do(req)
+                if (err == nil) {
+                    io.Copy(os.Stdout, response.Body)
+                } else {
+                    Printfln("Request Error: %v", err.Error())
+                }
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    ====================================================================
+    Output:
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>Pro Go</title>
+                <meta name="viewport" content="width=device-width" />
+            </head>
+            <body>
+                <h1>Hello, World</div>
+            </body>
+        </html>
 ████████████████████████████████████████████████████████████████████████
-459.
+459.Creating Multipart Forms:
+    The mime/multipart package can be used to create a request body encoded as multipart/form-data, which
+    allows a form to safely contain binary data, such as the contents of a file.
 ████████████████████████████████████████████████████████████████████████
-460.
+460.The Contents of the server_forms.go File in the httpclient Folder
+    example:
+    server_forms.go:
+        package main
+        import (
+            "net/http"
+            "fmt"
+            "io"
+        )
+        func init() {
+            http.HandleFunc("/form",
+                func (writer http.ResponseWriter, request *http.Request) {
+                    err := request.ParseMultipartForm(10000000)
+                    if (err == nil) {
+                        for name, vals := range request.MultipartForm.Value {
+                            fmt.Fprintf(writer, "Field %v: %v\n", name, vals)
+                        }
+                        for name, files := range request.MultipartForm.File {
+                            for _, file := range files {
+                                fmt.Fprintf(writer, "File %v: %v\n", name, file.Filename)
+                                if f, err := file.Open(); err == nil {
+                                    defer f.Close()
+                                    io.Copy(writer, f)
+                                }
+                            }
+                        }
+                    } else {
+                        fmt.Fprintf(writer, "Cannot parse form %v", err.Error())
+                    }
+                })
+        }
+    ====================================================================
+    Output:
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>Pro Go</title>
+                <meta name="viewport" content="width=device-width" />
+            </head>
+            <body>
+                <h1>Hello, World</div>
+            </body>
+        </html>
 ████████████████████████████████████████████████████████████████████████
-461.
+461.The multipart.Writer Constructor Function
+    Name                    Description
+    ---------------         ----------------------------
+    NewWriter(writer)       This function creates a new multipart.Writer that writes form data to the specified io.Writer.
+
 ████████████████████████████████████████████████████████████████████████
-462.
+462.The multipart.Writer Methods
+    Name                                    Description
+    ------------------------                ---------------------------------------
+    CreateFormField(fieldname)              This method creates a new form field with the specified name. The results
+                                            are an io.Writer that is used to write the field data and an error that
+                                            reports problems creating the field.
+    CreateFormFile(fieldname, filename)     This method creates a new file field with the specified field name and file
+                                            name. The results are an io.Writer that is used to write the field data and
+                                            an error that reports problems creating the field.
+    FormDataContentType()                   This method returns a string that is used to set the Content-Type request
+                                            header and includes the string that denotes the boundaries between the parts of the form.
+    Close()                                 This function finalizes the form and writes the terminating boundary that
+                                            denotes the end of the form data.
 ████████████████████████████████████████████████████████████████████████
 463.
 ████████████████████████████████████████████████████████████████████████
