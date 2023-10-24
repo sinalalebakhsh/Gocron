@@ -125,7 +125,12 @@
 					Enhanced Search Functionality:
 						Determine what specific improvements you want to make in the search feature. This could include adding filters (e.g., by category, difficulty level), allowing more complex search queries, or implementing a fuzzy search algorithm.
 						Implement the necessary code to realize these improvements. This might involve changes to the user interface and underlying data structures.
-
+		</details> 
+		<details>
+			<summary>
+				🍅 v1.0.27
+			</summary>
+				🍅 Add license MIT
 		</details> 
 	</details>
 </br>
@@ -238,4 +243,4 @@ You can use this command before start:
 	ALL CREATING HTTP CLIENTS
 	ALLCREATINGHTTPCLIENTS
 
-🌎🌏🌐🏀⚾🥎🏐🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍅🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒💍🎨
+🌎🌏🌐🏀⚾🥎🏐🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒💍🎨
