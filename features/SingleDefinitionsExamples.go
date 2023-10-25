@@ -217,6 +217,15 @@ var closed bool    // boolean variable 'closed' implicitly initialized with 'fal
 speeding := true   // boolean variable 'speeding' initialized with 'true'
 hasError := false  // boolean variable 'hasError' initialized with 'false' 
 `,
+"package comments":`like this:
+// Package kelvin provides tools to convert
+// temperatures to and from Kelvin.
+package kelvin
+`,
+"package comment":`like this:
+// Package kelvin provides tools to convert
+// temperatures to and from Kelvin.
+package kelvin`,
 	},
 }
 

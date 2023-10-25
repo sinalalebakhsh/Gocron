@@ -59,6 +59,8 @@ var OriginSingleDef = SingleDefinitions{
 		"bool":                       "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
 		"boolean":                    "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
 		"booleans":                   "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
+		"package comments":           "Package comments should be written directly before a package clause (package x) and begin with Package x ...",
+		"package comment":            "Package comments should be written directly before a package clause (package x) and begin with Package x ...",
 	},
 }
 
