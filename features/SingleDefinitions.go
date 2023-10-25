@@ -59,6 +59,8 @@ var OriginSingleDef = SingleDefinitions{
 		"bool":                       "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
 		"boolean":                    "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
 		"booleans":                   "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
+		"function comment":           "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
+		"function comments":          "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
 	},
 }
 

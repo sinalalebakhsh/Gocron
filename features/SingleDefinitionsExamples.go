@@ -217,15 +217,25 @@ var closed bool    // boolean variable 'closed' implicitly initialized with 'fal
 speeding := true   // boolean variable 'speeding' initialized with 'true'
 hasError := false  // boolean variable 'hasError' initialized with 'false' 
 `,
-"package comments":`like this:
+"package comments":`kelvin.go
 // Package kelvin provides tools to convert
 // temperatures to and from Kelvin.
 package kelvin
 `,
-"package comment":`like this:
+"package comment":`kelvin.go
 // Package kelvin provides tools to convert
 // temperatures to and from Kelvin.
 package kelvin`,
+"function comment":`example:
+// CelsiusFreezingTemp returns an integer value equal to the temperature at which water freezes in degrees Celsius.
+func CelsiusFreezingTemp() int {
+	return 0
+}`,
+"function comments":`example:
+// CelsiusFreezingTemp returns an integer value equal to the temperature at which water freezes in degrees Celsius.
+func CelsiusFreezingTemp() int {
+	return 0
+}`,
 	},
 }
 
