@@ -65,6 +65,11 @@ var OriginSingleDef = SingleDefinitions{
 =======
 		"function comment":           "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
 		"function comments":          "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
+<<<<<<< HEAD
+>>>>>>> beforeMergeToMain
+=======
+		"number":                     "Go contains basic numeric types that can represent sets of either integer or floating-point values.",
+		"numbers":                    "Go contains basic numeric types that can represent sets of either integer or floating-point values.",
 >>>>>>> beforeMergeToMain
 	},
 }
