@@ -236,7 +236,28 @@ func CelsiusFreezingTemp() int {
 func CelsiusFreezingTemp() int {
 	return 0
 }`,
-	},
+"operator":`Operator 	Example
+--------	-------------
++ 		4 + 6 == 10
+- 		15 - 10 == 5
+* 		2 * 3 == 6
+/ 		13 / 3 == 4
+% 		13 % 3 == 1`,
+"operators":`Operator 	Example
+--------	-------------
++ 		4 + 6 == 10
+- 		15 - 10 == 5
+* 		2 * 3 == 6
+/ 		13 / 3 == 4
+% 		13 % 3 == 1`,
+"arithmetic operators":`Operator 	Example
+--------	-------------
++ 		4 + 6 == 10
+- 		15 - 10 == 5
+* 		2 * 3 == 6
+/ 		13 / 3 == 4
+% 		13 % 3 == 1`,
+},
 }
 
 
