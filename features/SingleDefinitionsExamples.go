@@ -257,6 +257,11 @@ func CelsiusFreezingTemp() int {
 * 		2 * 3 == 6
 / 		13 / 3 == 4
 % 		13 % 3 == 1`,
+"converting between types":`var x int = 42 // x has type int
+f := float64(x) // f has type float64 (ie. 42.0)
+var y float64 = 11.9 // y has type float64
+i := int(y) // i has type int (ie. 11)`,
+
 },
 }
 
