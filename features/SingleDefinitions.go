@@ -66,10 +66,23 @@ var OriginSingleDef = SingleDefinitions{
 		"function comment":           "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
 		"function comments":          "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> beforeMergeToMain
 =======
 		"number":                     "Go contains basic numeric types that can represent sets of either integer or floating-point values.",
 		"numbers":                    "Go contains basic numeric types that can represent sets of either integer or floating-point values.",
+>>>>>>> beforeMergeToMain
+=======
+		"number":                     "Go contains basic numeric types that can represent sets of either integer or floating-point values. Numbers can be converted to other numeric types through Type Conversion.",
+		"numbers":                    "Go contains basic numeric types that can represent sets of either integer or floating-point values. Numbers can be converted to other numeric types through Type Conversion.",
+		"int":                        "e.g. 0, 255, 2147483647. A signed integer that is at least 32 bits in size (value range of: -2147483648 through 2147483647). But this will depend on the systems architecture. Most modern computers are 64 bit, therefore int will be 64 bits in size (value rate of: -9223372036854775808 through 9223372036854775807).",
+		"float64":                    "e.g. 0.0, 3.14. Contains the set of all 64-bit floating-point numbers.",
+		"uint":                       "e.g. 0, 255. An unsigned integer that is the same size as int (value range of: 0 through 4294967295 for 32 bits and 0 through 18446744073709551615 for 64 bits)",
+		"arithmetic operators":       "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
+		"operator":                   "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
+		"operators":                  "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
+		"basic operator":             "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
+		"basic operators":            "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
 >>>>>>> beforeMergeToMain
 	},
 }
