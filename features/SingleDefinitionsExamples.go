@@ -261,8 +261,25 @@ func CelsiusFreezingTemp() int {
 f := float64(x) // f has type float64 (ie. 42.0)
 var y float64 = 11.9 // y has type float64
 i := int(y) // i has type int (ie. 11)`,
+"arithmetic operations on different types":`var x int = 42
+
+// this line produces an error
+value := float32(2.0) * x // invalid operation: mismatched types float32 and int
+
+// you must convert int type to float32 before performing arithmetic operation
+value := float32(2.0) * float32(x)`,
+
+"arithmetic operations on different type":`var x int = 42
+
+// this line produces an error
+value := float32(2.0) * x // invalid operation: mismatched types float32 and int
+
+// you must convert int type to float32 before performing arithmetic operation
+value := float32(2.0) * float32(x)`,
+
 
 },
+
 }
 
 

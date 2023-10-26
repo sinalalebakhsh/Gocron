@@ -72,7 +72,7 @@ var OriginSingleDef = SingleDefinitions{
 		"basic operator":             "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
 		"basic operators":            "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
 		"converting between types":   "Converting between types is done via a function with the name of the type to convert to. ",
-		"";"",
+		"arithmetic operations on different types": "In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an error. ",
 	},
 }
 
