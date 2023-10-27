@@ -132,6 +132,12 @@
 			</summary>
 				🍅 Add license MIT
 		</details> 
+		<details>
+			<summary>
+				🌈 v1.0.28
+			</summary>
+				🌈 Add a feature for Question/Answer from user
+		</details> 
 	</details>
 </br>
 
@@ -243,4 +249,4 @@ You can use this command before start:
 	ALL CREATING HTTP CLIENTS
 	ALLCREATINGHTTPCLIENTS
 
-🌎🌏🌐🏀⚾🥎🏐🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒💍🎨
+🌎🌏🌐🏀⚾🥎🏐🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒💍🎨
