@@ -59,46 +59,21 @@ var OriginSingleDef = SingleDefinitions{
 		"bool":                       "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
 		"boolean":                    "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
 		"booleans":                   "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
-<<<<<<< HEAD
-		"package comments":           "Package comments should be written directly before a package clause (package x) and begin with Package x ...",
-		"package comment":            "Package comments should be written directly before a package clause (package x) and begin with Package x ...",
-=======
 		"function comment":           "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
 		"function comments":          "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> beforeMergeToMain
-=======
 		"number":                     "Go contains basic numeric types that can represent sets of either integer or floating-point values.",
 		"numbers":                    "Go contains basic numeric types that can represent sets of either integer or floating-point values.",
->>>>>>> beforeMergeToMain
-=======
-		"number":                     "Go contains basic numeric types that can represent sets of either integer or floating-point values. Numbers can be converted to other numeric types through Type Conversion.",
-		"numbers":                    "Go contains basic numeric types that can represent sets of either integer or floating-point values. Numbers can be converted to other numeric types through Type Conversion.",
 		"int":                        "e.g. 0, 255, 2147483647. A signed integer that is at least 32 bits in size (value range of: -2147483648 through 2147483647). But this will depend on the systems architecture. Most modern computers are 64 bit, therefore int will be 64 bits in size (value rate of: -9223372036854775808 through 9223372036854775807).",
 		"float64":                    "e.g. 0.0, 3.14. Contains the set of all 64-bit floating-point numbers.",
-<<<<<<< HEAD
 		"uint":                       "e.g. 0, 255. An unsigned integer that is the same size as int (value range of: 0 through 4294967295 for 32 bits and 0 through 18446744073709551615 for 64 bits)",
 		"arithmetic operators":       "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
 		"operator":                   "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
 		"operators":                  "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
 		"basic operator":             "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
 		"basic operators":            "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
->>>>>>> beforeMergeToMain
-=======
-		"uint":                       "e.g. 0, 255. An unsigned integer that is the same size as int (value range of: 0 through 4294967295 for 32 bits and 0 through 18446744073709551615 for 64 bits). Go has shorthand assignment for the operators above (e.g. a += 5 is short for a = a + 5). Go also supports the increment and decrement statements ++ and -- (e.g. a++). For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"arithmetic operators":       "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"operator":                   "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"operators":                  "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"basic operator":             "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"basic operators":            "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
 		"converting between types":   "Converting between types is done via a function with the name of the type to convert to. ",
-<<<<<<< HEAD
-		"";"",
->>>>>>> beforeMergeToMain
-=======
 		"arithmetic operations on different types": "In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an error. ",
->>>>>>> beforeMergeToMain
+
 	},
 }
 
