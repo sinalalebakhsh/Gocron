@@ -169,14 +169,24 @@ func IfUsris2orMoreWords(SliceOfWords []string) bool {
 			words := features.SplitIntoWords(features.Questions.SingleQues[result])
 			features.PrintWordByWord(words)
 			fmt.Println()
-			color.HiBlue(fmt.Sprintln("============================================◉❓❓❓❓❓❓❓◉=========================================="))
-			color.HiBlue(fmt.Sprintln(features.QuestionsSample.MapQuestionsSample[Index]))
-			color.HiBlue(fmt.Sprintln("============================================◉❓❓❓❓❓❓❓◉=========================================="))
+			color.HiYellow(fmt.Sprintln("============================================◉❓❓❓❓❓❓❓◉=========================================="))
+			color.HiRed(fmt.Sprintln(features.QuestionsSample.MapQuestionsSample[Index]))
+			color.HiYellow(fmt.Sprintln("============================================◉🔴🔴🔴🔴🔴🔴🔴◉=========================================="))
 			return false
 		}
 	}
 
-
+	for Index := range features.AnswersSample.MapAnswersSample {
+		if result == Index && lastElement == "answer" {
+			words := features.SplitIntoWords(features.Answers.SingleAnws[result])
+			features.PrintWordByWord(words)
+			fmt.Println()
+			color.HiGreen(fmt.Sprintln("============================================◉🔰🔰🔰🔰🔰🔰🔰◉=========================================="))
+			color.HiCyan(fmt.Sprintln(features.AnswersSample.MapAnswersSample[Index]))
+			color.HiGreen(fmt.Sprintln("============================================◉✅✅✅✅✅✅✅◉=========================================="))
+			return false
+		}
+	}
 	return true
 }
 
