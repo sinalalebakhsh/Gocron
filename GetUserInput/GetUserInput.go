@@ -163,6 +163,20 @@ func IfUsris2orMoreWords(SliceOfWords []string) bool {
 			return false
 		}
 	}
+
+	for Index := range features.QuestionsSample.MapQuestionsSample {
+		if result == Index && lastElement == "question" {
+			words := features.SplitIntoWords(features.Questions.SingleQues[result])
+			features.PrintWordByWord(words)
+			fmt.Println()
+			color.HiBlue(fmt.Sprintln("============================================◉❓❓❓❓❓❓❓◉=========================================="))
+			color.HiBlue(fmt.Sprintln(features.QuestionsSample.MapQuestionsSample[Index]))
+			color.HiBlue(fmt.Sprintln("============================================◉❓❓❓❓❓❓❓◉=========================================="))
+			return false
+		}
+	}
+
+
 	return true
 }
 
