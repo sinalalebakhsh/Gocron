@@ -77,7 +77,26 @@ var OriginSingleDef = SingleDefinitions{
 		"basic operators":            "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
 		"converting between types":   "Converting between types is done via a function with the name of the type to convert to. ",
 		"arithmetic operations on different types": "In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an error. ",
+<<<<<<< HEAD
 
+=======
+		//
+		//
+		//
+		//
+		"package tar":     "Package tar implements access to tar archives.",
+		"package zip":     "Package zip provides support for reading and writing ZIP archives.",
+		"package arena":   "The arena package provides the ability to allocate memory for a collection of Go values and free that space manually all at once, safely.",
+		"package bufio":   "bufio implements buffered I/O. It wraps an io.Reader or io.Writer object, creating another object (Reader or Writer) that also implements the interface but provides buffering and some help for textual I/O. ",
+		"package builtin": "Package builtin provides documentation for Go's predeclared identifiers.",
+		"package bytes":   "bytes implements functions for the manipulation of byte slices.",
+		"package cmp":     "Package cmp provides types and functions related to comparing ordered values. Ordered is a constraint that permits any ordered type: any type // that supports the operators < <= >= >.// If future releases of Go add new ordered types,// this constraint will be modified to include them.",
+		"package bzip2":   "Package bzip2 implements bzip2 decompression.",
+		"package flate":   "Package flate implements the DEFLATE compressed data format, described in RFC 1951.",
+		"package gzip":    "Package gzip implements reading and writing of gzip format compressed files, as specified in RFC 1952.",
+		"package lzw":     "Package lzw implements the Lempel-Ziv-Welch compressed data format, described in T. A. Welch, “A Technique for High-Performance Data Compression”, Computer, 17(6) (June 1984), pp 8-19. ",
+		"package zlib":    "Package zlib implements reading and writing of zlib format compressed data, as specified in RFC 1950. ",
+>>>>>>> beforeMergeToMain
 	},
 }
 
