@@ -277,6 +277,11 @@ value := float32(2.0) * x // invalid operation: mismatched types float32 and int
 // you must convert int type to float32 before performing arithmetic operation
 value := float32(2.0) * float32(x)`,
 
+	"godoc":`An Example Program With Godoc Comments
+The code below adheres to the Go way, in this case using single-line comments.
+===================================
+
+`,
 
 },
 
