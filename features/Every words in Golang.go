@@ -12018,6 +12018,10 @@ Output:
         func Printfln(template string, values ...interface{}) {
                 fmt.Printf(template+"\n", values...)
         }
+    
+    Caution Don't use the defer keyword on the call to the Close method; otherwise, the final boundary string
+    won't be added to the form until after the request will be sent, producing a form that not all servers will process.
+    It is important to call the Close method before sending the request.
 ████████████████████████████████████████████████████████████████████████
 464.
 ████████████████████████████████████████████████████████████████████████
