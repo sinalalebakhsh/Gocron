@@ -39,6 +39,10 @@ var TitleOfAllIndexSlices = map[string]string{
 	"ALLHTTPCLIENTS":               "ALLHTTPCLIENTS",
 	"ALL CREATING HTTP CLIENTS":    "ALL CREATING HTTP CLIENTS",
 	"ALLCREATINGHTTPCLIENTS":       "ALLCREATINGHTTPCLIENTS",
+	"ALL WORKING WITH DATABASES":   "ALL WORKING WITH DATABASES",
+	"ALLWORKINGWITHDATABASES":      "ALLWORKINGWITHDATABASES",
+	"ALL DATABASES":                "ALL DATABASES",
+	"ALLDATABASES":                 "ALLDATABASES",
 }
 
 var OriginalFeatures Features = Features{
@@ -12023,7 +12027,7 @@ Output:
     won't be added to the form until after the request will be sent, producing a form that not all servers will process.
     It is important to call the Close method before sending the request.
 ████████████████████████████████████████████████████████████████████████
-464.
+464.Working with Databases
 ████████████████████████████████████████████████████████████████████████
 465.
 ████████████████████████████████████████████████████████████████████████

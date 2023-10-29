@@ -187,6 +187,17 @@ func IfUsris2orMoreWords(SliceOfWords []string) bool {
 			return false
 		}
 	}
+
+	for Index := range features.MapUsage.SingleDef {
+		if result == Index && lastElement == "usage" {
+			color.HiCyan(fmt.Sprintln("============================================◉🔰🔰🔰🔰🔰🔰🔰◉=========================================="))
+			color.HiCyan(fmt.Sprintln(features.MapUsage.SingleDef[Index]))
+			color.HiCyan(fmt.Sprintln("============================================◉✅✅✅✅✅✅✅◉=========================================="))
+			return false
+		}
+	}
+
+
 	return true
 }
 
