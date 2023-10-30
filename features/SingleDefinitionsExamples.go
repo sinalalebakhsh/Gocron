@@ -294,6 +294,53 @@ Strings can be concatenated via the + operator:
 	
 ==================================================	
 `,
+
+"beego":`Quick Start
+Create hello directory, cd hello directory
+	mkdir hello
+	cd hello
+
+Init module
+	go mod init
+
+Download and install
+	go get github.com/beego/beego
+
+Create file hello.go
+	package main
+	import "github.com/beego/beego"
+	func main(){
+		beego.Run()
+	}
+
+Build and run
+	go build hello.go
+	./hello
+`,
+
+"beego framework":`Quick Start
+Create hello directory, cd hello directory
+	mkdir hello
+	cd hello
+
+Init module
+	go mod init
+
+Download and install
+	go get github.com/beego/beego
+
+Create file hello.go
+	package main
+	import "github.com/beego/beego"
+	func main(){
+		beego.Run()
+	}
+
+Build and run
+	go build hello.go
+	./hello
+`,
+
 },
 
 }
