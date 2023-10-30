@@ -7,6 +7,7 @@ type SingleDefinitions struct {
 var OriginSingleDef = SingleDefinitions{
 
 	SingleDef: map[string]string{
+		// Basic
 		"go":                         "Fans of Go (called gophers) describe Go as having the expressiveness of dynamic languages like Python or Ruby, with the performance of compiled languages like C or C++. The language is open source, and was started by engineers at Google. It's written using a C-style syntax, has statically typed variables, manages memory using garbage collection, and is compiled into stand-alone executables. Go is noted for the concurrent programming features built into the language core, the networking packages in the standard library (such as a web server), fast compilation and execution speed. Its simple, minimalistic and consistent language design make for a delightful experience, while the abundant and thoughtful tooling addresses traditional problems such as consistent formatting and documentation. The home page for Go is go.dev, and there is an excellent interactive tutorial at tour.go.dev.",
 		"godoc":                      "Godoc is a Go package that lets you create, manage, and use Go documentation in “the Go way”. for installing: sudo apt install golang-golang-x-tools. The Go way is a set of principles that, as a Go programmer, you should follow to improve code quality. Using Godoc, you can easily read other developers' documentation and code. You can also automate the creation of your own documentation and publish it using Godoc.Godoc is similar to Javadoc, the code documentor for Java. They both use comments and code in modules to generate documentation. And both tools structure that documentation in HTML so you can view it in a browser.",
 		"what is godoc?":             "Godoc is a Go package that lets you create, manage, and use Go documentation in “the Go way”. for installing: sudo apt install golang-golang-x-tools. The Go way is a set of principles that, as a Go programmer, you should follow to improve code quality. Using Godoc, you can easily read other developers' documentation and code. You can also automate the creation of your own documentation and publish it using Godoc.Godoc is similar to Javadoc, the code documentor for Java. They both use comments and code in modules to generate documentation. And both tools structure that documentation in HTML so you can view it in a browser.",
@@ -78,10 +79,18 @@ var OriginSingleDef = SingleDefinitions{
 		"converting between types":   "Converting between types is done via a function with the name of the type to convert to. ",
 		"arithmetic operations on different types": "In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an error. ",
 		"string":"A string in Go is an immutable sequence of bytes, which don't necessarily have to represent characters.",
+
+		// Frameworks
+		"beego":"beego is used for rapid development of RESTful APIs, web apps and backend services in Go. It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding.",
+		"beego framework":"beego is used for rapid development of RESTful APIs, web apps and backend services in Go. It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding.",
+
+
+		
 		//
 		//
-		//
-		//
+
+
+		// Packages
 		"package tar":     "Package tar implements access to tar archives.",
 		"package zip":     "Package zip provides support for reading and writing ZIP archives.",
 		"package arena":   "The arena package provides the ability to allocate memory for a collection of Go values and free that space manually all at once, safely.",
