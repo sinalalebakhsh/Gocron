@@ -84,12 +84,24 @@ var OriginSingleDef = SingleDefinitions{
 		"beego":           "beego is used for rapid development of RESTful APIs, web apps and backend services in Go. It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding. Package beego provide a MVC framework beego: an open-source, high-performance, modular, full-stack web framework It is used for rapid development of RESTful APIs, web apps and backend services in Go. beego is inspired by Tornado, Sinatra and Flask with the added benefit of some Go-specific features such as interfaces and struct embedding.",
 		"beego framework": "beego is used for rapid development of RESTful APIs, web apps and backend services in Go. It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding. Package beego provide a MVC framework beego: an open-source, high-performance, modular, full-stack web framework It is used for rapid development of RESTful APIs, web apps and backend services in Go. beego is inspired by Tornado, Sinatra and Flask with the added benefit of some Go-specific features such as interfaces and struct embedding.",
 
-
 		//
+
+		// Database
+		"database":                                         "There are drivers for a wide range of databases, and a list can be found at  https://github.com/golang/go/wiki/sqldrivers",
+		"data base":                                        "There are drivers for a wide range of databases, and a list can be found at  https://github.com/golang/go/wiki/sqldrivers",
+		"what is the database?":                            "The database/sql package provides features for working with SQL databases.",
+		"what is the sql package?":                         "The database/sql package provides features for working with SQL databases.",
+		"what is the database-sql package?":                "The database/sql package provides features for working with SQL databases.",
+		"what is the database/sql package?":                "The database/sql package provides features for working with SQL databases.",
+		"how is the database used?":                        "Relational databases remain the most effective way of storing large amounts of structured data and are used in most large projects.",
+		"how is the database/sql used?":                    "Relational databases remain the most effective way of storing large amounts of structured data and are used in most large projects.",
+		"Are in database any pitfalls or limitations?":     "These features do not automatically populate struct fields from result rows.",
+		"Are in database/sql any pitfalls or limitations?": "These features do not automatically populate struct fields from result rows.",
+		"Are in sql any pitfalls or limitations?":          "These features do not automatically populate struct fields from result rows.",
+
+
 
 		
-		//
-
 		// Packages
 		"package tar":     "Package tar implements access to tar archives.",
 		"package zip":     "Package zip provides support for reading and writing ZIP archives.",
