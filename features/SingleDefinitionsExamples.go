@@ -282,7 +282,18 @@ The code below adheres to the Go way, in this case using single-line comments.
 ===================================
 
 `,
+	"string":`A string literal is defined between double quotes:
 
+	const name = "Jane"
+	
+==================================================	
+Strings can be concatenated via the + operator:
+
+	"Jane" + " " + "Austen"
+	// => "Jane Austen"
+	
+==================================================	
+`,
 },
 
 }
