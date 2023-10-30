@@ -80,6 +80,7 @@ var OriginSingleDef = SingleDefinitions{
 		"arithmetic operations on different types": "In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an error. ",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 =======
@@ -87,17 +88,20 @@ var OriginSingleDef = SingleDefinitions{
 <<<<<<< HEAD
 >>>>>>> beforeMergeToMain
 =======
+=======
+		"string": "A string in Go is an immutable sequence of bytes, which don't necessarily have to represent characters.",
+>>>>>>> beforeMergeToMain
 
 		// Frameworks
-		"beego":"beego is used for rapid development of RESTful APIs, web apps and backend services in Go. It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding.",
-		"beego framework":"beego is used for rapid development of RESTful APIs, web apps and backend services in Go. It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding.",
+		"beego":           "beego is used for rapid development of RESTful APIs, web apps and backend services in Go. It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding. Package beego provide a MVC framework beego: an open-source, high-performance, modular, full-stack web framework It is used for rapid development of RESTful APIs, web apps and backend services in Go. beego is inspired by Tornado, Sinatra and Flask with the added benefit of some Go-specific features such as interfaces and struct embedding.",
+		"beego framework": "beego is used for rapid development of RESTful APIs, web apps and backend services in Go. It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding. Package beego provide a MVC framework beego: an open-source, high-performance, modular, full-stack web framework It is used for rapid development of RESTful APIs, web apps and backend services in Go. beego is inspired by Tornado, Sinatra and Flask with the added benefit of some Go-specific features such as interfaces and struct embedding.",
 
+
+		//
 
 		
 >>>>>>> beforeMergeToMain
 		//
-		//
-
 
 		// Packages
 		"package tar":     "Package tar implements access to tar archives.",
