@@ -12049,13 +12049,59 @@ Output:
     Are there any alternatives?
     There are third-party packages that build on these features to simplify or enhance their use.
 
+    Preparing for This Chapter:
+    1-Initializing the Module
+        go mod init data
+    2-Add a file named printer.go to the data folder
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+    3-Add a file named main.go
+        package main
+        func main() {
+        Printfln("Hello, Data")
+        }
+    4-Compiling and Executing the Project
+        go run .
+    ====================================================================
+    Output:
+        Hello, Data
 
 
+    Preparing the Database:
+    add a file named products.sql to the data folder:
+        DROP TABLE IF EXISTS Categories;
 
-
-
-
-
+        DROP TABLE IF EXISTS Products;
+        
+        CREATE TABLE IF NOT EXISTS Categories (
+            Id INTEGER NOT NULL PRIMARY KEY,
+            Name TEXT
+        );
+        
+        CREATE TABLE IF NOT EXISTS Products (
+            Id INTEGER NOT NULL PRIMARY KEY,
+            Name TEXT,
+            Category INTEGER,
+            Price decimal(8, 2),
+            CONSTRAINT CatRef FOREIGN KEY(Category) REFERENCES Categories (Id)
+        );
+        
+        INSERT INTO
+            Categories (Id, Name)
+        VALUES
+            (1, "Watersports"),
+            (2, "Soccer");
+        
+        INSERT INTO
+            Products (Id, Name, Category, Price)
+        VALUES
+            (1, "Kayak", 1, 279),
+            (2, "Lifejacket", 1, 48.95),
+            (3, "Soccer Ball", 2, 19.50),
+            (4, "Corner Flags", 2, 34.95);
 
 ████████████████████████████████████████████████████████████████████████
 465.
