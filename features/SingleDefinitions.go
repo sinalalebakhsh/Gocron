@@ -78,8 +78,12 @@ var OriginSingleDef = SingleDefinitions{
 		"converting between types":   "Converting between types is done via a function with the name of the type to convert to. ",
 		"arithmetic operations on different types": "In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an error. ",
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+		"string":"A string in Go is an immutable sequence of bytes, which don't necessarily have to represent characters.",
+>>>>>>> beforeMergeToMain
 		//
 		//
 		//
