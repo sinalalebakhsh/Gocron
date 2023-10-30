@@ -12028,6 +12028,35 @@ Output:
     It is important to call the Close method before sending the request.
 ████████████████████████████████████████████████████████████████████████
 464.Working with Databases
+    There are drivers for a wide range of databases, and a list can be found at 
+    https://github.com/golang/go/wiki/sqldrivers
+
+    Putting Working with Databases in Context
+    What is it?
+    The database/sql package provides features for working with SQL databases.
+
+    Why is it useful?
+    Relational databases remain the most effective way of storing large amounts of
+    structured data and are used in most large projects.
+
+    How is it used?
+    Driver packages provide support for specific databases, while the database/sql
+    package provides a set of types that allow databases to be used consistently.
+    
+    Are there any pitfalls or limitations? 
+    These features do not automatically populate struct fields from result rows.
+
+    Are there any alternatives?
+    There are third-party packages that build on these features to simplify or enhance their use.
+
+
+
+
+
+
+
+
+
 ████████████████████████████████████████████████████████████████████████
 465.
 ████████████████████████████████████████████████████████████████████████
