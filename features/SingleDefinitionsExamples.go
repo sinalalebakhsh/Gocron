@@ -341,6 +341,40 @@ Build and run
 	./hello
 `,
 
+"generics" :`main.go:
+package main
+
+import "fmt"
+
+type CustomMap[T comparable, V int | string] map[T]V
+
+func main() {
+	Printfln("Hello, Data")
+
+	obj := make(CustomMap[int, string])
+	obj[3] = "3"
+	obj[1] = "1"
+
+	fmt.Println(obj)
+}`,
+
+"generic" :`main.go:
+package main
+
+import "fmt"
+
+type CustomMap[T comparable, V int | string] map[T]V
+
+func main() {
+	Printfln("Hello, Data")
+
+	obj := make(CustomMap[int, string])
+	obj[3] = "3"
+	obj[1] = "1"
+
+	fmt.Println(obj)
+}`,
+
 },
 
 }
