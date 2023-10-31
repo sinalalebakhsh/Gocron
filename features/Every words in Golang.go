@@ -12103,10 +12103,22 @@ Output:
             (3, "Soccer Ball", 2, 19.50),
             (4, "Corner Flags", 2, 34.95);
 
+
+    Go to https://www.sqlite.org/download.html , look for the precompiled binaries section for your
+    operating system, and download the tools package.
+    Unpack the zip archive and copy the sqlite3 or sqlite3.exe file into the data folder. Run the command
+    Creating the Database command:
+        ./sqlite3 products.db ".read products.sql"
+
 ████████████████████████████████████████████████████████████████████████
-465.
+465.Creating the Database command:
+    ./sqlite3 products.db ".read products.sql"
 ████████████████████████████████████████████████████████████████████████
-466.
+466.Installing a Database Driver
+    Run the command:
+        go get modernc.org/sqlite
+    
+    
 ████████████████████████████████████████████████████████████████████████
 467.
 ████████████████████████████████████████████████████████████████████████
