@@ -12135,9 +12135,81 @@ Output:
                                 error that indicates problems opening the database.
 
 ████████████████████████████████████████████████████████████████████████
-468.
+468.The Contents of the database.go
+    package main
+    // The blank identifier is used to import the database driver package, which loads the driver and allows it
+    // to register as a provider of the SQL API:
+    import (
+        "database/sql"
+        _ "modernc.org/sqlite"
+    )
+    func listDrivers() {
+        for _, driver := range sql.Drivers() {
+            Printfln("Driver: %v", driver)
+        }
+    }
+    func openDatabase() (db *sql.DB, err error) {
+        db, err = sql.Open("sqlite", "products.db")
+        if err == nil {
+            Printfln("Opened database")
+        }
+        return
+    }
+    ====================================================================
+    Using the DB Struct in the main.go:
+        package main
+        func main() {
+            listDrivers()
+            db, err := openDatabase()
+            if (err == nil) {
+                db.Close()
+            } else {
+                panic(err)
+            }
+        }
+    ====================================================================
+    in Terminal:
+        go mod tidy
+
+        Output in Terminal:
+            go: finding module for package modernc.org/sqlite
+            go: downloading modernc.org/sqlite v1.27.0
+            go: found modernc.org/sqlite in modernc.org/sqlite v1.27.0
+            go: downloading golang.org/x/sys v0.9.0
+            go: downloading modernc.org/ccgo/v3 v3.16.13
+            go: downloading modernc.org/libc v1.29.0
+            go: downloading modernc.org/mathutil v1.6.0
+            go: downloading github.com/mattn/go-sqlite3 v1.14.16
+            go: downloading github.com/google/pprof v0.0.0-20221118152302-e6195bd50e26
+            go: downloading modernc.org/tcl v1.15.2
+            go: downloading github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec
+            go: downloading github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
+            go: downloading golang.org/x/tools v0.0.0-20201124115921-2c860bdd6e78
+            go: downloading modernc.org/cc/v3 v3.40.0
+            go: downloading modernc.org/opt v0.1.3
+            go: downloading github.com/dustin/go-humanize v1.0.1
+            go: downloading github.com/google/uuid v1.3.0
+            go: downloading github.com/mattn/go-isatty v0.0.16
+            go: downloading modernc.org/memory v1.7.2
+            go: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1
+            go: downloading golang.org/x/mod v0.3.0
+            go: downloading lukechampine.com/uint128 v1.2.0
+            go: downloading modernc.org/strutil v1.1.3
+            go: downloading modernc.org/token v1.0.1
+            go: downloading modernc.org/httpfs v1.0.6
+            go: downloading modernc.org/z v1.7.3
+            go: downloading modernc.org/ccorpus v1.11.6
+
+    ====================================================================
+    Output:
+        The main method calls the listDrivers function to print out the names of the loaded drivers and then
+        calls the openDatabase function to open the database. Nothing is done with the database yet, but Close
+        method is called.
 ████████████████████████████████████████████████████████████████████████
-469.
+469.The DB Method for Closing the Database:
+    Name        Description
+    -------     ----------------------
+    Close()     This function closes the database and prevents further operations from being performed.
 ████████████████████████████████████████████████████████████████████████
 470.
 ████████████████████████████████████████████████████████████████████████
