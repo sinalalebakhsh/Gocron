@@ -12118,7 +12118,9 @@ Output:
     Run the command:
         go get modernc.org/sqlite
     
-    
+    Most database servers are set up separately so that the database driver opens a connection to a separate
+    process. SQLite is an embedded database and is included in the driver package, which means no additional
+    configuration is required.
 ████████████████████████████████████████████████████████████████████████
 467.
 ████████████████████████████████████████████████████████████████████████

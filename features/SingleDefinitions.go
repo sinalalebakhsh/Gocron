@@ -118,7 +118,7 @@ var OriginSingleDef = SingleDefinitions{
 		"Are in database any pitfalls or limitations?":     "These features do not automatically populate struct fields from result rows.",
 		"Are in database/sql any pitfalls or limitations?": "These features do not automatically populate struct fields from result rows.",
 		"Are in sql any pitfalls or limitations?":          "These features do not automatically populate struct fields from result rows.",
-		"installing a database driver":                     "Run the command:==> go get modernc.org/sqlite",
+		"installing a database driver":                     "Run the command:==> go get modernc.org/sqlite  Most database servers are set up separately so that the database driver opens a connection to a separate process. SQLite is an embedded database and is included in the driver package, which means no additional configuration is required.",
 
 		// Apache kafka
 		"kafka":        "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
