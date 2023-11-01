@@ -172,7 +172,7 @@ var OriginSingleDef = SingleDefinitions{
 		"Are in database any pitfalls or limitations?":     "These features do not automatically populate struct fields from result rows.",
 		"Are in database/sql any pitfalls or limitations?": "These features do not automatically populate struct fields from result rows.",
 		"Are in sql any pitfalls or limitations?":          "These features do not automatically populate struct fields from result rows.",
-		"installing a database driver":                     "Run the command:==> go get modernc.org/sqlite",
+		"installing a database driver":                     "Run the command:==> go get modernc.org/sqlite  Most database servers are set up separately so that the database driver opens a connection to a separate process. SQLite is an embedded database and is included in the driver package, which means no additional configuration is required.",
 
 <<<<<<< HEAD
 <<<<<<< HEAD
