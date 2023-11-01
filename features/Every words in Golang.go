@@ -12122,7 +12122,18 @@ Output:
     process. SQLite is an embedded database and is included in the driver package, which means no additional
     configuration is required.
 ████████████████████████████████████████████████████████████████████████
-467.
+467.Opening a Database
+    The standard library provides the database/sql package for working with databases. 
+
+    The functions described here:
+    The database/sql Functions for Opening a Database
+    Name                        Description
+    ----------------            ------------------------------
+    Drivers()                   This function returns a slice of strings, each of which contains the name of a database driver.
+    Open(driver,connectionStr)  This function opens a database using the specified driver and connection string. The
+                                results are a pointer to a DB struct, which is used to interact with the database and an
+                                error that indicates problems opening the database.
+
 ████████████████████████████████████████████████████████████████████████
 468.
 ████████████████████████████████████████████████████████████████████████
