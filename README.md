@@ -259,6 +259,10 @@ You can use this command before start:
 	ALLHTTPCLIENTS
 	ALL CREATING HTTP CLIENTS
 	ALLCREATINGHTTPCLIENTS
+	ALL WORKING WITH DATABASES
+	ALLWORKINGWITHDATABASES
+	ALL DATABASES
+	ALLDATABASES
 
 ### ◉ 🟣 v1.0.29
 🟣 Add a feature if user wrote 'godoc usage' specified
