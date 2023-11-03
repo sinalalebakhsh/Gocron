@@ -65,10 +65,9 @@ var OriginSingleDef = SingleDefinitions{
 		"packages":                   "Go applications are organized in packages. A package is a collection of source files located in the same directory. All source files in a directory must share the same package name. When a package is imported, only entities (functions, types, variables, constants) whose names start with a capital letter can be used / accessed. The recommended style of naming in Go is that identifiers will be named using camelCase, except for those meant to be accessible across packages which should be PascalCase. EXAMPLE: || package lasagna || ",
 		"variable":                   "Variables Go is statically-typed, which means all variables must have a defined type at compile-time.Variables can be defined by explicitly specifying a type, EXAMPLE: var explicit int || Explicitly typed||",
 		"variables":                  "Variables Go is statically-typed, which means all variables must have a defined type at compile-time.Variables can be defined by explicitly specifying a type, EXAMPLE: var explicit int || Explicitly typed||",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> beforeMergeToMain
+
+
+
 		"constant":                   "Constants hold a piece of data just like variables, but their value cannot change during the execution of the program.Constants are defined using the const keyword and can be numbers, characters, strings or booleans. EXAMPLE:	const Age = 21",
 		"constants":                  "Constants hold a piece of data just like variables, but their value cannot change during the execution of the program.Constants are defined using the const keyword and can be numbers, characters, strings or booleans. EXAMPLE:	const Age = 21",
 		"function":                   "Go functions accept zero or more parameters. Parameters must be explicitly typed, there is no type inference. Values are returned from functions using the return keyword. A function is invoked by specifying the function name and passing arguments for each of the function's parameters.",
@@ -80,7 +79,7 @@ var OriginSingleDef = SingleDefinitions{
 		"booleans":                   "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
 		"function comment":           "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
 		"function comments":          "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
-<<<<<<< HEAD
+
 		"number":                     "Go contains basic numeric types that can represent sets of either integer or floating-point values.",
 		"numbers":                    "Go contains basic numeric types that can represent sets of either integer or floating-point values.",
 		"int":                        "e.g. 0, 255, 2147483647. A signed integer that is at least 32 bits in size (value range of: -2147483648 through 2147483647). But this will depend on the systems architecture. Most modern computers are 64 bit, therefore int will be 64 bits in size (value rate of: -9223372036854775808 through 9223372036854775807).",
@@ -92,57 +91,16 @@ var OriginSingleDef = SingleDefinitions{
 		"basic operator":             "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
 		"basic operators":            "Go supports many standard arithmetic operators EXAMPLE: + , - , / , % ",
 		"converting between types":   "Converting between types is done via a function with the name of the type to convert to. ",
-=======
-		"constant": "Constants hold a piece of data just like variables, but their value cannot change during the execution of the program.Constants are defined using the const keyword and can be numbers, characters, strings or booleans. EXAMPLE:	const Age = 21",
-		"constants": "Constants hold a piece of data just like variables, but their value cannot change during the execution of the program.Constants are defined using the const keyword and can be numbers, characters, strings or booleans. EXAMPLE:	const Age = 21",
-		"function":                 "Go functions accept zero or more parameters. Parameters must be explicitly typed, there is no type inference. Values are returned from functions using the return keyword. A function is invoked by specifying the function name and passing arguments for each of the function's parameters.",
-		"functions":                "Go functions accept zero or more parameters. Parameters must be explicitly typed, there is no type inference. Values are returned from functions using the return keyword. A function is invoked by specifying the function name and passing arguments for each of the function's parameters.",
-		"comment":                  "Note that Go supports two types of comments. Single line comments are preceded by // and multiline comments are inserted between /* and */.",
-		"comments":                 "Note that Go supports two types of comments. Single line comments are preceded by // and multiline comments are inserted between /* and */.",
-		"bool":                     "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
-		"boolean":                  "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
-		"booleans":                 "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
-		"function comment":         "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
-		"function comments":        "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
-		"number":                   "Go contains basic numeric types that can represent sets of either integer or floating-point values. Numbers can be converted to other numeric types through Type Conversion.",
-		"numbers":                  "Go contains basic numeric types that can represent sets of either integer or floating-point values. Numbers can be converted to other numeric types through Type Conversion.",
-		"int":                      "e.g. 0, 255, 2147483647. A signed integer that is at least 32 bits in size (value range of: -2147483648 through 2147483647). But this will depend on the systems architecture. Most modern computers are 64 bit, therefore int will be 64 bits in size (value rate of: -9223372036854775808 through 9223372036854775807).",
-		"float64":                  "e.g. 0.0, 3.14. Contains the set of all 64-bit floating-point numbers.",
-		"uint":                     "e.g. 0, 255. An unsigned integer that is the same size as int (value range of: 0 through 4294967295 for 32 bits and 0 through 18446744073709551615 for 64 bits). Go has shorthand assignment for the operators above (e.g. a += 5 is short for a = a + 5). Go also supports the increment and decrement statements ++ and -- (e.g. a++). For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"arithmetic operators":     "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"operator":                 "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"operators":                "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"basic operator":           "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"basic operators":          "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"converting between types": "Converting between types is done via a function with the name of the type to convert to. ",
->>>>>>> beforeMergeToMain
-=======
-		"number":                     "Go contains basic numeric types that can represent sets of either integer or floating-point values. Numbers can be converted to other numeric types through Type Conversion.",
-		"numbers":                    "Go contains basic numeric types that can represent sets of either integer or floating-point values. Numbers can be converted to other numeric types through Type Conversion.",
-		"int":                        "e.g. 0, 255, 2147483647. A signed integer that is at least 32 bits in size (value range of: -2147483648 through 2147483647). But this will depend on the systems architecture. Most modern computers are 64 bit, therefore int will be 64 bits in size (value rate of: -9223372036854775808 through 9223372036854775807).",
-		"float64":                    "e.g. 0.0, 3.14. Contains the set of all 64-bit floating-point numbers.",
-		"uint":                       "e.g. 0, 255. An unsigned integer that is the same size as int (value range of: 0 through 4294967295 for 32 bits and 0 through 18446744073709551615 for 64 bits). Go has shorthand assignment for the operators above (e.g. a += 5 is short for a = a + 5). Go also supports the increment and decrement statements ++ and -- (e.g. a++). For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"arithmetic operators":       "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"operator":                   "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"operators":                  "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"basic operator":             "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"basic operators":            "Go supports many standard arithmetic operators. EXAMPLE: + , - , / , % . For integer division, the remainder is dropped (e.g. 5 / 2 == 2).",
-		"converting between types":   "Converting between types is done via a function with the name of the type to convert to. ",
->>>>>>> beforeMergeToMain
+	
 		"arithmetic operations on different types": "In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an error. ",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-=======
+
+
+
 		"string":"A string in Go is an immutable sequence of bytes, which don't necessarily have to represent characters.",
-<<<<<<< HEAD
->>>>>>> beforeMergeToMain
-=======
-=======
-		"string": "A string in Go is an immutable sequence of bytes, which don't necessarily have to represent characters.",
->>>>>>> beforeMergeToMain
+
+
+
 
 		// Generics
 		"generic":                "Generics help you to do more with less code, by using generic types instead of concrete types. While Generics have been part of other programming languages for quite some time, Generics was only recently added to Golang as of the 1.18 release in 2022. Generics can be used to define functions, structs and maps.",
@@ -174,20 +132,17 @@ var OriginSingleDef = SingleDefinitions{
 		"Are in sql any pitfalls or limitations?":          "These features do not automatically populate struct fields from result rows.",
 		"installing a database driver":                     "Run the command:==> go get modernc.org/sqlite  Most database servers are set up separately so that the database driver opens a connection to a separate process. SQLite is an embedded database and is included in the driver package, which means no additional configuration is required.",
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
 
 
 		
-<<<<<<< HEAD
->>>>>>> beforeMergeToMain
+
+
 		//
 
-=======
->>>>>>> beforeMergeToMain
-=======
->>>>>>> beforeMergeToMain
-=======
+
+
 		// Apache kafka
 		"kafka":        "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 		"apacheKafka":  "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
@@ -197,7 +152,7 @@ var OriginSingleDef = SingleDefinitions{
 		"what is kafka apache for golang?":          "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 		"what is kafka apache for golang ?":         "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 
->>>>>>> beforeMergeToMain
+
 		// Packages
 		"package tar":     "Package tar implements access to tar archives.",
 		"package zip":     "Package zip provides support for reading and writing ZIP archives.",
@@ -211,7 +166,7 @@ var OriginSingleDef = SingleDefinitions{
 		"package gzip":    "Package gzip implements reading and writing of gzip format compressed files, as specified in RFC 1952.",
 		"package lzw":     "Package lzw implements the Lempel-Ziv-Welch compressed data format, described in T. A. Welch, “A Technique for High-Performance Data Compression”, Computer, 17(6) (June 1984), pp 8-19. ",
 		"package zlib":    "Package zlib implements reading and writing of zlib format compressed data, as specified in RFC 1950. ",
->>>>>>> beforeMergeToMain
+
 	},
 }
 
