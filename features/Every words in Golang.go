@@ -12224,9 +12224,13 @@ Output:
     Exec(query,...args)         This method executes statements or queries that do not return rows of data. The
                                 method returns a Result, which describes the response from the database, and
                                 an error that signals problems with execution. See the “Executing Other Queries” section.
-                                
+
 ████████████████████████████████████████████████████████████████████████
-471.
+471.Using Contexts with Databases
+    the context package and the Context interface it defines, which is used
+    to manage requests as they are processed by a server. All the important methods defined in the
+    database/sql package also have versions that accept a Context argument, which is useful if you
+    want to take advantage of features like request handling timeouts.
 ████████████████████████████████████████████████████████████████████████
 472.
 ████████████████████████████████████████████████████████████████████████
