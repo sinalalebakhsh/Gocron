@@ -12231,13 +12231,64 @@ Output:
     to manage requests as they are processed by a server. All the important methods defined in the
     database/sql package also have versions that accept a Context argument, which is useful if you
     want to take advantage of features like request handling timeouts.
+
+████████████████████████████████████████████████████████████████████████
+472.Querying for Multiple Rows
+    The Query method executes a query that retrieves one or more rows from the database. The Query method
+    returns a Rows struct, which contains the query results and an error that indicates problems. The row data is
+    accessed through the methods described in below
+
+    The Rows Struct Methods
+    Name                Description
+    ----------------    -----------------------------
+    Next()              This method advances to the next result row. The result is a bool, which is true when
+                        there is data to read and false when the end of the data has been reached, at which point
+                        the Close method is automatically called.
+    NextResultSet()     This method advances to the next result set when there are multiple result sets in the
+                        same database response. The method returns true if there is another set of rows to process.
+    Scan(...targets)    This method assigns the SQL values from the current row to the specified variables. The
+                        values are assigned via pointers and the method returns an error that indicates when the
+                        values cannot be scanned. See the “Understanding the Scan Method” section for details.
+    Close()             This method prevents further enumeration of the results and is used when not all of
+                        the data is required. There is no need to call this method if the Next method is used to
+                        advance until it returns false.
+████████████████████████████████████████████████████████████████████████
+473.Querying the Database in the main.go
+    example:
+        package main
+        import "database/sql"
+        func queryDatabase(db *sql.DB) {
+            rows, err := db.Query("SELECT * from Products")
+            if err == nil {
+                for rows.Next() {
+                    var id, category int
+                    var name string
+                    var price float64
+                    rows.Scan(&id, &name, &category, &price)
+                    Printfln("Row: %v %v %v %v", id, name, category, price)
+                }
+            } else {
+                Printfln("Error: %v", err)
+            }
+        }
+        func main() {
+            //listDrivers()
+            db, err := openDatabase()
+            if err == nil {
+                queryDatabase(db)
+                db.Close()
+            } else {
+                panic(err)
+            }
+        }
+    ====================================================================
+    The queryDatabase function performs a simple SELECT query on the Products table with the Query
+    method, which produces a Rows result and an error. If the error is nil, a for loop is used to move through
+    the result rows by calling the Next method, which returns true if there is a row to process and returns false
+    when the end of the data has been reached.
     
 ████████████████████████████████████████████████████████████████████████
-472.
-████████████████████████████████████████████████████████████████████████
-473.
-████████████████████████████████████████████████████████████████████████
-474.
+474.Using Reflection
 ████████████████████████████████████████████████████████████████████████
 475.
 ████████████████████████████████████████████████████████████████████████
