@@ -130,6 +130,7 @@ var OriginSingleDef = SingleDefinitions{
 		"what is kafka apache for golang ?":         "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 
 		// Packages
+		"strings":         "The strings package contains many useful functions to work on strings. For more information about string functions, check out the strings package documentation. Link: https://pkg.go.dev/strings",
 		"package tar":     "Package tar implements access to tar archives.",
 		"package zip":     "Package zip provides support for reading and writing ZIP archives.",
 		"package arena":   "The arena package provides the ability to allocate memory for a collection of Go values and free that space manually all at once, safely.",
