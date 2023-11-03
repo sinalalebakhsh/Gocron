@@ -104,11 +104,17 @@ var OriginSingleDef = SingleDefinitions{
 
 
 		// using reflection
-		"using reflection":           "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example.",
-		"What is reflection?":        "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example.",
-		"What is reflection ?":       "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example.",
-		"What is reflection in Go?":  "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example.",
-		"What is reflection in Go ?": "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example.",
+		"using reflection":             "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time.",
+		"what is reflection?":          "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time.",
+		"what is reflection ?":         "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time.",
+		"what is reflection in Go?":    "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time.",
+		"what is reflection in Go ?":   "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time.",
+		"why is reflection useful?":    "Reflection is useful when writing code that relies on types that will be defined in the future, such as when writing an API that will be used in other projects.",
+		"why is reflection useful ?":   "Reflection is useful when writing code that relies on types that will be defined in the future, such as when writing an API that will be used in other projects.",
+		"why is a reflection useful?":  "Reflection is useful when writing code that relies on types that will be defined in the future, such as when writing an API that will be used in other projects.",
+		"why is a reflection useful ?": "Reflection is useful when writing code that relies on types that will be defined in the future, such as when writing an API that will be used in other projects.",
+		"how is reflection used?":      "The reflect package provides features that allow types and values to be reflected, such that they can be used without explicit knowledge of the data types in use.",
+		"how is reflection used ?":      "The reflect package provides features that allow types and values to be reflected, such that they can be used without explicit knowledge of the data types in use.",
 
 		// Generics
 		"generic":                "Generics help you to do more with less code, by using generic types instead of concrete types. While Generics have been part of other programming languages for quite some time, Generics was only recently added to Golang as of the 1.18 release in 2022. Generics can be used to define functions, structs and maps.",
@@ -174,6 +180,7 @@ var OriginSingleDef = SingleDefinitions{
 		"package gzip":    "Package gzip implements reading and writing of gzip format compressed files, as specified in RFC 1952.",
 		"package lzw":     "Package lzw implements the Lempel-Ziv-Welch compressed data format, described in T. A. Welch, “A Technique for High-Performance Data Compression”, Computer, 17(6) (June 1984), pp 8-19. ",
 		"package zlib":    "Package zlib implements reading and writing of zlib format compressed data, as specified in RFC 1950. ",
+		"package reflect": "The reflect package provides features that allow types and values to be reflected, such that they can be used without explicit knowledge of the data types in use.",
 	},
 }
 
