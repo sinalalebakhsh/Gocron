@@ -103,6 +103,13 @@ var OriginSingleDef = SingleDefinitions{
 
 
 
+		// using reflection
+		"using reflection":           "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example.",
+		"What is reflection?":        "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example.",
+		"What is reflection ?":       "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example.",
+		"What is reflection in Go?":  "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example.",
+		"What is reflection in Go ?": "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example.",
+
 		// Generics
 		"generic":                "Generics help you to do more with less code, by using generic types instead of concrete types. While Generics have been part of other programming languages for quite some time, Generics was only recently added to Golang as of the 1.18 release in 2022. Generics can be used to define functions, structs and maps.",
 		"generics":               "Generics help you to do more with less code, by using generic types instead of concrete types. While Generics have been part of other programming languages for quite some time, Generics was only recently added to Golang as of the 1.18 release in 2022. Generics can be used to define functions, structs and maps.",
