@@ -10,127 +10,144 @@
 		<summary>
 			Features In Versions
 		</summary>
+		<details>
+			<summary>
+			Archive
+			</summary>
+				<details>
+					<summary>
+						🎭 V1.0.4 
+					</summary>
+						🎭 Add Goroutines for searching concurently in data
+				</details>
 			<details>
 				<summary>
-					🎭 V1.0.4 
+					🖌 V1.0.5 
 				</summary>
-					🎭 Add Goroutines for searching concurently in data
+					🖌 Add Single Examples for better learning.
 			</details>
-		<details>
-			<summary>
-				🖌 V1.0.5 
-			</summary>
-				🖌 Add Single Examples for better learning.
+			<details>
+				<summary>
+					🎯 v1.0.6
+				</summary>
+					🎯 Add Channel and rerlation between Gourotines
+			</details>
+			<details>
+				<summary>
+					🧭 v1.0.8
+				</summary>
+					🧭 Add message for "not found yet"
+			</details>
+			<details>
+				<summary>
+					🌍 v1.0.12
+				</summary>
+					🌍 Adding => All Creating HTTP Servers
+			</details>
+			<details>
+				<summary>
+					🍪 v1.0.13
+				</summary>
+					🍪 Add in everything Inspecting the Request
+			</details>
+			<details>
+				<summary>
+					🥎 v1.0.14
+				</summary>
+					🥎🥎🥎 Creating My First Server
+			</details>
+			<details>
+				<summary>
+					🥝 v1.0.15
+				</summary>
+					🥝 Add example for saving logs in TXT file from Server GO
+			</details>
+			<details>
+				<summary>
+					🏆 v1.0.16
+				</summary>
+					🏆 Will write in Terminal and File for feture analyzing. 
+			</details>
+			<details>
+				<summary>
+					🔰 v1.0.17
+				</summary>
+					🔰 Will write in Terminal and File for feture analyzing. 
+			</details>
+			<details>
+				<summary>
+					💎 v1.0.20
+				</summary>
+					💎 Add this section:
+					The user is asked if he wants to enter the project page. 
+			</details>
+			Complete HTTP Servers First Step
+			<details>
+				<summary>
+					🪙 v1.0.21
+				</summary>
+					🪙 Complete HTTP Servers First Step 
+			</details>
+			<details>
+				<summary>
+					⚽ 1.0.22
+				</summary>
+					⚽ Add Clear Screen in program After Ending for in current running program you can use it ⚽
+			</details>
+			<details>
+				<summary>
+					⏺ v1.0.23
+				</summary>
+					⏺ 1- add build program
+					⏺ 2- debuging
+					⏺ 3- add map instead slice"
+			</details>
+			<details>
+				<summary>
+					✅ v1.0.24
+				</summary>
+					✅ develop searching in examples with more than one or two arguments:
+					✅  this is better for searching like this:
+					✅      http servers example
+					✅  result is true for this.
+			</details>
+			<details>
+				<summary>
+					🔴 v1.0.25
+				</summary>
+					🔴 Add two file .sh for pushing in GitHub
+			</details> 
+			<details>
+				<summary>
+					🔔 v1.0.25
+				</summary>
+					🔔 Debug single definition for searching by To Lower Function
+						Clear Key Implementation:
+							Identify the key that will trigger the clearing functionality. This could be a specific keystroke or command.
+							Write the code that listens for this key input and executes the clear action.
+							Ensure that the user is provided with feedback confirming that the data has been cleared.
+						Enhanced Search Functionality:
+							Determine what specific improvements you want to make in the search feature. This could include adding filters (e.g., by category, difficulty level), allowing more complex search queries, or implementing a fuzzy search algorithm.
+							Implement the necessary code to realize these improvements. This might involve changes to the user interface and underlying data structures.
+			</details> 
+			<details>
+				<summary>
+					🍅 v1.0.27
+				</summary>
+					🍅 Add license MIT
+			</details> 
+			<details>
+				<summary>
+					🌈 v1.0.28
+				</summary>
+					🌈 Add a feature for Question/Answer from user
+			</details> 
 		</details>
 		<details>
 			<summary>
-				🎯 v1.0.6
+				🟣 v1.0.29
 			</summary>
-				🎯 Add Channel and rerlation between Gourotines
-		</details>
-		<details>
-			<summary>
-				🧭 v1.0.8
-			</summary>
-				🧭 Add message for "not found yet"
-		</details>
-		<details>
-			<summary>
-				🌍 v1.0.12
-			</summary>
-				🌍 Adding => All Creating HTTP Servers
-		</details>
-		<details>
-			<summary>
-				🍪 v1.0.13
-			</summary>
-				🍪 Add in everything Inspecting the Request
-		</details>
-		<details>
-			<summary>
-				🥎 v1.0.14
-			</summary>
-				🥎🥎🥎 Creating My First Server
-		</details>
-		<details>
-			<summary>
-				🥝 v1.0.15
-			</summary>
-				🥝 Add example for saving logs in TXT file from Server GO
-		</details>
-		<details>
-			<summary>
-				🏆 v1.0.16
-			</summary>
-				🏆 Will write in Terminal and File for feture analyzing. 
-		</details>
-		<details>
-			<summary>
-				🔰 v1.0.17
-			</summary>
-				🔰 Will write in Terminal and File for feture analyzing. 
-		</details>
-		<details>
-			<summary>
-				💎 v1.0.20
-			</summary>
-				💎 Add this section:
-				The user is asked if he wants to enter the project page. 
-		</details>
-		Complete HTTP Servers First Step
-		<details>
-			<summary>
-				🪙 v1.0.21
-			</summary>
-				🪙 Complete HTTP Servers First Step 
-		</details>
-		<details>
-			<summary>
-				⚽ 1.0.22
-			</summary>
-				⚽ Add Clear Screen in program After Ending for in current running program you can use it ⚽
-		</details>
-		<details>
-			<summary>
-				⏺ v1.0.23
-			</summary>
-				⏺ 1- add build program
-				⏺ 2- debuging
-				⏺ 3- add map instead slice"
-		</details>
-		<details>
-			<summary>
-				✅ v1.0.24
-			</summary>
-				✅ develop searching in examples with more than one or two arguments:
-				✅  this is better for searching like this:
-				✅      http servers example
-				✅  result is true for this.
-		</details>
-		<details>
-			<summary>
-				🔴 v1.0.25
-			</summary>
-				🔴 Add two file .sh for pushing in GitHub
-		</details> 
-		<details>
-			<summary>
-				🔔 v1.0.25
-			</summary>
-				🔔 Debug single definition for searching by To Lower Function
-				    Clear Key Implementation:
-						Identify the key that will trigger the clearing functionality. This could be a specific keystroke or command.
-						Write the code that listens for this key input and executes the clear action.
-						Ensure that the user is provided with feedback confirming that the data has been cleared.
-					Enhanced Search Functionality:
-						Determine what specific improvements you want to make in the search feature. This could include adding filters (e.g., by category, difficulty level), allowing more complex search queries, or implementing a fuzzy search algorithm.
-						Implement the necessary code to realize these improvements. This might involve changes to the user interface and underlying data structures.
-		</details> 
-		<details>
-			<summary>
-				🍅 v1.0.27
-			</summary>
-				🍅 Add license MIT
+				🟣 Add a feature if user wrote 'godoc usage' specified
 		</details> 
 	</details>
 </br>
@@ -193,27 +210,27 @@ map slice
 
 You can use this command before start:
 
-#### ◉============ Run
+#### ◉ Run
 	go run .
 	
-#### ◉============ Build
+#### ◉ Build
 	go build .
 	than:
 	./Gocron
 	
-#### ◉============ Help
+#### ◉ Help
 	./Gocron -h 
 	./Gocron help
 	./Gocron -help
 	./Gocron --help
 
-#### ◉============ Show All
+#### ◉ Show All
 	./Gocron all
 	./Gocron -all
 	./Gocron --all
 
 
-### if just write one input you get all about that:
+### ◉ if just write one input you get all about that:
 	READING AND WRITING DATA
     READINGANDWRITINGDATA
     ALL READING AND WRITING DATA
@@ -242,5 +259,17 @@ You can use this command before start:
 	ALLHTTPCLIENTS
 	ALL CREATING HTTP CLIENTS
 	ALLCREATINGHTTPCLIENTS
+	ALL WORKING WITH DATABASES
+	ALLWORKINGWITHDATABASES
+	ALL DATABASES
+	ALLDATABASES
 
-🌎🌏🌐🏀⚾🥎🏐🟠🟡🟢🔵🟣🟤🔘🍘🥘🫓🏵🐻🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧🌈⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒💍🎨
+### ◉ 🟣 v1.0.29
+🟣 Add a feature if user wrote 'godoc usage' specified
+### example after run Gocron:
+	operator 1 question
+### result is this:
+	The cars are produced on an assembly line. The assembly line has a certain speed, that can be changed. The faster the assembly line speed is, the more cars are produced. However, changing the speed of the assembly line also changes the number of cars that are produced successfully, that is cars without any errors in their production.	Implement a function that takes in the number of cars produced per hour and the success rate and calculates the number of successful cars made per hour. The success rate is given as a percentage, Note: the return value should be a float64, from 0 to 100:
+another example after run Gocron:
+
+🌎🌏🌐🏀⚾🥎🏐🟠🟡🟢🔵🟤🔘🍘🥘🫓🏵🐻🍑🍊🍈🌳❤️🎾🏕🏜🍺🫖🎳🎖🥇🥈🥉🎃🔥💧⭐🌟🏎🏍🚂🟥🟧🟨🟩🟦🟪🟫🔶🔷💠🔆⏹🛡🔒📌🗂📂💰📔📕📖📗📘📙📚📓📒💍🎨

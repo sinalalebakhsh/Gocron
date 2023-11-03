@@ -163,6 +163,41 @@ func IfUsris2orMoreWords(SliceOfWords []string) bool {
 			return false
 		}
 	}
+
+	for Index := range features.QuestionsSample.MapQuestionsSample {
+		if result == Index && lastElement == "question" {
+			words := features.SplitIntoWords(features.Questions.SingleQues[result])
+			features.PrintWordByWord(words)
+			fmt.Println()
+			color.HiYellow(fmt.Sprintln("============================================◉❓❓❓❓❓❓❓◉=========================================="))
+			color.HiRed(fmt.Sprintln(features.QuestionsSample.MapQuestionsSample[Index]))
+			color.HiYellow(fmt.Sprintln("============================================◉🔴🔴🔴🔴🔴🔴🔴◉=========================================="))
+			return false
+		}
+	}
+
+	for Index := range features.AnswersSample.MapAnswersSample {
+		if result == Index && lastElement == "answer" {
+			words := features.SplitIntoWords(features.Answers.SingleAnws[result])
+			features.PrintWordByWord(words)
+			fmt.Println()
+			color.HiGreen(fmt.Sprintln("============================================◉🔰🔰🔰🔰🔰🔰🔰◉=========================================="))
+			color.HiCyan(fmt.Sprintln(features.AnswersSample.MapAnswersSample[Index]))
+			color.HiGreen(fmt.Sprintln("============================================◉✅✅✅✅✅✅✅◉=========================================="))
+			return false
+		}
+	}
+
+	for Index := range features.MapUsage.SingleDef {
+		if result == Index && lastElement == "usage" {
+			color.HiCyan(fmt.Sprintln("============================================◉🔰🔰🔰🔰🔰🔰🔰◉=========================================="))
+			color.HiCyan(fmt.Sprintln(features.MapUsage.SingleDef[Index]))
+			color.HiCyan(fmt.Sprintln("============================================◉✅✅✅✅✅✅✅◉=========================================="))
+			return false
+		}
+	}
+
+
 	return true
 }
 

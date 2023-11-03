@@ -236,7 +236,147 @@ func CelsiusFreezingTemp() int {
 func CelsiusFreezingTemp() int {
 	return 0
 }`,
-	},
+"operator":`Operator 	Example
+--------	-------------
++ 		4 + 6 == 10
+- 		15 - 10 == 5
+* 		2 * 3 == 6
+/ 		13 / 3 == 4
+% 		13 % 3 == 1`,
+"operators":`Operator 	Example
+--------	-------------
++ 		4 + 6 == 10
+- 		15 - 10 == 5
+* 		2 * 3 == 6
+/ 		13 / 3 == 4
+% 		13 % 3 == 1`,
+"arithmetic operators":`Operator 	Example
+--------	-------------
++ 		4 + 6 == 10
+- 		15 - 10 == 5
+* 		2 * 3 == 6
+/ 		13 / 3 == 4
+% 		13 % 3 == 1`,
+"converting between types":`var x int = 42 // x has type int
+f := float64(x) // f has type float64 (ie. 42.0)
+var y float64 = 11.9 // y has type float64
+i := int(y) // i has type int (ie. 11)`,
+"arithmetic operations on different types":`var x int = 42
+
+// this line produces an error
+value := float32(2.0) * x // invalid operation: mismatched types float32 and int
+
+// you must convert int type to float32 before performing arithmetic operation
+value := float32(2.0) * float32(x)`,
+
+"arithmetic operations on different type":`var x int = 42
+
+// this line produces an error
+value := float32(2.0) * x // invalid operation: mismatched types float32 and int
+
+// you must convert int type to float32 before performing arithmetic operation
+value := float32(2.0) * float32(x)`,
+
+	"godoc":`An Example Program With Godoc Comments
+The code below adheres to the Go way, in this case using single-line comments.
+===================================
+
+`,
+	"string":`A string literal is defined between double quotes:
+
+	const name = "Jane"
+	
+==================================================	
+Strings can be concatenated via the + operator:
+
+	"Jane" + " " + "Austen"
+	// => "Jane Austen"
+	
+==================================================	
+`,
+
+"beego":`Quick Start
+Create hello directory, cd hello directory
+	mkdir hello
+	cd hello
+
+Init module
+	go mod init
+
+Download and install
+	go get github.com/beego/beego
+
+Create file hello.go
+	package main
+	import "github.com/beego/beego"
+	func main(){
+		beego.Run()
+	}
+
+Build and run
+	go build hello.go
+	./hello
+`,
+
+"beego framework":`Quick Start
+Create hello directory, cd hello directory
+	mkdir hello
+	cd hello
+
+Init module
+	go mod init
+
+Download and install
+	go get github.com/beego/beego
+
+Create file hello.go
+	package main
+	import "github.com/beego/beego"
+	func main(){
+		beego.Run()
+	}
+
+Build and run
+	go build hello.go
+	./hello
+`,
+
+"generics" :`main.go:
+package main
+
+import "fmt"
+
+type CustomMap[T comparable, V int | string] map[T]V
+
+func main() {
+	Printfln("Hello, Data")
+
+	obj := make(CustomMap[int, string])
+	obj[3] = "3"
+	obj[1] = "1"
+
+	fmt.Println(obj)
+}`,
+
+"generic" :`main.go:
+package main
+
+import "fmt"
+
+type CustomMap[T comparable, V int | string] map[T]V
+
+func main() {
+	Printfln("Hello, Data")
+
+	obj := make(CustomMap[int, string])
+	obj[3] = "3"
+	obj[1] = "1"
+
+	fmt.Println(obj)
+}`,
+
+},
+
 }
 
 
