@@ -43,6 +43,8 @@ var TitleOfAllIndexSlices = map[string]string{
 	"ALLWORKINGWITHDATABASES":      "ALLWORKINGWITHDATABASES",
 	"ALL DATABASES":                "ALL DATABASES",
 	"ALLDATABASES":                 "ALLDATABASES",
+	"ALLUSINGREFLECTION":           "ALLUSINGREFLECTION",
+	"ALL USING REFLECTION":         "ALL USING REFLECTION",
 }
 
 var OriginalFeatures Features = Features{

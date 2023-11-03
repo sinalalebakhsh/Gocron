@@ -292,6 +292,22 @@ func GetUserInputSendChannel(FinalInput string, MyChann1 chan<- features.DataBas
 		MyChann1 <- result
 		return
 	}
+	// ===============================================
+	// WORKING WITH DATABASES
+	// searching for on slice =	"ALL WORKING WITH DATABASES","ALLWORKINGWITHDATABASES","ALL DATABASES","ALLDATABASES",
+	if result := searchSlice(FinalInput, features.TitleDataBases, features.OriginalDataBases); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+	// ===============================================
+	// ALL USING REFLECTION
+	// 	searching for on slice = "ALLUSINGREFLECTION", "ALL USING REFLECTION",
+	if result := searchSlice(FinalInput, features.TitleUsingReflection, features.OriginalUsingReflection); result.Alldatafield != "" {
+		MyChann1 <- result
+		return
+	}
+
+
 
 	MyChann1 <- features.DataBase{} // Return an empty struct if not found
 

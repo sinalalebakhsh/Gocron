@@ -269,6 +269,8 @@ You can use this command before start:
 	ALLWORKINGWITHDATABASES
 	ALL DATABASES
 	ALLDATABASES
+	ALLUSINGREFLECTION
+	ALL USING REFLECTION
 
 ### ◉ 🐻 v1.0.31
 🐻 Debuging For being a GitHub donkey!!!!!
