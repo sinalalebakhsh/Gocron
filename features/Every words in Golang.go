@@ -39,6 +39,10 @@ var TitleOfAllIndexSlices = map[string]string{
 	"ALLHTTPCLIENTS":               "ALLHTTPCLIENTS",
 	"ALL CREATING HTTP CLIENTS":    "ALL CREATING HTTP CLIENTS",
 	"ALLCREATINGHTTPCLIENTS":       "ALLCREATINGHTTPCLIENTS",
+	"ALL WORKING WITH DATABASES":   "ALL WORKING WITH DATABASES",
+	"ALLWORKINGWITHDATABASES":      "ALLWORKINGWITHDATABASES",
+	"ALL DATABASES":                "ALL DATABASES",
+	"ALLDATABASES":                 "ALLDATABASES",
 }
 
 var OriginalFeatures Features = Features{
@@ -11953,21 +11957,274 @@ Output:
     Close()                                 This function finalizes the form and writes the terminating boundary that
                                             denotes the end of the form data.
 ████████████████████████████████████████████████████████████████████████
-463.
+463.Creating and Sending a Multipart Form in the main.go
+    example:
+    main.go:
+        package main
+        import (
+            "io"
+            "net/http"
+            "os"
+            "time"
+            //"encoding/json"
+            //"strings"
+            //"net/url"
+            //"net/http/cookiejar"
+            //"fmt"
+            "bytes"
+            "mime/multipart"
+        )
+        func main() {
+            go http.ListenAndServe(":5000", nil)
+            time.Sleep(time.Second)
+            var buffer bytes.Buffer
+            formWriter := multipart.NewWriter(&buffer)
+            fieldWriter, err := formWriter.CreateFormField("name")
+            if err == nil {
+                io.WriteString(fieldWriter, "Alice")
+            }
+            fieldWriter, err = formWriter.CreateFormField("city")
+            if err == nil {
+                io.WriteString(fieldWriter, "New York")
+            }
+            fileWriter, err := formWriter.CreateFormFile("codeFile", "printer.go")
+            if err == nil {
+                fileData, err := os.ReadFile("./printer.go")
+                if err == nil {
+                    fileWriter.Write(fileData)
+                }
+            }
+            formWriter.Close()
+            req, err := http.NewRequest(http.MethodPost,
+                "http://localhost:5000/form", &buffer)
+            req.Header["Content-Type"] = []string{formWriter.FormDataContentType()}
+            if err == nil {
+                var response *http.Response
+                response, err = http.DefaultClient.Do(req)
+                if err == nil {
+                    io.Copy(os.Stdout, response.Body)
+                } else {
+                    Printfln("Request Error: %v", err.Error())
+                }
+            } else {
+                Printfln("Error: %v", err.Error())
+            }
+        }
+    ====================================================================
+    Output:
+        Field name: [Alice]
+        Field city: [New York]
+        File codeFile: printer.go
+        package main
+        
+        import "fmt"
+        
+        func Printfln(template string, values ...interface{}) {
+                fmt.Printf(template+"\n", values...)
+        }
+    
+    Caution Don't use the defer keyword on the call to the Close method; otherwise, the final boundary string
+    won't be added to the form until after the request will be sent, producing a form that not all servers will process.
+    It is important to call the Close method before sending the request.
 ████████████████████████████████████████████████████████████████████████
-464.
+464.Working with Databases
+    There are drivers for a wide range of databases, and a list can be found at 
+    https://github.com/golang/go/wiki/sqldrivers
+
+    Putting Working with Databases in Context
+    What is it?
+    The database/sql package provides features for working with SQL databases.
+
+    Why is it useful?
+    Relational databases remain the most effective way of storing large amounts of
+    structured data and are used in most large projects.
+
+    How is it used?
+    Driver packages provide support for specific databases, while the database/sql
+    package provides a set of types that allow databases to be used consistently.
+    
+    Are there any pitfalls or limitations? 
+    These features do not automatically populate struct fields from result rows.
+
+    Are there any alternatives?
+    There are third-party packages that build on these features to simplify or enhance their use.
+
+    Preparing for This Chapter:
+    1-Initializing the Module
+        go mod init data
+    2-Add a file named printer.go to the data folder
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+    3-Add a file named main.go
+        package main
+        func main() {
+        Printfln("Hello, Data")
+        }
+    4-Compiling and Executing the Project
+        go run .
+    ====================================================================
+    Output:
+        Hello, Data
+
+
+    Preparing the Database:
+    add a file named products.sql to the data folder:
+        DROP TABLE IF EXISTS Categories;
+
+        DROP TABLE IF EXISTS Products;
+        
+        CREATE TABLE IF NOT EXISTS Categories (
+            Id INTEGER NOT NULL PRIMARY KEY,
+            Name TEXT
+        );
+        
+        CREATE TABLE IF NOT EXISTS Products (
+            Id INTEGER NOT NULL PRIMARY KEY,
+            Name TEXT,
+            Category INTEGER,
+            Price decimal(8, 2),
+            CONSTRAINT CatRef FOREIGN KEY(Category) REFERENCES Categories (Id)
+        );
+        
+        INSERT INTO
+            Categories (Id, Name)
+        VALUES
+            (1, "Watersports"),
+            (2, "Soccer");
+        
+        INSERT INTO
+            Products (Id, Name, Category, Price)
+        VALUES
+            (1, "Kayak", 1, 279),
+            (2, "Lifejacket", 1, 48.95),
+            (3, "Soccer Ball", 2, 19.50),
+            (4, "Corner Flags", 2, 34.95);
+
+
+    Go to https://www.sqlite.org/download.html , look for the precompiled binaries section for your
+    operating system, and download the tools package.
+    Unpack the zip archive and copy the sqlite3 or sqlite3.exe file into the data folder. Run the command
+    Creating the Database command:
+        ./sqlite3 products.db ".read products.sql"
+
 ████████████████████████████████████████████████████████████████████████
-465.
+465.Creating the Database command:
+    ./sqlite3 products.db ".read products.sql"
 ████████████████████████████████████████████████████████████████████████
-466.
+466.Installing a Database Driver
+    Run the command:
+        go get modernc.org/sqlite
+    
+    Most database servers are set up separately so that the database driver opens a connection to a separate
+    process. SQLite is an embedded database and is included in the driver package, which means no additional
+    configuration is required.
 ████████████████████████████████████████████████████████████████████████
-467.
+467.Opening a Database
+    The standard library provides the database/sql package for working with databases. 
+
+    The functions described here:
+    The database/sql Functions for Opening a Database
+    Name                        Description
+    ----------------            ------------------------------
+    Drivers()                   This function returns a slice of strings, each of which contains the name of a database driver.
+    Open(driver,connectionStr)  This function opens a database using the specified driver and connection string. The
+                                results are a pointer to a DB struct, which is used to interact with the database and an
+                                error that indicates problems opening the database.
+
 ████████████████████████████████████████████████████████████████████████
-468.
+468.The Contents of the database.go
+    package main
+    // The blank identifier is used to import the database driver package, which loads the driver and allows it
+    // to register as a provider of the SQL API:
+    import (
+        "database/sql"
+        _ "modernc.org/sqlite"
+    )
+    func listDrivers() {
+        for _, driver := range sql.Drivers() {
+            Printfln("Driver: %v", driver)
+        }
+    }
+    func openDatabase() (db *sql.DB, err error) {
+        db, err = sql.Open("sqlite", "products.db")
+        if err == nil {
+            Printfln("Opened database")
+        }
+        return
+    }
+    ====================================================================
+    Using the DB Struct in the main.go:
+        package main
+        func main() {
+            listDrivers()
+            db, err := openDatabase()
+            if (err == nil) {
+                db.Close()
+            } else {
+                panic(err)
+            }
+        }
+    ====================================================================
+    in Terminal:
+        go mod tidy
+
+        Output in Terminal:
+            go: finding module for package modernc.org/sqlite
+            go: downloading modernc.org/sqlite v1.27.0
+            go: found modernc.org/sqlite in modernc.org/sqlite v1.27.0
+            go: downloading golang.org/x/sys v0.9.0
+            go: downloading modernc.org/ccgo/v3 v3.16.13
+            go: downloading modernc.org/libc v1.29.0
+            go: downloading modernc.org/mathutil v1.6.0
+            go: downloading github.com/mattn/go-sqlite3 v1.14.16
+            go: downloading github.com/google/pprof v0.0.0-20221118152302-e6195bd50e26
+            go: downloading modernc.org/tcl v1.15.2
+            go: downloading github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec
+            go: downloading github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
+            go: downloading golang.org/x/tools v0.0.0-20201124115921-2c860bdd6e78
+            go: downloading modernc.org/cc/v3 v3.40.0
+            go: downloading modernc.org/opt v0.1.3
+            go: downloading github.com/dustin/go-humanize v1.0.1
+            go: downloading github.com/google/uuid v1.3.0
+            go: downloading github.com/mattn/go-isatty v0.0.16
+            go: downloading modernc.org/memory v1.7.2
+            go: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1
+            go: downloading golang.org/x/mod v0.3.0
+            go: downloading lukechampine.com/uint128 v1.2.0
+            go: downloading modernc.org/strutil v1.1.3
+            go: downloading modernc.org/token v1.0.1
+            go: downloading modernc.org/httpfs v1.0.6
+            go: downloading modernc.org/z v1.7.3
+            go: downloading modernc.org/ccorpus v1.11.6
+
+    ====================================================================
+    Output:
+        The main method calls the listDrivers function to print out the names of the loaded drivers and then
+        calls the openDatabase function to open the database. Nothing is done with the database yet, but Close
+        method is called.
 ████████████████████████████████████████████████████████████████████████
-469.
+469.The DB Method for Closing the Database:
+    Name        Description
+    -------     ----------------------
+    Close()     This function closes the database and prevents further operations from being performed.
 ████████████████████████████████████████████████████████████████████████
-470.
+470.Executing Statements and Queries
+    The DB Methods for Executing SQL Statements
+    Name                        Description
+    --------------------        -----------------------------
+    Query(query,...args)        This method executes the specified query, using the optional placeholder arguments.
+                                The results are a Rows struct, which contains the query results, and an error that
+                                indicates problems executing the query.
+    QueryRow(query, ..args)     This method executes the specified query, using the optional placeholder arguments.
+                                The result is a Row struct, which represents the first row from the query results. See
+                                the “Executing Queries for Single Rows” section.
+    Exec(query,...args)         This method executes statements or queries that do not return rows of data. The
+                                method returns a Result, which describes the response from the database, and
+                                an error that signals problems with execution. See the “Executing Other Queries” section.
+                                
 ████████████████████████████████████████████████████████████████████████
 471.
 ████████████████████████████████████████████████████████████████████████
@@ -12120,6 +12377,210 @@ Output:
 545.
 ████████████████████████████████████████████████████████████████████████
 546.
+████████████████████████████████████████████████████████████████████████
+547.
+████████████████████████████████████████████████████████████████████████
+548.
+████████████████████████████████████████████████████████████████████████
+549.
+████████████████████████████████████████████████████████████████████████
+550.
+████████████████████████████████████████████████████████████████████████
+551.
+████████████████████████████████████████████████████████████████████████
+552.
+████████████████████████████████████████████████████████████████████████
+553.
+████████████████████████████████████████████████████████████████████████
+554.
+████████████████████████████████████████████████████████████████████████
+555.
+████████████████████████████████████████████████████████████████████████
+556.
+████████████████████████████████████████████████████████████████████████
+557.
+████████████████████████████████████████████████████████████████████████
+558.
+████████████████████████████████████████████████████████████████████████
+559.
+████████████████████████████████████████████████████████████████████████
+560.
+████████████████████████████████████████████████████████████████████████
+561.
+████████████████████████████████████████████████████████████████████████
+562.
+████████████████████████████████████████████████████████████████████████
+563.
+████████████████████████████████████████████████████████████████████████
+564.
+████████████████████████████████████████████████████████████████████████
+565.
+████████████████████████████████████████████████████████████████████████
+566.
+████████████████████████████████████████████████████████████████████████
+567.
+████████████████████████████████████████████████████████████████████████
+568.
+████████████████████████████████████████████████████████████████████████
+569.
+████████████████████████████████████████████████████████████████████████
+570.
+████████████████████████████████████████████████████████████████████████
+571.
+████████████████████████████████████████████████████████████████████████
+572.
+████████████████████████████████████████████████████████████████████████
+573.
+████████████████████████████████████████████████████████████████████████
+574.
+████████████████████████████████████████████████████████████████████████
+575.
+████████████████████████████████████████████████████████████████████████
+576.
+████████████████████████████████████████████████████████████████████████
+577.
+████████████████████████████████████████████████████████████████████████
+578.
+████████████████████████████████████████████████████████████████████████
+579.
+████████████████████████████████████████████████████████████████████████
+580.
+████████████████████████████████████████████████████████████████████████
+581.
+████████████████████████████████████████████████████████████████████████
+582.
+████████████████████████████████████████████████████████████████████████
+583.
+████████████████████████████████████████████████████████████████████████
+584.
+████████████████████████████████████████████████████████████████████████
+585.
+████████████████████████████████████████████████████████████████████████
+586.
+████████████████████████████████████████████████████████████████████████
+587.
+████████████████████████████████████████████████████████████████████████
+588.
+████████████████████████████████████████████████████████████████████████
+589.
+████████████████████████████████████████████████████████████████████████
+590.
+████████████████████████████████████████████████████████████████████████
+591.
+████████████████████████████████████████████████████████████████████████
+592.
+████████████████████████████████████████████████████████████████████████
+593.
+████████████████████████████████████████████████████████████████████████
+594.
+████████████████████████████████████████████████████████████████████████
+595.
+████████████████████████████████████████████████████████████████████████
+596.
+████████████████████████████████████████████████████████████████████████
+597.
+████████████████████████████████████████████████████████████████████████
+598.
+████████████████████████████████████████████████████████████████████████
+599.
+████████████████████████████████████████████████████████████████████████
+600.
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████
 ████████████████████████████████████████████████████████████████████████
 
 
