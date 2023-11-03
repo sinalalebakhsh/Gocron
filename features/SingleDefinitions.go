@@ -77,9 +77,10 @@ var OriginSingleDef = SingleDefinitions{
 		"bool":                       "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
 		"boolean":                    "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
 		"booleans":                   "Booleans in Go are represented by the predeclared boolean type bool, which values can be either true or false. It's a defined type.",
+		"package comments":           "Package comments should be written directly before a package clause (package x) and begin with Package x ...",
+		"package comment":            "Package comments should be written directly before a package clause (package x) and begin with Package x ...",
 		"function comment":           "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
 		"function comments":          "A function comment should be written directly before the function declaration. It should be a full sentence that starts with the function name. For example, an exported comment for the function Calculate should take the form Calculate .... It should also explain what arguments the function takes, what it does with them, and what its return values mean, ending in a period):",
-
 		"number":                     "Go contains basic numeric types that can represent sets of either integer or floating-point values.",
 		"numbers":                    "Go contains basic numeric types that can represent sets of either integer or floating-point values.",
 		"int":                        "e.g. 0, 255, 2147483647. A signed integer that is at least 32 bits in size (value range of: -2147483648 through 2147483647). But this will depend on the systems architecture. Most modern computers are 64 bit, therefore int will be 64 bits in size (value rate of: -9223372036854775808 through 9223372036854775807).",
@@ -152,8 +153,8 @@ var OriginSingleDef = SingleDefinitions{
 		"what is kafka apache for golang?":          "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 		"what is kafka apache for golang ?":         "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 
-
 		// Packages
+		"strings":         "The strings package contains many useful functions to work on strings. For more information about string functions, check out the strings package documentation. Link: https://pkg.go.dev/strings",
 		"package tar":     "Package tar implements access to tar archives.",
 		"package zip":     "Package zip provides support for reading and writing ZIP archives.",
 		"package arena":   "The arena package provides the ability to allocate memory for a collection of Go values and free that space manually all at once, safely.",
@@ -166,7 +167,6 @@ var OriginSingleDef = SingleDefinitions{
 		"package gzip":    "Package gzip implements reading and writing of gzip format compressed files, as specified in RFC 1952.",
 		"package lzw":     "Package lzw implements the Lempel-Ziv-Welch compressed data format, described in T. A. Welch, “A Technique for High-Performance Data Compression”, Computer, 17(6) (June 1984), pp 8-19. ",
 		"package zlib":    "Package zlib implements reading and writing of zlib format compressed data, as specified in RFC 1950. ",
-
 	},
 }
 
