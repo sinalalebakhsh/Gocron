@@ -12402,9 +12402,69 @@ Output:
     ValueOf(val)    This function returns a Value struct, which allows the specified value to be inspected
                     and manipulated.
 ████████████████████████████████████████████████████████████████████████
-479.
+479.Using Reflection in the main.go
+    example:
+        package main
+        import (
+            "reflect"
+            "strings"
+            "fmt"
+        )
+        func printDetails(values ...interface{}) {
+            for _, elem := range values {
+                fieldDetails := []string {}
+                elemType := reflect.TypeOf(elem)
+                elemValue := reflect.ValueOf(elem)
+                if elemType.Kind() == reflect.Struct {
+                    for i := 0; i < elemType.NumField(); i++ {
+                        fieldName := elemType.Field(i).Name
+                        fieldVal := elemValue.Field(i)
+                        fieldDetails = append(fieldDetails,
+                            fmt.Sprintf("%v: %v", fieldName, fieldVal ))
+                    }
+                    Printfln("%v: %v", elemType.Name(), strings.Join(fieldDetails, ", "))
+                } else {
+                    Printfln("%v: %v", elemType.Name(), elemValue)
+                }
+            }
+        }
+        type Payment struct {
+            Currency string
+            Amount float64
+        }
+        func main() {
+            product := Product {
+            Name: "Kayak", Category: "Watersports", Price: 279,
+            }
+            customer := Customer { Name: "Alice", City: "New York" }
+            payment := Payment { Currency: "USD", Amount: 100.50 }
+            printDetails(product, customer, payment, 10, true)
+        }
+    ====================================================================
+    Code that uses reflection can be verbose, but the basic pattern becomes easy to follow once you become
+    familiar with the basics. The key point to remember is that there are two aspects of reflection that work
+    together: the reflected type and the reflected value.
+    The reflected type gives you access to details of a Go type without knowing in advance what it is. You can
+    explore the reflected type, exploring its details and characteristics through the methods defined by the Type
+    interface.
+    The reflected value lets you work with the specific value with which you have been provided. You can’t
+    just read a struct field or call a method, for example, as you would in normal code when you don’t know
+    what type you are dealing with.
+    The use of the reflected type and reflected value leads to the code verbosity. If you know you are dealing
+    with a Product struct, for example, you can just read the Name field and get a string result. If you don’t know
+    what type is being used, then you must use the reflected type to establish whether you are dealing with a
+    struct and whether it has a Name field. Once you have determined there is such as field, you use the reflected
+    value to read that field and get its value.
+
+    Output:
+        Product: Name: Kayak, Category: Watersports, Price: 279
+        Customer: Name: Alice, City: New York
+        Payment: Currency: USD, Amount: 100.5
+        int: 10
+        bool: true
+        
 ████████████████████████████████████████████████████████████████████████
-480.
+480.Using the Basic Type Features
 ████████████████████████████████████████████████████████████████████████
 481.
 ████████████████████████████████████████████████████████████████████████
