@@ -148,12 +148,18 @@
 				</summary>
 					🟣 Add a feature if user wrote 'godoc usage' specified
 			</details> 
+			<details>
+				<summary>
+					🐻 v1.0.31
+				</summary>
+					🐻 Debuging For being a GitHub donkey!!!!!
+			</details>
 		</details>
 		<details>
 			<summary>
-				🐻 v1.0.31
+				💠 v1.0.32
 			</summary>
-				🐻 Debuging For being a GitHub donkey!!!!!
+				💠💠💠 If User Input Is Just Number 💠💠💠
 		</details>
 	</details>
 </br>
@@ -272,8 +278,8 @@ You can use this command before start:
 	ALLUSINGREFLECTION
 	ALL USING REFLECTION
 
-### ◉ 🐻 v1.0.31
-🐻 Debuging For being a GitHub donkey!!!!!
+### ◉ 💠 v1.0.32
+💠💠💠 If User Input Is Just Number 💠💠💠
 ### example after run Gocron:
 	operator 1 question
 ### result is this:
