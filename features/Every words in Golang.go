@@ -12382,10 +12382,25 @@ Output:
     Output:
         Product: Name: Kayak, Category: Watersports, Price: 279
         Customer: Name: Alice, City: New York
+
+    The limitation of this approach is that the printDetails function 
+    can only process types that are known in advance.
+    Many projects will deal with a small enough set of types that this won't be an issue or will be able to
+    define interfaces with methods that provides access to common functionality. Reflection solves this issue for
+    those projects for which this isn't the case, either because there are a large number of types to deal with or
+    because interfaces and methods can't be written.
 ████████████████████████████████████████████████████████████████████████
-477.
+477.Using Reflection
+    The reflect package provides the Go reflection features, and the key functions are called TypeOf and
+    ValueOf
 ████████████████████████████████████████████████████████████████████████
-478.
+478.The Key Reflection Functions:
+    Name            Description
+    -----------     -------------------------------
+    TypeOf(val)     This function returns a value that implements the Type interface, which describes the
+                    type of the specified value.
+    ValueOf(val)    This function returns a Value struct, which allows the specified value to be inspected
+                    and manipulated.
 ████████████████████████████████████████████████████████████████████████
 479.
 ████████████████████████████████████████████████████████████████████████

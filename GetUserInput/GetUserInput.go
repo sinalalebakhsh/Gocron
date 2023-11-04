@@ -78,7 +78,7 @@ func GetUserInput() {
 
 func IfUsrisEXIT(FinalInput string) bool {
 	Exit := "exit"
-	if FinalInput == strings.ToLower(Exit) {
+	if Exit == strings.ToLower(FinalInput) {
 		features.GoodByePrint()
 		features.ClearTerminal()
 		os.Exit(0)
@@ -147,10 +147,10 @@ func IfUsris2orMoreWords(SliceOfWords []string) bool {
 		}
 	}
 
-	  // Get the last index
-	  lastIndex := len(SliceOfWords) - 1
-	  // Access the last element
-	  lastElement := SliceOfWords[lastIndex]
+	// Get the last index
+	lastIndex := len(SliceOfWords) - 1
+	// Access the last element
+	lastElement := SliceOfWords[lastIndex]
 
 	for Index := range features.OriginalSingleDefExamples.MapSingleDefEx {
 		if result == Index && lastElement == "example" {
@@ -197,6 +197,14 @@ func IfUsris2orMoreWords(SliceOfWords []string) bool {
 		}
 	}
 
+	for Index := range features.OriginalSingleDefFunctions.MapSingleDefFuncs {
+		if result == Index && (lastElement == "function" || lastElement == "Function") {
+			words := features.SplitIntoWords(features.OriginalSingleDefFunctions.MapSingleDefFuncs[result])
+			features.PrintWordByWord(words)
+			fmt.Println()
+			return false
+		}
+	}
 
 	return true
 }
