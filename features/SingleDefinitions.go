@@ -106,6 +106,8 @@ var OriginSingleDef = SingleDefinitions{
 		"how is reflection used ?":      "The reflect package provides features that allow types and values to be reflected, such that they can be used without explicit knowledge of the data types in use.  use this word for get example: reflection example",
 		"why the need for reflection?":  "The Go type system is rigorously enforced, which means you can't use a value of one type when a different type is inspected. sometime this is broken for wrong implementing. in this case, the empty interface, which can be used to accept any type.  use this word for get example: reflection example",
 		"why the need for reflection ?": "The Go type system is rigorously enforced, which means you can't use a value of one type when a different type is inspected. sometime this is broken for wrong implementing. in this case, the empty interface, which can be used to accept any type.  use this word for get example: reflection example",
+		"reflect package":               "The reflect package provides the Go reflection features, and the key functions are called TypeOf and ValueOf",
+		
 
 		//
 		//
