@@ -375,6 +375,8 @@ func main() {
 	fmt.Println(obj)
 }`,
 
+"reflection":`
+`,
 },
 
 }
