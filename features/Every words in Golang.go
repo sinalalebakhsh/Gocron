@@ -12465,6 +12465,10 @@ Output:
         
 ████████████████████████████████████████████████████████████████████████
 480.Using the Basic Type Features
+    The Type interface provides basic details about a type through the methods described in below.
+    There are specialized methods for working with specific kinds of types, such as arrays, which are described in later
+    sections, but these are the methods that provide the essential details for all types.
+    
 ████████████████████████████████████████████████████████████████████████
 481.
 ████████████████████████████████████████████████████████████████████████
