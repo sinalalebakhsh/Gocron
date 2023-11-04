@@ -104,6 +104,8 @@ var OriginSingleDef = SingleDefinitions{
 
 
 		// using reflection
+		"reflection":                    "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time. use this word for get example: reflection example",
+		"reflections":                   "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time. use this word for get example: reflection example",
 		"using reflection":              "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time. use this word for get example: reflection example",
 		"what is reflection?":           "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time. use this word for get example: reflection example",
 		"what is reflection ?":          "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time. use this word for get example: reflection example",
@@ -117,7 +119,6 @@ var OriginSingleDef = SingleDefinitions{
 		"how is reflection used ?":      "The reflect package provides features that allow types and values to be reflected, such that they can be used without explicit knowledge of the data types in use.  use this word for get example: reflection example",
 		"why the need for reflection?":  "The Go type system is rigorously enforced, which means you can't use a value of one type when a different type is inspected. sometime this is broken for wrong implementing. in this case, the empty interface, which can be used to accept any type.  use this word for get example: reflection example",
 		"why the need for reflection ?": "The Go type system is rigorously enforced, which means you can't use a value of one type when a different type is inspected. sometime this is broken for wrong implementing. in this case, the empty interface, which can be used to accept any type.  use this word for get example: reflection example",
-
 
 		//
 		//
