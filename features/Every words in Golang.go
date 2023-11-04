@@ -12292,9 +12292,70 @@ Output:
 ████████████████████████████████████████████████████████████████████████
 474.Using Reflection
     Preparing for This Chapter
-    
+    1-go mod init reflection
+    2-printer.go:
+        package main
+        import "fmt"
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template + "\n", values...)
+        }
+    3-types.go:
+        package main
+        type Product struct {
+            Name, Category string
+            Price float64
+        }
+        type Customer struct {
+            Name, City string
+        }
+    4-main.go:
+        package main
+        func printDetails(values ...Product) {
+            for _, elem := range values {
+                Printfln("Product: Name: %v, Category: %v, Price: %v",
+                    elem.Name, elem.Category, elem.Price)
+            }
+        }
+        func main() {
+            product := Product {
+                Name: "Kayak", Category: "Watersports", Price: 279,
+            }
+            printDetails(product)
+        }
+    ====================================================================
+    Output:
+        Product: Name: Kayak, Category: Watersports, Price: 279
 ████████████████████████████████████████████████████████████████████████
-475.
+475.Understanding the Need for Reflection
+    The Go type system is rigorously enforced, 
+    which means you can't use a value of one type when a different type is inspected.
+
+    example:
+    Mixing Types in the main.go
+        package main
+        func printDetails(values ...Product) {
+            for _, elem := range values {
+                Printfln("Product: Name: %v, Category: %v, Price: %v",
+                    elem.Name, elem.Category, elem.Price)
+            }
+        }
+        func main() {
+            product := Product {
+                Name: "Kayak", Category: "Watersports", Price: 279,
+            }
+            customer := Customer { Name: "Alice", City: "New York" }
+            printDetails(product, customer)
+        }
+    ====================================================================
+    Output:
+        # reflection
+        ./main.go:13:24: cannot use customer (variable of type Customer) as Product value in argument to printDetails
+
+
+    interfaces, which allow common characteristics to be defined through
+    methods, which can be invoked regardless of the type that implements the interface.
+    
+
 ████████████████████████████████████████████████████████████████████████
 476.
 ████████████████████████████████████████████████████████████████████████
