@@ -55,6 +55,10 @@ func GetUserInput() {
 		}
 
 		if Regular {
+			Regular = IfUserInputIsJustNumber(FinalInput)
+		}
+
+		if Regular {
 			Regular = IfUserWantSingleDefinition(FinalInput)
 		}
 
@@ -131,6 +135,18 @@ func openBrowser() {
 	}
 
 	exec.Command(command, "https://github.com/sinalalebakhsh/Gocron").Start()
+}
+
+func IfUserInputIsJustNumber(userInput string) bool {
+	for Index := range features.OriginalWordsGoNum.MapOfNumbered {
+		if userInput == Index {
+			color.HiMagenta(fmt.Sprintln("============================================◉💠💠💠💠💠💠💠◉=========================================="))
+			color.HiMagenta(fmt.Sprintln(features.OriginalWordsGoNum.MapOfNumbered[Index]))
+			color.HiMagenta(fmt.Sprintln("============================================◉💠💠💠💠💠💠💠◉=========================================="))
+			return false
+		} 
+	}
+	return true
 }
 
 func IfUsris2orMoreWords(SliceOfWords []string) bool {
