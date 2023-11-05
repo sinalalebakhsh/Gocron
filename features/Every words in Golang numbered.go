@@ -165,87 +165,666 @@ This type represents a Boolean truth with the values true and false.
 Literal Value Examples:
 	true, false.`,
 // ====================================================================================
-		"29":``,
+		"29":`29.string
+This type represents a sequence of characters.
+Literal Value Examples:
+	"Hello". Character sequences escaped with a backslash are interpreted if the value is enclosed
+	in double quotes ("Hello\n"). Escape sequences are not interpreted if the value is enclosed in
+	backquotes ('Hello\n').`,
 // ====================================================================================
-		"30":``,
+		"30":`30.rune = int32
+This type represents a single Unicode code point. Unicode is complicated,
+but—loosely—this is the representation of a single character. The rune type is
+an alias for int32.
+
+Literal Value Examples:
+	'A', '\n', '\u00A5', '¥'. Characters, glyphs, and escape sequences are enclosed in single
+	quotes (the ' character).`,
 // ====================================================================================
-		"31":``,
+		"31":`31.var = variable 
+Variables are defined using the var keyword, and, unlike constants, the value assigned to a variable can be
+changed`,
 // ====================================================================================
-		"32":``,
+		"32":`32.const = constant
+Constants are basically variables whose values cannot be changed later.
+
+	The Zero Values for the Basic Data Types
+	Type    Zero Value
+	------  -----------
+	int         0
+	unit        0
+	byte        0
+	float64     0
+	bool        false
+	string      “” (the empty string)
+	rune        0`,
 // ====================================================================================
-		"33":``,
+		"33":`33.+, -, *, /, %
+Operations and Conversions
+These operators are used to perform arithmetic using numeric values.`,
 // ====================================================================================
-		"34":``,
+		"34":`34.==, !=, <, <=, >, >=
+These operators compare two values.`,
 // ====================================================================================
-		"35":``,
+		"35":`35., &&, !
+These are the logical operators, which are applied to bool values and return a bool value.`,
 // ====================================================================================
-		"36":``,
+		"36":`36.=, :=
+These are the assignment operators. The standard assignment operator (=) is used to set
+the initial value when a constant or variable is defined, or to change the value assigned to
+a previously defined variable. The shorthand operator (:=) is used to define a variable and
+assign a value.`,
 // ====================================================================================
-		"37":``,
+		"37":`37.-=, +=, ++, --
+These operators increment and decrement numeric values.`,
 // ====================================================================================
-		"38":``,
+		"38":`38.&, , ^, &^, <<, >>
+These are the bitwise operators, which can be applied to integer values. These operators are
+not often required in mainstream development
+where the  operator is used to configure the Go logging features.
+
+The Arithmetic Operators
+	Operator    Description
+	-------     ---------------------
+	+        This operator returns the sum of two operands.
+	-        This operator returns the difference between two operands.
+	*        This operator returns the product of two operands.
+	/        This product returns the quotient of two operators.
+	%        This product returns the remainder, which is similar to the modulo operator provided by
+				other programming languages but can return negative values, as described in the “Using the
+				Remainder Operator” section.
+
+The Comparison Operators
+	Operator    Description
+	-------     ---------------------
+	==       This operator returns true if the operands are equal.
+	!=       This operator returns true if the operands are not equal.
+	<        This operator returns true if the first operand is less than the second operand.
+	>        This operator returns true if the first operand is greater than the second operand.
+	<=       This operator returns true if the first operand is less than or equal to the second operand.
+	>=       This operator returns true if the first operand is greater than or equal to the second
+				operand.
+
+The Logical Operators
+	Operator    Description
+	-------     ---------------------
+	||			This operator returns true if either operand is true. 
+				If the first operand is true, then the second
+				operand will not be evaluated.
+
+	&&       This operator returns true if both operands are true. 
+				If the first operand is false, then the
+				second operand will not be evaluated.
+
+	!        This operator is used with a single operand. 
+				It returns true if the operand is false and false if
+				the operand is true.`,
 // ====================================================================================
-		"39":``,
+		"39":`39.Ceil(value)
+Converting Floating-Point Values to Integers
+Functions in the math Package for Converting Numeric Types
+This function returns the smallest integer that is greater than the specified floating-
+point value. The smallest integer that is greater than 27.1, for example, is 28.`,
 // ====================================================================================
-		"40":``,
+		"40":`40.Floor(value)
+This function returns the largest integer that is less than the specified floating-point
+value. The largest integer that is less than 27.1, for example, is 28.`,
 // ====================================================================================
-		"41":``,
+		"41":`41.Round(value)
+This function rounds the specified floating-point value to the nearest integer.`,
 // ====================================================================================
-		"42":``,
+		"42":`42.RoundToEven(value)
+This function rounds the specified floating-point value to the nearest even integer.`,
 // ====================================================================================
-		"43":``,
+		"43":`43.ParseBool(str)
+Parsing from Strings
+Functions for Parsing Strings into Other Data Types
+This function parses a string into a bool value. Recognized string values are "true",
+"false", "TRUE", "FALSE", "True", "False", "T", "F", "0", and "1".`,
 // ====================================================================================
-		"44":``,
+		"44":`44.ParseFloat(str,size)
+This function parses a string into a floating-point value with the specified size, as
+described in the “Parsing Floating-Point Numbers” section.`,
 // ====================================================================================
-		"45":``,
+		"45":`45.ParseInt(str,base, size)
+This function parses a string into an int64 with the specified base and size. Acceptable
+base values are 2 for binary, 8 for octal, 16 for hex, and 10.`,
 // ====================================================================================
-		"46":``,
+		"46":`46.ParseUint(str,base, size)
+This function parses a string into an unsigned integer value with the specified base and size.`,
 // ====================================================================================
-		"47":``,
+		"47":`47.Atoi(str)
+This function parses a string into a base 10 int and is equivalent to calling
+ParseInt(str, 10, 0)`,
 // ====================================================================================
-		"48":``,
+		"48":`48.FormatBool(val)
+Formatting Values as Strings
+The strconv Functions for Converting Values into Strings
+This function returns the string true or false based on the value of the
+specified bool.`,
 // ====================================================================================
-		"49":``,
+		"49":`49.FormatInt(val, base)
+This function returns a string representation of the specified int64 value,
+expressed in the specified base.`,
 // ====================================================================================
-		"50":``,
+		"50":`50.FormatUint(val, base)
+This function returns a string representation of the specified uint64 value,
+expressed in the specified base.`,
 // ====================================================================================
-		"51":``,
+		"51":`51.FormatFloat(val, format, precision, size) 
+This function returns a string representation of the specified float64 value,
+expressed using the specified format, precision, and size.`,
 // ====================================================================================
-		"52":``,
+		"52":`52.Itoa(val)
+This function returns a string representation of the specified int value,
+expressed using base 10.
+
+Commonly Used Format Options for Floating-Point String Formatting
+Function
+f
+	The floating-point value will be expressed in the form ±ddd.ddd without an exponent, such as
+	49.95.
+
+e, E
+	The floating-point value will be expressed in the form ±ddd.ddde±dd, such as 4.995e+01 or
+	4.995E+01. The case of the letter denoting the exponent is determined by the case of the rune
+	used as the formatting argument.
+
+g, G
+	The floating-point value will be expressed using format e/E for large exponents or format f for
+	smaller values.`,
 // ====================================================================================
-		"53":``,
+		"53":`53.if
+Understanding Flow Control
+The if keyword is followed by the expression and then the group of statements to be executed,
+surrounded by braces`,
 // ====================================================================================
-		"54":``,
+		"54":`54.else
+The else keyword can be used to create additional clauses in an if statement`,
 // ====================================================================================
-		"55":``,
+		"55":`55.else if
+The else/if combination can be repeated to create a sequence of clauses`,
 // ====================================================================================
-		"56":``,
+		"56":`56.for
+Go allows loops only inside of functions.
+The for keyword is used to create loops that repeatedly execute statements. The most basic for loops will
+repeat indefinitely unless interrupted by the break keyword
+Incorporating the Condition into the Loop
+
+example: 
+	for (counter <= 3) {}
+
+Enumerating Sequences:
+	for index, character := range product {
+				fmt.Println("Index:", index, "Character:", string(character))
+			}
+
+range : is for variable like slice or array like this :
+for name := range sliceOfNames`,
 // ====================================================================================
-		"57":``,
+		"57":`57.switch
+A switch statement provides an alternative way to control execution flow, based on matching the result of an
+expression to a specific value, as opposed to evaluating a true or false result
+example:
+	switch (character) {
+		case 'K':
+			fmt.Println("K at position", index)
+		case 'y':
+			fmt.Println("y at position", index)
+	}
+
+Matching Multiple Values:
+example:
+	switch (character) {
+		case 'K', 'k':
+			fmt.Println("K or k at position", index)
+		case 'y':
+			fmt.Println("y at position", index)
+	}
+
+Terminate case Statement Execution:
+example:
+	switch (character) {
+		case 'K', 'k':
+	if (character == 'k') {
+		fmt.Println("Lowercase k at position", index)
+		break
+	}
+	fmt.Println("Uppercase K at position", index)
+		case 'y':
+	fmt.Println("y at position", index)
+	}`,
 // ====================================================================================
-		"58":``,
+		"58":`58.Falling Through
+Go switch statements don't automatically fall through, but this behavior can be enabled using the
+fallthrough keyword
+example:
+	switch (character) {
+		case 'K':
+			fmt.Println("Uppercase character")
+			fallthrough
+		case 'k':
+			fmt.Println("k at position", index)
+		case 'y':
+			fmt.Println("y at position", index)
+		}`,
 // ====================================================================================
-		"59":``,
+		"59":`59.default
+The default keyword is used to define a clause that will be executed when none of the case statements
+matches the switch statement's value
+
+example:
+	switch (character) {
+			case 'K', 'k':
+			if (character == 'k') {
+				fmt.Println("Lowercase k at position", index)
+				break
+			}
+			fmt.Println("Uppercase K at position", index)
+			case 'y':
+			fmt.Println("y at position", index)
+			default:
+			fmt.Println("Character", string(character), "at position", index)
+		}`,
 // ====================================================================================
-		"60":``,
+		"60":`60.goto label 
+Label statements allow execution to jump to a different point, 
+giving greater flexibility than other flow control features
+example:
+	counter := 0
+	target: fmt.Println("Counter", counter)
+	counter++
+	if (counter < 5) {
+			goto target
+	}`,
 // ====================================================================================
-		"61":``,
+		"61":`61.Array
+Go arrays are a fixed length and contain elements of a single type, which are accessed by index
+var names [3]string
+
+An array is a numbered sequence of elements of a sin-gle type with a fixed length.
+
+
+Array Literal Syntax:
+	names := [3]string { "Kayak", "Lifejacket", "Paddle" }
+
+The number of elements specified with the literal syntax can be less than the capacity of the array. 
+Any position in the array for which a value is not provided will be assigned the zero value for the array type.
+
+Enumerating Arrays:
+example:
+	names := [3]string { "Kayak", "Lifejacket", "Paddle" }
+	for index, value := range names {
+		fmt.Println("Index:", index, "Value:", value)
+	}`,
 // ====================================================================================
-		"62":``,
+		"62":`62.Slices
+The slice type in this example is []string
+The best way to think of slices is as a variable-length array because they are useful when you don't know how
+many values you need to store or when the number changes over time. One way to define a slice is to use the
+built-in make function.
+
+A slice is a segment of an array. Like arrays slices areindexable and have a length. 
+Unlike arrays this lengthis allowed to change.
+
+if you want to create a slice you should use the built-inmake function
+
+example:
+	names := make([]string, 3)
+	names[0] = "Kayak"
+	names[1] = "Lifejacket"
+	names[2] = "Paddle"
+
+Literal Syntax:
+example:
+	names := []string {"Kayak", "Lifejacket", "Paddle"}`,
 // ====================================================================================
-		"63":``,
+		"63":`63.append
+If you define a slice variable but don't initialize it, then the result is a slice that has a length of zero
+and a capacity of zero, and this will cause an error when an element is appended to it.
+One of the key advantages of slices is that they can be expanded to accommodate additional elements
+
+Appending Elements to a Slice:
+example:
+	names := []string {"Kayak", "Lifejacket", "Paddle"}
+	names = append(names, "Hat", "Gloves")
+
+Appending Items to a Slice:
+example:
+	names := []string {"Kayak", "Lifejacket", "Paddle"}
+	appendedNames := append(names, "Hat", "Gloves")
+	names[0] = "Canoe"
+
+Allocating Additional Slice Capacity:
+example:
+	names := make([]string, 3, 6)
+	names[0] = "Kayak"
+	names[1] = "Lifejacket"
+	names[2] = "Paddle"
+
+Adding Elements to a Slice:
+example:
+	names := make([]string, 3, 6)
+	names[0] = "Kayak"
+	names[1] = "Lifejacket"
+	names[2] = "Paddle"
+	appendedNames := append(names, "Hat", "Gloves")
+	names[0] = "Canoe"
+	fmt.Println("names:",names)
+	fmt.Println("appendedNames:", appendedNames)
+
+
+Appending One Slice to Another:
+example:
+	names := make([]string, 3, 6)
+	names[0] = "Kayak"
+	names[1] = "Lifejacket"
+	names[2] = "Paddle"
+	moreNames := []string { "Hat Gloves"}
+	appendedNames := append(names, moreNames...)
+	fmt.Println("appendedNames:", appendedNames)
+
+
+Creating Slices from Existing Arrays:
+example:
+	products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+	someNames := products[1:3]
+	allNames := products[:]
+
+Specifying Capacity When Creating a Slice from an Array:
+example:
+	products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+	someNames := products[1:3:3]
+	allNames := products[:]
+	someNames = append(someNames, "Gloves")
+
+Creating Slices from Other Slices:
+example:
+	products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+	allNames := products[1:]
+	someNames := allNames[1:3]
+	allNames = append(allNames, "Gloves")
+	allNames[1] = "Canoe"
+
+Comparing Slices:
+example:
+	Go restricts the use of the comparison operator so that slices can be compared only to the nil value.
+		p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+		p2 := p1
+		fmt.Println("Equal:", p1 == p2)
+Output:
+	.\main.go:13:30: invalid operation: p1 == p2 (slice can only be compared to nil)`,
 // ====================================================================================
-		"64":``,
+		"64":`64.copy
+The copy function is used to copy elements between slices. This function can be used to ensure that slices
+have separate arrays and to create slices that combine elements from different sources.
+
+Duplicating a Slice:
+The copy function accepts two arguments:
+example:
+	products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+	allNames := products[1:]
+	someNames := make([]string, 2)
+	copy(someNames, allNames)
+Output:
+	allNames [Lifejacket Paddle Hat]
+	someNames: [Lifejacket Paddle]
+
+the Uninitialized Slice Pitfall:
+the copy function doesn't resize the destination slice. A common
+pitfall is to try to copy elements into a slice that has not been initialized
+example:
+	products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+	allNames := products[1:]
+	var someNames []string
+	copy(someNames, allNames)
+Output:
+	someNames: []
+	allNames [Lifejacket Paddle Hat]
+
+Specifying Ranges When Copying Slices:
+Fine-grained control over the elements that are copied can be achieved using ranges
+example:
+	products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+	allNames := products[1:]
+	someNames := []string { "Boots", "Canoe"}
+	copy(someNames[1:], allNames[2:3])
+Output:
+	allNames [Lifejacket Paddle Hat]
+	someNames: [Boots Hat]
+
+Copying Slices with Different Sizes:
+	products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+	replacementProducts := []string { "Canoe", "Boots"}
+	copy(products, replacementProducts)
+Output:
+	products: [Canoe Boots Paddle Hat]
+
+Copying a Larger Source Slice
+example:
+	products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+		replacementProducts := []string { "Canoe", "Boots"}
+		copy(products[0:1], replacementProducts)
+		fmt.Println("products:", products)
+Output:
+	products: [Canoe Lifejacket Paddle Hat]
+Deleting Slice Elements:
+	products := [4]string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+	deleted := append(products[:2], products[3:]...)
+	fmt.Println("Deleted:", deleted)
+Enumerating Slices:
+example:
+	products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+	for index, value := range products[2:] {
+		fmt.Println("Index:", index, "Value:", value)
+	}
+Output:
+	Index: 0 Value: Paddle
+	Index: 1 Value: Hat`,
 // ====================================================================================
-		"65":``,
+		"65":`65.sort
+There is no built-in support for sorting slices, but the standard library includes the sort package, which
+defines functions for sorting different types of slice.
+
+example:
+	products := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+	sort.Strings(products)
+	for index, value := range products {
+		fmt.Println("Index:", index, "Value:", value)
+	}
+Output:
+	Index: 0 Value: Hat
+	Index: 1 Value: Kayak
+	Index: 2 Value: Lifejacket
+	Index: 3 Value: Paddle`,
 // ====================================================================================
-		"66":``,
+		"66":`66.DeepEqual
+The DeepEqual function can be used to compare a wider range of data types than the
+equality operator, including slices.
+
+example:
+	package main
+	import (
+		"fmt"
+		"reflect"
+	)
+	func main() {
+		p1 := []string { "Kayak", "Lifejacket", "Paddle", "Hat"}
+		p2 := p1
+		fmt.Println("Equal:", reflect.DeepEqual(p1, p2))
+	}    
+Output:
+	Equal: true`,
 // ====================================================================================
-		"67":``,
+		"67":`67.map
+Maps are a built-in data structure that associates data values with keys. 
+Unlike arrays, where values are associated with sequential integer locations, 
+maps can use other data types as keys.
+
+A map is an unordered collection of key-value pairs.
+Also known as an associative array, a hash table or dictionary, 
+maps are used to look up a value by its associated key.
+
+example:
+	products := make(map[string]float64, 10)
+	products["Kayak"] = 279
+	products["Lifejacket"] = 48.95
+
+Map Literal Syntax:
+	products := map[string]float64 {
+		"Kayak" : 279,
+		"Lifejacket": 48.95,
+	}
+Checking for Items in a Map:
+example:
+	products := map[string]float64 {
+				"Kayak" : 279,
+				"Lifejacket": 48.95,
+				"Hat": 0,
+			}
+			value, ok := products["Hat"]
+			if (ok) {
+				fmt.Println("Stored value:", value)
+			} else {
+				fmt.Println("No stored value")
+			}
+
+Removing Items from a Map:
+example:
+	products := map[string]float64 {
+		"Kayak" : 279,
+		"Lifejacket": 48.95,
+		"Hat": 0,
+	}
+	delete(products, "Hat")
+
+Enumerating the Contents of a Map:
+example:
+	products := map[string]float64 {
+			"Kayak" : 279,
+			"Lifejacket": 48.95,
+			"Hat": 0,
+	}
+	for key, value := range products {
+		fmt.Println("Key:", key, "Value:", value)
+	}
+
+Enumerating a Map in Order:
+example:
+	import (
+			"fmt"
+			"sort"
+		)
+	func main() {
+		products := map[string]float64 {
+			"Kayak" : 279,
+			"Lifejacket": 48.95,
+			"Hat": 0,
+		}
+		keys := make([]string, 0, len(products))
+		for key,  := range products {
+			keys = append(keys, key)
+		}
+		sort.Strings(keys)
+		for , key := range keys {
+			fmt.Println("Key:", key, "Value:", products[key])
+		}
+	}`,
 // ====================================================================================
-		"68":``,
+		"68":`68.strconv
+Understanding the Dual Nature of Strings
+Indexing and Slicing a String:
+	var price string = "$48.95"
+	var currency byte = price[0]
+	var amountString string = price[1:]
+	amount, parseErr := strconv.ParseFloat(amountString, 64)
+	fmt.Println("Currency:", currency)
+	if (parseErr == nil) {
+			fmt.Println("Amount:", amount)
+	} else {
+			fmt.Println("Parse Error:", parseErr)
+	}
+Output:
+	Currency: 36
+	Amount: 48.95
+
+Converting the Result:
+	var price string = "$48.95"
+	var currency string = string(price[0])
+	var amountString string = price[1:]
+	amount, parseErr  := strconv.ParseFloat(amountString, 64)
+	fmt.Println("Currency:", currency)
+	if (parseErr == nil) {
+		fmt.Println("Amount:", amount)
+	} else {
+		fmt.Println("Parse Error:", parseErr)
+	}   
+Output:
+	Currency: $
+	Amount: 48.95
+Changing the Currency Symbol:
+example:
+	var price string = "€48.95"
+	var currency string = string(price[0])
+	var amountString string = price[1:]
+	amount, parseErr  := strconv.ParseFloat(amountString, 64)
+	fmt.Println("Currency:", currency)
+	if (parseErr == nil) {
+		fmt.Println("Amount:", amount)
+	} else {
+		fmt.Println("Parse Error:", parseErr)
+	}
+Output:
+	Currency: â
+	Parse Error: strconv.ParseFloat: parsing "\x82\xac48.95": invalid syntax
+
+Obtaining the Length:
+	fmt.Println("Length:", len(price))
+Output:
+	Length: 8`,
 // ====================================================================================
-		"69":``,
+		"69":`69.rune
+Converting a String to Runes
+The rune type represents a Unicode code point, 
+which is essentially a single character. 
+To avoid slicing strings in the middle of characters, 
+an explicit conversion to a rune slice can be performed
+Unicode is incredibly complex, as you would expect 
+from any standard that aims to describe multiple
+writing systems evolved over thousands of years.
+Converting to Runes:
+	var price []rune = []rune("€48.95")
+	var amountString string = string(price[1:])
+
+Enumerating Strings        
+example:
+	var price = "€48.95"
+	for index, char := range price {
+		fmt.Println(index, char, string(char))
+	}
+Output:
+	0 8364 €
+	3 52 4
+	4 56 8
+	5 46 .
+	6 57 9
+	7 53 5
+
+Enumerating the Bytes
+example:
+	var price = "€48.95"
+	for index, char := range []byte(price) {
+		fmt.Println(index, char)
+	}
+Output:
+	0 226
+	1 130
+	2 172
+	3 52
+	4 56
+	5 46
+	6 57
+	7 53`,
 // ====================================================================================
 		"70":``,
 // ====================================================================================
