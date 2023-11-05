@@ -293,7 +293,7 @@ var OriginalFeatures Features = Features{
     The Logical Operators
     Operator    Description
     -------     ---------------------
-            This operator returns true if either operand is true. 
+    ||          This operator returns true if either operand is true. 
                 If the first operand is true, then the second
                 operand will not be evaluated.
 
@@ -321,9 +321,9 @@ var OriginalFeatures Features = Features{
 42.RoundToEven(value)
     This function rounds the specified floating-point value to the nearest even integer.
 ████████████████████████████████████████████████████████████████████████
-Parsing from Strings
-Functions for Parsing Strings into Other Data Types
 43.ParseBool(str)
+    Parsing from Strings
+    Functions for Parsing Strings into Other Data Types
     This function parses a string into a bool value. Recognized string values are "true",
     "false", "TRUE", "FALSE", "True", "False", "T", "F", "0", and "1".
 ████████████████████████████████████████████████████████████████████████
