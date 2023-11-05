@@ -826,167 +826,1852 @@ Output:
 	6 57
 	7 53`,
 // ====================================================================================
-		"70":``,
-// ====================================================================================
-		"71":``,
-// ====================================================================================
-		"72":``,
-// ====================================================================================
-		"73":``,
-// ====================================================================================
-		"74":``,
-// ====================================================================================
-		"75":``,
-// ====================================================================================
-		"76":``,
-// ====================================================================================
-		"77":``,
-// ====================================================================================
-		"78":``,
-// ====================================================================================
-		"79":``,
-// ====================================================================================
-		"80":``,
-// ====================================================================================
-		"81":``,
-// ====================================================================================
-		"82":``,
-// ====================================================================================
-		"83":``,
-// ====================================================================================
-		"84":``,
-// ====================================================================================
-		"85":``,
-// ====================================================================================
-		"86":``,
-// ====================================================================================
-		"87":``,
-// ====================================================================================
-		"88":``,
-// ====================================================================================
-		"89":``,
-// ====================================================================================
-		"90":``,
-// ====================================================================================
-		"91":``,
-// ====================================================================================
-		"92":``,
-// ====================================================================================
-		"93":``,
-// ====================================================================================
-		"94":``,
-// ====================================================================================
-		"95":``,
-// ====================================================================================
-		"96":``,
-// ====================================================================================
-		"97":``,
-// ====================================================================================
-		"98":``,
-// ====================================================================================
-		"99":``,
-// ====================================================================================
-		"100":``,
-// ====================================================================================
-		"101":``,
-// ====================================================================================
-		"102":``,
-// ====================================================================================
-		"103":``,
-// ====================================================================================
-		"104":``,
-// ====================================================================================
-		"105":``,
-// ====================================================================================
-		"106":``,
-// ====================================================================================
-		"107":``,
-// ====================================================================================
-		"108":``,
-// ====================================================================================
-		"109":``,
-// ====================================================================================
-		"110":``,
-// ====================================================================================
-		"111":``,
-// ====================================================================================
-		"112":``,
-// ====================================================================================
-		"113":``,
-// ====================================================================================
-		"114":``,
-// ====================================================================================
-		"115":``,
-// ====================================================================================
-		"116":``,
-// ====================================================================================
-		"117":``,
-// ====================================================================================
-		"118":``,
-// ====================================================================================
-		"119":``,
-// ====================================================================================
-		"120":``,
-// ====================================================================================
-		"121":``,
-// ====================================================================================
-		"122":``,
-// ====================================================================================
-		"123":``,
-// ====================================================================================
-		"124":``,
-// ====================================================================================
-		"125":``,
-// ====================================================================================
-		"126":``,
-// ====================================================================================
-		"127":``,
-// ====================================================================================
-		"128":``,
-// ====================================================================================
-		"129":``,
-// ====================================================================================
-		"130":``,
-// ====================================================================================
-		"131":``,
-// ====================================================================================
-		"132":``,
-// ====================================================================================
-		"133":``,
-// ====================================================================================
-		"134":``,
-// ====================================================================================
-		"135":``,
-// ====================================================================================
-		"136":``,
-// ====================================================================================
-		"137":``,
-// ====================================================================================
-		"138":``,
-// ====================================================================================
-		"139":``,
-// ====================================================================================
-		"140":``,
-// ====================================================================================
-		"141":``,
-// ====================================================================================
-		"142":``,
-// ====================================================================================
-		"143":``,
-// ====================================================================================
-		"144":``,
-// ====================================================================================
-		"145":``,
-// ====================================================================================
-		"146":``,
-// ====================================================================================
-		"147":``,
-// ====================================================================================
-		"148":``,
-// ====================================================================================
-		"149":``,
-// ====================================================================================
-		"150":``,
+		"70":`70.func
+Functions are groups of code statements that are executed only when the function is
+invoked during the flow of execution.`,
+// ====================================================================================
+		"71":`71.Function Parameters
+Parameters allow a function to receive data values when it is called, 
+allowing its behavior to be altered.
+Values for parameters are supplied as arguments when invoking the function, meaning that different
+values can be provided each time the function is called. Arguments are provided between the parentheses
+that follow the function name, separated by commas and in the same order in which the parameters have
+been defined
+example:
+	func printPrice(product string, price float64, taxRate float64) {
+		taxAmount := price * taxRate
+		fmt.Println(product, "price:", price, "Tax:", taxAmount)
+	}`,
+// ====================================================================================
+		"72":`72.Defining Variadic Parameters
+example:
+	func printSuppliers(product string, suppliers []string ) {
+		for , supplier := range suppliers {
+			fmt.Println("Product:", product, "Supplier:", supplier)
+		}
+	}
+example:
+	func printSuppliers(product string, suppliers ...string ) {
+		for , supplier := range suppliers {
+			fmt.Println("Product:", product, "Supplier:", supplier)
+		}
+	}`,
+// ====================================================================================
+		"73":`73.Dealing with No Arguments for a Variadic Parameter
+example:
+	func printSuppliers(product string, suppliers ...string ) {
+		for , supplier := range suppliers {
+			fmt.Println("Product:", product, "Supplier:", supplier)
+		}
+	}
+	func main() {
+		printSuppliers("Kayak", "Acme Kayaks", "Bob's Boats", "Crazy Canoes")
+		printSuppliers("Lifejacket", "Sail Safe Co")
+		printSuppliers("Soccer Ball")
+	}
+Output:
+	Product: Kayak Supplier: Acme Kayaks
+	Product: Kayak Supplier: Bob's Boats
+	Product: Kayak Supplier: Crazy Canoes
+	Product: Lifejacket Supplier: Sail Safe Co`,
+// ====================================================================================
+		"74":`74.return Function Results
+example:
+	func calcTax(price float64) float64 {
+		return price + (price * 0.2)
+	}`,
+// ====================================================================================
+		"75":`75.Returning Multiple Function Results
+example:
+	func swapValues(first, second int) (int, int) {
+		return second, first
+	}
+	func main() {
+		val1, val2 := 10, 20
+		fmt.Println("Before calling function", val1, val2)
+		val1, val2 = swapValues(val1, val2)
+		fmt.Println("After calling function", val1, val2)
+	}`,
+// ====================================================================================
+		"76":`76.Using Named Results
+example:
+	func calcTax(price float64) (float64, bool) {
+		if (price > 100) {
+			return price * 0.2, true
+		}
+		return 0, false
+	}
+	func calcTotalPrice(products map[string]float64,
+			minSpend float64) (total, tax float64)  {
+		total = minSpend
+		for , price := range products {
+			if taxAmount, due := calcTax(price); due {
+				total += taxAmount;
+				tax += taxAmount
+			} else {
+				total += price
+			}
+		}
+		return
+	}`,
+// ====================================================================================
+		"77":`77.defer
+The defer keyword is used to schedule a function call that will be performed immediately before the current
+function returns
+The defer keyword lets you group the statements that create, use, and
+release the resource together.
+The defer keyword can be used with any function call
+a single function can use the defer keyword multiple times.
+Immediately before the function returns, Go will perform the
+calls scheduled with the defer keyword in the order in which they were defined.`,
+// ====================================================================================
+		"78":`78.Function Types
+Functions in Go have a data type, which describes the combination of parameters the
+function consumes and the results the function produces. This type can be specified
+explicitly or inferred from a function defined using a literal syntax.
+Function types are defined using the func keyword, followed by a signature that
+describes the parameters and results. No function body is specified.
+
+Go does not support arrow functions, where functions are expressed more concisely using the =>
+operator, without the func keyword and a code block surrounded by braces. In Go, functions must always be
+defined with the keyword and a body.`,
+// ====================================================================================
+		"79":`79.Function Comparisons and the Zero Type
+example:
+	func calcWithTax(price float64) float64 {
+		return price + (price * 0.2)
+	}
+	func calcWithoutTax(price float64) float64 {
+		return price
+	}
+	func main() {
+		products := map[string]float64 {
+			"Kayak" : 275,
+			"Lifejacket": 48.95,
+		}
+		for product, price := range products {
+			var calcFunc func(float64) float64
+			fmt.Println("Function assigned:", calcFunc == nil)
+			if (price > 100) {
+				calcFunc = calcWithTax
+			} else {
+				calcFunc = calcWithoutTax
+			}
+			fmt.Println("Function assigned:", calcFunc == nil)
+			totalPrice := calcFunc(price)
+			fmt.Println("Product:", product, "Price:", totalPrice)
+		}
+	}`,
+// ====================================================================================
+		"80":`80.Functions as Arguments
+example:
+	func calcWithTax(price float64) float64 {
+		return price + (price * 0.2)
+	}
+	func calcWithoutTax(price float64) float64 {
+		return price
+	}
+	func printPrice(product string, price float64, calculator func(float64) float64 ) {
+		fmt.Println("Product:", product, "Price:", calculator(price))
+	}
+	func main() {
+		products := map[string]float64 {
+			"Kayak" : 275,
+			"Lifejacket": 48.95,
+		}
+		for product, price := range products {
+			if (price > 100) {
+				printPrice(product, price, calcWithTax)
+			} else {
+				printPrice(product, price, calcWithoutTax)
+			}
+		}
+	}`,
+// ====================================================================================
+		"81":`81.Functions as Results
+example:
+	func calcWithTax(price float64) float64 {
+		return price + (price * 0.2)
+	}
+	func calcWithoutTax(price float64) float64 {
+		return price
+	}
+	func printPrice(product string, price float64, calculator func(float64) float64 ) {
+		fmt.Println("Product:", product, "Price:", calculator(price))
+	}
+	func selectCalculator(price float64) func(float64) float64 {
+		if (price > 100) {
+			return calcWithTax
+		}
+		return calcWithoutTax
+	}
+	func main() {
+		products := map[string]float64 {
+			"Kayak" : 275,
+			"Lifejacket": 48.95,
+		}
+		for product, price := range products {
+			printPrice(product, price, selectCalculator(price))
+		}
+	}`,
+// ====================================================================================
+		"82":`82.Function Type Aliases
+Go supports type aliases, which can be used to assign a name to
+a function signature so that the parameter and result types are not specified every time the function type is
+used.
+example:
+	type calcFunc func(float64) float64
+	func calcWithTax(price float64) float64 {
+		return price + (price * 0.2)
+	}
+	func calcWithoutTax(price float64) float64 {
+		return price
+	}
+	func printPrice(product string, price float64, calculator calcFunc) {
+		fmt.Println("Product:", product, "Price:", calculator(price))
+	}
+	func selectCalculator(price float64) calcFunc {
+		if (price > 100) {
+			return calcWithTax
+		}
+		return calcWithoutTax
+	}
+	func main() {
+		products := map[string]float64 {
+			"Kayak" : 275,
+			"Lifejacket": 48.95,
+		}
+		for product, price := range products {
+			printPrice(product, price, selectCalculator(price))
+		}
+	}`,
+// ====================================================================================
+		"83":`83.the Literal Function Syntax
+example:
+	func selectCalculator(price float64) calcFunc {
+		if (price > 100) {
+			var withTax calcFunc = func (price float64) float64 {
+				return price + (price * 0.2)
+			}
+			return withTax
+		}`,
+// ====================================================================================
+		"84":`84.Function Variable Scope
+example:
+	func selectCalculator(price float64) calcFunc {
+		if (price > 100) {
+			var withTax calcFunc = func (price float64) float64 {
+				return price + (price * 0.2)
+			}
+			return withTax
+		} else if (price < 10) {
+			return withTax
+		}
+			withoutTax := func (price float64) float64 {
+				return price
+			}
+		return withoutTax
+	}`,
+// ====================================================================================
+		"85":`85.Functions Values Directly
+example:
+	func selectCalculator(price float64) calcFunc {
+		if (price > 100) {
+			return func (price float64) float64 {
+				return price + (price * 0.2)
+			}
+		}
+			return func (price float64) float64 {
+			return price
+		}
+	}`,
+// ====================================================================================
+		"86":`86.Literal Function Argument
+example:
+	func main() {
+		products := map[string]float64 {
+			"Kayak" : 275,
+			"Lifejacket": 48.95,
+		}
+		for product, price := range products {
+			printPrice(product, price, func (price float64) float64 {
+				return price + (price * 0.2)
+			})
+		}
+	}`,
+// ====================================================================================
+		"87":`87.Function Closure
+Functions defined using the literal syntax can reference variables from the surrounding code, a feature
+known as closure.
+example:
+	type calcFunc func(float64) float64
+	func printPrice(product string, price float64, calculator calcFunc) {
+		fmt.Println("Product:", product, "Price:", calculator(price))
+	}
+	func main() {
+		watersportsProducts := map[string]float64 {
+			"Kayak" : 275,
+			"Lifejacket": 48.95,
+		}
+		soccerProducts := map[string] float64 {
+			"Soccer Ball": 19.50,
+			"Stadium": 79500,
+		}
+		calc := func(price float64) float64 {
+			if (price > 100) {
+				return price + (price * 0.2)
+			}
+			return price;
+		}
+		for product, price := range watersportsProducts {
+			printPrice(product, price, calc)
+		}
+		calc = func(price float64) float64 {
+			if (price > 50) {
+				return price + (price * 0.1)
+			}
+			return price
+		}
+		for product, price := range soccerProducts {
+			printPrice(product, price, calc)
+		}
+	}`,
+// ====================================================================================
+		"88":`88.struct
+What are they?
+Structs are data types, comprised of fields.
+
+Why are they useful?
+Structs allow custom data types to be defined.
+
+How are they used?
+The type and struct keywords are used to define a type, 
+allowing field names and types to be specified.
+A struct can mix regular and embedded field types.
+example:
+	func main() {
+		type Product struct {
+			name, category string
+			price float64
+		}
+		kayak := Product {
+			name: "Kayak",
+			category: "Watersports",
+			price: 275,
+		}
+		fmt.Println(kayak.name, kayak.category, kayak.price)
+		kayak.price = 300
+		fmt.Println("Changed price:", kayak.price)
+	}
+Go doesn't differentiate between structs and classes, in the way that other languages do. All custom
+data types are defined as structs, and the decision to pass them by reference or by value is made
+depending on whether a pointer is used.
+
+Go doesn't allow structs to be used with the const keyword, and the compiler will report an error if
+you try to define a constant struct.`,
+// ====================================================================================
+		"89":`89.struct tag
+The struct type can be defined with tags, which provide additional information about how a field should
+be processed. Struct tags are just strings that are interpreted by the code that processes struct values,
+using the features provided by the reflect package.`,
+// ====================================================================================
+		"90":`90.struct values
+Values do not have to be provided for all fields when creating a struct value
+
+example:
+	func main() {
+		type Product struct {
+			name, category string
+			price float64
+		}
+		kayak := Product {
+				name: "Kayak",
+				category: "Watersports",
+		}
+	}`,
+// ====================================================================================
+		"91":`91.new 
+the new function to create struct values
+	var lifejacket = new(Product)
+
+The result is a pointer to a struct value whose fields are 
+initialized with their type's zero value. 
+This is equivalent to this statement:
+	var lifejacket = &Product{}
+
+These approaches are interchangeable, and choosing between them is a matter of preference.`,
+// ====================================================================================
+		"92":`92.Field Positions to Create Struct Values
+example:
+	func main() {
+		type Product struct {
+			name, category string
+			price float64
+		}
+		var kayak = Product { "Kayak", "Watersports", 275.00 }
+		fmt.Println("Name:", kayak.name)
+		fmt.Println("Category:", kayak.category)
+		fmt.Println("Price:", kayak.price)
+	}`,
+// ====================================================================================
+		"93":`93.Defining Embedded Fields
+If a field is defined without a name, 
+it is known as an embedded field, and it is accessed using the name of its type.
+example:
+	func main() {
+			type Product struct {
+				name, category string
+				price float64
+			}
+			type StockLevel struct {
+				Product
+				count int
+			}
+			stockItem := StockLevel {
+				Product: Product { "Kayak", "Watersports", 275.00 },
+				count: 100,
+			}
+			fmt.Println("Name:", stockItem.Product.name)
+			fmt.Println("Count:", stockItem.count)
+	}`,
+// ====================================================================================
+		"94":`94.Defining an Additional Field
+example:
+	func main() {
+		type Product struct {
+			name, category string
+			price float64
+		}
+		type StockLevel struct {
+			Product
+			Alternate Product
+			count int
+		}
+		stockItem := StockLevel {
+			Product: Product { "Kayak", "Watersports", 275.00 },
+			Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+			count: 100,
+		}
+		fmt.Println("Name:", stockItem.Product.name)
+		fmt.Println("Alt Name:", stockItem.Alternate.name)
+	}`,
+// ====================================================================================
+		"95":`95.Comparing Struct Values
+example:
+	func main() {
+		type Product struct {
+			name, category string
+			price float64
+		}
+		p1 := Product { name: "Kayak", category: "Watersports", price: 275.00 }
+		p2 := Product { name: "Kayak", category: "Watersports", price: 275.00 }
+		p3 := Product { name: "Kayak", category: "Boats", price: 275.00 }
+		fmt.Println("p1 == p2:", p1 == p2)
+		fmt.Println("p1 == p3:", p1 == p3)
+	}`,
+// ====================================================================================
+		"96":`96.Anonymous Struct Types
+Anonymous struct types are defined without using a name
+example:
+	package main
+	import "fmt"
+	func writeName(val struct {
+			name, category string
+			price float64}) {
+		fmt.Println("Name:", val.name)
+	}
+	func main() {
+		type Product struct {
+			name, category string
+			price float64
+			//otherNames []string
+		}
+		type Item struct {
+			name string
+			category string
+			price float64
+		}
+		prod := Product { name: "Kayak", category: "Watersports", price: 275.00 }
+		item := Item { name: "Stadium", category: "Soccer", price: 75000 }
+		writeName(prod)
+		writeName(item)
+	}`,
+// ====================================================================================
+		"97":`97.Creating Arrays, Slices, and Maps Containing Struct Values
+Omitting the Struct Type
+example:
+	package main
+	import "fmt"
+	func main() {
+		type Product struct {
+			name, category string
+			price float64
+			//otherNames []string
+		}
+		type StockLevel struct {
+			Product
+			Alternate Product
+			count int
+		}
+		array := [1]StockLevel {
+			{
+				Product: Product { "Kayak", "Watersports", 275.00 },
+				Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+				count: 100,
+			},
+		}
+		fmt.Println("Array:", array[0].Product.name)
+		slice := []StockLevel {
+			{
+				Product: Product { "Kayak", "Watersports", 275.00 },
+				Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+				count: 100,
+			},
+		}
+		fmt.Println("Slice:", slice[0].Product.name)
+		kvp := map[string]StockLevel {
+			"kayak": {
+				Product: Product { "Kayak", "Watersports", 275.00 },
+				Alternate: Product{"Lifejacket", "Watersports", 48.95 },
+				count: 100,
+			},
+		}
+		fmt.Println("Map:", kvp["kayak"].Product.name)
+	}`,
+// ====================================================================================
+		"98":`98.Structs and Pointers
+Assigning a struct to a new variable or using a struct as a function parameter 
+creates a new value that copies the field values.`,
+// ====================================================================================
+		"99":`99.Copying a Struct Value
+example:
+	package main
+	import "fmt"
+	func main() {
+		type Product struct {
+			name, category string
+			price float64
+		}
+		p1 := Product {
+			name: "Kayak",
+			category: "Watersports",
+			price: 275,
+		}
+		p2 := p1
+		p1.name = "Original Kayak"
+		fmt.Println("P1:", p1.name)
+		fmt.Println("P2:", p2.name)
+	}`,
+// ====================================================================================
+		"100":`100.Using a Pointer to a Struct
+example:
+	package main
+	import "fmt"
+	func main() {
+		type Product struct {
+			name, category string
+			price float64
+		}
+		p1 := Product {
+			name: "Kayak",
+			category: "Watersports",
+			price: 275,
+		}
+		p2 := &p1
+		p1.name = "Original Kayak"
+		fmt.Println("P1:", p1.name)
+		fmt.Println("P2:", (*p2).name)
+	}`,
+// ====================================================================================
+		"101":`101.the Struct Pointer Convenience Syntax
+example:
+	package main
+	import "fmt"
+	
+	type Product struct {
+		name, category string
+		price float64
+	}
+	
+	func calcTax(product *Product) {
+		if ((*product).price > 100) {
+			(*product).price += (*product).price * 0.2
+		}
+	}
+	
+	func main() {
+		kayak := Product {
+			name: "Kayak",
+			category: "Watersports",
+			price: 275,
+		}
+		calcTax(&kayak)
+		fmt.Println("Name:", kayak.name, "Category:",
+		kayak.category, "Price", kayak.price)
+	}`,
+// ====================================================================================
+		"102":`102.Struct Constructor Functions
+A constructor function is responsible for creating struct values using values received through parameters
+Constructor functions are used to create struct values consistently. Constructor functions are usually
+named new or New followed by the struct type so that the constructor function for creating Product values
+is named newProduct.
+example:
+	package main
+	import "fmt"
+	type Product struct {
+		name, category string
+		price float64
+	}
+	
+	func newProduct(name, category string, price float64) *Product {
+		return &Product{name, category, price}
+	}
+	
+	func main() {
+		products := [2]*Product {
+			newProduct("Kayak", "Watersports", 275),
+			newProduct("Hat", "Skiing", 42.50),
+		}
+		for , p := range products {
+			fmt.Println("Name:", p.name, "Category:",  p.category, "Price", p.price)
+		}
+	}`,
+// ====================================================================================
+		"103":`103.Modifying a Constructor
+The benefit of using constructor functions is consistency, 
+ensuring that changes to the construction
+process are reflected in all the struct values created by the function.
+
+example:
+	func newProduct(name, category string, price float64) *Product {
+		return &Product{name, category, price - 10}
+	}`,
+// ====================================================================================
+		"104":`104.Pointer Types for Struct Fields
+example:
+	package main
+	import "fmt"
+	type Product struct {
+		name, category string
+		price float64
+		*Supplier
+	}
+	type Supplier struct {
+		name, city string
+	}
+	func newProduct(name, category string, price float64, supplier *Supplier) *Product {
+		return &Product{name, category, price -10, supplier}
+	}
+	func main() {
+		acme := &Supplier { "Acme Co", "New York"}
+		products := [2]*Product {
+			newProduct("Kayak", "Watersports", 275, acme),
+			newProduct("Hat", "Skiing", 42.50, acme),
+		}
+		for , p := range products {
+			fmt.Println("Name:", p.name, "Supplier:",
+				p.Supplier.name, p.Supplier.city)
+		}
+	}`,
+// ====================================================================================
+		"105":`105.Pointer Field Copying
+Care must be taken when copying structs to consider the effect on pointer fields    
+example:
+	package main
+	import "fmt"
+	type Product struct {
+		name, category string
+		price float64
+		*Supplier
+	}
+	type Supplier struct {
+		name, city string
+	}
+	func newProduct(name, category string, price float64, supplier *Supplier) *Product {
+		return &Product{name, category, price -10, supplier}
+	}
+	func main() {
+		acme := &Supplier { "Acme Co", "New York"}
+		p1 := newProduct("Kayak", "Watersports", 275, acme)
+		p2 := *p1
+		p1.name = "Original Kayak"
+		p1.Supplier.name = "BoatCo"
+		for , p := range []Product { *p1, p2 } {
+			fmt.Println("Name:", p.name, "Supplier:",
+				p.Supplier.name, p.Supplier.city)
+		}
+	}`,
+// ====================================================================================
+		"106":`106.Method
+What are they?
+Methods are functions that are invoked on a struct and have access to all of the
+fields defined by the value's type. Interfaces define sets of methods, which can be
+implemented by struct types.
+
+Why are they useful?
+These features allow types to be mixed and used through their common
+characteristics.
+
+How are they used?
+Methods are defined using the func keyword, but with the addition of a receiver.
+Interfaces are defined using the type and interface keywords.
+
+Are there any pitfalls or limitations?
+Careful use of pointers is important when creating methods, and care must be taken
+when using interfaces to avoid problems with the underlying dynamic types.`,
+// ====================================================================================
+		"107":`107.Defining and Using Method
+example:
+	package main
+	import "fmt"
+	type Product struct {
+		name, category string
+		price float64
+	}
+	func newProduct(name, category string, price float64) *Product {
+			return &Product{ name, category, price }
+		}
+		func (product *Product) printDetails() {
+			fmt.Println("Name:", product.name, "Category:", product.category,
+				"Price", product.price)
+		}
+	func main() {
+		products := []*Product {
+			newProduct("Kayak", "Watersports", 275),
+			newProduct("Lifejacket", "Watersports", 48.95),
+			newProduct("Soccer Ball", "Soccer", 19.50),
+		}
+		for , p := range products {
+			p.printDetails()
+		}
+	}`,
+// ====================================================================================
+		"108":`108.Defining Method Parameters and Results
+example:
+	package main
+	import "fmt"
+	type Product struct {
+		name, category string
+		price float64
+	}
+	func newProduct(name, category string, price float64) *Product {
+			return &Product{ name, category, price }
+		}
+		func (product *Product) printDetails() {
+			fmt.Println("Name:", product.name, "Category:", product.category,
+				"Price", product.price)
+		}
+	func main() {
+		products := []*Product {
+			newProduct("Kayak", "Watersports", 275),
+			newProduct("Lifejacket", "Watersports", 48.95),
+			newProduct("Soccer Ball", "Soccer", 19.50),
+		}
+		for , p := range products {
+			p.calcTax(0.2, 100) //<-------------------------------here
+		}
+	}`,
+// ====================================================================================
+		"109":`109.Defining and Using Interfaces
+One interface can enclose another, with the effect that types must implement all the methods defined
+by the enclosing and enclosed interfaces. Interfaces are simpler than structs, and there are no fields or
+method to promote. The result of composing interfaces is a union of the method defined by the enclosing
+and enclosed types.
+
+example:
+	package main
+	import "fmt"
+	type Expense interface {
+		getName() string
+		getCost(annual bool) float64
+	}
+	func main() {
+		expenses := []Expense {
+			Product { "Kayak", "Watersports", 275 },
+			Service {"Boat Cover", 12, 89.50 },
+		}
+		for , expense := range expenses {
+			fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
+		}
+	}`,
+// ====================================================================================
+		"110":`110.an Interface in a Function
+example:
+	package main
+	import "fmt"
+	type Expense interface {
+		getName() string
+		getCost(annual bool) float64
+	}
+	func calcTotal(expenses []Expense) (total float64) {
+		for , item := range expenses {
+			total += item.getCost(true)
+		}
+		return
+	}
+	func main() {
+		expenses := []Expense {
+			Product { "Kayak", "Watersports", 275 },
+			Service {"Boat Cover", 12, 89.50 },
+		}
+		for , expense := range expenses {
+			fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
+		}
+		fmt.Println("Total:", calcTotal(expenses))
+	}`,
+// ====================================================================================
+		"111":`111.an Interface for Struct Fields
+example:
+	package main
+	import "fmt"
+	type Expense interface {
+		getName() string
+		getCost(annual bool) float64
+	}
+	func calcTotal(expenses []Expense) (total float64) {
+		for , item := range expenses {
+			total += item.getCost(true)
+		}
+		return
+	}
+	type Account struct {
+		accountNumber int
+		expenses []Expense
+	}
+	func main() {
+		account := Account {
+			accountNumber: 12345,
+			expenses: []Expense {
+				Product { "Kayak", "Watersports", 275 },
+				Service {"Boat Cover", 12, 89.50 },
+			},
+		}
+		for , expense := range account.expenses {
+			fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
+		}
+		fmt.Println("Total:", calcTotal(account.expenses))
+	}`,
+// ====================================================================================
+		"112":`112.Comparing Interface Values
+Care must be taken when comparing interface values, and inevitably, some knowledge of the dynamic
+types is required.
+The first two Expense values are not equal. 
+That's because the dynamic type for these values is a pointer
+type, and pointers are equal only if they point to the same memory location
+
+example:
+	package main
+	import "fmt"
+	type Expense interface {
+		getName() string
+		getCost(annual bool) float64
+	}
+	func main() {
+		var e1 Expense = &Product { name: "Kayak" }
+		var e2 Expense = &Product { name: "Kayak" }
+		var e3 Expense = Service { description: "Boat Cover" }
+		var e4 Expense = Service { description: "Boat Cover" }
+		fmt.Println("e1 == e2", e1 == e2)
+		fmt.Println("e3 == e4", e3 == e4)
+	}
+Output:
+	e1 == e2 false
+	e3 == e4 true`,
+// ====================================================================================
+		"113":`113.Empty Interface
+Go allows the user of the empty interface—which means an interface that defines no methods—to represent
+any type, which can be a useful way to group disparate types that share no common features
+The empty interface represents all types, including the built-in types and any structs and interfaces
+that have been defined.`,
+// ====================================================================================
+		"114":`114.Empty Interface for Function Parameters
+The empty interface can be used as the type for a function parameter, allowing a function to be called with
+any value
+
+example:
+	package main
+	import "fmt"
+	type Expense interface {
+		getName() string
+		getCost(annual bool) float64
+	}
+	type Person struct {
+		name, city string
+	}
+	func processItem(item interface{}) {
+			switch value := item.(type) {
+				case Product:
+					fmt.Println("Product:", value.name, "Price:", value.price)
+				case *Product:
+					fmt.Println("Product Pointer:", value.name, "Price:", value.price)
+				case Service:
+					fmt.Println("Service:", value.description, "Price:",
+						value.monthlyFee * float64(value.durationMonths))
+				case Person:
+					fmt.Println("Person:", value.name, "City:", value.city)
+				case *Person:
+					fmt.Println("Person Pointer:", value.name, "City:", value.city)
+				case string, bool, int:
+					fmt.Println("Built-in type:", value)
+				default:
+					fmt.Println("Default:", value)
+			}
+		}
+	func main() {
+		var expense Expense = &Product { "Kayak", "Watersports", 275 }
+		data := []interface{} {
+			expense,
+			Product { "Lifejacket", "Watersports", 48.95 },
+			Service {"Boat Cover", 12, 89.50, []string{} },
+			Person { "Alice", "London"},
+			&Person { "Bob", "New York"},
+			"This is a string",
+			100,
+			true,
+		}
+		for , item := range data {
+			processItem(item)
+		}
+	}`,
+// ====================================================================================
+		"115":`115.Package
+Packages are the Go feature that allows projects to be structured so that related functionality can be grouped
+together, without the need to put all the code into a single file or folder.
+
+What are they?
+Packages allow projects to be structured so that related features can be developed together.
+
+Why are they useful?
+Packages are how Go implements access controls so that the implementation of
+a feature can be hidden from the code that consumes it.
+
+How are they used?
+Packages are defined by creating code files in folders and using the package
+keyword to denote which package they belong to.`,
+// ====================================================================================
+		"116":`116.the Module File
+This name is important because it is used to import features from other packages created within
+the same project and third-party packages
+The go statement specifies the version of Go that is used.`,
+// ====================================================================================
+		"117":`117.Package Access Control
+Go has an unusual approach to access control. Instead of relying on dedicated keywords, like public
+and private, Go examines the first letter of the names given to the features in a code file, such as types,
+functions, and methods. If the first letter is lowercase, then the feature can be used only within the package
+that defines it. Features are exported for use outside of the package by giving them an uppercase first letter.
+
+The access control rules do not apply to individual function or method parameters, which means that
+the NewProduct function has to have an uppercase first character to be exported, but the parameter names
+can be lowercase.`,
+// ====================================================================================
+		"118":`118.Adding Code Files to Packages
+Packages can contain multiple code files, and to simplify development, access control rules and package
+prefixes do not apply when accessing features defined in the same package.`,
+// ====================================================================================
+		"119":`119.func init()
+Each code file can contain an initialization function that is executed only when all packages have been
+loaded and all other initialization—such as defining constants and variables—has been done. The most
+common use for initialization functions is to perform calculations that are difficult to perform or that require
+duplication to perform
+
+The initialization function is called init, and it is defined without parameters and a result. The init
+function is called automatically and provides an opportunity to prepare the package for use.
+
+The init function is not a regular Go function and cannot be invoked directly. And, unlike regular
+functions, a single file can define multiple init functions, all of which will be executed.
+
+AVOIDING THE MULTIPLE INITIALIZATION FUNCTION PITFALL
+Each code file can have its own initialization function. When using the standard Go compiler, the
+initialization functions are executed based on the alphabetic order of the filenames, so the function in
+the a.go file will be executed before the function in the b.go file, and so on.
+But this order is not part of the Go language specification and should not be relied on. Your initialization
+functions should be self-contained and not rely on other init functions having been invoked previously.`,
+// ====================================================================================
+		"120":`120.Creating Nested Packages
+Packages can be defined within other packages, making it easy to break up complex features into as many
+units as possible.
+The package statement is used just as with any other package, without the need to include the name
+of the parent or enclosing package. And dependency on custom packages must include the full package
+path. 
+
+example:
+	Create the packages/store/cart folder 
+	and add to it a file named cart.go with the contents:
+	#1
+	contents:
+		package cart
+		import "packages/store"
+		type Cart struct {
+			CustomerName string
+			Products []store.Product
+		}
+		func (cart *Cart) GetTotal() (total float64) {
+			for , p := range cart.Products {
+				total += p.Price()
+			}
+			return
+		}
+The features defined by the nested package are accessed using the package name, just like any other
+package. When importing a nested package, the package path starts with the module name and lists the
+sequence of packages.
+example:
+	package main
+	import (
+		"fmt"
+		"packages/store"
+		. "packages/fmt"
+		"packages/store/cart"
+	)
+	func main() {
+		product := store.NewProduct("Kayak", "Watersports", 279)
+		cart := cart.Cart {
+			CustomerName: "Alice",
+			Products: []store.Product{ *product },
+		}
+		fmt.Println("Name:", cart.CustomerName)
+		fmt.Println("Total:",  ToCurrency(cart.GetTotal()))
+	}`,
+// ====================================================================================
+		"121":`121.Initialization Function
+example:
+	func init() {
+			for category, price := range categoryMaxPrices {
+				categoryMaxPrices[category] = price + (price * defaultTaxRate)
+			}
+	}`,
+// ====================================================================================
+		"122":`122.Importing a Package Only for Initialization Effects
+Go prevents packages from being imported but not used, 
+which can be a problem if you rely on the effect of
+an initialization function but don't need to use any of the features the package exports.
+If I need the effect of the initialization function, 
+but I don't need to use the GetData function the package exports.
+
+example:
+	package main
+	import (
+		"fmt"
+		"packages/store"
+		. "packages/fmt"
+		"packages/store/cart"
+			"packages/data"
+	)`,
+// ====================================================================================
+		"123":`123.Finding Go Packages
+#1 https://pkg.go.dev
+#2 https://github.com/golang/go/wiki/Projects
+
+Many Go modules are written by individual developers
+to solve a problem and then published for anyone else to use. 
+This creates a rich module ecosystem,
+but it does mean that maintenance and support can be inconsistent.`,
+// ====================================================================================
+		"124":`124.indirect
+The indirect comment at the end of the statements is added automatically because
+the packages are not used by the code in the project. A file named go.sum is created when the module is
+obtained and contains checksums used to validate the packages.
+
+example:
+	module packages
+	go 1.17
+	require (
+		github.com/fatih/color v1.10.0 // indirect
+		github.com/mattn/go-colorable v0.1.8 // indirect
+		github.com/mattn/go-isatty v0.0.12 // indirect
+		golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae // indirect
+	)
+
+Note:
+	You can also use the go.mod file to create dependencies on projects you have created locally
+
+The first time you run the go get command, you will see a list of the modules that are
+downloaded, which illustrated that modules have their own dependencies and that these are resolved
+automatically:
+	go: downloading github.com/fatih/color v1.10.0
+	go: downloading github.com/mattn/go-isatty v0.0.12
+	go: downloading github.com/mattn/go-colorable v0.1.8
+	go: downloading golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae`,
+// ====================================================================================
+		"125":`125.Managing External Packages
+Removing a Package
+To update the go.mod file to reflect the change, run the command`,
+// ====================================================================================
+		"126":`126.go mod tidyPutting Type and Interface Composition in Context
+What is it?
+Composition is the process by which new types are created by combining
+structs and interfaces.
+
+Why is it useful?
+Composition allows types to be defined based on existing types.
+
+How is it used?
+Existing types are embedded in new types.
+
+Are there any pitfalls or limitations?
+Composition doesn't work in the same way as inheritance, and care must be
+taken to achieve the desired outcome.
+
+Are there any alternatives? 
+Composition is optional, and you can create entirely independent types.
+
+
+Go doesn't support classes or inheritance and focuses on composition instead. But, despite the
+differences, composition can be used to create hierarchies of types, just in a different way.
+
+Steps:
+	1-Defining the Base Type -> struct - method 
+	2-Defining a Constructor -> for create struct
+	example:
+	// struct:
+	type Product struct {
+			Name, Category string
+			price float64
+	}
+	// method:
+	func (p *Product) Price(taxRate float64) float64 {
+		return p.price + (p.price * taxRate)
+	}
+	// Constructor:
+	func NewProduct(name, category string, price float64) *Product {
+		return &Product{ name, category, price }
+	}`,
+// ====================================================================================
+		"127":`127.Creating Struct Values in Packages
+example:
+package main
+import (
+	"fmt"
+	"composition/store"
+)
+func main() {
+	
+	// use Constructor:
+	kayak := store.NewProduct("Kayak", "Watersports", 275)
+
+	// use the literal syntax:
+	lifejacket := &store.Product{ Name: "Lifejacket", Category:  "Watersports"}
+	for , p := range []*store.Product { kayak, lifejacket} {
+		fmt.Println("Name:", p.Name, "Category:", p.Category, "Price:", p.Price(0.2))
+	}
+}`,
+// ====================================================================================
+		"128":`128.Steps of composition
+1-Defining the Base Type -> struct - method 
+2-Defining a Constructor -> for create struct
+3-Composing Types
+4-Using the Boat Struct in the main.go
+A struct can mix regular and embedded field types, but the embedded fields are an important part of
+the composition feature
+
+Go gives special treatment to struct types that have fields whose type is another struct type, in the way
+that the Boat type has a *Product field in the example project. You can see this special treatment in the
+statement in the for loop, which is responsible for writing out details of each Boat.
+Go allows the fields of the nested type to be accessed in two ways. The first is the conventional approach
+of navigating the hierarchy of types to reach the value that is required. The *Product field is embedded, which
+means that its name its its type.
+
+The Boat type doesn't define a Name field, but it can be treated as though it did because of the direct
+access feature. This is known as field promotion, and Go essentially flattens the types so that the Boat
+type behaves as though it defines the fields that are provided by the nested Product type
+
+example:
+product.go:
+	// struct:
+	type Product struct {
+			Name, Category string
+			price float64
+	}
+	// method:
+	func (p *Product) Price(taxRate float64) float64 {
+		return p.price + (p.price * taxRate)
+	}
+	// Constructor:
+	func NewProduct(name, category string, price float64) *Product {
+		return &Product{ name, category, price }
+	}
+
+
+boat.go:
+	package store
+	The Boat struct type defines an embedded *Product field
+	type Boat struct {
+		*Product       -------------------> Embedded Type
+		Capacity int   -----------------> Reguler Fields
+		Motorized bool 
+	}
+	func NewBoat(name string, price float64, capacity int, motorized bool) *Boat {
+			return &Boat {
+				NewProduct(name, "Watersports", price), capacity, motorized,
+			}
+		}
+
+main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+
+	func main() {
+		boats := []*store.Boat {
+			store.NewBoat("Kayak", 275, 1, false),
+			store.NewBoat("Canoe", 400, 3, false),
+			store.NewBoat("Tender", 650.25, 2, true),
+		}
+		for , b := range boats {
+			fmt.Println("Conventional:", b.Product.Name, "Direct:", b.Name)
+		}
+	}    
+Output:
+	Conventional: Kayak Direct: Kayak
+	Conventional: Canoe Direct: Canoe
+	Conventional: Tender Direct: Tender
+
+If the field type is a value, such as Product, then any methods defined with Product or *Product
+receivers will be promoted. If the field type is a pointer, such as *Product, then only methods with *Product
+receivers will be prompted.
+There is no Price method defined for the *Boat type, but Go promotes the method defined with a
+*Product receiver.
+
+Calling a Method in the main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+	func main() {
+		boats := []*store.Boat {
+			store.NewBoat("Kayak", 275, 1, false),
+			store.NewBoat("Canoe", 400, 3, false),
+			store.NewBoat("Tender", 650.25, 2, true),
+		}
+		for , b := range boats {
+			fmt.Println("Boat:", b.Name, "Price:", b.Price(0.2))
+		}
+	}
+Output:
+	Boat: Kayak Price: 330
+	Boat: Canoe Price: 480
+	Boat: Tender Price: 780.3`,
+// ====================================================================================
+		"129":`129.Creating a Chain of Nested Types
+The composition feature can be used to create complex chains of nested types, 
+whose fields and methods are promoted to the top-level enclosing type.
+
+Go performs promotion so that the fields defined by all three types in the chain can be
+accessed directly.
+
+Go promotes fields from the nested Boat and 
+Product types so they can be accessed through the top-
+level RentalBoat type, which allows the Name field to be read.
+Methods are also promoted to the top-level type, 
+which is why I can use the Price method, even though it is defined on the *Product type,
+which is at the end of the chain.
+
+example:
+rentalboats.go:
+	package store
+
+	type RentalBoat struct {
+		*Boat
+		IncludeCrew bool
+	}
+
+	func NewRentalBoat(name string, price float64, capacity int,
+			motorized, crewed bool) *RentalBoat {
+		return &RentalBoat{NewBoat(name, price, capacity, motorized), crewed}
+	}
+
+
+
+Accessing Nested Fields Directly in the main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+	func main() {
+		rentals := []*store.RentalBoat {
+			store.NewRentalBoat("Rubber Ring", 10, 1, false, false),
+			store.NewRentalBoat("Yacht", 50000, 5, true, true),
+			store.NewRentalBoat("Super Yacht", 100000, 15, true, true),
+		}
+		for , r := range rentals {
+			fmt.Println("Rental Boat:", r.Name, "Rental Price:", r.Price(0.2))
+		}
+	}        
+Output:
+	Rental Boat: Rubber Ring Rental Price: 12
+	Rental Boat: Yacht Rental Price: 60000
+	Rental Boat: Super Yacht Rental Price: 120000`,
+// ====================================================================================
+		"130":`130.Multiple Nested Types in the Same Struct
+example:
+rentalboats.go:
+	package store
+	type Crew struct {
+		Captain, FirstOfficer string
+	}
+	type RentalBoat struct {
+		*Boat
+		IncludeCrew bool
+		*Crew
+	}
+	func NewRentalBoat(name string, price float64, capacity int,
+			motorized, crewed bool, captain, firstOfficer string) *RentalBoat {
+		return &RentalBoat{NewBoat(name, price, capacity, motorized), crewed,
+			&Crew{captain, firstOfficer}}
+	}
+
+
+Using Promoted Fields in the main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+	func main() {
+		rentals := []*store.RentalBoat {
+			store.NewRentalBoat("Rubber Ring", 10, 1, false, false, "N/A", "N/A"),
+			store.NewRentalBoat("Yacht", 50000, 5, true, true, "Bob", "Alice"),
+			store.NewRentalBoat("Super Yacht", 100000, 15, true, true,
+				"Dora", "Charlie"),
+		}
+		for , r := range rentals {
+			fmt.Println("Rental Boat:", r.Name, "Rental Price:", r.Price(0.2),
+				"Captain:", r.Captain)
+		}
+	}
+Output:
+	Rental Boat: Rubber Ring Rental Price: 12 Captain: N/A
+	Rental Boat: Yacht Rental Price: 60000 Captain: Bob
+	Rental Boat: Super Yacht Rental Price: 120000 Captain: Dora`,
+// ====================================================================================
+		"131":`131.When Promotion Cannot Be Performed
+example:
+specialdeal.go File in the store Folder:
+	package store
+	type SpecialDeal struct {
+		Name string
+		*Product
+		price float64
+	}
+	func NewSpecialDeal(name string, p *Product, discount float64) *SpecialDeal {
+		return &SpecialDeal{ name, p, p.price - discount }
+	}
+	func (deal *SpecialDeal ) GetDetails() (string, float64, float64) {
+		return deal.Name, deal.price, deal.Price(0)
+	}
+
+
+Using a New Type in the main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+	func main() {
+		product := store.NewProduct("Kayak", "Watersports", 279)
+		deal := store.NewSpecialDeal("Weekend Special", product, 50)
+		Name, price, Price := deal.GetDetails()
+		fmt.Println("Name:", Name)
+		fmt.Println("Price field:", price)
+		fmt.Println("Price method:", Price)
+	}
+Output:
+	Name: Weekend Special
+	Price field: 229
+	Price method: 279
+
+
+is a more concise way of expressing this statement:
+	return deal.Name, deal.price, deal.Product.Price(0)
+
+The new Price method stops Go from promoting the Product method 
+and produces the following result
+Defining a Method in the specialdeal.go:
+	package store
+	type SpecialDeal struct {
+		Name string
+		*Product
+		price float64
+	}
+	func NewSpecialDeal(name string, p *Product, discount float64) *SpecialDeal {
+		return &SpecialDeal{ name, p, p.price - discount }
+	}
+	func (deal *SpecialDeal ) GetDetails() (string, float64, float64) {
+		return deal.Name, deal.price, deal.Price(0)
+	}
+	func (deal *SpecialDeal) Price(taxRate float64) float64 {
+		return deal.price
+	}    
+Output:
+	Name: Weekend Special
+	Price field: 229
+	Price method: 229`,
+// ====================================================================================
+		"132":`132.Promotion Ambiguity
+A related issue arises when two embedded fields use the same field or method names
+example:
+An Ambiguous Method in the main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+	func main() {
+		kayak := store.NewProduct("Kayak", "Watersports", 279)
+		type OfferBundle struct {
+			*store.SpecialDeal
+			*store.Product
+		}
+		bundle := OfferBundle {
+			store.NewSpecialDeal("Weekend Special", kayak, 50),
+			store.NewProduct("Lifrejacket", "Watersports", 48.95),
+		}
+		fmt.Println("Price:", bundle.Price(0))
+	}
+Output:
+	.\main.go:22:33: ambiguous selector bundle.Price`,
+// ====================================================================================
+		"133":`133.Composition and Interfaces
+example:
+Mixing Types in the main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+	func main() {
+		products := map[string]*store.Product {
+			"Kayak": store.NewBoat("Kayak", 279, 1, false),
+			"Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+		}
+		for , p := range products {
+			fmt.Println("Name:", p.Name, "Category:", p.Category, "Price:", p.Price(0.2))
+		}
+	}
+Output:
+	.\main.go:11:9: cannot use store.NewBoat("Kayak", 279, 1, false) (type *store.Boat) as
+	type *store.Product in map value`,
+// ====================================================================================
+		"134":`134.Composition to Implement Interfaces
+Go takes promoted methods into account when determining whether a type conforms to an interface,
+which avoids the need to duplicate methods that are already present through an embedded field.
+
+add a file named forsale.go to the store folder:
+The Contents of the forsale.go:
+	package store
+	type ItemForSale interface {
+		Price(taxRate float64) float64
+	}
+		
+
+Using an Interface in the main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+	func main() {
+		products := map[string]store.ItemForSale {
+			"Kayak": store.NewBoat("Kayak", 279, 1, false),
+			"Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+		}
+		for key, p := range products {
+			fmt.Println("Key:", key, "Price:", p.Price(0.2))
+		}
+	}
+Output:
+	Key: Kayak Price: 334.8
+	Key: Ball Price: 23.4`,
+// ====================================================================================
+		"135":`135.the Type Switch Limitation
+example:
+main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+	func main() {
+		products := map[string]store.ItemForSale {
+			"Kayak": store.NewBoat("Kayak", 279, 1, false),
+			"Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+		}
+		for key, p := range products {
+			switch item := p.(type) {
+				case *store.Product, *store.Boat:
+					fmt.Println("Name:", item.Name, "Category:", item.Category,
+						"Price:", item.Price(0.2))
+				default:
+					fmt.Println("Key:", key, "Price:", p.Price(0.2))
+			}
+		}
+	}
+Output:
+	.\main.go:21:42: item.Name undefined (type store.ItemForSale has no field or method Name)
+	.\main.go:21:66: item.Category undefined (type store.ItemForSale has no field or method
+	Category)
+
+
+Using Separate case Statements in the main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+	func main() {
+		products := map[string]store.ItemForSale {
+			"Kayak": store.NewBoat("Kayak", 279, 1, false),
+			"Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+		}
+		for key, p := range products {
+			switch item := p.(type) {
+				case *store.Product:
+				fmt.Println("Name:", item.Name, "Category:", item.Category,
+					"Price:", item.Price(0.2))
+				case *store.Boat:
+				fmt.Println("Name:", item.Name, "Category:", item.Category,
+					"Price:", item.Price(0.2))
+				default:
+				fmt.Println("Key:", key, "Price:", p.Price(0.2))
+			}
+		}
+	}
+Output:
+	Name: Kayak Category: Watersports Price: 334.8
+	Name: Soccer Ball Category: Soccer Price: 23.4`,
+// ====================================================================================
+		"136":`136.the Type Switch Limitation An alternative solution
+example:
+Defining an Interface in the product.go:
+	package store
+	type Product struct {
+		Name, Category string
+		price float64
+	}
+	func NewProduct(name, category string, price float64) *Product {
+		return &Product{ name, category, price }
+	}
+	func (p *Product) Price(taxRate float64) float64 {
+		return p.price + (p.price * taxRate)
+	}
+	type Describable interface  {
+		GetName() string
+		GetCategory() string
+	}
+	func (p *Product) GetName() string {
+		return p.Name
+	}
+	func (p *Product) GetCategory() string {
+		return p.Category
+	}
+
+
+Using Interfaces in the main.go:
+	package main
+	import (
+		"fmt"
+		"composition/store"
+	)
+	func main() {
+		products := map[string]store.ItemForSale {
+			"Kayak": store.NewBoat("Kayak", 279, 1, false),
+			"Ball": store.NewProduct("Soccer Ball", "Soccer", 19.50),
+		}
+		for key, p := range products {
+			switch item := p.(type) {
+				case store.Describable:
+				fmt.Println("Name:", item.GetName(), "Category:", item.GetCategory(),
+					"Price:", item.(store.ItemForSale).Price(0.2))
+				default:
+				fmt.Println("Key:", key, "Price:", p.Price(0.2))
+			}
+		}
+	}
+
+
+Output:
+	Name: Kayak Category: Watersports Price: 334.8
+	Name: Soccer Ball Category: Soccer Price: 23.4`,
+// ====================================================================================
+		"137":`137.Composing Interfaces
+Go allows interfaces to be composed from other interfaces
+
+example:
+Composing an Interface in the product.go:
+	package store
+	type Product struct {
+		Name, Category string
+		price float64
+	}
+	func NewProduct(name, category string, price float64) *Product {
+		return &Product{ name, category, price }
+	}
+	func (p *Product) Price(taxRate float64) float64 {
+		return p.price + (p.price * taxRate)
+	}
+	type Describable interface  {
+		GetName() string
+		GetCategory() string
+		ItemForSale
+	}
+	func (p *Product) GetName() string {
+		return p.Name
+	}
+	func (p *Product) GetCategory() string {
+		return p.Category
+	}`,
+// ====================================================================================
+		"138":`138.Goroutines and Channels
+What are they?
+Goroutines are lightweight threads created and managed by the Go runtime.
+Channels are pipes that carry values of a specific type.
+
+Why are they useful?
+Goroutines allow functions to be executed concurrently, without needing to deal
+with the complications of operating system threads. Channels allow goroutines to
+produce results asynchronously.
+
+How are they used?
+Goroutines are created using the go keyword. Channels are defined as data types.
+
+Are there any or limitations?
+pitfalls Care must be taken to manage the direction of channels. 
+Goroutines that share data require additional features.
+
+Are there any alternatives?
+Goroutines and channels are the built-in Go concurrency features, but some
+applications can rely on a single thread of execution, which is created by default to
+execute the main function.
+
+Receiving from a channel is a blocking operation, 
+meaning that execution will not continue until a value
+has been received
+
+Problem                                 Solution
+---------------------------------       -------------------------
+Execute a function asynchronously       Create a goroutine
+Produce a result from a function        Use a channel 
+executed asynchronously
+Send and receive values                 Use arrow expressions 
+using a channel
+Indicate that no further values         Use the close function
+will be sent over a channel
+Enumerate the values received           Use a for loop with the range keyword 
+from a channel`,
+// ====================================================================================
+		"139":`139.How Go Executes Code
+All Go programs use at least one goroutine because this is how Go executes the code in the
+main function.
+
+When compiled Go code is executed, the runtime creates a goroutine that starts executing
+the statements in the entry point, which is the main function in the main package. 
+Each statement in the main function is executed in the order in which they are defined. 
+The goroutine keeps executing statements until
+it reaches the end of the main function, at which point the application terminates.
+
+The goroutine executes each statement in the main function synchronously, 
+which means that it waits
+for the statement to complete before moving on to the next statement. 
+The statements in the main function`,
+// ====================================================================================
+		"140":`140.Creating Additional Goroutines
+Go allows the developer to create additional goroutines, 
+which execute code at the same time as the main
+goroutine. Go makes it easy to create new goroutines
+
+example:
+	package main
+	import (
+		"fmt"
+		"time
+	)
+
+	func main(){
+		fmt.Println("first statement")
+		fmt.Println("second statement")
+		time.Sleep(time.Second * 2)
+
+		go fmt.Println("first statement")
+		
+		fmt.Println("first statement")
+
+	}`,
+// ====================================================================================
+		"141":`141.Returning Results from Goroutines
+Receiving from a channel is a blocking operation, 
+meaning that execution will not continue until a value
+has been received
+
+Getting a result from a function that is being executed asynchronously 
+can be complicated because it requires coordination between the goroutine 
+that produces the result and the goroutine that consumes the result.
+To address this issue, Go provides channels, which are 
+conduits through which data can be sent and received.
+
+Defining a Channel:
+example:
+	var channel chan float64 = make(chan float64)`,
+// ====================================================================================
+		"142":`142.Sending a Result Using a Channel
+Receiving from a channel is a blocking operation, 
+meaning that execution will not continue until a value
+has been received
+example:
+	resultChannel <- total`,
+// ====================================================================================
+		"143":`143.Receiving a Result Using a Channel
+Receiving from a channel is a blocking operation, 
+meaning that execution will not continue until a value
+has been received
+
+example:
+	storeTotal += <- channel`,
+// ====================================================================================
+		"144":`144.using adapters to execute functions asynchronously
+It isn't always possible to rewrite existing functions or methods to use channels, but it is a simple matter
+to execute synchronous functions asynchronously in a wrapper, like this:
+The syntax is a little awkward because the arguments used to invoke the function are expressed
+immediately following the function definition. But the result is the same, which is that a synchronous
+function can be executed by a goroutine with the result being sent through a channel.
+
+example:
+	...
+	calcTax := func(price float64) float64 {
+		return price + (price * 0.2)
+	}
+	wrapper := func (price float64, c chan float64)  {
+		c <- calcTax(price)
+	}
+	resultChannel := make(chan float64)
+	go wrapper(275, resultChannel)
+	result := <- resultChannel
+	fmt.Println("Result:", result)
+	...
+	The wrapper function receives a channel, which it uses to send the value received from executing the
+	calcTax function synchronously. This can be expressed more concisely by defining a function without
+	assigning it to a variable, like this:
+	...
+	go func (price float64, c chan float64) {
+		c <- calcTax(price)
+	}(275, resultChannel)`,
+// ====================================================================================
+		"145":`145.Coordinating Channels
+By default, sending and receiving through a channel are blocking operations. This means a goroutine that
+sends a value will not execute any further statements until another goroutine receives the value from the
+channel. If a second goroutine sends a value, it will be blocked until the channel is cleared, causing a queue
+of goroutines waiting for values to be received. This happens in the other direction, too, so that goroutines
+that receive values will block until another goroutine sends one.
+
+example:
+	If Bob has a message for Alice, the default channel behavior requires 
+	Alice and Bob to agree on a meeting place, and
+	whoever gets there first will wait for the other to arrive. 
+	Bob will only give the message to Alice when they are
+	both present. When Charlie also has a message for Alice, he will form a queue behind Bob. 
+	Everyone waits patiently, messages are transferred only when the sender 
+	and receiver are both available, and messages are
+	processed sequentially.`,
+// ====================================================================================
+		"146":`146.Buffered Channel
+The default channel behavior can lead to bursts of activity as goroutines do their work, followed by a long
+idle period waiting for messages to be received. This doesn't have an impact on the example application
+because the goroutines finish once their messages are received, but in a real project goroutines often have
+repetitive tasks to perform, and waiting for a receiver can cause a performance bottleneck.
+
+An alternative approach is to create a channel with a buffer, 
+which is used to accept values from a
+sender and store them until a receiver becomes available. 
+This makes sending a message a nonblocking
+operation, allowing a sender to pass its value to the channel and continue working without having to wait
+for a receiver. 
+
+example:
+	This is similar to Alice having an inbox on her desk. Senders come to Alice's office and put
+	their message into the inbox, leaving it for Alice to read when she is ready. But, if the inbox is full, then they
+	will have to wait until she has processed some of her backlog before sending a new message.
+Creating a Buffered Channel
+example:
+	var channel chan float64 = make(chan float64, 2)
+Result explain:
+	For this example, I have set the size of the buffer to 2, meaning that two senders will be able to send
+	values through the channel without having to wait for them to be received.`,
+// ====================================================================================
+		"147":`147.Inspecting a Channel Buffer
+You can determine the size of a channel's buffer using 
+the built-in cap function and determine how many
+values are in the buffer using the len function
+The modified statement uses the len and cap functions to report 
+the number of values in the channel's
+buffer and the overall size of the buffer.
+
+example:
+	len(channel), "items in buffer, size", cap(channel))`,
+// ====================================================================================
+		"148":`148.Closing a Channel
+The solution for this problem is for the sender to indicate when no further values are coming through the
+channel, which is done by closing the channel
+The built-in close function accepts a channel as its argument and is used to indicate that there will be
+no further values sent through the channel. Receivers can check if a channel is closed when requesting a
+value.
+You need to close channels only when it is helpful to do so to coordinate your goroutines. 
+Go doesn't require channels to be closed to free up resources or perform any kind of housekeeping task.
+
+example:
+	close(channel)
+
+
+
+The receive operator can be used to obtain two values. 
+The first value is assigned the value received
+from the channel, and the second value indicates whether the channel is closed
+It is illegal to send values to a channel once it has been closed.
+
+example:
+	if details, open := <- dispatchChannel; open {
+			fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
+			"x", details.Product.Name)
+		} else {
+			fmt.Println("Channel has been closed")
+		break
+	}`,
+// ====================================================================================
+		"149":`149.Enumerating Channel Values
+A for loop can be used with the range keyword to enumerate the values sent through a channel, allowing
+the values to be received more easily and terminating the loop when the channel is closed
+
+The range expression produces one value per iteration, which is the value received from the channel.
+The for loop will continue to receive values until the channel is closed. (You can use a for...range loop on a
+channel that isn't closed, in which case the loop will never exit.)
+
+example:
+	go DispatchOrders(dispatchChannel)
+	for details := range dispatchChannel {
+		fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
+			"x", details.Product.Name)
+	}
+	fmt.Println("Channel has been closed")`,
+// ====================================================================================
+		"150":`150.Restricting Channel Direction
+By default, channels can be used to send and receive data, but this can be restricted when using channels
+as arguments, such that only send or receive operations can be performed.
+
+example:
+	func DispatchOrders(channel chan<- DispatchNotification)
+
+The location of the arrow specifies the direction of the channel. 
+When the arrow follows the chan keyword,
+then the channel can be used only to send.
+The channel can be used to receive only if the arrow precedes the chan keyword (<-chan, for example).
+
+Attempting to receive from a send-only (and vice versa) channel is a compile-time error,
+
+example:
+	# concurrency
+	.\orderdispatch.go:29:29: invalid operation: <-channel (receive from send-only type chan<-
+	DispatchNotification)`,
 // ====================================================================================
 		"151":``,
 // ====================================================================================

@@ -1939,9 +1939,9 @@ var OriginalFeatures Features = Features{
 ████████████████████████████████████████████████████████████████████████
 125.Managing External Packages
     Removing a Package
-    To update the go.mod file to reflect the change, run the command:
+    To update the go.mod file to reflect the change, run the command
 ████████████████████████████████████████████████████████████████████████
-go mod tidy126.Putting Type and Interface Composition in Context
+126.go mod tidyPutting Type and Interface Composition in Context
     What is it?
     Composition is the process by which new types are created by combining
     structs and interfaces.
@@ -2469,7 +2469,6 @@ go mod tidy126.Putting Type and Interface Composition in Context
         func (p *Product) GetCategory() string {
             return p.Category
         }
-    
 ████████████████████████████████████████████████████████████████████████
 138.Goroutines and Channels
     What are they?
