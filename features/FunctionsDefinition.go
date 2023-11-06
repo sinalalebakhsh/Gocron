@@ -23,6 +23,44 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"ToUpper()":     "ToUpper(rune) 🔔 This function returns the upper rune associated with the specified rune.",
 		"ToUpper(r)":    "ToUpper(rune) 🔔 This function returns the upper rune associated with the specified rune.",
 		"ToUpper(R)":    "ToUpper(rune) 🔔 This function returns the upper rune associated with the specified rune.",
+		"IsTitle(rune)": "IsTitle(rune) 🔔 This function returns true if the specified rune is title case.",
+		"IsTitle()":     "IsTitle(rune) 🔔 This function returns true if the specified rune is title case.",
+		"IsTitle(r)":    "IsTitle(rune) 🔔 This function returns true if the specified rune is title case.",
+		"IsTitle(R)":    "IsTitle(rune) 🔔 This function returns true if the specified rune is title case.",
+		"ToTitle(rune)": "ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
+		"ToTitle()":     "ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
+		"ToTitle(r)":    "ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
+		"ToTitle(R)":    "ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
+		//
+		//The strings Functions for Inspecting Strings
+		"Count(s, sub)":                    "Count(s, sub) 🔔 This function returns an int that reports how many times the specified substring is found in the string s.",
+		"Count()":                          "Count(s, sub) 🔔 This function returns an int that reports how many times the specified substring is found in the string s.",
+		"Count(string, sub)":               "Count(s, sub) 🔔 This function returns an int that reports how many times the specified substring is found in the string s.",
+		"Index(s, sub)":                    "Index(s, sub) 🔔 These functions return the index of the first or last occurrence of a specified",
+		"Index()":                          "Index(s, sub) 🔔 These functions return the index of the first or last occurrence of a specified",
+		"Index(string, sub)":               "Index(s, sub) 🔔 These functions return the index of the first or last occurrence of a specified",
+		"IndexAny(s, chars)":               "IndexAny(s, chars) 🔔 These functions return the first or last occurrence of any character in the...",
+		"IndexAny()":                       "IndexAny(s, chars) 🔔 These functions return the first or last occurrence of any character in the...",
+		"IndexAny(string, characters)":     "IndexAny(s, chars) 🔔 These functions return the first or last occurrence of any character in the...",
+		"LastIndexAny(s, chars)":           "LastIndexAny(s, chars) 🔔 specified string within the string s, or -1 if there is no occurrence.",
+		"LastIndexAny()":                   "LastIndexAny(s, chars) 🔔 specified string within the string s, or -1 if there is no occurrence.",
+		"LastIndexAny(string, characters)": "LastIndexAny(s, chars) 🔔 specified string within the string s, or -1 if there is no occurrence.",
+		"IndexByte(s, b)":                  "IndexByte(s, b) 🔔 These functions return the index of the first or last occurrence of a specified",
+		"IndexByte()":                      "IndexByte(s, b) 🔔 These functions return the index of the first or last occurrence of a specified",
+		"IndexByte(string, byte)":          "IndexByte(s, b) 🔔 These functions return the index of the first or last occurrence of a specified",
+		"LastIndexByte(s, b)":              "LastIndexByte(s, b) 🔔 byte within the string s, or -1 if there is no occurrence.",
+		"LastIndexByte()":                  "LastIndexByte(s, b) 🔔 byte within the string s, or -1 if there is no occurrence.",
+		"LastIndexByte(string, byte)":      "LastIndexByte(s, b) 🔔 byte within the string s, or -1 if there is no occurrence.",
+		"IndexFunc(s, func)":               "IndexFunc(s, func) 🔔 These functions return the index of the first or last occurrence of the...",
+		"IndexFunc()":                      "IndexFunc(s, func) 🔔 These functions return the index of the first or last occurrence of the...",
+		"IndexFunc(string, function)":      "IndexFunc(s, func) 🔔 These functions return the index of the first or last occurrence of the...",
+		"LastIndexFunc(s, func)":           "LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
+		"LastIndexFunc()":                  "LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
+		"LastIndexFunc(string, function)":  "LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
+		
+		//
+		//
+		//
 		//
 		//
 		//

@@ -3212,7 +3212,7 @@ var OriginalFeatures Features = Features{
     ------------            --------------------------------------------------
     Count(s, sub)           This function returns an int that reports how many times the specified
                             substring is found in the string s.
-    Index(s, sub)           These functions return the index of the first or last occurrence of a specified
+    Index(s, sub)           These functions return the index of the first or last occurrence of a specified.
     LastIndex(s, sub)       substring string within the string s, or -1 if there is no occurrence.
     IndexAny(s, chars)      These functions return the first or last occurrence of any character in the
     LastIndexAny(s, chars)  specified string within the string s, or -1 if there is no occurrence.
