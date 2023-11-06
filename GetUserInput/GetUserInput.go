@@ -214,7 +214,8 @@ func IfUsris2orMoreWords(SliceOfWords []string) bool {
 	}
 
 	for Index := range features.OriginalSingleDefFunctions.MapSingleDefFuncs {
-		if result == Index && (lastElement == "function" || lastElement == "Function") {
+		result = strings.ToLower(result)
+		if result == Index && strings.ToLower(lastElement) == "function" {
 			words := features.SplitIntoWords(features.OriginalSingleDefFunctions.MapSingleDefFuncs[result])
 			features.PrintWordByWord(words)
 			fmt.Println()
