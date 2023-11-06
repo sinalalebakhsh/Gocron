@@ -3573,29 +3573,213 @@ The Functions for Trimming Strings in the strings Package
 							which a custom function returns true are removed.
 							`,
 // ====================================================================================
-		"175":``,
+		"175":`175.TrimSpace function
+Trimming Whitespace
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		username := " Alice"
+		trimmed := strings.TrimSpace(username)
+		fmt.Println("Trimmed:", ">>" + trimmed + "<<")
+	}
+Output:
+	Trimmed: >>Alice<<
+	`,
 // ====================================================================================
-		"176":``,
+		"176":`176.Trim, TrimLeft, and TrimRight functions
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		description := "A boat for one person"
+		trimmed := strings.Trim(description, "Anor ")
+		fmt.Println("Trimmed:>>"+ trimmed+ "<<")
+	}
+Ourput:
+	Trimmed:>>boat for one pers<<
+	`,
 // ====================================================================================
-		"177":``,
+		"177":`177.TrimPrefix and TrimSuffix functions
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		description := "A boat for one person"
+		prefixTrimmed := strings.TrimPrefix(description, "A boat ")
+		wrongPrefix := strings.TrimPrefix(description, "A hat ")
+		fmt.Println("Trimmed:", prefixTrimmed)
+		fmt.Println("Not trimmed:", wrongPrefix)
+	}
+Output:
+	Trimmed: for one person
+	Not trimmed: A boat for one person
+	`,
 // ====================================================================================
-		"178":``,
+		"178":`178.TrimFunc, TrimLeftFunc, and TrimRightFunc functions
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		description := "A boat for one person"
+		trimmer := func(r rune) bool {
+			return r == 'A' || r == 'n'
+		}
+		trimmed := strings.TrimFunc(description, trimmer)
+		fmt.Println("Trimmed:", trimmed)
+	}
+Output:
+	Trimmed:  boat for one person
+	`,
 // ====================================================================================
-		"179":``,
+		"179":`179.Altering Strings
+The Functions for Altering Strings in the strings Package
+	Function                    Description
+	----------------            -----------------------------------
+	Replace(s, old, new, n)     This function alters the string s by replacing occurrences of the string old with the
+								string new. The maximum number of occurrences that will be replaced is specified by
+								the int argument n.
+	ReplaceAll(s, old, new)     This function alters the string s by replacing all occurrences of the string old with
+								the string new. Unlike the Replace function, there is no limit on the number of
+								occurrences that will be replaced.
+	Map(func, s)                This function generates a string by invoking the custom function for each character in
+								the string s and concatenating the results. If the function produces a negative value,
+								the current character is dropped without a replacement.
+								`,
 // ====================================================================================
-		"180":``,
+		"180":`180.Replace and ReplaceAll functions
+The Replace function allows a maximum number of changes to be specified, 
+while the ReplaceAll function will replace all the
+occurrences of the substring it finds
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		text := "It was a boat. A small boat."
+		replace := strings.Replace(text, "boat", "canoe", 1)
+		replaceAll := strings.ReplaceAll(text, "boat", "truck")
+		fmt.Println("Replace:", replace)
+		fmt.Println("Replace All:", replaceAll)
+	}
+Output:
+	Replace: It was a canoe. A small boat.
+	Replace All: It was a truck. A small truck.
+	`,
 // ====================================================================================
-		"181":``,
+		"181":`181.Map function
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+	text := "It was a boat. A small boat."
+	mapper := func(r rune) rune {
+			if r == 'b' {
+				return 'c'
+			}
+			return r
+		}
+		mapped := strings.Map(mapper, text)
+		fmt.Println("Mapped:", mapped)
+	}
+Output:
+	Mapped: It was a coat. A small coat.
+	`,
 // ====================================================================================
-		"182":``,
+		"182":`182.NewReplacer function
+The strings package exports a struct type named Replacer that is used to replace strings
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		text := "It was a boat. A small boat.   111"
+		replacer := strings.NewReplacer("boat", "kayak", 
+		"small", "huge",
+		"111", "222",
+	)
+		replaced := replacer.Replace(text)
+		fmt.Println("Replaced:", replaced)
+	}
+Output:
+	Replaced: It was a kayak. A huge kayak.   222`,
 // ====================================================================================
-		"183":``,
+		"183":`183.The Replacer Methods
+
+		Name                    Description
+		-------------------     --------------------------------------------
+		Replace(s)              This method returns a string for which all the replacements specified with the
+								constructor have been performed on the string s.
+	
+		WriteString(writer, s)  This method is used to perform the replacements specified with the constructor
+								and write the results to an io.Writer
+								`,
 // ====================================================================================
-		"184":``,
+		"184":`184.Building and Generating Strings
+The strings Functions for Generating Strings
+
+	Function            Description
+	----------------    ----------------------------------------------------------------------------------------
+	Join(slice, sep)    This function combines the elements in the specified string slice, with the specified
+						separator string placed between elements.
+
+	Repeat(s, count)    This function generates a string by repeating the string s for a specified number of times.
+	`,
 // ====================================================================================
-		"185":``,
+		"185":`185.Join and Repeat functions
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		text := "It was a boat. A small boat."
+		elements := strings.Fields(text)
+		joined := strings.Join(elements, "--")
+		fmt.Println("Joined:", joined)
+		esplited := strings.Split(text, " ")
+		fmt.Printf("%q\n",esplited)
+	}
+Output:
+	Joined: It--was--a--boat.--A--small--boat.
+	["It" "was" "a" "boat." "A" "small" "boat."]
+	`,
 // ====================================================================================
-		"186":``,
+		"186":`186.Building Strings
+The strings.Builder Methods
+
+	Name                Description
+	---------------     --------------------------------------------
+	WriteString(s)      This method appends the string s to the string being built.
+	WriteRune(r)        This method appends the character r to the string being built.
+	WriteByte(b)        This method appends the byte b to the string being built.
+	String()            This method returns the string that has been created by the builder.
+	Reset()             This method resets the string created by the builder.
+	Len()               This method returns the number of bytes used to store the string created by the builder.
+	Cap()               This method returns the number of bytes that have been allocated by the builder.
+	Grow(size)          This method increases the number of bytes used allocated by the builder to store the
+						string that is being built.
+						`,
 // ====================================================================================
 		"187":``,
 // ====================================================================================
