@@ -3799,7 +3799,6 @@ var OriginalFeatures Features = Features{
         First index 0 - 5 = Kayak
         Index 0 = 0 - 5 = Kayak
         Index 1 = 9 - 13 = boat
-
 ████████████████████████████████████████████████████████████████████████
 193.FindString and FindAllString methods
     If you dont need to know the location of the matches, then the FindString and FindAllString
@@ -3937,7 +3936,7 @@ var OriginalFeatures Features = Features{
                                     the order in which they are defined.
 ████████████████████████████████████████████████████████████████████████
 198.SubexpIndex(name) method
-    he syntax for assigning names to subexpressions is awkward: within the parentheses, a question mark,
+    the syntax for assigning names to subexpressions is awkward: within the parentheses, a question mark,
     followed by an uppercase P, followed by the name within angle brackets.
     pattern := regexp.MustCompile("A (?P<type>[A-z]*) for (?P<capacity>[A-z]*) person")
     The subexpressions are given the names type and capacity. The SubexpIndex method returns the
