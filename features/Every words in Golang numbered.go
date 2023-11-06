@@ -2673,35 +2673,471 @@ example:
 	.\orderdispatch.go:29:29: invalid operation: <-channel (receive from send-only type chan<-
 	DispatchNotification)`,
 // ====================================================================================
-		"151":``,
+		"151":`151.Restricting Channel Argument Direction
+Go allows bidirectional channels to be assigned to unidirectional channel variables, 
+allowing restrictions to be applied
+example:
+	func receiveDispatches(channel <-chan DispatchNotification) {
+		for details := range channel {
+			fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
+				"x", details.Product.Name)
+		}
+		fmt.Println("Channel has been closed")
+	}
+
+Restrictions on channel direction can also be created through explicit conversion
+The explicit conversion for the receive-only channel requires parentheses around the channel type
+to prevent the compiler from interpreting a conversion to the DispatchNotification type.
+
+example:
+	func main() {
+		dispatchChannel := make(chan DispatchNotification, 100)
+		go DispatchOrders(chan<- DispatchNotification(dispatchChannel))
+		receiveDispatches((<-chan DispatchNotification)(dispatchChannel))
+	}`,
 // ====================================================================================
-		"152":``,
+		"152":`152.Select Statements
+The select keyword is used to group operations that will send or receive from channels, 
+which allows for complex arrangements of goroutines and channels to be created. 
+There are several uses for select statements.
+
+The simplest use for select statements is to receive from a channel without blocking, ensuring that a
+goroutine won't have to wait when the channel is empty.
+A select statement has a similar structure to a switch statement, except that the case statements are
+channel operations.
+When the select statement is executed, each channel operation is evaluated until one
+that can be performed without blocking is reached. The channel operation is performed, and the statements
+enclosed in the case statement are executed. If none of the channel operations can be performed, the
+statements in the default clause are executed.
+
+example:
+	for {
+		select {
+			case details, ok := <- dispatchChannel:
+			if ok {
+				fmt.Println("Dispatch to", details.Customer, ":",
+					details.Quantity, "x", details.Product.Name)
+			} else {
+				fmt.Println("Channel has been closed")
+				goto alldone
+			}
+		default:
+			fmt.Println("-- No message ready to be received")
+			time.Sleep(time.Millisecond * 500)
+		}
+	}
+	alldone: fmt.Println("All values received")`,
 // ====================================================================================
-		"153":``,
+		"153":`153.Receiving from Multiple Channels
+A select statement can be used to receive without blocking,
+when there are multiple channels, through which values are sent at different
+rates. A select statement will allow the receiver to obtain values from whichever channel has them, without
+blocking on any single channel
+
+
+In this example, the select statement is used to receive values from two channels, one that carries
+DispatchNofitication values and one that carries Product values. Each time the select statement is
+executed, it works its way through the case statements, building up a list of the ones from which a value can
+be read without blocking. One of the case statements is selected from the list at random and executed. If
+none of the case statements can be performed, the default clause is executed.
+
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func enumerateProducts(channel chan<- *Product) {
+		for , p := range ProductList[:3] {
+			channel <- p
+			time.Sleep(time.Millisecond * 800)
+		}
+		close(channel)
+	}
+	func main() {
+		dispatchChannel := make(chan DispatchNotification, 100)
+		go DispatchOrders(chan<- DispatchNotification(dispatchChannel))
+		productChannel := make(chan *Product)
+		go enumerateProducts(productChannel)
+		openChannels := 2
+		for  {
+			select {
+				case details, ok := <- dispatchChannel:
+					if ok {
+						fmt.Println("Dispatch to", details.Customer, ":",
+							details.Quantity, "x", details.Product.Name)
+					} else {
+						fmt.Println("Dispatch channel has been closed")
+						dispatchChannel = nil
+						openChannels--
+					}
+				case product, ok := <- productChannel:
+					if ok {
+						fmt.Println("Product:", product.Name)
+					} else {
+						fmt.Println("Product channel has been closed")
+						productChannel = nil
+						openChannels--
+					}
+				default:
+					if (openChannels == 0) {
+						goto alldone
+					}
+					fmt.Println("-- No message ready to be received")
+					time.Sleep(time.Millisecond * 500)
+			}
+		}
+		alldone: fmt.Println("All values received")
+	}`,
 // ====================================================================================
-		"154":``,
+		"154":`154.Sending Without Blocking
+A select statement can also be used to send to a channel without blocking
+
+example:
+	func enumerateProducts(channel chan<- *Product) {
+		for , p := range ProductList {
+			select {
+				case channel <- p:
+					fmt.Println("Sent product:", p.Name)
+				default:
+					fmt.Println("Discarding product:", p.Name)
+					time.Sleep(time.Second)
+			}
+		}
+		close(channel)
+	}`,
 // ====================================================================================
-		"155":``,
+		"155":`155.Sending to Multiple Channels
+If there are multiple channels available, a select statement can be used to find a channel for which sending
+will not block
+You can combine case statements with send and receive operations in the same select statement.
+When the select statement is executed, the Go runtime builds a combined list of case statements that can be
+executed without blocking and picks one at random, which can be either a send or a receive statement.
+
+This example has two channels with small buffers. As with receiving, the select statement builds a list
+of the channels through which a value can be sent without blocking and then picks one at random from that
+list. If none of the channels can be used, then the default clause is executed. There is no default clause
+in this example, which means that the select statement will block until one of the channels can receive
+a value.
+
+example:
+	func enumerateProducts(channel1, channel2 chan<- *Product) {
+		for , p := range ProductList {
+			select {
+				case channel1 <- p:
+					fmt.Println("Send via channel 1")
+				case channel2 <- p:
+					fmt.Println("Send via channel 2")
+			}
+		}
+		close(channel1)
+		close(channel2)
+	}`,
 // ====================================================================================
-		"156":``,
+		"156":`156.Error Handling
+What is it?
+Go's error handling allows exceptional conditions and failures to be represented and dealt with.
+
+Why is it useful?
+Applications will often encounter unexpected situations, 
+and the error handling features provide a way to respond to those situations when they arise.
+
+How is it used?
+The error interface is used to define error conditions, 
+which are typically returned as function results. 
+The panic function is called when an unrecoverable error occurs.
+
+Are there any pitfalls or limitations?
+Care must be taken to ensure that errors are communicated to the part of the
+application that can best decide how serious the situation is.
+
+Are there any alternatives?
+You don't have to use the error interface in your code, 
+but it is employed throughout the Go standard library and is difficult to avoid.
+
+Go provides a predefined interface named error that provides one way to resolve this issue. Here is the
+definition of the interface:
+
+type error interface {
+	Error() string
+}
+
+Problem                                 Solution
+----------------------------------      ---------------------------------------------------
+Indicate that an error has occurred     Create a struct that implements the error interface
+										and return it as a function result
+Report an error over a channel          Add an error field to the struct type used for
+										channel messages
+Indicate that an unrecoverable          Call the panic function 
+error has occurred
+Recover from a panic                    Use the defer keyword to register a function that
+										calls the recover function`,
 // ====================================================================================
-		"157":``,
+		"157":`157.Generating Errors
+Functions and methods can express exceptional or unexpected outcomes by producing error responses
+Defining an Error
+example:
+	package main
+	import "fmt"
+	func main() {
+		categories := []string { "Watersports", "Chess", "Running" }
+		for , cat := range categories {
+			total, err := Products.TotalPrice(cat)
+			if (err == nil) {
+				fmt.Println(cat, "Total:", ToCurrency(total))
+			} else {
+				fmt.Println(cat, "(no such category)")
+			}
+		}
+	}
+Output:
+	Watersports Total: $328.95
+	Chess Total: $1291.00
+	Running (no such category)`,
 // ====================================================================================
-		"158":``,
+		"158":`158.Ignoring Error Results
+I don't recommend ignoring error results because it means you will lose important information.
+
+but if you don't need to know when something goes wrong, 
+then you can use the blank identifier instead of a
+name for the error result, like this:
+
+example:
+	package main
+	import "fmt"
+	func main() {
+		categories := []string { "Watersports", "Chess", "Running" }
+		for , cat := range categories {
+			total,  := Products.TotalPrice(cat)
+			fmt.Println(cat, "Total:", ToCurrency(total))
+		}
+	}`,
 // ====================================================================================
-		"159":``,
+		"159":`159.Reporting Errors via Channels
+example:
+operations.go:
+	package main
+	type CategoryError struct {
+		requestedCategory string
+	}
+	func (e *CategoryError) Error() string {
+		return "Category " + e.requestedCategory + " does not exist"
+	}
+	type ChannelMessage struct {
+		Category string
+		Total float64
+		*CategoryError
+	}
+	func (slice ProductSlice) TotalPrice(category string) (total float64,
+			err *CategoryError) {
+		productCount := 0
+		for , p := range slice {
+			if (p.Category == category) {
+				total += p.Price
+				productCount++
+			}
+		}
+		if (productCount == 0) {
+			err = &CategoryError{ requestedCategory: category}
+		}
+		return
+	}
+	func (slice ProductSlice) TotalPriceAsync (categories []string,
+			channel chan<- ChannelMessage) {
+		for , c := range categories {
+			total, err := slice.TotalPrice(c)
+			channel <- ChannelMessage{
+				Category: c,
+				Total: total,
+				CategoryError: err,
+			}
+		}
+		close(channel)
+	}
+
+
+main.go:
+	package main
+	import "fmt"
+	func main() {
+		categories := []string { "Watersports", "Chess", "Running" }
+		channel := make(chan ChannelMessage, 10)
+		go Products.TotalPriceAsync(categories, channel)
+		for message := range channel {
+			if message.CategoryError == nil {
+				fmt.Println(message.Category, "Total:", ToCurrency(message.Total))
+			} else {
+				fmt.Println(message.Category, "(no such category)")
+			}
+		}
+	}
+Output:
+	Watersports Total: $328.95
+	Chess Total: $1291.00
+	Running (no such category)`,
 // ====================================================================================
-		"160":``,
+		"160":`160.String Processing and Regular Expressions
+What are they?
+String processing includes a wide range of operations, from trimming
+whitespace to splitting a string into components. Regular expressions
+are patterns that allow string matching rules to be concisely defined.
+
+Why are they useful?
+These operations are useful when an application needs to process
+string values. A common example is processing HTTP requests.
+
+How are they used?
+These features are contained in the strings and regexp packages,
+which are part of the standard library.
+
+Are there any pitfalls or limitations?
+There are some quirks in the way that some of these operations are
+performed, but they mostly behave as you would expect.
+
+Are there any alternatives?
+The use of these packages is optional, and they do not have
+to be used. That said, there is little point in creating your own
+implementations of these features since the standard library is well-
+written and thoroughly tested.
+
+Problem                     Solution
+-------------------         -------------------------------------------------------------------
+Compare strings             Use the Contains, EqualFold, or Has* function in the strings package
+Convert string case         Use the ToLower, ToUpper, Title, or ToTitle function in the
+							strings package
+Check or change             Use the functions provided by the unicode package
+character case
+Find content in strings     Use the functions provided by the strings or regexp package
+Split a string              Use the Fields or Split* function in the strings and regexp packages
+Join strings                Use the Join or Repeat function in the strings package
+Trim characters from        Use the Trim* functions in the strings package
+a string
+Perform a substitution      Use the Replace* or Map function in the strings package,
+تعویض انجام دهید            use a Replacer, or use the Replace* functions in the regexp package
+Efficiently build a         Use the Builder type in the strings package
+string`,
 // ====================================================================================
-		"161":``,
+		"161":`161.Comparing Strings
+The strings Functions for Comparing Strings
+
+Function                    Description
+-------------               ------------------------
+Contains(s, substr)         This function returns true if the string s contains substr and false if it does not.
+ContainsAny(s, substr)      This function returns true if the string s contains any of the characters
+							contained in the string substr.
+ContainsRune(s, rune)       This function returns true if the string s contains a specific rune.
+EqualFold(s1, s2)           This function performs a case-insensitive comparison and returns true of
+							strings s1 and s2 are the same.
+HasPrefix(s, prefix)        This function returns true if the string s begins with the string prefix.
+HasSuffix(s, suffix)        This function returns true if the string ends with the string suffix.
+
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		product := "Kayak"
+		fmt.Println("Contains:", strings.Contains(product, "yak"))
+		fmt.Println("ContainsAny:", strings.ContainsAny(product, "abc"))
+		fmt.Println("ContainsRune:", strings.ContainsRune(product, 'K'))
+		fmt.Println("EqualFold:", strings.EqualFold(product, "KAYAK"))
+		fmt.Println("HasPrefix:", strings.HasPrefix(product, "Ka"))
+		fmt.Println("HasSuffix:", strings.HasSuffix(product, "yak"))
+	}
+Output:
+	Contains: true
+	ContainsAny: true
+	ContainsRune: true
+	HasPrefix: true
+	HasSuffix: true
+	EqualFold: true`,
 // ====================================================================================
-		"162":``,
+		"162":`162.Using The Byte-Oriented Functions
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+		"bytes"
+	)
+	func main() {
+		price := "€100"
+		fmt.Println("Strings Prefix:", strings.HasPrefix(price, "€"))
+		fmt.Println("Bytes Prefix:", bytes.HasPrefix([]byte(price),
+			[]byte { 226, 130 }))
+	}
+Output:
+	Strings Prefix: true
+	Bytes Prefix: true`,
 // ====================================================================================
-		"163":``,
+		"163":`163.Converting String Case
+The Case Functions in the strings Package
+	Function        Description
+	--------------  ------------------------------------------------------
+	ToLower(str)    This function returns a new string containing the characters in the specified string
+					mapped to lowercase.
+	ToUpper(str)    This function returns a new string containing the characters in the specified string
+					mapped to lowercase.
+	Title(str)      This function converts the specific string so that the first character of each word is
+					uppercase and the remaining characters are lowercase.
+	ToTitle(str)    This function returns a new string containing the characters in the specified string
+					mapped to title case.
+
+Care must be taken with the Title and ToTitle functions, which don't work the way you might expect.
+The Title function returns a string that is suitable for use as a title, but it treats all words the same
+
+Creating a Title:
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		description := "A boat for sailing"
+		fmt.Println("Original:", description)
+		fmt.Println("Title:", strings.Title(description))
+	fmt.Println("Title:", strings.ToTitle(description))
+	}
+Output:
+	Original: A boat for sailing
+	Title: A Boat For Sailing
+	Title: A BOAT FOR SAILING`,
 // ====================================================================================
-		"164":``,
+		"164":`164.Title Case
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		specialChar := "\u01c9"
+		fmt.Println("Original:", specialChar, []byte(specialChar))
+		upperChar := strings.ToUpper(specialChar)
+		fmt.Println("Upper:", upperChar, []byte(upperChar))
+		titleChar := strings.ToTitle(specialChar)
+		fmt.Println("Title:", titleChar, []byte(titleChar))
+	}
+Output:
+	Original: ǉ [199 137]
+	Upper: Ǉ [199 135]
+	Title: ǈ [199 136]`,
 // ====================================================================================
-		"165":``,
+		"165":`165.Working with Character Case
+The unicode package provides functions that can be used to determine or change the case of individual
+characters
+Functions in the unicode Package for Character Case
+Function        Description
+-------------   -----------------------------------------------------------------
+IsLower(rune)   This function returns true if the specified rune is lowercase.
+ToLower(rune)   This function returns the lowercase rune associated with the specified rune.
+IsUpper(rune)   This function returns true if the specified rune is uppercase.
+ToUpper(rune)   This function returns the upper rune associated with the specified rune.
+IsTitle(rune)   This function returns true if the specified rune is title case.
+ToTitle(rune)   This function returns the title case rune associated with the specified rune.`,
 // ====================================================================================
 		"166":``,
 // ====================================================================================
