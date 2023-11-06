@@ -3781,39 +3781,451 @@ The strings.Builder Methods
 						string that is being built.
 						`,
 // ====================================================================================
-		"187":``,
+		"187":`187.builder.String()
+Creating the string using the Builder is more efficient than using the concatenation operator on regular
+string values, especially if the Grow method is used to allocate storage in advance.
+Care must be taken to use pointers when passing Builder values to and from functions and
+methods; otherwise, the efficiency gains will be lost when the Builder is copied.
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		text := "It was a boat. A small boat."
+		var builder strings.Builder
+		for _, sub := range strings.Fields(text) {
+			if (sub == "small") {
+				builder.WriteString("very ")
+			}
+			builder.WriteString(sub)
+			builder.WriteRune(' ')
+		}
+		fmt.Println("String:", builder.String())
+	}
+	`,
 // ====================================================================================
-		"188":``,
+		"188":`188.new() function
+example:
+	package main
+	import "fmt"
+	func main() {
+		// 1.
+		var ChannelName1 string = "AcronProject"
+		fmt.Println("Value=", ChannelName1, "memory address=", &ChannelName1)
+		// 2.
+		var ChannelName2 *string = new(string)
+		fmt.Println("Value ??? = ", ChannelName2, "memory address=", &ChannelName2)
+		var ChannelName3 *string = new(string)
+		fmt.Println("Value ??? = ", ChannelName3, "memory address=", &ChannelName3)
+		fmt.Printf("%q \n",*ChannelName2 + *ChannelName3)
+	}
+Output:
+Value= AcronProject memory address= 0xc000014070
+Value ??? =  0xc000014090 memory address= 0xc00004e028
+Value ??? =  0xc0000140a0 memory address= 0xc00004e030
+""
+`,
 // ====================================================================================
-		"189":``,
+		"189":`189.Regular Expressions
+The regular expressions used in this section perform basic matches, but the regexp package
+supports an extensive pattern syntax, which is described at https://pkg.go.dev/regexp/syntax@go1.17.1.
+
+The Basic Functions Provided by the regexp Package
+Function                Description
+-----------------       --------------------------------------------------------------------------
+Match(pattern, b)       This function returns a bool that indicates whether a pattern is matched by
+						the byte slice b.
+MatchString(patten, s)  This function returns a bool that indicates whether a pattern is matched by
+						the string s.
+Compile(pattern)        This function returns a RegExp that can be used to perform repeated pattern
+						matching with the specified pattern.
+MustCompile(pattern)    This function provides the same feature as Compile but panics, 
+						if the specified pattern cannot be compiled.
+
+example:
+	package main
+	import (
+		"fmt"
+		//"strings"
+		"regexp"
+	)
+	func main() {
+		description := "A boat for one person"
+		match, err := regexp.MatchString("[A-z]oat", description)
+		if (err == nil) {
+			fmt.Println("Match:", match)
+		} else {
+			fmt.Println("Error:", err)
+		}
+	}
+Output:
+	Match: true
+`,
 // ====================================================================================
-		"190":``,
+		"190":`190.Compiling and Reusing Patterns
+The MatchString function is simple and convenient, 
+but the full power of regular expressions is accessed
+through the Compile function
+`,
 // ====================================================================================
-		"191":``,
+		"191":`191.regexp.Compile() function
+This is more efficient because the pattern has to be compiled only once. 
+The result of the Compile
+function is an instance of the RegExp type, 
+which defines the MatchString function.
+
+example:
+	package main
+	import (
+		"fmt"
+		"regexp"
+	)
+	func main() {
+		pattern, compileErr := regexp.Compile("[A-z]oat")
+		description := "A boat for one person"
+		question := "Is that a goat?"
+		preference := "I like oats"
+		if (compileErr == nil) {
+			fmt.Println("Description:", pattern.MatchString(description))
+			fmt.Println("Question:", pattern.MatchString(question))
+			fmt.Println("Preference:", pattern.MatchString(preference))
+		} else {
+			fmt.Println("Error:", compileErr)
+		}
+	}
+Output:
+	Description: true
+	Question: true
+	Preference: false
+`,
 // ====================================================================================
-		"192":``,
+		"192":`192.Useful Basic Regexp Methods
+
+	Function                    Description
+	---------------             ----------------------------------------------------------------------
+	MatchString(s)              This method returns true if the string s matches the compiled pattern.
+	FindStringIndex(s)          This method returns an int slice containing the location for the left-
+								most match made by the compiled pattern in the string s. A nil result
+								indicates that no matches were made.
+	FindAllStringIndex(s, max)  This method returns a slice of int slices that contain the location for all
+								the matches made by the compiled pattern in the string s. A nil result
+								indicates that no matches were made.
+	FindString(s)               This method returns a string containing the left-most match made by the
+								compiled pattern in the string s. An empty string will be returned if no
+								match is made.
+	FindAllString(s, max)       This method returns a string slice containing the matches made by the
+								compiled pattern in the string s. The int argument max specifies the
+								maximum number of matches, with -1 specifying no limit. A nil result is
+								returned if there are no matches.
+	Split(s, max)               This method splits the string s using matches from the compiled pattern
+								as separators and returns a slice containing the split substrings.
+
+example:
+	package main
+	import (
+		"fmt"
+		"regexp"
+	)
+	func getSubstring(s string, indices []int) string {
+		return string(s[indices[0]:indices[1]])
+	}
+	func main() {
+		pattern := regexp.MustCompile("K[a-z]{4}|[A-z]oat")
+		description := "Kayak. A boat for one person."
+		firstIndex := pattern.FindStringIndex(description)
+		allIndices := pattern.FindAllStringIndex(description, -1)
+		fmt.Println("First index", firstIndex[0], "-", firstIndex[1],
+			"=", getSubstring(description, firstIndex))
+		for i, idx := range allIndices {
+			fmt.Println("Index", i, "=", idx[0], "-",
+				idx[1], "=", getSubstring(description, idx))
+		}
+	}
+Output:
+	First index 0 - 5 = Kayak
+	Index 0 = 0 - 5 = Kayak
+	Index 1 = 9 - 13 = boat
+`,
 // ====================================================================================
-		"193":``,
+		"193":`193.FindString and FindAllString methods
+If you dont need to know the location of the matches, then the FindString and FindAllString
+methods are more useful because their results are the substrings matched by the regular expression
+Getting Match Substrings
+example:
+	package main
+	import (
+		"fmt"
+		"regexp"
+	)
+	func main() {
+		pattern := regexp.MustCompile("K[a-z]{4}|[A-z]oat")
+		description := "Kayak. A boat for one person."
+		firstMatch := pattern.FindString(description)
+		allMatches := pattern.FindAllString(description, -1)
+		fmt.Println("First match:", firstMatch)
+		for i, m := range allMatches {
+			fmt.Println("Match", i, "=", m)
+		}
+	}
+Output:
+	First match: Kayak
+	Match 0 = Kayak
+	Match 1 = boat
+`,
 // ====================================================================================
-		"194":``,
+		"194":`194.Splitting Strings Using a Regular Expression
+The Split method splits a string using the matches made by a regular expression, which can provide a more
+flexible alternative to the splitting functions
+example:
+	package main
+	import (
+		"fmt"
+		"regexp"
+	)
+	func main() {
+		pattern := regexp.MustCompile(" |boat|one")
+		description := "Kayak. A boat for one person."
+		split := pattern.Split(description, -1)
+		for _, s := range split {
+			if s != "" {
+				fmt.Println("Substring:", s)
+			}
+		}
+	}
+Output:
+	Substring: Kayak.
+	Substring: A
+	Substring: for
+	Substring: person.
+example:
+	package main
+	import (
+		"fmt"
+		"regexp"
+	)
+	func main() {
+		pattern := regexp.MustCompile(" |boat|one")
+		description := "Kayak. A boat | | | | for one person."
+		split := pattern.Split(description, -2)
+		for _, s := range split {
+			if s != "" {
+				fmt.Println("Substring:", s)
+			}
+		}
+	}
+Output:
+	Substring: Kayak.
+	Substring: A
+	Substring: |
+	Substring: |
+	Substring: |
+	Substring: |
+	Substring: for
+	Substring: person.
+`,
 // ====================================================================================
-		"195":``,
+		"195":`195.Subexpressions
+Subexpressions allow parts of a regular expression to be accessed, which can make it easier to extract
+substrings from within a matched region.
+The pattern in this example matches a specific sentence structure.
+example:
+	package main
+	import (
+		"fmt"
+		"regexp"
+	)
+	func main() {
+		pattern := regexp.MustCompile("A [A-z]* for [A-z]* person")
+		description := "Kayak. A boat for one person."
+		str := pattern.FindString(description)
+		fmt.Println("Match:", str)
+	}
+Output:
+	Match: A boat for one person
+`,
 // ====================================================================================
-		"196":``,
+		"196":`196.FindStringSubmatch method
+The FindStringSubmatch method performs the same
+task as FindString, but also includes the substrings matched by the expressions in its result.
+example:
+	package main
+	import (
+		"fmt"
+		"regexp"
+	)
+	func main() {
+		pattern := regexp.MustCompile("A ([A-z]*) for ([A-z]*) person")
+		description := "Kayak. A boat for one person."
+		subs := pattern.FindStringSubmatch(description)
+		for _, s := range subs {
+			fmt.Println("Match:", s)
+		}
+	}
+Output:
+	Match: A boat for one person
+	Match: boat
+	Match: one
+`,
 // ====================================================================================
-		"197":``,
+		"197":`197.The Regexp Methods for Subexpressions
+
+	Name                            Description
+	---------------------------     ------------------------------------------------------------------
+	FindStringSubmatch(s)           This method returns a slice containing the first match made by the
+									pattern and the text for the subexpressions that the pattern defines.
+	FindAllStringSubmatch(s, max)   This method returns a slice containing all the matches and the text
+									for the subexpressions. The int argument is used to specify the
+									maximum number of matches. A value of -1 specifies all matches.
+	FindStringSubmatchIndex(s)      This method is equivalent to FindStringSubmatch but returns
+									indices rather than substrings.
+									FindAllStringSubmatchIndex
+	(s, max)                        This method is equivalent to FindAllStringSubmatch but returns
+									indices rather than substrings.
+	NumSubexp()                     This method returns the number of subexpressions.
+	SubexpIndex(name)               This method returns the index of the subexpression with the
+									specified name or -1 if there is no such subexpression.
+	SubexpNames()                   This method returns the names of the subexpressions, expressed in
+									the order in which they are defined.
+`,
 // ====================================================================================
-		"198":``,
+		"198":`198.SubexpIndex(name) method
+the syntax for assigning names to subexpressions is awkward: within the parentheses, a question mark,
+followed by an uppercase P, followed by the name within angle brackets.
+pattern := regexp.MustCompile("A (?P<type>[A-z]*) for (?P<capacity>[A-z]*) person")
+The subexpressions are given the names type and capacity. The SubexpIndex method returns the
+position of a named subexpression in the results, which allows me to get the substrings matched by the type
+and capacity subexpressions.
+
+example:
+	package main
+	import (
+		"fmt"
+		"regexp"
+	)
+	func main() {
+		pattern := regexp.MustCompile(
+			"A (?P<type>[A-z]*) for (?P<capacity>[A-z]*) person")
+		description := "Kayak. A boat for one person."
+		subs := pattern.FindStringSubmatch(description)
+		for _, name := range []string { "type", "capacity" } {
+			fmt.Println(name, "=", subs[pattern.SubexpIndex(name)])
+		}
+	}
+Output:
+	type = boat
+	capacity = one
+`,
 // ====================================================================================
-		"199":``,
+		"199":`199.Replacing Substrings Using a Regular Expression
+
+		Name                                Description
+		-----------------------------       ---------------------------------------------------------
+		ReplaceAllString(s, template)       This method replaces the matched portion of the string s with the
+											specified template, which is expanded before it is included in the result to
+											incorporate subexpressions.
+		ReplaceAllLiteralString(s, sub)     This method replaces the matched portion of the string s with the
+											specified content, which is included in the result without being expanded
+											for subexpressions.
+		ReplaceAllStringFunc(s, func)       This method replaces the matched portion of the string s with the result
+											produced by the specified function.
+	`,
 // ====================================================================================
-		"200":``,
+		"200":`200.ReplaceAllString method
+The result from the ReplaceAllString method is a string with the replaced content.
+Notice that the template is responsible for only part of the result from the ReplaceAllString method,
+The first part of the description string—the word Kayak, followed by a period and a space, is
+not matched by the regular expression and is included in the result without being modified.
+
+■ Tip
+	Use the ReplaceAllLiteralString method if you want to replace content without the new
+	substring being interpreted for subexpressions.
+
+example:
+	package main
+	import (
+		"fmt"
+		"regexp"
+	)
+	func main() {
+		pattern := regexp.MustCompile(
+			"A (?P<type>[A-z]*) for (?P<capacity>[A-z]*) person")
+		description := "Kayak. A boat for one person."
+		template := "(type: ${type}, capacity: ${capacity})"
+		replaced := pattern.ReplaceAllString(description, template)
+		fmt.Println(replaced)
+	}
+Output:
+	Kayak. (type: boat, capacity: one).
+	`,
 // ====================================================================================
-		"201":``,
+		"201":`201.ReplaceAllStringFunc method
+The ReplaceAllStringFunc method replaces the matched section of a string 
+with content generated by a function
+example:
+	package main
+	import (
+		"fmt"
+		"regexp"
+	)
+	func main() {
+		pattern := regexp.MustCompile(
+			"A (?P<type>[A-z]*) for (?P<capacity>[A-z]*) person")
+		description := "Kayak. A boat for one person."
+		replaced := pattern.ReplaceAllStringFunc(description, func(s string) string {
+			return "This is the replacement content"
+		})
+		fmt.Println(replaced)
+	}
+Output:
+	Kayak. This is the replacement content.
+	`,
 // ====================================================================================
-		"202":``,
+		"202":`202.Formatting and Scanning Strings
+Formatting is the process of composing a new string from one or more data values, 
+while scanning is the process of parsing values from a string.
+
+What are they?
+Formatting is the process of composing values into a string. Scanning is the process
+of parsing a string for the values it contains.
+
+Why are they useful?
+Formatting a string is a common requirement and is used to produce strings for
+everything from logging and debugging to presenting the user with information.
+Scanning is useful for extracting data from strings, such as from HTTP requests or
+user input.
+
+How are they used?
+Both sets of features are provided through functions defined in the fmt package.
+
+Are there any pitfalls or limitations?
+The templates used to format strings can be hard to read, and there is no built-in
+function that allows a formatted string to be created to which a newline character
+is appended automatically.
+
+Are there any alternatives?
+Larger amounts of text and HTML content can be generated using the template features.
+`,
 // ====================================================================================
-		"203":``,
+		"203":`203.fmt package
+The fmt package provides functions for composing and writing strings.
+Some of these functions use writers, which are part of the Go support for input/output.
+The Basic fmt Functions for Composing and Writing Strings.
+
+	Name                        Description
+	--------------------------  --------------------------------------------------------------------
+	Print(...vals)              This function accepts a variable number of arguments and writes out their
+								values to the standard out. Spaces are added between values that are not
+								strings.
+	Println(...vals)            This function accepts a variable number of arguments and writes out
+								their values to the standard out, separated by spaces and followed by a
+								newline character.
+	Fprint(writer, ...vals)     This function writes out a variable number of arguments to the specified writer,
+								Spaces are added between values that are not strings.
+	Fprintln(writer, ...vals)   This function writes out a variable number of arguments to the specified writer
+								followed by a newline character. Spaces are added between all values.
+								`,
 // ====================================================================================
 		"204":``,
 // ====================================================================================
