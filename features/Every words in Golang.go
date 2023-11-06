@@ -3063,7 +3063,6 @@ var OriginalFeatures Features = Features{
     تعویض انجام دهید            use a Replacer, or use the Replace* functions in the regexp package
     Efficiently build a         Use the Builder type in the strings package
     string
-
 ████████████████████████████████████████████████████████████████████████
 161.Comparing Strings
     The strings Functions for Comparing Strings
