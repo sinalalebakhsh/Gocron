@@ -3510,11 +3510,9 @@ var OriginalFeatures Features = Features{
             fmt.Println("Trimmed:", trimmed)
         }
     Output:
-        Trimmed:  boat for one perso
+        Trimmed:  boat for one person
 ████████████████████████████████████████████████████████████████████████
 179.Altering Strings
-    تغییر رشته‌ها 
-    
     The Functions for Altering Strings in the strings Package
     Function                    Description
     ----------------            -----------------------------------

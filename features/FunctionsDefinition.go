@@ -6,7 +6,9 @@ type FunctionsDefinitions struct {
 
 var OriginalSingleDefFunctions = FunctionsDefinitions{
 	MapSingleDefFuncs: map[string]string{
-		// 🔔
+		//
+		//
+		//
 		//  Working with Character Case
 		"IsLower(rune)": "IsLower(rune) 🔔 This function returns true if the specified rune is lowercase.",
 		"IsLower()":     "IsLower(rune) 🔔 This function returns true if the specified rune is lowercase.",
@@ -32,7 +34,9 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"ToTitle()":     "ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
 		"ToTitle(r)":    "ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
 		"ToTitle(R)":    "ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
-		// 🔔
+		//
+		//
+		//
 		//The strings Functions for Inspecting Strings
 		"Count(s, sub)":                    "Count(s, sub) 🔔 This function returns an int that reports how many times the specified substring is found in the string s.",
 		"Count()":                          "Count(s, sub) 🔔 This function returns an int that reports how many times the specified substring is found in the string s.",
@@ -58,7 +62,9 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"LastIndexFunc(s, func)":           "LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
 		"LastIndexFunc()":                  "LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
 		"LastIndexFunc(string, function)":  "LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
-		// 🔔
+		//
+		//
+		//
 		// Splitting Strings
 		"Fields(s)":                     "Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
 		"Fields()":                      "Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
@@ -78,7 +84,9 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"SplitAfterN(s, sub, max)":      "SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
 		"SplitAfterN()":                 "SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
 		"SplitAfterN(string, sub, max)": "SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
-		// 🔔
+		//
+		//
+		//
 		// 161.Comparing Strings
 		"Contains(s, substr)":            "Contains(s, substr) 🔔 This function returns true if the string s contains substr and false if it does not.",
 		"Contains()":                     "Contains(s, substr) 🔔 This function returns true if the string s contains substr and false if it does not.",
@@ -108,8 +116,56 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"HasSuffix(string, sufix)":       "HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
 		"HasSuffix()":                    "HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
 		"HasSuffix(string, string)":      "HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
-		// 🔔
 		//
+		//
+		//
+		//179.Altering Strings
+		"Replace(s, old, new, n)":           "Replace(s, old, new, n) 🔔 This function alters the string s by replacing occurrences of the string old with the string new. The maximum number of occurrences that will be replaced is specified by the int argument n.",
+		"Replace()":                         "Replace(s, old, new, n) 🔔 This function alters the string s by replacing occurrences of the string old with the string new. The maximum number of occurrences that will be replaced is specified by the int argument n.",
+		"Replace(1, 2, 3, 4)":               "Replace(s, old, new, n) 🔔 This function alters the string s by replacing occurrences of the string old with the string new. The maximum number of occurrences that will be replaced is specified by the int argument n.",
+		"Replace(1,2,3,4)":                  "Replace(s, old, new, n) 🔔 This function alters the string s by replacing occurrences of the string old with the string new. The maximum number of occurrences that will be replaced is specified by the int argument n.",
+		"Replace(string, old, new, number)": "Replace(s, old, new, n) 🔔 This function alters the string s by replacing occurrences of the string old with the string new. The maximum number of occurrences that will be replaced is specified by the int argument n.",
+		"ReplaceAll(s, old, new)":           "ReplaceAll(s, old, new) 🔔 This function alters the string s by replacing all occurrences of the string old with the string new. Unlike the Replace function, there is no limit on the number of occurrences that will be replaced.",
+		"ReplaceAll()":                      "ReplaceAll(s, old, new) 🔔 This function alters the string s by replacing all occurrences of the string old with the string new. Unlike the Replace function, there is no limit on the number of occurrences that will be replaced.",
+		"ReplaceAll(string, old, new)":      "ReplaceAll(s, old, new) 🔔 This function alters the string s by replacing all occurrences of the string old with the string new. Unlike the Replace function, there is no limit on the number of occurrences that will be replaced.",
+		"Map(func, s)":                      "Map(func, s) 🔔 This function generates a string by invoking the custom function for each character in the string s and concatenating the results. If the function produces a negative value, the current character is dropped without a replacement.",
+		"Map()":                             "Map(func, s) 🔔 This function generates a string by invoking the custom function for each character in the string s and concatenating the results. If the function produces a negative value, the current character is dropped without a replacement.",
+		"Map(function, string)":             "Map(func, s) 🔔 This function generates a string by invoking the custom function for each character in the string s and concatenating the results. If the function produces a negative value, the current character is dropped without a replacement.",
+		//
+		//
+		//
+		// 183.The Replacer Methods
+		"Replace(s)":             "Replace(s) 🔔 This method returns a string for which all the replacements specified with the constructor have been performed on the string s.",
+		"Replace(string)":        "Replace(s) 🔔 This method returns a string for which all the replacements specified with the constructor have been performed on the string s.",
+		"Replace(S)":             "Replace(s) 🔔 This method returns a string for which all the replacements specified with the constructor have been performed on the string s.",
+		"WriteString(writer, s)": "WriteString(writer, s) 🔔 This method is used to perform the replacements specified with the constructor and write the results to an io.Writer",
+		"WriteString(w, s)":      "WriteString(writer, s) 🔔 This method is used to perform the replacements specified with the constructor and write the results to an io.Writer",
+		"WriteString(w, str)":    "WriteString(writer, s) 🔔 This method is used to perform the replacements specified with the constructor and write the results to an io.Writer",
+		"WriteString(w, string)": "WriteString(writer, s) 🔔 This method is used to perform the replacements specified with the constructor and write the results to an io.Writer",
+		//
+		//
+		//
+		// 184.Building and Generating Strings
+		"Join(slice, sep)":       "Join(slice, sep) 🔔 This function combines the elements in the specified string slice, with the specified separator string placed between elements.",
+		"Join(slice, specified)": "Join(slice, sep) 🔔 This function combines the elements in the specified string slice, with the specified separator string placed between elements.",
+		"Join()":                 "Join(slice, sep) 🔔 This function combines the elements in the specified string slice, with the specified separator string placed between elements.",
+		"Repeat(s, count)":       "Repeat(s, count) 🔔 This function generates a string by repeating the string s for a specified number of times.",
+		"Repeat(str, count)":     "Repeat(s, count) 🔔 This function generates a string by repeating the string s for a specified number of times.",
+		//
+		//
+		//
+		// 186.Building Strings
+		"WriteString(s)":      "WriteString(s) 🔔 This method appends the string s to the string being built.",
+		"WriteString(string)": "WriteString(s) 🔔 This method appends the string s to the string being built.",
+		"WriteString()":       "WriteString(s) 🔔 This method appends the string s to the string being built.",
+		"WriteRune(r)":        "WriteRune(r) 🔔 This method appends the character r to the string being built.",
+		"WriteRune()":         "WriteRune(r) 🔔 This method appends the character r to the string being built.",
+		"WriteByte(b)":        "WriteByte(b) 🔔 This method appends the byte b to the string being built.",
+		"WriteByte(byte)":     "WriteByte(b) 🔔 This method appends the byte b to the string being built.",
+		"WriteByte()":         "WriteByte(b) 🔔 This method appends the byte b to the string being built.",
+		"String()":            "String() 🔔 This method returns the string that has been created by the builder.",
+		"Reset()":             "Reset() 🔔 This method resets the string created by the builder.",
+		// 🔔
 		//
 		//
 		"Atoi()":                 "Atoi(str) 🔔 This function parses a string into a base 10 int and is equivalent to calling ParseInt(str, 10, 0)",
