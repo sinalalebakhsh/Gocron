@@ -6,6 +6,7 @@ type FunctionsDefinitions struct {
 
 var OriginalSingleDefFunctions = FunctionsDefinitions{
 	MapSingleDefFuncs: map[string]string{
+		// 🔔
 		//  Working with Character Case
 		"IsLower(rune)": "IsLower(rune) 🔔 This function returns true if the specified rune is lowercase.",
 		"IsLower()":     "IsLower(rune) 🔔 This function returns true if the specified rune is lowercase.",
@@ -31,7 +32,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"ToTitle()":     "ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
 		"ToTitle(r)":    "ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
 		"ToTitle(R)":    "ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
-		//
+		// 🔔
 		//The strings Functions for Inspecting Strings
 		"Count(s, sub)":                    "Count(s, sub) 🔔 This function returns an int that reports how many times the specified substring is found in the string s.",
 		"Count()":                          "Count(s, sub) 🔔 This function returns an int that reports how many times the specified substring is found in the string s.",
@@ -57,11 +58,57 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"LastIndexFunc(s, func)":           "LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
 		"LastIndexFunc()":                  "LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
 		"LastIndexFunc(string, function)":  "LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
-		
-		//
-		//
-		//
-		//
+		// 🔔
+		// Splitting Strings
+		"Fields(s)":                     "Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
+		"Fields()":                      "Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
+		"Fields(string)":                "Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
+		"FieldsFunc(s, func)":           "FieldsFunc(s, func) 🔔 This function splits the string s on the characters for which a custom function returns true and returns a slice containing the remaining sections of the string.",
+		"FieldsFunc()":                  "FieldsFunc(s, func) 🔔 This function splits the string s on the characters for which a custom function returns true and returns a slice containing the remaining sections of the string.",
+		"FieldsFunc(string, function)":  "FieldsFunc(s, func) 🔔 This function splits the string s on the characters for which a custom function returns true and returns a slice containing the remaining sections of the string.",
+		"Split(s, sub)":                 "Split(s, sub) 🔔 This function splits the string s on every occurrence of the specified substring, returning a string slice. If the separator is the empty string, then the slice will contain strings for each character.",
+		"Split()":                       "Split(s, sub) 🔔 This function splits the string s on every occurrence of the specified substring, returning a string slice. If the separator is the empty string, then the slice will contain strings for each character.",
+		"Split(string, sub)":            "Split(s, sub) 🔔 This function splits the string s on every occurrence of the specified substring, returning a string slice. If the separator is the empty string, then the slice will contain strings for each character.",
+		"SplitN(s, sub, max)":           "SplitN(s, sub, max) 🔔 This function is similar to Split, but accepts an additional int argument that specifies the maximum number of substrings to return. The last substring in the result slice will contain the unsplit portion of the source string.",
+		"SplitN()":                      "SplitN(s, sub, max) 🔔 This function is similar to Split, but accepts an additional int argument that specifies the maximum number of substrings to return. The last substring in the result slice will contain the unsplit portion of the source string.",
+		"SplitN(string, sub, max)":      "SplitN(s, sub, max) 🔔 This function is similar to Split, but accepts an additional int argument that specifies the maximum number of substrings to return. The last substring in the result slice will contain the unsplit portion of the source string.",
+		"SplitAfter(s, sub)":            "SplitAfter(s, sub) 🔔 This function is similar to Split but includes the substring used in the results.",
+		"SplitAfter()":                  "SplitAfter(s, sub) 🔔 This function is similar to Split but includes the substring used in the results.",
+		"SplitAfter(string, sub)":       "SplitAfter(s, sub) 🔔 This function is similar to Split but includes the substring used in the results.",
+		"SplitAfterN(s, sub, max)":      "SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
+		"SplitAfterN()":                 "SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
+		"SplitAfterN(string, sub, max)": "SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
+		// 🔔
+		// 161.Comparing Strings
+		"Contains(s, substr)":            "Contains(s, substr) 🔔 This function returns true if the string s contains substr and false if it does not.",
+		"Contains()":                     "Contains(s, substr) 🔔 This function returns true if the string s contains substr and false if it does not.",
+		"Contains(string, substring)":    "Contains(s, substr) 🔔 This function returns true if the string s contains substr and false if it does not.",
+		"ContainsAny(s, substr)":         "ContainsAny(s, substr) 🔔 This function returns true if the string s contains any of the characters contained in the string substr.",
+		"ContainsAny()":                  "ContainsAny(s, substr) 🔔 This function returns true if the string s contains any of the characters contained in the string substr.",
+		"ContainsAny(string, substring)": "ContainsAny(s, substr) 🔔 This function returns true if the string s contains any of the characters contained in the string substr.",
+		"ContainsRune(s, rune)":          "ContainsRune(s, rune) 🔔 This function returns true if the string s contains a specific rune.",
+		"ContainsRune()":                 "ContainsRune(s, rune) 🔔 This function returns true if the string s contains a specific rune.",
+		"ContainsRune(string, rune)":     "ContainsRune(s, rune) 🔔 This function returns true if the string s contains a specific rune.",
+		"ContainsRune(string, r)":        "ContainsRune(s, rune) 🔔 This function returns true if the string s contains a specific rune.",
+		"ContainsRune(string, R)":        "ContainsRune(s, rune) 🔔 This function returns true if the string s contains a specific rune.",
+		"ContainsRune(s, R)":             "ContainsRune(s, rune) 🔔 This function returns true if the string s contains a specific rune.",
+		"ContainsRune(S, R)":             "ContainsRune(s, rune) 🔔 This function returns true if the string s contains a specific rune.",
+		"EqualFold(s1, s2)":              "EqualFold(s1, s2) 🔔 This function performs a case-insensitive comparison and returns true of strings s1 and s2 are the same.",
+		"EqualFold()":                    "EqualFold(s1, s2) 🔔 This function performs a case-insensitive comparison and returns true of strings s1 and s2 are the same.",
+		"EqualFold(string, string)":      "EqualFold(s1, s2) 🔔 This function performs a case-insensitive comparison and returns true of strings s1 and s2 are the same.",
+		"EqualFold(string1, string2)":    "EqualFold(s1, s2) 🔔 This function performs a case-insensitive comparison and returns true of strings s1 and s2 are the same.",
+		"HasPrefix(s, prefix)":           "HasPrefix(s, prefix) 🔔 This function returns true if the string s begins with the string prefix.",
+		"HasPrefix(s, p)":                "HasPrefix(s, prefix) 🔔 This function returns true if the string s begins with the string prefix.",
+		"HasPrefix(string, p)":           "HasPrefix(s, prefix) 🔔 This function returns true if the string s begins with the string prefix.",
+		"HasPrefix(string, prefix)":      "HasPrefix(s, prefix) 🔔 This function returns true if the string s begins with the string prefix.",
+		"HasPrefix()":                    "HasPrefix(s, prefix) 🔔 This function returns true if the string s begins with the string prefix.",
+		"HasSuffix(s, suffix)":           "HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
+		"HasSuffix(s, suf)":              "HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
+		"HasSuffix(string, suf)":         "HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
+		"HasSuffix(string, sufix)":       "HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
+		"HasSuffix()":                    "HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
+		"HasSuffix(string, string)":      "HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
+		// 🔔
 		//
 		//
 		//
@@ -73,6 +120,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"FormatInt(val, base)":   "FormatInt(value, base) 🔔 This function returns a string representation of the specified int64 value, expressed in the specified base.",
 		"FormatUint()":           "FormatUint(val, base) 🔔 This function returns a string representation of the specified uint64 value, expressed in the specified base.",
 		"FormatUint(val, base)":  "FormatUint(val, base) 🔔 This function returns a string representation of the specified uint64 value, expressed in the specified base.",
+		// 🔔
 		//
 		//
 		//
@@ -80,6 +128,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"Itoa()":      "Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
 		"Itoa(val)":   "Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
 		"Itoa(value)": "Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
+		// 🔔
 		//
 		//
 		//
