@@ -31,24 +31,29 @@ returning multiple values
 	Go is also capable of returning multiple values from afunction
 
 variadic functions
-func add(args ...int) int {}`,
+func add(args ...int) int {}
+`,
 // ====================================================================================
 		"1":`1.build
 Using the Go Command
 The go build command compiles the source code in the current directory 
-and generates an executable file.`,
+and generates an executable file.
+`,
 // ====================================================================================
 		"2":`2.clean
 go clean command removes the output produced by the go build command, 
-the executable and any temporary files that were created during the build.`,
+the executable and any temporary files that were created during the build.
+`,
 // ====================================================================================
 		"3":`3.doc
-The go doc command generates documentation from source code.`,
+The go doc command generates documentation from source code.
+`,
 // ====================================================================================
 		"4":`4.fmt
 The go fmt command ensures consistent indentation and alignment in source code files.
 fmt = for printing in CLI
-fmt.Printf("%v %s %f", variable, string, float32)`,
+fmt.Printf("%v %s %f", variable, string, float32)
+`,
 // ====================================================================================
 		"5":`5.get
 The go get command downloads and installs external packages.
@@ -57,65 +62,83 @@ flag package:
 Command-line flags are a common way to specify options for command-line programs. 
 For example, in wc -l the -l is a command-line flag.
 Go provides a flag package supporting basic command-line flag parsing.
-We'll use this package to implement our example command-line program.`,
+We'll use this package to implement our example command-line program.
+`,
 // ====================================================================================
 		"6":`6.install
-The go install command downloads packages and is usually used to install tool packages.`,
+The go install command downloads packages and is usually used to install tool packages.
+`,
 // ====================================================================================
 		"7":`7.help
 The go help command displays help information for other Go features. The command go
-help build, for example, displays information about the build argument.`,
+help build, for example, displays information about the build argument.
+`,
 // ====================================================================================
 		"8":`8.mod
-The go mod command is used to create and manage a Go module.`,
+The go mod command is used to create and manage a Go module.
+`,
 // ====================================================================================
 		"9":`9.run
 The go run command builds and executes the source code in a specified folder without
-creating an executable output`,
+creating an executable output
+`,
 // ====================================================================================
 		"10":`10.test
-The go test command executes unit tests`,
+The go test command executes unit tests
+`,
 // ====================================================================================
 		"11":`11.version
-The go version command writes out the Go version number.`,
+The go version command writes out the Go version number.
+`,
 // ====================================================================================
 		"12":`12.vet
-The go vet command detects common problems in Go code`,
+The go vet command detects common problems in Go code
+`,
 // ====================================================================================
 		"13":`13.print <expr>
 Useful Debugger State Commands
 This command evaluates an expression and displays the result. It can
 be used to display a value (print i) or perform a more complex test
-(print i > 0).`,
+(print i > 0).
+`,
 // ====================================================================================
 		"14":`14.set <variable> = <value>
 This command changes the value of the specified variable.
-این دستور مقدار متغیر مشخص شده را تغییر می دهد.`,
+این دستور مقدار متغیر مشخص شده را تغییر می دهد.
+`,
 // ====================================================================================
 		"15":`15.locals
-This command prints the value of all local variables.`,
+This command prints the value of all local variables.
+`,
 // ====================================================================================
 		"16":`16.whatis <expr>
-This command prints the type of the specified expression such as whatis`,
+This command prints the type of the specified expression such as whatis
+`,
 // ====================================================================================
 		"17":`17.continue
 Useful Debugger Commands for Controlling Execution
-This command resumes execution of the application.`,
+This command resumes execution of the application.
+`,
 // ====================================================================================
 		"18":`18.next
-This command moves to the next statement.`,
+This command moves to the next statement.
+`,
 // ====================================================================================
 		"19":`19.step
-This command steps into the current statement.`,
+This command steps into the current statement.
+`,
 // ====================================================================================
 		"20":`20.stepout
-This command steps out of the current statement.`,
+This command steps out of the current statement.
+`,
 // ====================================================================================
 		"21":`21.restart
-This command restarts the process. Use the continue command to begin execution.`,
+This command restarts the process. Use the continue command to begin execution.
+`,
 // ====================================================================================
 		"22":`22.exit
-This command exits the debugger.`,
+This command exits the debugger.
+`,
 // ====================================================================================
 		"23":`23.int = integers
 Understanding the Basic Data Types
@@ -126,7 +149,8 @@ int64, but the int type should be used unless you need a specific size.
 
 Literal Value Examples:
 	20, -20. Values can also be expressed in hex (0x14), octal (0o24), and binary notation
-	(0b0010100).`,
+	(0b0010100).
+	`,
 // ====================================================================================
 		"24":`24.unit
 uint8,  uint16,  uint32,  uint64,int8,  int16,  int32
@@ -135,7 +159,8 @@ dependent and will be either 32 or 64 bits. There are also unsigned integer
 types that have a specific size, such as uint8, uint16, uint32, and uint64, but
 the uint type should be used unless you need a specific size.
 Literal Value Examples:
-	There are no uint literals. All literal whole numbers are treated as int values.`,
+	There are no uint literals. All literal whole numbers are treated as int values.
+	`,
 // ====================================================================================
 		"25":`25.byte = uint8
 This type is an alias for uint8 and is typically used to represent a byte of data.
@@ -144,7 +169,8 @@ byte = 8 bits,
 1024 kilobytes = 1 megabyte
 Literal Value Examples:
 	There are no byte literals. Bytes are typically expressed as integer literals (such as 101) or run
-	literals ('e') since the byte type is an alias for the uint8 type.`,
+	literals ('e') since the byte type is an alias for the uint8 type.
+	`,
 // ====================================================================================
 		"26":`26.float32, float64
 Floating Point Numbers. e.g 3.14, 123.541, 100.4020401
@@ -152,25 +178,29 @@ These types represent numbers with a fraction. These types allocate 32 or 64
 bits to store the value.
 Literal Value Examples:
 	20.2, -20.2, 1.2e10, 1.2e-10. Values can also be expressed in hex notation (0x2p10), although
-	the exponent is expressed in decimal digits.`,
+	the exponent is expressed in decimal digits.
+	`,
 // ====================================================================================
 		"27":`27.complex64, complex128
 These types represent numbers that have real and imaginary components.
-These types allocate 64 or 128 bits to store the value.`,
+These types allocate 64 or 128 bits to store the value.
+`,
 // ====================================================================================
 		"28":`28.bool 
 bolean
 This type represents a Boolean truth with the values true and false.
 
 Literal Value Examples:
-	true, false.`,
+	true, false.
+	`,
 // ====================================================================================
 		"29":`29.string
 This type represents a sequence of characters.
 Literal Value Examples:
 	"Hello". Character sequences escaped with a backslash are interpreted if the value is enclosed
 	in double quotes ("Hello\n"). Escape sequences are not interpreted if the value is enclosed in
-	backquotes ('Hello\n').`,
+	backquotes ('Hello\n').
+	`,
 // ====================================================================================
 		"30":`30.rune = int32
 This type represents a single Unicode code point. Unicode is complicated,
@@ -179,11 +209,13 @@ an alias for int32.
 
 Literal Value Examples:
 	'A', '\n', '\u00A5', '¥'. Characters, glyphs, and escape sequences are enclosed in single
-	quotes (the ' character).`,
+	quotes (the ' character).
+	`,
 // ====================================================================================
 		"31":`31.var = variable 
 Variables are defined using the var keyword, and, unlike constants, the value assigned to a variable can be
-changed`,
+changed
+`,
 // ====================================================================================
 		"32":`32.const = constant
 Constants are basically variables whose values cannot be changed later.
@@ -197,26 +229,32 @@ Constants are basically variables whose values cannot be changed later.
 	float64     0
 	bool        false
 	string      “” (the empty string)
-	rune        0`,
+	rune        0
+	`,
 // ====================================================================================
 		"33":`33.+, -, *, /, %
 Operations and Conversions
-These operators are used to perform arithmetic using numeric values.`,
+These operators are used to perform arithmetic using numeric values.
+`,
 // ====================================================================================
 		"34":`34.==, !=, <, <=, >, >=
-These operators compare two values.`,
+These operators compare two values.
+`,
 // ====================================================================================
 		"35":`35., &&, !
-These are the logical operators, which are applied to bool values and return a bool value.`,
+These are the logical operators, which are applied to bool values and return a bool value.
+`,
 // ====================================================================================
 		"36":`36.=, :=
 These are the assignment operators. The standard assignment operator (=) is used to set
 the initial value when a constant or variable is defined, or to change the value assigned to
 a previously defined variable. The shorthand operator (:=) is used to define a variable and
-assign a value.`,
+assign a value.
+`,
 // ====================================================================================
 		"37":`37.-=, +=, ++, --
-These operators increment and decrement numeric values.`,
+These operators increment and decrement numeric values.
+`,
 // ====================================================================================
 		"38":`38.&, , ^, &^, <<, >>
 These are the bitwise operators, which can be applied to integer values. These operators are
@@ -258,62 +296,76 @@ The Logical Operators
 
 	!        This operator is used with a single operand. 
 				It returns true if the operand is false and false if
-				the operand is true.`,
+				the operand is true.
+				`,
 // ====================================================================================
 		"39":`39.Ceil(value)
 Converting Floating-Point Values to Integers
 Functions in the math Package for Converting Numeric Types
 This function returns the smallest integer that is greater than the specified floating-
-point value. The smallest integer that is greater than 27.1, for example, is 28.`,
+point value. The smallest integer that is greater than 27.1, for example, is 28.
+`,
 // ====================================================================================
 		"40":`40.Floor(value)
 This function returns the largest integer that is less than the specified floating-point
-value. The largest integer that is less than 27.1, for example, is 28.`,
+value. The largest integer that is less than 27.1, for example, is 28.
+`,
 // ====================================================================================
 		"41":`41.Round(value)
-This function rounds the specified floating-point value to the nearest integer.`,
+This function rounds the specified floating-point value to the nearest integer.
+`,
 // ====================================================================================
 		"42":`42.RoundToEven(value)
-This function rounds the specified floating-point value to the nearest even integer.`,
+This function rounds the specified floating-point value to the nearest even integer.
+`,
 // ====================================================================================
 		"43":`43.ParseBool(str)
 Parsing from Strings
 Functions for Parsing Strings into Other Data Types
 This function parses a string into a bool value. Recognized string values are "true",
-"false", "TRUE", "FALSE", "True", "False", "T", "F", "0", and "1".`,
+"false", "TRUE", "FALSE", "True", "False", "T", "F", "0", and "1".
+`,
 // ====================================================================================
 		"44":`44.ParseFloat(str,size)
 This function parses a string into a floating-point value with the specified size, as
-described in the “Parsing Floating-Point Numbers” section.`,
+described in the “Parsing Floating-Point Numbers” section.
+`,
 // ====================================================================================
 		"45":`45.ParseInt(str,base, size)
 This function parses a string into an int64 with the specified base and size. Acceptable
-base values are 2 for binary, 8 for octal, 16 for hex, and 10.`,
+base values are 2 for binary, 8 for octal, 16 for hex, and 10.
+`,
 // ====================================================================================
 		"46":`46.ParseUint(str,base, size)
-This function parses a string into an unsigned integer value with the specified base and size.`,
+This function parses a string into an unsigned integer value with the specified base and size.
+`,
 // ====================================================================================
 		"47":`47.Atoi(str)
 This function parses a string into a base 10 int and is equivalent to calling
-ParseInt(str, 10, 0)`,
+ParseInt(str, 10, 0)
+`,
 // ====================================================================================
 		"48":`48.FormatBool(val)
 Formatting Values as Strings
 The strconv Functions for Converting Values into Strings
 This function returns the string true or false based on the value of the
-specified bool.`,
+specified bool.
+`,
 // ====================================================================================
 		"49":`49.FormatInt(val, base)
 This function returns a string representation of the specified int64 value,
-expressed in the specified base.`,
+expressed in the specified base.
+`,
 // ====================================================================================
 		"50":`50.FormatUint(val, base)
 This function returns a string representation of the specified uint64 value,
-expressed in the specified base.`,
+expressed in the specified base.
+`,
 // ====================================================================================
 		"51":`51.FormatFloat(val, format, precision, size) 
 This function returns a string representation of the specified float64 value,
-expressed using the specified format, precision, and size.`,
+expressed using the specified format, precision, and size.
+`,
 // ====================================================================================
 		"52":`52.Itoa(val)
 This function returns a string representation of the specified int value,
@@ -332,18 +384,22 @@ e, E
 
 g, G
 	The floating-point value will be expressed using format e/E for large exponents or format f for
-	smaller values.`,
+	smaller values.
+	`,
 // ====================================================================================
 		"53":`53.if
 Understanding Flow Control
 The if keyword is followed by the expression and then the group of statements to be executed,
-surrounded by braces`,
+surrounded by braces
+`,
 // ====================================================================================
 		"54":`54.else
-The else keyword can be used to create additional clauses in an if statement`,
+The else keyword can be used to create additional clauses in an if statement
+`,
 // ====================================================================================
 		"55":`55.else if
-The else/if combination can be repeated to create a sequence of clauses`,
+The else/if combination can be repeated to create a sequence of clauses
+`,
 // ====================================================================================
 		"56":`56.for
 Go allows loops only inside of functions.
@@ -360,7 +416,8 @@ Enumerating Sequences:
 			}
 
 range : is for variable like slice or array like this :
-for name := range sliceOfNames`,
+for name := range sliceOfNames
+`,
 // ====================================================================================
 		"57":`57.switch
 A switch statement provides an alternative way to control execution flow, based on matching the result of an
@@ -393,7 +450,8 @@ example:
 	fmt.Println("Uppercase K at position", index)
 		case 'y':
 	fmt.Println("y at position", index)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"58":`58.Falling Through
 Go switch statements don't automatically fall through, but this behavior can be enabled using the
@@ -407,7 +465,8 @@ example:
 			fmt.Println("k at position", index)
 		case 'y':
 			fmt.Println("y at position", index)
-		}`,
+		}
+		`,
 // ====================================================================================
 		"59":`59.default
 The default keyword is used to define a clause that will be executed when none of the case statements
@@ -425,7 +484,8 @@ example:
 			fmt.Println("y at position", index)
 			default:
 			fmt.Println("Character", string(character), "at position", index)
-		}`,
+		}
+		`,
 // ====================================================================================
 		"60":`60.goto label 
 Label statements allow execution to jump to a different point, 
@@ -436,7 +496,8 @@ example:
 	counter++
 	if (counter < 5) {
 			goto target
-	}`,
+	}
+	`,
 // ====================================================================================
 		"61":`61.Array
 Go arrays are a fixed length and contain elements of a single type, which are accessed by index
@@ -456,7 +517,8 @@ example:
 	names := [3]string { "Kayak", "Lifejacket", "Paddle" }
 	for index, value := range names {
 		fmt.Println("Index:", index, "Value:", value)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"62":`62.Slices
 The slice type in this example is []string
@@ -477,7 +539,8 @@ example:
 
 Literal Syntax:
 example:
-	names := []string {"Kayak", "Lifejacket", "Paddle"}`,
+	names := []string {"Kayak", "Lifejacket", "Paddle"}
+	`,
 // ====================================================================================
 		"63":`63.append
 If you define a slice variable but don't initialize it, then the result is a slice that has a length of zero
@@ -553,7 +616,8 @@ example:
 		p2 := p1
 		fmt.Println("Equal:", p1 == p2)
 Output:
-	.\main.go:13:30: invalid operation: p1 == p2 (slice can only be compared to nil)`,
+	.\main.go:13:30: invalid operation: p1 == p2 (slice can only be compared to nil)
+	`,
 // ====================================================================================
 		"64":`64.copy
 The copy function is used to copy elements between slices. This function can be used to ensure that slices
@@ -620,7 +684,8 @@ example:
 	}
 Output:
 	Index: 0 Value: Paddle
-	Index: 1 Value: Hat`,
+	Index: 1 Value: Hat
+	`,
 // ====================================================================================
 		"65":`65.sort
 There is no built-in support for sorting slices, but the standard library includes the sort package, which
@@ -636,7 +701,8 @@ Output:
 	Index: 0 Value: Hat
 	Index: 1 Value: Kayak
 	Index: 2 Value: Lifejacket
-	Index: 3 Value: Paddle`,
+	Index: 3 Value: Paddle
+	`,
 // ====================================================================================
 		"66":`66.DeepEqual
 The DeepEqual function can be used to compare a wider range of data types than the
@@ -654,7 +720,8 @@ example:
 		fmt.Println("Equal:", reflect.DeepEqual(p1, p2))
 	}    
 Output:
-	Equal: true`,
+	Equal: true
+	`,
 // ====================================================================================
 		"67":`67.map
 Maps are a built-in data structure that associates data values with keys. 
@@ -729,7 +796,8 @@ example:
 		for , key := range keys {
 			fmt.Println("Key:", key, "Value:", products[key])
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"68":`68.strconv
 Understanding the Dual Nature of Strings
@@ -781,7 +849,8 @@ Output:
 Obtaining the Length:
 	fmt.Println("Length:", len(price))
 Output:
-	Length: 8`,
+	Length: 8
+	`,
 // ====================================================================================
 		"69":`69.rune
 Converting a String to Runes
@@ -824,11 +893,13 @@ Output:
 	4 56
 	5 46
 	6 57
-	7 53`,
+	7 53
+	`,
 // ====================================================================================
 		"70":`70.func
 Functions are groups of code statements that are executed only when the function is
-invoked during the flow of execution.`,
+invoked during the flow of execution.
+`,
 // ====================================================================================
 		"71":`71.Function Parameters
 Parameters allow a function to receive data values when it is called, 
@@ -841,7 +912,8 @@ example:
 	func printPrice(product string, price float64, taxRate float64) {
 		taxAmount := price * taxRate
 		fmt.Println(product, "price:", price, "Tax:", taxAmount)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"72":`72.Defining Variadic Parameters
 example:
@@ -855,7 +927,8 @@ example:
 		for , supplier := range suppliers {
 			fmt.Println("Product:", product, "Supplier:", supplier)
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"73":`73.Dealing with No Arguments for a Variadic Parameter
 example:
@@ -873,13 +946,15 @@ Output:
 	Product: Kayak Supplier: Acme Kayaks
 	Product: Kayak Supplier: Bob's Boats
 	Product: Kayak Supplier: Crazy Canoes
-	Product: Lifejacket Supplier: Sail Safe Co`,
+	Product: Lifejacket Supplier: Sail Safe Co
+	`,
 // ====================================================================================
 		"74":`74.return Function Results
 example:
 	func calcTax(price float64) float64 {
 		return price + (price * 0.2)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"75":`75.Returning Multiple Function Results
 example:
@@ -891,7 +966,8 @@ example:
 		fmt.Println("Before calling function", val1, val2)
 		val1, val2 = swapValues(val1, val2)
 		fmt.Println("After calling function", val1, val2)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"76":`76.Using Named Results
 example:
@@ -913,7 +989,8 @@ example:
 			}
 		}
 		return
-	}`,
+	}
+	`,
 // ====================================================================================
 		"77":`77.defer
 The defer keyword is used to schedule a function call that will be performed immediately before the current
@@ -923,7 +1000,8 @@ release the resource together.
 The defer keyword can be used with any function call
 a single function can use the defer keyword multiple times.
 Immediately before the function returns, Go will perform the
-calls scheduled with the defer keyword in the order in which they were defined.`,
+calls scheduled with the defer keyword in the order in which they were defined.
+`,
 // ====================================================================================
 		"78":`78.Function Types
 Functions in Go have a data type, which describes the combination of parameters the
@@ -934,7 +1012,8 @@ describes the parameters and results. No function body is specified.
 
 Go does not support arrow functions, where functions are expressed more concisely using the =>
 operator, without the func keyword and a code block surrounded by braces. In Go, functions must always be
-defined with the keyword and a body.`,
+defined with the keyword and a body.
+`,
 // ====================================================================================
 		"79":`79.Function Comparisons and the Zero Type
 example:
@@ -961,7 +1040,8 @@ example:
 			totalPrice := calcFunc(price)
 			fmt.Println("Product:", product, "Price:", totalPrice)
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"80":`80.Functions as Arguments
 example:
@@ -986,7 +1066,8 @@ example:
 				printPrice(product, price, calcWithoutTax)
 			}
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"81":`81.Functions as Results
 example:
@@ -1013,7 +1094,8 @@ example:
 		for product, price := range products {
 			printPrice(product, price, selectCalculator(price))
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"82":`82.Function Type Aliases
 Go supports type aliases, which can be used to assign a name to
@@ -1044,7 +1126,8 @@ example:
 		for product, price := range products {
 			printPrice(product, price, selectCalculator(price))
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"83":`83.the Literal Function Syntax
 example:
@@ -1054,7 +1137,8 @@ example:
 				return price + (price * 0.2)
 			}
 			return withTax
-		}`,
+		}
+		`,
 // ====================================================================================
 		"84":`84.Function Variable Scope
 example:
@@ -1071,7 +1155,8 @@ example:
 				return price
 			}
 		return withoutTax
-	}`,
+	}
+	`,
 // ====================================================================================
 		"85":`85.Functions Values Directly
 example:
@@ -1084,7 +1169,8 @@ example:
 			return func (price float64) float64 {
 			return price
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"86":`86.Literal Function Argument
 example:
@@ -1098,7 +1184,8 @@ example:
 				return price + (price * 0.2)
 			})
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"87":`87.Function Closure
 Functions defined using the literal syntax can reference variables from the surrounding code, a feature
@@ -1135,7 +1222,8 @@ example:
 		for product, price := range soccerProducts {
 			printPrice(product, price, calc)
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"88":`88.struct
 What are they?
@@ -1168,12 +1256,14 @@ data types are defined as structs, and the decision to pass them by reference or
 depending on whether a pointer is used.
 
 Go doesn't allow structs to be used with the const keyword, and the compiler will report an error if
-you try to define a constant struct.`,
+you try to define a constant struct.
+`,
 // ====================================================================================
 		"89":`89.struct tag
 The struct type can be defined with tags, which provide additional information about how a field should
 be processed. Struct tags are just strings that are interpreted by the code that processes struct values,
-using the features provided by the reflect package.`,
+using the features provided by the reflect package.
+`,
 // ====================================================================================
 		"90":`90.struct values
 Values do not have to be provided for all fields when creating a struct value
@@ -1188,7 +1278,8 @@ example:
 				name: "Kayak",
 				category: "Watersports",
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"91":`91.new 
 the new function to create struct values
@@ -1199,7 +1290,8 @@ initialized with their type's zero value.
 This is equivalent to this statement:
 	var lifejacket = &Product{}
 
-These approaches are interchangeable, and choosing between them is a matter of preference.`,
+These approaches are interchangeable, and choosing between them is a matter of preference.
+`,
 // ====================================================================================
 		"92":`92.Field Positions to Create Struct Values
 example:
@@ -1212,7 +1304,8 @@ example:
 		fmt.Println("Name:", kayak.name)
 		fmt.Println("Category:", kayak.category)
 		fmt.Println("Price:", kayak.price)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"93":`93.Defining Embedded Fields
 If a field is defined without a name, 
@@ -1233,7 +1326,8 @@ example:
 			}
 			fmt.Println("Name:", stockItem.Product.name)
 			fmt.Println("Count:", stockItem.count)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"94":`94.Defining an Additional Field
 example:
@@ -1254,7 +1348,8 @@ example:
 		}
 		fmt.Println("Name:", stockItem.Product.name)
 		fmt.Println("Alt Name:", stockItem.Alternate.name)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"95":`95.Comparing Struct Values
 example:
@@ -1268,7 +1363,8 @@ example:
 		p3 := Product { name: "Kayak", category: "Boats", price: 275.00 }
 		fmt.Println("p1 == p2:", p1 == p2)
 		fmt.Println("p1 == p3:", p1 == p3)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"96":`96.Anonymous Struct Types
 Anonymous struct types are defined without using a name
@@ -1295,7 +1391,8 @@ example:
 		item := Item { name: "Stadium", category: "Soccer", price: 75000 }
 		writeName(prod)
 		writeName(item)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"97":`97.Creating Arrays, Slices, and Maps Containing Struct Values
 Omitting the Struct Type
@@ -1337,11 +1434,13 @@ example:
 			},
 		}
 		fmt.Println("Map:", kvp["kayak"].Product.name)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"98":`98.Structs and Pointers
 Assigning a struct to a new variable or using a struct as a function parameter 
-creates a new value that copies the field values.`,
+creates a new value that copies the field values.
+`,
 // ====================================================================================
 		"99":`99.Copying a Struct Value
 example:
@@ -1361,7 +1460,8 @@ example:
 		p1.name = "Original Kayak"
 		fmt.Println("P1:", p1.name)
 		fmt.Println("P2:", p2.name)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"100":`100.Using a Pointer to a Struct
 example:
@@ -1381,7 +1481,8 @@ example:
 		p1.name = "Original Kayak"
 		fmt.Println("P1:", p1.name)
 		fmt.Println("P2:", (*p2).name)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"101":`101.the Struct Pointer Convenience Syntax
 example:
@@ -1408,7 +1509,8 @@ example:
 		calcTax(&kayak)
 		fmt.Println("Name:", kayak.name, "Category:",
 		kayak.category, "Price", kayak.price)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"102":`102.Struct Constructor Functions
 A constructor function is responsible for creating struct values using values received through parameters
@@ -1445,7 +1547,8 @@ process are reflected in all the struct values created by the function.
 example:
 	func newProduct(name, category string, price float64) *Product {
 		return &Product{name, category, price - 10}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"104":`104.Pointer Types for Struct Fields
 example:
@@ -1472,7 +1575,8 @@ example:
 			fmt.Println("Name:", p.name, "Supplier:",
 				p.Supplier.name, p.Supplier.city)
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"105":`105.Pointer Field Copying
 Care must be taken when copying structs to consider the effect on pointer fields    
@@ -1500,7 +1604,8 @@ example:
 			fmt.Println("Name:", p.name, "Supplier:",
 				p.Supplier.name, p.Supplier.city)
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"106":`106.Method
 What are they?
@@ -1518,7 +1623,8 @@ Interfaces are defined using the type and interface keywords.
 
 Are there any pitfalls or limitations?
 Careful use of pointers is important when creating methods, and care must be taken
-when using interfaces to avoid problems with the underlying dynamic types.`,
+when using interfaces to avoid problems with the underlying dynamic types.
+`,
 // ====================================================================================
 		"107":`107.Defining and Using Method
 example:
@@ -1544,7 +1650,8 @@ example:
 		for , p := range products {
 			p.printDetails()
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"108":`108.Defining Method Parameters and Results
 example:
@@ -1570,7 +1677,8 @@ example:
 		for , p := range products {
 			p.calcTax(0.2, 100) //<-------------------------------here
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"109":`109.Defining and Using Interfaces
 One interface can enclose another, with the effect that types must implement all the methods defined
@@ -1593,7 +1701,8 @@ example:
 		for , expense := range expenses {
 			fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"110":`110.an Interface in a Function
 example:
@@ -1618,7 +1727,8 @@ example:
 			fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
 		}
 		fmt.Println("Total:", calcTotal(expenses))
-	}`,
+	}
+	`,
 // ====================================================================================
 		"111":`111.an Interface for Struct Fields
 example:
@@ -1650,7 +1760,8 @@ example:
 			fmt.Println("Expense:", expense.getName(), "Cost:", expense.getCost(true))
 		}
 		fmt.Println("Total:", calcTotal(account.expenses))
-	}`,
+	}
+	`,
 // ====================================================================================
 		"112":`112.Comparing Interface Values
 Care must be taken when comparing interface values, and inevitably, some knowledge of the dynamic
@@ -1676,13 +1787,15 @@ example:
 	}
 Output:
 	e1 == e2 false
-	e3 == e4 true`,
+	e3 == e4 true
+	`,
 // ====================================================================================
 		"113":`113.Empty Interface
 Go allows the user of the empty interface—which means an interface that defines no methods—to represent
 any type, which can be a useful way to group disparate types that share no common features
 The empty interface represents all types, including the built-in types and any structs and interfaces
-that have been defined.`,
+that have been defined.
+`,
 // ====================================================================================
 		"114":`114.Empty Interface for Function Parameters
 The empty interface can be used as the type for a function parameter, allowing a function to be called with
@@ -1732,7 +1845,8 @@ example:
 		for , item := range data {
 			processItem(item)
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"115":`115.Package
 Packages are the Go feature that allows projects to be structured so that related functionality can be grouped
@@ -1747,12 +1861,14 @@ a feature can be hidden from the code that consumes it.
 
 How are they used?
 Packages are defined by creating code files in folders and using the package
-keyword to denote which package they belong to.`,
+keyword to denote which package they belong to.
+`,
 // ====================================================================================
 		"116":`116.the Module File
 This name is important because it is used to import features from other packages created within
 the same project and third-party packages
-The go statement specifies the version of Go that is used.`,
+The go statement specifies the version of Go that is used.
+`,
 // ====================================================================================
 		"117":`117.Package Access Control
 Go has an unusual approach to access control. Instead of relying on dedicated keywords, like public
@@ -1762,11 +1878,13 @@ that defines it. Features are exported for use outside of the package by giving 
 
 The access control rules do not apply to individual function or method parameters, which means that
 the NewProduct function has to have an uppercase first character to be exported, but the parameter names
-can be lowercase.`,
+can be lowercase.
+`,
 // ====================================================================================
 		"118":`118.Adding Code Files to Packages
 Packages can contain multiple code files, and to simplify development, access control rules and package
-prefixes do not apply when accessing features defined in the same package.`,
+prefixes do not apply when accessing features defined in the same package.
+`,
 // ====================================================================================
 		"119":`119.func init()
 Each code file can contain an initialization function that is executed only when all packages have been
@@ -1785,7 +1903,8 @@ Each code file can have its own initialization function. When using the standard
 initialization functions are executed based on the alphabetic order of the filenames, so the function in
 the a.go file will be executed before the function in the b.go file, and so on.
 But this order is not part of the Go language specification and should not be relied on. Your initialization
-functions should be self-contained and not rely on other init functions having been invoked previously.`,
+functions should be self-contained and not rely on other init functions having been invoked previously.
+`,
 // ====================================================================================
 		"120":`120.Creating Nested Packages
 Packages can be defined within other packages, making it easy to break up complex features into as many
@@ -1830,7 +1949,8 @@ example:
 		}
 		fmt.Println("Name:", cart.CustomerName)
 		fmt.Println("Total:",  ToCurrency(cart.GetTotal()))
-	}`,
+	}
+	`,
 // ====================================================================================
 		"121":`121.Initialization Function
 example:
@@ -1838,7 +1958,8 @@ example:
 			for category, price := range categoryMaxPrices {
 				categoryMaxPrices[category] = price + (price * defaultTaxRate)
 			}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"122":`122.Importing a Package Only for Initialization Effects
 Go prevents packages from being imported but not used, 
@@ -1855,7 +1976,8 @@ example:
 		. "packages/fmt"
 		"packages/store/cart"
 			"packages/data"
-	)`,
+	)
+	`,
 // ====================================================================================
 		"123":`123.Finding Go Packages
 #1 https://pkg.go.dev
@@ -1864,7 +1986,8 @@ example:
 Many Go modules are written by individual developers
 to solve a problem and then published for anyone else to use. 
 This creates a rich module ecosystem,
-but it does mean that maintenance and support can be inconsistent.`,
+but it does mean that maintenance and support can be inconsistent.
+`,
 // ====================================================================================
 		"124":`124.indirect
 The indirect comment at the end of the statements is added automatically because
@@ -1890,11 +2013,13 @@ automatically:
 	go: downloading github.com/fatih/color v1.10.0
 	go: downloading github.com/mattn/go-isatty v0.0.12
 	go: downloading github.com/mattn/go-colorable v0.1.8
-	go: downloading golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae`,
+	go: downloading golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae
+	`,
 // ====================================================================================
 		"125":`125.Managing External Packages
 Removing a Package
-To update the go.mod file to reflect the change, run the command`,
+To update the go.mod file to reflect the change, run the command
+`,
 // ====================================================================================
 		"126":`126.go mod tidyPutting Type and Interface Composition in Context
 What is it?
@@ -1934,7 +2059,8 @@ Steps:
 	// Constructor:
 	func NewProduct(name, category string, price float64) *Product {
 		return &Product{ name, category, price }
-	}`,
+	}
+	`,
 // ====================================================================================
 		"127":`127.Creating Struct Values in Packages
 example:
@@ -1953,7 +2079,8 @@ func main() {
 	for , p := range []*store.Product { kayak, lifejacket} {
 		fmt.Println("Name:", p.Name, "Category:", p.Category, "Price:", p.Price(0.2))
 	}
-}`,
+}
+`,
 // ====================================================================================
 		"128":`128.Steps of composition
 1-Defining the Base Type -> struct - method 
@@ -2052,7 +2179,8 @@ Calling a Method in the main.go:
 Output:
 	Boat: Kayak Price: 330
 	Boat: Canoe Price: 480
-	Boat: Tender Price: 780.3`,
+	Boat: Tender Price: 780.3
+	`,
 // ====================================================================================
 		"129":`129.Creating a Chain of Nested Types
 The composition feature can be used to create complex chains of nested types, 
@@ -2103,7 +2231,8 @@ Accessing Nested Fields Directly in the main.go:
 Output:
 	Rental Boat: Rubber Ring Rental Price: 12
 	Rental Boat: Yacht Rental Price: 60000
-	Rental Boat: Super Yacht Rental Price: 120000`,
+	Rental Boat: Super Yacht Rental Price: 120000
+	`,
 // ====================================================================================
 		"130":`130.Multiple Nested Types in the Same Struct
 example:
@@ -2145,7 +2274,8 @@ Using Promoted Fields in the main.go:
 Output:
 	Rental Boat: Rubber Ring Rental Price: 12 Captain: N/A
 	Rental Boat: Yacht Rental Price: 60000 Captain: Bob
-	Rental Boat: Super Yacht Rental Price: 120000 Captain: Dora`,
+	Rental Boat: Super Yacht Rental Price: 120000 Captain: Dora
+	`,
 // ====================================================================================
 		"131":`131.When Promotion Cannot Be Performed
 example:
@@ -2208,7 +2338,8 @@ Defining a Method in the specialdeal.go:
 Output:
 	Name: Weekend Special
 	Price field: 229
-	Price method: 229`,
+	Price method: 229
+	`,
 // ====================================================================================
 		"132":`132.Promotion Ambiguity
 A related issue arises when two embedded fields use the same field or method names
@@ -2232,7 +2363,8 @@ An Ambiguous Method in the main.go:
 		fmt.Println("Price:", bundle.Price(0))
 	}
 Output:
-	.\main.go:22:33: ambiguous selector bundle.Price`,
+	.\main.go:22:33: ambiguous selector bundle.Price
+	`,
 // ====================================================================================
 		"133":`133.Composition and Interfaces
 example:
@@ -2253,7 +2385,8 @@ Mixing Types in the main.go:
 	}
 Output:
 	.\main.go:11:9: cannot use store.NewBoat("Kayak", 279, 1, false) (type *store.Boat) as
-	type *store.Product in map value`,
+	type *store.Product in map value
+	`,
 // ====================================================================================
 		"134":`134.Composition to Implement Interfaces
 Go takes promoted methods into account when determining whether a type conforms to an interface,
@@ -2284,7 +2417,8 @@ Using an Interface in the main.go:
 	}
 Output:
 	Key: Kayak Price: 334.8
-	Key: Ball Price: 23.4`,
+	Key: Ball Price: 23.4
+	`,
 // ====================================================================================
 		"135":`135.the Type Switch Limitation
 example:
@@ -2341,7 +2475,8 @@ Using Separate case Statements in the main.go:
 	}
 Output:
 	Name: Kayak Category: Watersports Price: 334.8
-	Name: Soccer Ball Category: Soccer Price: 23.4`,
+	Name: Soccer Ball Category: Soccer Price: 23.4
+	`,
 // ====================================================================================
 		"136":`136.the Type Switch Limitation An alternative solution
 example:
@@ -2394,7 +2529,8 @@ Using Interfaces in the main.go:
 
 Output:
 	Name: Kayak Category: Watersports Price: 334.8
-	Name: Soccer Ball Category: Soccer Price: 23.4`,
+	Name: Soccer Ball Category: Soccer Price: 23.4
+	`,
 // ====================================================================================
 		"137":`137.Composing Interfaces
 Go allows interfaces to be composed from other interfaces
@@ -2422,7 +2558,8 @@ Composing an Interface in the product.go:
 	}
 	func (p *Product) GetCategory() string {
 		return p.Category
-	}`,
+	}
+	`,
 // ====================================================================================
 		"138":`138.Goroutines and Channels
 What are they?
@@ -2460,7 +2597,8 @@ using a channel
 Indicate that no further values         Use the close function
 will be sent over a channel
 Enumerate the values received           Use a for loop with the range keyword 
-from a channel`,
+from a channel
+`,
 // ====================================================================================
 		"139":`139.How Go Executes Code
 All Go programs use at least one goroutine because this is how Go executes the code in the
@@ -2475,7 +2613,8 @@ it reaches the end of the main function, at which point the application terminat
 The goroutine executes each statement in the main function synchronously, 
 which means that it waits
 for the statement to complete before moving on to the next statement. 
-The statements in the main function`,
+The statements in the main function
+`,
 // ====================================================================================
 		"140":`140.Creating Additional Goroutines
 Go allows the developer to create additional goroutines, 
@@ -2498,7 +2637,8 @@ example:
 		
 		fmt.Println("first statement")
 
-	}`,
+	}
+	`,
 // ====================================================================================
 		"141":`141.Returning Results from Goroutines
 Receiving from a channel is a blocking operation, 
@@ -2513,14 +2653,16 @@ conduits through which data can be sent and received.
 
 Defining a Channel:
 example:
-	var channel chan float64 = make(chan float64)`,
+	var channel chan float64 = make(chan float64)
+	`,
 // ====================================================================================
 		"142":`142.Sending a Result Using a Channel
 Receiving from a channel is a blocking operation, 
 meaning that execution will not continue until a value
 has been received
 example:
-	resultChannel <- total`,
+	resultChannel <- total
+	`,
 // ====================================================================================
 		"143":`143.Receiving a Result Using a Channel
 Receiving from a channel is a blocking operation, 
@@ -2528,7 +2670,8 @@ meaning that execution will not continue until a value
 has been received
 
 example:
-	storeTotal += <- channel`,
+	storeTotal += <- channel
+	`,
 // ====================================================================================
 		"144":`144.using adapters to execute functions asynchronously
 It isn't always possible to rewrite existing functions or methods to use channels, but it is a simple matter
@@ -2556,7 +2699,8 @@ example:
 	...
 	go func (price float64, c chan float64) {
 		c <- calcTax(price)
-	}(275, resultChannel)`,
+	}(275, resultChannel)
+	`,
 // ====================================================================================
 		"145":`145.Coordinating Channels
 By default, sending and receiving through a channel are blocking operations. This means a goroutine that
@@ -2573,7 +2717,8 @@ example:
 	both present. When Charlie also has a message for Alice, he will form a queue behind Bob. 
 	Everyone waits patiently, messages are transferred only when the sender 
 	and receiver are both available, and messages are
-	processed sequentially.`,
+	processed sequentially.
+	`,
 // ====================================================================================
 		"146":`146.Buffered Channel
 The default channel behavior can lead to bursts of activity as goroutines do their work, followed by a long
@@ -2597,7 +2742,8 @@ example:
 	var channel chan float64 = make(chan float64, 2)
 Result explain:
 	For this example, I have set the size of the buffer to 2, meaning that two senders will be able to send
-	values through the channel without having to wait for them to be received.`,
+	values through the channel without having to wait for them to be received.
+	`,
 // ====================================================================================
 		"147":`147.Inspecting a Channel Buffer
 You can determine the size of a channel's buffer using 
@@ -2608,7 +2754,8 @@ the number of values in the channel's
 buffer and the overall size of the buffer.
 
 example:
-	len(channel), "items in buffer, size", cap(channel))`,
+	len(channel), "items in buffer, size", cap(channel))
+	`,
 // ====================================================================================
 		"148":`148.Closing a Channel
 The solution for this problem is for the sender to indicate when no further values are coming through the
@@ -2636,7 +2783,8 @@ example:
 		} else {
 			fmt.Println("Channel has been closed")
 		break
-	}`,
+	}
+	`,
 // ====================================================================================
 		"149":`149.Enumerating Channel Values
 A for loop can be used with the range keyword to enumerate the values sent through a channel, allowing
@@ -2652,7 +2800,8 @@ example:
 		fmt.Println("Dispatch to", details.Customer, ":", details.Quantity,
 			"x", details.Product.Name)
 	}
-	fmt.Println("Channel has been closed")`,
+	fmt.Println("Channel has been closed")
+	`,
 // ====================================================================================
 		"150":`150.Restricting Channel Direction
 By default, channels can be used to send and receive data, but this can be restricted when using channels
@@ -2671,7 +2820,8 @@ Attempting to receive from a send-only (and vice versa) channel is a compile-tim
 example:
 	# concurrency
 	.\orderdispatch.go:29:29: invalid operation: <-channel (receive from send-only type chan<-
-	DispatchNotification)`,
+	DispatchNotification)
+	`,
 // ====================================================================================
 		"151":`151.Restricting Channel Argument Direction
 Go allows bidirectional channels to be assigned to unidirectional channel variables, 
@@ -2694,7 +2844,8 @@ example:
 		dispatchChannel := make(chan DispatchNotification, 100)
 		go DispatchOrders(chan<- DispatchNotification(dispatchChannel))
 		receiveDispatches((<-chan DispatchNotification)(dispatchChannel))
-	}`,
+	}
+	`,
 // ====================================================================================
 		"152":`152.Select Statements
 The select keyword is used to group operations that will send or receive from channels, 
@@ -2726,7 +2877,8 @@ example:
 			time.Sleep(time.Millisecond * 500)
 		}
 	}
-	alldone: fmt.Println("All values received")`,
+	alldone: fmt.Println("All values received")
+	`,
 // ====================================================================================
 		"153":`153.Receiving from Multiple Channels
 A select statement can be used to receive without blocking,
@@ -2788,7 +2940,8 @@ example:
 			}
 		}
 		alldone: fmt.Println("All values received")
-	}`,
+	}
+	`,
 // ====================================================================================
 		"154":`154.Sending Without Blocking
 A select statement can also be used to send to a channel without blocking
@@ -2805,7 +2958,8 @@ example:
 			}
 		}
 		close(channel)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"155":`155.Sending to Multiple Channels
 If there are multiple channels available, a select statement can be used to find a channel for which sending
@@ -2832,7 +2986,8 @@ example:
 		}
 		close(channel1)
 		close(channel2)
-	}`,
+	}
+	`,
 // ====================================================================================
 		"156":`156.Error Handling
 What is it?
@@ -2871,7 +3026,8 @@ Report an error over a channel          Add an error field to the struct type us
 Indicate that an unrecoverable          Call the panic function 
 error has occurred
 Recover from a panic                    Use the defer keyword to register a function that
-										calls the recover function`,
+										calls the recover function
+										`,
 // ====================================================================================
 		"157":`157.Generating Errors
 Functions and methods can express exceptional or unexpected outcomes by producing error responses
@@ -2893,7 +3049,8 @@ example:
 Output:
 	Watersports Total: $328.95
 	Chess Total: $1291.00
-	Running (no such category)`,
+	Running (no such category)
+	`,
 // ====================================================================================
 		"158":`158.Ignoring Error Results
 I don't recommend ignoring error results because it means you will lose important information.
@@ -2911,7 +3068,8 @@ example:
 			total,  := Products.TotalPrice(cat)
 			fmt.Println(cat, "Total:", ToCurrency(total))
 		}
-	}`,
+	}
+	`,
 // ====================================================================================
 		"159":`159.Reporting Errors via Channels
 example:
@@ -2974,7 +3132,8 @@ main.go:
 Output:
 	Watersports Total: $328.95
 	Chess Total: $1291.00
-	Running (no such category)`,
+	Running (no such category)
+	`,
 // ====================================================================================
 		"160":`160.String Processing and Regular Expressions
 What are they?
@@ -3015,7 +3174,9 @@ a string
 Perform a substitution      Use the Replace* or Map function in the strings package,
 تعویض انجام دهید            use a Replacer, or use the Replace* functions in the regexp package
 Efficiently build a         Use the Builder type in the strings package
-string`,
+string
+
+`,
 // ====================================================================================
 		"161":`161.Comparing Strings
 The strings Functions for Comparing Strings
@@ -3052,7 +3213,8 @@ Output:
 	ContainsRune: true
 	HasPrefix: true
 	HasSuffix: true
-	EqualFold: true`,
+	EqualFold: true
+	`,
 // ====================================================================================
 		"162":`162.Using The Byte-Oriented Functions
 example:
@@ -3070,7 +3232,8 @@ example:
 	}
 Output:
 	Strings Prefix: true
-	Bytes Prefix: true`,
+	Bytes Prefix: true
+	`,
 // ====================================================================================
 		"163":`163.Converting String Case
 The Case Functions in the strings Package
@@ -3104,7 +3267,8 @@ example:
 Output:
 	Original: A boat for sailing
 	Title: A Boat For Sailing
-	Title: A BOAT FOR SAILING`,
+	Title: A BOAT FOR SAILING
+	`,
 // ====================================================================================
 		"164":`164.Title Case
 example:
@@ -3124,7 +3288,8 @@ example:
 Output:
 	Original: ǉ [199 137]
 	Upper: Ǉ [199 135]
-	Title: ǈ [199 136]`,
+	Title: ǈ [199 136]
+	`,
 // ====================================================================================
 		"165":`165.Working with Character Case
 The unicode package provides functions that can be used to determine or change the case of individual
@@ -3137,7 +3302,8 @@ ToLower(rune)   This function returns the lowercase rune associated with the spe
 IsUpper(rune)   This function returns true if the specified rune is uppercase.
 ToUpper(rune)   This function returns the upper rune associated with the specified rune.
 IsTitle(rune)   This function returns true if the specified rune is title case.
-ToTitle(rune)   This function returns the title case rune associated with the specified rune.`,
+ToTitle(rune)   This function returns the title case rune associated with the specified rune.
+`,
 // ====================================================================================
 		"166":`166.the Rune Case Functions
 example:
@@ -3157,7 +3323,8 @@ Output:
 	a Upper case: false
 	y Upper case: false
 	a Upper case: false
-	k Upper case: false`,
+	k Upper case: false
+	`,
 // ====================================================================================
 		"167":`167.Inspecting Strings
 The strings Functions for Inspecting Strings
@@ -3198,16 +3365,52 @@ Output:
 	LastIndex: 19
 	IndexAny: 2
 	LastIndex: 19
-	LastIndexAny: 4`,
+	LastIndexAny: 4
+	`,
 // ====================================================================================
 		"168":`168.IndexFunc and LastIndexFunc functions 
-	Inspecting Strings with Custom Functions
-	The IndexFunc and LastIndexFunc functions use a custom function to inspect strings, using custom functions
-	Custom functions receive a rune and return a bool result that indicates if the character meets the
-	desired condition. The IndexFunc function invokes the custom function for each character in the string until
-	a true result is obtained, at which point the index is returned.
-	The isLetterB variable is assigned a custom function that receives a rune and returns true if the rune
-	is a uppercase or lowercase B. The custom function is passed to the strings.IndexFunc function
+Inspecting Strings with Custom Functions
+The IndexFunc and LastIndexFunc functions use a custom function to inspect strings, using custom functions
+Custom functions receive a rune and return a bool result that indicates if the character meets the
+desired condition. The IndexFunc function invokes the custom function for each character in the string until
+a true result is obtained, at which point the index is returned.
+The isLetterB variable is assigned a custom function that receives a rune and returns true if the rune
+is a uppercase or lowercase B. The custom function is passed to the strings.IndexFunc function
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		description := "A boat for one person"
+		isLetterB := func (r rune) bool {
+			return r == 'B' || r == 'b'
+		}
+		fmt.Println("IndexFunc:", strings.IndexFunc(description, isLetterB))
+	}
+Output:
+	IndexFunc: 2
+	`,
+// ====================================================================================
+	"169":`169.Splitting Strings
+	The Functions for Splitting Strings in the strings Package
+	Function                    Description
+	---------------             --------------------------------
+	Fields(s)                   This function splits a string on whitespace characters and returns a slice
+								containing the nonwhitespace sections of the string s.
+	FieldsFunc(s, func)         This function splits the string s on the characters for which a custom function
+								returns true and returns a slice containing the remaining sections of the string.
+	Split(s, sub)               This function splits the string s on every occurrence of the specified substring,
+								returning a string slice. If the separator is the empty string, then the slice will
+								contain strings for each character.
+	SplitN(s, sub, max)         This function is similar to Split, but accepts an additional int argument that
+								specifies the maximum number of substrings to return. The last substring in the
+								result slice will contain the unsplit portion of the source string.
+	SplitAfter(s, sub)          This function is similar to Split but includes the substring used in the results.
+	SplitAfterN(s, sub, max)    This function is similar to SplitAfter, but accepts an additional int argument
+								that specifies the maximum number of substrings to return.
+
 	example:
 		package main
 		import (
@@ -3216,25 +3419,159 @@ Output:
 		)
 		func main() {
 			description := "A boat for one person"
-			isLetterB := func (r rune) bool {
-				return r == 'B' || r == 'b'
+			splits := strings.Split(description, " ")
+			for _, x := range splits {
+				fmt.Println("Split >>" + x + "<<")
 			}
-			fmt.Println("IndexFunc:", strings.IndexFunc(description, isLetterB))
+			splitsAfter := strings.SplitAfter(description, " ")
+			for _, x := range splitsAfter {
+				fmt.Println("SplitAfter >>" + x + "<<")
+			}
 		}
 	Output:
-		IndexFunc: 2`,
+		Split >>A<<
+		Split >>boat<<
+		Split >>for<<
+		Split >>one<<
+		Split >>person<<
+		SplitAfter >>A <<
+		SplitAfter >>boat <<
+		SplitAfter >>for <<
+		SplitAfter >>one <<
+		SplitAfter >>person<<
+		`,
 // ====================================================================================
-		"169":``,
+		"170":`170.SplitN and SplitAfterN functions 
+Restricting the Number of Results
+The SplitN and SplitAfterN functions accept an int argument that specifies the maximum number of
+results that should be included in the results
+Restricting the Results
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		description := "A boat for one person"
+		splits := strings.SplitN(description, " ", 3)
+		for _, x := range splits {
+			fmt.Println("Split >>" + x + "<<")
+		}
+	}
+Output:
+	Split >>A<<
+	Split >>boat<<
+	Split >>for one person<<
+	`,
 // ====================================================================================
-		"170":``,
+		"171":`171.strings.SplitN function
+Splitting on Whitespace Characters
+One limitation of the Split, SplitN, SplitAfter, and SplitAfterN functions is they do not deal with
+repeated sequences of characters, which can be a problem when splitting a string on whitespace characters
+
+The words in the source string are double-spaced, but the SplitN function splits only on the first space
+character, which produces odd results.
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		description := "This  is  double  spaced"
+		splits := strings.SplitN(description, " ", 3)
+		for _, x := range splits {
+			fmt.Println("Split >>" + x + "<<")
+		}
+	}
+Output:
+	Split >>This<<
+	Split >><<
+	Split >>is  double  spaced<<
+	`,
 // ====================================================================================
-		"171":``,
+		"172":`172.Fields Function
+The Fields function doesn't support a limit on the number of results 
+but does deal with the double spaces properly.
+The Fields function has a better approach, which is to split on any character for
+which the IsSpace function in the unicode package returns true.
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		description := "This  is  double  spaced"
+		splits := strings.Fields(description)
+		for _, x := range splits {
+			fmt.Println("Field >>" + x + "<<")
+		}
+	}
+Output:
+	Field >>This<<
+	Field >>is<<
+	Field >>double<<
+	Field >>spaced<<
+	`,
 // ====================================================================================
-		"172":``,
+		"173":`173.FieldsFunc function
+Splitting Using a Custom Function to Split Strings
+The FieldsFunc function splits a string by passing each character to a custom function and splitting when
+that function returns true
+The custom function receives a rune and returns true if that rune should cause the string to split.
+The FieldsFunc function is smart enough to deal with repeated characters
+example:
+	package main
+	import (
+		"fmt"
+		"strings"
+	)
+	func main() {
+		description := "This  is  double  spaced"
+		splitter := func(r rune) bool {
+			return r == ' '
+		}
+		splits := strings.FieldsFunc(description, splitter)
+		for _, x := range splits {
+			fmt.Println("Field >>" + x + "<<")
+		}
+	}
+Output:
+	Field >>This<<
+	Field >>is<<
+	Field >>double<<
+	Field >>spaced<<
+	`,
 // ====================================================================================
-		"173":``,
-// ====================================================================================
-		"174":``,
+		"174":`174.Trimming Strings
+The Functions for Trimming Strings in the strings Package
+	
+	Function                Description
+	------------            ---------------------------------------
+	TrimSpace(s)            This function returns the string s without leading or trailing whitespace characters.
+	Trim(s, set)            This function returns a string from which any leading or trailing characters
+							contained in the string set are removed from the string s.
+	TrimLeft(s, set)        This function returns the string s without any leading character contained
+							in the string set. This function matches any of the specified characters—use
+							the TrimPrefix function to remove a complete substring.
+	TrimRight(s, set)       This function returns the string s without any trailing character contained
+							in the string set. This function matches any of the specified characters—use
+							the TrimSuffix function to remove a complete substring.
+	TrimPrefix(s, prefix)   This function returns the string s after removing the specified prefix string.
+							This function removes the complete prefix string—use the TrimLeft
+							function to remove characters from a set.
+	TrimSuffix(s, suffix)   This function returns the string s after removing the specified suffix string.
+							This function removes the complete suffix string—use the TrimRight
+							function to remove characters from a set.
+	TrimFunc(s, func)       This function returns the string s from which any leading or trailing
+							character for which a custom function returns true are removed.
+	TrimLeftFunc(s, func)   This function returns the string s from which any leading character for
+							which a custom function returns true are removed.
+	TrimRightFunc(s, func)  This function returns the string s from which any trailing character for
+							which a custom function returns true are removed.
+							`,
 // ====================================================================================
 		"175":``,
 // ====================================================================================
