@@ -4227,11 +4227,80 @@ The Basic fmt Functions for Composing and Writing Strings.
 								followed by a newline character. Spaces are added between all values.
 								`,
 // ====================================================================================
-		"204":``,
+		"204":`204.Println and Fprintln functions
+The Println and Fprintln functions add spaces between all the values, but the
+Print and Fprint functions only add spaces between values that are not strings.
+
+since the Print function adds spaces only between pairs of nonstring values, the results are different.
+
+example:
+	package main
+	import "fmt"
+	func main() {
+		fmt.Println("Product:", 1234 , "Price:", 5555)
+		fmt.Print("Product:", 1234 , "Price:", 5555, "\n")
+	}
+Output:
+	Product: 1234 Price: 5555
+	Product:1234Price:5555
+	`,
 // ====================================================================================
-		"205":``,
+		"205":`205.fmt.Printf
+The Printf function accepts a template string and a series of values. The template is scanned for verbs,
+which are denoted by the percentage sign (the % character) followed by a format specifier.
+
+The first verb is %v, and it specifies the default representation for a type. For a string value, for example,
+%v simply includes the string in the output. The %4.2f verb specifies the format for a floating-point value,
+with 4 digits before the decimal point and 2 digits after. The values for the template verbs are taken from the
+remaining arguments, used in the order they are specified. For the example, this means the %v verb is used
+to format the Product.Name value, and the %4.2f verb is used to format the Product.Price value. These
+values are formatted, inserted into the template string, and written out to the console.
+
+example:
+	package main
+	import "fmt"
+	type Product struct {
+		Name, Category string
+		Price float64
+	}
+	var Kayak = Product {
+		Name: "Kayak",
+		Category: "Watersports",
+		Price: 275,
+	}
+	var Products = []Product {
+		{ "Kayak", "Watersports", 279 },
+		{ "Lifejacket", "Watersports", 49.95 },
+		{ "Soccer Ball", "Soccer", 19.50 },
+		{ "Corner Flags", "Soccer", 34.95 },
+		{ "Stadium", "Soccer", 79500 },
+		{ "Thinking Cap", "Chess", 16 },
+		{ "Unsteady Chair", "Chess", 75 },
+		{ "Bling-Bling King", "Chess", 1200 },
+	}
+	func main() {
+		fmt.Printf("Product: %v, Price: $%4.2f", Kayak.Name, Kayak.Price)
+	}
+Output:
+	Product: Kayak, Price: $275.00
+	`,
 // ====================================================================================
-		"206":``,
+		"206":`206.The fmt Functions for Formatting Strings
+		
+	Name                            Description
+	---------------------------     -----------------------------------------
+	Sprintf(t, ...vals)             This function returns a string, which is created by processing the template t.
+									The remaining arguments are used as values for the template verbs.
+	Printf(t, ...vals)              This function creates a string by processing the template t.
+									The remaining arguments are used as values for the template verbs.
+									The string is written to the standard out.
+	Fprintf(writer, t, ...vals)     This function creates a string by processing the template t.
+									The remaining arguments are used as values for the template verbs.
+									The string is written to a Writer, which is described in Chapter 20.
+	Errorf(t, ...values)            This function creates an error by processing the template t.
+									The remaining arguments are used as values for the template verbs. The
+									result is an error value whose Error method returns the formatted string.
+									`,
 // ====================================================================================
 		"207":``,
 // ====================================================================================
