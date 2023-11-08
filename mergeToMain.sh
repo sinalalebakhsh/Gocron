@@ -2,7 +2,7 @@
 echo -n "Git push on branch develop "
 echo ""
 git add .
-git commit -m " 💠 Add Numbers for Keys Map until 480  "
+git commit -m " 💠💠💠 Adding There are complete => Numbers for Keys Map until 480  "
 git push -u origin develop
 echo "====================================================================="
 echo -n "git checkout beforeMergeToMain "
@@ -16,7 +16,7 @@ echo "====================================================================="
 echo -n "Git is Push for beforeMergeToMain "
 echo ""
 git add .
-git commit -m " 💠 Add Numbers for Keys Map until 480  "
+git commit -m " 💠💠💠 Adding There are complete => Numbers for Keys Map until 480  "
 git push -u origin beforeMergeToMain
 echo "====================================================================="
 echo -n "git checkout main "
@@ -34,7 +34,7 @@ echo "====================================================================="
 echo -n "Git is Push for main "
 echo ""
 git add .
-git commit -m " 💠 Add Numbers for Keys Map until 480  "
+git commit -m " 💠💠💠 Adding There are complete => Numbers for Keys Map until 480  "
 git push -u origin main
 echo "====================================================================="
 echo -n "git checkout develop "
