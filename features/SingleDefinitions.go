@@ -7,7 +7,12 @@ type SingleDefinitions struct {
 var OriginSingleDef = SingleDefinitions{
 
 	SingleDef: map[string]string{
-		// Introduction
+		/*
+
+
+
+
+		 */                 // Introduction
 		"go":               "Fans of Go (called gophers) describe Go as having the expressiveness of dynamic languages like Python or Ruby, with the performance of compiled languages like C or C++. The language is open source, and was started by engineers at Google. It's written using a C-style syntax, has statically typed variables, manages memory using garbage collection, and is compiled into stand-alone executables. Go is noted for the concurrent programming features built into the language core, the networking packages in the standard library (such as a web server), fast compilation and execution speed. Its simple, minimalistic and consistent language design make for a delightful experience, while the abundant and thoughtful tooling addresses traditional problems such as consistent formatting and documentation. The home page for Go is go.dev, and there is an excellent interactive tutorial at tour.go.dev. Go (often referred to as Golang) is a statically-typed programming language known for its simplicity, efficiency, and strong support for concurrent programming. It was designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson and was first released to the public in 2009.",
 		"golang":           "Fans of Go (called gophers) describe Go as having the expressiveness of dynamic languages like Python or Ruby, with the performance of compiled languages like C or C++. The language is open source, and was started by engineers at Google. It's written using a C-style syntax, has statically typed variables, manages memory using garbage collection, and is compiled into stand-alone executables. Go is noted for the concurrent programming features built into the language core, the networking packages in the standard library (such as a web server), fast compilation and execution speed. Its simple, minimalistic and consistent language design make for a delightful experience, while the abundant and thoughtful tooling addresses traditional problems such as consistent formatting and documentation. The home page for Go is go.dev, and there is an excellent interactive tutorial at tour.go.dev. Go (often referred to as Golang) is a statically-typed programming language known for its simplicity, efficiency, and strong support for concurrent programming. It was designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson and was first released to the public in 2009.",
 		"gopher":           "Fans of Go (called gophers) describe Go as having the expressiveness of dynamic languages like Python or Ruby, with the performance of compiled languages like C or C++. The language is open source, and was started by engineers at Google. It's written using a C-style syntax, has statically typed variables, manages memory using garbage collection, and is compiled into stand-alone executables. Go is noted for the concurrent programming features built into the language core, the networking packages in the standard library (such as a web server), fast compilation and execution speed. Its simple, minimalistic and consistent language design make for a delightful experience, while the abundant and thoughtful tooling addresses traditional problems such as consistent formatting and documentation. The home page for Go is go.dev, and there is an excellent interactive tutorial at tour.go.dev. Go (often referred to as Golang) is a statically-typed programming language known for its simplicity, efficiency, and strong support for concurrent programming. It was designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson and was first released to the public in 2009.",
@@ -16,8 +21,12 @@ var OriginSingleDef = SingleDefinitions{
 		"what is go ?":     "Fans of Go (called gophers) describe Go as having the expressiveness of dynamic languages like Python or Ruby, with the performance of compiled languages like C or C++. The language is open source, and was started by engineers at Google. It's written using a C-style syntax, has statically typed variables, manages memory using garbage collection, and is compiled into stand-alone executables. Go is noted for the concurrent programming features built into the language core, the networking packages in the standard library (such as a web server), fast compilation and execution speed. Its simple, minimalistic and consistent language design make for a delightful experience, while the abundant and thoughtful tooling addresses traditional problems such as consistent formatting and documentation. The home page for Go is go.dev, and there is an excellent interactive tutorial at tour.go.dev. Go (often referred to as Golang) is a statically-typed programming language known for its simplicity, efficiency, and strong support for concurrent programming. It was designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson and was first released to the public in 2009.",
 		"what is golang?":  "Fans of Go (called gophers) describe Go as having the expressiveness of dynamic languages like Python or Ruby, with the performance of compiled languages like C or C++. The language is open source, and was started by engineers at Google. It's written using a C-style syntax, has statically typed variables, manages memory using garbage collection, and is compiled into stand-alone executables. Go is noted for the concurrent programming features built into the language core, the networking packages in the standard library (such as a web server), fast compilation and execution speed. Its simple, minimalistic and consistent language design make for a delightful experience, while the abundant and thoughtful tooling addresses traditional problems such as consistent formatting and documentation. The home page for Go is go.dev, and there is an excellent interactive tutorial at tour.go.dev. Go (often referred to as Golang) is a statically-typed programming language known for its simplicity, efficiency, and strong support for concurrent programming. It was designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson and was first released to the public in 2009.",
 		"what is golang ?": "Fans of Go (called gophers) describe Go as having the expressiveness of dynamic languages like Python or Ruby, with the performance of compiled languages like C or C++. The language is open source, and was started by engineers at Google. It's written using a C-style syntax, has statically typed variables, manages memory using garbage collection, and is compiled into stand-alone executables. Go is noted for the concurrent programming features built into the language core, the networking packages in the standard library (such as a web server), fast compilation and execution speed. Its simple, minimalistic and consistent language design make for a delightful experience, while the abundant and thoughtful tooling addresses traditional problems such as consistent formatting and documentation. The home page for Go is go.dev, and there is an excellent interactive tutorial at tour.go.dev. Go (often referred to as Golang) is a statically-typed programming language known for its simplicity, efficiency, and strong support for concurrent programming. It was designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson and was first released to the public in 2009.",
+		/*
 
-		// Go documentation
+
+
+
+		 */                           // Go documentation
 		"godoc":                      "Godoc is a Go package that lets you create, manage, and use Go documentation in “the Go way”. for installing: sudo apt install golang-golang-x-tools. The Go way is a set of principles that, as a Go programmer, you should follow to improve code quality. Using Godoc, you can easily read other developers' documentation and code. You can also automate the creation of your own documentation and publish it using Godoc.Godoc is similar to Javadoc, the code documentor for Java. They both use comments and code in modules to generate documentation. And both tools structure that documentation in HTML so you can view it in a browser.",
 		"what is godoc?":             "Godoc is a Go package that lets you create, manage, and use Go documentation in “the Go way”. for installing: sudo apt install golang-golang-x-tools. The Go way is a set of principles that, as a Go programmer, you should follow to improve code quality. Using Godoc, you can easily read other developers' documentation and code. You can also automate the creation of your own documentation and publish it using Godoc.Godoc is similar to Javadoc, the code documentor for Java. They both use comments and code in modules to generate documentation. And both tools structure that documentation in HTML so you can view it in a browser.",
 		"install godoc":              "Run this in Terminal ===> sudo apt install golang-golang-x-tools",
@@ -94,6 +103,7 @@ var OriginSingleDef = SingleDefinitions{
 		"converting between types":   "Converting between types is done via a function with the name of the type to convert to. ",
 	
 		"arithmetic operations on different types": "In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an error. ",
+<<<<<<< HEAD
 
 
 
@@ -102,8 +112,15 @@ var OriginSingleDef = SingleDefinitions{
 
 
 
+=======
+		"string": "A string in Go is an immutable sequence of bytes, which don't necessarily have to represent characters.",
+		/*
+>>>>>>> beforeMergeToMain
 
-		// using reflection
+
+
+
+		 */                              // using reflection
 		"reflection":                    "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time. use this word for get example: reflection example",
 		"reflections":                   "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time. use this word for get example: reflection example",
 		"using reflection":              "the Go support for reflection, which allows an application to work with types that are not known when the project is compiled, which is useful for creating APIs that will be used by other projects, for example. Reflection allows types and values to be inspected at runtime, even if those types were not defined at compile time. use this word for get example: reflection example",
@@ -120,11 +137,12 @@ var OriginSingleDef = SingleDefinitions{
 		"why the need for reflection?":  "The Go type system is rigorously enforced, which means you can't use a value of one type when a different type is inspected. sometime this is broken for wrong implementing. in this case, the empty interface, which can be used to accept any type.  use this word for get example: reflection example",
 		"why the need for reflection ?": "The Go type system is rigorously enforced, which means you can't use a value of one type when a different type is inspected. sometime this is broken for wrong implementing. in this case, the empty interface, which can be used to accept any type.  use this word for get example: reflection example",
 		"reflect package":               "The reflect package provides the Go reflection features, and the key functions are called TypeOf and ValueOf",
-		
+		/*
 
-		//
-		//
-		// Generics
+
+
+
+		 */                       // Generics
 		"generic":                "Generics help you to do more with less code, by using generic types instead of concrete types. While Generics have been part of other programming languages for quite some time, Generics was only recently added to Golang as of the 1.18 release in 2022. Generics can be used to define functions, structs and maps.",
 		"generics":               "Generics help you to do more with less code, by using generic types instead of concrete types. While Generics have been part of other programming languages for quite some time, Generics was only recently added to Golang as of the 1.18 release in 2022. Generics can be used to define functions, structs and maps.",
 		"what is the generics":   "Generics help you to do more with less code, by using generic types instead of concrete types. While Generics have been part of other programming languages for quite some time, Generics was only recently added to Golang as of the 1.18 release in 2022. Generics can be used to define functions, structs and maps.",
@@ -133,14 +151,20 @@ var OriginSingleDef = SingleDefinitions{
 		"go generics":            "Generics help you to do more with less code, by using generic types instead of concrete types. While Generics have been part of other programming languages for quite some time, Generics was only recently added to Golang as of the 1.18 release in 2022. Generics can be used to define functions, structs and maps.",
 		"generics go":            "Generics help you to do more with less code, by using generic types instead of concrete types. While Generics have been part of other programming languages for quite some time, Generics was only recently added to Golang as of the 1.18 release in 2022. Generics can be used to define functions, structs and maps.",
 		"generics in go":         "Generics help you to do more with less code, by using generic types instead of concrete types. While Generics have been part of other programming languages for quite some time, Generics was only recently added to Golang as of the 1.18 release in 2022. Generics can be used to define functions, structs and maps.",
+		/*
 
-		// Frameworks
+
+
+
+		 */                // Frameworks
 		"beego":           "beego is used for rapid development of RESTful APIs, web apps and backend services in Go. It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding. Package beego provide a MVC framework beego: an open-source, high-performance, modular, full-stack web framework It is used for rapid development of RESTful APIs, web apps and backend services in Go. beego is inspired by Tornado, Sinatra and Flask with the added benefit of some Go-specific features such as interfaces and struct embedding.",
 		"beego framework": "beego is used for rapid development of RESTful APIs, web apps and backend services in Go. It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding. Package beego provide a MVC framework beego: an open-source, high-performance, modular, full-stack web framework It is used for rapid development of RESTful APIs, web apps and backend services in Go. beego is inspired by Tornado, Sinatra and Flask with the added benefit of some Go-specific features such as interfaces and struct embedding.",
+		/*
 
-		//
 
-		// Database
+
+
+		 */                                                 // Database
 		"database":                                         "There are drivers for a wide range of databases, and a list can be found at  https://github.com/golang/go/wiki/sqldrivers",
 		"data base":                                        "There are drivers for a wide range of databases, and a list can be found at  https://github.com/golang/go/wiki/sqldrivers",
 		"what is the database?":                            "The database/sql package provides features for working with SQL databases.",
@@ -153,10 +177,12 @@ var OriginSingleDef = SingleDefinitions{
 		"Are in database/sql any pitfalls or limitations?": "These features do not automatically populate struct fields from result rows.",
 		"Are in sql any pitfalls or limitations?":          "These features do not automatically populate struct fields from result rows.",
 		"installing a database driver":                     "Run the command:==> go get modernc.org/sqlite  Most database servers are set up separately so that the database driver opens a connection to a separate process. SQLite is an embedded database and is included in the driver package, which means no additional configuration is required.",
+		/*
 
 
 
 
+<<<<<<< HEAD
 
 		
 
@@ -166,6 +192,9 @@ var OriginSingleDef = SingleDefinitions{
 
 
 		// Apache kafka
+=======
+		 */             // Apache kafka
+>>>>>>> beforeMergeToMain
 		"kafka":        "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 		"apacheKafka":  "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 		"apache Kafka": "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
@@ -173,8 +202,12 @@ var OriginSingleDef = SingleDefinitions{
 		"what is exactly kafka apache for golang ?": "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 		"what is kafka apache for golang?":          "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 		"what is kafka apache for golang ?":         "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
+		/*
 
-		// Packages
+
+
+
+		 */                // Packages
 		"strings":         "The strings package contains many useful functions to work on strings. For more information about string functions, check out the strings package documentation. Link: https://pkg.go.dev/strings",
 		"package tar":     "Package tar implements access to tar archives.",
 		"package zip":     "Package zip provides support for reading and writing ZIP archives.",
@@ -189,6 +222,12 @@ var OriginSingleDef = SingleDefinitions{
 		"package lzw":     "Package lzw implements the Lempel-Ziv-Welch compressed data format, described in T. A. Welch, “A Technique for High-Performance Data Compression”, Computer, 17(6) (June 1984), pp 8-19. ",
 		"package zlib":    "Package zlib implements reading and writing of zlib format compressed data, as specified in RFC 1950. ",
 		"package reflect": "The reflect package provides features that allow types and values to be reflected, such that they can be used without explicit knowledge of the data types in use.",
+		/*
+		
+		
+		
+		
+		*/ //
 	},
 }
 
