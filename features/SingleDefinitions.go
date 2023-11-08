@@ -103,19 +103,8 @@ var OriginSingleDef = SingleDefinitions{
 		"converting between types":   "Converting between types is done via a function with the name of the type to convert to. ",
 	
 		"arithmetic operations on different types": "In many languages you can perform arithmetic operations on different types of variables, but in Go this gives an error. ",
-<<<<<<< HEAD
-
-
-
-
-		"string":"A string in Go is an immutable sequence of bytes, which don't necessarily have to represent characters.",
-
-
-
-=======
 		"string": "A string in Go is an immutable sequence of bytes, which don't necessarily have to represent characters.",
 		/*
->>>>>>> beforeMergeToMain
 
 
 
@@ -182,19 +171,7 @@ var OriginSingleDef = SingleDefinitions{
 
 
 
-<<<<<<< HEAD
-
-		
-
-
-		//
-
-
-
-		// Apache kafka
-=======
 		 */             // Apache kafka
->>>>>>> beforeMergeToMain
 		"kafka":        "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 		"apacheKafka":  "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
 		"apache Kafka": "Apache Kafka is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It is designed to handle high-throughput, fault-tolerant, and scalable messaging. Kafka allows you to publish and subscribe to streams of records, store them in a fault-tolerant way, and process them as they occur.",
