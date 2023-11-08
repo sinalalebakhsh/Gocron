@@ -7255,349 +7255,5567 @@ Output:
 	"S2F5YWs="
 `,
 // ====================================================================================
-		"309":``,
-// ====================================================================================
-		"310":``,
-// ====================================================================================
-		"311":``,
-// ====================================================================================
-		"312":``,
-// ====================================================================================
-		"313":``,
-// ====================================================================================
-		"314":``,
-// ====================================================================================
-		"315":``,
-// ====================================================================================
-		"316":``,
-// ====================================================================================
-		"317":``,
-// ====================================================================================
-		"318":``,
-// ====================================================================================
-		"319":``,
-// ====================================================================================
-		"320":``,
-// ====================================================================================
-		"321":``,
-// ====================================================================================
-		"322":``,
-// ====================================================================================
-		"323":``,
-// ====================================================================================
-		"324":``,
-// ====================================================================================
-		"325":``,
-// ====================================================================================
-		"326":``,
-// ====================================================================================
-		"327":``,
-// ====================================================================================
-		"328":``,
-// ====================================================================================
-		"329":``,
-// ====================================================================================
-		"330":``,
-// ====================================================================================
-		"331":``,
-// ====================================================================================
-		"332":``,
-// ====================================================================================
-		"333":``,
-// ====================================================================================
-		"334":``,
-// ====================================================================================
-		"335":``,
-// ====================================================================================
-		"336":``,
-// ====================================================================================
-		"337":``,
-// ====================================================================================
-		"338":``,
-// ====================================================================================
-		"339":``,
-// ====================================================================================
-		"340":``,
-// ====================================================================================
-		"341":``,
-// ====================================================================================
-		"342":``,
-// ====================================================================================
-		"343":``,
-// ====================================================================================
-		"344":``,
-// ====================================================================================
-		"345":``,
-// ====================================================================================
-		"346":``,
-// ====================================================================================
-		"347":``,
-// ====================================================================================
-		"348":``,
-// ====================================================================================
-		"349":``,
-// ====================================================================================
-		"350":``,
-// ====================================================================================
-		"351":``,
-// ====================================================================================
-		"352":``,
-// ====================================================================================
-		"353":``,
-// ====================================================================================
-		"354":``,
-// ====================================================================================
-		"355":``,
-// ====================================================================================
-		"356":``,
-// ====================================================================================
-		"357":``,
-// ====================================================================================
-		"358":``,
-// ====================================================================================
-		"359":``,
-// ====================================================================================
-		"360":``,
-// ====================================================================================
-		"361":``,
-// ====================================================================================
-		"362":``,
-// ====================================================================================
-		"363":``,
-// ====================================================================================
-		"364":``,
-// ====================================================================================
-		"365":``,
-// ====================================================================================
-		"366":``,
-// ====================================================================================
-		"367":``,
-// ====================================================================================
-		"368":``,
-// ====================================================================================
-		"369":``,
-// ====================================================================================
-		"370":``,
-// ====================================================================================
-		"371":``,
-// ====================================================================================
-		"372":``,
-// ====================================================================================
-		"373":``,
-// ====================================================================================
-		"374":``,
-// ====================================================================================
-		"375":``,
-// ====================================================================================
-		"376":``,
-// ====================================================================================
-		"377":``,
-// ====================================================================================
-		"378":``,
-// ====================================================================================
-		"379":``,
-// ====================================================================================
-		"380":``,
-// ====================================================================================
-		"381":``,
-// ====================================================================================
-		"382":``,
-// ====================================================================================
-		"383":``,
-// ====================================================================================
-		"384":``,
-// ====================================================================================
-		"385":``,
-// ====================================================================================
-		"386":``,
-// ====================================================================================
-		"387":``,
-// ====================================================================================
-		"388":``,
-// ====================================================================================
-		"389":``,
-// ====================================================================================
-		"390":``,
-// ====================================================================================
-		"391":``,
-// ====================================================================================
-		"392":``,
-// ====================================================================================
-		"393":``,
-// ====================================================================================
-		"394":``,
-// ====================================================================================
-		"395":``,
-// ====================================================================================
-		"396":``,
-// ====================================================================================
-		"397":``,
-// ====================================================================================
-		"398":``,
-// ====================================================================================
-		"399":``,
-// ====================================================================================
-		"400":``,
-// ====================================================================================
-		"401":``,
-// ====================================================================================
-		"402":``,
-// ====================================================================================
-		"403":``,
-// ====================================================================================
-		"404":``,
-// ====================================================================================
-		"405":``,
-// ====================================================================================
-		"406":``,
-// ====================================================================================
-		"407":``,
-// ====================================================================================
-		"408":``,
-// ====================================================================================
-		"409":``,
-// ====================================================================================
-		"410":``,
-// ====================================================================================
-		"411":``,
-// ====================================================================================
-		"412":``,
-// ====================================================================================
-		"413":``,
-// ====================================================================================
-		"414":``,
-// ====================================================================================
-		"415":``,
-// ====================================================================================
-		"416":``,
-// ====================================================================================
-		"417":``,
-// ====================================================================================
-		"418":``,
-// ====================================================================================
-		"419":``,
-// ====================================================================================
-		"420":``,
-// ====================================================================================
-		"421":``,
-// ====================================================================================
-		"422":``,
-// ====================================================================================
-		"423":``,
-// ====================================================================================
-		"424":``,
-// ====================================================================================
-		"425":``,
-// ====================================================================================
-		"426":``,
-// ====================================================================================
-		"427":``,
-// ====================================================================================
-		"428":``,
-// ====================================================================================
-		"429":``,
-// ====================================================================================
-		"430":``,
-// ====================================================================================
-		"431":``,
-// ====================================================================================
-		"432":``,
-// ====================================================================================
-		"433":``,
-// ====================================================================================
-		"434":``,
-// ====================================================================================
-		"435":``,
-// ====================================================================================
-		"436":``,
-// ====================================================================================
-		"437":``,
-// ====================================================================================
-		"438":``,
-// ====================================================================================
-		"439":``,
-// ====================================================================================
-		"440":``,
-// ====================================================================================
-		"441":``,
-// ====================================================================================
-		"442":``,
-// ====================================================================================
-		"443":``,
-// ====================================================================================
-		"444":``,
-// ====================================================================================
-		"445":``,
-// ====================================================================================
-		"446":``,
-// ====================================================================================
-		"447":``,
-// ====================================================================================
-		"448":``,
-// ====================================================================================
-		"449":``,
-// ====================================================================================
-		"450":``,
-// ====================================================================================
-		"451":``,
-// ====================================================================================
-		"452":``,
-// ====================================================================================
-		"453":``,
-// ====================================================================================
-		"454":``,
-// ====================================================================================
-		"455":``,
-// ====================================================================================
-		"456":``,
-// ====================================================================================
-		"457":``,
-// ====================================================================================
-		"458":``,
-// ====================================================================================
-		"459":``,
-// ====================================================================================
-		"460":``,
-// ====================================================================================
-		"461":``,
-// ====================================================================================
-		"462":``,
-// ====================================================================================
-		"463":``,
-// ====================================================================================
-		"464":``,
-// ====================================================================================
-		"465":``,
-// ====================================================================================
-		"466":``,
-// ====================================================================================
-		"467":``,
-// ====================================================================================
-		"468":``,
-// ====================================================================================
-		"469":``,
-// ====================================================================================
-		"470":``,
-// ====================================================================================
-		"471":``,
-// ====================================================================================
-		"472":``,
-// ====================================================================================
-		"473":``,
-// ====================================================================================
-		"474":``,
-// ====================================================================================
-		"475":``,
-// ====================================================================================
-		"476":``,
-// ====================================================================================
-		"477":``,
-// ====================================================================================
-		"478":``,
-// ====================================================================================
-		"479":``,
-// ====================================================================================
-		"480":``,
+		"309":`309.Encoding Maps
+Go maps are encoded as JSON objects, with the map keys used as the object keys. The values contained in
+the map are encoded based on their type.
+Maps can also be useful for creating custom JSON representations of Go data.
+encoder.Encode()
+example:
+	package main
+	import (
+		"encoding/json"
+		"fmt"
+		"strings"
+	)
+	func main() {
+		m := map[string]float64{
+			"Kayak":      279,
+			"Lifejacket": 49.95,
+		}
+		var writer strings.Builder
+		encoder := json.NewEncoder(&writer)
+		encoder.Encode(m)
+		fmt.Print(writer.String())
+	}
+Output:
+		{"Kayak":279,"Lifejacket":49.95}
+`,
+// ====================================================================================
+		"310":`310.Encoding Structs
+The Encoder expresses struct values as JSON objects, using the exported struct field names as the object's
+keys and the field values as the object's values
+example:
+	package main
+	import (
+		"encoding/json"
+		"fmt"
+		"strings"
+	)
+	func main() {
+		
+		var writer strings.Builder
+		encoder := json.NewEncoder(&writer)
+		encoder.Encode(Kayak)
+		fmt.Print(writer.String())
+	}
+Output:
+	{"Name":"Kayak","Category":"Watersports","Price":279}
+`,
+// ====================================================================================
+		"311":`311.Effect of Promotion in JSON in Encoding
+When a struct defines an embedded field that is also a struct, the fields of the embedded struct are promoted
+and encoded as though they are defined by the enclosing type.
+discount.go:
+	package main
+	type DiscountedProduct struct {
+		*Product
+		Discount float64
+	}
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"fmt"
+		"strings"
+	)
+	func main() {
+		
+		var writer strings.Builder
+		encoder := json.NewEncoder(&writer)
+		dp := DiscountedProduct {
+			Product: &Kayak,
+			Discount: 10.50,
+		}
+		encoder.Encode(&dp)
+		fmt.Print(writer.String())
+	}
+Output:
+	{"Name":"Kayak","Category":"Watersports","Price":279,"Discount":10.5}
+`,
+// ====================================================================================
+		"312":`312.Customizing the JSON Encoding of Structs
+How a struct is encoded can be customized using struct tags, which are string literals that follow fields. Struct
+tags are part of the Go support for reflection, 
+that tags follow fields and can be used to alter two aspects of how a field is encoded in JSON.
+example:
+discount.go:
+	package main
+	type DiscountedProduct struct {
+		*Product ^json:"product"^           // ------------------------->   Use the symbol ^ above the Tab button instead
+
+		Discount float64
+	}
+===============================================================
+Output:
+	{"product":{"Name":"Kayak","Category":"Watersports","Price":279},"Discount":10.5}
+`,
+// ====================================================================================
+		"313":`313.Omitting a Field
+The Encoder skips fields decorated with a tag that specifies a hyphen (the - character) for the name
+The new tag tells the Encoder to skip the Discount field when creating the JSON representation of a
+DIscountedProduct value.
+exampe:
+discount.go:
+	package main
+	type DiscountedProduct struct {
+		*Product ^json:"product"^           // ------------------------->   Use the symbol ^ above the Tab button instead
+
+		Discount float64 ^json:"-"^         // ------------------------->   Use the symbol ^ above the Tab button instead
+
+	}        
+Output:
+	{"product":{"Name":"Kayak","Category":"Watersports","Price":279}}
+`,
+// ====================================================================================
+		"314":`314.Omitting Unassigned Fields
+By default, the JSON Encoder includes struct fields, even when they have not been assigned a value	
+example:
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"fmt"
+		"strings"
+	)
+	func main() {
+		var writer strings.Builder
+		encoder := json.NewEncoder(&writer)
+		dp := DiscountedProduct{
+			Product:  &Kayak,
+			Discount: 10.50,
+		}
+		encoder.Encode(&dp)
+		dp2 := DiscountedProduct { Discount: 10.50 }
+		encoder.Encode(&dp2)
+		fmt.Print(writer.String())
+	}
+=======================================================
+	Output:
+	{"product":{"Name":"Kayak","Category":"Watersports","Price":279}}
+	{"product":null}
+=======================================================
+To omit a nil field, the omitempty keyword is added to the tag for the field
+discount.go:
+	package main
+	type DiscountedProduct struct {
+		// *Product ^json:"product"^                   // ------------------------->   Use the symbol ^ above the Tab button instead
+
+		*Product ^json:"product,omitempty"^            // ------------------------->   Use the symbol ^ above the Tab button instead
+
+		Discount float64 ^json:"-"^
+	}
+=======================================================
+Output:
+	{"product":{"Name":"Kayak","Category":"Watersports","Price":279}}
+	{}
+=======================================================
+To skip a nil field without changing the name or field promotion, specify the omitempty keyword without a name
+discount.go:
+	package main
+	type DiscountedProduct struct {
+		// *Product ^json:"product"^
+		// *Product ^json:"product,omitempty"^
+		*Product ^json:",omitempty"^                    // ------------------------->   Use the symbol ^ above the Tab button instead
+
+		Discount float64 ^json:"-"^                     // ------------------------->   Use the symbol ^ above the Tab button instead
+
+	}
+======================================================
+Output:
+	{"Name":"Kayak","Category":"Watersports","Price":279}
+	{}
+`,
+// ====================================================================================
+		"315":`315.Forcing Fields to be Encoded as Strings
+Struct tags can be used to force a field value to be encoded as a string, overriding the normal encoding for
+the field type
+example:
+discount.go:
+	package main
+	type DiscountedProduct struct {
+		*Product ^json:",omitempty"^
+		// Discount float64 ^json:"-"^              // ------------------------->   Use the symbol ^ above the Tab button                
+
+		Discount float64 ^json:",string"^           // ------------------------->   Use the symbol ^ above the Tab button    
+
+	}
+Output:
+	{"Name":"Kayak","Category":"Watersports","Price":279,"Discount":"10.5"}
+	{"Discount":"10.5"}
+`,
+// ====================================================================================
+		"316":`316.Encoding Interfaces
+The JSON encoder can be used on values assigned to interface variables, but it is the dynamic type that
+is encoded.
+No aspect of the interface is used to adapt the JSON, and all the exported fields of each value in the slice
+are included in the JSON. This can be a useful feature, but care must be taken when decoding this kind of
+JSON, because each value can have a different set of fields
+example:
+interface.go:
+	package main
+	type Named interface{ GetName() string }
+	type Person struct{ PersonName string }
+	func (p *Person) GetName() string { return p.PersonName }
+	func (p *DiscountedProduct) GetName() string { return p.Name }
+=======================================================
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"fmt"
+		"strings"
+	)
+	func main() {
+		var writer strings.Builder
+		encoder := json.NewEncoder(&writer)
+		dp := DiscountedProduct{
+			Product:  &Kayak,
+			Discount: 10.50,
+		}
+		namedItems := []Named { &dp, &Person{ PersonName: "Alice"}}
+		encoder.Encode(namedItems)
+		fmt.Print(writer.String())
+	}
+=======================================================
+Output:
+	[{"Name":"Kayak","Category":"Watersports","Price":279,"Discount":"10.5"},{"PersonName":"Alice"}]
+`,
+// ====================================================================================
+		"317":`317.The Marshaler Method
+Creating Completely Custom JSON Encodings
+The Encoder checks to see whether a struct implements the Marshaler interface, which denotes a type that
+has a custom encoding and which defines the method.
+
+	Name                Description
+	--------------      ------------------------------------------
+	MarshalJSON()       This method is invoked to create a JSON representation of a value and returns a byte
+						slice containing the JSON and an error indicating encoding problems.
+`,
+// ====================================================================================
+		"318":`318.json.Marshal()
+The MarshalJSON method can generate JSON in any way that suits the project.
+I define a map with string keys and use the
+empty interface for the values. This allows me to build the JSON by adding key-value pairs to the map
+and then pass the map to the Marshal function, which uses the built-in support
+to encode each of the values contained in the map.
+example:
+discount.go:
+	package main
+	import "encoding/json"
+	type DiscountedProduct struct {
+		*Product ^json:",omitempty"^
+		Discount float64 ^json:",string"^
+	}
+	func (dp *DiscountedProduct) MarshalJSON() (jsn []byte, err error) {
+		if dp.Product != nil {
+			m := map[string]interface{}{
+				"product": dp.Name,
+				"cost":    dp.Price - dp.Discount,
+			}
+			jsn, err = json.Marshal(m)
+		}
+		return
+	}
+===========================================================
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"fmt"
+		"strings"
+	)
+	func main() {
+		var writer strings.Builder
+		encoder := json.NewEncoder(&writer)
+		dp := DiscountedProduct{
+			Product:  &Kayak,
+			Discount: 10.50,
+		}
+		namedItems := []Named { &dp, &Person{ PersonName: "Alice"}}
+		encoder.Encode(namedItems)
+		fmt.Print(writer.String())
+	}
+===========================================================
+Output:
+	[{"cost":268.5,"product":"Kayak"},{"PersonName":"Alice"}]`,
+// ====================================================================================
+		"319":`319.Decoding JSON Data
+The NewDecoder constructor function creates a Decoder, which can be used to decode JSON data obtained
+from a Reader.
+The Decoder Methods:
+	
+	Name                        Description
+	---------------------       --------------------------------------------
+	Decode(value)               This method reads and decodes data, which is used to create the specified
+								value. The method returns an error that indicates problems decoding the
+								data to the required type or EOF.
+	DisallowUnknownFields()     By default, when decoding a struct type, the Decoder ignores any key in
+								the JSON data for which there is no corresponding struct field. Calling this
+								method causes the Decode to return an error, rather than ignoring the key.
+	UseNumber()                 By default, JSON number values are decoded into float64 values. Calling
+								this method uses the Number type instead, as described in the “Decoding
+								Number Values” section.
+`,
+// ====================================================================================
+		"320":`320.Decoding Basic Data Types
+example:
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"io"
+		"strings"
+		"asd/asd"
+	)
+	func main() {
+		reader := strings.NewReader(^true "Hello" 99.99 200^)   // ------------------------->   Use the symbol ^ above the Tab button
+		vals := []interface{}{}
+		decoder := json.NewDecoder(reader)
+		for {
+			var decodedVal interface{}
+			err := decoder.Decode(&decodedVal)
+			if err != nil {
+				if err != io.EOF {
+					asd.Printfln("Error: %v", err.Error())
+				}
+				break
+			}
+			vals = append(vals, decodedVal)
+		}
+		for _, val := range vals {
+			asd.Printfln("Decoded (%T): %v", val, val)
+		}
+	}
+Output:
+	Decoded (bool): true
+	Decoded (string): Hello
+	Decoded (float64): 99.99
+	Decoded (float64): 200
+`,
+// ====================================================================================
+		"321":`321.Decoding Number Values
+The Methods Defined by the Number Type
+
+	Name            Description
+	---------       ------------------------------------
+	Int64()         This method returns the decoded value as a int64 and an error that indicates if the value
+					cannot be converted.
+	Float64()       This method returns the decoded value as a float64 and an error that indicates if the
+					value cannot be converted.
+	String()        This method returns the unconverted string from the JSON data.
+
+	Not all JSON number values can be expressed as
+	Go int64 values, so this is the method that is typically called first. 
+	If attempting to convert to an integer
+	fails, then the Float64 method can be called. 
+	If a number cannot be converted to either Go type, then the
+	String method can be used to get the unconverted string from the JSON data.
+`,
+// ====================================================================================
+		"322":`322.Decoding Numbers
+example:
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"io"
+		"strings"
+	)
+	func main() {
+		reader := strings.NewReader(^true "Hello" 99.99 200^)   // ------------------------->   Use the symbol ^ above the Tab button 
+
+		vals := []interface{}{}
+		decoder := json.NewDecoder(reader)
+		for {
+			var decodedVal interface{}
+			err := decoder.Decode(&decodedVal)
+			if err != nil {
+				if err != io.EOF {
+					Printfln("Error: %v", err.Error())
+				}
+				break
+			}
+			vals = append(vals, decodedVal)
+		}
+		for _, val := range vals {
+			if num, ok := val.(json.Number); ok {
+				if ival, err := num.Int64(); err == nil {
+					Printfln("Decoded Integer: %v", ival)
+				} else if fpval, err := num.Float64(); err == nil {
+					Printfln("Decoded Floating Point: %v", fpval)
+				} else {
+					Printfln("Decoded String: %v", num.String())
+				}
+			} else {
+				Printfln("Decoded (%T): %v", val, val)
+			}
+		}
+	}
+Output:
+	Decoded (bool): true
+	Decoded (string): Hello
+	Decoded (float64): 99.99
+	Decoded (float64): 200
+`,
+// ====================================================================================
+		"323":`323.Specifying Types for Decoding
+example:
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"strings"
+	)
+	func main() {
+		reader := strings.NewReader(^true "Hello" 99.99 200^)   // ------------------------->   Use the symbol ^ above the Tab button
+		var bval bool
+		var sval string
+		var fpval float64
+		var ival int
+		vals := []interface{}{&bval, &sval, &fpval, &ival}
+		decoder := json.NewDecoder(reader)
+		for i := 0; i < len(vals); i++ {
+			err := decoder.Decode(vals[i])
+			if err != nil {
+				Printfln("Error: %v", err.Error())
+				break
+			}
+		}
+		Printfln("Decoded (%T): %v", bval, bval)
+		Printfln("Decoded (%T): %v", sval, sval)
+		Printfln("Decoded (%T): %v", fpval, fpval)
+		Printfln("Decoded (%T): %v", ival, ival)
+	}
+Output:
+	Decoded (bool): true
+	Decoded (string): Hello
+	Decoded (float64): 99.99
+	Decoded (int): 200
+`,
+// ====================================================================================
+		"324":`324.Decoding Arrays
+The Decoder processes arrays automatically, but care must be taken because JSON allows arrays to contain
+values of different types, which conflicts with the strict type rules enforced by Go.
+The source JSON data contains two arrays, one of which contains only numbers and one of which mixes
+numbers and strings. The Decoder doesn't try to figure out if a JSON array can be represented using a single
+Go type and decodes every array into an empty interface slice:
+example:
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"io"
+		"strings"
+	)
+	func main() {
+		reader := strings.NewReader(^[10,20,30]["Kayak","Lifejacket",279]^)     // ------------------------->   Use the symbol ^ above the Tab button 
+
+		vals := []interface{}{}
+		decoder := json.NewDecoder(reader)
+		for {
+			var decodedVal interface{}
+			err := decoder.Decode(&decodedVal)
+			if err != nil {
+				if err != io.EOF {
+					Printfln("Error: %v", err.Error())
+				}
+				break
+			}
+			vals = append(vals, decodedVal)
+		}
+		for _, val := range vals {
+			Printfln("Decoded (%T): %v", val, val)
+		}
+	}
+Output:
+	Decoded ([]interface {}): [10 20 30]
+	Decoded ([]interface {}): [Kayak Lifejacket 279]
+`,
+// ====================================================================================
+		"325":`325.Specifying the Decoded Array Type
+The second array contains a mix of values, which means that I have to specify
+the empty interface as the target type. The literal slice syntax is awkward when using the empty interface
+because two sets of braces are required:
+...
+mixed := []interface{} {}
+example:
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"strings"
+	)
+	func main() {
+		reader := strings.NewReader(^[10,20,30]["Kayak","Lifejacket",279]^) // ------------------------->   Use the symbol ^ above the Tab button 
+
+		ints := []int {}
+		mixed := []interface{} {}
+		vals := []interface{} { &ints, &mixed}
+		decoder := json.NewDecoder(reader)
+		for i := 0; i < len(vals); i++ {
+			err := decoder.Decode(vals[i])
+			if err != nil {
+				Printfln("Error: %v", err.Error())
+				break
+			}
+		}
+		Printfln("Decoded (%T): %v", ints, ints)
+		Printfln("Decoded (%T): %v", mixed, mixed)
+	}
+Output:
+	Decoded ([]int): [10 20 30]
+	Decoded ([]interface {}): [Kayak Lifejacket 279]
+`,
+// ====================================================================================
+		"326":`326.Decoding Maps
+The safest approach is to define a map with string keys and empty interface values, which ensures that
+all the key-value pairs in the JSON data can be decoded into the map
+JavaScript objects are expressed as key-value pairs, which makes it easy to decode them into Go maps
+example:
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"strings"
+	)
+	func main() {
+		reader := strings.NewReader(^{"Kayak" : 279, "Lifejacket" : 49.95}^)    // ------------------------->   Use the symbol ^ above the Tab button 
+
+		m := map[string]interface{}{}
+		decoder := json.NewDecoder(reader)
+		err := decoder.Decode(&m)
+		if err != nil {
+			Printfln("Error: %v", err.Error())
+		} else {
+			Printfln("Map: %T, %v", m, m)
+			for k, v := range m {
+				Printfln("Key: %v, Value: %v", k, v)
+			}
+		}
+	}
+Output:
+	Map: map[string]interface {}, map[Kayak:279 Lifejacket:49.95]
+	Key: Kayak, Value: 279
+	Key: Lifejacket, Value: 49.95
+`,
+// ====================================================================================
+		"327":`327.a Specific Value Type 
+A single JSON object can be used for multiple data types as values, but if you know in advance that you
+will be decoding a JSON object that has a single value type, then you can be more specific when defining the
+map into which the data will be decoded.
+example:
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"strings"
+	)
+	func main() {
+		reader := strings.NewReader(^{"Kayak" : 279, "Lifejacket" : 49.95}^)    // ------------------------->   Use the symbol ^ above the Tab button 
+
+		m := map[string]float64 {}
+		decoder := json.NewDecoder(reader)
+		err := decoder.Decode(&m)
+		if err != nil {
+			Printfln("Error: %v", err.Error())
+		} else {
+			Printfln("Map: %T, %v", m, m)
+			for k, v := range m {
+				Printfln("Key: %v, Value: %v", k, v)
+			}
+		}
+	}
+Output:
+	Map: map[string]float64, map[Kayak:279 Lifejacket:49.95]
+	Key: Kayak, Value: 279
+	Key: Lifejacket, Value: 49.95
+`,
+// ====================================================================================
+		"328":`328.Decoding Structs
+The Decoder decodes the JSON object and uses the keys to set the values of the exported struct fields.
+The capitalization of the fields and JSON keys don't have to match, and the Decoder will ignore any JSON
+key for which there isn't a struct field and ignore any struct field for which there is no JSON key.
+The JSON objectscontain different capitalization and have more or fewer keys than the Product struct
+fields. The Decoder processes the data as best as it can.
+example:
+main.go:
+	package main
+	import (
+		"strings"
+		"encoding/json"
+		"io"
+	)
+	func main() {
+		reader := strings.NewReader(^    // ------------------------->   Use the symbol ^ above the Tab button 
+
+			{"Name":"Kayak","Category":"Watersports","Price":279}
+			{"Name":"Lifejacket","Category":"Watersports" }
+			{"name":"Canoe","category":"Watersports", "price": 100, "inStock": true }
+		^)                                          // ------------------------->   Use the symbol ^ above the Tab button 
+
+		decoder := json.NewDecoder(reader)
+		for {
+			var val Product
+			err := decoder.Decode(&val)
+			if err != nil {
+				if err != io.EOF {
+					Printfln("Error: %v", err.Error())
+				}
+				break
+			} else {
+				Printfln("Name: %v, Category: %v, Price: %v",
+					val.Name, val.Category, val.Price)
+			}
+		}
+	}
+Output:
+	Name: Kayak, Category: Watersports, Price: 279
+	Name: Lifejacket, Category: Watersports, Price: 0
+	Name: Canoe, Category: Watersports, Price: 100
+`,
+// ====================================================================================
+		"329":`329.Decoding to Interface Types
+As I explained earlier in the chapter, the JSON encoder deals with interfaces by encoding the value
+using the exported fields of the dynamic type. This is because JSON deals with key-value pairs and
+has no way to express methods. As a consequence, you cannot decode directly to an interface variable
+from JSON. Instead, you must decode to a struct or map and then assign the value that is created to an
+interface variable.
+`,
+// ====================================================================================
+		"330":`330.Disallowing Unused Keys
+By default, the Decoder will ignore JSON keys for which there is no corresponding struct field. This behavior
+can be changed by calling the DisallowUnknownFields method
+example:
+Disallowing Unused Keys in the main.go
+	...
+	decoder := json.NewDecoder(reader)
+	decoder.DisallowUnknownFields()
+	...
+output:
+	Name: Kayak, Category: Watersports, Price: 279
+	Name: Lifejacket, Category: Watersports, Price: 0
+	Error: json: unknown field "inStock"
+`,
+// ====================================================================================
+		"331":`331.Struct Tags
+The tag applied to the Discount field tells the Decoder that the value for this field should be obtained
+from the JSON key named offer and that the value will be parsed from a string, instead of the JSON
+number that would usually be expected for a Go float64 value.
+
+example:
+discount.go:
+	package main
+	import "encoding/json"
+	type DiscountedProduct struct {
+		*Product ^json:",omitempty"^                 // ------------------------->   Use the symbol ^ above the Tab button 
+
+		Discount float64 ^json:"offer,string"^       // ------------------------->   Use the symbol ^ above the Tab button 
+
+	}
+	func (dp *DiscountedProduct) MarshalJSON() (jsn []byte, err error) {
+		if (dp.Product != nil) {
+			m := map[string]interface{} {
+				"product": dp.Name,
+				"cost": dp.Price - dp.Discount,
+			}
+			jsn, err = json.Marshal(m)
+		}
+		return
+	}    
+main.go:
+	package main
+	import (
+		"strings"
+		"encoding/json"
+		"io"
+	)
+	func main() {
+		reader := strings.NewReader(^
+			{"Name":"Kayak","Category":"Watersports","Price":279, "Offer": "10"}^)   // ------------------------->   Use the symbol ^ above the Tab button 
+
+		decoder := json.NewDecoder(reader)
+		for {
+			var val DiscountedProduct
+			err := decoder.Decode(&val)
+			if err != nil {
+				if err != io.EOF {
+					Printfln("Error: %v", err.Error())
+				}
+				break
+			} else {
+				Printfln("Name: %v, Category: %v, Price: %v, Discount: %v",
+					val.Name, val.Category, val.Price, val.Discount)
+			}
+		}
+	}
+Output:
+	Name: Kayak, Category: Watersports, Price: 279, Discount: 10
+`,
+// ====================================================================================
+		"332":`332.Creating Completely Custom JSON Decoders
+The Unmarshaler Method
+
+	Name                            Description
+	------------------------        ------------------------------------------
+	UnmarshalJSON(byteSlice)        This method is invoked to decode JSON data contained in the specified
+									byte slice. The result is an error indicating encoding problems.
+`,
+// ====================================================================================
+		"333":`333.Defining a Custom Decoder
+This implementation of the UnmarshalJSON method uses the Unmarshal method to decode the JSON
+data into a map and then checks the type of each value required for the DiscountedProduct struct.
+example:
+discount.go:
+	package main
+	import (
+		"encoding/json"
+		"strconv"
+	)
+	type DiscountedProduct struct {
+		*Product ^json:",omitempty"^               // ------------------------->   Use the symbol ^ above the Tab button 
+
+		Discount float64 ^json:"offer,string"^         // ------------------------->   Use the symbol ^ above the Tab button 
+
+	}
+	func (dp *DiscountedProduct) MarshalJSON() (jsn []byte, err error) {
+		if dp.Product != nil {
+			m := map[string]interface{}{
+				"product": dp.Name,
+				"cost":    dp.Price - dp.Discount,
+			}
+			jsn, err = json.Marshal(m)
+		}
+		return
+	}
+	func (dp *DiscountedProduct) UnmarshalJSON(data []byte) (err error) {
+		mdata := map[string]interface{}{}
+		err = json.Unmarshal(data, &mdata)
+		if dp.Product == nil {
+			dp.Product = &Product{}
+		}
+		if err == nil {
+			if name, ok := mdata["Name"].(string); ok {
+				dp.Name = name
+			}
+			if category, ok := mdata["Category"].(string); ok {
+				dp.Category = category
+			}
+			if price, ok := mdata["Price"].(float64); ok {
+				dp.Price = price
+			}
+			if discount, ok := mdata["Offer"].(string); ok {
+				fpval, fperr := strconv.ParseFloat(discount, 64)
+				if fperr == nil {
+					dp.Discount = fpval
+				}
+			}
+		}
+		return
+	}
+Output:
+	Name: Kayak, Category: Watersports, Price: 279, Discount: 10
+`,
+// ====================================================================================
+		"334":`334.Working with Files
+Putting Working with Files in Context
+	
+	Answer                                  Question
+	---------------------------             -------------------------------------------------------
+	What are they?                          These features provide access to the file system so that files can be read and written.
+	Why are they useful?                    Files are used for everything from logging to configuration files.
+	How are they used?                      These features are accessed through the os package, which provides platform-
+											neutral access to the file system.
+	Are there any pitfallsor limitations?   Some consideration of the underlying file system must be made, especially when
+											dealing with paths.
+	Are there any alternatives?             Go supports alternative ways of storing data, such as databases, but there are no
+											alternative mechanisms for accessing files.
+
+Preparing
+printer.go:
+	package main
+	import (
+		"fmt"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+product.go:
+	package main
+	type Product struct {
+		Name, Category string
+		Price          float64
+	}
+	var Kayak = Product{
+		Name:     "Kayak",
+		Category: "Watersports",
+		Price:    279,
+	}
+	var Products = []Product{
+		{"Kayak", "Watersports", 279},
+		{"Lifejacket", "Watersports", 49.95},
+		{"Soccer Ball", "Soccer", 19.50},
+		{"Corner Flags", "Soccer", 34.95},
+		{"Stadium", "Soccer", 79500},
+		{"Thinking Cap", "Chess", 16},
+		{"Unsteady Chair", "Chess", 75},
+		{"Bling-Bling King", "Chess", 1200},
+	}    
+main.go:
+	package main
+	func main() {
+		for _, p := range Products {
+			Printfln("Product: %v, Category: %v, Price: $%.2f",
+				p.Name, p.Category, p.Price)
+		}
+	}
+Output:
+	Product: Kayak, Category: Watersports, Price: $279.00
+	Product: Lifejacket, Category: Watersports, Price: $49.95
+	Product: Soccer Ball, Category: Soccer, Price: $19.50
+	Product: Corner Flags, Category: Soccer, Price: $34.95
+	Product: Stadium, Category: Soccer, Price: $79500.00
+	Product: Thinking Cap, Category: Chess, Price: $16.00
+	Product: Unsteady Chair, Category: Chess, Price: $75.00
+	Product: Bling-Bling King, Category: Chess, Price: $1200.00
+`,
+// ====================================================================================
+		"335":`335.The os Package Functions for Reading Files
+
+    Name                Description
+    -------------       -------------------------------------
+    ReadFile(name)      This function opens the specified file and reads its contents. The results are a byte
+                        slice containing the file content and an error indicating problems opening or reading
+                        the file.
+    Open(name)          This function opens the specified file for reading. The result is a File struct and an
+                        error that indicates problems opening the file.
+
+One of the most common reasons to read a file is to load configuration data. The JSON format is well-
+suited for configuration files because it is simple to process, has good support in the Go standard library
+The Contents of the config.json File in the files Folder:
+	{
+		"Username": "Alice",
+		"AdditionalProducts": [
+			{"name": "Hat", "category": "Skiing", "price": 10},
+			{"name": "Boots", "category":"Skiing", "price": 220.51 },
+			{"name": "Gloves", "category":"Skiing", "price": 40.20 }
+		]
+	}
+`,
+// ====================================================================================
+		"336":`336.os.ReadFile()
+The LoadConfig function uses the ReadFile function to read the contents of the config.json file. 
+The file will be read from the current working directory when the application is executed, 
+which means that I can open the file just with its name.
+The contents of the file are returned as a byte slice, which is converted to a string and written out. The
+LoadConfig function is invoked by an initialization function, which ensures the configuration file is read.
+example:
+readconfig.go:
+	package main
+	import "os"
+	func LoadConfig() (err error) {
+		data, err := os.ReadFile("config.json")
+		if err == nil {
+			Printfln(string(data))
+		}
+		return
+	}
+	func init() {
+		err := LoadConfig()
+		if err != nil {
+			Printfln("Error Loading Config: %v", err.Error())
+		}
+	}
+Output:
+	{
+		"Username": "Alice",
+		"AdditionalProducts": [
+			{"name": "Hat", "category": "Skiing", "price": 10},
+			{"name": "Boots", "category":"Skiing", "price": 220.51 },
+			{"name": "Gloves", "category":"Skiing", "price": 40.20 }
+		]
+	}
+	Product: Kayak, Category: Watersports, Price: $279.00
+	Product: Lifejacket, Category: Watersports, Price: $49.95
+	Product: Soccer Ball, Category: Soccer, Price: $19.50
+	Product: Corner Flags, Category: Soccer, Price: $34.95
+	Product: Stadium, Category: Soccer, Price: $79500.00
+	Product: Thinking Cap, Category: Chess, Price: $16.00
+	Product: Unsteady Chair, Category: Chess, Price: $75.00
+	Product: Bling-Bling King, Category: Chess, Price: $1200.00
+`,
+// ====================================================================================
+		"337":`337.Decoding the JSON Data
+example:
+readconfig.go:
+	package main
+	import (
+		"encoding/json"
+		"os"
+		"strings"
+	)
+	type ConfigData struct {
+		UserName           string
+		AdditionalProducts []Product
+	}
+	var Config ConfigData
+	func LoadConfig() (err error) {
+		data, err := os.ReadFile("config.json")
+		if err == nil {
+			decoder := json.NewDecoder(strings.NewReader(string(data)))
+			err = decoder.Decode(&Config)
+		}
+		return
+	}
+	func init() {
+		err := LoadConfig()
+		if err != nil {
+			Printfln("Error Loading Config: %v", err.Error())
+		} else {
+			Printfln("Username: %v", Config.UserName)
+			Products = append(Products, Config.AdditionalProducts...)
+		}
+	}
+Output:
+	Username: Alice
+	Product: Kayak, Category: Watersports, Price: $279.00
+	Product: Lifejacket, Category: Watersports, Price: $49.95
+	Product: Soccer Ball, Category: Soccer, Price: $19.50
+	Product: Corner Flags, Category: Soccer, Price: $34.95
+	Product: Stadium, Category: Soccer, Price: $79500.00
+	Product: Thinking Cap, Category: Chess, Price: $16.00
+	Product: Unsteady Chair, Category: Chess, Price: $75.00
+	Product: Bling-Bling King, Category: Chess, Price: $1200.00
+	Product: Hat, Category: Skiing, Price: $10.00
+	Product: Boots, Category: Skiing, Price: $220.51
+	Product: Gloves, Category: Skiing, Price: $40.20
+`,
+// ====================================================================================
+		"338":`338.os.Open("config.json")
+Using the File Struct to Read a File
+The Open function opens a file for reading and returns a File value, which represents the open file, and an
+error, which is used to indicate problems opening the file. The File struct implements the Reader interface,
+which makes it simple to read and process the example JSON data, without reading the entire file into a byte
+slice.
+The File struct also implements the Closer interface, which defines a Close method.
+
+The defer keyword can be used to call the Close method when the enclosing function completes,
+like this:
+	defer file.Close()
+using the defer keyword ensures that the file is closed even when a function returns early.
+
+example:
+readconfig.go:
+	package main
+	import (
+		"encoding/json"
+		"os"
+		"time"
+	)
+	type ConfigData struct {
+		UserName           string
+		AdditionalProducts []Product
+	}
+	var Config ConfigData
+	func LoadConfig() (err error) {
+		file, err := os.Open("config.json")
+		if (err == nil) {
+			defer file.Close()
+			decoder := json.NewDecoder(file)
+			err = decoder.Decode(&Config)
+		}
+		return
+	}
+	func init() {
+		time.Sleep(time.Second)
+	}
+	func init() {
+		err := LoadConfig()
+		if err != nil {
+			Printfln("Error Loading Config: %v", err.Error())
+		} else {
+			Printfln("Username: %v", Config.UserName)
+			Products = append(Products, Config.AdditionalProducts...)
+		}
+	}
+Output:
+	Username: Alice
+	Product: Kayak, Category: Watersports, Price: $279.00
+	Product: Lifejacket, Category: Watersports, Price: $49.95
+	Product: Soccer Ball, Category: Soccer, Price: $19.50
+	Product: Corner Flags, Category: Soccer, Price: $34.95
+	Product: Stadium, Category: Soccer, Price: $79500.00
+	Product: Thinking Cap, Category: Chess, Price: $16.00
+	Product: Unsteady Chair, Category: Chess, Price: $75.00
+	Product: Bling-Bling King, Category: Chess, Price: $1200.00
+	Product: Hat, Category: Skiing, Price: $10.00
+	Product: Boots, Category: Skiing, Price: $220.51
+	Product: Gloves, Category: Skiing, Price: $40.20
+`,
+// ====================================================================================
+		"339":`339.Methods Defined by the File Struct for Reading at a Specific Location
+
+	Name                        Description
+	--------------------        ------------------------------------------
+	ReadAt(slice, offset)       This method is defined by the ReaderAt interface and performs a read into the
+								specific slice at the specified position offset in the file.
+	Seek(offset, how)           This method is defined by the Seeker interface and moves the offset into
+	جستجو کنید                  the file for the next read. The offset is determined by the combination of the
+								two arguments: the first argument specifies the number of bytes to offset,
+								and the second argument determines how the offset is applied—a value of 0
+								means the offset is relative to the start of the file, a value of 1 means the offset
+								is relative to the current read position, and a value of 2 means the offset is
+								relative to the end of the file.
+
+Reading from specific locations requires knowledge of the file structure.
+In this example, I know the location of the data I want to read, 
+which allows me to use the ReadAt method to read the username value
+and the Seek method to jump to the start of the product data.
+
+example:
+readconfig.go:
+	package main
+	import (
+		"os"
+		"encoding/json"
+		//"strings"
+	)
+	type ConfigData struct {
+		UserName string
+		AdditionalProducts []Product
+	}
+	var Config ConfigData
+	func LoadConfig() (err error) {
+		file, err := os.Open("config.json")
+		if (err == nil) {
+			defer file.Close()
+			nameSlice := make([]byte, 5)
+			file.ReadAt(nameSlice, 19)
+			Config.UserName = string(nameSlice)
+			file.Seek(55, 0)
+			decoder := json.NewDecoder(file)
+			err = decoder.Decode(&Config.AdditionalProducts)
+		}
+		return
+	}
+	func init() {
+		err := LoadConfig()
+		if err != nil {
+			Printfln("Username: %v", Config.UserName)
+			Products = append(Products, Config.AdditionalProducts...)
+		} else {
+			Printfln("Error Loading Config: %v", err.Error())
+		}
+	}
+Output:
+	Username: Alice
+	Product: Kayak, Category: Watersports, Price: $279.00
+	Product: Lifejacket, Category: Watersports, Price: $49.95
+	Product: Soccer Ball, Category: Soccer, Price: $19.50
+	Product: Corner Flags, Category: Soccer, Price: $34.95
+	Product: Stadium, Category: Soccer, Price: $79500.00
+	Product: Thinking Cap, Category: Chess, Price: $16.00
+	Product: Unsteady Chair, Category: Chess, Price: $75.00
+	Product: Bling-Bling King, Category: Chess, Price: $1200.00
+`,
+// ====================================================================================
+		"340":`340.The os Package Function for Writing Files
+
+    Name                                    Description
+    -------------------------------         ----------------------------------------
+    WriteFile(name,slice, modePerms)        This function creates a file with the specified name, mode, and permissions and
+                                            writes the content of the specified byte slice. If the file already exists, its contents
+                                            will be replaced with the byte slice. The result is an error that reports any problems
+                                            creating the file or writing the data.
+    OpenFile(name, flag, modePerms)         The function opens the file with the specified name, using the flags to control how
+                                            the file is opened. If a new file is created, then the specified mode and permissions
+                                            are applied. The result is a File value that provides access to the file contents and
+                                            an error that indicates problems opening the file.
+`,
+// ====================================================================================
+		"341":`341.the Write Convenience Function
+The file mode is used to specify special characteristics for the file, 
+but a value of zero is used for regular files, as in the example. 
+You can find a list of the file mode values and their settings at 
+
+https://golang.org/pkg/io/fs/#FileMode
+https://cs.opensource.google/go/go/+/go1.21.1:src/io/fs/fs.go;l=165
+
+type FileMode 
+type FileMode uint32
+A FileMode represents a file's mode and permission bits. 
+The bits have the same definition on all systems, 
+so that information about files can be moved from one system to another portably. 
+Not all bits apply to all systems. 
+The only required bit is ModeDir for directories.
+
+const (
+	// The single letters are the abbreviations
+	// used by the String method's formatting.
+	ModeDir        FileMode = 1 << (32 - 1 - iota) // d: is a directory
+	ModeAppend                                     // a: append-only
+	ModeExclusive                                  // l: exclusive use
+	ModeTemporary                                  // T: temporary file; Plan 9 only
+	ModeSymlink                                    // L: symbolic link
+	ModeDevice                                     // D: device file
+	ModeNamedPipe                                  // p: named pipe (FIFO)
+	ModeSocket                                     // S: Unix domain socket
+	ModeSetuid                                     // u: setuid
+	ModeSetgid                                     // g: setgid
+	ModeCharDevice                                 // c: Unix character device, when ModeDevice is set
+	ModeSticky                                     // t: sticky
+	ModeIrregular                                  // ?: non-regular file; nothing else is known about this file
+	// Mask for the type bits. For regular files, none will be set.
+	ModeType = ModeDir | ModeSymlink | ModeNamedPipe | ModeSocket | ModeDevice | ModeCharDevice | ModeIrregular
+	ModePerm FileMode = 0777 // Unix permission bits
+)
+
+The defined file mode bits are the most significant bits of the FileMode. 
+The nine least-significant bits are the standard Unix rwxrwxrwx permissions. 
+The values of these bits should be considered part of the public API and 
+may be used in wire protocols or disk representations: they must not be changed, 
+although new bits might be added.
+example:
+main.go:
+	package main
+	import (
+		"fmt"
+		"os"
+		"time"
+	)
+	func main() {
+		total := 0.0
+		for _, p := range Products {
+			total += p.Price
+		}
+		dataStr := fmt.Sprintf("Time: %v, Total: $%.2f\n",time.Now().Format("Mon 15:04:05"), total)
+		err := os.WriteFile("output.txt", []byte(dataStr), 0666)
+		if err == nil {
+			fmt.Println("Output file created")
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+Output: a file create with this name= output.txt
+	Time: Thu 07:27:34, Total: $279.00
+`,
+// ====================================================================================
+		"342":`342.Using the File Struct to Write to a File
+The OpenFile function opens a file and returns a File value. 
+Unlike the Open function, the OpenFile function accepts one or 
+more flags that specify how the file should be opened. 
+The flags are defined as constants in the os package,
+Care must be taken with these flags, not all of which are supported by every operating system.
+`,
+// ====================================================================================
+		"343":`343.The File Opening Flags
+
+	Name            Description
+	--------        ------------------------------------------
+	O_RDONLY        This flag opens the file read-only so that it can be read from but not written to.
+	O_WRONLY        This flag opens the file write-only so that it can be written to but not read from.
+	O_RDWR          This flag opens the file read-write so that it can be written to and read from.
+	O_APPEND        This flag will append writes to the end of the file.
+	O_CREATE        This flag will create the file if it doesn't exist.
+	O_EXCL          This flag is used in conjunction with O_CREATE to ensure that a new file is created. If the file
+					already exists, this flag will trigger an error.
+	O_SYNC          This flag enables synchronous writes, such that data is written to the storage device before
+					the write function/method returns.
+	O_TRUNC         This flag truncates the existing content in the file.
+`,
+// ====================================================================================
+		"344":`344.Writing to a File
+example:
+main.go:
+	package main
+	import (
+		"fmt"
+		"time"
+		"os"
+	)
+	func main() {
+		total := 0.0
+		for _, p := range Products {
+			total += p.Price
+		}
+		dataStr := fmt.Sprintf("Time: %v, Total: $%.2f\n",
+			time.Now().Format("Mon 15:04:05"), total)
+	
+			
+		file, err := os.OpenFile("output.txt",os.O_WRONLY | os.O_CREATE | os.O_APPEND, 0666)
+		
+		if (err == nil) {
+			defer file.Close()
+			file.WriteString(dataStr)
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+
+
+I combined the O_WRONLY flag to open the file for writing, 
+the O_CREATE file to create if it doesn't already
+exist, and the O_APPEND flag to append any written data to the end of the file.
+Output:
+	appended to file exist:
+		Time: Thu 07:27:34, Total: $279.00
+		Time: Thu 08:17:05, Total: $81174.40
+		Time: Thu 08:17:09, Total: $81174.40
+`,
+// ====================================================================================
+		"345":`345.The File Methods for Writing Data
+
+	Name                        Description
+	-----------------------     ---------------------------------------------------
+	Seek(offset, how)           This method sets the location for subsequent operations.
+	Write(slice)                This method writes the contents of the specified byte slice to the file.
+								The results are the number of bytes written and an error that indicates
+								problems writing the data.
+	WriteAt(slice, offset)      This method writes the data in the slice at the specified location and is the
+								counterpart to the ReadAt method.
+	WriteString(str)            This method writes a string to the file. This is a convenience method that
+								converts the string to a byte slice, invokes the Write method, and returns the
+								results it receives.
+`,
+// ====================================================================================
+		"346":`346.Writing JSON Data to a File
+example:
+main.go:
+	package main
+	import (
+		// "fmt"
+		// "time"
+		"encoding/json"
+		"os"
+	)
+	func main() {
+		cheapProducts := []Product{}
+		for _, p := range Products {
+			if p.Price < 100 {
+				cheapProducts = append(cheapProducts, p)
+			}
+		}
+		file, err := os.OpenFile("cheap.json", os.O_WRONLY|os.O_CREATE, 0666)
+		if err == nil {
+			defer file.Close()
+			encoder := json.NewEncoder(file)
+			encoder.Encode(cheapProducts)
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+Output:
+	create file = cheap.json
+	content of this:
+
+		[{"Name":"Lifejacket","Category":"Watersports","Price":49.95},{"Name":"Soccer Ball","Category":"Soccer","Price":19.5},{"Name":"Corner Flags","Category":"Soccer","Price":34.95},{"Name":"Thinking Cap","Category":"Chess","Price":16},{"Name":"Unsteady Chair","Category":"Chess","Price":75}]
+`,
+// ====================================================================================
+		"347":`347.the Convenience Functions to Create New Files
+The os Package Functions for Creating Files
+	The CreateTemp function can be useful, but it is important to understand that the purpose of this
+	function is to generate a random filename and that in all other respects, the file that is created is just a
+	regular file. The file that is created isn't removed automatically and will remain on the storage device after
+	the application has been executed.
+
+	Name                                Description
+	-------------------------           --------------------------------------------
+	Create(name)                        This function is equivalent to calling OpenFile with the O_RDWR, O_CREATE, and
+										O_TRUNC flags. The results are the File, which can be used for reading and writing,
+										and an error that is used to indicate problems creating the file. Note that this
+										combination of flags means that if a file exists with the specified name, it will be
+										opened, and its contents will be deleted.
+	CreateTemp(dirName, fileName)       This function creates a new file in the directory with the specified name. If the
+										name is the empty string, then the system temporary directory is used, obtained
+										using the TempDir function. The file is created with a
+										name that contains a random sequence of characters, as demonstrated in the text
+										after the table. The file is opened with the O_RDWR, O_CREATE, and O_EXCL flags.
+										The file isn't removed when it is closed.
+`,
+// ====================================================================================
+		"348":`348.Creating a Temporary File
+The location of the temporary file is specified with a period, meaning the current working directory.
+if the empty string is used, then the file will be created in the default temporary
+directory, which is obtained using the TempDir function described.
+The name of the file can include an asterisk (the * character), 
+and if this is present, the random part of the filename will replace it. 
+If the filename does not contain an asterisk, 
+then the random part of the filename will be added to the end of the name.
+ompile and execute the project, and once execution is complete, you will see a new file in the files
+folder. The file in my project is named tempfile-1732419518.json, but your filename will be different, and
+you will see a new file and a unique name each time the program is executed.
+example:
+main.go:
+	package main
+	import (
+		"os"
+		"encoding/json"
+	)
+	func main() {
+		cheapProducts := []Product {}
+		for _, p := range Products {
+			if (p.Price < 100) {
+				cheapProducts = append(cheapProducts, p)
+			}
+		}
+		file, err := os.CreateTemp(".", "tempfile-*.json")
+		if (err == nil) {
+			defer file.Close()
+			encoder := json.NewEncoder(file)
+			encoder.Encode(cheapProducts)
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+Output:
+tempfile-1982129407.json:
+	[{"Name":"Lifejacket","Category":"Watersports","Price":49.95},{"Name":"Soccer Ball","Category":"Soccer","Price":19.5},{"Name":"Corner Flags","Category":"Soccer","Price":34.95},{"Name":"Thinking Cap","Category":"Chess","Price":16},{"Name":"Unsteady Chair","Category":"Chess","Price":75}]
+`,
+// ====================================================================================
+		"349":`349.Working with File Paths
+If you want to read and write files in
+other locations, then you must specify file paths. The issue is that not all of the operating systems that Go
+supports express file paths in the same way. For example, the path to a file named mydata.json in my home
+directory on a Linux system might be expressed like this:
+	/home/adam/mydata.json
+
+where the path to the same in my home directory is expressed like this:
+	C:\Users\adam\mydata.json
+`,
+// ====================================================================================
+		"350":`350.The Common Location Functions Defined by the os Package
+
+	Name                Description
+	--------------      ------------------------------------
+	Getwd()             This function returns the current working directory, expressed as a string, and an
+						error that indicates problems obtaining the value.
+	UserHomeDir()       This function returns the user's home directory and an error that indicates problems
+						obtaining the path.
+	UserCacheDir()      This function returns the default directory for user-specific cached data and an error
+						that indicates problems obtaining the path.
+	UserConfigDir()     This function returns the default directory for user-specific configuration data and an
+						error that indicates problems obtaining the path.
+	TempDir()           This function returns the default directory for temporary files and an error that
+						indicates problems obtaining the path.
+`,
+// ====================================================================================
+		"351":`351.The path/filepath Functions for Paths
+
+    Name                    Description
+    ------------            ------------------------------------------
+    Abs(path)               This function returns an absolute path, which is useful if you have a relative path,
+                            such as a filename.
+    IsAbs(path)             This function returns true if the specified path is absolute.
+    Base(path)              This function returns the last element from the path.
+    Clean(path)             This function tidies up path strings by removing duplicate separators and relative references.
+    Dir(path)               This function returns all but the last element of the path.
+    EvalSymlinks(path)      This function evaluates a symbolic link and returns the resulting path.
+    Ext(path)               This function returns the file extension from the specified path, which is
+                            assumed to be the suffix following the final period in the path string.
+    FromSlash(path)         This function replaces each forward slash with the platform's file separator character.
+    ToSlash(path)           This function replaces the platform's file separator with forward slashes.
+    Join(...elements)       This function combines multiple elements using the platform's file separator.
+    Match(pattern, path)    This function returns true if the path is matched by the specified pattern.
+    Split(path)             This function returns the components on either side of the final path separator in
+                            the specified path.
+    SplitList(path)         This function splits a path into its components, which are returned as a string slice.
+    VolumeName(path)        This function returns the volume component of the specified path or the empty
+                            string if the path does not contain a volume.
+`,
+// ====================================================================================
+		"352":`352.Working with a Path
+example:
+main.go
+	package main
+	import (
+		// "fmt"
+		// "time"
+		"os"
+		//"encoding/json"
+		"path/filepath"
+	)
+	func main() {
+		path, err := os.UserHomeDir()
+		if (err == nil) {
+			path = filepath.Join(path, "MyApp", "MyTempFile.json")
+		}
+		Printfln("Full path: %v", path)
+		Printfln("Volume name: %v", filepath.VolumeName(path))
+		Printfln("Dir component: %v", filepath.Dir(path))
+		Printfln("File component: %v", filepath.Base(path))
+		Printfln("File extension: %v", filepath.Ext(path))
+	}
+Output:
+	Username: Alice
+	Full path: /home/sina/MyApp/MyTempFile.json
+	Volume name: 
+	Dir component: /home/sina/MyApp
+	File component: MyTempFile.json
+	File extension: .json
+
+received on the Windows machine:
+	Username: Alice
+	Full path: C:\Users\adam\MyApp\MyTempFile.json
+	Volume name: C:
+	Dir component: C:\Users\adam\MyApp
+	File component: MyTempFile.json
+	File extension: .json
+`,
+// ====================================================================================
+		"353":`353.The os Package Functions for Managing Files and Directories
+
+	Name                            Description
+	-----------------               ------------------------------------------
+	Chdir(dir)                      This function changes the current working directory to the specified directory.
+									The result is an error that indicates problems making the change.
+	Mkdir(name, modePerms)          This function creates a directory with the specified name and mode/
+									permissions. The result is an error that is nil if the directory is created or that
+									describes a problem if one arises.
+	MkdirAll(name, modePerms)       This function performs the same task as Mkdir but creates any parent directories
+									in the specified path.
+	MkdirTemp(parentDir, name)      This function is similar to CreateTemp but creates a directory rather than a file.
+									A random string is added to the end of the specified name or in place of an
+									asterisk, and the new directory is created within the specified parent. The results
+									are the name of the directory and an error indicating problems.
+	Remove(name)                    This function removes the specified file or directory. The result is an error that
+									describes any problems that arise.
+	RemoveAll(name)                 This function removes the specified file or directory. If the name specifies a
+									directory, then any children it contains are also removed. The result is an error
+									that describes any problems that arise.
+	Rename(old, new)                This function renames the specified file or folder. The result is an error that
+									describes any problems that arise.
+	Symlink(old, new)               This function creates a symbolic link to the specified file. The result is an error
+									that describes any problems that arise.
+`,
+// ====================================================================================
+		"354":`354.Creating Directories
+example:
+main.go:
+	package main
+	import (
+		// "fmt"
+		// "time"
+		"encoding/json"
+		"os"
+		"path/filepath"
+	)
+	func main() {
+		path, err := os.UserHomeDir()
+		if err == nil {
+			path = filepath.Join(path, "0-Repo/TEST-2/MyApp", "MyTempFile.json")
+		}
+		Printfln("Full path: %v", path)
+		err = os.MkdirAll(filepath.Dir(path), 0766)
+		if err == nil {
+			file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY, 0666)
+			if err == nil {
+				defer file.Close()
+				encoder := json.NewEncoder(file)
+				encoder.Encode(Products)
+			}
+		}
+		if err != nil {
+			Printfln("Error %v", err.Error())
+		}
+	}
+Output:
+	print this:
+		Username: Alice
+		Full path: /home/sina/0-Repo/TEST-2/MyApp/MyTempFile.json
+
+	Create this:
+		MyTempFile.json in that directory with content:
+			[{"Name":"Kayak","Category":"Watersports","Price":279},{"Name":"Lifejacket","Category":"Watersports","Price":49.95},{"Name":"Soccer Ball","Category":"Soccer","Price":19.5},{"Name":"Corner Flags","Category":"Soccer","Price":34.95},{"Name":"Stadium","Category":"Soccer","Price":79500},{"Name":"Thinking Cap","Category":"Chess","Price":16},{"Name":"Unsteady Chair","Category":"Chess","Price":75},{"Name":"Bling-Bling King","Category":"Chess","Price":1200}]
+`,
+// ====================================================================================
+		"355":`355.ReadDir(name)
+The os Package Function for Listing Directories
+This function reads the specified directory and returns a DirEntry slice, each of which
+describes an item in the directory.
+The result of the ReadDir function is a slice of values that implement the DirEntry interface, which
+defines the methods.
+`,
+// ====================================================================================
+		"356":`356.The Methods Defined by the DirEntry Interface
+	Name        Description
+	--------    --------------------------
+	Name()      This method returns the name of the file or directory described by the DirEntry value.
+	IsDir()     This method returns true if the DirEntry value represents a directory.
+	Type()      This method returns a FileMode value, which is an alias to uint32, which describes the file more
+				and the permissions of the file or directory represented by the DirEntry value.
+	Info()      This method returns a FileInfo value that provides additional details about the file or directory
+				represented by the DirEntry value.
+`,
+// ====================================================================================
+		"357":`357.Useful Methods Defined by the FileInfo Interface
+	Name            Description
+	----------      ------------------------------------
+	Name()          This method returns a string containing the name of the file or directory.
+	Size()          This method returns the size of the file, expressed as an int64 value.
+	Mode()          This method returns the file mode and permission settings for the file or directory.
+	ModTime()       This method returns the last modified time of the file or directory.
+`,
+// ====================================================================================
+		"358":`358.Stat(path)
+The os Package Function for Inspecting a File
+This function accepts a path string. It returns a FileInfo value that describes the file and an
+error, which indicates problems inspecting the file.
+`,
+// ====================================================================================
+		"359":`359.Enumerating Files
+example:
+main.go:
+	package main
+	import (
+		"os"
+	)
+	func main() {
+		path, err := os.Getwd()
+		if err == nil {
+			dirEntries, err := os.ReadDir(path)
+			if err == nil {
+				for _, dentry := range dirEntries {
+					Printfln("Entry name: %v, IsDir: %v", dentry.Name(), dentry.IsDir())
+				}
+			}
+		}
+		if err != nil {
+			Printfln("Error %v", err.Error())
+		}
+	}
+Output:
+	Username: Alice
+	Entry name: .git, IsDir: true
+	Entry name: .vscode, IsDir: true
+	Entry name: README.md, IsDir: false
+	Entry name: U.sh, IsDir: false
+	Entry name: cheap.json, IsDir: false
+	Entry name: config.json, IsDir: false
+	Entry name: go.mod, IsDir: false
+	Entry name: main.go, IsDir: false
+	Entry name: output.txt, IsDir: false
+	Entry name: printer.go, IsDir: false
+	Entry name: product.go, IsDir: false
+	Entry name: readconfig.go, IsDir: false
+`,
+// ====================================================================================
+		"360":`360.Determining Whether a File Exists
+Checking Whether a File Exists:
+main.go:
+	package main
+	import (
+		"os"
+	)
+	func main() {
+		targetFiles := []string { "no_such_file.txt", "config.json" }
+		for _, name := range targetFiles {
+			info, err := os.Stat(name)
+			if os.IsNotExist(err) {
+				Printfln("File does not exist: %v", name)
+			} else if err != nil  {
+				Printfln("Other error: %v", err.Error())
+			} else {
+				Printfln("File %v, Size: %v", info.Name(), info.Size())
+			}
+		}
+	}
+=============================
+Output:
+	Username: Alice
+	File does not exist: no_such_file.txt
+	File config.json, Size: 253
+`,
+// ====================================================================================
+		"361":`361.The path/filepath Function for Locating Files with a Pattern
+
+	Name                        Description
+	--------------------        -------------------------------
+	Match(pattern, name)        This function matches a single path against a pattern. The results are a bool,
+								which indicates if there is a match, and an error, which indicates problems
+								with the pattern or with performing the match.
+	Glob(pathPatten)            This function finds all the files that match the specified pattern. The results
+								are a string slice containing the matched paths and an error that indicates
+								problems with performing the search.
+`,
+// ====================================================================================
+		"362":`362.The Search Pattern Syntax for the path/filepath Functions
+
+    Term        Description
+    --------    -------------------
+     *          This term matches any sequence of characters, excluding the path separator.
+     ?          This term matches any single character, excluding the path separator.
+     [a-Z]      This term matches any character in the specified range.
+`,
+// ====================================================================================
+		"363":`363.Locating Files
+example:
+main.go:
+	package main
+	import (
+		"os"
+		"path/filepath"
+	)
+	func main() {
+		path, err := os.Getwd()
+		if err == nil {
+			matches, err := filepath.Glob(filepath.Join(path, "*.json"))
+			if err == nil {
+				for _, m := range matches {
+					Printfln("Match: %v", m)
+				}
+			}
+		}
+		if err != nil {
+			Printfln("Error %v", err.Error())
+		}
+	}
+=============================
+Output:
+	Username: Alice
+	Match: /home/sina/0-Repo/TEST-2/cheap.json
+	Match: /home/sina/0-Repo/TEST-2/config.json
+`,
+// ====================================================================================
+		"364":`364.The Function Provided by the path/filepath Package
+
+	Name                        Description
+	-----------------------     ----------------------------------
+	WalkDir(directory, func)    This function calls the specified function for each file and directory in the
+								specified directory.
+`,
+// ====================================================================================
+		"365":`365.Walking a Directory
+example:
+main.go:
+	package main
+	import (
+		"os"
+		"path/filepath"
+	)
+	func callback(path string, dir os.DirEntry, dirErr error) (err error) {
+		info, _ := dir.Info()
+		Printfln("Path %v, Size: %v", path, info.Size())
+		return
+	}
+	func main() {
+		path, err := os.Getwd()
+		if err == nil {
+			err = filepath.WalkDir(path, callback)
+		} else {
+			Printfln("Error %v", err.Error())
+		}
+	}
+=============================
+Output:
+	Username: Alice
+	Path /home/sina/0-Repo/TEST-2, Size: 4096
+	Path /home/sina/0-Repo/TEST-2/.git, Size: 4096
+	Path /home/sina/0-Repo/TEST-2/.git/COMMIT_EDITMSG, Size: 4
+	Path /home/sina/0-Repo/TEST-2/.git/FETCH_HEAD, Size: 92
+	Path /home/sina/0-Repo/TEST-2/.git/refs/remotes/origin/main, Size: 41
+	Path /home/sina/0-Repo/TEST-2/.git/refs/tags, Size: 4096
+	Path /home/sina/0-Repo/TEST-2/.vscode, Size: 4096
+	Path /home/sina/0-Repo/TEST-2/.vscode/extensions.json, Size: 79
+	Path /home/sina/0-Repo/TEST-2/.vscode/settings.json, Size: 405
+	Path /home/sina/0-Repo/TEST-2/README.md, Size: 9
+	Path /home/sina/0-Repo/TEST-2/U.sh, Size: 68
+	Path /home/sina/0-Repo/TEST-2/cheap.json, Size: 487
+	Path /home/sina/0-Repo/TEST-2/config.json, Size: 253
+	Path /home/sina/0-Repo/TEST-2/go.mod, Size: 22
+	Path /home/sina/0-Repo/TEST-2/main.go, Size: 8579
+	Path /home/sina/0-Repo/TEST-2/output.txt, Size: 109
+	Path /home/sina/0-Repo/TEST-2/printer.go, Size: 129
+	Path /home/sina/0-Repo/TEST-2/product.go, Size: 474
+	Path /home/sina/0-Repo/TEST-2/readconfig.go, Size: 704
+`,
+// ====================================================================================
+		"366":`366.Putting HTML and Text Templates in Context
+Question Answer:
+What are they?
+These templates allow HTML and text content to be generated dynamically
+from Go data values.
+
+Why are they useful?
+Templates are useful when large amounts of content are required, such that
+defining the content as strings would be unmanageable.
+
+How are they used?
+The templates are HTML or text files, which are annotated with instructions
+for the template processing engine. When a template is rendered, the
+instructions are processed to generate HTML or text content.
+
+Are there any pitfalls or limitations?
+The template syntax is counterintuitive and is not checked by the Go
+compiler. This means that care must be taken to use the correct syntax,
+which can be a frustrating process.
+
+Are there any alternatives?
+Templates are optional, and smaller amounts of content can be produced
+using strings.
+
+Summary:
+	Problem                                         Solution
+	------------------                              -----------------------------------
+	Generate an HTML document                       Define an HTML template with actions that
+													incorporate data values into the output. Load and
+													execute the templates, providing data for the actions.
+	Enumerate loaded templates                      Enumerate the results of the Templates method.
+	Locate a specific template                      Use the Lookup method.
+	Produce dynamic content                         Use a template action.
+	Format a data value                             Use the formatting functions.
+	Suppress whitespace                             Add hyphens to the template.
+	Process a slice                                 Use the slice functions.
+	Conditionally execute template content          Use the conditional actions and functions.
+	Create a nested template                        Use the define and template actions.
+	Define a default template                       Use the block and template actions.
+	Create functions for use in a template          Define template functions.
+	Disable encoding for function results           Return one of the type aliases defined by the html/template package.
+	Store data values for later use in a template   Define template variables.
+	Generate a text document                        Use the text/template package.
+
+Preparing for This Chapter:
+1- go mod init htmltext
+2- printer.go:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+3- product.go:
+	package main
+	type Product struct {
+		Name, Category string
+		Price float64
+	}
+	var Kayak = Product {
+		Name: "Kayak",
+		Category: "Watersports",
+		Price: 279,
+	}
+	var Products = []Product {
+		{ "Kayak", "Watersports", 279 },
+		{ "Lifejacket", "Watersports", 49.95 },
+		{ "Soccer Ball", "Soccer", 19.50 },
+		{ "Corner Flags", "Soccer", 34.95 },
+		{ "Stadium", "Soccer", 79500 },
+		{ "Thinking Cap", "Chess", 16 },
+		{ "Unsteady Chair", "Chess", 75 },
+		{ "Bling-Bling King", "Chess", 1200 },
+	}
+	func (p *Product) AddTax() float64 {
+		return p.Price * 1.2
+	}
+	func (p * Product) ApplyDiscount(amount float64) float64 {
+		return p.Price - amount
+	}
+4- main.go:
+	package main
+	func main() {
+		for _, p := range Products {
+			Printfln("Product: %v, Category: %v, Price: $%.2f",
+				p.Name, p.Category, p.Price)
+		}
+	}
+`,
+// ====================================================================================
+		"367":`367.Creating HTML Templates
+The html/template package provides support for creating templates that are processed using a data
+structure to generate dynamic HTML output.
+Templates contain static content mixed with expressions that are enclosed in double curly braces,
+known as actions.
+
+The template uses the simplest action, which is a period (the . character)
+and which prints out the data used to execute the template, 
+which I explain in the next section.
+
+example:
+template.html:
+	<h1>Template Value: {{ . }}</h1>
+
+A project can contain multiple templates files.
+extras.html:
+	<h1>Extras Template Value: {{ . }}</h1>
+
+The new template uses the same action as the previous example but has different static content to make
+it clear which template has been executed in the next section. Once I have described the basic techniques for
+using templates, I'll introduce more complex template actions.
+`,
+// ====================================================================================
+		"368":`368.Loading and Executing Templates
+Using templates is a two-step process. 
+First, the templates files are loaded and processed to create Template values.
+
+	The html/template Functions for Loading Template Files:
+	Name                        Description
+	---------------------       --------------------------------------------
+	ParseFiles(...files)        This function loads one or more files, which are specified by name. The result
+								is a Template that can be used to generate content and an error that reports
+								problems loading the templates.
+	ParseGlob(pattern)          This function loads one or more files, which are selected with a pattern. The
+								result is a Template that can be used to generate content and an error that
+								reports problems loading the templates.
+	
+If you name your template files consistently, 
+then you can use the ParseGlob function to load them with a simple pattern. 
+If you want specific files—or the files are not named consistently—then you can specify
+individual files using the ParseFiles function.
+`,
+// ====================================================================================
+		"369":`369.The Template Methods for Selecting and Executing Templates
+
+	Name                                            Description
+	----------------------------                    -------------------------------------------
+	Templates()                                     This function returns a slice containing pointers to the Template values that
+													have been loaded.
+	Lookup(name)                                    This function returns a *Template for the specified loaded template.
+	Name()                                          This method returns the name of the Template.
+	Execute(writer, data)                           This function executes the Template, using the specified data and writes
+													the output to the specified Writer.
+	ExecuteTemplate(writer, templateName, data)     This function executes the template with the specified name and data and
+													writes the output to the specified Writer.
+`,
+// ====================================================================================
+		"370":`370.Loading and Executing a Template
+example:
+main.go:
+	package main
+	import (
+		"fmt"
+		"html/template"
+		"os"
+	)
+	func main() {
+		t, err := template.ParseFiles("templates/template.html")
+		if (err == nil) {
+			t.Execute(os.Stdout, &Kayak)
+			fmt.Println()
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+=============================
+Output:
+	<h1>Template Value: {Kayak Watersports 279}</h1>
+`,
+// ====================================================================================
+		"371":`371.Loading Multiple Templates
+There are two approaches to working with multiple templates. 
+The first is to create a separate Template value
+for each of them and execute them separately.
+
+example:
+Using Separate Templates:
+main.go:
+	package main
+	import (
+		"fmt"
+		"html/template"
+		"os"
+	)
+	func main() {
+		t1, err1 := template.ParseFiles("templates/template.html")
+		t2, err2 := template.ParseFiles("templates/extras.html")
+		if (err1 == nil && err2 == nil) {
+			t1.Execute(os.Stdout, &Kayak)
+			os.Stdout.WriteString("\n")
+			t2.Execute(os.Stdout, &Kayak)
+			os.Stdout.WriteString("\n")
+		} else {
+			Printfln("Error: %v %v", err1.Error(), err2.Error())
+		}
+	}
+=============================
+Output:
+	<h1>Template Value: {Kayak Watersports 279}</h1>
+	<h1>Extras Template Value: {Kayak Watersports 279}</h1>
+`,
+// ====================================================================================
+		"372":`372.Using a Combined Template
+When multiple files are loaded with the ParseFiles, 
+the result is a Template value on which the
+ExecuteTemplate method can be called to execute a specified template. 
+The filename is used as the template name, 
+which means that the templates in this example are named template.html and extras.html.
+
+You can call the Execute method on the Template returned by the ParseFiles or ParseGlob
+function, and the first template that was loaded will be selected 
+and used to produce the output. 
+Take care when using the ParseGlob function because 
+the first template loaded—and therefore the template that will be
+executed—may not be the file you expect.
+
+example:
+main.go:
+	package main
+	import (
+		"html/template"
+		"os"
+	)
+	func main() {
+			allTemplates, err1 := template.ParseFiles("templates/template.html",
+				"templates/extras.html")
+			if (err1 == nil) {
+				allTemplates.ExecuteTemplate(os.Stdout, "template.html", &Kayak)
+				os.Stdout.WriteString("\n")
+				allTemplates.ExecuteTemplate(os.Stdout, "extras.html", &Kayak)
+			} else {
+				Printfln("Error: %v %v", err1.Error())
+			}
+		}
+=============================
+Output:
+	<h1>Template Value: {Kayak Watersports 279}</h1>
+	<h1>Extras Template Value: {Kayak Watersports 279}</h1>
+`,
+// ====================================================================================
+		"373":`373.Enumerating Loaded Templates
+It can be useful to enumerate the templates that have been loaded, 
+especially when using the ParseGlob function, 
+to make sure that all the expected files have been discovered.
+example:
+main.go:
+	package main
+	import (
+		"html/template"
+	)
+	func main() {
+			allTemplates, err := template.ParseGlob("templates/*.html")
+		if (err == nil) {
+			for _, t := range allTemplates.Templates() {
+				Printfln("Template name: %v", t.Name())
+			}
+		} else {
+			Printfln("Error: %v %v", err.Error())
+		}
+	}
+=============================
+Output:
+	Template name: extras.html
+	Template name: template.html
+`,
+// ====================================================================================
+		"374":`374.Looking Up a Specific Template
+An alternative to specifying a name is to use the Lookup method to select a template, 
+which is useful when
+you want to pass a template as an argument to a function
+example:
+main.go:
+	package main
+	import (
+		"html/template"
+		"os"
+	)
+	func Exec(t *template.Template) error {
+		return t.Execute(os.Stdout, &Kayak)
+	}
+	func main() {
+		allTemplates, err := template.ParseGlob("templates/*.html")
+		if err == nil {
+			selectedTemplated := allTemplates.Lookup("template.html")
+			err = Exec(selectedTemplated)
+		}
+		if err != nil {
+			Printfln("Error: %v %v", err.Error())
+		}
+	}
+=============================
+Output:
+	<h1>Template Value: {Kayak Watersports 279}</h1>
+`,
+// ====================================================================================
+		"375":`375.The Template Actions
+		
+	Action                      Description
+	------------                -----------------------------------------
+	{{ value }}                 This action inserts a data value or the result of an expression into the
+	{{ expr }}                  template. A period is used to refer to the data value passed to the Execute or
+								ExecuteTemplate function. See the “Inserting Data Values” section for details.
+
+	{{ value.fieldname }}       This action inserts the value of a struct field. See the “Inserting Data Values” section for details.
+	{{ value.method arg }}      This action invokes a method and inserts the result into the template
+								output. Parentheses are not used, and arguments are separated by
+								spaces. See the “Inserting Data Values” section for details.
+
+	{{ func arg }}              This action invokes a function and inserts the result into the output.
+								There are built-in functions for common tasks, such as formatting
+								data values, and custom functions can be defined, as described in the
+								“Defining Template Functions” section.
+
+	{{ expr | value.method }}   Expressions can be chained together using a vertical bar so that the result
+	{{ expr | func              of the first expression is used as the last argument in the second expression.
+	{{ range value }}           This action iterates through the specified slice and adds the content
+	...                         between the range and end keyword for each element. The actions within
+	{{ end }}                   the nested content are executed, with the current element accessible
+								through the period. See the “Using Slices in Templates” section for details.
+
+	{{ range value }}           This action is similar to the range/end combination but defines a section
+	...                         of nested content that is used if the slice contains no elements.
+	{{ else }}
+	...
+	{{ end }}
+
+	{{ if expr }}               This action evaluates an expression and executes the nested template
+	...                         content if the result is true, as demonstrated in the “Conditionally
+	{{ end }}                   Executing Template Content” section. This action can be used with
+								optional else and else if clauses.
+
+	{{ with expr }}             This action evaluates an expression and executes the nested template
+	...                         content if the result isn't nil or the empty string. This action can be used
+	{{ end }}                   with optional clauses.
+
+	{{ define "name" }}         This action defines a template with the specified name
+	...
+	{{ end }}
+
+	{{ template "name" expr }}  This action executes the template with the specified name and data and
+								inserts the result in the output.
+
+	{{ block "name" expr }}     This action defines a template with the specified name and invokes it
+	...                         with the specified data. This is typically used to define a template that
+	{{ end }}                   can be replaced by one loaded from another file, as demonstrated in the
+								“Defining Template Blocks” section.
+`,
+// ====================================================================================
+		"376":`376.The Template Expressions for Inserting Values into Templates
+Inserting Data Values
+
+	Expression          Description
+	------------        -----------------------------------------------
+	.                   This expression inserts the value passed to the Execute or ExecuteTemplate method into the
+						template output.
+	.Field              This expression inserts the value of the specified field into the template output.
+	.Method             This expression calls the specified method without arguments and inserts the result into the
+						template output.
+	.Method             This expression calls the specified method with the specified argument and inserts the result
+	arg                 into the template output.
+	call                This expression invokes a struct function field, using the specified arguments, which are
+	.Field arg          separated by spaces. The result from the function is inserted into the template output.
+`,
+// ====================================================================================
+		"377":`377.Inserting Data Values in the template.html
+Unlike Go code, methods are not invoked with parentheses, and arguments
+are simply specified after the name, separated by spaces. 
+It is the responsibility of the developer to ensure
+that arguments are of a type that can be used by the method or function.
+
+example:
+templates/template.html:
+	<h1>Template Value: {{ . }}</h1>
+	<h1>Name: {{ .Name }}</h1>
+	<h1>Category: {{ .Category }}</h1>
+	<h1>Price: {{ .Price }}</h1>
+	<h1>Tax: {{ .AddTax }}</h1>
+	<h1>Discount Price: {{ .ApplyDiscount 10 }}</h1>
+=============================
+Output:
+	<h1>Template Value: {Kayak Watersports 279}</h1>
+	<h1>Name: Kayak</h1>
+	<h1>Category: Watersports</h1>
+	<h1>Price: 279</h1>
+	<h1>Tax: 334.8</h1>
+	<h1>Discount Price: 269</h1>`,
+// ====================================================================================
+		"378":`378.Understanding Contextual Escaping
+Values are automatically escaped to make them safe for inclusion in HTML, CSS, and JavaScript code,
+with the appropriate escaping rules applied based on context. For example, a string value such as
+"It was a <big> boat" used as the text content of an HTML element would be inserted into the
+template as "It was a <big> boat" but as "It was a \u003cbig\u003e boat" when used
+as a string literal value in JavaScript code. Full details of how values are escaped can be found at
+
+https://golang.org/pkg/html/template.`,
+// ====================================================================================
+		"379":`379.The Built-in Templates Functions for Formatting Data
+	Name        Description
+	-------     --------------------------------
+	print       This is an alias to the fmt.Sprint function.
+	printf      This is an alias to the fmt.Sprintf function.
+	println     This is an alias to the fmt.Sprintln function.
+	html        This function encodes a value for safe inclusion in an HTML document.
+	js          This function encodes a value for safe inclusion in a JavaScript document.
+	urlquery    This function encodes a value for use in a URL query string.
+
+example:
+template.html:
+	<h1>Template Value: {{ . }}</h1>
+	<h1>Name: {{ .Name }}</h1>
+	<h1>Category: {{ .Category }}</h1>
+	<h1>Price: {{ printf "$%.3f" .Price }}</h1>
+	<h1>Tax: {{ printf "$%.2f" .AddTax }}</h1>
+	<h1>Discount Price: {{ .ApplyDiscount 10 }}</h1>
+=============================
+Output:
+	<h1>Template Value: {Kayak Watersports 279}</h1>
+	<h1>Name: Kayak</h1>
+	<h1>Category: Watersports</h1>
+	<h1>Price: $279.000</h1>
+	<h1>Tax: $334.80</h1>
+	<h1>Discount Price: 269</h1>
+`,
+// ====================================================================================
+		"380":`380.Chaining Expressions
+Chaining expressions creates a pipeline for values, 
+which allows the output from one method or function
+to be used as the input for another.
+
+example:
+template.html:
+	<h1>Template Value: {{ . }}</h1>
+	<h1>Name: {{ .Name }}</h1>
+	<h1>Category: {{ .Category }}</h1>
+	<h1>Price: {{ printf "$%.2f" .Price }}</h1>
+	<h1>Tax: {{ printf "$%.2f" .AddTax }}</h1>
+	<h1>Discount Price: {{ .ApplyDiscount 10 | printf "$%.2f" }}</h1>
+=============================
+Output:
+	<h1>Template Value: {Kayak Watersports 279}</h1>
+	<h1>Name: Kayak</h1>
+	<h1>Category: Watersports</h1>
+	<h1>Price: $279.00</h1>
+	<h1>Tax: $334.80</h1>
+	<h1>Discount Price: $269.00</h1>
+`,
+// ====================================================================================
+		"381":`381.Using Parentheses in html 
+Chaining can be used only for the last argument provided to a function. 
+An alternative approach—and
+one that can be used to set other function arguments is to use parentheses
+
+example:
+template.html:
+	<h1>Template Value: {{ . }}</h1>
+	<h1>Name: {{ .Name }}</h1>
+	<h1>Category: {{ .Category }}</h1>
+	<h1>Price: {{ printf "$%.2f" .Price }}</h1>
+	<h1>Tax: {{ printf "$%.2f" .AddTax }}</h1>
+	<h1>Discount Price: {{ printf "$%.2f" (.ApplyDiscount 10) }}</h1>
+=============================
+Output:
+	<h1>Template Value: {Kayak Watersports 279}</h1>
+	<h1>Name: Kayak</h1>
+	<h1>Category: Watersports</h1>
+	<h1>Price: $279.00</h1>
+	<h1>Tax: $334.80</h1>
+	<h1>Discount Price: $269.00</h1>
+`,
+// ====================================================================================
+		"382":`382.Trimming Whitespace
+HTML isn't sensitive to the whitespace between elements, 
+but whitespace can still cause problems for text content and attribute values, 
+especially when you want to structure the content
+of a template to make it easy to read.
+
+example:
+template.html
+	<h1>
+		Name: {{ .Name }}, Category: {{ .Category }}, Price,
+			{{ printf "$%.2f" .Price }}
+	</h1>
+=============================
+Output:
+	<h1>
+		Name: Kayak, Category: Watersports, Price,
+			$279.00
+	</h1>
+`,
+// ====================================================================================
+		"383":`383.The minus sign must
+The effect is to remove all of the whitespace to before or after the action.
+The minus sign can be used to trim whitespace, 
+applied immediately after or before the braces
+that open or close an action.
+example:
+template.html:
+	<h1>
+			Name: {{ .Name }}, Category: {{ .Category }}, Price,
+				{{ printf "$%.2f" .Price }}
+	</h1>
+
+	<h1>
+			Name: {{ .Name }}, Category: {{ .Category }}, Price,
+				{{- printf "$%.2f" .Price -}}
+	</h1>
+=============================
+Output:
+	<h1>
+			Name: Kayak, Category: Watersports, Price,
+				$279.00
+	</h1>
+
+	<h1>
+			Name: Kayak, Category: Watersports, Price,$279.00</h1>
+`,
+// ====================================================================================
+		"384":`384.Trimming Additional Whitespace
+The whitespace around the final action has been removed, 
+but there is still a newline character after
+the opening h1 tag because the whitespace trimming applies only to actions.
+
+example:
+template.html:
+	<h1>
+		{{- "" -}} Name: {{ .Name }}, Category: {{ .Category }}, Price,
+			{{- printf "$%.2f" .Price -}}
+	</h1>
+=============================
+Output:
+	<h1>Name: Kayak, Category: Watersports, Price,$279.00</h1>
+`,
+// ====================================================================================
+		"385":`385.Slices in Templates
+Template actions can be used to generate content for slices
+
+example:
+Processing a Slice in the template.html
+	{{ range . -}}
+		<h1>Name: {{ .Name }}, Category: {{ .Category }}, Price,
+			{{- printf "$%.2f" .Price }}</h1>
+	{{ end }}
+main.go:
+	package main
+
+	import (
+		"html/template"
+		"os"
+	)
+	
+	func Exec(t *template.Template) error {
+		return t.Execute(os.Stdout, Products)
+	}
+	func main() {
+		allTemplates, err := template.ParseGlob("templates/*.html")
+		if err == nil {
+			selectedTemplated := allTemplates.Lookup("template.html")
+			err = Exec(selectedTemplated)
+		}
+	
+		
+		if err != nil {
+			Printfln("Error: %v %v", err.Error())
+		}
+	}
+=============================
+Output:
+	<h1>Name: Kayak, Category: Watersports, Price,$279.00</h1>
+	<h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
+	<h1>Name: Soccer Ball, Category: Soccer, Price,$19.50</h1>
+	<h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+	<h1>Name: Stadium, Category: Soccer, Price,$79500.00</h1>
+	<h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+	<h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>
+	<h1>Name: Bling-Bling King, Category: Chess, Price,$1200.00</h1>
+`,
+// ====================================================================================
+		"386":`386.The Built-in Template Functions for Slices
+Go text templates support the built-in functions
+	
+	Name        Description
+	------      --------------
+	slice       This function creates a new slice. Its arguments are the original slice, the start index, and the end index.
+	index       This function returns the element at the specified index.
+	len         This function returns the length of the specified slice.
+	
+example:
+Built-in Functions in the template.html:
+	<h1>There are {{ len . }} products in the source data.</h1>
+	<h1>First product: {{ index . 0 }}</h1>
+	{{ range slice . 3 6 -}} 
+		<h1>Name: {{ .Name }}, Category: {{ .Category }}, Price,
+			{{- printf "$%.2f" .Price }}</h1>
+	{{ end }}
+=============================
+Output:
+	<h1>There are 8 products in the source data.</h1>
+	<h1>First product: {Kayak Watersports 279}</h1>
+	<h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+	<h1>Name: Stadium, Category: Soccer, Price,$79500.00</h1>
+	<h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+`,
+// ====================================================================================
+		"387":`387.Conditionally Executing Template Content
+Actions can be used to conditionally insert content into the output based on the evaluation of their expressions.
+The Template Conditional Functions:
+		Function            Description
+		------------        -----------------------------------------------
+		eq arg1 arg2        This function returns true if arg1 == arg2.
+		ne arg1 arg2        This function returns true if arg1 != arg2.
+		lt arg1 arg2        This function returns true if arg1 < arg2.
+		le arg1 arg2        This function returns true if arg1 <= arg2.
+		gt arg1 arg2        This function returns true if arg1 > arg2.
+		ge arg1 arg2        This function returns true if arg1 >= arg2.
+		and arg1 arg2       This function returns true if both arg1 and arg2 are true.
+		not arg1            This function returns true if arg1 is false, and false if it is true.
+	
+example:
+a Conditional Action in the template.html:
+	<h1>There are {{ len . }} products in the source data.</h1>
+	<h1>First product: {{ index . 0 }}</h1>
+	{{ range . -}}
+		{{ if lt .Price 100.00 -}}
+			<h1>Name: {{ .Name }}, Category: {{ .Category }}, Price,
+				{{- printf "$%.2f" .Price }}</h1>
+		{{ end -}}
+	{{ end }}
+=============================
+Output:
+	<h1>There are 8 products in the source data.</h1>
+	<h1>First product: {Kayak Watersports 279}</h1>
+	<h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
+		<h1>Name: Soccer Ball, Category: Soccer, Price,$19.50</h1>
+		<h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+		<h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+		<h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>        
+
+Despite the use of the minus sign to trim whitespace, 
+the output is oddly formatted because of the
+way I chose to structure the template.
+`,
+// ====================================================================================
+		"388":`388.Using the Optional Conditional Actions
+The if action can be used with optional else and else if keywords
+
+example:
+template.html:
+	<h1>There are {{ len . }} products in the source data.</h1>
+	<h1>First product: {{ index . 0 }}</h1>
+	{{ range . -}}
+		{{ if lt .Price 100.00 -}}
+			<h1>Name: {{ .Name }}, Category: {{ .Category }}, Price,
+				{{- printf "$%.2f" .Price }}</h1>
+		{{ else if gt .Price 1500.00 -}}
+			<h1>Expensive Product {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
+		{{ else -}}
+			<h1>Midrange Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
+		{{ end -}}
+	{{ end }}
+main.go:
+	package main
+	import (
+		"html/template"
+		"os"
+	)
+	func Exec(t *template.Template) error {
+		return t.Execute(os.Stdout, Products)
+	}
+	func main() {
+		allTemplates, err := template.ParseGlob("templates/*.html")
+		if err == nil {
+			selectedTemplated := allTemplates.Lookup("template.html")
+			err = Exec(selectedTemplated)
+		}
+		if err != nil {
+			Printfln("Error: %v %v", err.Error())
+		}
+	}
+=============================
+Output:
+	<h1>There are 8 products in the source data.</h1>
+	<h1>First product: {Kayak Watersports 279}</h1>
+	<h1>Midrange Product: Kayak ($279.00)</h1>
+		<h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
+		<h1>Name: Soccer Ball, Category: Soccer, Price,$19.50</h1>
+		<h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+		<h1>Expensive Product Stadium ($79500.00)</h1>
+		<h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+		<h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>
+		<h1>Midrange Product: Bling-Bling King ($1200.00)</h1>
+`,
+// ====================================================================================
+		"389":`389.Creating Named Nested Templates
+The define action is used to create a nested template that can be executed by name, 
+which allows content to
+be defined once and used repeatedly with the template action
+
+example:
+template.html:
+	{{ define "currency" }}{{ printf "$%.2f" . }}{{ end }}
+	{{ define "basicProduct" -}}
+		Name: {{ .Name }}, Category: {{ .Category }}, Price,
+			{{- template "currency" .Price }}
+	{{- end }}
+	{{ define "expensiveProduct" -}}
+		Expensive Product {{ .Name }} ({{ template "currency" .Price }})
+	{{- end }}
+	<h1>There are {{ len . }} products in the source data.</h1>
+	<h1>First product: {{ index . 0 }}</h1>
+	{{ range . -}}
+		{{ if lt .Price 100.00 -}}
+			<h1>{{ template "basicProduct" . }}</h1>
+		{{ else if gt .Price 1500.00 -}}
+			<h1>{{ template "expensiveProduct" . }}</h1>
+		{{ else -}}
+			<h1>Midrange Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
+		{{ end -}}
+	{{ end }}
+=============================
+Output:
+
+
+
+	<h1>There are 8 products in the source data.</h1>
+	<h1>First product: {Kayak Watersports 279}</h1>
+	<h1>Midrange Product: Kayak ($279.00)</h1>
+		<h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
+		<h1>Name: Soccer Ball, Category: Soccer, Price,$19.50</h1>
+		<h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+		<h1>Expensive Product Stadium ($79500.00)</h1>
+		<h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+		<h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>
+		<h1>Midrange Product: Bling-Bling King ($1200.00)</h1>
+
+
+The define keyword is followed by the template name in quotes, 
+and the template is terminated by the end keyword. 
+The template keyword is used to execute a named template, 
+specifying the template name and a data value:
+	...
+	{{- template "currency" .Price }}
+	...
+`,
+// ====================================================================================
+		"390":`390.Selecting a Named Template in the main.go
+Using the define and end keywords for the main template content excludes the whitespace used to
+separate the other named templates.
+Adding a Named Template in the template.html:
+	{{ define "currency" }}{{ printf "$%.2f" . }}{{ end }}
+	{{ define "basicProduct" -}}
+		Name: {{ .Name }}, Category: {{ .Category }}, Price,
+			{{- template "currency" .Price }}
+	{{- end }}
+	{{ define "expensiveProduct" -}}
+		Expensive Product {{ .Name }} ({{ template "currency" .Price }})
+	{{- end }}
+	{{ define "mainTemplate" -}}
+		<h1>There are {{ len . }} products in the source data.</h1>
+		<h1>First product: {{ index . 0 }}</h1>
+		{{ range . -}}
+			{{ if lt .Price 100.00 -}}
+				<h1>{{ template "basicProduct" . }}</h1>
+			{{ else if gt .Price 1500.00 -}}
+				<h1>{{ template "expensiveProduct" . }}</h1>
+			{{ else -}}
+				<h1>Midrange Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h1>
+			{{ end -}}
+		{{ end }}
+	{{- end}}    
+=============================
+main.go:
+	package main
+	import (
+		"html/template"
+		"os"
+	)
+	func Exec(t *template.Template) error {
+		return t.Execute(os.Stdout, Products)
+	}
+	func main() {
+		allTemplates, err := template.ParseGlob("templates/*.html")
+		if (err == nil) {
+			selectedTemplated := allTemplates.Lookup("mainTemplate")
+			err = Exec(selectedTemplated)
+		}
+		if (err != nil) {
+			Printfln("Error: %v %v", err.Error())
+		}
+	}
+=============================
+Any of the named templates can be executed directly, but I have selected the mainTemplate
+Output:
+	<h1>There are 8 products in the source data.</h1>
+	<h1>First product: {Kayak Watersports 279}</h1>
+	<h1>Midrange Product: Kayak ($279.00)</h1>
+		<h1>Name: Lifejacket, Category: Watersports, Price,$49.95</h1>
+		<h1>Name: Soccer Ball, Category: Soccer, Price,$19.50</h1>
+		<h1>Name: Corner Flags, Category: Soccer, Price,$34.95</h1>
+		<h1>Expensive Product Stadium ($79500.00)</h1>
+		<h1>Name: Thinking Cap, Category: Chess, Price,$16.00</h1>
+		<h1>Name: Unsteady Chair, Category: Chess, Price,$75.00</h1>
+		<h1>Midrange Product: Bling-Bling King ($1200.00)</h1>
+`,
+// ====================================================================================
+		"391":`391.Defining Template Blocks
+Template blocks are used to define a template with default content that can be overridden in another
+template file, which requires multiple templates to be loaded and executed together. 
+This is often used to common content, such as a layout.
+The templates must be loaded so that the file that contains the block action is loaded before the file that
+contains the define action that redefines the template. 
+When the templates are loaded, the template defined
+in the list.html file redefines the template named body so that the content in the list.html file replaces
+the content in the template.html file.
+example:
+template.html File in the templates Folder
+	{{ define "mainTemplate" -}}
+		<h1>This is the layout header</h1>
+		{{ block "body" . }}
+			<h2>There are {{ len . }} products in the source data.</h2>
+		{{ end }}
+		<h1>This is the layout footer</h1>
+	{{ end }}
+==============================================
+Output:
+	<h1>This is the layout header</h1>
+			<h2>There are 8 products in the source data.</h2>
+		<h1>This is the layout footer</h1>
+
+When used alone, the output from the template file includes the content in the block. 
+But this content can be redefined by another template file.
+example:
+list.html:
+	{{ define "body" }}
+		{{ range . }}
+			<h2>Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h2>
+		{{ end -}}
+	{{ end }}
+========================
+main.go:
+	package main
+	import (
+		"html/template"
+		"os"
+	)
+	func Exec(t *template.Template) error {
+		return t.Execute(os.Stdout, Products)
+	}
+	func main() {
+		allTemplates, err := template.ParseFiles("templates/template.html","templates/list.html")
+		if err == nil {
+			selectedTemplated := allTemplates.Lookup("mainTemplate")
+			err = Exec(selectedTemplated)
+		}
+		if err != nil {
+			Printfln("Error: %v %v", err.Error())
+		}
+	}
+=============================
+Output:
+	<h1>This is the layout header</h1>
+	
+		
+		<h2>Product: Kayak ($279.00)</h2>
+
+		<h2>Product: Lifejacket ($49.95)</h2>
+
+		<h2>Product: Soccer Ball ($19.50)</h2>
+
+		<h2>Product: Corner Flags ($34.95)</h2>
+
+		<h2>Product: Stadium ($79500.00)</h2>
+
+		<h2>Product: Thinking Cap ($16.00)</h2>
+
+		<h2>Product: Unsteady Chair ($75.00)</h2>
+
+		<h2>Product: Bling-Bling King ($1200.00)</h2>
+
+	<h1>This is the layout footer</h1>
+`,
+// ====================================================================================
+		"392":`392.Defining Template Functions
+example:
+main.go File in the htmltext Folder:
+	package main
+	import (
+		"html/template"
+		"os"
+	)
+	func GetCategories(products []Product) (categories []string) {
+		catMap := map[string]string {}
+		for _, p := range products {
+			if (catMap[p.Category] == "") {
+				catMap[p.Category] = p.Category
+				categories = append(categories, p.Category)
+			}
+		}
+		return
+	}
+	func Exec(t *template.Template) error {
+		return t.Execute(os.Stdout, Products)
+	}
+	func main() {
+		allTemplates := template.New("allTemplates")
+		allTemplates.Funcs(map[string]interface{} {
+			"getCats": GetCategories,
+		})
+		allTemplates, err := allTemplates.ParseGlob("templates/*.html")
+		if (err == nil) {
+			selectedTemplated := allTemplates.Lookup("mainTemplate")
+			err = Exec(selectedTemplated)
+		}
+		if (err != nil) {
+			Printfln("Error: %v %v", err.Error())
+		}
+	}
+=============================
+Output:
+	<h1>This is the layout header</h1>
+	
+		<h2>There are 8 products in the source data.</h2>
+
+	<h1>This is the layout footer</h1>
+`,
+// ====================================================================================
+		"393":`393.Using a Custom Function in the template.html
+example:
+template.html:
+	{{ define "mainTemplate" -}}
+		<h1>There are {{ len . }} products in the source data.</h1>
+		{{ range getCats .  -}}
+			<h1>Category: {{ . }}</h1>
+		{{ end }}
+	{{- end }}
+=============================================
+Output:
+	<h1>There are 8 products in the source data.</h1>
+		<h1>Category: Watersports</h1>
+		<h1>Category: Soccer</h1>
+		<h1>Category: Chess</h1>
+`,
+// ====================================================================================
+		"394":`394.Creating an HTML Fragment in the main.go
+example:
+main.go:
+	...
+	func GetCategories(products []Product) (categories []string) {
+		catMap := map[string]string {}
+		for _, p := range products {
+			if (catMap[p.Category] == "") {
+				catMap[p.Category] = p.Category
+				categories = append(categories, "<b>p.Category</b>")
+			}
+		}
+		return
+	}
+	...
+===============================================================
+Output:
+	<h1>There are 8 products in the source data.</h1>
+		<h1>Category: &lt;b&gt;p.Category&lt;/b&gt;</h1>
+		<h1>Category: &lt;b&gt;p.Category&lt;/b&gt;</h1>
+		<h1>Category: &lt;b&gt;p.Category&lt;/b&gt;</h1>
+`,
+// ====================================================================================
+		"395":`395.The Types Aliases Used to Denote Content Types
+
+	Name        Description
+	--------    -----------
+	CSS         This type denotes CSS content.
+	HTML        This type denotes a fragment of HTML.
+	HTMLAttr    This type denotes a value that will be used as the value for an HTML attribute.
+	JS          This type denotes a fragment of JavaScript code.
+	JSStr       This type denotes a value that is intended to appear between quotes in a JavaScript expression.
+	Srcset      This type denotes a value that can be used in the srcset attribute of an img element.
+	URL         This type denotes a URL.
+`,
+// ====================================================================================
+		"396":`396.Returning HTML Content in the main.go
+example:
+main.go:
+	...
+	func GetCategories(products []Product) (categories []template.HTML) {
+		catMap := map[string]string {}
+		for _, p := range products {
+			if (catMap[p.Category] == "") {
+				catMap[p.Category] = p.Category
+				categories = append(categories, "<b>p.Category</b>")
+			}
+		}
+		return
+	}
+	...
+=======================================================
+Output:
+	<h1>There are 8 products in the source data.</h1>
+		<h1>Category: <b>p.Category</b></h1>
+		<h1>Category: <b>p.Category</b></h1>
+		<h1>Category: <b>p.Category</b></h1>
+`,
+// ====================================================================================
+		"397":`397.Providing Access to Standard Library Functions
+Adding a Function Mapping in the main.go
+example:
+main.go:
+	package main
+	import (
+		"html/template"
+		"os"
+		"strings"
+	)
+	func GetCategories(products []Product) (categories []string) {
+		catMap := map[string]string{}
+		for _, p := range products {
+			if catMap[p.Category] == "" {
+				catMap[p.Category] = p.Category
+				categories = append(categories, p.Category)
+			}
+		}
+		return
+	}
+	func Exec(t *template.Template) error {
+		return t.Execute(os.Stdout, Products)
+	}
+	func main() {
+		allTemplates := template.New("allTemplates")
+		allTemplates.Funcs(map[string]interface{}{
+			"getCats": GetCategories,
+			"lower":   strings.ToLower,
+		})
+		allTemplates, err := allTemplates.ParseGlob("templates/*.html")
+		if err == nil {
+			selectedTemplated := allTemplates.Lookup("mainTemplate")
+			err = Exec(selectedTemplated)
+		}
+		if err != nil {
+			Printfln("Error: %v %v", err.Error())
+		}
+	}
+=============================================
+Output:
+	<h1>There are 8 products in the source data.</h1>
+		<h1>Category: Watersports</h1>
+		<h1>Category: Soccer</h1>
+		<h1>Category: Chess</h1>
+`,
+// ====================================================================================
+		"398":`398.Using a Template Function in the template.html
+example:
+template.html:
+	{{ define "mainTemplate" -}}
+		<h1>There are {{ len . }} products in the source data.</h1>
+		{{ range getCats .  -}}
+			<h1>Category: {{ lower . }}</h1>
+		{{ end }}
+	{{- end }}
+=============================================================
+Output:
+	<h1>There are 8 products in the source data.</h1>
+		<h1>Category: watersports</h1>
+		<h1>Category: soccer</h1>
+		<h1>Category: chess</h1>
+`,
+// ====================================================================================
+		"399":`399.Defining Template Variables
+Defining and Using a Template Variable in the template.html
+example:
+template.html:
+	{{ define "mainTemplate" -}}
+		{{ $length := len . }}
+		<h1>There are {{ $length }} products in the source data.</h1>
+		{{ range getCats .  -}}
+			<h1>Category: {{ lower . }}</h1>
+		{{ end }}
+	{{- end }}
+=============================================================
+Output:
+		
+	<h1>There are 8 products in the source data.</h1>
+	<h1>Category: watersports</h1>
+	<h1>Category: soccer</h1>
+	<h1>Category: chess</h1>
+`,
+// ====================================================================================
+		"400":`400.Defining and Using a Template Variable in the template.html
+example:
+template.html:
+	{{ define "mainTemplate" -}}
+		<h1>There are {{ len . }} products in the source data.</h1>
+		{{- range getCats .  -}}
+			{{ if ne ($char := slice (lower .) 0 1) "s"  }}
+				<h1>{{$char}}: {{.}}</h1>
+			{{- end }}
+		{{- end }}
+	{{- end }}
+==============================================
+Output:
+	<h1>There are 8 products in the source data.</h1>
+				<h1>w: Watersports</h1>
+				<h1>c: Chess</h1>
+`,
+// ====================================================================================
+		"401":`401.Using Template Variables in Range Actions
+Enumerating a Map in the template.html
+example:
+main.go:
+	...
+	func Exec(t *template.Template) error {
+		productMap := map[string]Product {}
+		for _, p := range Products {
+			productMap[p.Name] = p
+		}
+		return t.Execute(os.Stdout, &productMap)
+	}
+	...
+template.html:
+	{{ define "mainTemplate" -}}
+		{{ range $key, $value := . -}}
+			<h1>{{ $key }}: {{ printf "$%.2f" $value.Price }}</h1>
+		{{ end }}
+	{{- end }}
+Output:
+	<h1>Bling-Bling King: $1200.00</h1>
+		<h1>Corner Flags: $34.95</h1>
+		<h1>Kayak: $279.00</h1>
+		<h1>Lifejacket: $49.95</h1>
+		<h1>Soccer Ball: $19.50</h1>
+		<h1>Stadium: $79500.00</h1>
+		<h1>Thinking Cap: $16.00</h1>
+		<h1>Unsteady Chair: $75.00</h1>
+`,
+// ====================================================================================
+		"402":`402.Creating Text Templates
+Loading and Executing a Text Template in the main.go
+
+The Contents of the template.txt
+example:
+templates/template.txt:
+	{{ define "mainTemplate" -}}
+		{{ range $key, $value := . -}}
+			{{ $key }}: {{ printf "$%.2f" $value.Price }}
+		{{ end }}
+	{{- end }}
+---------------------------------------
+main.go:
+	package main
+	import (
+		"text/template"
+		"os"
+		"strings"
+	)
+	func GetCategories(products []Product) (categories []string) {
+		catMap := map[string]string {}
+		for _, p := range products {
+			if (catMap[p.Category] == "") {
+				catMap[p.Category] = p.Category
+				categories = append(categories, p.Category)
+			}
+		}
+		return
+	}
+	func Exec(t *template.Template) error {
+		productMap := map[string]Product {}
+		for _, p := range Products {
+			productMap[p.Name] = p
+		}
+		return t.Execute(os.Stdout, &productMap)
+	}
+	func main() {
+		allTemplates := template.New("allTemplates")
+		allTemplates.Funcs(map[string]interface{} {
+			"getCats": GetCategories,
+			"lower": strings.ToLower,
+		})
+		allTemplates, err := allTemplates.ParseGlob("templates/*.txt")
+		if (err == nil) {
+			selectedTemplated := allTemplates.Lookup("mainTemplate")
+			err = Exec(selectedTemplated)
+		}
+		if (err != nil) {
+			Printfln("Error: %v %v", err.Error())
+		}
+	}
+Output:
+	Bling-Bling King: $1200.00
+		Corner Flags: $34.95
+		Kayak: $279.00
+		Lifejacket: $49.95
+		Soccer Ball: $19.50
+		Stadium: $79500.00
+		Thinking Cap: $16.00
+		Unsteady Chair: $75.00
+`,
+// ====================================================================================
+		"403":`403.Creating HTTP Servers
+What are they?
+The features described in this chapter make it easy for Go applications to create HTTP servers.
+
+Why are they useful?
+HTTP is one of the most widely used protocols and is useful for both user-facing
+applications and web services.
+
+How is it used?
+The features of the net/http package are used to create a server and handle requests.
+
+Are there any pitfalls or limitations?
+These features are well-designed and easy to use.
+
+Are there any alternatives?
+The standard library includes support for other network protocols and also for
+opening and using lower-level network connections. 
+See https://pkg.go.dev/net@go1.17.1 for details of the net package and its subpackages, 
+such as net/smtp, for example, which implements the SMTP protocol.
+
+Problem                                 Solution
+--------                                -------------
+Create an HTTP or HTTPS server          Use the ListenAndServe or ListenAndServeTLS functions
+Inspect an HTTP request                 Use the features of the Request struct
+Produce a response                      Use the ResponseWriter interface or the
+										convenience functions
+
+Handle requests to specific URLs        Use the integrated router
+Serve static content                    Use the FileServer and StripPrefix function
+Use a template to produce a response    Write the content to the ResponseWriter
+or produce a JSON response
+
+Handle form data                        Use the Request methods
+Set or read cookies                     Use the Cookie, Cookies, and SetCookie methods
+
+Preparing for This Chapter:
+1- go mod init httpserver
+2- printer.go:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+3- product.go:
+	package main
+	type Product struct {
+		Name, Category string
+		Price          float64
+	
+	var Products = []Product{
+		{"Kayak", "Watersports", 279},
+		{"Lifejacket", "Watersports", 49.95},
+		{"Soccer Ball", "Soccer", 19.50},
+		{"Corner Flags", "Soccer", 34.95},
+		{"Stadium", "Soccer", 79500},
+		{"Thinking Cap", "Chess", 16},
+		{"Unsteady Chair", "Chess", 75},
+		{"Bling-Bling King", "Chess", 1200},
+	}
+4- main.go:
+	package main
+	func main() {
+		for _, p := range Products {
+			Printfln("Product: %v, Category: %v, Price: $%.2f",
+				p.Name, p.Category, p.Price)
+		}
+	}
+=================================
+Output:
+	Product: Kayak, Category: Watersports, Price: $279.00
+	Product: Lifejacket, Category: Watersports, Price: $49.95
+	Product: Soccer Ball, Category: Soccer, Price: $19.50
+	Product: Corner Flags, Category: Soccer, Price: $34.95
+	Product: Stadium, Category: Soccer, Price: $79500.00
+	Product: Thinking Cap, Category: Chess, Price: $16.00
+	Product: Unsteady Chair, Category: Chess, Price: $75.00
+	Product: Bling-Bling King, Category: Chess, Price: $1200.00
+`,
+// ====================================================================================
+		"404":`404.Creating a Simple HTTP Server
+example:
+main.go:
+	package main
+	import (
+		"net/http"
+		"io"
+	)
+	type StringHandler struct {
+		message string
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+			request *http.Request) {
+		io.WriteString(writer, sh.message)
+	}
+	func main() {
+		err := http.ListenAndServe(":5000", StringHandler{ message: "Hello, World"})
+		if (err != nil) {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+	=================================
+	Output: go run .
+	in Web Browser, search localhost:5000/
+		Hello, World
+`,
+// ====================================================================================
+		"405":`405.Creating the HTTP Listener and Handler
+The net/http Convenience Functions
+
+The ListenAndServe function starts listening for HTTP requests on a specified network address. 
+The ListenAndServeTLS function does the same for HTTP requests.
+The addresses accepted by the functions can be used to restrict the HTTP server so that it
+only accepts requests on a specific interface or to listen for requests on any interface.
+	
+	Name                                            Description
+	---------                                       ----------------------------------------
+	ListenAndServe(addr, handler)                   This function starts listening for HTTP requests on a specified
+													address and passes requests onto the specified handler.
+	ListenAndServeTLS(addr, cert, key, handler)     This function starts listening for HTTPS requests. The arguments are the address
+`,
+// ====================================================================================
+		"406":`406.The Method Defined by the Handler Interface
+	
+	Name                            Description
+	-----------------------			-------------------
+	ServeHTTP(writer, request)      This method is invoked to process a HTTP request. The request is described by a
+									Request value, and the response is written using a ResponseWriter, both of which
+									are received as parameters.
+`,
+// ====================================================================================
+		"407":`407.Inspecting the Request
+The Basic Fields Defined by the Request Struct
+
+	Name        Description
+	-------     ------------------------
+	Method      This field provides the HTTP method (GET, POST, etc.) as a string. The net/http package defines
+				constants for the HTTP methods, such as MethodGet and MethodPost.
+	URL         This field returns the requested URL, expressed as a URL value.
+	Proto       This field returns a string that indicates the version of HTTP used for the request.
+	Host        This field returns a string containing the requested hos.
+	Header      This field returns a Header value, which is an alias to map[string][]string and contains the
+				request headers. The map keys are the names of the headers, and the values are string slices
+				containing the header values.
+	Trailer     This field returns a map[string]string that contains any additional headers that are included in
+				the request after the body.
+	Body        This filed returns a ReadCloser, which is an interface that combines the Read method of the
+				Reader interface with the Close method of the Closer interface
+`,
+// ====================================================================================
+		"408":`408.Writing Request Fields in the main.go
+example:
+main.go:
+	package main
+	import (
+		"io"
+		"net/http"
+	)
+	type StringHandler struct {
+		message string
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+		Printfln("Method: %v", request.Method)
+		Printfln("URL: %v", request.URL)
+		Printfln("HTTP Version: %v", request.Proto)
+		Printfln("Host: %v", request.Host)
+		for name, val := range request.Header {
+			Printfln("Header: %v, Value: %v", name, val)
+		}
+		Printfln("---")
+		io.WriteString(writer, sh.message)
+	}
+	func main() {
+		err := http.ListenAndServe(":5000", StringHandler{message: "Hello, World"})
+		if err != nil {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+===================================================================================
+Output: Compile and execute the project and request http://localhost:5000
+	Method: GET
+	URL: /
+	HTTP Version: HTTP/1.1
+	Host: localhost:5000
+	Header: Accept, Value: [text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8]
+	Header: Accept-Language, Value: [en-US,en;q=0.5]
+	Header: Accept-Encoding, Value: [gzip, deflate, br]
+	Header: Sec-Fetch-Mode, Value: [navigate]
+	Header: Sec-Fetch-Site, Value: [none]
+	Header: User-Agent, Value: [Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0]
+	Header: Connection, Value: [keep-alive]
+	Header: Upgrade-Insecure-Requests, Value: [1]
+	Header: Sec-Fetch-Dest, Value: [document]
+	Header: Sec-Fetch-User, Value: [?1]
+	---
+	Method: GET
+	URL: /favicon.ico
+	HTTP Version: HTTP/1.1
+	Host: localhost:5000
+	Header: Accept-Encoding, Value: [gzip, deflate, br]
+	Header: Connection, Value: [keep-alive]
+	Header: Sec-Fetch-Dest, Value: [image]
+	Header: Sec-Fetch-Mode, Value: [no-cors]
+	Header: Sec-Fetch-Site, Value: [same-origin]
+	Header: User-Agent, Value: [Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0]
+	Header: Accept, Value: [image/avif,image/webp,*/*]
+	Header: Accept-Language, Value: [en-US,en;q=0.5]
+	Header: Referer, Value: [http://localhost:5000/]
+	---
+`,
+// ====================================================================================
+		"409":`409.Save All Logs in a txt file:
+Server.go:
+	package server
+	import (
+		"io"
+		"log"
+		"net/http"
+		"os"
+	)
+	type StringHandler struct {
+		Message string
+	}
+	func MyServer() {
+		logFile, err := os.OpenFile("Server/LogFile/logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+		if err != nil {
+			log.Fatal(err)
+		}
+		defer logFile.Close()
+		log.SetOutput(logFile)
+	
+		err = http.ListenAndServe(":5000", StringHandler{Message: "Hello, World"})
+		if err != nil {
+			log.Printf("Error: %v", err.Error())
+		}
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+		log.Printf("Method: %v", request.Method)
+		log.Printf("URL: %v", request.URL)
+		log.Printf("HTTP Version: %v", request.Proto)
+		log.Printf("Host: %v", request.Host)
+		for name, val := range request.Header {
+			log.Printf("Header: %v, Value: %v", name, val)
+		}
+		io.WriteString(writer, sh.Message)
+		log.Printf("============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================")
+	}
+Output: Create a TXT file in Server/LogFile/logs.txt and save appendation in to it.
+`,
+// ====================================================================================
+		"410":`410.Filtering Requests and Generating Responses
+Useful Fields and Methods Defined by the URL Struct
+The ResponseWriter interface defines the methods that are available when creating a response.
+
+	Name        Description
+	-------     -----------------------------
+	Scheme      This field returns the scheme component of the URL.
+	Host        This field returns the host component of the URL, which may include the port.
+	RawQuery    This field returns the query string from the URL. Use the Query method to process the query
+				string into a map.
+	Path        This field returns the path component of the URL.
+	Fragment    This field returns the fragment component of the URL, without the # character.
+	Hostname()  This method returns the hostname component of the URL as a string.
+	Port()T     his method returns the port component of the URL as a string.
+	Query()     This method returns a map[string][]string (a map with string keys and string slice
+				values), containing the query string fields.
+	User()      This method returns the user information associated with the request.
+	String()    This method returns a string representation of the URL.
+`,
+// ====================================================================================
+		"411":`411.The ResponseWriter Methods
+
+	Name                Description
+	------------		------------------------
+	Header()            This method returns a Header, which is an alias to map[string][]string, that can be
+						used to set the response headers.
+	WriteHeader(code)   This method sets the status code for the response, specified as an int. The net/http
+						package defines constants for most status codes.
+	Write(data)         This method writes data to the response body and implements the Writer interface.
+`,
+// ====================================================================================
+		"412":`412.Producing Difference Responses in the main.go
+example:
+main.go:
+	package main
+	import (
+		"net/http"
+		"io"
+	)
+	type StringHandler struct {
+		message string
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+			request *http.Request) {
+		if (request.URL.Path == "/favicon.ico") {
+			Printfln("Request for icon detected - returning 404")
+			writer.WriteHeader(http.StatusNotFound)
+			return
+		}
+		Printfln("Request for %v", request.URL.Path)
+		io.WriteString(writer, sh.message)
+	}
+	func main() {
+		err := http.ListenAndServe(":5000", StringHandler{ message: "Hello, World"})
+		if (err != nil) {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+Output: in Terminal
+	Request for /
+	Request for icon detected - returning 404
+`,
+// ====================================================================================
+		"413":`413.Get Logs and Handle request if URL not Exist:
+example:
+main.go:
+	package main
+	import (
+		"io"
+		"log"
+		"net/http"
+		"os"
+	)
+	type StringHandler struct {
+		Message string
+	}
+	func main() {
+		logFile, err := os.OpenFile("LogFile/logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+		if err != nil {
+			log.Fatal(err)
+		}
+		defer logFile.Close()
+		log.SetOutput(logFile)
+	
+		err = http.ListenAndServe(":5000", StringHandler{Message: "Hello, World"})
+		if err != nil {
+			log.Printf("Error: %v", err.Error())
+		}
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+		if (request.URL.Path != "/") {
+			Printfln("Request for icon detected - returning 404")
+			writer.WriteHeader(http.StatusNotFound)
+			return
+		}
+		Printfln("Request for %v", request.URL.Path)
+		io.WriteString(writer, sh.Message)
+	
+		
+	
+		log.Printf("Method: %v", request.Method)
+		log.Printf("URL: %v", request.URL)
+		log.Printf("HTTP Version: %v", request.Proto)
+		log.Printf("Host: %v", request.Host)
+		for name, val := range request.Header {
+			log.Printf("Header: %v, Value: %v", name, val)
+		}
+		io.WriteString(writer, sh.Message)
+		log.Printf("============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================")
+	}
+=======================================================================================
+Output: so we have to logs, one of that is logs about user request,
+another that is about path URL in Terminal
+`,
+// ====================================================================================
+		"414":`414.Using the Response Convenience Functions
+
+	Name                                    Description
+	-----------------------                 ----------------------------
+	Error(writer, message, code)            This function sets the header to the specified code, sets the Content-Type header
+											to text/plain, and writes the error message to the response. The X-Content-
+											Type-Options header is also set to stop browsers from interpreting the response as
+											anything other than text.
+	NotFound(writer, request)               This function calls Error and specifies a 404 error code.
+	Redirect(writer, request, url, code)    This function sends a redirection response to the specified URL and with the
+											specified status code.
+	ServeFile(writer, request, fileName)    This function sends a response containing the contents of the specified file. The
+											Content-Type header is set based on the file name but can be overridden by
+											explicitly setting the header before calling the function. See the “Creating a Static
+											HTTP Server” section for an example that serves files.
+`,
+// ====================================================================================
+		"415":`415.Convenience Functions in the main.go
+example:
+main.go:
+	package main
+	import (
+		"io"
+		"log"
+		"net/http"
+		"os"
+	)
+	type StringHandler struct {
+		Message string
+	}
+	func main() {
+		logFile, err := os.OpenFile("LogFile/logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+		if err != nil {
+			log.Fatal(err)
+		}
+		defer logFile.Close()
+		log.SetOutput(logFile)
+		err = http.ListenAndServe(":5000", StringHandler{Message: "Hello, World"})
+		if err != nil {
+			log.Printf("Error: %v", err.Error())
+		}
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+		Printfln("Request for %v", request.URL.Path)
+		switch request.URL.Path {
+		case "/favicon.ico":
+			http.NotFound(writer, request)
+		case "/message":
+			io.WriteString(writer, sh.Message)
+		default:
+			http.Redirect(writer, request, "/message", http.StatusTemporaryRedirect)
+		}
+		log.Printf("Method: %v", request.Method)
+		log.Printf("URL: %v", request.URL)
+		log.Printf("HTTP Version: %v", request.Proto)
+		log.Printf("Host: %v", request.Host)
+		for name, val := range request.Header {
+			log.Printf("Header: %v, Value: %v", name, val)
+		}
+		io.WriteString(writer, sh.Message)
+		log.Printf("============================================◉🧭🧭🧭🧭🧭🧭🧭◉==========================================")
+	}
+==============================================================
+Output: Will write in Terminal and File for feture analyzing.
+`,
+// ====================================================================================
+		"416":`416.Using the Convenience Functions in the main.go
+example:
+main.go:
+	package main
+	import (
+		"io"
+		"net/http"
+	)
+	type StringHandler struct {
+		message string
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+		Printfln("Request for %v", request.URL.Path)
+		switch request.URL.Path {
+		case "/favicon.ico":
+			http.NotFound(writer, request)
+		case "/message":
+			io.WriteString(writer, sh.message)
+		default:
+			http.Redirect(writer, request, "/message", http.StatusTemporaryRedirect)
+		}
+	}
+	func main() {
+		err := http.ListenAndServe(":5000", StringHandler{message: "Hello, World"})
+		if err != nil {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+================================================
+Output:
+	every wrong links redirect to specific link.
+	uses a switch statement to decide how to respond to a request.
+`,
+// ====================================================================================
+		"417":`417.Using the Convenience Routing Handler
+The process of inspecting the URL and selecting a response can produce complex code that is difficult to
+read and maintain. 
+To simplify the process, the net/http package provides a Handler implementation that
+allows matching the URL to be separated from producing a request.
+example:
+main.go:
+	package main
+	import (
+		"io"
+		"net/http"
+	)
+	type StringHandler struct {
+		message string
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+		Printfln("Request for %v", request.URL.Path)
+		io.WriteString(writer, sh.message)
+	}
+	func main() {
+		http.Handle("/message", StringHandler{"Hello, World"})
+		http.Handle("/favicon.ico", http.NotFoundHandler())
+		http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+		err := http.ListenAndServe(":5000", nil)
+		if err != nil {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+======================================================
+Output:
+	don't show wrong search.
+`,
+// ====================================================================================
+		"418":`418.The net/http Functions for Creating Routing Rules
+
+	Name                                Description
+	-----------------                   ---------------------------------
+	Handle(pattern, handler)            This function creates a rule that invokes the specified ServeHTTP method of the
+										specified Hander for requests that match the pattern.
+	HandleFunc(pattern, handlerFunc)    This function creates a rule that invokes the specified function for requests that match
+										the pattern. The function is invoked with ResponseWriter and Request arguments.
+`,
+// ====================================================================================
+		"419":`419.he net/http Functions for Creating Request Handlers
+
+    Name                                        Description
+	---------------------------					--------------------------
+    FileServer(root)                            This function creates a Handler that produces responses using the ServeFile
+                                                function. See the “Creating a Static HTTP Server” section for an example that
+                                                serves files.
+    NotFoundHandler()                           This function creates a Handler that produces responses using the NotFound function.
+    RedirectHandler(url, code)                  This function creates a Handler that produces responses using the Redirect function.
+    StripPrefix(prefix, handler)                This function creates a Handler that removes the specified prefix from the
+                                                request URL and passes on the request to the specified Handler. See the
+                                                “Creating a Static HTTP Server” section for details.
+    TimeoutHandler(handler, duration, message)  This function passes on the request to the specified Handler but generates an error
+                                                response if the response hasn't been produced within the specified duration.
+	`,
+// ====================================================================================
+		"420":`420.Supporting HTTPS Requests
+The net/http package provides integrated support for HTTPS. 
+To prepare for HTTPS, you will need to add
+two files to the httpserver folder: 
+	a certificate file and a private key file.
+
+`,
+// ====================================================================================
+		"421":`421.Getting Certificates for HTTPS
+A good way to get started with HTTPS is with a self-signed certificate, 
+which can be used for development and testing. 
+If you don't already have a self-signed certificate, 
+then you can create one online using sites such as 
+
+https://getacert.com 
+or 
+https://www.selfsignedcertificate.com
+
+both of which will let you create a self-signed certificate easily 
+and without charge.
+
+Two files are required to use HTTPS, regardless of whether your certificate 
+is self-signed or not. The first is the certificate file, 
+which usually has a cer or cert file extension. 
+The second is the private key file, which usually has a key file extension.
+
+after ready to deploy:
+	https://letsencrypt.org
+
+The ListenAndServeTLS function is used to enable HTTPS, 
+where the additional arguments specify the
+certificate and private key files, 
+which are named certificate.cer and certificate.key in my project
+`,
+// ====================================================================================
+		"422":`422.Enabling HTTPS in the main.go
+example:
+main.go:
+	package main
+	import (
+		"io"
+		"net/http"
+	)
+	type StringHandler struct {
+		message string
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
+		Printfln("Request for %v", request.URL.Path)
+		io.WriteString(writer, sh.message)
+	}
+	func main() {
+		http.Handle("/message", StringHandler{"Hello, World"})
+		http.Handle("/favicon.ico", http.NotFoundHandler())
+		http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+	
+		go func() {
+			err := http.ListenAndServeTLS(":5500", "certificate.cer",
+				"certificate.key", nil)
+			if err != nil {
+				Printfln("HTTPS Error: %v", err.Error())
+			}
+		}()
+	
+		err := http.ListenAndServe(":5000", nil)
+		if err != nil {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+=========================================================
+Output:
+	HTTPS Error: open certificate.cer: no such file or directory
+	Request for /message
+`,
+// ====================================================================================
+		"423":`423.Redirecting HTTP Requests to HTTPS
+A common requirement when creating web servers is to redirect HTTP requests to the HTTPS port. 
+This can be done by creating a custom handler
+
+example:
+Redirecting to HTTPS in the main.go:
+	package main
+	import (
+		"net/http"
+		"io"
+		"strings"
+	)
+	type StringHandler struct {
+		message string
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+			request *http.Request) {
+		Printfln("Request for %v", request.URL.Path)
+		io.WriteString(writer, sh.message)
+	}
+	func HTTPSRedirect(writer http.ResponseWriter,
+			request *http.Request) {
+		host := strings.Split(request.Host, ":")[0]
+		target := "https://" + host + ":5500" + request.URL.Path
+		if len(request.URL.RawQuery) > 0 {
+			target += "?" + request.URL.RawQuery
+		}
+		http.Redirect(writer, request, target, http.StatusTemporaryRedirect)
+	}
+	func main() {
+		http.Handle("/message", StringHandler{ "Hello, World"})
+		http.Handle("/favicon.ico", http.NotFoundHandler())
+		http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+		go func () {
+			err := http.ListenAndServeTLS(":5520", "certificate.cer",
+				"certificate.key", nil)
+			if (err != nil) {
+				Printfln("HTTPS Error: %v", err.Error())
+			}
+		}()
+		err := http.ListenAndServe(":5000", http.HandlerFunc(HTTPSRedirect))
+		if (err != nil) {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+========================================================
+Output:
+	Not work for my Browser but you have to try, maybe work it for you.
+`,
+// ====================================================================================
+		"424":`424.Creating a Static HTTP Server
+The net/http package includes built-in support for responding to requests with the contents of files. 
+To prepare for the static HTTP server, 
+create the httpserver/static folder and add to it a file named index.html
+example:
+static/index.html:
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Pro Go</title>
+		<meta name="viewport" content="width=device-width" />
+		<link href="bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="m-1 p-2 bg-primary text-white h2">
+			Hello, World
+		</div>
+	</body>
+	</html>
+
+store.html:
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Pro Go</title>
+		<meta name="viewport" content="width=device-width" />
+		<link href="bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="m-1 p-2 bg-primary text-white h2 text-center">
+			Products
+		</div>
+		<table class="table table-sm table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Category</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Kayak</td>
+					<td>Watersports</td>
+					<td>$279.00</td>
+				</tr>
+				<tr>
+					<td>Lifejacket</td>
+					<td>Watersports</td>
+					<td>$49.95</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	</html>
+=======================================================
+The HTML files depend on the Bootstrap CSS package to style the HTML content. Run the command
+shown in here in the httpserver folder to download the Bootstrap CSS file into the static folder.
+(You may have to install the curl command.):
+	curl https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css --output static/bootstrap.min.css
+===========================================
+Output:
+	ootstrap.min.css
+	% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+									Dload  Upload   Total   Spent    Left  Speed
+	100  152k    0  152k    0     0   163k      0 --:--:-- --:--:-- --:--:--  163k
+`,
+// ====================================================================================
+		"425":`425.Creating the Static File Route
+example:
+Defining a Route in the main.go:
+	package main
+	import (
+		"net/http"
+		"io"
+	)
+	type StringHandler struct {
+		message string
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+			request *http.Request) {
+		Printfln("Request for %v", request.URL.Path)
+		io.WriteString(writer, sh.message)
+	}
+	func main() {
+		http.Handle("/message", StringHandler{ "Hello, World"})
+		http.Handle("/favicon.ico", http.NotFoundHandler())
+		http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+		fsHandler := http.FileServer(http.Dir("./static"))
+		http.Handle("/files/", http.StripPrefix("/files", fsHandler))
+		err := http.ListenAndServe(":5000", nil)
+		if (err != nil) {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+=========================================================
+Output:
+	redirect from => https://localhost:5500/files/store.html
+				to => static/store.html
+`,
+// ====================================================================================
+		"426":`426.Using Templates to Generate Responses
+example:
+templates/products.html:
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<title>Pro Go</title>
+		<link rel="stylesheet" href="/files/bootstrap.min.css">
+	</head>
+	<body>
+		<h3 class="bg-primary text-white text-center p-2 m-2">Products</h3>
+		<div class="p-2">
+			<table class="table table-sm table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Index</th>
+						<th>Name</th>
+						<th>Category</th>
+						<th class="text-end">Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{ range $index, $product := .Data }}
+					<tr>
+						<td>{{ $index }}</td>
+						<td>{{ $product.Name }}</td>
+						<td>{{ $product.Category }}</td>
+						<td class="text-end">
+							{{ printf "$%.2f" $product.Price }}
+						</td>
+					</tr>
+					{{ end }}
+				</tbody>
+			</table>
+		</div>
+	</body>
+	</html>
+
+dynamic.go:
+	package main
+	import (
+		"html/template"
+		"net/http"
+		"strconv"
+	)
+	type Context struct {
+		Request *http.Request
+		Data []Product
+	}
+	var htmlTemplates *template.Template
+	func HandleTemplateRequest(writer http.ResponseWriter, request *http.Request) {
+		path := request.URL.Path
+		if (path == "") {
+			path = "products.html"
+		}
+		t := htmlTemplates.Lookup(path)
+		if (t == nil) {
+			http.NotFound(writer, request)
+		} else {
+			err := t.Execute(writer, Context{  request, Products})
+			if (err != nil) {
+				http.Error(writer, err.Error(), http.StatusInternalServerError)
+			}
+		}
+	}
+	func init() {
+		var err error
+		htmlTemplates = template.New("all")
+		htmlTemplates.Funcs(map[string]interface{} {
+			"intVal": strconv.Atoi,
+		})
+		htmlTemplates, err = htmlTemplates.ParseGlob("templates/*.html")
+		if (err == nil) {
+			http.Handle("/templates/", http.StripPrefix("/templates/",
+				http.HandlerFunc(HandleTemplateRequest)))
+		} else {
+			panic(err)
+		}
+	}
+========================================================
+Output:
+	The initialization function loads all the templates with the html extension in the templates folder and
+	sets up a route so that requests that start with /templates/ are processed by the HandleTemplateRequest
+	function. This function looks up the template, falling back to the products.html file if no file path is
+	specified, executes the template, and writes the response.
+`,
+// ====================================================================================
+		"427":`427.Understanding Content Type Sniffing
+which implements the MIME Sniffing algorithm defined by: 
+	https://mimesniff.spec.whatwg.org 
+The sniffing process can't detect every content type, 
+but it does well with standard web types, such as HTML, CSS, and JavaScript.
+The DetectContentType function returns a MIME type, 
+which is used as the value for the Content-Type header.
+`,
+// ====================================================================================
+		"428":`428.Responding with JSON Data
+JSON responses are widely used in web services, 
+which provide access to an application's data for clients
+that don't want to receive HTML, such as Angular or React JavaScript clients.
+example:
+json.go:
+	package main
+	import (
+		"net/http"
+		"encoding/json"
+	)
+	func HandleJsonRequest(writer http.ResponseWriter, request *http.Request) {
+		writer.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(writer).Encode(Products)
+	}
+	func init() {
+		http.HandleFunc("/json", HandleJsonRequest)
+	}
+=========================================================================
+main.go:
+	package main
+	import (
+		"net/http"
+		"io"
+	)
+	type StringHandler struct {
+		message string
+	}
+	func (sh StringHandler) ServeHTTP(writer http.ResponseWriter,
+			request *http.Request) {
+		Printfln("Request for %v", request.URL.Path)
+		io.WriteString(writer, sh.message)
+	}
+	func main() {
+		http.Handle("/message", StringHandler{ "Hello, World"})
+		http.Handle("/favicon.ico", http.NotFoundHandler())
+		http.Handle("/", http.RedirectHandler("/message", http.StatusTemporaryRedirect))
+
+		fsHandler := http.FileServer(http.Dir("./static"))
+		http.Handle("/files/", http.StripPrefix("/files", fsHandler))
+
+		err := http.ListenAndServe(":5000", nil)
+		if (err != nil) {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+===================================================================
+Output:
+	The initialization function creates a route, 
+	which means that requests for /json will be processed by the
+	HandleJsonRequest function.
+`,
+// ====================================================================================
+		"429":`429.Handling Form Data
+The net/http package provides support for easily receiving and processing form data.
+This template makes use of template variables, expressions, 
+and functions to get the query string from
+the request and select the first index value, 
+which is converted to an int and used to retrieve a Product value
+from the data provided to the template.
+example:
+edit.html:
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<title>Pro Go</title>
+		<link rel="stylesheet" href="/files/bootstrap.min.css">
+	</head>
+	<body>
+		{{ $index := intVal (index (index .Request.URL.Query "index") 0) }}
+		{{ if lt $index (len .Data)}}
+		{{ with index .Data $index}}
+		<h3 class="bg-primary text-white text-center p-2 m-2">Product</h3>
+		<form method="POST" action="/forms/edit" class="m-2">
+			<div class="form-group">
+				<label>Index</label>
+				<input name="index" value="{{$index}}" class="form-control" disabled />
+				<input name="index" value="{{$index}}" type="hidden" />
+			</div>
+			<div class="form-group">
+				<label>Name</label>
+				<input name="name" value="{{.Name}}" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label>Category</label>
+				<input name="category" value="{{.Category}}" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label>Price</label>
+				<input name="price" value="{{.Price}}" class="form-control" />
+			</div>
+			<div class="mt-2">
+				<button type="submit" class="btn btn-primary">Save</button>
+				<a href="/templates/" class="btn btn-secondary">Cancel</a>
+			</div>
+		</form>
+		{{ end }}
+		{{ else }}
+		<h3 class="bg-danger text-white text-center p-2">
+			No Product At Specified Index
+		</h3>
+		{{end }}
+	</body>
+	</html>
+`,
+// ====================================================================================
+		"430":`430.Reading Form Data from Requests
+The Request Form Data Fields and Methods
+
+	Name                Description
+	--------            ------------------------------
+	Form                This field returns a map[string][]string containing the parsed form data and the
+						query string parameters. The ParseForm method must be called before this field is read.
+	PostForm            This field is similar to Form but excludes the query string parameters so that only
+						data from the request body is contained in the map. The ParseForm method must
+						be called before this field is read.
+	MultipartForm       This field returns a multipart form represented using the Form struct defined in the
+						mime/multipart package. The ParseMultipartForm method must be called before
+						this field is read.
+	FormValue(key)      This method returns the first value for the specified form key and returns the
+						empty string if there is no value. The source of data for this method is the Form
+						field, and calling the FormValue method automatically calls ParseForm or
+						ParseMultipartForm to parse the form.
+	PostFormValue(key)  This method returns the first value for the specified form key and returns the
+						empty string if there is no value. The source of data for this method is the PostForm
+						field, and calling the PostFormValue method automatically calls ParseForm or
+						ParseMultipartForm to parse the form.
+	FormFile(key)       This method provides access to the first file with the specified key in the form.
+						The results are a File and FileHeader, both of which are defined in the mime/
+						multipart package, and an error. Calling this function causes the ParseForm or
+						ParseMultipartForm functions to be invoked to parse the form.
+	ParseForm()         This method parses a form and populates the Form and PostForm fields. The result
+						is an error that describes any parsing problems.
+	ParseMultipart      This method parses a MIME multipart form and populates the MultipartForm field.
+	Form(max)           The argument specifies the maximum number of bytes to allocate to the form data,
+						and the result is an error that describes any problems processing the form.
+
+The init function sets up a new route so that the ProcessFormData function handles requests whose
+path is /forms/edit. Within the ProcessFormData function, the request method is checked, and the form
+data in the request is used to create a Product struct and replace the existing data value. In a real project,
+validating the data submitted in the form is essential, but for this chapter I trust that the form contains
+valid data.
+Processing form data:
+	https://localhost:5500/templates/edit.html?index=2
+
+example:
+The Contents of the forms.go File in the httpserver Folder:
+	package main
+	import (
+		"net/http"
+		"strconv"
+	)
+	func ProcessFormData(writer http.ResponseWriter, request *http.Request) {
+		if (request.Method == http.MethodPost) {
+			index, _ := strconv.Atoi(request.PostFormValue("index"))
+			p := Product {}
+			p.Name = request.PostFormValue("name")
+			p.Category = request.PostFormValue("category")
+			p.Price, _ = strconv.ParseFloat(request.PostFormValue("price"), 64)
+			Products[index] = p
+		}
+		http.Redirect(writer, request, "/templates", http.StatusTemporaryRedirect)
+	}
+	func init() {
+		http.HandleFunc("/forms/edit", ProcessFormData)
+	}
+==============================================================
+Output:
+	without view of upload you can add data to templates URL.
+`,
+// ====================================================================================
+		"431":`431.Reading Multipart Forms
+example:
+upload.html:
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Pro Go</title>
+		<meta name="viewport" content="width=device-width" />
+		<link href="bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="m-1 p-2 bg-primary text-white h2 text-center">
+			Upload File
+		</div>
+		<form method="POST" action="/forms/upload" class="p-2"
+				enctype="multipart/form-data">
+			<div class="form-group">
+				<label class="form-label">Name</label>
+				<input class="form-control" type="text" name="name">
+			</div>
+			<div class="form-group">
+				<label class="form-label">City</label>
+				<input class="form-control" type="text" name="city">
+			</div>
+			<div class="form-group">
+				<label class="form-label">Choose Files</label>
+				<input class="form-control" type="file" name="files" multiple>
+			</div>
+			<button type="submit" class="btn btn-primary mt-2">Upload</button>
+		</form>
+	</body>
+	</html>
+====================================================================================
+upload.go:
+	package main
+	import (
+		"fmt"
+		"io"
+		"net/http"
+	)
+	func HandleMultipartForm(writer http.ResponseWriter, request *http.Request) {
+		fmt.Fprintf(writer, "Name: %v, City: %v\n", request.FormValue("name"),
+			request.FormValue("city"))
+		fmt.Fprintln(writer, "------")
+		file, header, err := request.FormFile("files")
+		if err == nil {
+			defer file.Close()
+			fmt.Fprintf(writer, "Name: %v, Size: %v\n", header.Filename, header.Size)
+			for k, v := range header.Header {
+				fmt.Fprintf(writer, "Key: %v, Value: %v\n", k, v)
+			}
+			fmt.Fprintln(writer, "------")
+			io.Copy(writer, file)
+		} else {
+			http.Error(writer, err.Error(), http.StatusInternalServerError)
+		}
+	}
+	func init() {
+		http.HandleFunc("/forms/upload", HandleMultipartForm)
+	}
+Output: Search in Browser: http://localhost:5000/files/upload.html
+	You Can Upload
+`,
+// ====================================================================================
+		"432":`432.The FileHeader Fields and Method
+
+	Name        Description
+	-------     ------------------------------
+	Name        This field returns a string containing the name of the file.
+	Size        This field returns an int64 containing the size of the file.
+	Header      This field returns a map[string][]string, which contains the headers for the MIME part that
+				contains the file.
+	Open()      This method returns a File that can be used to read the content associated with the header, as
+				demonstrated in the next section.
+`,
+// ====================================================================================
+		"433":`433.Reading and Setting Cookies
+The net/http Function for Setting Cookies
+
+    Name                            Description
+    ---------------                 ------------------------------------
+    SetCookie(writer, cookie)       This function adds a Set-Cookie header to the specified ResponseWriter. The
+                                    cookie is described using a pointer to a Cookie struct, which is described next.
+
+Cookies can be complex, and care must be taken to configure them correctly. 
+The detail of how cookies work is beyond the scope of this book, 
+but there is a good description available at 
+	
+	https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies 
+
+and a detailed breakdown of the cookie
+fields at: 
+
+	https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie.
+`,
+// ====================================================================================
+		"434":`434.The Fields Defined by the Cookie Struct
+
+	Name        Description
+	-------     --------------------------------
+	Name        This field represents the name of the cookie, expressed as a string.
+	Value       This field represents the cookie value, expressed as a string.
+	Path        This optional field specifies the cookie path.
+	Domain      This optional field specifies the host/domain to which the cookie will be set.
+	Expires     This field specifies the cookie expiry, expressed as a time.Time value.
+	MaxAge      This field specifies the number of seconds until the cookie expires, expressed as an int.
+	Secure      When this bool field is true, the client will only send the cookie over HTTPS connections.
+	HttpOnly    When this bool field is true, the client will prevent JavaScript code from accessing the cookie.
+	SameSite    This field specifies the cross-origin policy for the cookie using the SameSite constants, which
+				defines SameSiteDefaultMode, SameSiteLaxMode, SameSiteStrictMode, and SameSiteNoneMode.
+`,
+// ====================================================================================
+		"435":`435.The Request Methods for Cookies
+
+    Name            Description
+    -----------     ----------------
+    Cookie(name)    This method returns a pointer to the Cookie value with the specified name and an error
+                    that indicates when there is no matching cookie.
+    Cookies()       This method returns a slice of Cookie pointers.
+
+example:
+cookies.go:
+	package main
+	import (
+		"net/http"
+		"fmt"
+		"strconv"
+	)
+	func GetAndSetCookie(writer http.ResponseWriter, request *http.Request) {
+		counterVal := 1
+		counterCookie, err := request.Cookie("counter")
+		if (err == nil) {
+			counterVal, _ = strconv.Atoi(counterCookie.Value)
+			counterVal++
+		}
+	http.SetCookie(writer, &http.Cookie{
+			Name: "counter", Value: strconv.Itoa(counterVal),
+		})
+		if (len(request.Cookies()) > 0) {
+			for _, c := range request.Cookies() {
+				fmt.Fprintf(writer, "Cookie Name: %v, Value: %v", c.Name, c.Value)
+			}
+		} else {
+			fmt.Fprintln(writer, "Request contains no cookies")
+		}
+	}
+	func init() {
+		http.HandleFunc("/cookies", GetAndSetCookie)
+	}
+======================================================================================
+Compile and execute the project and use a browser to request http://localhost:5000/cookies
+Output:
+	search-1:
+		Request contains no cookies
+	search-2:
+		Cookie Name: counter, Value: 1
+	search-3:
+		Cookie Name: counter, Value: 2
+	...
+`,
+// ====================================================================================
+		"436":`436.Creating HTTP Clients
+Putting HTTP Clients in Context
+
+What are they?
+	HTTP requests are used to retrieve data from HTTP servers
+
+Why are they useful?
+	HTTP is one of the most widely used protocols and is commonly used to provide
+	access to content that can be presented to the user as well as data that is consumed
+	programmatically.
+
+How is it used?
+	The features of the net/http package are used to create and send requests and
+	process responses.
+
+Are there any pitfalls or limitations?
+	These features are well-designed and easy to use, although some features require a
+	specific sequence to use.
+
+Are there any alternatives?
+	The standard library includes support for other network protocols and also for
+	opening and using lower-level network connections. 
+	See the 
+	https://pkg.go.dev/net@go1.17.1 
+	https://pkg.go.dev/net
+	for details of the net package and its subpackages, such as net/smtp,
+	for example, which implements the SMTP protocol.
+
+Chapter Summary:
+
+	Problem                                     Solution
+	--------                                    ------------
+	Send HTTP requests                          Use the convenience methods for specific HTTP methods
+	Configure HTTP requests                     Use the fields and methods defined by the Client struct
+	Create a preconfigured request              Use the NewRequest convenience functions
+	Use cookies in a request                    Use a cookie jar
+	Configure how redirections are processed    Use the CheckRedirect field to register a function that is
+												invoked to deal with a redirection
+	Send multipart forms                        Use the mime/multipart package
+
+Preparing for This Chapter
+1- go mod init httpclient
+2- printer.go
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+3- httpclient folder -> file named product.go
+	package main
+	type Product struct {
+		Name, Category string
+		Price float64
+	}
+	var Products = []Product {
+		{ "Kayak", "Watersports", 279 },
+		{ "Lifejacket", "Watersports", 49.95 },
+		{ "Soccer Ball", "Soccer", 19.50 },
+		{ "Corner Flags", "Soccer", 34.95 },
+		{ "Stadium", "Soccer", 79500 },
+		{ "Thinking Cap", "Chess", 16 },
+		{ "Unsteady Chair", "Chess", 75 },
+		{ "Bling-Bling King", "Chess", 1200 },
+	}
+4- The Contents of the index.html File in the httpclient Folder
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Pro Go</title>
+		<meta name="viewport" content="width=device-width" />
+	</head>
+	<body>
+		<h1>Hello, World</div>
+	</body>
+	</html>    
+5- The Contents of the server.go File in the httpclient Folder
+	package main
+	import (
+		"encoding/json"
+		"fmt"
+		"io"
+		"net/http"
+		"os"
+	)
+	func init() {
+		http.HandleFunc("/html",
+			func(writer http.ResponseWriter, request *http.Request) {
+				http.ServeFile(writer, request, "./index.html")
+			})
+		http.HandleFunc("/json",
+			func(writer http.ResponseWriter, request *http.Request) {
+				writer.Header().Set("Content-Type", "application/json")
+				json.NewEncoder(writer).Encode(Products)
+			})
+		http.HandleFunc("/echo",
+			func(writer http.ResponseWriter, request *http.Request) {
+				writer.Header().Set("Content-Type", "text/plain")
+				fmt.Fprintf(writer, "Method: %v\n", request.Method)
+				for header, vals := range request.Header {
+					fmt.Fprintf(writer, "Header: %v: %v\n", header, vals)
+				}
+				fmt.Fprintln(writer, "----")
+				data, err := io.ReadAll(request.Body)
+				if err == nil {
+					if len(data) == 0 {
+						fmt.Fprintln(writer, "No body")
+					} else {
+						writer.Write(data)
+					}
+				} else {
+					fmt.Fprintf(os.Stdout, "Error reading body: %v\n", err.Error())
+				}
+			})
+	}
+6- The Contents of the main.go File in the httpclient Folder
+	package main
+	import (
+		"net/http"
+	)
+	func main() {
+		Printfln("Starting HTTP Server")
+		http.ListenAndServe(":5000", nil)
+	}
+=======================================================================================
+Output:
+	The code in httpclient folder will be compiled and executed. 
+	Use a web browser to request http://localhost:5000/html and http://localhost:5000/json,
+	To see the echo result, request http://localhost:5000/echo
+`,
+// ====================================================================================
+		"437":`437.Sending Simple HTTP Requests
+The net/http package provides a set of convenience functions that make basic HTTP requests. 
+The functions are named after the HTTP method of the request they created.
+The Convenience Methods for HTTP Requests
+
+	Name                                Description
+	-----------------                   -----------------------------
+	Get(url)                            This function sends a GET request to the specified HTTP or HTTPS URL. The
+										results are a Response and an error that reports problems with the request.
+	Head(url)                           This function sends a HEAD request to the specified HTTP or HTTPS URL.
+										A HEAD request returns the headers that would be returned for a GET request.
+										The results are a Response and an error that reports problems with the request.
+	Post(url, contentType, reader)      This function sends a POST request to the specified HTTP or HTTPS URL, with
+										the specified Content-Type header value. The content for the form is provided
+										by the specified Reader. The results are a Response and an error that reports
+										problems with the request.
+	PostForm(url, data)                 This function sends a POST request to the specified HTTP or HTTPS URL, with
+										the Content-Type header set to application/x-www-form-urlencoded. The
+										content for the form is provided by a map[string][]string. The results are a
+										Response and an error that reports problems with the request.
+`,
+// ====================================================================================
+		"438":`438.Sending a GET Request in the main.go
+main.go:
+	package main
+	import (
+		"net/http"
+		"os"
+		"time"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		response, err := http.Get("http://localhost:5000/html")
+		if (err == nil) {
+			response.Write(os.Stdout)
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+===================================================================================================
+The argument to the Get function is a string that contains the URL to request. 
+The results are a Response value and an error that reports any problems sending the request.
+
+Output:
+	HTTP/1.1 200 OK
+	Content-Length: 171
+	Accept-Ranges: bytes
+	Content-Type: text/html; charset=utf-8
+	Date: Thu, 12 Oct 2023 16:17:10 GMT
+	Last-Modified: Wed, 11 Oct 2023 12:44:50 GMT
+	
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Pro Go</title>
+		<meta name="viewport" content="width=device-width" />
+	</head>
+	<body>
+		<h1>Hello, World</div>
+	</body>
+	</html>
+
+========================================================================================================
+example-2:
+main.go:
+package main
+import (
+	"net/http"
+	"os"
+	// "time"
+)
+func main() {
+	// go http.ListenAndServe(":5000", nil)
+	// time.Sleep(time.Second)
+	response, err := http.Get("https://www.google.com")
+	if (err == nil) {
+		response.Write(os.Stdout)
+	} else {
+		Printfln("Error: %v", err.Error())
+	}
+}
+
+Output:
+HTTP/2.0 403 Forbidden
+Content-Length: 1579
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Content-Type: text/html; charset=UTF-8
+Date: Thu, 12 Oct 2023 16:15:23 GMT
+Referrer-Policy: no-referrer
+
+<!DOCTYPE html>
+<html lang=en>
+<meta charset=utf-8>
+<meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+<title>Error 403 (Forbidden)!!1</title>
+<style>
+	*{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+</style>
+<a href=//www.google.com/><span id=logo aria-label=Google></span></a>
+<p><b>403.</b> <ins>That's an error.</ins>
+<p>Your client does not have permission to get URL <code>/</code> from this server.  <ins>That's all we know.</ins>
+`,
+// ====================================================================================
+		"439":`439.The Fields and Methods Defined by the Response Struct
+
+	Name            Description
+	----------      -------------------------------------
+	StatusCode      This field returns the response status code, expressed as an int.
+	Status          This field returns a string containing the status description.
+	Proto           This field returns a string containing the response HTTP protocol.
+	Header          This field returns a map[string][]string that contains the response headers.
+	Body            This field returns a ReadCloser, which is a Reader that defines a Close method and
+					which provides access to the response body.
+	Trailer         This field returns a map[string][]string that contains the response trailers.
+	ContentLength   This field returns the value of the Content-Length header, parsed into an int64 value.
+					TransferEncoding This field returns the set of Transfer-Encoding header values.
+	Close           This bool field returns true if the response contains a Connection header set to close,
+					which indicates that the HTTP connection should be closed.
+	Uncompressed    This field returns true if the server sent a compressed response that was
+					decompressed by the net/http package.
+	Request         This field returns the Request that was used to obtain the response. The Request struct
+					is described in Chapter 24.
+	TLS             This field provides details of the HTTPS connection.
+	Cookies()       This method returns a []*Cookie, which contains the Set-Cookie headers in the
+					response. The Cookie struct is described in Chapter 24.
+	Location()      This method returns the URL from the response Location header and an error that
+					indicates when the response does not contain this header.
+	Write(writer)   This method writes a summary of the response to the specified Writer.
+`,
+// ====================================================================================
+		"440":`440.Reading the Response Body in the main.go
+main.go:
+	package main
+	import (
+		"net/http"
+		"os"
+		"time"
+		"io"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		response, err := http.Get("http://localhost:5000/html")
+		if (err == nil && response.StatusCode == http.StatusOK) {
+			data, err := io.ReadAll(response.Body)
+			if (err == nil) {
+				defer response.Body.Close()
+				os.Stdout.Write(data)
+			}
+		} else {
+			Printfln("Error: %v, Status Code: %v", err.Error(), response.StatusCode)
+		}
+	}
+====================================================================
+Output: in Terminal
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Pro Go</title>
+		<meta name="viewport" content="width=device-width" />
+	</head>
+	<body>
+		<h1>Hello, World</div>
+	</body>
+	</html>
+`,
+// ====================================================================================
+		"441":`441.Reading and Parsing Data in the main.go
+main.go:
+	package main
+	import (
+		"net/http"
+		//"os"
+		"time"
+		//"io"
+		"encoding/json"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		response, err := http.Get("http://localhost:5000/json")
+		if (err == nil && response.StatusCode == http.StatusOK) {
+			defer response.Body.Close()
+			data := []Product {}
+			err = json.NewDecoder(response.Body).Decode(&data)
+			if (err == nil) {
+				for _, p := range data {
+					Printfln("Name: %v, Price: $%.2f", p.Name, p.Price)
+				}
+			} else {
+				Printfln("Decode error: %v", err.Error())
+			}
+		} else {
+			Printfln("Error: %v, Status Code: %v", err.Error(), response.StatusCode)
+		}
+	}
+====================================================================
+Output: in Terminal
+	Name: Kayak,Price: $279.00
+	Name: Lifejacket,Price: $49.95
+	Name: Soccer Ball,Price: $19.50
+	Name: Corner Flags,Price: $34.95
+	Name: Stadium,Price: $79500.00
+	Name: Thinking Cap,Price: $16.00
+	Name: Unsteady Chair,Price: $75.00
+	Name: Bling-Bling King,Price: $1200.00
+`,
+// ====================================================================================
+		"442":`442.Sending POST Requests
+The Post and PostForm functions are used to send POST requests. 
+The PostForm function encodes a map of values as form data.
+Sending a Form in the main.go
+main.go:
+	package main
+	import (
+		"net/http"
+		"os"
+		"time"
+		"io"
+		//"encoding/json"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		formData := map[string][]string {
+			"name":  { "Kayak "},
+			"category": { "Watersports"},
+			"price":  { "279"},
+		}
+		response, err := http.PostForm("http://localhost:5000/echo", formData)
+		if (err == nil && response.StatusCode == http.StatusOK) {
+			io.Copy(os.Stdout, response.Body)
+			defer response.Body.Close()
+		} else {
+			Printfln("Error: %v, Status Code: %v", err.Error(), response.StatusCode)
+		}
+	}
+====================================================================
+Output: 
+	Method: POST
+	Header: Accept-Encoding: [gzip]
+	Header: User-Agent: [Go-http-client/1.1]
+	Header: Content-Length: [42]
+	Header: Content-Type: [application/x-www-form-urlencoded]
+	----
+	category=Watersports&name=Kayak+&price=279
+`,
+// ====================================================================================
+		"443":`443.Posting a Form Using a Reader
+The Post function sends a POST request 
+to the server and creates the request body by reading content from a Reader.
+
+Posting from a Reader in the main.go:
+	package main
+	import (
+		"net/http"
+		"os"
+		"time"
+		"io"
+		"encoding/json"
+		"strings"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		var builder strings.Builder
+		err := json.NewEncoder(&builder).Encode(Products[0])
+		if (err == nil) {
+			response, err := http.Post("http://localhost:5000/echo","application/json",strings.NewReader(builder.String()))
+			if (err == nil && response.StatusCode == http.StatusOK) {
+				io.Copy(os.Stdout, response.Body)
+				defer response.Body.Close()
+			} else {
+				Printfln("Error: %v", err.Error())
+			}
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+====================================================================
+Output:
+	Method: POST
+	Header: User-Agent: [Go-http-client/1.1]
+	Header: Content-Length: [54]
+	Header: Content-Type: [application/json]
+	Header: Accept-Encoding: [gzip]
+	----
+	{"Name":"Kayak","Category":"Watersports","Price":279}
+`,
+// ====================================================================================
+		"444":`444.Understanting The Content-Length Header
+This header is set automatically but is included in requests only when it is
+possible to determine how much data will be included in the body in advance. 
+This is done by inspecting the Reader to determine the dynamic type. 
+When the data is stored in memory using the strings.
+Reader, bytes.Reader, or bytes.Buffer type, 
+the built-in len function is used to determine the amount of data, 
+and the result is used to set the Content-Length header.
+For all other types, the Content-Type head is not set, 
+and chunked encoding is used instead, which means that 
+the body is written in blocks of data whose size 
+is declared as part of the request body. 
+This approach allows requests to be sent 
+without needing to read all the data from the Reader just to work
+out how many bytes there are. 
+Chunked encoding is described at 
+	https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Transfer-Encoding
+`,
+// ====================================================================================
+		"445":`445.Configuring HTTP Client Requests
+The Client struct is used when control is required over an HTTP request 
+and defines the fields and methods described:
+
+	The Client Fields and Methods
+	Name                            Description
+	-----------------               -------------------------
+	Transport                       This field is used to select the transport that will be used to send the HTTP
+									request. The net/http package provides a default transport.
+	CheckRedirect                   This field is used to specify a custom policy for dealing with repeated
+									redirections, as described in the “Managing Redirections” section.
+	Jar                             This field returns a CookieJar, which is used to manage cookies, as
+									described in the “Working with Cookies” section.
+	Timeout                         This field is used to set a timeout for the request, specified as a time.Duration 
+	Do(request)                     This method sends the specified Request, returning a Response and an
+									error that indicates problems sending the request.
+	CloseIdleConnections()          This method closes any idle HTTP requests that are currently open and unused.
+	Get(url)                        This method is called by the Get function described
+	Head(url)                       This method is called by the Head function described
+	Post(url, contentType,reader)   This method is called by the Post function described
+	PostForm(url, data)             This method is called by the PostForm function described
+`,
+// ====================================================================================
+		"446":`446.Useful Request Fields and Methods
+
+	Name                Description
+	------              ------------------------------
+	Method              This string field specifies the HTTP method that will be used for the request. The net/
+						http package defines constants for HTTP methods, such as MethodGet and MethodPost.
+	URL                 This URL field specifies the URL to which the request will be sent. The URL struct is
+	Header              This field is used to specify the headers for the request. The headers are specified in a
+						map[string][]string, and the field will be nil when a Request value is created using the literal struct syntax.
+	ContentLength       This field is used to set the Content-Length header using an int64 value.
+	TransferEncoding    This field is used to set the Transfer-Encoding header using a slice of strings.
+	Body                This ReadCloser field specifies the source for the request body. If you have a Reader
+						that doesn't define a Close method, then the io.NopCloser function can be used to
+						create a ReadCloser whose Close method does nothing.
+`,
+// ====================================================================================
+		"447":`447.The Function for Parsing URL Values
+
+    Name            Description
+    ---------       ---------------------
+    Parse(string)   This method parses a string into a URL. The results are the URL value and an error that
+                    indicates problems parsing the string.
+`,
+// ====================================================================================
+		"448":`448.Sending a Request in the main.go
+main.go:
+	package main
+	import (
+		"net/http"
+		"os"
+		"time"
+		"io"
+		"encoding/json"
+		"strings"
+		"net/url"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		var builder strings.Builder
+		err := json.NewEncoder(&builder).Encode(Products[0])
+		if (err == nil) {
+			reqURL, err := url.Parse("http://localhost:5000/echo")
+			if (err == nil) {
+				req := http.Request {
+					Method: http.MethodPost,
+					URL: reqURL,
+					Header: map[string][]string {
+						"Content-Type": { "application.json" },
+					},
+					Body: io.NopCloser(strings.NewReader(builder.String())),
+				}
+				response, err := http.DefaultClient.Do(&req)
+				if (err == nil && response.StatusCode == http.StatusOK) {
+					io.Copy(os.Stdout, response.Body)
+					defer response.Body.Close()
+				} else {
+					Printfln("Request Error: %v", err.Error())
+				}
+			} else {
+				Printfln("Parse Error: %v", err.Error())
+			}
+		} else {
+			Printfln("Encoder Error: %v", err.Error())
+		}
+	}
+====================================================================
+Output:
+	Method: POST
+	Header: User-Agent: [Go-http-client/1.1]
+	Header: Content-Type: [application.json]
+	Header: Accept-Encoding: [gzip]
+	----
+	{"Name":"Kayak","Category":"Watersports","Price":279}
+`,
+// ====================================================================================
+		"449":`449.Using the Convenience Functions to Create a Request
+The net/http Convenience Functions for Creating Requests
+
+	Name                                                    Description
+	-------------------------                               ----------------------------
+	NewRequest(method, url,reader)                          This function creates a new Reader, configured with the specified method,
+															URL, and body. The function also returns an error that indicates problems
+															creating the value, including parsing the URL, which is expressed as a string.
+	NewRequestWithContext(context, method, url, reader)     This function creates a new Reader that will be sent in the specified context.
+`,
+// ====================================================================================
+		"450":`450.Using the Convenience Function in the main.go
+example:
+main.go:
+	package main
+	import (
+		"encoding/json"
+		"io"
+		"net/http"
+		"os"
+		"strings"
+		"time"
+		//"net/url"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		var builder strings.Builder
+		err := json.NewEncoder(&builder).Encode(Products[0])
+		if err == nil {
+			req, err := http.NewRequest(http.MethodPost, "http://localhost:5000/echo",
+				io.NopCloser(strings.NewReader(builder.String())))
+			if err == nil {
+				req.Header["Content-Type"] = []string{"application/json"}
+				response, err := http.DefaultClient.Do(req)
+				if err == nil && response.StatusCode == http.StatusOK {
+					io.Copy(os.Stdout, response.Body)
+					defer response.Body.Close()
+				} else {
+					Printfln("Request Error: %v", err.Error())
+				}
+			} else {
+				Printfln("Request Init Error: %v", err.Error())
+			}
+		} else {
+			Printfln("Encoder Error: %v", err.Error())
+		}
+	}
+====================================================================
+Output:
+	Method: POST
+	Header: User-Agent: [Go-http-client/1.1]
+	Header: Content-Type: [application/json]
+	Header: Accept-Encoding: [gzip]
+	----
+	{"Name":"Kayak","Category":"Watersports","Price":279}
+`,
+// ====================================================================================
+		"451":`451.Working with Cookies
+The Client keeps track of the cookies it receives from the server and automatically includes them in
+subsequent requests.
+
+example:
+The Contents of the server_cookie.go:
+	package main
+	import (
+		"fmt"
+		"net/http"
+		"strconv"
+	)
+	func init() {
+		http.HandleFunc("/cookie",
+			func(writer http.ResponseWriter, request *http.Request) {
+				counterVal := 1
+				counterCookie, err := request.Cookie("counter")
+				if err == nil {
+					counterVal, _ = strconv.Atoi(counterCookie.Value)
+					counterVal++
+				}
+				http.SetCookie(writer, &http.Cookie{
+					Name: "counter", Value: strconv.Itoa(counterVal),
+				})
+				if len(request.Cookies()) > 0 {
+					for _, c := range request.Cookies() {
+						fmt.Fprintf(writer, "Cookie Name: %v, Value: %v\n",
+							c.Name, c.Value)
+					}
+				} else {
+					fmt.Fprintln(writer, "Request contains no cookies")
+				}
+			})
+	}
+-----------------------------------
+Changing URL in the main.go:
+	package main
+	import (
+		"io"
+		"net/http"
+		"os"
+		"time"
+		// "encoding/json"
+		// "strings"
+		//"net/url"
+		"net/http/cookiejar"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		jar, err := cookiejar.New(nil)
+		if err == nil {
+			http.DefaultClient.Jar = jar
+		}
+		for i := 0; i < 3; i++ {
+			req, err := http.NewRequest(http.MethodGet,
+				"http://localhost:5000/cookie", nil)
+			if err == nil {
+				response, err := http.DefaultClient.Do(req)
+				if err == nil && response.StatusCode == http.StatusOK {
+					io.Copy(os.Stdout, response.Body)
+					defer response.Body.Close()
+				} else {
+					Printfln("Request Error: %v", err.Error())
+				}
+			} else {
+				Printfln("Request Init Error: %v", err.Error())
+			}
+		}
+	}
+====================================================================
+Output: in Terminal
+	Request contains no cookies
+	Cookie Name: counter, Value: 1
+	Cookie Name: counter, Value: 2
+`,
+// ====================================================================================
+		"452":`452.The Methods Defined by the CookieJar Interface
+
+	Name                        Description
+	------------------------    ---------------------------------
+	SetCookies(url, cookies)    This method stores a *Cookie slice for the specified URL.
+	Cookes(url)                 This method returns a *Cookie slice containing the cookies that
+								should be included in a request for the specified URL.
+
+
+	The net/http/cookiejar package contains an implementation of the CookieJar interface that stores
+	cookies in memory. Cookie jars are created with a constructor function
+`,
+// ====================================================================================
+		"453":`453.The Cookie Jar Constructor Function in the net/http/cookiejar Package
+
+    Name            Description
+    ------------    -------------------------
+    New(options)    This function creates a new CookieJar, configured with an Options struct, described
+                    next. The function also returns an error that reports problems creating the jar.
+
+The New function accepts a net/http/cookiejar/Options struct, which is used to configure the
+cookie jar. There is only one Options field, PublicSuffixList, which is used to specify an implementation
+of the interface with the same name, which provides support for preventing cookies from being set too
+widely, which can cause privacy violations. The standard library doesn't contain an implementation of the
+PublicSuffixList interface, but there is an implementation available at 
+
+	https://pkg.go.dev/golang.org/x/net/publicsuffix
+`,
+// ====================================================================================
+		"454":`454.Creating Separate Clients and Cookie Jars
+A consequence of using the DefaultClient is that all requests share the same cookies, 
+which can be useful, especially since the cookie jar will ensure that each request 
+only includes the cookies that are required for each URL.
+`,
+// ====================================================================================
+		"455":`455.Creating Separate Clients in the main.go File
+example:
+main.go:
+	package main
+	import (
+		"net/http"
+		"os"
+		"time"
+		"io"
+		//"encoding/json"
+		//"strings"
+		//"net/url"
+		"net/http/cookiejar"
+		"fmt"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		clients := make([]http.Client, 3)
+		for index, client := range clients {
+			jar, err := cookiejar.New(nil)
+			if (err == nil) {
+				client.Jar = jar
+			}
+			for i := 0; i < 3; i++ {
+				req, err := http.NewRequest(http.MethodGet,
+					"http://localhost:5000/cookie", nil)
+				if (err == nil) {
+					response, err := client.Do(req)
+					if (err == nil && response.StatusCode == http.StatusOK) {
+						fmt.Fprintf(os.Stdout, "Client %v: ", index)
+						io.Copy(os.Stdout, response.Body)
+						defer response.Body.Close()
+					}  else {
+						Printfln("Request Error: %v", err.Error())
+					}
+				} else {
+					Printfln("Request Init Error: %v", err.Error())
+				}
+			}
+		}
+	}
+====================================================================
+Output:
+	Client 0: Request contains no cookies
+	Client 0: Cookie Name: counter, Value: 1
+	Client 0: Cookie Name: counter, Value: 2
+	Client 1: Request contains no cookies
+	Client 1: Cookie Name: counter, Value: 1
+	Client 1: Cookie Name: counter, Value: 2
+	Client 2: Request contains no cookies
+	Client 2: Cookie Name: counter, Value: 1
+	Client 2: Cookie Name: counter, Value: 2
+`,
+// ====================================================================================
+		"456":`456.Sharing a CookieJar in the main.go
+example:
+main.go:
+	package main
+	import (
+		"io"
+		"net/http"
+		"os"
+		"time"
+		//"encoding/json"
+		//"strings"
+		//"net/url"
+		"fmt"
+		"net/http/cookiejar"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		jar, err := cookiejar.New(nil)
+		clients := make([]http.Client, 3)
+		for index, client := range clients {
+			//jar, err := cookiejar.New(nil)
+			if err == nil {
+				client.Jar = jar
+			}
+			for i := 0; i < 3; i++ {
+				req, err := http.NewRequest(http.MethodGet,
+					"http://localhost:5000/cookie", nil)
+				if err == nil {
+					response, err := client.Do(req)
+					if err == nil && response.StatusCode == http.StatusOK {
+						fmt.Fprintf(os.Stdout, "Client %v: ", index)
+						io.Copy(os.Stdout, response.Body)
+						defer response.Body.Close()
+					} else {
+						Printfln("Request Error: %v", err.Error())
+					}
+				} else {
+					Printfln("Request Init Error: %v", err.Error())
+				}
+			}
+		}
+	}
+====================================================================
+Output:
+	Client 0: Request contains no cookies
+	Client 0: Cookie Name: counter, Value: 1
+	Client 0: Cookie Name: counter, Value: 2
+	Client 1: Cookie Name: counter, Value: 3
+	Client 1: Cookie Name: counter, Value: 4
+	Client 1: Cookie Name: counter, Value: 5
+	Client 2: Cookie Name: counter, Value: 6
+	Client 2: Cookie Name: counter, Value: 7
+	Client 2: Cookie Name: counter, Value: 8
+`,
+// ====================================================================================
+		"457":`457.Managing Redirections
+		By default, a Client will stop following redirections after ten requests, 
+		but this can be changed by specifying a custom policy.
+	
+		example:
+		The Contents of the server_redirects.go File in the httpclient Folder:
+			package main
+			import "net/http"
+			func init() {
+				http.HandleFunc("/redirect1",
+					func(writer http.ResponseWriter, request *http.Request) {
+						http.Redirect(writer, request, "/redirect2",
+							http.StatusTemporaryRedirect)
+					})
+				http.HandleFunc("/redirect2",
+					func(writer http.ResponseWriter, request *http.Request) {
+						http.Redirect(writer, request, "/redirect1",
+							http.StatusTemporaryRedirect)
+					})
+			}
+====================================================================
+Sending a Request in the main.go File in the httpclient Folder:
+		package main
+		import (
+			"net/http"
+			"os"
+			"io"
+			"time"
+			//"encoding/json"
+			//"strings"
+			//"net/url"
+			//"net/http/cookiejar"
+			//"fmt"
+		)
+		func main() {
+			go http.ListenAndServe(":5000", nil)
+			time.Sleep(time.Second)
+			req, err := http.NewRequest(http.MethodGet,
+				"http://localhost:5000/redirect1", nil)
+			if (err == nil) {
+				var response *http.Response
+				response, err = http.DefaultClient.Do(req)
+				if (err == nil) {
+					io.Copy(os.Stdout, response.Body)
+				} else {
+					Printfln("Request Error: %v", err.Error())
+				}
+			} else {
+				Printfln("Error: %v", err.Error())
+			}
+		}
+====================================================================
+Output:
+	Request Error: Get "/redirect1": stopped after 10 redirects
+`,
+// ====================================================================================
+		"458":`458.Defining a Custom Redirection Policy in the main.go
+example:
+main.go:
+	package main
+	import (
+		"net/http"
+		"os"
+		"io"
+		"time"
+		//"encoding/json"
+		//"strings"
+		"net/url"
+		//"net/http/cookiejar"
+		//"fmt"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		http.DefaultClient.CheckRedirect = func(req *http.Request,
+			previous []*http.Request) error {
+			if len(previous) == 3 {
+				url, _ := url.Parse("http://localhost:5000/html")
+				req.URL = url
+			}
+			return nil
+		}
+		req, err := http.NewRequest(http.MethodGet,
+			"http://localhost:5000/redirect1", nil)
+		if (err == nil) {
+			var response *http.Response
+			response, err = http.DefaultClient.Do(req)
+			if (err == nil) {
+				io.Copy(os.Stdout, response.Body)
+			} else {
+				Printfln("Request Error: %v", err.Error())
+			}
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+====================================================================
+Output:
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Pro Go</title>
+			<meta name="viewport" content="width=device-width" />
+		</head>
+		<body>
+			<h1>Hello, World</div>
+		</body>
+	</html>
+`,
+// ====================================================================================
+		"459":`459.Creating Multipart Forms:
+The mime/multipart package can be used to create a request body encoded as multipart/form-data, which
+allows a form to safely contain binary data, such as the contents of a file.
+`,
+// ====================================================================================
+		"460":`460.The Contents of the server_forms.go File in the httpclient Folder
+example:
+server_forms.go:
+	package main
+	import (
+		"net/http"
+		"fmt"
+		"io"
+	)
+	func init() {
+		http.HandleFunc("/form",
+			func (writer http.ResponseWriter, request *http.Request) {
+				err := request.ParseMultipartForm(10000000)
+				if (err == nil) {
+					for name, vals := range request.MultipartForm.Value {
+						fmt.Fprintf(writer, "Field %v: %v\n", name, vals)
+					}
+					for name, files := range request.MultipartForm.File {
+						for _, file := range files {
+							fmt.Fprintf(writer, "File %v: %v\n", name, file.Filename)
+							if f, err := file.Open(); err == nil {
+								defer f.Close()
+								io.Copy(writer, f)
+							}
+						}
+					}
+				} else {
+					fmt.Fprintf(writer, "Cannot parse form %v", err.Error())
+				}
+			})
+	}
+====================================================================
+Output:
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Pro Go</title>
+			<meta name="viewport" content="width=device-width" />
+		</head>
+		<body>
+			<h1>Hello, World</div>
+		</body>
+	</html>
+`,
+// ====================================================================================
+		"461":`461.The multipart.Writer Constructor Function
+
+		Name                    Description
+		---------------         ----------------------------
+		NewWriter(writer)       This function creates a new multipart.Writer that writes form data to the specified io.Writer.
+`,
+// ====================================================================================
+		"462":`462.The multipart.Writer Methods
+
+    Name                                    Description
+    ------------------------                ---------------------------------------
+    CreateFormField(fieldname)              This method creates a new form field with the specified name. The results
+                                            are an io.Writer that is used to write the field data and an error that
+                                            reports problems creating the field.
+    CreateFormFile(fieldname, filename)     This method creates a new file field with the specified field name and file
+                                            name. The results are an io.Writer that is used to write the field data and
+                                            an error that reports problems creating the field.
+    FormDataContentType()                   This method returns a string that is used to set the Content-Type request
+                                            header and includes the string that denotes the boundaries between the parts of the form.
+    Close()                                 This function finalizes the form and writes the terminating boundary that
+                                            denotes the end of the form data.
+`,
+// ====================================================================================
+		"463":`463.Creating and Sending a Multipart Form in the main.go
+example:
+main.go:
+	package main
+	import (
+		"io"
+		"net/http"
+		"os"
+		"time"
+		//"encoding/json"
+		//"strings"
+		//"net/url"
+		//"net/http/cookiejar"
+		//"fmt"
+		"bytes"
+		"mime/multipart"
+	)
+	func main() {
+		go http.ListenAndServe(":5000", nil)
+		time.Sleep(time.Second)
+		var buffer bytes.Buffer
+		formWriter := multipart.NewWriter(&buffer)
+		fieldWriter, err := formWriter.CreateFormField("name")
+		if err == nil {
+			io.WriteString(fieldWriter, "Alice")
+		}
+		fieldWriter, err = formWriter.CreateFormField("city")
+		if err == nil {
+			io.WriteString(fieldWriter, "New York")
+		}
+		fileWriter, err := formWriter.CreateFormFile("codeFile", "printer.go")
+		if err == nil {
+			fileData, err := os.ReadFile("./printer.go")
+			if err == nil {
+				fileWriter.Write(fileData)
+			}
+		}
+		formWriter.Close()
+		req, err := http.NewRequest(http.MethodPost,
+			"http://localhost:5000/form", &buffer)
+		req.Header["Content-Type"] = []string{formWriter.FormDataContentType()}
+		if err == nil {
+			var response *http.Response
+			response, err = http.DefaultClient.Do(req)
+			if err == nil {
+				io.Copy(os.Stdout, response.Body)
+			} else {
+				Printfln("Request Error: %v", err.Error())
+			}
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+====================================================================
+Output:
+	Field name: [Alice]
+	Field city: [New York]
+	File codeFile: printer.go
+	package main
+	
+	import "fmt"
+	
+	func Printfln(template string, values ...interface{}) {
+			fmt.Printf(template+"\n", values...)
+	}
+
+Caution Don't use the defer keyword on the call to the Close method; otherwise, the final boundary string
+won't be added to the form until after the request will be sent, producing a form that not all servers will process.
+It is important to call the Close method before sending the request.
+`,
+// ====================================================================================
+		"464":`464.Working with Databases
+There are drivers for a wide range of databases, and a list can be found at 
+https://github.com/golang/go/wiki/sqldrivers
+Putting Working with Databases in Context
+What is it?
+The database/sql package provides features for working with SQL databases.
+
+Why is it useful?
+Relational databases remain the most effective way of storing large amounts of
+structured data and are used in most large projects.
+
+How is it used?
+Driver packages provide support for specific databases, while the database/sql
+package provides a set of types that allow databases to be used consistently.
+
+Are there any pitfalls or limitations? 
+These features do not automatically populate struct fields from result rows.
+
+Are there any alternatives?
+There are third-party packages that build on these features to simplify or enhance their use.
+
+Preparing for This Chapter:
+1-Initializing the Module
+	go mod init data
+2-Add a file named printer.go to the data folder
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+3-Add a file named main.go
+	package main
+	func main() {
+	Printfln("Hello, Data")
+	}
+4-Compiling and Executing the Project
+	go run .
+====================================================================
+Output:
+	Hello, Data
+
+Preparing the Database:
+add a file named products.sql to the data folder:
+	DROP TABLE IF EXISTS Categories;
+	DROP TABLE IF EXISTS Products;
+	CREATE TABLE IF NOT EXISTS Categories (
+		Id INTEGER NOT NULL PRIMARY KEY,
+		Name TEXT
+	);
+	CREATE TABLE IF NOT EXISTS Products (
+		Id INTEGER NOT NULL PRIMARY KEY,
+		Name TEXT,
+		Category INTEGER,
+		Price decimal(8, 2),
+		CONSTRAINT CatRef FOREIGN KEY(Category) REFERENCES Categories (Id)
+	);
+	INSERT INTO
+		Categories (Id, Name)
+	VALUES
+		(1, "Watersports"),
+		(2, "Soccer");
+	INSERT INTO
+		Products (Id, Name, Category, Price)
+	VALUES
+		(1, "Kayak", 1, 279),
+		(2, "Lifejacket", 1, 48.95),
+		(3, "Soccer Ball", 2, 19.50),
+		(4, "Corner Flags", 2, 34.95);
+===================================================
+Go to https://www.sqlite.org/download.html , look for the precompiled binaries section for your
+operating system, and download the tools package.
+Unpack the zip archive and copy the sqlite3 or sqlite3.exe file into the data folder. Run the command
+Creating the Database command:
+	./sqlite3 products.db ".read products.sql"
+`,
+// ====================================================================================
+		"465":`465.Creating the Database command:
+./sqlite3 products.db ".read products.sql"
+`,
+// ====================================================================================
+		"466":`466.Installing a Database Driver
+Run the command:
+	go get modernc.org/sqlite
+
+Most database servers are set up separately so that the database driver opens a connection to a separate
+process. SQLite is an embedded database and is included in the driver package, which means no additional
+configuration is required.
+`,
+// ====================================================================================
+		"467":`467.Opening a Database
+The standard library provides the database/sql package for working with databases. 
+The functions described here:
+The database/sql Functions for Opening a Database
+
+	Name                        Description
+	----------------            ------------------------------
+	Drivers()                   This function returns a slice of strings, each of which contains the name of a database driver.
+	Open(driver,connectionStr)  This function opens a database using the specified driver and connection string. The
+								results are a pointer to a DB struct, which is used to interact with the database and an
+								error that indicates problems opening the database.
+`,
+// ====================================================================================
+		"468":`468.The Contents of the database.go
+package main
+// The blank identifier is used to import the database driver package, which loads the driver and allows it
+// to register as a provider of the SQL API:
+import (
+	"database/sql"
+	_ "modernc.org/sqlite"
+)
+func listDrivers() {
+	for _, driver := range sql.Drivers() {
+		Printfln("Driver: %v", driver)
+	}
+}
+func openDatabase() (db *sql.DB, err error) {
+	db, err = sql.Open("sqlite", "products.db")
+	if err == nil {
+		Printfln("Opened database")
+	}
+	return
+}
+====================================================================
+Using the DB Struct in the main.go:
+	package main
+	func main() {
+		listDrivers()
+		db, err := openDatabase()
+		if (err == nil) {
+			db.Close()
+		} else {
+			panic(err)
+		}
+	}
+====================================================================
+in Terminal:
+	go mod tidy
+
+	Output in Terminal:
+		go: finding module for package modernc.org/sqlite
+		go: downloading modernc.org/sqlite v1.27.0
+		go: found modernc.org/sqlite in modernc.org/sqlite v1.27.0
+		go: downloading golang.org/x/sys v0.9.0
+		go: downloading modernc.org/ccgo/v3 v3.16.13
+		go: downloading modernc.org/libc v1.29.0
+		go: downloading modernc.org/mathutil v1.6.0
+		go: downloading github.com/mattn/go-sqlite3 v1.14.16
+		go: downloading github.com/google/pprof v0.0.0-20221118152302-e6195bd50e26
+		go: downloading modernc.org/tcl v1.15.2
+		go: downloading github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec
+		go: downloading github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
+		go: downloading golang.org/x/tools v0.0.0-20201124115921-2c860bdd6e78
+		go: downloading modernc.org/cc/v3 v3.40.0
+		go: downloading modernc.org/opt v0.1.3
+		go: downloading github.com/dustin/go-humanize v1.0.1
+		go: downloading github.com/google/uuid v1.3.0
+		go: downloading github.com/mattn/go-isatty v0.0.16
+		go: downloading modernc.org/memory v1.7.2
+		go: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1
+		go: downloading golang.org/x/mod v0.3.0
+		go: downloading lukechampine.com/uint128 v1.2.0
+		go: downloading modernc.org/strutil v1.1.3
+		go: downloading modernc.org/token v1.0.1
+		go: downloading modernc.org/httpfs v1.0.6
+		go: downloading modernc.org/z v1.7.3
+		go: downloading modernc.org/ccorpus v1.11.6
+
+====================================================================
+Output:
+	The main method calls the listDrivers function to print out the names of the loaded drivers and then
+	calls the openDatabase function to open the database. Nothing is done with the database yet, but Close
+	method is called.
+`,
+// ====================================================================================
+		"469":`469.The DB Method for Closing the Database:
+
+	Name        Description
+	-------     ----------------------
+	Close()     This function closes the database and prevents further operations from being performed.
+`,
+// ====================================================================================
+		"470":`470.Executing Statements and Queries
+The DB Methods for Executing SQL Statements
+
+    Name                        Description
+    --------------------        -----------------------------
+    Query(query,...args)        This method executes the specified query, using the optional placeholder arguments.
+                                The results are a Rows struct, which contains the query results, and an error that
+                                indicates problems executing the query.
+    QueryRow(query, ..args)     This method executes the specified query, using the optional placeholder arguments.
+                                The result is a Row struct, which represents the first row from the query results. See
+                                the “Executing Queries for Single Rows” section.
+    Exec(query,...args)         This method executes statements or queries that do not return rows of data. The
+                                method returns a Result, which describes the response from the database, and
+                                an error that signals problems with execution. See the “Executing Other Queries” section.
+`,
+// ====================================================================================
+		"471":`471.Using Contexts with Databases
+the context package and the Context interface it defines, which is used
+to manage requests as they are processed by a server. All the important methods defined in the
+database/sql package also have versions that accept a Context argument, which is useful if you
+want to take advantage of features like request handling timeouts.
+`,
+// ====================================================================================
+		"472":`472.Querying for Multiple Rows
+The Query method executes a query that retrieves one or more rows from the database. The Query method
+returns a Rows struct, which contains the query results and an error that indicates problems. The row data is
+accessed through the methods described in below
+The Rows Struct Methods
+
+	Name                Description
+	----------------    -----------------------------
+	Next()              This method advances to the next result row. The result is a bool, which is true when
+						there is data to read and false when the end of the data has been reached, at which point
+						the Close method is automatically called.
+	NextResultSet()     This method advances to the next result set when there are multiple result sets in the
+						same database response. The method returns true if there is another set of rows to process.
+	Scan(...targets)    This method assigns the SQL values from the current row to the specified variables. The
+						values are assigned via pointers and the method returns an error that indicates when the
+						values cannot be scanned. See the “Understanding the Scan Method” section for details.
+	Close()             This method prevents further enumeration of the results and is used when not all of
+						the data is required. There is no need to call this method if the Next method is used to
+						advance until it returns false.
+`,
+// ====================================================================================
+		"473":`473.Querying the Database in the main.go
+example:
+	package main
+	import "database/sql"
+	func queryDatabase(db *sql.DB) {
+		rows, err := db.Query("SELECT * from Products")
+		if err == nil {
+			for rows.Next() {
+				var id, category int
+				var name string
+				var price float64
+				rows.Scan(&id, &name, &category, &price)
+				Printfln("Row: %v %v %v %v", id, name, category, price)
+			}
+		} else {
+			Printfln("Error: %v", err)
+		}
+	}
+	func main() {
+		//listDrivers()
+		db, err := openDatabase()
+		if err == nil {
+			queryDatabase(db)
+			db.Close()
+		} else {
+			panic(err)
+		}
+	}
+====================================================================
+The queryDatabase function performs a simple SELECT query on the Products table with the Query
+method, which produces a Rows result and an error. If the error is nil, a for loop is used to move through
+the result rows by calling the Next method, which returns true if there is a row to process and returns false
+when the end of the data has been reached.
+`,
+// ====================================================================================
+		"474":`474.Using Reflection
+Preparing for This Chapter
+1-go mod init reflection
+2-printer.go:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+3-types.go:
+	package main
+	type Product struct {
+		Name, Category string
+		Price float64
+	}
+	type Customer struct {
+		Name, City string
+	}
+4-main.go:
+	package main
+	func printDetails(values ...Product) {
+		for _, elem := range values {
+			Printfln("Product: Name: %v, Category: %v, Price: %v",
+				elem.Name, elem.Category, elem.Price)
+		}
+	}
+	func main() {
+		product := Product {
+			Name: "Kayak", Category: "Watersports", Price: 279,
+		}
+		printDetails(product)
+	}
+====================================================================
+Output:
+	Product: Name: Kayak, Category: Watersports, Price: 279
+`,
+// ====================================================================================
+		"475":`475.Understanding the Need for Reflection
+The Go type system is rigorously enforced, 
+which means you can't use a value of one type when a different type is inspected.
+
+example:
+Mixing Types in the main.go
+	package main
+	func printDetails(values ...Product) {
+		for _, elem := range values {
+			Printfln("Product: Name: %v, Category: %v, Price: %v",
+				elem.Name, elem.Category, elem.Price)
+		}
+	}
+	func main() {
+		product := Product {
+			Name: "Kayak", Category: "Watersports", Price: 279,
+		}
+		customer := Customer { Name: "Alice", City: "New York" }
+		printDetails(product, customer)
+	}
+====================================================================
+Output:
+	# reflection
+	./main.go:13:24: cannot use customer (variable of type Customer) as Product value in argument to printDetails
+
+
+interfaces, which allow common characteristics to be defined through
+methods, which can be invoked regardless of the type that implements the interface.
+`,
+// ====================================================================================
+		"476":`476.Using the Empty Interface in the main.go File in the reflection
+example:
+	package main
+	func printDetails(values ...interface{}) {
+		for _, elem := range values {
+			switch val := elem.(type) {
+				case Product:
+					Printfln("Product: Name: %v, Category: %v, Price: %v",
+						val.Name, val.Category, val.Price)
+				case Customer:
+					Printfln("Customer: Name: %v, City: %v", val.Name, val.City)
+			}
+		}
+	}
+	func main() {
+		product := Product {
+			Name: "Kayak", Category: "Watersports", Price: 279,
+		}
+		customer := Customer { Name: "Alice", City: "New York" }
+		printDetails(product, customer)
+	}
+====================================================================
+Output:
+	Product: Name: Kayak, Category: Watersports, Price: 279
+	Customer: Name: Alice, City: New York
+
+The limitation of this approach is that the printDetails function 
+can only process types that are known in advance.
+Many projects will deal with a small enough set of types that this won't be an issue or will be able to
+define interfaces with methods that provides access to common functionality. Reflection solves this issue for
+those projects for which this isn't the case, either because there are a large number of types to deal with or
+because interfaces and methods can't be written.
+`,
+// ====================================================================================
+		"477":`477.Using Reflection
+The reflect package provides the Go reflection features, and the key functions are called TypeOf and
+ValueOf
+`,
+// ====================================================================================
+		"478":`478.The Key Reflection Functions:
+
+	Name            Description
+	-----------     -------------------------------
+	TypeOf(val)     This function returns a value that implements the Type interface, which describes the
+					type of the specified value.
+	ValueOf(val)    This function returns a Value struct, which allows the specified value to be inspected
+					and manipulated.
+`,
+// ====================================================================================
+		"479":`479.Using Reflection in the main.go
+example:
+	package main
+	import (
+		"reflect"
+		"strings"
+		"fmt"
+	)
+	func printDetails(values ...interface{}) {
+		for _, elem := range values {
+			fieldDetails := []string {}
+			elemType := reflect.TypeOf(elem)
+			elemValue := reflect.ValueOf(elem)
+			if elemType.Kind() == reflect.Struct {
+				for i := 0; i < elemType.NumField(); i++ {
+					fieldName := elemType.Field(i).Name
+					fieldVal := elemValue.Field(i)
+					fieldDetails = append(fieldDetails,
+						fmt.Sprintf("%v: %v", fieldName, fieldVal ))
+				}
+				Printfln("%v: %v", elemType.Name(), strings.Join(fieldDetails, ", "))
+			} else {
+				Printfln("%v: %v", elemType.Name(), elemValue)
+			}
+		}
+	}
+	type Payment struct {
+		Currency string
+		Amount float64
+	}
+	func main() {
+		product := Product {
+		Name: "Kayak", Category: "Watersports", Price: 279,
+		}
+		customer := Customer { Name: "Alice", City: "New York" }
+		payment := Payment { Currency: "USD", Amount: 100.50 }
+		printDetails(product, customer, payment, 10, true)
+	}
+====================================================================
+Code that uses reflection can be verbose, but the basic pattern becomes easy to follow once you become
+familiar with the basics. The key point to remember is that there are two aspects of reflection that work
+together: the reflected type and the reflected value.
+The reflected type gives you access to details of a Go type without knowing in advance what it is. You can
+explore the reflected type, exploring its details and characteristics through the methods defined by the Type
+interface.
+The reflected value lets you work with the specific value with which you have been provided. You can’t
+just read a struct field or call a method, for example, as you would in normal code when you don’t know
+what type you are dealing with.
+The use of the reflected type and reflected value leads to the code verbosity. If you know you are dealing
+with a Product struct, for example, you can just read the Name field and get a string result. If you don’t know
+what type is being used, then you must use the reflected type to establish whether you are dealing with a
+struct and whether it has a Name field. Once you have determined there is such as field, you use the reflected
+value to read that field and get its value.
+===============================================================
+Output:
+	Product: Name: Kayak, Category: Watersports, Price: 279
+	Customer: Name: Alice, City: New York
+	Payment: Currency: USD, Amount: 100.5
+	int: 10
+	bool: true
+`,
+// ====================================================================================
+		"480":`480.Using the Basic Type Features
+The Type interface provides basic details about a type through the methods described in below.
+There are specialized methods for working with specific kinds of types, such as arrays, which are described in later
+sections, but these are the methods that provide the essential details for all types.
+`,
 // ====================================================================================
 		"481":``,
 // ====================================================================================

@@ -6978,8 +6978,6 @@ Output:
     Go maps are encoded as JSON objects, with the map keys used as the object keys. The values contained in
     the map are encoded based on their type.
     Maps can also be useful for creating custom JSON representations of Go data.
-
-
     encoder.Encode()
     example:
         package main
@@ -7000,7 +6998,6 @@ Output:
         }
     Output:
             {"Kayak":279,"Lifejacket":49.95}
-
 ████████████████████████████████████████████████████████████████████████
 310.Encoding Structs
     The Encoder expresses struct values as JSON objects, using the exported struct field names as the object's
@@ -7057,7 +7054,6 @@ Output:
     How a struct is encoded can be customized using struct tags, which are string literals that follow fields. Struct
     tags are part of the Go support for reflection, 
     that tags follow fields and can be used to alter two aspects of how a field is encoded in JSON.
-
     example:
     discount.go:
         package main
@@ -7066,12 +7062,11 @@ Output:
 
             Discount float64
         }
-    
+    ===============================================================
     Output:
         {"product":{"Name":"Kayak","Category":"Watersports","Price":279},"Discount":10.5}
-
 ████████████████████████████████████████████████████████████████████████
-313.Omitting a Field حذف یک فیلد
+313.Omitting a Field
     The Encoder skips fields decorated with a tag that specifies a hyphen (the - character) for the name
     The new tag tells the Encoder to skip the Discount field when creating the JSON representation of a
     DIscountedProduct value.
@@ -7199,7 +7194,6 @@ Output:
         }
     Output:
         [{"Name":"Kayak","Category":"Watersports","Price":279,"Discount":"10.5"},{"PersonName":"Alice"}]
-
 ████████████████████████████████████████████████████████████████████████
 317.The Marshaler Method
     Creating Completely Custom JSON Encodings
@@ -7259,7 +7253,6 @@ Output:
         
     Output:
         [{"cost":268.5,"product":"Kayak"},{"PersonName":"Alice"}]
-    
 ████████████████████████████████████████████████████████████████████████
 319.Decoding JSON Data
     The NewDecoder constructor function creates a Decoder, which can be used to decode JSON data obtained
@@ -7603,7 +7596,7 @@ Output:
     from JSON. Instead, you must decode to a struct or map and then assign the value that is created to an
     interface variable.
 ████████████████████████████████████████████████████████████████████████
-330.Disallowing Unused Keys غیر مجاز کردن
+330.Disallowing Unused Keys
     By default, the Decoder will ignore JSON keys for which there is no corresponding struct field. This behavior
     can be changed by calling the DisallowUnknownFields method
 
@@ -7618,7 +7611,7 @@ Output:
         Name: Lifejacket, Category: Watersports, Price: 0
         Error: json: unknown field "inStock"
 ████████████████████████████████████████████████████████████████████████
-331.Struct Tags 
+331.Struct Tags
     The tag applied to the Discount field tells the Decoder that the value for this field should be obtained
     from the JSON key named offer and that the value will be parsed from a string, instead of the JSON
     number that would usually be expected for a Go float64 value.
@@ -8496,7 +8489,7 @@ Output:
         Entry name: product.go, IsDir: false
         Entry name: readconfig.go, IsDir: false
 ████████████████████████████████████████████████████████████████████████
-360.Determining Whether a File Exists تعیین اینکه آیا یک فایل وجود دارد یا خیر
+360.Determining Whether a File Exists
     Checking Whether a File Exists:
     main.go:
         package main
@@ -8573,7 +8566,7 @@ Output:
     WalkDir(directory, func)    This function calls the specified function for each file and directory in the
                                 specified directory.
 ████████████████████████████████████████████████████████████████████████
-365.Walking a Directory قدم زدن در یک فهرست
+365.Walking a Directory
     example:
     main.go:
         package main
@@ -9927,6 +9920,7 @@ Output:
 ████████████████████████████████████████████████████████████████████████
 406.The Method Defined by the Handler Interface
     Name                            Description
+    ------------------------        ----------------
     ServeHTTP(writer, request)      This method is invoked to process a HTTP request. The request is described by a
                                     Request value, and the response is written using a ResponseWriter, both of which
                                     are received as parameters.
@@ -10066,6 +10060,7 @@ Output:
 ████████████████████████████████████████████████████████████████████████
 411.The ResponseWriter Methods
     Name                Description
+    --------------      ------------------------
     Header()            This method returns a Header, which is an alias to map[string][]string, that can be
                         used to set the response headers.
     WriteHeader(code)   This method sets the status code for the response, specified as an int. The net/http
@@ -10290,6 +10285,7 @@ Output:
 ████████████████████████████████████████████████████████████████████████
 419.he net/http Functions for Creating Request Handlers
     Name                                        Description
+    -------------------------------             -----------------
     FileServer(root)                            This function creates a Handler that produces responses using the ServeFile
                                                 function. See the “Creating a Static HTTP Server” section for an example that
                                                 serves files.
