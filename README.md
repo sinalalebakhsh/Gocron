@@ -154,12 +154,18 @@
 				</summary>
 					🐻 Debuging For being a GitHub donkey!!!!!
 			</details>
+			<details>
+				<summary>
+					💠 v1.0.32
+				</summary>
+					💠💠💠 If User Input Is Just Number 💠💠💠
+			</details>
 		</details>
 		<details>
-			<summary>
-				💠 v1.0.32
-			</summary>
-				💠💠💠 If User Input Is Just Number 💠💠💠
+				<summary>
+					💠 v1.0.33
+				</summary>
+					💠💠💠 💠💠💠 Adding There are complete => Numbers for Keys Map until 480 💠💠💠
 		</details>
 	</details>
 </br>
