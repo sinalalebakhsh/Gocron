@@ -4927,7 +4927,6 @@ var OriginalFeatures Features = Features{
     Output:
         Ints: [9 4 2 -1 10]
         Ints Sorted: [-1 2 4 9 10]
-        
 ████████████████████████████████████████████████████████████████████████
 237.The Functions for Searching Sorted Data
     Name                        Description
@@ -4955,33 +4954,33 @@ var OriginalFeatures Features = Features{
 
     example:
         package main
-    import (
-        "fmt"
-        "sort"
-    )
-    func Printfln(template string, values ...interface{}) {
-        fmt.Printf(template+"\n", values...)
-    }
-    func main() {
-        ints := []int{9, 1, 2, -1, 10,5}
-        sortedInts := make([]int, len(ints))
-        copy(sortedInts, ints)
-        sort.Ints(sortedInts)
-        Printfln("Ints: %v", ints)
-        Printfln("Ints Sorted: %v", sortedInts)
-        
-        // ===========================================
-        indexOf4 := sort.SearchInts(sortedInts, 4)
-        Printfln("Index of 4: %v", indexOf4)
-        
-        indexOf3 := sort.SearchInts(sortedInts, 3)
-        Printfln("Index of 3: %v", indexOf3)
-    }
-Output:
-    Ints: [9 1 2 -1 10 5]
-    Ints Sorted: [-1 1 2 5 9 10]
-    Index of 4: 3
-    Index of 3: 3
+        import (
+            "fmt"
+            "sort"
+        )
+        func Printfln(template string, values ...interface{}) {
+            fmt.Printf(template+"\n", values...)
+        }
+        func main() {
+            ints := []int{9, 1, 2, -1, 10,5}
+            sortedInts := make([]int, len(ints))
+            copy(sortedInts, ints)
+            sort.Ints(sortedInts)
+            Printfln("Ints: %v", ints)
+            Printfln("Ints Sorted: %v", sortedInts)
+            
+            // ===========================================
+            indexOf4 := sort.SearchInts(sortedInts, 4)
+            Printfln("Index of 4: %v", indexOf4)
+            
+            indexOf3 := sort.SearchInts(sortedInts, 3)
+            Printfln("Index of 3: %v", indexOf3)
+        }
+    Output:
+        Ints: [9 1 2 -1 10 5]
+        Ints Sorted: [-1 1 2 5 9 10]
+        Index of 4: 3
+        Index of 3: 3
 ████████████████████████████████████████████████████████████████████████
 239.sort.SearchInts() bool returned
     example:
@@ -5006,12 +5005,11 @@ Output:
             Printfln("Index of 4: %v (present: %v)", indexOf4, sortedInts[indexOf4] == 4)
             Printfln("Index of 3: %v (present: %v)", indexOf3, sortedInts[indexOf3] == 3)
         }
-Output:
-    Ints: [9 1 2 -1 10 5]
-    Ints Sorted: [-1 1 2 5 9 10]
-    Index of 4: 3 (present: false)
-    Index of 3: 3 (present: false)
-
+    Output:
+        Ints: [9 1 2 -1 10 5]
+        Ints Sorted: [-1 1 2 5 9 10]
+        Index of 4: 3 (present: false)
+        Index of 3: 3 (present: false)
 ████████████████████████████████████████████████████████████████████████
 240.The Methods Defined by the sort.Interface Interface
     Name            Description
@@ -5061,8 +5059,6 @@ Output:
         Name: Soccer Ball, Price: 19.50
         Name: Lifejacket, Price: 49.95
         Name: Kayak, Price: 279.00
-
-
 ████████████████████████████████████████████████████████████████████████
 242.Sorting with a Comparison Function
     go mod init
@@ -5123,7 +5119,6 @@ Output:
 	func SortWith(prods []Product, f ProductComparison) {
 		sort.Sort(ProductSliceFlex{ prods, f})
 	}
-
 ████████████████████████████████████████████████████████████████████████
 243.Putting Dates, Times, and Durations in Context
     What are they?
@@ -5146,7 +5141,6 @@ Output:
 
     Are there any alternatives?
     These are optional features, and their use is not required.
-
 ████████████████████████████████████████████████████████████████████████
 244.The Functions in the time Package for Creating Time Values
     Name                                    Description
@@ -5158,7 +5152,6 @@ Output:
                                             section.)
     Unix(sec, nsec)                         This function creates a Time value from the number of seconds and nanoseconds since
                                             January 1, 1970, UTC, commonly known as Unix time.
-                                        
 ████████████████████████████████████████████████████████████████████████
 245.The Methods for Accessing Time Components
     Name            Description
@@ -5227,7 +5220,6 @@ Output:
         Current: Day: 15: Month: September Year: 2023
         Specific: Day: 31: Month: May Year: 1993
         UNIX: Day: 31: Month: December Year: 1969
-
 ████████████████████████████████████████████████████████████████████████
 248.The Time Method for Creating Formatted Strings
     Name                Description
@@ -5369,7 +5361,6 @@ Output:
     https://www.iana.org/time-zones , 
     and are listed by 
     https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
 ████████████████████████████████████████████████████████████████████████
 253.Embedding The Time Zone Database
     example:
@@ -5953,8 +5944,7 @@ Output:
         Read name: Bob
         Read name: Charlie
         Read name: Dora
-        ...
-            
+        ... 
 ████████████████████████████████████████████████████████████████████████
 271.NewTicker(duration)
     The result of the NewTicker function is a pointer to a Ticker struct, which defines the field and methods
@@ -6171,7 +6161,6 @@ Output:
     ...
 ████████████████████████████████████████████████████████████████████████
 279.the Utility Functions for Readers and Writers
-    توابع مفید برای خوانندگان و نویسندگان
     
     Functions in the io Package for Readng and Writing Data
     Name                            Description
@@ -6278,7 +6267,7 @@ Output:
             }
             asd.Printfln("Read data: %v", string(data))
         }
-
+    =====================================================================================
     Notice the parentheses at the end of this statement. These are required when creating a goroutine for an
     anonymous function, but it is easy to forget them.
     main.go:
@@ -6295,9 +6284,7 @@ Output:
             }()
             ConsumeData(pipeReader)
         }
-
-
-
+    =====================================================================================
     The output highlights the fact that pipes are synchronous. The GenerateData function calls the writer's
     Write method and then blocks until the data is read. This is why the first message in the output is from the
     reader: the reader is consuming the data two bytes at a time, which means that two read operations are
@@ -6566,8 +6553,6 @@ Output:
     The NewReader and NewReaderSize functions return bufio.Reader values, which implement the io.
     Reader interface and which can be used as drop-in wrappers for other types of Reader methods, seamlessly
     introducing a read buffer.
-
-
 ████████████████████████████████████████████████████████████████████████
 292.The Methods Defined by the Buffered Reader
     Name                Description

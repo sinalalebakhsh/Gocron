@@ -4302,207 +4302,2958 @@ Output:
 									result is an error value whose Error method returns the formatted string.
 									`,
 // ====================================================================================
-		"207":``,
-// ====================================================================================
-		"208":``,
-// ====================================================================================
-		"209":``,
-// ====================================================================================
-		"210":``,
-// ====================================================================================
-		"211":``,
-// ====================================================================================
-		"212":``,
-// ====================================================================================
-		"213":``,
-// ====================================================================================
-		"214":``,
-// ====================================================================================
-		"215":``,
-// ====================================================================================
-		"216":``,
-// ====================================================================================
-		"217":``,
-// ====================================================================================
-		"218":``,
-// ====================================================================================
-		"219":``,
-// ====================================================================================
-		"220":``,
-// ====================================================================================
-		"221":``,
-// ====================================================================================
-		"222":``,
-// ====================================================================================
-		"223":``,
-// ====================================================================================
-		"224":``,
-// ====================================================================================
-		"225":``,
-// ====================================================================================
-		"226":``,
-// ====================================================================================
-		"227":``,
-// ====================================================================================
-		"228":``,
-// ====================================================================================
-		"229":``,
-// ====================================================================================
-		"230":``,
-// ====================================================================================
-		"231":``,
-// ====================================================================================
-		"232":``,
-// ====================================================================================
-		"233":``,
-// ====================================================================================
-		"234":``,
-// ====================================================================================
-		"235":``,
-// ====================================================================================
-		"236":``,
-// ====================================================================================
-		"237":``,
-// ====================================================================================
-		"238":``,
-// ====================================================================================
-		"239":``,
-// ====================================================================================
-		"240":``,
-// ====================================================================================
-		"241":``,
-// ====================================================================================
-		"242":``,
-// ====================================================================================
-		"243":``,
-// ====================================================================================
-		"244":``,
-// ====================================================================================
-		"245":``,
-// ====================================================================================
-		"246":``,
-// ====================================================================================
-		"247":``,
-// ====================================================================================
-		"248":``,
-// ====================================================================================
-		"249":``,
-// ====================================================================================
-		"250":``,
-// ====================================================================================
-		"251":``,
-// ====================================================================================
-		"252":``,
-// ====================================================================================
-		"253":``,
-// ====================================================================================
-		"254":``,
-// ====================================================================================
-		"255":``,
-// ====================================================================================
-		"256":``,
-// ====================================================================================
-		"257":``,
-// ====================================================================================
-		"258":``,
-// ====================================================================================
-		"259":``,
-// ====================================================================================
-		"260":``,
-// ====================================================================================
-		"261":``,
-// ====================================================================================
-		"262":``,
-// ====================================================================================
-		"263":``,
-// ====================================================================================
-		"264":``,
-// ====================================================================================
-		"265":``,
-// ====================================================================================
-		"266":``,
-// ====================================================================================
-		"267":``,
-// ====================================================================================
-		"268":``,
-// ====================================================================================
-		"269":``,
-// ====================================================================================
-		"270":``,
-// ====================================================================================
-		"271":``,
-// ====================================================================================
-		"272":``,
-// ====================================================================================
-		"273":``,
-// ====================================================================================
-		"274":``,
-// ====================================================================================
-		"275":``,
-// ====================================================================================
-		"276":``,
-// ====================================================================================
-		"277":``,
-// ====================================================================================
-		"279":``,
-// ====================================================================================
-		"280":``,
-// ====================================================================================
-		"281":``,
-// ====================================================================================
-		"282":``,
-// ====================================================================================
-		"283":``,
-// ====================================================================================
-		"284":``,
-// ====================================================================================
-		"285":``,
-// ====================================================================================
-		"286":``,
-// ====================================================================================
-		"287":``,
-// ====================================================================================
-		"288":``,
-// ====================================================================================
-		"289":``,
-// ====================================================================================
-		"290":``,
-// ====================================================================================
-		"291":``,
-// ====================================================================================
-		"292":``,
-// ====================================================================================
-		"293":``,
-// ====================================================================================
-		"294":``,
-// ====================================================================================
-		"295":``,
-// ====================================================================================
-		"296":``,
-// ====================================================================================
-		"297":``,
-// ====================================================================================
-		"298":``,
-// ====================================================================================
-		"299":``,
-// ====================================================================================
-		"300":``,
-// ====================================================================================
-		"301":``,
-// ====================================================================================
-		"302":``,
-// ====================================================================================
-		"303":``,
-// ====================================================================================
-		"304":``,
-// ====================================================================================
-		"305":``,
-// ====================================================================================
-		"306":``,
-// ====================================================================================
-		"307":``,
-// ====================================================================================
-		"308":``,
+		"207":`207.fmt.Sprintf
+Both of the formatted strings in this example use the %v value, 
+which writes out values in their default form.
+
+example:
+	package main
+
+	import "fmt"
+	
+	type Product struct {
+		Name, Category string
+		Price          float64
+	}
+	
+	var Kayak = Product{
+		Name:     "Kayak",
+		Category: "Watersports",
+		Price:    275,
+	}
+	var Products = []Product{
+		{"Kayak", "Watersports", 279},
+		{"Lifejacket", "Watersports", 49.95},
+		{"Soccer Ball", "Soccer", 19.50},
+		{"Corner Flags", "Soccer", 34.95},
+		{"Stadium", "Soccer", 79500},
+		{"Thinking Cap", "Chess", 16},
+		{"Unsteady Chair", "Chess", 75},
+		{"Bling-Bling King", "Chess", 1200},
+	}
+	
+	func getProductName(index int) (name string, err error) {
+		if len(Products) > index {
+			name = fmt.Sprintf("Name of product: %v", Products[index].Name)
+		} else {
+			err = fmt.Errorf("error for index %v", index)
+		}
+		return
+	}
+	func main() {
+		name, _ := getProductName(1)
+		fmt.Println(name)
+		_, err := getProductName(10)
+		fmt.Println(err.Error())
+	}
+Output:
+	Name of product: Lifejacket
+	error for index 10
+	`,
+// ====================================================================================
+		"208":`208.the General-Purpose Formatting Verbs
+The general-purpose verbs can be used to display any value.
+The Formatting Verbs for Any Value
+
+	Verb    Description
+	------  -----------------------------------------------
+	%v      This verb displays the default format for the value. Modifying the verb with a plus sign (%+v) includes
+			field names when writing out struct values.
+	%#v     This verb displays a value in a format that could be used to re-create the value in a Go code file.
+	%T      This verb displays the Go type of a value.
+
+example:
+	package main
+	import "fmt"
+	type Product struct {
+		Name, Category string
+		Price          float64
+	}
+	var Kayak = Product{
+		Name:     "Kayak",
+		Category: "Watersports",
+		Price:    275,
+	}
+	var Products = []Product{
+		{"Kayak", "Watersports", 279},
+		{"Lifejacket", "Watersports", 49.95},
+		{"Soccer Ball", "Soccer", 19.50},
+		{"Corner Flags", "Soccer", 34.95},
+		{"Stadium", "Soccer", 79500},
+		{"Thinking Cap", "Chess", 16},
+		{"Unsteady Chair", "Chess", 75},
+		{"Bling-Bling King", "Chess", 1200},
+	}
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		Printfln("Value: %v", Kayak)
+		Printfln("Go syntax: %#v", Kayak)
+		Printfln("Type: %T", Kayak)
+	}
+Output:
+	Value: {Kayak Watersports 275}
+	Go syntax: main.Product{Name:"Kayak", Category:"Watersports", Price:275}
+	Type: main.Product`,
+// ====================================================================================
+		"209":`209.Controlling Struct Formatting
+Go has a default format for all data types that the %v verb relies on. 
+For structs, the default value lists the field values within curly braces. 
+The default verb can be modified with a plus sign to include the field names in the output.
+example:
+	package main
+	import "fmt"
+	type Product struct {
+		Name, Category string
+		Price          float64
+	}
+	var Kayak = Product{
+		Name:     "Kayak",
+		Category: "Watersports",
+		Price:    275,
+	}
+	var Products = []Product{
+		{"Kayak", "Watersports", 279},
+		{"Lifejacket", "Watersports", 49.95},
+		{"Soccer Ball", "Soccer", 19.50},
+		{"Corner Flags", "Soccer", 34.95},
+		{"Stadium", "Soccer", 79500},
+		{"Thinking Cap", "Chess", 16},
+		{"Unsteady Chair", "Chess", 75},
+		{"Bling-Bling King", "Chess", 1200},
+	}
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		Printfln("Value: %v", Kayak)
+		Printfln("Value with fields: %+v", Kayak)
+	}    
+Output:
+	Value: {Kayak Watersports 275}
+	Value with fields: {Name:Kayak Category:Watersports Price:275}
+	`,
+// ====================================================================================
+		"210":`210.Custom Struct Format
+example:
+	package main
+	import "fmt"
+	type Product struct {
+		Name, Category string
+		Price          float64
+	}
+	var Kayak = Product{
+		Name:     "Kayak",
+		Category: "Watersports",
+		Price:    275,
+	}
+	var Products = []Product{
+		{"Kayak", "Watersports", 279},
+		{"Lifejacket", "Watersports", 49.95},
+		{"Soccer Ball", "Soccer", 19.50},
+		{"Corner Flags", "Soccer", 34.95},
+		{"Stadium", "Soccer", 79500},
+		{"Thinking Cap", "Chess", 16},
+		{"Unsteady Chair", "Chess", 75},
+		{"Bling-Bling King", "Chess", 1200},
+	}
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func (p Product) String() string {
+		return fmt.Sprintf("Product: %v, Price: $%4.2f", p.Name, p.Price)
+	}
+	func main() {
+		Printfln("Value: %v", Kayak)
+		Printfln("Value with fields: %+v", Kayak)
+	}
+Output:
+	Value: Product: Kayak, Price: $275.00
+	Value with fields: Product: Kayak, Price: $275.00
+	`,
+// ====================================================================================
+		"211":`211.Formating Arrays, Slices, Maps
+When arrays and slices are represented as strings, the output is a set of square brackets, within which
+are the individual elements, like this:
+example:
+	[Kayak Lifejacket Paddle]
+
+Notice that no commas are separating the elements. When maps are represented as strings, the key-
+value pairs are displayed within square brackets, preceded by the map keyword, like this:
+example:
+	map[1:Kayak 2:Lifejacket 3:Paddle]
+	`,
+// ====================================================================================
+		"212":`212.Integer Formatting Verbs
+
+	Verb    Description
+	------  ------------------------------------
+	%b      This verb displays an integer value as a binary string.
+	%d      This verb displays an integer value as a decimal string. This is the default format for integer
+			values, applied when the %v verb is used.
+	%o, %O  These verbs display an integer value as an octal string. The %O verb adds the 0o prefix.
+	%x, %X  These verbs display an integer value as a hexadecimal string. The letters A–F are displayed in
+			lowercase by the %x verb and in uppercase by the %X verb.
+
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		number := 250
+		Printfln("Binary: %b", number)
+		Printfln("Decimal: %d", number)
+		Printfln("Octal: %o, %O", number, number)
+		Printfln("Hexadecimal: %x, %X", number, number)
+	}
+Output:
+	Binary: 11111010
+	Decimal: 250
+	Octal: 372, 0o372
+	Hexadecimal: fa, FA
+	`,
+// ====================================================================================
+		"213":`213.Floating-Point Formatting Verbs
+The Formatting Verbs for Floating-Point Values
+
+	Verb    Description
+	-----   ------------------------------------
+	%b      This verb displays a floating-point value with an exponent and without a decimal place.
+	%e, %E  These verbs display a floating-point value with an exponent and a decimal place. The %e uses a
+			lowercase exponent indicator, while %E uses an uppercase indicator.
+	%f, %F  These verbs display a floating-point value with a decimal place but no exponent. The %f and %F
+			verbs produce the same output.
+	%g      This verb adapts to the value it displays. The %e format is used for values with large exponents,
+			and the %f format is used otherwise. This is the default format, applied when the %v verb is
+			used.
+	%G      This verb adapts to the value it displays. The %E format is used for values with large exponents,
+			and the %f format is used otherwise.
+	%x, %X  These verbs display a floating-point value in hexadecimal notation, with lowercase (%x) or
+			uppercase (%X) letters.
+
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		number := 279.00
+		Printfln("Decimalless with exponent: %b", number)
+		Printfln("Decimal with exponent: %e", number)
+		Printfln("Decimal without exponent: %f", number)
+		Printfln("Hexadecimal: %x, %X", number, number)
+	}
+Output:
+	Decimalless with exponent: 4908219906392064p-44
+	Decimal with exponent: 2.790000e+02
+	Decimal without exponent: 279.000000
+	Hexadecimal: 0x1.17p+08, 0X1.17P+08
+	`,
+// ====================================================================================
+		"214":`214.Controlling Formatting
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		number := 279.00
+		Printfln("Decimal without exponent: >>%8.2f<<", number)
+	}
+Output:
+	Decimal without exponent: >>  279.00<<
+	`,
+// ====================================================================================
+		"215":`215.Specifying Precision
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		number := 279.00
+		Printfln("Decimal without exponent: >>%.2f<<", number)
+	}
+Output:
+	Decimal without exponent: >>279.00<<
+	`,
+// ====================================================================================
+		"216":`216.The Formatting Verb Modifiers
+Modifier    Description
+--------    --------------------------
++           This modifier (the plus sign) always prints a sign, positive or negative, for numeric values.
+
+0           This modifier uses zeros, rather than spaces, as padding when the width is greater than the
+			number of characters required to display the value.
+
+-           This modifier (the subtracts symbol) adds padding to the right of the number, rather than
+			the left.
+
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		number := 279.00
+		Printfln("Sign: >>%+.2f<<", number)
+		Printfln("Zeros for Padding: >>%07.2f<<", number)
+		Printfln("Zeros for Padding: >>%08.2f<<", number)
+		Printfln("Right Padding: >>%-8.2f<<", number)
+	}
+Output:
+	Sign: >>+279.00<<
+	Zeros for Padding: >>0279.00<<
+	Zeros for Padding: >>00279.00<<
+	Right Padding: >>279.00  <<
+	`,
+// ====================================================================================
+		"217":`217.The Formatting Verbs for Strings and Runes
+Verb    Description
+----    ----------------------------------------------------
+%s      This verb displays a string. This is the default format, applied when the %v verb is used.
+
+%c      This verb displays a character. Care must be taken to avoid slicing strings into individual bytes, as
+		explained in the text after the table.
+
+%U      This verb displays a character in the Unicode format so that the output begins with U+ followed by
+		a hexadecimal character code.
+
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		name := "Kayak"
+		Printfln("String: %s", name)
+		Printfln("Character: %c", []rune(name)[0])
+		Printfln("Unicode: %U", []rune(name)[0])
+	}
+Output:
+	String: Kayak
+	Character: K
+	Unicode: U+004B
+	`,
+// ====================================================================================
+		"218":`218.The bool Formatting Verb
+Verb    Description
+----    -------------
+%t      This verb formats bool values and displays true or false.
+
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		name := "Kayak"
+		Printfln("Bool: %t", len(name) > 1)
+		Printfln("Bool: %t", len(name) > 100)
+	}
+Output:
+	Bool: true
+	Bool: false
+	`,
+// ====================================================================================
+		"219":`219.The Pointer Formatting Verb
+Verb    Description
+----    -----------------
+%p      This verb displays a hexadecimal representation of the pointer's storage location.
+
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		name := "Kayak"
+		Printfln("Pointer: %p", &name)
+	}
+Output:
+	Pointer: 0xc00004a240
+	`,
+// ====================================================================================
+		"220":`220.The fmt Functions for Scanning Strings
+
+	Name                                Description
+	------------------------            ---------------------------------------------------------------------
+	Scan(...vals)                       This function reads text from the standard in and stores the space-
+										separated values into specified arguments. Newlines are treated as
+										spaces, and the function reads until it has received values for all of its
+										arguments. The result is the number of values that have been read and an
+										error that describes any problems.
+	Scanln(...vals)                     This function works in the same way as Scan but stops reading when it
+										encounters a newline character.
+	Scanf(template, ...vals)            This function works in the same way as Scan but uses a template string
+										to select the values from the input it receives.
+	Fscan(reader, ...vals)              This function reads space-separated values from the specified reader,
+										which is described in Chapter 20. Newlines are treated as spaces, and
+										the function returns the number of values that have been read and an
+										error that describes any problems.
+	Fscanln(reader, ...vals)            This function works in the same way as Fscan but stops reading when it
+										encounters a newline character.
+	Fscanf(reader, template, ...vals)   This function works in the same way as Fscan but uses a template to
+										select the values from the input it receives.
+	Sscan(str, ...vals)                 This function scans the specified string for space-separated values,
+										which are assigned to the remaining arguments. The result is the
+										number of values scanned and an error that describes any problems.
+	Sscanf(str, template, ...vals)      This function works in the same way as Sscan but uses a template to
+										select values from the string.
+	Sscanln(str, template, ...vals)     This function works in the same way as Sscanf but stops scanning the
+										string as soon as a newline character is encountered.
+											`,
+// ====================================================================================
+		"221":`221.Scanning a String
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		var name string
+		var category string
+		var price float64
+		fmt.Print("Enter text to scan: ")
+		n, err := fmt.Scan(&name, &category, &price)
+		if (err == nil) {
+			Printfln("Scanned %v values", n)
+			Printfln("Name: %v, Category: %v, Price: %.2f", name, category, price)
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+Output:
+	Enter text to scan: asd asd 123
+	Scanned 3 values
+	Name: asd, Category: asd, Price: 123.00
+	`,
+// ====================================================================================
+		"222":`222.Scanln Function
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		var name string
+		var category string
+		var price float64
+		fmt.Print("Enter text to scan: ")
+		n, err := fmt.Scanln(&name, &category, &price)
+		if (err == nil) {
+			Printfln("Scanned %v values", n)
+			Printfln("Name: %v, Category: %v, Price: %.2f", name, category, price)
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+Output:
+	Error: unexpected newline
+	`,
+// ====================================================================================
+		"223":`223.Sscan Function
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		var name string
+		var category string
+		var price float64
+		source := "Lifejacket Watersports 48.95"
+		n, err := fmt.Sscan(source, &name, &category, &price)
+		if (err == nil) {
+			Printfln("Scanned %v values", n)
+			Printfln("Name: %v, Category: %v, Price: %.2f", name, category, price)
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+Output:
+	Scanned 3 values
+	Name: Lifejacket, Category: Watersports, Price: 48.95
+	`,
+// ====================================================================================
+		"224":`224.Scanning Template
+The template ignores the term Product, skipping that part of the string and
+allowing the scanning to begin with the next term.
+example:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+	func main() {
+		var name string
+		var category string
+		var price float64
+		source := "Product Lifejacket Watersports 48.95"
+		template := "Product %s %s %f"
+		n, err := fmt.Sscanf(source, template, &name, &category, &price)
+		if (err == nil) {
+			Printfln("Scanned %v values", n)
+			Printfln("Name: %v, Category: %v, Price: %.2f", name, category, price)
+		} else {
+			Printfln("Error: %v", err.Error())
+		}
+	}
+Output:
+	Scanned 3 values
+	Name: Lifejacket, Category: Watersports, Price: 48.95
+	`,
+// ====================================================================================
+		"225":`225.Putting Math Functions and Sorting Data in Context
+What are they?
+The math functions allow common calculations to be performed. Random
+numbers are numbers generated in a sequence that is difficult to predict. Sorting
+is the process of placing a sequence of values in a predetermined order.
+
+Why are they useful?
+These are features that are used throughout development.
+
+How are they used?
+These features are provided in the math, math/rand, and sort packages.
+
+Are there any pitfalls or limitations?
+Unless initialized with a seed value, the numbers produced by the math/rand
+package are not random.
+
+Are there any alternatives?
+You could implement both sets of features from scratch, although these packages
+are provided so that this is not required.
+`,
+// ====================================================================================
+		"226":`226.Useful Functions from the math Package
+Name                Description
+--------------      ----------------------------------------------------------
+Abs(val)            This function returns the absolute value of a float64 value, meaning the distance
+					from zero without considering direction.
+Ceil(val)           This function returns the smallest integer that is equal to or greater than the specified
+					float64 value. The result is also a float64 value, even though it represents an integer
+					number.
+Copysign(x, y)      This function returns a float64 value, which is the absolute value of x with the sign of y.
+Floor(val)          This function returns the largest integer that is smaller or equal to the specified
+					float64 value. The result is also a float64 value, even though it represents an integer number.
+Max(x, y)           This function returns whichever of the specified float64 value is the largest.
+Min(x, y)           This function returns whichever of the specified float64 value is smallest.
+Mod(x, y)           This function returns the remainder of x/y.
+Pow(x, y)           This function returns x raised to the exponent y.
+Round(val)          This function rounds the specified value to the nearest integer, rounding half values
+					up. The result is a float64 value, even though it represents an integer.
+RoundToEven(val)    This function rounds the specified value to the nearest integer, rounding half values
+					to the nearest even number. The result is a float64 value, even though it represents
+					an integer.
+
+example:
+	package main
+	import "math"
+	func main() {
+		val1 := 279.00
+		val2 := 48.95
+		Printfln("Abs: %v", math.Abs(val1))
+		Printfln("Ceil: %v", math.Ceil(val2))
+		Printfln("Copysign: %v", math.Copysign(val1, -5))
+		Printfln("Floor: %v", math.Floor(val2))
+		Printfln("Max: %v", math.Max(val1, val2))
+		Printfln("Min: %v", math.Min(val1, val2))
+		Printfln("Mod: %v", math.Mod(val1, val2))
+		Printfln("Pow: %v", math.Pow(val1, 2))
+		Printfln("Round: %v", math.Round(val2))
+		Printfln("RoundToEven: %v", math.RoundToEven(val2))
+	}
+Output:
+	Abs: 279
+	Ceil: 49
+	Copysign: -279
+	Floor: 48
+	Max: 279
+	Min: 48.95
+	Mod: 34.249999999999986
+	Pow: 77841
+	Round: 49
+	RoundToEven: 49
+	`,
+// ====================================================================================
+		"227":`227.The Limit Constants
+
+	Name                        Description
+	----------------            -----------------------------
+	MaxInt8                     These constants represent the largest and smallest values that can be stored
+	MinInt8                     using an int8.
+	MaxInt16                    These constants represent the largest and smallest values that can be stored
+	MinInt16                    using an int16.
+	MaxInt32                    These constants represent the largest and smallest values that can be stored
+	MinInt32                    using an int32.
+	MaxInt64                    These constants represent the largest and smallest values that can be stored
+	MinInt64                    using an int64.
+	MaxUint8                    This constant represents the largest value that can be represented using a
+								uint8.The smallest value is zero.
+	MaxUint16                   This constant represents the largest value that can be represented using a
+								uint16. The smallest value is zero.
+	MaxUint32                   This constant represents the largest value that can be represented using a
+								uint32. The smallest value is zero.
+	MaxUint64                   This constant represents the largest value that can be represented using a
+								uint64. The smallest value is zero.
+	MaxFloat32                  These constants represent the largest values that can be represented using
+	MaxFloat64                  float32 and float64 values.
+	SmallestNonzeroFloat32      These constants represent the smallest nonzero values that can be
+	SmallestNonzeroFloat32      represented using float32 and float64 values.
+`,
+// ====================================================================================
+		"228":`228.Generating Random Numbers
+Useful math/rand Functions
+
+	Name                    Description
+	--------------------    ---------------------------------------
+	Seed(s)                 This function sets the seed value using the specified int64 value.
+	Float32()               This function generates a random float32 value between 0 and 1.
+	Float64()               This function generates a random float64 value between 0 and 1.
+	Int()                   This function generates a random int value.
+	Intn(max)               This function generates a random int smaller than a specified value, as
+							described after the table.
+	UInt32()                This function generates a random uint32 value.
+	UInt64()                This function generates a random uint64 value.
+	Shuffle(count, func)    This function is used to randomize the order of elements, as described after
+							the table.
+`,
+// ====================================================================================
+		"229":`229.rand.Int()
+example:
+	package main
+	import "math/rand"
+	func main() {
+		for i := 0; i < 5; i++ {
+			Printfln("Value %v : %v", i, rand.Int())
+		}
+	}
+Output:
+	Value 0 : 5577006791947779410
+	Value 1 : 8674665223082153551
+	Value 2 : 6129484611666145821
+	Value 3 : 4037200794235010051
+	Value 4 : 3916589616287113937
+`,
+// ====================================================================================
+		"230":`230.rand.Seed()
+Example:
+	package main
+	import (
+		"math/rand"
+		"time"
+	)
+	func main() {
+		rand.Seed(time.Now().UnixNano())
+		for i := 0; i < 5; i++ {
+			Printfln("Value %v : %v", i, rand.Int())
+		}
+	}
+Output:
+	Value 0 : 8113726196145714527
+	Value 1 : 3479565125812279859
+	Value 2 : 8074476402089812953
+	Value 3 : 3916870404047362448
+	Value 4 : 8226545715271170755
+`,
+// ====================================================================================
+		"231":`231.rand.Intn(rangeNumber)
+Generating a Random Number Within a Specific Range
+example:
+	package main
+	import (
+		"math/rand"
+		"time"
+	)
+	func main() {
+		rand.Seed(time.Now().UnixNano())
+		for i := 0; i < 5; i++ {
+			Printfln("Value %v : %v", i, rand.Intn(10))
+		}
+	}
+Output:
+	Value 0 : 7
+	Value 1 : 5
+	Value 2 : 4
+	Value 3 : 0
+	Value 4 : 7
+`,
+// ====================================================================================
+		"232":`232.Specifying a Lower Bound
+example:
+package main
+import (
+	"math/rand"
+	"time"
+)
+func IntRange(min, max int) int {
+	return rand.Intn(max - min) + min
+}
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	for i := 0; i < 5; i++ {
+		Printfln("Value %v : %v", i, IntRange(10, 20))
+	}
+}
+Output:
+	Value 0 : 10
+	Value 1 : 19
+	Value 2 : 11
+	Value 3 : 10
+	Value 4 : 17
+`,
+// ====================================================================================
+		"233":`233.Shuffling Elements
+example:
+	package main
+	import (
+		"math/rand"
+		"time"
+		"fmt"
+	)
+	var names = []string{"Alice", "Bob", "Charlie", "Dora", "Edith"}
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		rand.Seed(time.Now().UnixNano())
+		rand.Shuffle(len(names), func(first, second int) {
+			names[first], names[second] = names[second], names[first]
+		})
+		for i, name := range names {
+			Printfln("Index %v: Name: %v", i, name)
+		}
+	}
+Output:
+	Index 0: Name: Edith
+	Index 1: Name: Dora
+	Index 2: Name: Charlie
+	Index 3: Name: Alice
+	Index 4: Name: Bob
+`,
+// ====================================================================================
+		"234":`234.The Basic Functions for Sorting
+	Name                        Description
+	--------------------        -------------------------------------------
+	Float64s(slice)             This function sorts a slice of float64 values. The elements are sorted in place.
+	Float64sAreSorted(slice)    This function returns true if the elements in the specified float64 slice are in order.
+	Ints(slice)                 This function sorts a slice of int values. The elements are sorted in place.
+	IntsAreSorted(slice)        This function returns true if the elements in the specified int slice are in order.
+	Strings(slice)              This function sorts a slice of string values. The elements are sorted in place.
+	StringsAreSorted(slice)     This function returns true if the elements in the specified string slice are in order.
+`,
+// ====================================================================================
+		"235":`235.Sorting Slices
+example:
+	package main
+	import (
+		"fmt"
+		"sort"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		ints := []int{9, 4, 2, -1, 10}
+		Printfln("Ints: %v", ints)
+		
+		sort.Ints(ints)
+		Printfln("Ints Sorted: %v", ints)
+		
+		floats := []float64{279, 48.95, 19.50}
+		Printfln("Floats: %v", floats)
+		
+		sort.Float64s(floats)
+		Printfln("Floats Sorted: %v", floats)
+		
+		strings := []string{"Kayak", "Lifejacket", "Stadium"}
+		Printfln("Strings: %v", strings)
+		
+		
+		if !sort.StringsAreSorted(strings) {
+			sort.Strings(strings)
+			Printfln("Strings Sorted: %v", strings)
+		} else {
+			Printfln("Strings Already Sorted: %v", strings)
+		}
+	}
+Output:
+	Ints: [9 4 2 -1 10]
+	Ints Sorted: [-1 2 4 9 10]
+	Floats: [279 48.95 19.5]
+	Floats Sorted: [19.5 48.95 279]
+	Strings: [Kayak Lifejacket Stadium]
+	Strings Already Sorted: [Kayak Lifejacket Stadium]
+`,
+// ====================================================================================
+		"236":`236.Creating a Sorted Copy of a Slice
+example:
+	package main
+	import (
+		"fmt"
+		"sort"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		ints := []int{9, 4, 2, -1, 10}
+		
+		sortedInts := make([]int, len(ints))
+		
+		copy(sortedInts, ints)
+		
+		sort.Ints(sortedInts)
+		
+		
+		Printfln("Ints: %v", ints)
+		Printfln("Ints Sorted: %v", sortedInts)
+	}
+Output:
+	Ints: [9 4 2 -1 10]
+	Ints Sorted: [-1 2 4 9 10]
+`,
+// ====================================================================================
+		"237":`237.The Functions for Searching Sorted Data
+
+	Name                        Description
+	----------------------      ----------------------------------
+	SearchInts(slice, val)      This function searches the sorted slice for the specified int value. The
+								result is the index of the specified value or, if the value is not found, the
+								index at which the value can be inserted while maintaining the sorted order.
+	SearchFloat64s(slice, val)  This function searches the sorted slice for the specified float64 value.
+								The result is the index of the specified value or, if the value is not found,
+								the index at which the value can be inserted while maintaining the
+								sorted order.
+	SearchStrings(slice, val)   This function searches the sorted slice for the specified string value.
+								The result is the index of the specified value or, if the value is not found,
+								the index at which the value can be inserted while maintaining the
+								sorted order.
+	Search(count, testFunc)     This function invokes the test function for the specified number of
+								elements. The result is the index for which the function returns true.
+								If there is no match, then the result is the index at which the specified
+								value can be inserted to maintain the sorted order.
+`,
+// ====================================================================================
+		"238":`238.sort.SearchInts()
+    When a value is located, the functions return its position in the slice. 
+    But unusually, if the value is not found, then the result is the position it can be
+    inserted while maintaining the sort order.
+
+example:
+	package main
+	import (
+		"fmt"
+		"sort"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		ints := []int{9, 1, 2, -1, 10,5}
+		sortedInts := make([]int, len(ints))
+		copy(sortedInts, ints)
+		sort.Ints(sortedInts)
+		Printfln("Ints: %v", ints)
+		Printfln("Ints Sorted: %v", sortedInts)
+		
+		// ===========================================
+		indexOf4 := sort.SearchInts(sortedInts, 4)
+		Printfln("Index of 4: %v", indexOf4)
+		
+		indexOf3 := sort.SearchInts(sortedInts, 3)
+		Printfln("Index of 3: %v", indexOf3)
+	}
+Output:
+    Ints: [9 1 2 -1 10 5]
+    Ints Sorted: [-1 1 2 5 9 10]
+    Index of 4: 3
+    Index of 3: 3
+`,
+// ====================================================================================
+		"239":`239.sort.SearchInts() bool returned
+example:
+	package main
+	import (
+		"fmt"
+		"sort"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		ints := []int{9, 1, 2, -1, 10,5}
+		sortedInts := make([]int, len(ints))
+		copy(sortedInts, ints)
+		sort.Ints(sortedInts)
+		Printfln("Ints: %v", ints)
+		Printfln("Ints Sorted: %v", sortedInts)	
+		// =========================
+		indexOf4:= sort.SearchInts(sortedInts, 4)
+		indexOf3 := sort.SearchInts(sortedInts, 3)
+		Printfln("Index of 4: %v (present: %v)", indexOf4, sortedInts[indexOf4] == 4)
+		Printfln("Index of 3: %v (present: %v)", indexOf3, sortedInts[indexOf3] == 3)
+	}
+Output:
+	Ints: [9 1 2 -1 10 5]
+	Ints Sorted: [-1 1 2 5 9 10]
+	Index of 4: 3 (present: false)
+	Index of 3: 3 (present: false)
+`,
+// ====================================================================================
+		"240":`240.The Methods Defined by the sort.Interface Interface
+
+	Name            Description
+	----------      ----------------
+	Len()           This method returns the number of items that will be sorted.
+	Less(i, j)      This method returns true if the element at index i should appear in the sorted sequence
+					before the element j. If Less(i,j) and Less(j, i) are both false, then the elements are
+					considered equal.
+	Swap(i, j)      This method swaps the elements at the specified indices.
+`,
+// ====================================================================================
+		"241":`241.The Functions for Sorting Types That Implement Interface
+
+    Name            Description
+    ----------      ---------------------
+    Sort(data)      This function uses the methods described in 240 Number to sort the specified data.
+    Stable(data)    This function uses the methods described in 240 Number to sort the specified data
+                    without changing the order of elements of equal value.
+    IsSorted(data)  This function returns true if the data is in sorted order.
+    Reverse(data)   This function reverses the order of the data.
+
+example:
+main.go:
+	package main
+
+	import (
+		"fmt"
+	)
+
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+
+	func main() {
+		products := []Product{
+			{"Kayak", 279},
+			{"Lifejacket", 49.95},
+			{"Soccer Ball", 19.50},
+		}
+		ProductSlices(products)
+		
+		for _, p := range products {
+			Printfln("Name: %v, Price: %.2f", p.Name, p.Price)
+		}
+
+	}
+
+	Name: Soccer Ball, Price: 19.50
+	Name: Lifejacket, Price: 49.95
+	Name: Kayak, Price: 279.00
+`,
+// ====================================================================================
+		"242":`242.Sorting with a Comparison Function
+go mod init
+AND
+main.go File:
+	package main
+	import (
+		"fmt"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		products := []Product{
+			{"Kayak", 279},
+			{"Lifejacket", 49.95},
+			{"Soccer Ball", 19.50},
+		}
+		SortWith(products, func(p1, p2 Product) bool {
+			return p1.Name < p2.Name
+		})
+		for _, p := range products {
+			Printfln("Name: %v, Price: %.2f", p.Name, p.Price)
+		}    
+	}
+
+productsort.go File:
+	package main
+	import "sort"
+	type Product struct {
+		Name  string
+		Price float64
+	}
+	type ProductSlice []Product
+	func ProductSlices(p []Product) {
+		sort.Sort(ProductSlice(p))
+	}
+	func ProductSlicesAreSorted(p []Product) {
+		sort.IsSorted(ProductSlice(p))
+	}
+	func (products ProductSlice) Len() int {
+		return len(products)
+	}
+	func (products ProductSlice) Less(i, j int) bool {
+		return products[i].Price < products[j].Price
+	}
+	func (products ProductSlice) Swap(i, j int) {
+		products[i], products[j] = products[j], products[i]
+	}
+	type ProductComparison func(p1, p2 Product) bool
+	type ProductSliceFlex struct {
+	ProductSlice
+	ProductComparison
+	}
+	func (flex ProductSliceFlex) Less(i, j int) bool {
+		return flex.ProductComparison(flex.ProductSlice[i], flex.ProductSlice[j])
+	}
+	func SortWith(prods []Product, f ProductComparison) {
+		sort.Sort(ProductSliceFlex{ prods, f})
+	}
+`,
+// ====================================================================================
+		"243":`243.Putting Dates, Times, and Durations in Context
+What are they?
+The features provided by the time package are used to represent
+specific moments in time and intervals or durations.
+
+Why are they useful?
+These features are useful in any application that needs to deal with
+calendaring or alarm and for the development of any feature that
+requires delays or notifications in the future.
+
+How are they used?
+The time package defines data types for representing dates and
+individual units of time and functions for manipulating them. There
+are also features integrated into the Go channel system.
+
+Are there any pitfalls or limitations?
+Dates can be complex, and care must be taken to deal with calendar
+and time zone issues.
+
+Are there any alternatives?
+These are optional features, and their use is not required.
+`,
+// ====================================================================================
+		"244":`244.The Functions in the time Package for Creating Time Values
+
+	Name                                    Description
+	--------                                -----------------------------
+	Now()                                   This function creates a Time representing the current moment in time.
+	Date(y, m, d, h, min, sec, nsec, loc)   This function creates a Time representing a specified moment in time, which is
+											expressed by the year, month, day, hour, minute, second, nanosecond, and Location
+											arguments. (The Location type is described in the “Parsing Time Values from Strings”
+											section.)
+	Unix(sec, nsec)                         This function creates a Time value from the number of seconds and nanoseconds since
+											January 1, 1970, UTC, commonly known as Unix time.
+`,
+// ====================================================================================
+		"245":`245.The Methods for Accessing Time Components
+
+	Name            Description
+	--------        ----------------------------
+	Date()          This method returns the year, month, and day components. The year and day are
+					expressed as int values and the month as a Month value.
+	Clock()         This method returns the hour, minutes, and seconds components of the Time.
+	Year()          This method returns the year component, expressed as an int.
+	YearDay()       This method returns the day of the year, expressed as an int between 1 and 366 (to accommodate leap years).
+	Month()         This method returns the month component, expressed using the Month type.
+	Day()           This method returns the day of the month, expressed as an int.
+	Weekday()       This method returns the day of the week, expressed as a Weekday.
+	Hour()          This method returns the hour of the day, expressed as an int between 0 and 23.
+	Minute()        This method returns the number of minutes elapsed into the hour of the day, expressed as an int between 0 and 59.
+	Second()        This method returns the number of seconds elapsed into the minute of the hour, expressed as an int between 0 and 59.
+	Nanosecond()    This method returns the number of nanoseconds elapsed into the second of the minute,
+					expressed as an int between 0 and 999,999,999.
+`,
+// ====================================================================================
+		"246":`246.The Types Used to Describe Time Components
+
+    Name        Description
+    -------     ------------------------------------------------------------------------
+    Month       This type represents a month, and the time package defines constant values for the English-
+                language month names: January, February, etc. The Month type defines a String method that
+                uses these names when formatting strings.
+    Weekday     This type represents a day of the week, and the time package defines constant values for the
+                English-language weekday names: Sunday, Monday, etc. The Weekday type defines a String
+                method that uses these names when formatting strings.
+`,
+// ====================================================================================
+		"247":`247.Creating Time Values
+example:
+	package main
+	import "time"
+	func PrintTime(label string, t *time.Time) {
+		Printfln("%s: Day: %v: Month: %v Year: %v",
+			label, t.Day(), t.Month(), t.Year())
+	}
+	func main() {
+		current := time.Now()
+		specific := time.Date(1995, time.June, 9, 0, 0, 0, 0, time.Local)
+		unix := time.Unix(1433228090, 0)
+		PrintTime("Current", &current)
+		PrintTime("Specific", &specific)
+		PrintTime("UNIX", &unix)
+	}
+Output:
+	Current: Day: 15: Month: September Year: 2023
+	Specific: Day: 9: Month: June Year: 1995
+	UNIX: Day: 2: Month: June Year: 2015
+
+example:
+	package main
+	import "time"
+	func PrintTime(label string, t *time.Time) {
+		Printfln("%s: Day: %v: Month: %v Year: %v",
+			label, t.Day(), t.Month(), t.Year())
+	}
+	func main() {
+		current := time.Now()
+		specific := time.Date(1993, time.June, 0, 0, 0, 0, 0, time.Local)
+		unix := time.Unix(0, 0)
+		PrintTime("Current", &current)
+		PrintTime("Specific", &specific)
+		PrintTime("UNIX", &unix)
+	}
+Output:
+	Current: Day: 15: Month: September Year: 2023
+	Specific: Day: 31: Month: May Year: 1993
+	UNIX: Day: 31: Month: December Year: 1969
+`,
+// ====================================================================================
+		"248":`248.The Time Method for Creating Formatted Strings
+
+	Name                Description
+	--------------      --------------------
+	Format(layout)      This method returns a formatted string, which is created using the specified layout.
+
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func PrintTime(label string, t *time.Time) {
+		layout := "Day: 02 Month: Jan Year: 2006"
+		fmt.Println(label, t.Format(layout))
+	}
+	func main() {
+		current := time.Now()
+		specific := time.Date(1993, time.June, 0, 0, 0, 0, 0, time.Local)
+		unix := time.Unix(0, 0)
+		PrintTime("Current", &current)
+		PrintTime("Specific", &specific)
+		PrintTime("UNIX", &unix)
+	}
+Output:
+	Current Day: 16 Month: Sep Year: 2023
+	Specific Day: 31 Month: May Year: 1993
+	UNIX Day: 31 Month: Dec Year: 1969
+`,
+// ====================================================================================
+		"249":`249.The Layout Constants Defined by the time Package
+
+	Name            Reference Date Format
+	-----------     ----------------------------------
+	ANSIC           Mon Jan _2 15:04:05 2006
+	UnixDate        Mon Jan _2 15:04:05 MST 2006
+	RubyDate        Mon Jan 02 15:04:05 -0700 2006
+	RFC822          02 Jan 06 15:04 MST
+	RFC822Z         02 Jan 06 15:04 -0700
+	RFC850          Monday, 02-Jan-06 15:04:05 MST
+	RFC1123         Mon, 02 Jan 2006 15:04:05 MST
+	RFC1123Z        Mon, 02 Jan 2006 15:04:05 -0700
+	RFC3339         2006-01-02T15:04:05Z07:00
+	RFC3339Nano     2006-01-02T15:04:05.999999999Z07:00
+	Kitchen         3:04PM
+	Stamp           Jan _2 15:04:05
+	StampMilli      Jan _2 15:04:05.000
+	StampMicro      Jan _2 15:04:05.000000
+	StampNano       Jan _2 15:04:05.000000000
+`,
+// ====================================================================================
+		"250":`250.The time Package Functions for Parsing Strings into Time Values
+
+    Name                                        Description
+    --------------------------------------      -----------------------------------
+    Parse(layout, str)                          This function parses a string using the specified layout to create a Time value.
+                                                An error is returned to indicate problems parsing the string.
+    ParseInLocation(layout, str, location)      This function parses a string, using the specified layout and using the
+                                                Location if no time zone is included in the string. An error is returned to
+                                                indicate problems parsing the string.
+
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func PrintTime(label string, t *time.Time) {
+		fmt.Println(label, t.Format(time.RFC822Z))
+	}
+	func main() {
+		dates := []string{
+			"09 Jun 95 00:00 GMT",
+			"02 Jun 15 00:00 GMT",
+		}
+		
+		for _, d := range dates {
+			time, err := time.Parse(time.RFC822, d)
+			if err == nil {
+				PrintTime("Parsed", &time)
+			} else {
+				Printfln("Error: %s", err.Error())
+			}
+		}
+	}
+Output:
+	Parsed 09 Jun 95 00:00 +0000
+	Parsed 02 Jun 15 00:00 +0000
+`,
+// ====================================================================================
+		"251":`251.time.ParseInLocation()
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func PrintTime(label string, t *time.Time) {
+		//layout := "Day: 02 Month: Jan Year: 2006"
+		fmt.Println(label, t.Format(time.RFC822Z))
+	}
+	func main() {
+		layout := "02 Jan 06 15:04"
+		date := "09 Jun 95 19:30"
+		london, lonerr := time.LoadLocation("Europe/London")
+		newyork, nycerr := time.LoadLocation("America/New_York")
+		Tehran, TehranErr := time.LoadLocation("Asia/Tehran")
+	
+		if lonerr == nil && nycerr == nil  && TehranErr == nil{
+	
+			TehranTime, _ := time.ParseInLocation(layout, date, Tehran)
+			PrintTime("Tehran:",&TehranTime)
+	
+			nolocation, _ := time.Parse(layout, date)
+			PrintTime("No location:", &nolocation)
+	
+			londonTime, _ := time.ParseInLocation(layout, date, london)
+			PrintTime("London:", &londonTime)
+	
+			newyorkTime, _ := time.ParseInLocation(layout, date, newyork)
+			PrintTime("New York:", &newyorkTime)
+	
+		} else {
+			fmt.Println(lonerr.Error(), nycerr.Error())
+		}
+	}
+Output:
+	Tehran: 09 Jun 95 19:30 +0430
+	No location: 09 Jun 95 19:30 +0000
+	London: 09 Jun 95 19:30 +0100
+	New York: 09 Jun 95 19:30 -0400
+`,
+// ====================================================================================
+		"252":`252.The Functions for Creating Locations
+
+	Name                                Description
+	-------------------------           -----------------------------------------
+	LoadLocation(name)                  This function returns a *Location for the specified name and an
+										error that indicates any problems.
+	LoadLocationFromTZData(name,data)   This function returns a *Location from a byte slice that contains a
+										formatted time zone database.
+	FixedZone(name, offset)             This function returns a *Location that always uses the specified
+										name and offset from UTC.
+
+The place names are defined in the IANA time zone database, 
+https://www.iana.org/time-zones , 
+and are listed by 
+https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+`,
+// ====================================================================================
+		"253":`253.Embedding The Time Zone Database
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func PrintTime(label string, t *time.Time) {
+		//layout := "Day: 02 Month: Jan Year: 2006"
+		fmt.Println(label, t.Format(time.RFC822Z))
+	}
+	func main() {
+		layout := "02 Jan 06 15:04"
+		date := "09 Jun 95 19:30"
+		Tehran, TehranErr := time.LoadLocation("Asia/Tehran")
+		local, _ := time.LoadLocation("Local")
+		if TehranErr == nil{
+			TehranTime, _ := time.ParseInLocation(layout, date, Tehran)
+			PrintTime("Tehran:",&TehranTime)
+			localTime, _ := time.ParseInLocation(layout, date, local)
+			PrintTime("Local:", &localTime)
+			nolocation, _ := time.Parse(layout, date)
+			PrintTime("No location:", &nolocation)
+		} else {
+			fmt.Println(TehranErr.Error())
+		}
+	}
+Output:
+	Tehran: 09 Jun 95 19:30 +0430
+	Local: 09 Jun 95 19:30 -0400
+	No location: 09 Jun 95 19:30 +0000
+`,
+// ====================================================================================
+		"254":`254.Specifying Time Zones
+The arguments to the FixedZone function are a name and the number of seconds offset from UTC. This
+example creates three fixed time zones, one of which is an hour ahead of UTC, one of which is four hours
+behind, and one of which has no offset.
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func PrintTime(label string, t *time.Time) {
+		//layout := "Day: 02 Month: Jan Year: 2006"
+		fmt.Println(label, t.Format(time.RFC822Z))
+	}
+	func main() {
+		layout := "02 Jan 06 15:04"
+		date := "09 Jun 95 19:30"
+		london := time.FixedZone("BST", 1*60*60)
+		newyork := time.FixedZone("EDT", -4*60*60)
+		local := time.FixedZone("Local", 0)
+		
+		nolocation, _ := time.Parse(layout, date)
+		londonTime, _ := time.ParseInLocation(layout, date, london)
+		newyorkTime, _ := time.ParseInLocation(layout, date, newyork)
+		localTime, _ := time.ParseInLocation(layout, date, local)
+		
+		PrintTime("No location:", &nolocation)
+		PrintTime("London:", &londonTime)
+		PrintTime("New York:", &newyorkTime)
+		PrintTime("Local:", &localTime)
+	}
+Output:
+	No location: 09 Jun 95 19:30 +0000
+	London: 09 Jun 95 19:30 +0100
+	New York: 09 Jun 95 19:30 -0400
+	Local: 09 Jun 95 19:30 +0000
+`,
+// ====================================================================================
+		"255":`255.The Methods for Working with Time Values
+
+	Name                Description
+	----------------    -------------------------------------------------
+	Add(duration)       This method adds the specified Duration to the Time and returns the result.
+	Sub(time)           This method returns a Duration that expresses the difference between the Time on
+						which the method has been called and the Time provided as the argument.
+	AddDate(y, m, d)    This method adds the specified number of years, months, and days to the Time and
+						returns the result.
+	After(time)         This method returns true if the Time on which the method has been called occurs
+						after the Time provided as the argument.
+	Before(time)        This method returns true if the Time on which the method has been called occurs
+						before the Time provided as the argument.
+	Equal(time)         This method returns true if the Time on which the method has been called is equal
+						to the Time provided as the argument.
+	IsZero()            This method returns true if the Time on which the method has been called
+						represents the zero-time instant, which is January 1, year 1, 00:00:00 UTC.
+	In(loc)             This method returns the Time value, expressed in the specified Location.
+	Location()          This method returns the Location that is associated with the Time, effectively
+						allowing a time to be expressed in a different time zone.
+	Round(duration)     This method rounds the Time to the nearest interval represented by a Duration
+						value.
+	Truncate(duration)  This method rounds the Time down to the nearest interval represented by a
+						Duration value.
+`,
+// ====================================================================================
+		"256":`256.time.Parse()
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		t, err := time.Parse(time.RFC822, "09 Jun 95 04:59 BST")
+		if err == nil {
+			Printfln("After: %v", t.After(time.Now()))
+			Printfln("Round: %v", t.Round(time.Hour))
+			Printfln("Truncate: %v", t.Truncate(time.Hour))
+		} else {
+			fmt.Println(err.Error())
+		}
+	}
+Output:
+	After: false
+	Round: 1995-06-09 05:00:00 +0100 BST
+	Truncate: 1995-06-09 04:00:00 +0100 BST
+`,
+// ====================================================================================
+		"257":`257.Comparing Time Values
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		t1, _ := time.Parse(time.RFC822Z, "09 Jun 95 04:59 +0100")
+		t2, _ := time.Parse(time.RFC822Z, "08 Jun 95 23:59 -0400")
+		
+		Printfln("Equal Method: %v", t1.Equal(t2))
+		Printfln("Equality Operator: %v", t1 == t2)
+	}
+Output:
+	Equal Method: true
+	Equality Operator: false
+`,
+// ====================================================================================
+		"258":`258.The Duration Constants in the time Package
+
+	Name            Description
+	------------    ----------------------------------------
+	Hour            This constant represents 1 hour.
+	Minute          This constant represents 1 minute.
+	Second          This constant represents 1 second.
+	Millisecond     This constant represents 1 millisecond.
+	Microsecond     This constant represents 1 microsecond.
+	Nanosecond      This constant represents 1 nanosecond.
+`,
+// ====================================================================================
+		"259":`259.The Duration Methods
+
+    Name                Description
+    ----------------    ---------------------------------------------
+    Hours()             This method returns a float64 that represents the Duration in hours.
+    Minutes()           This method returns a float64 that represents the Duration in minutes.
+    Seconds()           This method returns a float64 that represents the Duration in seconds.
+    Milliseconds()      This method returns an int64 that represents the Duration in milliseconds.
+    Microseconds()      This method returns an int64 that represents the Duration in microseconds.
+    Nanoseconds()       This method returns an int64 that represents the Duration in nanoseconds.
+    Round(duration)     This method returns a Duration, which is rounded to the nearest multiple of the
+                        specified Duration.
+    Truncate(duration)  This method returns a Duration, which is rounded down to the nearest multiple of
+                        the specified Duration.
+`,
+// ====================================================================================
+		"260":`260.Hours() - Minutes() - Seconds() - rounded.Hours() - rounded.Minutes()
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		var d time.Duration = time.Hour + (30 * time.Minute)
+		Printfln("Hours: %v", d.Hours())
+		Printfln("Mins: %v", d.Minutes())
+		Printfln("Seconds: %v", d.Seconds())
+		Printfln("Millseconds: %v", d.Milliseconds())
+	
+	
+		rounded := d.Round(time.Hour)
+		Printfln("Rounded Hours: %v", rounded.Hours())
+		Printfln("Rounded Mins: %v", rounded.Minutes())
+	
+		trunc := d.Truncate(time.Hour)
+		Printfln("Truncated Hours: %v", trunc.Hours())
+		Printfln("Rounded Mins: %v", trunc.Minutes())
+	}
+Output:
+	Hours: 1.5
+	Mins: 90
+	Seconds: 5400
+	Millseconds: 5400000
+	Rounded Hours: 2
+	Rounded Mins: 120
+	Truncated Hours: 1
+	Rounded Mins: 60
+`,
+// ====================================================================================
+		"261":`261.The time Functions for Creating Duration Values relative to a Time
+	Name            Description
+	-----------     ----------------------------------------
+	Since(time)     This function returns a Duration expressing the elapsed time since the specified Time value.
+	Until(time)     This function returns a Duration expressing the elapsed time until the specified Time value.
+`,
+// ====================================================================================
+		"262":`262.time.Until(time) - Since(time)
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		toYears := func(d time.Duration) int {
+			return int(d.Hours() / (24 * 365))
+		}
+		
+		future := time.Date(2051, 0, 0, 0, 0, 0, 0, time.Local)
+		past := time.Date(1965, 0, 0, 0, 0, 0, 0, time.Local)
+		
+		Printfln("this year is %v.",time.Now().Year())
+		Printfln("Future: %v is %v.", toYears(time.Until(future)), future.Year())
+		Printfln("Past: %v is %v.", toYears(time.Since(past)), past.Year())
+	}
+Output:
+	this year is 2023.
+	Future: 27 is 2050.
+	Past: 58 is 1964.
+`,
+// ====================================================================================
+		"263":`263.time.ParseDuration function
+This function returns a Duration and an error, indicating if there were problems
+parsing the specified string.
+The format of the strings supported by the ParseDuration function is a sequence of number values
+followed by the unit indicators:
+
+	Unit        Description
+	-----       --------------------
+	h           This unit denotes hours.
+	m           This unit denotes minutes.
+	s           This unit denotes seconds.
+	ms          This unit denotes milliseconds.
+	us or μs    These units denotes microseconds.
+	ns          This unit denotes nanoseconds.
+
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func main() {
+		d, err := time.ParseDuration("1h30m")
+		if err == nil {
+			Printfln("Hours: %v", d.Hours())
+			Printfln("Mins: %v", d.Minutes())
+			Printfln("Seconds: %v", d.Seconds())
+			Printfln("Millseconds: %v", d.Milliseconds())
+		} else {
+			fmt.Println(err.Error())
+		}
+	}
+Output:
+	Hours: 1.5
+	Mins: 90
+	Seconds: 5400
+	Millseconds: 5400000
+`,
+// ====================================================================================
+		"264":`264.Using the Time Features for Goroutines and Channels
+The time package provides a small set of functions that are useful for working with goroutines and channels.
+
+	The time Package Functions:
+	Name                        Description
+	----------------------      ----------------------------------------
+	Sleep(duration)             This function pauses the current goroutine for at least the specified duration.
+	AfterFunc(duration,func)    This function executes the specified function in its own goroutine after the
+								specified duration. The result is a *Timer, whose Stop method can be used to
+								cancel the execution of the function before the duration elapses.
+	After(duration)             This function returns a channel that blocks for the specified duration and then
+								yields a Time value. See the “Receiving Timed Notifications” section for details.
+	Tick(duration)              This function returns a channel that periodically sends a Time value, where the
+								period is specified as a duration.
+`,
+// ====================================================================================
+		"265":`265.time.Sleep(time.Second * 1)
+Pausing a Goroutine The Sleep function pauses execution of the current goroutine for a specified duration
+	
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func writeToChannel(channel chan<- string) {
+		names := []string{"Alice", "Bob", "Charlie", "Dora"}
+		for _, name := range names {
+			channel <- name
+			time.Sleep(time.Second * 1)
+		}
+		close(channel)
+	}
+	func main() {
+		nameChannel := make(chan string)
+		
+		go writeToChannel(nameChannel)
+		
+		for name := range nameChannel {
+			Printfln("Read name: %v", name)
+		}
+	}
+Output:
+	Read name: Alice
+						// 1 second delaying
+	Read name: Bob
+						// 1 second delaying
+	Read name: Charlie
+						// 1 second delaying
+	Read name: Dora
+`,
+// ====================================================================================
+		"266":`266.time.AfterFunc() function
+The AfterFunc function is used to defer the execution of a function for a specified period
+Deferring a Function:
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func writeToChannel(channel chan<- string) {
+		names := []string{"Alice", "Bob", "Charlie", "Dora"}
+		for _, name := range names {
+			channel <- name
+			// time.Sleep(time.Second * 1)
+		}
+		close(channel)
+	}
+	func main() {
+		nameChannel := make(chan string)
+	
+		time.AfterFunc(time.Second*5, func() {
+			writeToChannel(nameChannel)
+		})
+	
+		for name := range nameChannel {
+			Printfln("Read name: %v", name)
+		}
+	}
+Output:
+	// It waits for 5 seconds and then continues the program.
+	Read name: Alice
+	Read name: Bob
+	Read name: Charlie
+	Read name: Dora
+`,
+// ====================================================================================
+		"267":`267.time.After(time.Second * 2)
+The result from the After function is a channel that carries Time values. The channel blocks for the
+specified duration, when a Time value is sent, indicating the duration has passed. In this example, the
+value sent over the channel acts as a signal and is not used directly, which is why it is assigned to the blank
+identifier, like this:
+
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func writeToChannel(channel chan<- string) {
+	
+		Printfln("Waiting for initial duration...")
+		_ = <-time.After(time.Second * 2)
+		Printfln("Initial duration elapsed.")
+	
+		names := []string{"Alice", "Bob", "Charlie", "Dora"}
+		for _, name := range names {
+			channel <- name
+			time.Sleep(time.Second * 1)
+		}
+		close(channel)
+	}
+	func main() {
+		nameChannel := make(chan string)
+		go writeToChannel(nameChannel)
+		for name := range nameChannel {
+			Printfln("Read name: %v", name)
+		}
+	}
+Output:
+	Waiting for initial duration... // Wait for 2 seconds
+	Initial duration elapsed.
+	Read name: Alice    // wait for 1 second
+	Read name: Bob      // wait for 1 second
+	Read name: Charlie  // wait for 1 second
+	Read name: Dora     // wait for 1 second
+`,
+// ====================================================================================
+		"268":`268.time.Sleep(time.Second * 3) with select statement
+Using a Timeout in a Select Statement
+
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func writeToChannel(channel chan<- string) {
+		Printfln("Waiting for initial duration...")
+		_ = <-time.After(time.Second * 2)
+		Printfln("Initial duration elapsed.")
+		names := []string{"Alice", "Bob", "Charlie", "Dora"}
+		for _, name := range names {
+			channel <- name
+			time.Sleep(time.Second * 3)
+		}
+		close(channel)
+	}
+	func main() {
+		nameChannel := make(chan string)
+		go writeToChannel(nameChannel)
+		channelOpen := true
+		for channelOpen {
+			Printfln("Starting channel read")
+			select {
+			case name, ok := <-nameChannel:
+				if !ok {
+					channelOpen = false
+				} else {
+					Printfln("Read name: %v", name)
+				}
+			case <-time.After(time.Second * 2):
+				Printfln("Timeout")
+			}
+		}
+	}
+Output:
+	Starting channel read
+	Waiting for initial duration...
+	Timeout
+	Starting channel read
+	Initial duration elapsed.
+	Read name: Alice
+	Starting channel read
+	Timeout
+	Starting channel read
+	Read name: Bob
+	Starting channel read
+	Timeout
+	Starting channel read
+	Read name: Charlie
+	Starting channel read
+	Timeout
+	Starting channel read
+	Read name: Dora
+	Starting channel read
+	Timeout
+	Starting channel read
+`,
+// ====================================================================================
+		"269":`269.NewTimer(duration)
+This function returns a *Timer with the specified period.
+Caution Be careful when stopping a timer. 
+The timer's channel is not closed, which means that reads from
+the channel will continue to block even after the timer has stopped.
+The Methods Defined by the Timer Struct:
+
+	Name                Description
+	------------        -------------------------------------------
+	C                   This field returns the channel over which the Time will send its Time value.
+	Stop()              This method stops the timer. The result is a bool that will be true if the timer has been
+						stopped and false if the timer had already sent its message.
+	Reset(duration)     This method stops a timer and resets it so that its interval is the specified Duration.
+
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func writeToChannel(channel chan<- string) {
+		timer := time.NewTimer(time.Minute * 10)
+		go func() {
+			time.Sleep(time.Second * 2)
+			Printfln("Resetting timer")
+			timer.Reset(time.Second)
+		}()
+		Printfln("Waiting for initial duration...")
+		<-timer.C
+		Printfln("Initial duration elapsed.")
+		names := []string{"Alice", "Bob", "Charlie", "Dora"}
+		for _, name := range names {
+			channel <- name
+		}
+		close(channel)
+	}
+	func main() {
+		nameChannel := make(chan string)
+		go writeToChannel(nameChannel)
+		for name := range nameChannel {
+			Printfln("Read name: %v", name)
+		}
+	}
+Output:
+	Waiting for initial duration...
+	Resetting timer
+	Initial duration elapsed.
+	Read name: Alice
+	Read name: Bob
+	Read name: Charlie
+	Read name: Dora
+`,
+// ====================================================================================
+		"270":`270.time.Tick(time.Second)
+Receiving Recurring Notifications دریافت اعلان های مکرر
+The Tick function returns a channel over which Time values are sent at a specified interval
+
+Tick is a convenience wrapper for NewTicker providing access to the ticking channel only. 
+While Tick is useful for clients that have no need to shut down the Ticker, 
+be aware that without a way to shut it down the underlying
+Ticker cannot be recovered by the garbage collector; it "leaks".
+Unlike NewTicker, Tick will return nil if d <= 0.
+
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func writeToChannel(nameChannel chan<- string) {
+		names := []string{"Alice", "Bob", "Charlie", "Dora"}
+		tickChannel := time.Tick(time.Second)
+		index := 0
+		for {
+			<-tickChannel
+			nameChannel <- names[index]
+			index++
+			if index == len(names) {
+				index = 0
+			}
+		}
+	}
+	func main() {
+		nameChannel := make(chan string)
+
+		go writeToChannel(nameChannel)
+
+		for name := range nameChannel {
+			Printfln("Read name: %v", name)
+		}
+		
+	}
+Output:
+	Read name: Alice
+	Read name: Bob
+	Read name: Charlie
+	Read name: Dora
+	Read name: Alice
+	Read name: Bob
+	Read name: Charlie
+	Read name: Dora
+	Read name: Alice
+	Read name: Bob
+	Read name: Charlie
+	Read name: Dora
+	...
+`,
+// ====================================================================================
+		"271":`271.NewTicker(duration)
+The result of the NewTicker function is a pointer to a Ticker struct, which defines the field and methods
+The time Function for Creating a Ticker:
+
+	Name                    Description
+	---------------------   ---------------------------------
+	NewTicker(duration)     This function returns a *Ticker with the specified period.
+
+	The Field and Methods Defined by the Ticker Struct:
+	Name                Description
+	----------------    --------------------------------
+	C                   This field returns the channel over which the Ticker will send its Time values.
+	Stop()              This method stops the ticker (but does not close the channel returned by the C field).
+	Reset(duration)     This method stops a ticker and resets it so that its interval is the specified Duration.
+`,
+// ====================================================================================
+		"272":`272.Creating a Ticker in the main.go
+example:
+	package main
+	import (
+		"fmt"
+		"time"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+	func writeToChannel(nameChannel chan<- string) {
+		names := []string{"Alice", "Bob", "Charlie", "Dora"}
+		ticker := time.NewTicker(time.Second / 10)
+		index := 0
+		for {
+			<-ticker.C
+			nameChannel <- names[index]
+			index++
+			if index == len(names) {
+				ticker.Stop()
+				close(nameChannel)
+				break
+			}
+		}
+	}
+	func main() {
+		nameChannel := make(chan string)
+	
+		go writeToChannel(nameChannel)
+	
+		for name := range nameChannel {
+			Printfln("Read name: %v", name)
+		}
+	}
+Output: 
+	// This is printed after milliseconds
+	Read name: Alice
+	Read name: Bob
+	Read name: Charlie
+	Read name: Dora
+`,
+// ====================================================================================
+		"273":`273.Reading and Writing Data
+These interfaces are used wherever data is read or written, which means that any
+source or destination for data can be treated in much the same way so that writing data to a file, for example,
+is just the same as writing data to a network connection.
+
+What are they?
+These interfaces define the basic methods required to read and write data.
+
+Why are they useful?
+This approach means that just about any data source can be used
+in the same way, while still allowing specialized features to be
+defined using the composition features.
+
+How is it used?
+The io package defines these interfaces, but the implementations
+are available from a range of other packages
+
+Are there any pitfalls or limitations?
+These interfaces don't entirely hide the detail of sources or
+destinations for data and additional methods are often required,
+provided by interfaces that build on Reader and Writer.
+
+Are there any alternatives?
+The use of these interfaces is optional, but they are hard to avoid
+because they are used throughout the standard library.
+
+The Reader and Writer interfaces are defined by the io package and 
+provide abstract ways to read and write data, 
+without being tied to where the data is coming from or going to.
+
+Preparing for This Chapter:
+product.go:
+	package main
+	type Product struct {
+		Name, Category string
+		Price          float64
+	}
+	var Kayak = Product{
+		Name:     "Kayak",
+		Category: "Watersports",
+		Price:    279,
+	}
+	var Products = []Product{
+		{"Kayak", "Watersports", 279},
+		{"Lifejacket", "Watersports", 49.95},
+		{"Soccer Ball", "Soccer", 19.50},
+		{"Corner Flags", "Soccer", 34.95},
+		{"Stadium", "Soccer", 79500},
+		{"Thinking Cap", "Chess", 16},
+		{"Unsteady Chair", "Chess", 75},
+		{"Bling-Bling King", "Chess", 1200},
+	}
+printer.go:
+	package main
+	import (
+		"fmt"
+	)
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template+"\n", values...)
+	}
+main.go:
+	package main
+	func main() {
+		Printfln("Product: %v, Price : %v", Kayak.Name, Kayak.Price)
+	}
+`,
+// ====================================================================================
+		"274":`274.The Reader interface
+The Reader interface doesn't include any detail about where data comes from or how it is obtained—it
+just defines the Read method. The details are left to the types that implement the interface, and there are
+reader implementations in the standard library for different data sources.	
+defines a single method:
+
+	Name                Description
+	--------------      -------------------------
+	Read(byteSlice)     This method reads data into the specified []byte. The method returns the number of
+						bytes that were read, expressed as an int, and an error.
+`,
+// ====================================================================================
+		"275":`275.io.Reader package
+example:
+	package main
+	import (
+		"io"
+		"strings"
+	)
+	func processData(reader io.Reader) {
+		b := make([]byte, 2)
+		for {
+			count, err := reader.Read(b)
+			if count > 0 {
+				Printfln("Read %v bytes: %v", count, string(b[0:count]))
+			}
+			if err == io.EOF {
+				break
+			}
+		}
+	}
+	func main() {
+		r := strings.NewReader("Kayak")
+		processData(r)
+	}
+Output:
+	Read 2 bytes: Ka
+	Read 2 bytes: ya
+	Read 1 bytes: k
+`,
+// ====================================================================================
+		"276":`276.Writer interface
+Write(byteSlice)
+	This method writes the data from the specified byte slice. The method returns the
+	number of bytes that were written and an error. The error will be non-nil if the
+	number of bytes written is less than the length of the slice.
+	The Writer interface doesn't include any details of how the written data is stored, transmitted, or
+	processed, all of which is left to the types that implement the interface.
+`,
+// ====================================================================================
+		"277":`277.io.Writer
+example:
+	package main
+	import(
+		"io"
+		"strings"
+		"asd/asd"
+	)
+	func processData(reader io.Reader, writer io.Writer) {
+		b := make([]byte, 2)
+		for {
+			count, err := reader.Read(b)
+			if count > 0 {
+				writer.Write(b[0:count])
+				asd.Printfln("Read %v bytes: %v", count, string(b[0:count]))
+			}
+			if err == io.EOF {
+				break
+			}
+		}
+	}
+	func main() {
+		r := strings.NewReader("Kayak")
+		var builder strings.Builder
+		processData(r, &builder)
+		asd.Printfln("String builder contents: %s", builder.String())
+	}
+Output:
+	Read 2 bytes: Ka
+	Read 2 bytes: ya
+	Read 1 bytes: k
+	String builder contents: Kayak
+`,
+// ====================================================================================
+		"278":`278.io.EOF
+The io package defines a special error named EOF, 
+which is used to signal when the Reader reaches the end of the data. 
+If the error result from the Read function is equal to the EOF error, 
+then I break out of the for
+loop that has been reading data from the Reader:
+...
+if err == io.EOF {
+	break
+}
+...
+`,
+// ====================================================================================
+		"279":`279.the Utility Functions for Readers and Writers
+Functions in the io Package for Readng and Writing Data
+
+	Name                            Description
+	------------------------        -------------------------------------------------------
+	Copy(w, r)                      This function copies data from a Reader to a Writer until EOF is returned or
+									another error is encountered. The results are the number of bytes copies and an
+									error used to describe any problems.
+	CopyBuffer(w, r, buffer)        This function performs the same task as Copy but reads the data into the
+									specified buffer before it is passed to the Writer.
+	CopyN(w, r, count)              This function copies count bytes from the Reader to the Writer. The results are
+									the number of bytes copies and an error used to describe any problems.
+	ReadAll(r)                      This function reads data from the specified Reader until EOF is reached. The
+									results are a byte slice containing the read data and an error, which is used to
+									describe any problems.
+	ReadAtLeast(r, byteSlice, min)  This function reads at least the specified number of bytes from the reader,
+									placing them into the byte slice. An error is reported if fewer bytes than specified
+									are read.
+	ReadFull(r, byteSlice)          This function fills the specified byte slice with data. The result is the number
+									of bytes read and an error. An error will be reported if EOF was encountered
+									before enough bytes to fill the slice were read.
+	WriteString(w, str)             This function writes the specified string to a writer.
+`,
+// ====================================================================================
+		"280":`280.io.Copy(writer, reader)
+example:
+	package main
+	import(
+		"io"
+		"asd/asd"
+		"strings"
+	)
+	func processData(reader io.Reader, writer io.Writer) {
+		count, err := io.Copy(writer, reader)
+			if (err == nil) {
+				asd.Printfln("Read %v bytes", count)
+			} else {
+				asd.Printfln("Error: %v", err.Error())
+			}
+	}
+	func main() {
+
+		r := strings.NewReader("Kayak .")
+		var builder strings.Builder
+		processData(r, &builder)
+		asd.Printfln("String builder contents: %s", builder.String())
+	}
+Output:
+	Read 7 bytes
+	String builder contents: Kayak .
+`,
+// ====================================================================================
+		"281":`281.The io Package Functions for Specialized Readers and Writers
+
+	Name                        Description
+	-----------                 ----------------------------------------
+	Pipe()                      This function returns a PipeReader and a PipeWriter, which can be used to connect
+								functions that require a Reader and a Writer, as described in the “Using Pipes” section.
+	MultiReader(...readers)     This function defines a variadic parameter that allows an arbitrary number of Reader
+								values to be specified. The result is a Reader that passes on the content from each of
+								its parameters in the sequence they are defined, as described in the “Concatenating
+								Multiple Readers” section.
+	MultiWriter(...writers)     This function defines a variadic parameter that allows an arbitrary number of Writer
+								values to be specified. The result is a Writer that sends the same data to all the
+								specified writers, as described in the “Combining Multiple Writers” section.
+	LimitReader(r, limit)       This function creates a Reader that will EOF after the specified number of bytes, as
+								described in the “Limiting Read Data” section.
+`,
+// ====================================================================================
+		"282":`282.Pipe
+    Pipes are used to connect code that consumes data through a Reader 
+    and code that produces code through a Writer.
+    The GenerateData function defines a Writer parameter, which it uses to write bytes from a string.
+    example:
+    data.go:
+        package main
+        import (
+            "io"
+            "asd/asd"
+        )
+        func GenerateData(writer io.Writer) {
+            data := []byte("Kayak, Lifejacket")
+            writeSize := 4
+            for i := 0; i < len(data); i += writeSize {
+                    end := i + writeSize;
+                    if (end > len(data)) {
+                        end = len(data)
+                    }
+                    count, err := writer.Write(data[i: end])
+                    asd.Printfln("Wrote %v byte(s): %v", count, string(data[i: end]))
+                    if (err != nil)  {
+                        asd.Printfln("Error: %v", err.Error())
+                    }
+                }
+            }
+        func ConsumeData(reader io.Reader) {
+            data := make([]byte, 0, 10)
+            slice := make([]byte, 2)
+            for {
+                count, err := reader.Read(slice)
+                if (count > 0) {
+                    asd.Printfln("Read data: %v", string(slice[0:count]))
+                    data = append(data, slice[0:count]...)
+                }
+                if (err == io.EOF) {
+                    break
+                }
+            }
+            asd.Printfln("Read data: %v", string(data))
+        }
+	=====================================================================================
+    Notice the parentheses at the end of this statement. These are required when creating a goroutine for an
+    anonymous function, but it is easy to forget them.
+    main.go:
+        package main
+        import (
+            "io"
+        )
+        func main() {
+        
+            pipeReader, pipeWriter := io.Pipe()
+            go func() {
+                GenerateData(pipeWriter)
+                pipeWriter.Close()
+            }()
+            ConsumeData(pipeReader)
+        }
+	=====================================================================================
+    The output highlights the fact that pipes are synchronous. The GenerateData function calls the writer's
+    Write method and then blocks until the data is read. This is why the first message in the output is from the
+    reader: the reader is consuming the data two bytes at a time, which means that two read operations are
+    required before the initial call to the Write method, which is used to send four bytes, completes, and the
+    message from the GenerateData function is displayed.
+    Output:
+        Read data: Ka
+        Read data: ya
+        Wrote 4 byte(s): Kaya
+        Read data: k,
+        Read data:  L
+        Wrote 4 byte(s): k, L
+        Read data: if
+        Read data: ej
+        Wrote 4 byte(s): ifej
+        Read data: ac
+        Read data: ke
+        Wrote 4 byte(s): acke
+        Read data: t
+        Wrote 1 byte(s): t
+        Read data: Kayak, Lifejacket`,
+// ====================================================================================
+		"283":`283.PipeReader and a PipeWriter
+The io.Pipe function returns a PipeReader and a PipeWriter. The PipeReader and PipeWriter structs
+implement the Closer interface
+
+	Name        Description
+	-------     -----------------------
+	Close()     This method closes the reader or writer. The details are implementation specific, but, in
+				general, any subsequent reads from a closed Reader will return zero bytes and the EOF error,
+				while any subsequent writes to a closed Writer will return an error.
+
+	The PipeReader struct implements the Reader interface, which means I can use it as the argument to
+	the ConsumeData function. The ConsumeData function is executed in the main goroutine, which means that
+	the application won't exit until the function completes.
+	The effect is that data is written into the pipe using the PipeWriter and read from the pipe using the
+	PipeReader. When the GenerateData function is complete, the Close method is called on the PipeWriter,
+	which causes the next read by the PipeReader to produce EOF.
+`,
+// ====================================================================================
+		"284":`284.io.MultiReader()
+example:
+main.go:
+	package main
+	import (
+		"io"
+		"strings"
+	)
+	func main() {
+		r1 := strings.NewReader("Kayak")
+		r2 := strings.NewReader("Lifejacket")
+		r3 := strings.NewReader("Canoe")
+		concatReader := io.MultiReader(r1, r2, r3)
+		ConsumeData(concatReader)
+	}
+Output:
+	Read data: Ka
+	Read data: ya
+	Read data: k
+	Read data: Li
+	Read data: fe
+	Read data: ja
+	Read data: ck
+	Read data: et
+	Read data: Ca
+	Read data: no
+	Read data: e
+	Read data: KayakLifejacketCanoe
+`,
+// ====================================================================================
+		"285":`285.io.MultiWriter()
+example:
+	package main
+	import (
+		"io"
+		"strings"
+		"asd/asd"
+	)
+	func main() {
+		var w1 strings.Builder
+		var w2 strings.Builder
+		var w3 strings.Builder
+		combinedWriter := io.MultiWriter(&w1, &w2, &w3)
+		GenerateData(combinedWriter)
+		asd.Printfln("Writer #1: %v", w1.String())
+		asd.Printfln("Writer #2: %v", w2.String())
+		asd.Printfln("Writer #3: %v", w3.String())
+	}
+Output:
+	Wrote 4 byte(s): Kaya
+	Wrote 4 byte(s): k, L
+	Wrote 4 byte(s): ifej
+	Wrote 4 byte(s): acke
+	Wrote 1 byte(s): t
+	Writer #1: Kayak, Lifejacket
+	Writer #2: Kayak, Lifejacket
+	Writer #3: Kayak, Lifejacket
+`,
+// ====================================================================================
+		"286":`286.io.TeeReader(concatReader, &writer)
+Echoing Reads to a Writer
+The TeeReader function returns a Reader that echoes the data that it receives to a Writer.
+example:
+	package main
+	import (
+		"asd/asd"
+		"io"
+		"strings"
+	)
+	func main() {
+	
+		r1 := strings.NewReader("Kayak")
+		r2 := strings.NewReader("Lifejacket")
+		r3 := strings.NewReader("Canoe")
+		concatReader := io.MultiReader(r1, r2, r3)
+		var writer strings.Builder
+		teeReader := io.TeeReader(concatReader, &writer)
+		ConsumeData(teeReader)
+		asd.Printfln("Echo data: %v", writer.String())
+	}
+Output:
+	Read data: Ka
+	Read data: ya
+	Read data: k
+	Read data: Li
+	Read data: fe
+	Read data: ja
+	Read data: ck
+	Read data: et
+	Read data: Ca
+	Read data: no
+	Read data: e
+	Read data: KayakLifejacketCanoe
+	Echo data: KayakLifejacketCanoe
+`,
+// ====================================================================================
+		"287":`287.io.LimitReader(concatReader, 5)
+The LimitReader function is used to restrict the amount of data that can be obtained from a Reader
+example:
+	package main
+	import (
+		"io"
+		"strings"
+	)
+	func main() {
+		r1 := strings.NewReader("Kayak")
+		r2 := strings.NewReader("Lifejacket")
+		r3 := strings.NewReader("Canoe")
+		concatReader := io.MultiReader(r1, r2, r3)
+		limited := io.LimitReader(concatReader, 5)
+		ConsumeData(limited)
+	}
+Output:
+	Read data: Ka
+	Read data: ya
+	Read data: k
+	Read data: Kayak
+`,
+// ====================================================================================
+		"288":`288.bufio
+The bufio package provides support for adding buffers to readers and writers.
+example:
+	This code defined a struct type named CustomReader that acts as a wrapper around a Reader. 
+	The implementation of the Read method generates output that reports how much data is read and
+	how many read operations are performed overall. 
+	custom.go:
+		package main
+		import (
+			"io"
+			"asd/asd"
+		)
+		type CustomReader struct {
+			reader    io.Reader
+			readCount int
+		}
+		func NewCustomReader(reader io.Reader) *CustomReader {
+			return &CustomReader{reader, 0}
+		}
+		func (cr *CustomReader) Read(slice []byte) (count int, err error) {
+			count, err = cr.reader.Read(slice)
+			cr.readCount++
+			asd.Printfln("Custom Reader: %v bytes", count)
+			if err == io.EOF {
+				asd.Printfln("Total Reads: %v", cr.readCount)
+			}
+			return
+		}
+
+	main.go:
+		package main
+		import (
+			"asd/asd"
+			"io"
+			"strings"
+		)
+		func main() {
+			text := "It was a boat. A small boat."
+			var reader io.Reader = NewCustomReader(strings.NewReader(text))
+			var writer strings.Builder
+			slice := make([]byte, 5)
+			for {
+				count, err := reader.Read(slice)
+				if count > 0 {
+					writer.Write(slice[0:count])
+				}
+				if err != nil {
+					break
+				}
+			}
+			asd.Printfln("Read data: %v", writer.String())
+		}
+	The NewCustomreader function is used to create a CustomReader that reads from a string and uses a for
+	loop to consume the data using a byte slice.
+	Output:
+		Custom Reader: 5 bytes
+		Custom Reader: 5 bytes
+		Custom Reader: 5 bytes
+		Custom Reader: 5 bytes
+		Custom Reader: 5 bytes
+		Custom Reader: 3 bytes
+		Custom Reader: 0 bytes
+		Total Reads: 7
+		Read data: It was a boat. A small boat.
+`,
+// ====================================================================================
+		"289":`289.bufio Functions for Creating Buffered Readers
+
+	Name                        Description
+	----------------------      ---------------------------------
+	NewReader(r)                This function returns a buffered Reader with the default buffer size (which is
+								4,096 bytes at the time of writing).
+	NewReaderSize(r, size)      This function returns a buffered Reader with the specified buffer size.
+`,
+// ====================================================================================
+		"290":`290.bufio.NewReader(reader)
+The default buffer size is 4,096 bytes, which means that the buffered reader was able to read all the data
+in a single read operation, plus an additional read to produce the EOF result. Introducing the buffer reduces
+the overhead associated with the read operations, albeit at the cost of the memory used to buffer the data.
+example:
+	package main
+	import (
+		"io"
+		"strings"
+		"bufio"
+	)
+	func main() {
+		text := "It was a boat. A small boat."
+		var reader io.Reader = NewCustomReader(strings.NewReader(text))
+		var writer strings.Builder
+		slice := make([]byte, 5)
+		reader = bufio.NewReader(reader)
+		for {
+			count, err := reader.Read(slice)
+			if (count > 0) {
+				writer.Write(slice[0:count])
+			}
+			if (err != nil) {
+				break
+			}
+		}
+		Printfln("Read data: %v", writer.String())
+	}
+Output:
+	Custom Reader: 28 bytes
+	Custom Reader: 0 bytes
+	Total Reads: 2
+	Read data: It was a boat. A small boat.
+`,
+// ====================================================================================
+		"291":`291.Additional Buffered Reader Methods
+The NewReader and NewReaderSize functions return bufio.Reader values, which implement the io.
+Reader interface and which can be used as drop-in wrappers for other types of Reader methods, seamlessly
+introducing a read buffer.
+`,
+// ====================================================================================
+		"292":`292.The Methods Defined by the Buffered Reader
+
+	Name                Description
+	--------------      ------------------------------------------
+	Buffered()          This method returns an int that indicates the number of bytes that can be read from the buffer.
+	Discard(count)      This method discards the specified number of bytes.
+	Peek(count)         This method returns the specified number of bytes without removing them from the
+						buffer, meaning they will be returned by subsequent calls to the Read method.
+	Reset(reader)       This method discards the data in the buffer and performs subsequent reads from the
+						specified Reader.
+	Size()              This method returns the size of the buffer, expressed int.
+`,
+// ====================================================================================
+		"293":`293.buffered.Read(slice)
+example:
+	package main
+	import (
+		"io"
+		"strings"
+		"bufio"
+	)
+	func main() {
+		text := "It was a boat. A small boat."
+		var reader io.Reader = NewCustomReader(strings.NewReader(text))
+		var writer strings.Builder
+		slice := make([]byte, 5)
+		buffered := bufio.NewReader(reader)
+		for {
+			count, err := buffered.Read(slice)
+			if (count > 0) {
+				Printfln("Buffer size: %v, buffered: %v",
+					buffered.Size(), buffered.Buffered())
+				writer.Write(slice[0:count])
+			}
+			if (err != nil) {
+					break
+				}
+		}
+		Printfln("Read data: %v", writer.String())
+	}
+Output:
+	Custom Reader: 28 bytes
+	Buffer size: 4096, buffered: 23
+	Buffer size: 4096, buffered: 18
+	Buffer size: 4096, buffered: 13
+	Buffer size: 4096, buffered: 8
+	Buffer size: 4096, buffered: 3
+	Buffer size: 4096, buffered: 0
+	Custom Reader: 0 bytes
+	Total Reads: 2
+	Read data: It was a boat. A small boat.
+`,
+// ====================================================================================
+		"294":`294.bufio Functions for Creating Buffered Writers
+
+	Name                        Description
+	-----------------------     --------------------------------------
+	NewWriter(w)                This function returns a buffered Writer with the default buffer size (which is
+								4,096 bytes at the time of writing).
+	NewWriterSize(w, size)      This function returns a buffered Writer with the specified buffer size.
+`,
+// ====================================================================================
+		"295":`295.Methods Defined by the bufio.Writer Struct
+
+	Name                Description
+	--------------      -----------------------------------
+	Available()         This method returns the number of available bytes in the buffer.
+	Buffered()          This method returns the number of bytes that have been written to the buffer.
+	Flush()             This method writes the contents of the buffer to the underlying Writer.
+	Reset(writer)       This method discards the data in the buffer and performs subsequent writes to the
+						specified Writer.
+	Size()              This method returns the capacity of the buffer in bytes.
+`,
+// ====================================================================================
+		"296":`296.Defining a Custom Writer example
+The NewCustomWriter constructor wraps a Writer with a CustomWriter struct, which reports on its
+write operations.
+custom.go:
+	package main
+	import (
+		"asd/asd"
+		"io"
+	)
+	type CustomReader struct {
+		reader    io.Reader
+		readCount int
+	}
+	func NewCustomReader(reader io.Reader) *CustomReader {
+		return &CustomReader{reader, 0}
+	}
+	func (cr *CustomReader) Read(slice []byte) (count int, err error) {
+		count, err = cr.reader.Read(slice)
+		cr.readCount++
+		asd.Printfln("Custom Reader: %v bytes", count)
+		if err == io.EOF {
+			asd.Printfln("Total Reads: %v", cr.readCount)
+		}
+		return
+	}
+	type CustomWriter struct {
+		writer     io.Writer
+		writeCount int
+	}
+	func NewCustomWriter(writer io.Writer) *CustomWriter {
+		return &CustomWriter{writer, 0}
+	}
+	func (cw *CustomWriter) Write(slice []byte) (count int, err error) {
+		count, err = cw.writer.Write(slice)
+		cw.writeCount++
+		asd.Printfln("Custom Writer: %v bytes", count)
+		return
+	}
+	func (cw *CustomWriter) Close() (err error) {
+		if closer, ok := cw.writer.(io.Closer); ok {
+			closer.Close()
+		}
+		asd.Printfln("Total Writes: %v", cw.writeCount)
+		return
+	}    
+main.go:
+	package main
+	import (
+		"strings"
+		"asd/asd"
+	)
+	func main() {
+		text := "It was a boat. A small boat."
+		var builder strings.Builder
+		var writer = NewCustomWriter(&builder)
+		for i := 0; true; {
+			end := i + 5
+			if end >= len(text) {
+				writer.Write([]byte(text[i:]))
+				break
+			}
+			writer.Write([]byte(text[i:end]))
+			i = end
+		}
+		asd.Printfln("Written data: %v", builder.String())
+	}
+Output:
+	Custom Writer: 5 bytes
+	Custom Writer: 5 bytes
+	Custom Writer: 5 bytes
+	Custom Writer: 5 bytes
+	Custom Writer: 5 bytes
+	Custom Writer: 3 bytes
+	Written data: It was a boat. A small boat.`,
+// ====================================================================================
+		"297":`297.Using a Buffered Writer in the main.go example
+example:
+main.go:
+	package main
+	import (
+		"strings"
+		"asd/asd"
+		"bufio"
+	)
+	func main() {
+		text := "It was a boat. A small boat."
+		var builder strings.Builder
+		var writer = bufio.NewWriterSize(NewCustomWriter(&builder), 20)
+		for i := 0; true; {
+			end := i + 5
+			if end >= len(text) {
+				writer.Write([]byte(text[i:]))
+				writer.Flush()
+				break
+			}
+			writer.Write([]byte(text[i:end]))
+			i = end
+		}
+		asd.Printfln("Written data: %v", builder.String())
+	}
+Output:
+	Custom Writer: 20 bytes
+	Custom Writer: 8 bytes
+	Written data: It was a boat. A small boat.
+`,
+// ====================================================================================
+		"298":`298.Scanning from a Reader
+example:
+main.go
+	package main
+	import (
+		"io"
+		"strings"
+		"asd/asd"
+		"fmt"
+	)
+	func scanFromReader(reader io.Reader, template string,
+		vals ...interface{}) (int, error) {
+		return fmt.Fscanf(reader, template, vals...)
+	}
+	func main() {
+		reader := strings.NewReader("Kayak Watersports $279.00")
+		var name, category string
+		var price float64
+		scanTemplate := "%s %s $%f"
+		_, err := scanFromReader(reader, scanTemplate, &name, &category, &price)
+		if err != nil {
+			asd.Printfln("Error: %v", err.Error())
+		} else {
+			asd.Printfln("Name: %v", name)
+			asd.Printfln("Category: %v", category)
+			asd.Printfln("Price: %.2f", price)
+		}
+	}
+Output:
+	Name: Kayak
+	Category: Watersports
+	Price: 279.00
+`,
+// ====================================================================================
+		"299":`299.Scanning Gradually اسکن به تدریج
+example:
+main.go
+	package main
+	import (
+		"io"
+		"strings"
+		"asd/asd"
+		"fmt"
+	)
+	func scanSingle(reader io.Reader, val interface{}) (int, error) {
+		return fmt.Fscan(reader, val)
+	}
+	func main() {
+		reader := strings.NewReader("Kayak Watersports $279.00")
+		for {
+			var str string
+			_, err := scanSingle(reader, &str)
+			if err != nil {
+				if err != io.EOF {
+					asd.Printfln("Error: %v", err.Error())
+				}
+				break
+			}
+			asd.Printfln("Value: %v", str)
+		}
+	}
+Output:
+	Value: Kayak
+	Value: Watersports
+	Value: $279.00
+`,
+// ====================================================================================
+		"300":`300.Writing Formatted Strings to a Writer
+The fmt package also provides functions for writing formatted strings to a Writer
+The writeFormatted function uses the fmt.Fprintf function to write a string formatted with a template
+to a Writer.
+
+example:
+main.go:
+	package main
+	import (
+		"io"
+		"strings"
+		"fmt"
+	)
+	func writeFormatted(writer io.Writer, template string, vals ...interface{}) {
+		fmt.Fprintf(writer, template, vals...)
+	}
+	func main() {
+		var writer strings.Builder
+		template := "Name: %s, Category: %s, Price: $%.2f"
+		writeFormatted(&writer, template, "Kayak", "Watersports", float64(279))
+		fmt.Println(writer.String())
+	}
+Output:
+	Name: Kayak, Category: Watersports, Price: $279.00
+`,
+// ====================================================================================
+		"301":`301.strings.Replacer struct
+	The strings.Replacer struct can be used to perform replacements on a string and output the modified
+	result to a Writer.
+
+	example:
+		package main
+		import (
+			"fmt"
+			"io"
+			"strings"
+		)
+		func writeReplaced(writer io.Writer, str string, subs ...string) {
+			replacer := strings.NewReplacer(subs...)
+			replacer.WriteString(writer, str)
+		}
+		func main() {
+			text := "It was a boat. A small boat."
+			subs := []string{"boat", "kayak", "small", "huge"}
+			var writer strings.Builder
+			writeReplaced(&writer, text, subs...)
+			fmt.Println(writer.String())
+		}    
+	Output:
+		It was a kayak. A huge kayak.
+`,
+// ====================================================================================
+		"302":`302.Working with JSON Data
+Putting Working with JSON Data in Context
+
+What is it?
+JSON data is the de facto standard for exchanging data, especially in HTTP applications.
+
+Why is it useful?
+JSON is simple enough to be supported by any language but can represent
+relatively complex data.
+
+How is it used?
+The encoding/json package provides support for encoding and decoding JSON data.
+
+Are there any pitfalls or limitations?
+Not all Go data types can be represented in JSON, which requires the developer
+to be mindful of how Go data types will be expressed.
+
+Are there any alternatives?
+There are many other data encodings available, some of which are supported by
+the Go standard library.
+
+The safest approach is to define a map with string keys and empty interface values, which ensures that
+all the key-value pairs in the JSON data can be decoded into the map
+
+	Problem                     Solution
+	-----------                 ------------------------
+	Encode JSON                 dataCreate an Encoder with a Writer and invoke the Encode method
+	Control struct encoding     Use JSON struct tags or implement the Mashaler interface
+	Decode JSON data            Create a Decoder with a Reader and invoke the Decode method
+	Control struct decoding     Use JSON struct tags or implement the Unmarshaler interface
+`,
+// ====================================================================================
+		"303":`303.The encoding/json Constructor Functions for JSON Data
+
+	Name                    Description
+	-------------------     --------------------------------------------
+	NewEncoder(writer)      This function returns an Encoder, which can be used to encode JSON data and
+							write it to the specified Writer.
+	NewDecoder(reader)      This function returns a Decoder, which can be used to read JSON data from the
+							specified Reader and decode it.
+`,
+// ====================================================================================
+		"304":`304.The Functions for Creating and Parsing JSON Data
+
+Name                            Description
+------------------------        -----------------------------------------------
+Marshal(value)                  This function encodes the specified value as JSON. The results are the
+								JSON content expressed in a byte slice and an error, which indicates any
+								encoding problems.
+Unmarshal(byteSlice, val)       This function parses JSON data contained in the specified slice of bytes
+								and assigns the result to the specified value.
+`,
+// ====================================================================================
+		"305":`305.The Encoder Methods
+The NewEncoder constructor function is used to create an Encoder, which can be used to write JSON data to a Writer.
+    Name                            Description
+    -------------------------       --------------------------------------------------
+    Encode(val)                     This method encodes the specified value as JSON and writes it to the Writer.
+    SetEscapeHTML(on)               This method accepts a bool argument that, when true, encodes
+                                    characters that would be dangerous in HTML to be escaped. The default
+                                    behavior is to escape these characters.
+    SetIndent(prefix, indent)       This method specifies a prefix and indentation that is applied to the name
+                                    of each field in the JSON output.
+`,
+// ====================================================================================
+		"306":`306.Expressing the Basic Go Data Types in JSON
+
+	Data                TypeDescription
+	----------------    ------------------------------------
+	bool                Go bool values are expressed as JSON true or false.
+	string              Go string values are expressed as JSON strings. By default, unsafe HTML
+						characters are escaped.
+	float32, float64    Go floating-point values are expressed as JSON numbers.
+	int, int<size>      Go integer values are expressed as JSON numbers.
+	uint, uint<size>    Go integer values are expressed as JSON numbers.
+	byte                Go bytes are expressed as JSON numbers.
+	rune                Go runes are expressed as JSON numbers.
+	nil                 The Go nil value is expressed as the JSON null value.
+	Pointers            The JSON encoder follows pointers and encodes the value at the pointer's location.
+`,
+// ====================================================================================
+		"307":`307.encoding/json
+example:
+	package main
+	import (
+		"encoding/json"
+		"fmt"
+		"strings"
+	)
+	func main() {
+		var b bool = true
+		var str string = "Hello"
+		var fval float64 = 99.99
+		var ival int = 200
+		var pointer *int = &ival
+		var writer strings.Builder
+		encoder := json.NewEncoder(&writer)
+		for _, val := range []interface{}{b, str, fval, ival, pointer} {
+			encoder.Encode(val)
+		}
+		fmt.Print(writer.String())
+	}
+Output:
+	true
+	"Hello"
+	99.99
+	200
+	200
+`,
+// ====================================================================================
+		"308":`308.Encoding Slices and Arrays
+Example:
+	package main
+	import (
+		"encoding/json"
+		"fmt"
+		"strings"
+	)
+	func main() {
+		names := []string{"Kayak", "Lifejacket", "Soccer Ball"}
+		numbers := [3]int{10, 20, 30}
+		var byteArray [5]byte
+		copy(byteArray[0:], []byte(names[0]))
+		byteSlice := []byte(names[0])
+		
+		var writer strings.Builder
+		encoder := json.NewEncoder(&writer)
+		
+		encoder.Encode(names)
+		encoder.Encode(numbers)
+		encoder.Encode(byteArray)
+		encoder.Encode(byteSlice)
+		fmt.Print(writer.String())
+}
+Output:
+	["Kayak","Lifejacket","Soccer Ball"]
+	[10,20,30]
+	[75,97,121,97,107]
+	"S2F5YWs="
+`,
 // ====================================================================================
 		"309":``,
 // ====================================================================================
