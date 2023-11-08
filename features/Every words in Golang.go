@@ -12423,11 +12423,11 @@ Output:
     The reflected type gives you access to details of a Go type without knowing in advance what it is. You can
     explore the reflected type, exploring its details and characteristics through the methods defined by the Type
     interface.
-    The reflected value lets you work with the specific value with which you have been provided. You can’t
-    just read a struct field or call a method, for example, as you would in normal code when you don’t know
+    The reflected value lets you work with the specific value with which you have been provided. You can't
+    just read a struct field or call a method, for example, as you would in normal code when you don't know
     what type you are dealing with.
     The use of the reflected type and reflected value leads to the code verbosity. If you know you are dealing
-    with a Product struct, for example, you can just read the Name field and get a string result. If you don’t know
+    with a Product struct, for example, you can just read the Name field and get a string result. If you don't know
     what type is being used, then you must use the reflected type to establish whether you are dealing with a
     struct and whether it has a Name field. Once you have determined there is such as field, you use the reflected
     value to read that field and get its value.
@@ -12444,7 +12444,6 @@ Output:
     The Type interface provides basic details about a type through the methods described in below.
     There are specialized methods for working with specific kinds of types, such as arrays, which are described in later
     sections, but these are the methods that provide the essential details for all types.
-    
 ████████████████████████████████████████████████████████████████████████
 481.
 ████████████████████████████████████████████████████████████████████████
