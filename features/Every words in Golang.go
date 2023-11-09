@@ -12370,7 +12370,7 @@ Output:
     The reflect package provides the Go reflection features, and the key functions are called TypeOf and
     ValueOf
 ████████████████████████████████████████████████████████████████████████
-478.The Key Reflection Functions:
+478.The Key Reflection Functions
     Name            Description
     -----------     -------------------------------
     TypeOf(val)     This function returns a value that implements the Type interface, which describes the
