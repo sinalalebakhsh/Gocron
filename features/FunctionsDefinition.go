@@ -6,12 +6,7 @@ type FunctionsDefinitions struct {
 
 var OriginalSingleDefFunctions = FunctionsDefinitions{
 	MapSingleDefFuncs: map[string]string{
-		/*
-
-
-
-
-		 */                       //47.Atoi(str) 49.FormatInt(val, base) 50.FormatUint(val, base)
+		//47.Atoi(str) 49.FormatInt(val, base) 50.FormatUint(val, base)
 		"atoi()":                 "47🚀 Atoi(str) 🔔 This function parses a string into a base 10 int and is equivalent to calling ParseInt(str, 10, 0)",
 		"atoi(str)":              "47🚀 Atoi(str) 🔔 This function parses a string into a base 10 int and is equivalent to calling ParseInt(str, 10, 0)",
 		"atoi(string)":           "47🚀 Atoi(str) 🔔 This function parses a string into a base 10 int and is equivalent to calling ParseInt(str, 10, 0)",
@@ -20,21 +15,15 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"formatint(val, base)":   "49🚀 FormatInt(value, base) 🔔 This function returns a string representation of the specified int64 value, expressed in the specified base.",
 		"formatuint()":           "50🚀 FormatUint(val, base) 🔔 This function returns a string representation of the specified uint64 value, expressed in the specified base.",
 		"formatuint(val, base)":  "50🚀 FormatUint(val, base) 🔔 This function returns a string representation of the specified uint64 value, expressed in the specified base.",
-		/*
-
-
-
-
-		 */            //52.Itoa(val)
+		//51.FormatFloat(val, format, precision, size)
+		"formatfloat()":                             "51🚀 FormatFloat(val, format, precision, size) 🔔 This function returns a string representation of the specified float64 value, expressed using the specified format, precision, and size.",
+		"formatfloat(1,2,3,4)":                      "51🚀 FormatFloat(val, format, precision, size) 🔔This function returns a string representation of the specified float64 value, expressed using the specified format, precision, and size.",
+		"formatfloat(val, format, precision, size)": "51🚀 FormatFloat(val, format, precision, size) 🔔This function returns a string representation of the specified float64 value, expressed using the specified format, precision, and size.",
+		//52.Itoa(val)
 		"itoa()":      "52🚀 Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
 		"itoa(val)":   "52🚀 Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
 		"itoa(value)": "52🚀 Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
-		/*
-
-
-
-
-		 */               // 165.Working with Character Case
+		// 165.Working with Character Case
 		"islower(rune)":  "165🚀 IsLower(rune) 🔔 This function returns true if the specified rune is lowercase.",
 		"islower()":      "165🚀 IsLower(rune) 🔔 This function returns true if the specified rune is lowercase.",
 		"islower(r)":     "165🚀 IsLower(rune) 🔔 This function returns true if the specified rune is lowercase.",
@@ -59,13 +48,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"totitle()":      "165🚀 ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
 		"totitle(r)":     "165🚀 ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
 		"totitle(runes)": "165🚀 ToTitle(rune) 🔔 This function returns the title case rune associated with the specified rune.",
-		/*
-
-
-
-
-
-		 */                                 // 167.Inspecting Strings || The strings Functions for Inspecting Strings
+		// 167.Inspecting Strings || The strings Functions for Inspecting Strings
 		"count(s, sub)":                    "167🚀 Count(s, sub) 🔔 This function returns an int that reports how many times the specified substring is found in the string s.",
 		"count()":                          "167🚀 Count(s, sub) 🔔 This function returns an int that reports how many times the specified substring is found in the string s.",
 		"count(string, sub)":               "167🚀 Count(s, sub) 🔔 This function returns an int that reports how many times the specified substring is found in the string s.",
@@ -90,12 +73,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"lastindexFunc(s, func)":           "167🚀 LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
 		"lastindexFunc()":                  "167🚀 LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
 		"lastindexFunc(string, function)":  "167🚀 LastIndexFunc(s, func) 🔔  character in the string s for which the specified function returns true, as described in the “Inspecting Strings with Custom Functions” section.",
-		/*
-
-
-
-
-		 */                               //161.Comparing Strings
+		//161.Comparing Strings
 		"contains(s, substr)":            "161🚀 Contains(s, substr) 🔔 This function returns true if the string s contains substr and false if it does not.",
 		"contains()":                     "161🚀 Contains(s, substr) 🔔 This function returns true if the string s contains substr and false if it does not.",
 		"contains(string, substring)":    "161🚀 Contains(s, substr) 🔔 This function returns true if the string s contains substr and false if it does not.",
@@ -124,13 +102,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"hassuffix(string, sufix)":       "161🚀 HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
 		"hassuffix()":                    "161🚀 HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
 		"hassuffix(string, string)":      "161🚀 HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
-		/*
-
-
-
-
-
-		 */                              // 169.Splitting Strings
+		// 169.Splitting Strings
 		"fields(s)":                     "169🚀 Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
 		"fields()":                      "169🚀 Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
 		"fields(string)":                "169🚀 Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
@@ -149,13 +121,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"splitaftern(s, sub, max)":      "169🚀 SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
 		"splitaftern()":                 "169🚀 SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
 		"splitaftern(string, sub, max)": "169🚀 SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
-		/*
-
-
-
-
-
-		 */                                  // 179.Altering Strings
+		// 179.Altering Strings
 		"replace(s, old, new, n)":           "179🚀 Replace(s, old, new, n) 🔔 This function alters the string s by replacing occurrences of the string old with the string new. The maximum number of occurrences that will be replaced is specified by the int argument n.",
 		"replace()":                         "179🚀 Replace(s, old, new, n) 🔔 This function alters the string s by replacing occurrences of the string old with the string new. The maximum number of occurrences that will be replaced is specified by the int argument n.",
 		"replace(1, 2, 3, 4)":               "179🚀 Replace(s, old, new, n) 🔔 This function alters the string s by replacing occurrences of the string old with the string new. The maximum number of occurrences that will be replaced is specified by the int argument n.",
@@ -167,13 +133,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"map(func, s)":                      "179🚀 Map(func, s) 🔔 This function generates a string by invoking the custom function for each character in the string s and concatenating the results. If the function produces a negative value, the current character is dropped without a replacement.",
 		"map()":                             "179🚀 Map(func, s) 🔔 This function generates a string by invoking the custom function for each character in the string s and concatenating the results. If the function produces a negative value, the current character is dropped without a replacement.",
 		"map(function, string)":             "179🚀 Map(func, s) 🔔 This function generates a string by invoking the custom function for each character in the string s and concatenating the results. If the function produces a negative value, the current character is dropped without a replacement.",
-		/*
-
-
-
-
-
-		 */                       //183.The Replacer Methods
+		//183.The Replacer Methods
 		"replace(s)":             "183🚀 Replace(s) 🔔 This method returns a string for which all the replacements specified with the constructor have been performed on the string s.",
 		"replace(string)":        "183🚀 Replace(s) 🔔 This method returns a string for which all the replacements specified with the constructor have been performed on the string s.",
 		"replace(str)":           "183🚀 Replace(s) 🔔 This method returns a string for which all the replacements specified with the constructor have been performed on the string s.",
@@ -181,26 +141,13 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"writestring(w, s)":      "183🚀 WriteString(writer, s) 🔔 This method is used to perform the replacements specified with the constructor and write the results to an io.Writer",
 		"writestring(w, str)":    "183🚀 WriteString(writer, s) 🔔 This method is used to perform the replacements specified with the constructor and write the results to an io.Writer",
 		"writestring(w, string)": "183🚀 WriteString(writer, s) 🔔 This method is used to perform the replacements specified with the constructor and write the results to an io.Writer",
-		/*
-
-
-
-
-
-
-		 */                       //184.Building and Generating Strings
+		//184.Building and Generating Strings
 		"join(slice, sep)":       "184🚀 Join(slice, sep) 🔔 This function combines the elements in the specified string slice, with the specified separator string placed between elements.",
 		"join(slice, specified)": "184🚀 Join(slice, sep) 🔔 This function combines the elements in the specified string slice, with the specified separator string placed between elements.",
 		"join()":                 "184🚀 Join(slice, sep) 🔔 This function combines the elements in the specified string slice, with the specified separator string placed between elements.",
 		"repeat(s, count)":       "184🚀 Repeat(s, count) 🔔 This function generates a string by repeating the string s for a specified number of times.",
 		"repeat(str, count)":     "184🚀 Repeat(s, count) 🔔 This function generates a string by repeating the string s for a specified number of times.",
-		/*
-
-
-
-
-
-		 */                    //186.Building Strings
+		//186.Building Strings
 		"writestring(s)":      "186🚀 WriteString(s) 🔔 This method appends the string s to the string being built.",
 		"writestring(string)": "186🚀 WriteString(s) 🔔 This method appends the string s to the string being built.",
 		"writestring()":       "186🚀 WriteString(s) 🔔 This method appends the string s to the string being built.",
@@ -216,12 +163,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"grow(size)":          "186🚀 Grow(size) 🔔 This method increases the number of bytes used allocated by the builder to store the string that is being built.",
 		"grow(siz)":           "186🚀 Grow(size) 🔔 This method increases the number of bytes used allocated by the builder to store the string that is being built.",
 		"grow(sizes)":         "186🚀 Grow(size) 🔔 This method increases the number of bytes used allocated by the builder to store the string that is being built.",
-		/*
-
-
-
-
-		 */                                 //192.Useful Basic Regexp Methods
+		//192.Useful Basic Regexp Methods
 		"matchstring(s)":                   "192🚀 MatchString(s) 🔔 This method returns true if the string s matches the compiled pattern.",
 		"matchstring(str)":                 "192🚀 MatchString(s) 🔔 This method returns true if the string s matches the compiled pattern.",
 		"matchstring(string)":              "192🚀 MatchString(s) 🔔 This method returns true if the string s matches the compiled pattern.",
@@ -244,12 +186,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"split(s, max)":                    "192🚀 Split(s, max) 🔔 This method splits the string s using matches from the compiled pattern as separators and returns a slice containing the split substrings.",
 		"split(str, max)":                  "192🚀 Split(s, max) 🔔 This method splits the string s using matches from the compiled pattern as separators and returns a slice containing the split substrings.",
 		"split(string, max)":               "192🚀 Split(s, max) 🔔 This method splits the string s using matches from the compiled pattern as separators and returns a slice containing the split substrings.",
-		/*
-
-
-
-
-		 */                                   // 197.The Regexp Methods for Subexpressions
+		// 197.The Regexp Methods for Subexpressions
 		"findstringsubmatch(s)":              "197🚀 FindStringSubmatch(s) 🔔 This method returns a slice containing the first match made by the pattern and the text for the subexpressions that the pattern defines.",
 		"findstringsubmatch(str)":            "197🚀 FindStringSubmatch(s) 🔔 This method returns a slice containing the first match made by the pattern and the text for the subexpressions that the pattern defines.",
 		"findstringsubmatch(string)":         "197🚀 FindStringSubmatch(s) 🔔 This method returns a slice containing the first match made by the pattern and the text for the subexpressions that the pattern defines.",
@@ -264,12 +201,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"subexpindex(names)":                 "197🚀 SubexpIndex(name) 🔔 This method returns the index of the subexpression with the specified name or -1 if there is no such subexpression.",
 		"subexpindex(n)":                     "197🚀 SubexpIndex(name) 🔔 This method returns the index of the subexpression with the specified name or -1 if there is no such subexpression.",
 		"subexpnames()":                      "197🚀 SubexpNames() 🔔 This method returns the names of the subexpressions, expressed in the order in which they are defined.",
-		/*
-
-
-
-
-		 */                                           //199.Replacing Substrings Using a Regular Expression
+		//199.Replacing Substrings Using a Regular Expression
 		"replaceallstring(s, template)":              "199🚀 ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
 		"replaceallstring(str, temp)":                "199🚀 ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
 		"replaceallstring(string, temp)":             "199🚀 ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
@@ -283,31 +215,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"replaceallstringfunc(s, func)":              "199🚀 ReplaceAllStringFunc(s, func) 🔔 This method replaces the matched portion of the string s with the result produced by the specified function.",
 		"replaceallstringfunc(str, func)":            "199🚀 ReplaceAllStringFunc(s, func) 🔔 This method replaces the matched portion of the string s with the result produced by the specified function.",
 		"replaceallstringfunc(string, function)":     "199🚀 ReplaceAllStringFunc(s, func) 🔔 This method replaces the matched portion of the string s with the result produced by the specified function.",
-		/*
-
-
-
-
-
-		 */
-		"formatfloat()":                             "FormatFloat(val, format, precision, size) 🔔 This function returns a string representation of the specified float64 value, expressed using the specified format, precision, and size.",
-		"formatfloat(1,2,3,4)":                      "FormatFloat(val, format, precision, size) 🔔This function returns a string representation of the specified float64 value, expressed using the specified format, precision, and size.",
-		"formatfloat(val, format, precision, size)": "FormatFloat(val, format, precision, size) 🔔This function returns a string representation of the specified float64 value, expressed using the specified format, precision, and size.",
-		/*
-
-
-
-
-
-		 */             //The Key Reflection Functions
-		"typeof(val)":  "TypeOf(val) 🔔 This function returns a value that implements the Type interface, which describes the type of the specified value. There is a lot of detail behind the TypeOf and ValueOf functions and their results, and it is easy to lose sight of why reflection can be useful.",
-		"valueof(val)": "ValueOf(val) 🔔 This function returns a Value struct, which allows the specified value to be inspected and manipulated. There is a lot of detail behind the TypeOf and ValueOf functions and their results, and it is easy to lose sight of why reflection can be useful.",
-		/*
-
-
-
-
-		 */                          // 203.fmt package
+		// 203.fmt package
 		"print(...vals)":            "203🚀 Print(...vals) 🔔 This function accepts a variable number of arguments and writes out their values to the standard out. Spaces are added between values that are not strings.",
 		"print()":                   "203🚀 Print(...vals) 🔔 This function accepts a variable number of arguments and writes out their values to the standard out. Spaces are added between values that are not strings.",
 		"print(...)":                "203🚀 Print(...vals) 🔔 This function accepts a variable number of arguments and writes out their values to the standard out. Spaces are added between values that are not strings.",
@@ -331,13 +239,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"fprintln(w, v)":            "203🚀 Fprintln(writer, ...vals) 🔔 This function writes out a variable number of arguments to the specified writer followed by a newline character. Spaces are added between all values.",
 		"fprintln()":                "203🚀 Fprintln(writer, ...vals) 🔔 This function writes out a variable number of arguments to the specified writer followed by a newline character. Spaces are added between all values.",
 		"fprintln(wrt, vls)":        "203🚀 Fprintln(writer, ...vals) 🔔 This function writes out a variable number of arguments to the specified writer followed by a newline character. Spaces are added between all values.",
-		/*
-
-
-
-
-
-		 */                            //206.The fmt Functions for Formatting Strings
+		//206.The fmt Functions for Formatting Strings
 		"sprintf(t, ...vals)":         "206🚀 Sprintf(t, ...vals) 🔔 This function returns a string, which is created by processing the template t.",
 		"sprintf(t, vals)":            "206🚀 Sprintf(t, ...vals) 🔔 This function returns a string, which is created by processing the template t.",
 		"sprintf()":                   "206🚀 Sprintf(t, ...vals) 🔔 This function returns a string, which is created by processing the template t.",
@@ -357,12 +259,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"errorf()":                    "206🚀 Errorf(t, ...values) 🔔 This function creates an error by processing the template t. The remaining arguments are used as values for the template verbs. The result is an error value whose Error method returns the formatted string.",
 		"errorf(1,2)":                 "206🚀 Errorf(t, ...values) 🔔 This function creates an error by processing the template t. The remaining arguments are used as values for the template verbs. The result is an error value whose Error method returns the formatted string.",
 		"errorf(1,...2)":              "206🚀 Errorf(t, ...values) 🔔 This function creates an error by processing the template t. The remaining arguments are used as values for the template verbs. The result is an error value whose Error method returns the formatted string.",
-		/*
-
-
-
-
-		 */                                    // 220.The fmt Functions for Scanning Strings
+		// 220.The fmt Functions for Scanning Strings
 		"scan(...vals)":                       "220🚀 Scan(...vals) 🔔 This function reads text from the standard in and stores the space- separated values into specified arguments. Newlines are treated as spaces, and the function reads until it has received values for all of its arguments. The result is the number of values that have been read and an error that describes any problems.",
 		"scan(...)":                           "220🚀 Scan(...vals) 🔔 This function reads text from the standard in and stores the space- separated values into specified arguments. Newlines are treated as spaces, and the function reads until it has received values for all of its arguments. The result is the number of values that have been read and an error that describes any problems.",
 		"scan()":                              "220🚀 Scan(...vals) 🔔 This function reads text from the standard in and stores the space- separated values into specified arguments. Newlines are treated as spaces, and the function reads until it has received values for all of its arguments. The result is the number of values that have been read and an error that describes any problems.",
@@ -427,12 +324,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"sscanln(1,2,3)":                      "220🚀 Sscanln(str, template, ...vals) 🔔 This function works in the same way as Sscanf but stops scanning the string as soon as a newline character is encountered.",
 		"sscanln(1, 2, 3)":                    "220🚀 Sscanln(str, template, ...vals) 🔔 This function works in the same way as Sscanf but stops scanning the string as soon as a newline character is encountered.",
 		"sscanln()":                           "220🚀 Sscanln(str, template, ...vals) 🔔 This function works in the same way as Sscanf but stops scanning the string as soon as a newline character is encountered.",
-		/*
-
-
-
-
-		 */                 //226.Useful Functions from the math Package
+		//226.Useful Functions from the math Package
 		"abs(val)":         "226🚀 Abs(val) 🔔 This function returns the absolute value of a float64 value, meaning the distance from zero without considering direction.",
 		"abs()":            "226🚀 Abs(val) 🔔 This function returns the absolute value of a float64 value, meaning the distance from zero without considering direction.",
 		"ceil(val)":        "226🚀 Ceil(val) 🔔 This function returns the smallest integer that is equal to or greater than the specified float64 value. The result is also a float64 value, even though it represents an integer number.",
@@ -467,12 +359,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"round()":          "226🚀 Round(val) 🔔 This function rounds the specified value to the nearest integer, rounding half values up. The result is a float64 value, even though it represents an integer.",
 		"roundtoeven(val)": "226🚀 RoundToEven(val) 🔔 This function rounds the specified value to the nearest integer, rounding half values to the nearest even number. The result is a float64 value, even though it represents an integer.",
 		"roundtoeven()":    "226🚀 RoundToEven(val) 🔔 This function rounds the specified value to the nearest integer, rounding half values to the nearest even number. The result is a float64 value, even though it represents an integer.",
-		/*
-
-
-
-
-		 */                     //228.Generating Random Numbers
+		//228.Generating Random Numbers
 		"seed(s)":              "228 🚀 Seed(s) 🔔 This function sets the seed value using the specified int64 value.",
 		"seed()":               "228 🚀 Seed(s) 🔔 This function sets the seed value using the specified int64 value.",
 		"float32()":            "228 🚀 Float32() 🔔 This function generates a random float32 value between 0 and 1.",
@@ -483,12 +370,7 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"uint32()":             "228 🚀 UInt32() 🔔 This function generates a random uint32 value.",
 		"uint64()":             "228 🚀 UInt64() 🔔 This function generates a random uint64 value.",
 		"shuffle(count, func)": "228 🚀 Shuffle(count, func) 🔔 This function is used to randomize the order of elements, as described after the table.",
-		/*
-
-
-
-
-		 */                         //234.The Basic Functions for Sorting
+		//234.The Basic Functions for Sorting
 		"float64s(slice)":          "234🚀 Float64s(slice) 🔔 This function sorts a slice of float64 values. The elements are sorted in place.",
 		"float64s()":               "234🚀 Float64s(slice) 🔔 This function sorts a slice of float64 values. The elements are sorted in place.",
 		"float64saresorted(slice)": "234🚀 Float64sAreSorted(slice) 🔔 This function returns true if the elements in the specified float64 slice are in order.",
@@ -501,14 +383,19 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"strings()":                "234🚀 Strings(slice) 🔔 This function sorts a slice of string values. The elements are sorted in place.",
 		"stringsaresorted(slice)":  "234🚀 StringsAreSorted(slice) 🔔 This function returns true if the elements in the specified string slice are in order.",
 		"stringsaresorted()":       "234🚀 StringsAreSorted(slice) 🔔 This function returns true if the elements in the specified string slice are in order.",
-		/*
-
-
-
-
-		 */          //481.Basic Methods Defined by the Type Interface
-		"name()":    "481🚀 Name() 🔔 This method returns the name of the type.",
-		"pkgpath()": "481🚀 PkgPath() 🔔 This method returns the package path for the type. The empty string is returned for built-in types, such as int and bool.",
-		// 🔔
+		//478.The Key Reflection Functions
+		"typeof(val)":  "478🚀 TypeOf(val) 🔔 This function returns a value that implements the Type interface, which describes the type of the specified value. There is a lot of detail behind the TypeOf and ValueOf functions and their results, and it is easy to lose sight of why reflection can be useful.",
+		"valueof(val)": "478🚀 ValueOf(val) 🔔 This function returns a Value struct, which allows the specified value to be inspected and manipulated. There is a lot of detail behind the TypeOf and ValueOf functions and their results, and it is easy to lose sight of why reflection can be useful.",
+		//481.Basic Methods Defined by the Type Interface
+		"name()":             "481🚀 Name() 🔔 This method returns the name of the type.",
+		"pkgpath()":          "481🚀 PkgPath() 🔔 This method returns the package path for the type. The empty string is returned for built-in types, such as int and bool.",
+		"kind()":             "481🚀 Kind() 🔔 This method returns the kind of type, using a value that matches one of the constant values defined by the reflect package, as described in Table 27-5.",
+		"481 string()":       "481🚀 String() 🔔 This method returns a string representation of the type name, including the package name.",
+		"comparable()":       "481🚀 Comparable() 🔔 This method returns true if values of this type can be compared using the standard comparison operator, as described in the “Comparing Values” section.",
+		"assignableto(type)": "481🚀 AssignableTo(type) 🔔 This method returns true if values of this type can be assigned to variables or fields of the specified reflected type.",
+		"assignableto()":     "481🚀 AssignableTo(type) 🔔 This method returns true if values of this type can be assigned to variables or fields of the specified reflected type.",
+		//
+		//
+		// 🚀🚀🚀🚀🚀🚀 🔔🔔🔔🔔🔔🔔
 	},
 }
