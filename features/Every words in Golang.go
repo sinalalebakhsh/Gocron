@@ -12445,7 +12445,20 @@ Output:
     There are specialized methods for working with specific kinds of types, such as arrays, which are described in later
     sections, but these are the methods that provide the essential details for all types.
 ████████████████████████████████████████████████████████████████████████
-481.
+481.Basic Methods Defined by the Type Interface
+
+    Name                Description
+    ---------------     ------------------------------------
+    Name()              This method returns the name of the type.
+    PkgPath()           This method returns the package path for the type. The empty string is returned for
+                        built-in types, such as int and bool.
+    Kind()              This method returns the kind of type, using a value that matches one of the constant
+                        values defined by the reflect package, as described in Table 27-5.
+    String()            This method returns a string representation of the type name, including the package name.
+    Comparable()        This method returns true if values of this type can be compared using the standard
+                        comparison operator, as described in the “Comparing Values” section.
+    AssignableTo(type)  This method returns true if values of this type can be assigned to variables or fields of
+                        the specified reflected type.
 ████████████████████████████████████████████████████████████████████████
 482.
 ████████████████████████████████████████████████████████████████████████
