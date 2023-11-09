@@ -478,6 +478,31 @@ Output:
 Product: Name: Kayak, Category: Watersports, Price: 279
 Customer: Name: Alice, City: New York`,
 
+"server":`server1 = you can use server2 example, server3 or more 
+main.go:
+	package main
+	import (
+		"net/http"
+		"os"
+	)
+	func main()  {
+		dir, _ := os.Getwd()
+		http.ListenAndServe(":3000", http.FileServer(http.Dir(dir)))
+	}
+`,
+
+"server1":`server1 = you can use server2 example, server3 or more
+main.go:
+	package main
+	import (
+		"net/http"
+		"os"
+	)
+	func main()  {
+		dir, _ := os.Getwd()
+		http.ListenAndServe(":3000", http.FileServer(http.Dir(dir)))
+	}
+`,
 
 },
 
