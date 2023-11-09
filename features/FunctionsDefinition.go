@@ -387,14 +387,26 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"typeof(val)":  "478🚀 TypeOf(val) 🔔 This function returns a value that implements the Type interface, which describes the type of the specified value. There is a lot of detail behind the TypeOf and ValueOf functions and their results, and it is easy to lose sight of why reflection can be useful.",
 		"valueof(val)": "478🚀 ValueOf(val) 🔔 This function returns a Value struct, which allows the specified value to be inspected and manipulated. There is a lot of detail behind the TypeOf and ValueOf functions and their results, and it is easy to lose sight of why reflection can be useful.",
 		//481.Basic Methods Defined by the Type Interface
-		"name()":             "481🚀 Name() 🔔 This method returns the name of the type.",
-		"pkgpath()":          "481🚀 PkgPath() 🔔 This method returns the package path for the type. The empty string is returned for built-in types, such as int and bool.",
-		"kind()":             "481🚀 Kind() 🔔 This method returns the kind of type, using a value that matches one of the constant values defined by the reflect package, as described in Table 27-5.",
-		"481 string()":       "481🚀 String() 🔔 This method returns a string representation of the type name, including the package name.",
+		"name()":             "481🚀 Name() 	🔔 This method returns the name of the type.",
+		"pkgpath()":          "481🚀 PkgPath() 	🔔 This method returns the package path for the type. The empty string is returned for built-in types, such as int and bool.",
+		"kind()":             "481🚀 Kind() 	🔔 This method returns the kind of type, using a value that matches one of the constant values defined by the reflect package, as described in Table 27-5.",
+		"481 string()":       "481🚀 String() 	🔔 This method returns a string representation of the type name, including the package name.",
 		"comparable()":       "481🚀 Comparable() 🔔 This method returns true if values of this type can be compared using the standard comparison operator, as described in the “Comparing Values” section.",
 		"assignableto(type)": "481🚀 AssignableTo(type) 🔔 This method returns true if values of this type can be assigned to variables or fields of the specified reflected type.",
 		"assignableto()":     "481🚀 AssignableTo(type) 🔔 This method returns true if values of this type can be assigned to variables or fields of the specified reflected type.",
-		//
+		//484.Using the Basic Value Features
+		"484 kind()":   "484🚀 Kind()      🔔 This method returns the kind of the value's type.",
+		"type()":       "484🚀 Type()      🔔 This method returns the Type for the Value.",
+		"isnil()":      "484🚀 IsNil()     🔔 This method returns true if the value is nil. This method will panic if the underlying value isn't a function, an interface, a pointer, a slice, or a channel.",
+		"iszero()":     "484🚀 IsZero()    🔔 This method returns true if the underlying value is the zero value for its type.",
+		"bool()":       "484🚀 Bool()      🔔 This method returns the underlying bool value. The method panics if the underlying value's Kind is not Bool.",
+		"bytes()":      "484🚀 Bytes()     🔔 This method returns the underlying []byte value. The method panics if the underlying value is not a byte slice. I demonstrate how to determine the type of a slice in the “Identifying Byte Slices” section.",
+		"484 int()":    "484🚀 Int()       🔔 This method returns the underlying value as an int64. The method panics if the underlying value's Kind is not Int, Int8, Int16, Int32, or Int64.",
+		"unit()":       "484🚀 Uint()      🔔 This method returns the underlying value as an uint64. The method panics if the underlying value's Kind is not Uint, Uint8, Uint16, Uint32, or Uint64.",
+		"float()":      "484🚀 Float()     🔔 This method returns the underlying value as an float64. The method panics if the underlying value's Kind is not Float32, or Float64.",
+		"484 string()": "484🚀 String()    🔔 This method returns the underlying value as a string if the value's Kind is String. For other Kind values, this method returns the string <T Value> where T is the underlying type, such as <int Value>.",
+		"elem()":       "484🚀 Elem()      🔔 This method returns the Value to which a pointer refers. This method can also be used with interfaces, as described in Chapter 29. This method panics if the underlying value's Kind is not Ptr.",
+		"isvalid()":    "484🚀 IsValid()   🔔 This method returns false if the Value is the zero value, created as Value{} rather than obtained using ValueOf, for example. This method doesn't relate to reflected values that are the zero value of their reflected type. If this method returns false, then all other Value methods will panic.",
 		//
 		// 🚀🚀🚀🚀🚀🚀 🔔🔔🔔🔔🔔🔔
 	},

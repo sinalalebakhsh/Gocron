@@ -12855,11 +12855,170 @@ series of constants that describe different kinds of type.
 	Uintptr                                 This value denotes an unsafe pointer, which is not described in this book.	
 `,
 // ====================================================================================
-		"483":``,
+		"483":`483.Printing Type Details in the main.go File in the reflection Folder
+added a function that replaces empty package names so that built-in types are more obviously described.
+example:
+main.go:
+	package main
+	import (
+		"reflect"
+		// "strings"
+		// "fmt"
+	)
+	func getTypePath(t reflect.Type) (path string) {
+		path = t.PkgPath()
+		if path == "" {
+			path = "(built-in)"
+		}
+		return
+	}
+	func printDetails(values ...interface{}) {
+		for _, elem := range values {
+			elemType := reflect.TypeOf(elem)
+			Printfln("Name: %v, PkgPath: %v, Kind: %v",
+				elemType.Name(), getTypePath(elemType), elemType.Kind())
+		}
+	}
+	type Payment struct {
+		Currency string
+		Amount   float64
+	}
+	func main() {
+		product := Product{
+			Name: "Kayak", Category: "Watersports", Price: 279,
+		}
+		customer := Customer{Name: "Alice", City: "New York"}
+		payment := Payment{Currency: "USD", Amount: 100.50}
+		printDetails(product, customer, payment, 10, true)
+	}
+==============================
+printer.go:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+==============================
+types.go:
+	package main
+	type Product struct {
+		Name, Category string
+		Price float64
+	}
+	type Customer struct {
+		Name, City string
+	}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+	Name: Product, PkgPath: main, Kind: struct
+	Name: Customer, PkgPath: main, Kind: struct
+	Name: Payment, PkgPath: main, Kind: struct
+	Name: int, PkgPath: (built-in), Kind: int
+	Name: bool, PkgPath: (built-in), Kind: bool
+`,
 // ====================================================================================
-		"484":``,
+		"484":`484.Using the Basic Value Features
+For each group of reflected type features, there are corresponding features for reflected values. The Value
+struct defines the methods described in here, which provide access to basic reflection features,
+including accessing the underlying value.
+	
+	Basic Methods Defined by the Value Struct
+	Name        Description
+	-------		----------------------------------------------------
+	Kind()      This method returns the kind of the value's type.
+	Type()      This method returns the Type for the Value.
+	IsNil()     This method returns true if the value is nil. This method will panic if the underlying value
+				isn't a function, an interface, a pointer, a slice, or a channel.
+	IsZero()    This method returns true if the underlying value is the zero value for its type.
+	Bool()      This method returns the underlying bool value. The method panics if the underlying value's Kind is not Bool.
+	Bytes()     This method returns the underlying []byte value. The method panics if the underlying
+				value is not a byte slice. I demonstrate how to determine the type of a slice in the
+				“Identifying Byte Slices” section.
+	Int()       This method returns the underlying value as an int64. The method panics if the underlying
+				value's Kind is not Int, Int8, Int16, Int32, or Int64.
+	Uint()      This method returns the underlying value as an uint64. The method panics if the underlying
+				value's Kind is not Uint, Uint8, Uint16, Uint32, or Uint64.
+	Float()     This method returns the underlying value as an float64. The method panics if the
+				underlying value's Kind is not Float32, or Float64.
+	String()    This method returns the underlying value as a string if the value's Kind is String. For other
+				Kind values, this method returns the string <T Value> where T is the underlying type, such
+				as <int Value>.
+	Elem()      This method returns the Value to which a pointer refers. This method can also be used with
+				interfaces, as described in Chapter 29. This method panics if the underlying value's Kind is not Ptr.
+	IsValid()   This method returns false if the Value is the zero value, created as Value{} rather than
+				obtained using ValueOf, for example. This method doesn't relate to reflected values that
+				are the zero value of their reflected type. If this method returns false, then all other Value
+				methods will panic.
+`,
 // ====================================================================================
-		"485":``,
+		"485":`485.Using the Basic Value Methods in the main.go
+example:
+main.go:
+	package main
+	import (
+		"reflect"
+		// "strings"
+		// "fmt"
+	)
+	func printDetails(values ...interface{}) {
+		for _, elem := range values {
+			elemValue := reflect.ValueOf(elem)
+			switch elemValue.Kind() {
+			case reflect.Bool:
+				var val bool = elemValue.Bool()
+				Printfln("Bool: %v", val)
+			case reflect.Int:
+				var val int64 = elemValue.Int()
+				Printfln("Int: %v", val)
+			case reflect.Float32, reflect.Float64:
+				var val float64 = elemValue.Float()
+				Printfln("Float: %v", val)
+			case reflect.String:
+				var val string = elemValue.String()
+				Printfln("String: %v", val)
+			case reflect.Ptr:
+				var val reflect.Value = elemValue.Elem()
+				if val.Kind() == reflect.Int {
+					Printfln("Pointer to Int: %v", val.Int())
+				}
+			default:
+				Printfln("Other: %v", elemValue.String())
+			}
+		}
+	}
+	func main() {
+		product := Product{
+			Name: "Kayak", Category: "Watersports", Price: 279,
+		}
+		number := 100
+		printDetails(true, 10, 23.30, "Alice", &number, product)
+	}
+================================================================
+printer:
+	package main
+	import "fmt"
+	func Printfln(template string, values ...interface{}) {
+		fmt.Printf(template + "\n", values...)
+	}
+================================================================
+types.go:
+	package main
+	type Product struct {
+		Name, Category string
+		Price float64
+	}
+	type Customer struct {
+		Name, City string
+	}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+	Bool: true
+	Int: 10
+	Float: 23.3
+	String: Alice
+	Pointer to Int: 100
+	Other: <main.Product Value>
+`,
 // ====================================================================================
 		"486":``,
 // ====================================================================================
