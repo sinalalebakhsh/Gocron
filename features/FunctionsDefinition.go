@@ -11,7 +11,30 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 
 
 
-		 */               // 165.Working with Character Case 
+		 */                       //47.Atoi(str) 49.FormatInt(val, base) 50.FormatUint(val, base)
+		"atoi()":                 "47🚀 Atoi(str) 🔔 This function parses a string into a base 10 int and is equivalent to calling ParseInt(str, 10, 0)",
+		"atoi(str)":              "47🚀 Atoi(str) 🔔 This function parses a string into a base 10 int and is equivalent to calling ParseInt(str, 10, 0)",
+		"atoi(string)":           "47🚀 Atoi(str) 🔔 This function parses a string into a base 10 int and is equivalent to calling ParseInt(str, 10, 0)",
+		"formatint()":            "49🚀 FormatInt(value, base) 🔔 This function returns a string representation of the specified int64 value, expressed in the specified base.",
+		"formatint(value, base)": "49🚀 FormatInt(value, base) 🔔 This function returns a string representation of the specified int64 value, expressed in the specified base.",
+		"formatint(val, base)":   "49🚀 FormatInt(value, base) 🔔 This function returns a string representation of the specified int64 value, expressed in the specified base.",
+		"formatuint()":           "50🚀 FormatUint(val, base) 🔔 This function returns a string representation of the specified uint64 value, expressed in the specified base.",
+		"formatuint(val, base)":  "50🚀 FormatUint(val, base) 🔔 This function returns a string representation of the specified uint64 value, expressed in the specified base.",
+		/*
+
+
+
+
+		 */            //52.Itoa(val)
+		"itoa()":      "52🚀 Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
+		"itoa(val)":   "52🚀 Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
+		"itoa(value)": "52🚀 Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
+		/*
+
+
+
+
+		 */               // 165.Working with Character Case
 		"islower(rune)":  "165🚀 IsLower(rune) 🔔 This function returns true if the specified rune is lowercase.",
 		"islower()":      "165🚀 IsLower(rune) 🔔 This function returns true if the specified rune is lowercase.",
 		"islower(r)":     "165🚀 IsLower(rune) 🔔 This function returns true if the specified rune is lowercase.",
@@ -72,31 +95,6 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 
 
 
-
-		 */                              // 169.Splitting Strings 
-		"fields(s)":                     "169🚀 Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
-		"fields()":                      "169🚀 Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
-		"fields(string)":                "169🚀 Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
-		"fieldsfunc(s, func)":           "169🚀 FieldsFunc(s, func) 🔔 This function splits the string s on the characters for which a custom function returns true and returns a slice containing the remaining sections of the string.",
-		"fieldsfunc()":                  "169🚀 FieldsFunc(s, func) 🔔 This function splits the string s on the characters for which a custom function returns true and returns a slice containing the remaining sections of the string.",
-		"fieldsfunc(string, function)":  "169🚀 FieldsFunc(s, func) 🔔 This function splits the string s on the characters for which a custom function returns true and returns a slice containing the remaining sections of the string.",
-		"split(s, sub)":                 "169🚀 Split(s, sub) 🔔 This function splits the string s on every occurrence of the specified substring, returning a string slice. If the separator is the empty string, then the slice will contain strings for each character.",
-		"split()":                       "169🚀 Split(s, sub) 🔔 This function splits the string s on every occurrence of the specified substring, returning a string slice. If the separator is the empty string, then the slice will contain strings for each character.",
-		"split(string, sub)":            "169🚀 Split(s, sub) 🔔 This function splits the string s on every occurrence of the specified substring, returning a string slice. If the separator is the empty string, then the slice will contain strings for each character.",
-		"splitn(s, sub, max)":           "169🚀 SplitN(s, sub, max) 🔔 This function is similar to Split, but accepts an additional int argument that specifies the maximum number of substrings to return. The last substring in the result slice will contain the unsplit portion of the source string.",
-		"splitn()":                      "169🚀 SplitN(s, sub, max) 🔔 This function is similar to Split, but accepts an additional int argument that specifies the maximum number of substrings to return. The last substring in the result slice will contain the unsplit portion of the source string.",
-		"splitn(string, sub, max)":      "169🚀 SplitN(s, sub, max) 🔔 This function is similar to Split, but accepts an additional int argument that specifies the maximum number of substrings to return. The last substring in the result slice will contain the unsplit portion of the source string.",
-		"splitafter(s, sub)":            "169🚀 SplitAfter(s, sub) 🔔 This function is similar to Split but includes the substring used in the results.",
-		"splitafter()":                  "169🚀 SplitAfter(s, sub) 🔔 This function is similar to Split but includes the substring used in the results.",
-		"splitafter(string, sub)":       "169🚀 SplitAfter(s, sub) 🔔 This function is similar to Split but includes the substring used in the results.",
-		"splitaftern(s, sub, max)":      "169🚀 SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
-		"splitaftern()":                 "169🚀 SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
-		"splitaftern(string, sub, max)": "169🚀 SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
-		/*
-
-
-
-
 		 */                               //161.Comparing Strings
 		"contains(s, substr)":            "161🚀 Contains(s, substr) 🔔 This function returns true if the string s contains substr and false if it does not.",
 		"contains()":                     "161🚀 Contains(s, substr) 🔔 This function returns true if the string s contains substr and false if it does not.",
@@ -126,6 +124,31 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 		"hassuffix(string, sufix)":       "161🚀 HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
 		"hassuffix()":                    "161🚀 HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
 		"hassuffix(string, string)":      "161🚀 HasSuffix(s, suffix) 🔔 This function returns true if the string ends with the string suffix.",
+		/*
+
+
+
+
+
+		 */                              // 169.Splitting Strings
+		"fields(s)":                     "169🚀 Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
+		"fields()":                      "169🚀 Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
+		"fields(string)":                "169🚀 Fields(s) 🔔 This function splits a string on whitespace characters and returns a slice containing the nonwhitespace sections of the string s.",
+		"fieldsfunc(s, func)":           "169🚀 FieldsFunc(s, func) 🔔 This function splits the string s on the characters for which a custom function returns true and returns a slice containing the remaining sections of the string.",
+		"fieldsfunc()":                  "169🚀 FieldsFunc(s, func) 🔔 This function splits the string s on the characters for which a custom function returns true and returns a slice containing the remaining sections of the string.",
+		"fieldsfunc(string, function)":  "169🚀 FieldsFunc(s, func) 🔔 This function splits the string s on the characters for which a custom function returns true and returns a slice containing the remaining sections of the string.",
+		"split(s, sub)":                 "169🚀 Split(s, sub) 🔔 This function splits the string s on every occurrence of the specified substring, returning a string slice. If the separator is the empty string, then the slice will contain strings for each character.",
+		"split()":                       "169🚀 Split(s, sub) 🔔 This function splits the string s on every occurrence of the specified substring, returning a string slice. If the separator is the empty string, then the slice will contain strings for each character.",
+		"split(string, sub)":            "169🚀 Split(s, sub) 🔔 This function splits the string s on every occurrence of the specified substring, returning a string slice. If the separator is the empty string, then the slice will contain strings for each character.",
+		"splitn(s, sub, max)":           "169🚀 SplitN(s, sub, max) 🔔 This function is similar to Split, but accepts an additional int argument that specifies the maximum number of substrings to return. The last substring in the result slice will contain the unsplit portion of the source string.",
+		"splitn()":                      "169🚀 SplitN(s, sub, max) 🔔 This function is similar to Split, but accepts an additional int argument that specifies the maximum number of substrings to return. The last substring in the result slice will contain the unsplit portion of the source string.",
+		"splitn(string, sub, max)":      "169🚀 SplitN(s, sub, max) 🔔 This function is similar to Split, but accepts an additional int argument that specifies the maximum number of substrings to return. The last substring in the result slice will contain the unsplit portion of the source string.",
+		"splitafter(s, sub)":            "169🚀 SplitAfter(s, sub) 🔔 This function is similar to Split but includes the substring used in the results.",
+		"splitafter()":                  "169🚀 SplitAfter(s, sub) 🔔 This function is similar to Split but includes the substring used in the results.",
+		"splitafter(string, sub)":       "169🚀 SplitAfter(s, sub) 🔔 This function is similar to Split but includes the substring used in the results.",
+		"splitaftern(s, sub, max)":      "169🚀 SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
+		"splitaftern()":                 "169🚀 SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
+		"splitaftern(string, sub, max)": "169🚀 SplitAfterN(s, sub, max) 🔔 This function is similar to SplitAfter, but accepts an additional int argument that specifies the maximum number of substrings to return.",
 		/*
 
 
@@ -246,43 +269,20 @@ var OriginalSingleDefFunctions = FunctionsDefinitions{
 
 
 
-		 */
-		"replaceallstring(s, template)":              "ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
-		"replaceallstring(str, temp)":                "ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
-		"replaceallstring(string, temp)":             "ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
-		"replaceallstring(strings, temp)":            "ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
-		"replaceallstring(strings, template)":        "ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
-		"replaceallstring(string, template)":         "ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
-		"replaceallliteralstring(s, sub)":            "ReplaceAllLiteralString(s, sub) 🔔 This method replaces the matched portion of the string s with the specified content, which is included in the result without being expanded for subexpressions.",
-		"replaceallliteralstring(str, sub)":          "ReplaceAllLiteralString(s, sub) 🔔 This method replaces the matched portion of the string s with the specified content, which is included in the result without being expanded for subexpressions.",
-		"replaceallliteralstring(string, sub)":       "ReplaceAllLiteralString(s, sub) 🔔 This method replaces the matched portion of the string s with the specified content, which is included in the result without being expanded for subexpressions.",
-		"replaceallliteralstring(string, specified)": "ReplaceAllLiteralString(s, sub) 🔔 This method replaces the matched portion of the string s with the specified content, which is included in the result without being expanded for subexpressions.",
-		"replaceallstringfunc(s, func)":              "ReplaceAllStringFunc(s, func) 🔔 This method replaces the matched portion of the string s with the result produced by the specified function.",
-		"replaceallstringfunc(str, func)":            "ReplaceAllStringFunc(s, func) 🔔 This method replaces the matched portion of the string s with the result produced by the specified function.",
-		"replaceallstringfunc(string, function)":     "ReplaceAllStringFunc(s, func) 🔔 This method replaces the matched portion of the string s with the result produced by the specified function.",
-		/*
-
-
-
-
-		 */
-		"atoi()":                 "Atoi(str) 🔔 This function parses a string into a base 10 int and is equivalent to calling ParseInt(str, 10, 0)",
-		"atoi(str)":              "Atoi(str) 🔔 This function parses a string into a base 10 int and is equivalent to calling ParseInt(str, 10, 0)",
-		"atoi(string)":           "Atoi(str) 🔔 This function parses a string into a base 10 int and is equivalent to calling ParseInt(str, 10, 0)",
-		"formatint()":            "FormatInt(value, base) 🔔 This function returns a string representation of the specified int64 value, expressed in the specified base.",
-		"formatint(value, base)": "FormatInt(value, base) 🔔 This function returns a string representation of the specified int64 value, expressed in the specified base.",
-		"formatint(val, base)":   "FormatInt(value, base) 🔔 This function returns a string representation of the specified int64 value, expressed in the specified base.",
-		"formatuint()":           "FormatUint(val, base) 🔔 This function returns a string representation of the specified uint64 value, expressed in the specified base.",
-		"formatuint(val, base)":  "FormatUint(val, base) 🔔 This function returns a string representation of the specified uint64 value, expressed in the specified base.",
-		/*
-
-
-
-
-		 */
-		"itoa()":      "Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
-		"itoa(val)":   "Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
-		"itoa(value)": "Itoa(val) 🔔 This function returns a string representation of the specified int value, expressed using base 10.",
+		 */                                           //199.Replacing Substrings Using a Regular Expression
+		"replaceallstring(s, template)":              "199🚀 ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
+		"replaceallstring(str, temp)":                "199🚀 ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
+		"replaceallstring(string, temp)":             "199🚀 ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
+		"replaceallstring(strings, temp)":            "199🚀 ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
+		"replaceallstring(strings, template)":        "199🚀 ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
+		"replaceallstring(string, template)":         "199🚀 ReplaceAllString(s, template) 🔔 This method replaces the matched portion of the string s with the specified template, which is expanded before it is included in the result to incorporate subexpressions.",
+		"replaceallliteralstring(s, sub)":            "199🚀 ReplaceAllLiteralString(s, sub) 🔔 This method replaces the matched portion of the string s with the specified content, which is included in the result without being expanded for subexpressions.",
+		"replaceallliteralstring(str, sub)":          "199🚀 ReplaceAllLiteralString(s, sub) 🔔 This method replaces the matched portion of the string s with the specified content, which is included in the result without being expanded for subexpressions.",
+		"replaceallliteralstring(string, sub)":       "199🚀 ReplaceAllLiteralString(s, sub) 🔔 This method replaces the matched portion of the string s with the specified content, which is included in the result without being expanded for subexpressions.",
+		"replaceallliteralstring(string, specified)": "199🚀 ReplaceAllLiteralString(s, sub) 🔔 This method replaces the matched portion of the string s with the specified content, which is included in the result without being expanded for subexpressions.",
+		"replaceallstringfunc(s, func)":              "199🚀 ReplaceAllStringFunc(s, func) 🔔 This method replaces the matched portion of the string s with the result produced by the specified function.",
+		"replaceallstringfunc(str, func)":            "199🚀 ReplaceAllStringFunc(s, func) 🔔 This method replaces the matched portion of the string s with the result produced by the specified function.",
+		"replaceallstringfunc(string, function)":     "199🚀 ReplaceAllStringFunc(s, func) 🔔 This method replaces the matched portion of the string s with the result produced by the specified function.",
 		/*
 
 
