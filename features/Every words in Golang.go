@@ -12460,7 +12460,27 @@ Output:
     AssignableTo(type)  This method returns true if values of this type can be assigned to variables or fields of
                         the specified reflected type.
 ████████████████████████████████████████████████████████████████████████
-482.
+482.The Kind Constants
+    The reflect package defines a type named Kind, which is an alias for uint, and which is used for a
+    series of constants that describe different kinds of type.
+
+    Name                                    Description
+    ----------------------                  -----------------------------------------
+    Bool                                    This value denotes a bool.
+    Int, Int8, Int16, Int32, Int64          These values denote the different sizes of integer types.
+    Uint, Uint8, Uint16, Uint32, Uint64     These values denote the different sizes of unsigned integer types.
+    Float32, Float64                        These values denote the different sizes of floating-point types.
+    String                                  This value denotes a string.
+    Struct                                  This value denotes a struct.
+    Array                                   This value denotes an array.
+    Slice                                   This value denotes a slice.
+    Map                                     This value denotes a map.
+    Chan                                    This value denotes a channel.
+    Func                                    This value defines a function.
+    Interface                               This value denotes an interface.
+    Ptr                                     This value denotes a pointer
+    Uintptr                                 This value denotes an unsafe pointer, which is not described in this book.
+
 ████████████████████████████████████████████████████████████████████████
 483.
 ████████████████████████████████████████████████████████████████████████
