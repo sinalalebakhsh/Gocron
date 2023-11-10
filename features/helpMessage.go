@@ -42,7 +42,7 @@ like this:
 func HelpMessage() {
 	color.HiBlue(`
 ┌───────────────────┐
-|   GoCron v1.0.16  |
+|   GoCron v1.0.36  |
 └───────────────────┘`)
 	words := SplitIntoWords(Message)
 	PrintWordByWord(words)
