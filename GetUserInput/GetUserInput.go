@@ -14,9 +14,12 @@ import (
 
 // after ensure user dont wrote arg more than one like -h or --help
 // get user input in this condition
-func GetUserInput() {
+func GetUserInput(GetBoleanFromGetFirstArgFunction bool) {
 
-	fmt.Println("Would you like to join the gocron project on GitHub? (yes/no)")
+	if GetBoleanFromGetFirstArgFunction {
+		fmt.Println("💠💠💠 Would you like to join the gocron project on GitHub? (yes/no)")
+	}
+	
 	FirstCount := true
 
 	// I use For loop for getting user input for Repeatedly.
