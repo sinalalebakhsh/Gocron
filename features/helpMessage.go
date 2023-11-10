@@ -105,5 +105,8 @@ Show All
 	ALLHTTPCLIENTS
 	ALL CREATING HTTP CLIENTS
 	ALLCREATINGHTTPCLIENTS`))
+	time.Sleep(time.Second * 2)
+	color.HiBlue(fmt.Sprintln("💠💠💠 Would you like to join the gocron project on GitHub? (yes/no)"))
+
 
 }
