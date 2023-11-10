@@ -16,10 +16,12 @@ import (
 // get user input in this condition
 func GetUserInput(GetBoleanFromGetFirstArgFunction bool) {
 
+	// If user wrote another argument after ./Gocron for running program,
+	// Like -help, so this here below will not print. 
 	if GetBoleanFromGetFirstArgFunction {
 		fmt.Println("💠💠💠 Would you like to join the gocron project on GitHub? (yes/no)")
 	}
-	
+
 	FirstCount := true
 
 	// I use For loop for getting user input for Repeatedly.
