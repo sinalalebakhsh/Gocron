@@ -3,3 +3,4 @@ golang
 exit
 what is variable in golang?
 what exactly variable in go language? explain to me
+explain golang
