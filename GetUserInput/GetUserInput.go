@@ -12,6 +12,7 @@ import (
 	// "github.com/sinalalebakhsh/Gocron/Server"
 )
 
+
 // after ensure user dont wrote arg more than one like -h or --help
 // get user input in this condition
 func GetUserInput(GetBoleanFromGetFirstArgFunction bool) {
@@ -34,7 +35,12 @@ func GetUserInput(GetBoleanFromGetFirstArgFunction bool) {
 		FinalInput, _ := UserInput.ReadString('\n')
 		FinalInput = strings.TrimSuffix(FinalInput, "\n")
 		FinalInput = strings.TrimSpace(FinalInput)
+		
+		SaveUserInputInFileTXT(FinalInput)
+
+
 		SliceOfWords := strings.Split(FinalInput, " ")
+
 
 		// Checks for each entry into the loop
 		// if user input was "exit" so break loop and log out
@@ -354,4 +360,59 @@ func searchSlice(input string, slice []string, obj features.DataBase) features.D
 
 func PrintNotAddYet(FinalInput string) {
 	color.HiRed(fmt.Sprintf("=================================\nNot add %q yet.\n=================================", FinalInput))
+}
+
+const FileName = "user_input.txt"
+func SaveUserInputInFileTXT(FinalInput string) {
+	// Check if the file exists
+	if _, err := os.Stat(FileName); os.IsNotExist(err) {
+		// File doesn't exist, create an empty one
+		if err := os.WriteFile(FileName, []byte(""), 0644); err != nil {
+			fmt.Println("Error creating file:", err)
+			return
+		}
+	}
+
+	// Read existing content from the file
+	content, err := os.ReadFile(FileName)
+	if err != nil {
+		fmt.Println("Error reading file:", err)
+		return
+	}
+
+	// Convert file content to lowercase for case-insensitive comparison
+	fileContent := strings.ToLower(string(content))
+
+
+	// Convert user input to lowercase for case-insensitive comparison
+	FinalInput = strings.ToLower(FinalInput)
+
+	// Check if the user input exists in the file
+	if strings.Contains(fileContent, FinalInput) {
+		// fmt.Println("This search was done before.")
+	} else {
+		// Save the user input to the file
+		if err := SaveToFile(FinalInput); err != nil {
+			// fmt.Println("Error saving to file:", err)
+			return
+		}
+		// fmt.Println("Sentence saved to the file.")
+	}
+}
+
+
+func SaveToFile(sentence string) error {
+	// Open the file in append mode
+	file, err := os.OpenFile(FileName, os.O_APPEND|os.O_WRONLY, 0644)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	// Write the sentence to the file
+	if _, err := file.WriteString(sentence + "\n"); err != nil {
+		return err
+	}
+
+	return nil
 }
