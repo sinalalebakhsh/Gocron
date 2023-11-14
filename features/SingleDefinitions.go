@@ -150,6 +150,14 @@ var OriginSingleDef = SingleDefinitions{
 		"package reflect": "The reflect package provides features that allow types and values to be reflected, such that they can be used without explicit knowledge of the data types in use.",
 		// server
 		"server": "server is a service for connection between clients and hosts. for get example of Go please write this: server example",
+		// 487.Identifying Byte Slices
+		"identifying byte slices":"Using the comparison operator is also a good way of using the Bytes method safety. The Bytes method will panic if it is called on any type other than a slice of bytes, but the Kind method only indicates slices and not their contents.",
+		//
+		//
+		//
+		//
+		//
+		//
 		//
 		//
 		//
