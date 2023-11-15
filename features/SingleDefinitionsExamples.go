@@ -690,7 +690,215 @@ Output:
 	NOT Found blue text with another information.
 */
 `,
+"goal or none sense game":`game-1 Goal Or None Sense Game
 
+main.go:
+	package main
+	import (
+		"fmt"
+		"math/rand"
+		"time"
+	)
+	func main() {
+		rand.Seed(time.Now().UnixNano())
+
+		var cups, chances int
+
+		fmt.Print("How many cups? ")
+		fmt.Scan(&cups)
+
+		fmt.Print("How many chances? ")
+		fmt.Scan(&chances)
+
+		aiGoal := rand.Intn(cups) + 1
+		fmt.Println("----------")
+		var userGuess int
+		for i := 0; i < chances; i++ {
+			fmt.Printf("%d chances left.\n", chances-i)
+			fmt.Print("Guess [1-", cups, "]: ")
+			fmt.Scan(&userGuess)
+			if userGuess == aiGoal {
+				fmt.Println("You guessed right.")
+				break
+			} else {
+				fmt.Println("🥶 🫨 🥶 🫨")
+				fmt.Println("🥶 🫥 🥶 🫨 🫨")
+				fmt.Println("----------")
+			}
+		}
+		if userGuess == aiGoal {
+			fmt.Println("==============")
+			fmt.Println("💓 😍 💓 😍 💓 😍 💓 😍💗💗💗")
+		} else {
+			fmt.Printf("The right answer is %d.\n", aiGoal)
+			fmt.Println("You lost. Sorry!")
+		}
+	}
+`,
+"game":`game-1 Goal Or None Sense Game
+main.go:
+package main
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	var cups, chances int
+	fmt.Print("How many cups? ")
+	fmt.Scan(&cups)
+	fmt.Print("How many chances? ")
+	fmt.Scan(&chances)
+	aiGoal := rand.Intn(cups) + 1
+	fmt.Println("----------")
+	var userGuess int
+	for i := 0; i < chances; i++ {
+		fmt.Printf("%d chances left.\n", chances-i)
+		fmt.Print("Guess [1-", cups, "]: ")
+		fmt.Scan(&userGuess)
+
+		if userGuess == aiGoal {
+			fmt.Println("You guessed right.")
+			break
+		} else {
+			fmt.Println("🥶 🫨 🥶 🫨")
+			fmt.Println("🥶 🫥 🥶 🫨 🫨")
+			fmt.Println("----------")
+		}
+	}
+	if userGuess == aiGoal {
+		fmt.Println("==============")
+		fmt.Println("💓 😍 💓 😍 💓 😍 💓 😍💗💗💗")
+	} else {
+		fmt.Printf("The right answer is %d.\n", aiGoal)
+		fmt.Println("You lost. Sorry!")
+	}
+}
+`,
+"game1":`game-1 Goal Or None Sense Game
+main.go:
+package main
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	var cups, chances int
+	fmt.Print("How many cups? ")
+	fmt.Scan(&cups)
+	fmt.Print("How many chances? ")
+	fmt.Scan(&chances)
+	aiGoal := rand.Intn(cups) + 1
+	fmt.Println("----------")
+	var userGuess int
+	for i := 0; i < chances; i++ {
+		fmt.Printf("%d chances left.\n", chances-i)
+		fmt.Print("Guess [1-", cups, "]: ")
+		fmt.Scan(&userGuess)
+
+		if userGuess == aiGoal {
+			fmt.Println("You guessed right.")
+			break
+		} else {
+			fmt.Println("🥶 🫨 🥶 🫨")
+			fmt.Println("🥶 🫥 🥶 🫨 🫨")
+			fmt.Println("----------")
+		}
+	}
+	if userGuess == aiGoal {
+		fmt.Println("==============")
+		fmt.Println("💓 😍 💓 😍 💓 😍 💓 😍💗💗💗")
+	} else {
+		fmt.Printf("The right answer is %d.\n", aiGoal)
+		fmt.Println("You lost. Sorry!")
+	}
+}
+`,
+"game goal or none sense":`game-1 Goal Or None Sense Game
+main.go:
+package main
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	var cups, chances int
+	fmt.Print("How many cups? ")
+	fmt.Scan(&cups)
+	fmt.Print("How many chances? ")
+	fmt.Scan(&chances)
+	aiGoal := rand.Intn(cups) + 1
+	fmt.Println("----------")
+	var userGuess int
+	for i := 0; i < chances; i++ {
+		fmt.Printf("%d chances left.\n", chances-i)
+		fmt.Print("Guess [1-", cups, "]: ")
+		fmt.Scan(&userGuess)
+
+		if userGuess == aiGoal {
+			fmt.Println("You guessed right.")
+			break
+		} else {
+			fmt.Println("🥶 🫨 🥶 🫨")
+			fmt.Println("🥶 🫥 🥶 🫨 🫨")
+			fmt.Println("----------")
+		}
+	}
+	if userGuess == aiGoal {
+		fmt.Println("==============")
+		fmt.Println("💓 😍 💓 😍 💓 😍 💓 😍💗💗💗")
+	} else {
+		fmt.Printf("The right answer is %d.\n", aiGoal)
+		fmt.Println("You lost. Sorry!")
+	}
+}
+`,
+"goal or none sense":`game-1 Goal Or None Sense Game
+main.go:
+package main
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	var cups, chances int
+	fmt.Print("How many cups? ")
+	fmt.Scan(&cups)
+	fmt.Print("How many chances? ")
+	fmt.Scan(&chances)
+	aiGoal := rand.Intn(cups) + 1
+	fmt.Println("----------")
+	var userGuess int
+	for i := 0; i < chances; i++ {
+		fmt.Printf("%d chances left.\n", chances-i)
+		fmt.Print("Guess [1-", cups, "]: ")
+		fmt.Scan(&userGuess)
+
+		if userGuess == aiGoal {
+			fmt.Println("You guessed right.")
+			break
+		} else {
+			fmt.Println("🥶 🫨 🥶 🫨")
+			fmt.Println("🥶 🫥 🥶 🫨 🫨")
+			fmt.Println("----------")
+		}
+	}
+	if userGuess == aiGoal {
+		fmt.Println("==============")
+		fmt.Println("💓 😍 💓 😍 💓 😍 💓 😍💗💗💗")
+	} else {
+		fmt.Printf("The right answer is %d.\n", aiGoal)
+		fmt.Println("You lost. Sorry!")
+	}
+}
+`,
 },
 
 }
