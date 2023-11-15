@@ -899,6 +899,82 @@ func main() {
 	}
 }
 `,
+"encryption":`encryption1 simple encryption
+main.go:
+	package main
+
+	import "fmt"
+
+	func main() {
+		userInput := "sina"
+
+		var Encryption string
+
+		for _, char := range userInput {
+			Encryption += fmt.Sprintf("%d ", char)
+		}
+
+		fmt.Println(Encryption)
+	}
+`,
+
+"encryption1":`encryption1 simple encryption
+main.go:
+	package main
+
+	import "fmt"
+
+	func main() {
+		userInput := "sina"
+
+		var Encryption string
+
+		for _, char := range userInput {
+			Encryption += fmt.Sprintf("%d ", char)
+		}
+
+		fmt.Println(Encryption)
+	}
+`,
+
+"simple encryption":`encryption1 simple encryption
+main.go:
+	package main
+
+	import "fmt"
+
+	func main() {
+		userInput := "sina"
+
+		var Encryption string
+
+		for _, char := range userInput {
+			Encryption += fmt.Sprintf("%d ", char)
+		}
+
+		fmt.Println(Encryption)
+	}
+`,
+
+"first encryption":`encryption1 simple encryption
+main.go:
+	package main
+
+	import "fmt"
+
+	func main() {
+		userInput := "sina"
+
+		var Encryption string
+
+		for _, char := range userInput {
+			Encryption += fmt.Sprintf("%d ", char)
+		}
+
+		fmt.Println(Encryption)
+	}
+`,
+
 },
 
 }

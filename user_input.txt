@@ -5,3 +5,17 @@ what is variable in golang?
 what exactly variable in go language? explain to me
 explain golang
 identifying byte slices
+"encryption":`encryption1 simple encryption
+main.go:
+package main
+import "fmt"
+func main() {
+userinput := "sina"
+var encryption string
+for _, char := range userinput {
+encryption += fmt.sprintf("%d ", char)
+}
+fmt.println(encryption)
+`,
+clear
+first encryption example
