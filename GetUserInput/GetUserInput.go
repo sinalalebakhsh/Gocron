@@ -10,6 +10,7 @@ import (
 	"os/exec"
 	"runtime"
 	// "github.com/sinalalebakhsh/Gocron/Server"
+	"math/rand"
 )
 
 
@@ -82,6 +83,10 @@ func GetUserInput(GetBoleanFromGetFirstArgFunction bool) {
 
 		if Regular {
 			Regular = IfUsrisALL(FinalInput)
+		}
+
+		if Regular {
+			Regular = IfUserInputIsEmpty(FinalInput)
 		}
 
 		if Regular {
@@ -360,6 +365,104 @@ func searchSlice(input string, slice []string, obj features.DataBase) features.D
 
 func PrintNotAddYet(FinalInput string) {
 	color.HiRed(fmt.Sprintf("=================================\nNot add %q yet.\n=================================", FinalInput))
+}
+
+func IfUserInputIsEmpty(FinalInput string) bool {
+	if FinalInput == "" {
+		// Example slice of strings
+		mySlice := []string{
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"I tell to Sina Lalehbakhsh!!!",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"I tell to Sina Lalehbakhsh!!!",
+			"I tell to Sina Lalehbakhsh!!!",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"I tell to Sina Lalehbakhsh!!!",
+			"I tell to Sina Lalehbakhsh!!!",
+			"I tell to Sina Lalehbakhsh!!!",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"What are you doing!? with empty!",
+			"empty search !",
+			"empty search !",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"empty search !",
+			"empty search !",
+			"empty search !",
+			"are you kidding me؟!", 
+			"say something.", 
+			"you think that faunny!?", 
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"You entered blank!", 
+			"Go language has no definition for empty space!",
+			"Do you think the empty space has meaning?!",
+			"Seriously, are you joking?!",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"Speak up, please.",
+			"Do you find that amusing!?",
+			"You just submitted nothing!",
+			"empty search !",
+			"empty search !",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"empty search !",
+			"In Go language, an empty space is undefined!",
+			"Contemplate: does an empty space convey meaning to you?!",
+			"Are you pulling my leg right now?!",
+			"Express yourself, don't stay silent.",
+			"Humor me, do you really think that's funny!?",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"A void? You just presented me with emptiness!",
+			"In the realm of Go language, emptiness lacks definition!",
+			"Does the absence of content hold significance to you?",
+			"empty search !",
+			"empty search !",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"empty search !",
+			"You jest, right? There's nothing here!",
+			"Your input is as vacant as an open field in Go!",
+			"Is the concept of nothingness profound to you?",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"Seriously, an empty space? That's your contribution?",
+			"In Go, silence speaks louder than an undefined space!",
+			"Time will tell.",
+			"Dream big dreams.",
+			"Chase your passion.",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"Love conquers all.",
+			"Silence speaks volumes.",
+			"Explore new horizons.",
+			"Learn from mistakes.",
+			"Embrace the unexpected.",
+			"Create lasting memories.",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"Find inner strength.",
+			"empty search !",
+			"empty search !",
+			"empty search !",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"empty search !",
+			"empty search !",
+			"I am Gocron!! and I don't have feature for empty!!! say something!!",
+			"empty search !",
+		}
+
+		// Get a random element from the slice
+		randomElement, err := getRandomElement(mySlice)
+		if err != nil {
+			fmt.Println(err)
+		} else {
+			color.HiRed(fmt.Sprintf("=================================\n%s\n=================================", randomElement))
+		}
+		return false
+	}
+	return true
+}
+func getRandomElement(slice []string) (string, error) {
+	if len(slice) == 0 {
+		return "", fmt.Errorf("slice is empty")
+	}
+	randomIndex := rand.Intn(len(slice))
+	return slice[randomIndex], nil
 }
 
 const FileName = "user_input.txt"
