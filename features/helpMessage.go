@@ -8,7 +8,7 @@ import (
 )
 
 var LOGO string = fmt.Sprintln(` ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
- •                                      GOCRON-VERSION 💠 v1.0.32 💠                                           •
+ •                                      GOCRON-VERSION 💠 v1.0.38 💠                                           •
  •                                       Go learning with CLI tool                                             • 
  • ██████████████████████████████████████████████████████████████████████████████████████████████████████████  •
  • ██              ███             ███              ██               █████             ███       ██████     █  •
@@ -42,7 +42,7 @@ like this:
 func HelpMessage() {
 	color.HiBlue(`
 ┌───────────────────┐
-|   GoCron v1.0.36  |
+|   GoCron v1.0.38  |
 └───────────────────┘`)
 	words := SplitIntoWords(Message)
 	PrintWordByWord(words)
