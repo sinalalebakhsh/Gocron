@@ -2,7 +2,7 @@
 echo -n "Git push on branch develop "
 echo ""
 git add .
-git commit -m " 💠 488.go tool dist list  "
+git commit -m " 💠 Now for Windows and Ubuntu amd64 = Building Executables for Different Architectures   "
 git push -u origin develop
 echo "====================================================================="
 echo -n "git checkout beforeMergeToMain "
@@ -16,7 +16,7 @@ echo "====================================================================="
 echo -n "Git is Push for beforeMergeToMain "
 echo ""
 git add .
-git commit -m " 💠 488.go tool dist list  "
+git commit -m " 💠 Now for Windows and Ubuntu amd64 = Building Executables for Different Architectures   "
 git push -u origin beforeMergeToMain
 echo "====================================================================="
 echo -n "git checkout main "
@@ -38,7 +38,7 @@ echo "====================================================================="
 echo -n "Git is Push for main "
 echo ""
 git add .
-git commit -m " 💠 488.go tool dist list  "
+git commit -m " 💠 Now for Windows and Ubuntu amd64 = Building Executables for Different Architectures   "
 git push -u origin main
 echo "====================================================================="
 echo -n "git checkout develop "
