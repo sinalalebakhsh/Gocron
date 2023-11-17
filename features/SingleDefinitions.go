@@ -159,6 +159,10 @@ var OriginSingleDef = SingleDefinitions{
 		// 487.Identifying Byte Slices
 		"identifying byte slices":"Using the comparison operator is also a good way of using the Bytes method safety. The Bytes method will panic if it is called on any type other than a slice of bytes, but the Kind method only indicates slices and not their contents.",
 		//
+		// 488.go tool dist list
+		"go tool dist list": `488🚀 This will provide you a list of operating systems and architectures separated by / characters:`,
+		"tool dist list":    `488🚀 This will provide you a list of operating systems and architectures separated by / characters:`,
+		"dist list":         `488🚀 This will provide you a list of operating systems and architectures separated by / characters:`,
 		//
 		//
 		//
