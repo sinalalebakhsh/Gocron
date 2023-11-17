@@ -27,11 +27,11 @@ echo -n "git merge beforeMergeToMain "
 echo ""
 git merge beforeMergeToMain
 echo "🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫"
-go build .
+go build -o build/Ubuntu/ . 
 echo -n "Go Build "
 echo ""
 echo "🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫🐹🦫"
-GOOS=windows GOARCH=amd64 go build .
+GOOS=windows GOARCH=amd64 go build -o build/Windows/ .
 echo -n "Go Build For windows"
 echo ""
 echo "====================================================================="
