@@ -160,12 +160,21 @@
 				</summary>
 					💠💠💠 If User Input Is Just Number 💠💠💠
 			</details>
+			<details>
+					<summary>
+						💠 v1.0.33
+					</summary>
+					💠💠💠 💠💠💠 Adding There are complete => Numbers for Keys Map until 480 💠💠💠
+			</details>
 		</details>
 		<details>
 				<summary>
-					💠 v1.0.33
+					v1.0.38
 				</summary>
-					💠💠💠 💠💠💠 Adding There are complete => Numbers for Keys Map until 480 💠💠💠
+			Now for Windows and Ubuntu amd64 = Building Executables for Different Architectures
+			This is my First developed project , so maybe will not work for your Windows
+			I learn this from:
+			https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-20-04
 		</details>
 	</details>
 </br>
