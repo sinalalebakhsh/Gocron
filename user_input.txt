@@ -19,3 +19,8 @@ fmt.println(encryption)
 `,
 clear
 first encryption example
+yes
+for example
+server example
+dist list
+dist list example
