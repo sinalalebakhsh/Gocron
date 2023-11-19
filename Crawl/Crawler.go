@@ -7,22 +7,39 @@ Terminal:
 
 */
 
-package features
+package crawl
 
 import (
 	"fmt"
+	"golang.org/x/net/html"
 	"net/http"
 	"os"
-	"strconv"
-
-	"golang.org/x/net/html"
+	"time"
 )
 
 // Crawl function takes a URL and recursively crawls the pages
-func Crawl(url string, depth int) {
+func Crawl(url string, depth int, searchDir string) {
 	if depth <= 0 {
 		return
 	}
+
+	// Create a directory for the search with the current date and time
+	now := time.Now()
+	searchDir = now.Format("2006-01-02-15-04-05") + "-" + searchDir
+
+	err := os.Mkdir(searchDir, 0755)
+	if err != nil {
+		fmt.Println("Error creating directory:", err)
+		return
+	}
+
+	// Create a file to store search results
+	resultFile, err := os.Create(fmt.Sprintf("%s/searchResult.txt", searchDir))
+	if err != nil {
+		fmt.Println("Error creating result file:", err)
+		return
+	}
+	defer resultFile.Close()
 
 	// Make an HTTP request
 	resp, err := http.Get(url)
@@ -39,28 +56,29 @@ func Crawl(url string, depth int) {
 		return
 	}
 
-	// Process the links on the current page
-	processLinks(doc)
+	// Process the links on the current page and write them to the result file
+	processLinks(doc, resultFile)
 
 	// Recursively crawl the linked pages
 	links := extractLinks(doc)
 	for _, link := range links {
-		Crawl(link, depth-1)
+		Crawl(link, depth-1, searchDir)
 	}
 }
 
 // processLinks extracts and prints the links on the current page
-func processLinks(n *html.Node) {
+func processLinks(n *html.Node, resultFile *os.File) {
 	if n.Type == html.ElementNode && n.Data == "a" {
 		for _, a := range n.Attr {
 			if a.Key == "href" {
-				fmt.Println("Link:", a.Val)
+				link := fmt.Sprintf("Link: %s\n", a.Val)
+				resultFile.WriteString(link)
 			}
 		}
 	}
 
 	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		processLinks(c)
+		processLinks(c, resultFile)
 	}
 }
 
@@ -90,17 +108,4 @@ func extractLinks(n *html.Node) []string {
 
 	visitNode(n)
 	return links
-}
-
-func main() {
-	if len(os.Args) != 3 {
-		fmt.Println("Usage: go run crawler.go <url> <depth>")
-		return
-	}
-
-	url := os.Args[1]
-	depth := os.Args[2]
-    IntDepth, _ := strconv.Atoi(depth)
-
-	Crawl(url, IntDepth)
 }
