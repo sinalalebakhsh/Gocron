@@ -465,7 +465,7 @@ func getRandomElement(slice []string) (string, error) {
 	return slice[randomIndex], nil
 }
 
-const FileName = "user_input.txt"
+const FileName = "SearchLogs/user_input.txt"
 func SaveUserInputInFileTXT(FinalInput string) {
 	// Check if the file exists
 	if _, err := os.Stat(FileName); os.IsNotExist(err) {
