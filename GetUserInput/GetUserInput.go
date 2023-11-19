@@ -465,19 +465,19 @@ func getRandomElement(slice []string) (string, error) {
 	return slice[randomIndex], nil
 }
 
-const FileName = "SearchLogs/user_input.txt"
+const SearchLogFile = "SearchLogs/user_input.txt"
 func SaveUserInputInFileTXT(FinalInput string) {
 	// Check if the file exists
-	if _, err := os.Stat(FileName); os.IsNotExist(err) {
+	if _, err := os.Stat(SearchLogFile); os.IsNotExist(err) {
 		// File doesn't exist, create an empty one
-		if err := os.WriteFile(FileName, []byte(""), 0644); err != nil {
+		if err := os.WriteFile(SearchLogFile, []byte(""), 0644); err != nil {
 			fmt.Println("Error creating file:", err)
 			return
 		}
 	}
 
 	// Read existing content from the file
-	content, err := os.ReadFile(FileName)
+	content, err := os.ReadFile(SearchLogFile)
 	if err != nil {
 		fmt.Println("Error reading file:", err)
 		return
@@ -506,7 +506,7 @@ func SaveUserInputInFileTXT(FinalInput string) {
 
 func SaveToFile(sentence string) error {
 	// Open the file in append mode
-	file, err := os.OpenFile(FileName, os.O_APPEND|os.O_WRONLY, 0644)
+	file, err := os.OpenFile(SearchLogFile, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
 		return err
 	}

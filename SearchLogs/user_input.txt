@@ -24,3 +24,10 @@ for example
 server example
 dist list
 dist list example
+go is language?
+userinput := "lina"
+asd
+asd asd
+func main() {}
+sina lale
+sina lalehbakhsh
