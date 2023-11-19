@@ -8,8 +8,6 @@ import (
 	"runtime"
 	"strconv"
 	"strings"
-	"time"
-
 	"github.com/fatih/color"
 	"github.com/sinalalebakhsh/Gocron/Crawl"
 	"github.com/sinalalebakhsh/Gocron/features"
@@ -85,7 +83,7 @@ func GetUserInput(GetBoleanFromGetFirstArgFunction bool) {
 		// if Regular {
 		// }
 
-		if len(SliceOfWords) >= 3 {
+		if len(SliceOfWords) >= 4 {
 			// fmt.Printf("%q", SliceOfWords)
 			Regular = IfUserInputIsCrawlURL(SliceOfWords)
 		}
@@ -542,9 +540,7 @@ func IfUserInputIsCrawlURL(SliceOfWords[]string) bool {
 			if err != nil {
 				fmt.Println("Error converting depth to integer:", err) 
 			} else {
-				// Automatically generate a search directory name based on the current date and time
-				now := time.Now()
-				searchDir := now.Format("2006-01-02-15-04-05")
+				searchDir := SliceOfWords[3]
 				crawl.Crawl(URL, depth, searchDir)
 				return false
 			}
