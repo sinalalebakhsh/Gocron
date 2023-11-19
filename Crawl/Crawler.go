@@ -8,7 +8,6 @@ Terminal:
 */
 
 package crawl
-
 import (
 	"fmt"
 	"golang.org/x/net/html"
@@ -23,9 +22,9 @@ func Crawl(url string, depth int, searchDir string) {
 		return
 	}
 
-	// Create a directory for the search with the current date and time
-	now := time.Now()
-	searchDir = now.Format("2006-01-02-15-04-05") + "-" + searchDir
+	// Create a directory for the search
+	today := time.Now().Format("2006-01-02")
+	searchDir = fmt.Sprintf("%s-%s", today, searchDir)
 
 	err := os.Mkdir(searchDir, 0755)
 	if err != nil {
@@ -57,17 +56,17 @@ func Crawl(url string, depth int, searchDir string) {
 	}
 
 	// Process the links on the current page and write them to the result file
-	processLinks(doc, resultFile)
+	ProcessLinks(doc, resultFile)
 
 	// Recursively crawl the linked pages
-	links := extractLinks(doc)
+	links := ExtractLinks(doc)
 	for _, link := range links {
 		Crawl(link, depth-1, searchDir)
 	}
 }
 
-// processLinks extracts and prints the links on the current page
-func processLinks(n *html.Node, resultFile *os.File) {
+// ProcessLinks extracts and prints the links on the current page
+func ProcessLinks(n *html.Node, resultFile *os.File) {
 	if n.Type == html.ElementNode && n.Data == "a" {
 		for _, a := range n.Attr {
 			if a.Key == "href" {
@@ -78,12 +77,12 @@ func processLinks(n *html.Node, resultFile *os.File) {
 	}
 
 	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		processLinks(c, resultFile)
+		ProcessLinks(c, resultFile)
 	}
 }
 
-// extractLinks returns a slice of unique links from the HTML document
-func extractLinks(n *html.Node) []string {
+// ExtractLinks returns a slice of unique links from the HTML document
+func ExtractLinks(n *html.Node) []string {
 	var links []string
 	visited := make(map[string]bool)
 
