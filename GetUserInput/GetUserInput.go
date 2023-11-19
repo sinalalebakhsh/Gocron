@@ -4,15 +4,19 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strings"
-	"github.com/fatih/color"
-	"github.com/sinalalebakhsh/Gocron/features"
 	"os/exec"
 	"runtime"
+	"strconv"
+	"strings"
+	"time"
+
+	"github.com/fatih/color"
+	"github.com/sinalalebakhsh/Gocron/Crawl"
+	"github.com/sinalalebakhsh/Gocron/features"
+
 	// "github.com/sinalalebakhsh/Gocron/Server"
 	"math/rand"
 )
-
 
 // after ensure user dont wrote arg more than one like -h or --help
 // get user input in this condition
@@ -74,11 +78,16 @@ func GetUserInput(GetBoleanFromGetFirstArgFunction bool) {
 			Regular = IfUserWantSingleDefinition(FinalInput)
 		}
 
-		if Regular {
-			if len(SliceOfWords) >= 2 {
-				// FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
-				Regular = IfUsris2orMoreWords(SliceOfWords)
-			}
+		if len(SliceOfWords) >= 2 {
+			// FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
+			Regular = IfUsris2orMoreWords(SliceOfWords)
+		}
+		// if Regular {
+		// }
+
+		if len(SliceOfWords) >= 3 {
+			// fmt.Printf("%q", SliceOfWords)
+			Regular = IfUserInputIsCrawlURL(SliceOfWords)
 		}
 
 		if Regular {
@@ -518,4 +527,30 @@ func SaveToFile(sentence string) error {
 	}
 
 	return nil
+}
+
+
+func IfUserInputIsCrawlURL(SliceOfWords[]string) bool {
+	const CRAWL = "crawl"
+	var URL string
+	var depthStr string
+	if CRAWL == strings.ToLower(SliceOfWords[0]) {
+		if SliceOfWords[1] != "" {
+			URL = SliceOfWords[1]
+			depthStr = SliceOfWords[2]			
+			depth, err := strconv.Atoi(depthStr)
+			if err != nil {
+				fmt.Println("Error converting depth to integer:", err) 
+			} else {
+				// Automatically generate a search directory name based on the current date and time
+				now := time.Now()
+				searchDir := now.Format("2006-01-02-15-04-05")
+				crawl.Crawl(URL, depth, searchDir)
+				return false
+			}
+			return false
+		}
+		return false
+	}
+	return true
 }
