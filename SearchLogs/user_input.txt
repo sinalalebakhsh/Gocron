@@ -31,3 +31,5 @@ asd asd
 func main() {}
 sina lale
 sina lalehbakhsh
+crawl https://www.irna.ir/service/province/tehran 1
+crawl https://fa.wikipedia.org/wiki/%d8%aa%d9%87%d8%b1%d8%a7%d9%86 1
