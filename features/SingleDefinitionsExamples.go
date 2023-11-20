@@ -1129,6 +1129,216 @@ Output:
 	windows/amd64
 	windows/arm
 	windows/arm64`,
+
+	"random generator":`
+	// random generator1
+	// go get github.com/Knetic/govaluate
+
+	package main
+	
+	import (
+		"fmt"
+		"math/rand"
+		"time"
+	
+		"github.com/Knetic/govaluate"
+	)
+	
+	func generateRandomFormula() string {
+		// Get the current time with millisecond precision
+		currentTime := time.Now()
+	
+		// Get the current time with microsecond precision
+		microseconds := currentTime.UnixNano() / int64(time.Microsecond) % 1000000
+	
+		microsecondsPlus := currentTime.UnixNano() / int64(time.Microsecond) % 1000000
+	
+		// Generate a 6-digit random number
+		randomNumber := microseconds
+	
+	
+		randomNumberPlus := (microsecondsPlus / 12) * (2 + 9) - (10 * 41) * 2 
+		
+	
+		// Generate random operations (you can customize this based on your needs)
+		operations := []string{"+", "-", "*", "/"}
+		randomOperation := operations[rand.Intn(len(operations))]
+	
+		// Create the random formula
+		formula := fmt.Sprintf("%d %s %d", randomNumber, randomOperation, randomNumberPlus)
+	
+		return formula
+	}
+	
+	func evaluateFormula(formula string) (float64, error) {
+		expression, err := govaluate.NewEvaluableExpression(formula)
+		if err != nil {
+			return 0, err
+		}
+	
+		result, err := expression.Evaluate(nil)
+		if err != nil {
+			return 0, err
+		}
+	
+		return result.(float64), nil
+	}
+	
+	func main() {
+		// Generate and print a random formula
+		randomFormula := generateRandomFormula()
+		fmt.Println("Random Formula:", randomFormula)
+	
+		result, err := evaluateFormula(randomFormula)
+		if err != nil {
+			fmt.Println("Error evaluating formula:", err)
+			return
+		}
+	
+		fmt.Println("Result:", result)
+	
+	}
+	`,
+
+	"random generator1":`
+	// random generator1
+	// go get github.com/Knetic/govaluate
+
+	package main
+	
+	import (
+		"fmt"
+		"math/rand"
+		"time"
+	
+		"github.com/Knetic/govaluate"
+	)
+	
+	func generateRandomFormula() string {
+		// Get the current time with millisecond precision
+		currentTime := time.Now()
+	
+		// Get the current time with microsecond precision
+		microseconds := currentTime.UnixNano() / int64(time.Microsecond) % 1000000
+	
+		microsecondsPlus := currentTime.UnixNano() / int64(time.Microsecond) % 1000000
+	
+		// Generate a 6-digit random number
+		randomNumber := microseconds
+	
+	
+		randomNumberPlus := (microsecondsPlus / 12) * (2 + 9) - (10 * 41) * 2 
+		
+	
+		// Generate random operations (you can customize this based on your needs)
+		operations := []string{"+", "-", "*", "/"}
+		randomOperation := operations[rand.Intn(len(operations))]
+	
+		// Create the random formula
+		formula := fmt.Sprintf("%d %s %d", randomNumber, randomOperation, randomNumberPlus)
+	
+		return formula
+	}
+	
+	func evaluateFormula(formula string) (float64, error) {
+		expression, err := govaluate.NewEvaluableExpression(formula)
+		if err != nil {
+			return 0, err
+		}
+	
+		result, err := expression.Evaluate(nil)
+		if err != nil {
+			return 0, err
+		}
+	
+		return result.(float64), nil
+	}
+	
+	func main() {
+		// Generate and print a random formula
+		randomFormula := generateRandomFormula()
+		fmt.Println("Random Formula:", randomFormula)
+	
+		result, err := evaluateFormula(randomFormula)
+		if err != nil {
+			fmt.Println("Error evaluating formula:", err)
+			return
+		}
+	
+		fmt.Println("Result:", result)
+	
+	}
+	`,
+
+	"random generator numbers":`
+	// random generator1
+	// go get github.com/Knetic/govaluate
+
+	package main
+	
+	import (
+		"fmt"
+		"math/rand"
+		"time"
+	
+		"github.com/Knetic/govaluate"
+	)
+	
+	func generateRandomFormula() string {
+		// Get the current time with millisecond precision
+		currentTime := time.Now()
+	
+		// Get the current time with microsecond precision
+		microseconds := currentTime.UnixNano() / int64(time.Microsecond) % 1000000
+	
+		microsecondsPlus := currentTime.UnixNano() / int64(time.Microsecond) % 1000000
+	
+		// Generate a 6-digit random number
+		randomNumber := microseconds
+	
+	
+		randomNumberPlus := (microsecondsPlus / 12) * (2 + 9) - (10 * 41) * 2 
+		
+	
+		// Generate random operations (you can customize this based on your needs)
+		operations := []string{"+", "-", "*", "/"}
+		randomOperation := operations[rand.Intn(len(operations))]
+	
+		// Create the random formula
+		formula := fmt.Sprintf("%d %s %d", randomNumber, randomOperation, randomNumberPlus)
+	
+		return formula
+	}
+	
+	func evaluateFormula(formula string) (float64, error) {
+		expression, err := govaluate.NewEvaluableExpression(formula)
+		if err != nil {
+			return 0, err
+		}
+	
+		result, err := expression.Evaluate(nil)
+		if err != nil {
+			return 0, err
+		}
+	
+		return result.(float64), nil
+	}
+	
+	func main() {
+		// Generate and print a random formula
+		randomFormula := generateRandomFormula()
+		fmt.Println("Random Formula:", randomFormula)
+	
+		result, err := evaluateFormula(randomFormula)
+		if err != nil {
+			fmt.Println("Error evaluating formula:", err)
+			return
+		}
+	
+		fmt.Println("Result:", result)
+	
+	}
+	`,
 },
 
 }
