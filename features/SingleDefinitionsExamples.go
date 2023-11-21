@@ -776,6 +776,9 @@ func main() {
 	}
 }
 `,
+// =======================================================================================
+// =======================================================================================
+// =======================================================================================
 "game1":`game-1 Goal Or None Sense Game
 main.go:
 package main
@@ -817,6 +820,9 @@ func main() {
 	}
 }
 `,
+// =======================================================================================
+// =======================================================================================
+// =======================================================================================
 "game goal or none sense":`game-1 Goal Or None Sense Game
 main.go:
 package main
@@ -858,6 +864,9 @@ func main() {
 	}
 }
 `,
+// =======================================================================================
+// =======================================================================================
+// =======================================================================================
 "goal or none sense":`game-1 Goal Or None Sense Game
 main.go:
 package main
@@ -899,6 +908,7 @@ func main() {
 	}
 }
 `,
+// ******************************************************************************************************
 "encryption":`encryption1 simple encryption
 main.go:
 	package main
@@ -917,7 +927,7 @@ main.go:
 		fmt.Println(Encryption)
 	}
 `,
-
+// *********************************//////////////////////////////**********************************
 "encryption1":`encryption1 simple encryption
 main.go:
 	package main
@@ -936,7 +946,8 @@ main.go:
 		fmt.Println(Encryption)
 	}
 `,
-
+// ************************************************************************************************
+// =================================================================================================
 "simple encryption":`encryption1 simple encryption
 main.go:
 	package main
@@ -955,7 +966,8 @@ main.go:
 		fmt.Println(Encryption)
 	}
 `,
-
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+// ================================================================================================
 "first encryption":`encryption1 simple encryption
 main.go:
 	package main
@@ -974,7 +986,8 @@ main.go:
 		fmt.Println(Encryption)
 	}
 `,
-
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+// ================================================================================================
 "go tool dist list": `
 488🚀 This will provide you a list of operating systems and architectures separated by / characters:
 Output:
@@ -1025,8 +1038,8 @@ Output:
 	windows/amd64
 	windows/arm
 	windows/arm64`,
-
-
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+// ===============================================================================================
 	"tool dist list": `
 488🚀 This will provide you a list of operating systems and architectures separated by / characters:
 Output:
@@ -1077,8 +1090,8 @@ Output:
 	windows/amd64
 	windows/arm
 	windows/arm64`,
-
-
+// ///////////////////////////////////////////////////////////////////////////////////
+// ==================================================================================
 	"dist list": `
 488🚀 This will provide you a list of operating systems and architectures separated by / characters:
 Output:
@@ -1129,7 +1142,7 @@ Output:
 	windows/amd64
 	windows/arm
 	windows/arm64`,
-
+// =====================================================================================
 	"random generator":`
 	// random generator1
 	// go get github.com/Knetic/govaluate
@@ -1199,7 +1212,7 @@ Output:
 	
 	}
 	`,
-
+// ==================================================================
 	"random generator1":`
 	// random generator1
 	// go get github.com/Knetic/govaluate
@@ -1339,6 +1352,121 @@ Output:
 	
 	}
 	`,
+// =======================================================================================
+// =======================================================================================
+// =======================================================================================
+	"crawler":`
+	In Terminal in current directory write:
+		go get golang.org/x/net/html
+
+	main.go:
+		package main
+		import (
+			"fmt"
+			"golang.org/x/net/html"
+			"net/http"
+			"os"
+			"strconv"
+			"time"
+		)
+		// Crawl function takes a URL and recursively crawls the pages
+		func Crawl(url string, depth int, searchDir string) {
+			if depth <= 0 {
+				return
+			}
+			// Create a directory for the search with the current date, minutes, and seconds
+			now := time.Now()
+			searchDir = fmt.Sprintf("%s-search-%02d%02d%02d", now.Format("2006-01-02"), now.Minute(), now.Second())
+			err := os.Mkdir(searchDir, 0755)
+			if err != nil {
+				fmt.Println("Error creating directory:", err)
+				return
+			}
+			// Create a file to store search results
+			resultFile, err := os.Create(fmt.Sprintf("%s/searchResult.txt", searchDir))
+			if err != nil {
+				fmt.Println("Error creating result file:", err)
+				return
+			}
+			defer resultFile.Close()
+			// Make an HTTP request
+			resp, err := http.Get(url)
+			if err != nil {
+				fmt.Println("Error making request:", err)
+				return
+			}
+			defer resp.Body.Close()
+			// Parse the HTML content
+			doc, err := html.Parse(resp.Body)
+			if err != nil {
+				fmt.Println("Error parsing HTML:", err)
+				return
+			}
+			// Process the links on the current page and write them to the result file
+			processLinks(doc, resultFile)
+			// Recursively crawl the linked pages
+			links := extractLinks(doc)
+			for _, link := range links {
+				Crawl(link, depth-1, searchDir)
+			}
+		}
+		// processLinks extracts and prints the links on the current page
+		func processLinks(n *html.Node, resultFile *os.File) {
+			if n.Type == html.ElementNode && n.Data == "a" {
+				for _, a := range n.Attr {
+					if a.Key == "href" {
+						link := fmt.Sprintf("Link: %s\n", a.Val)
+						resultFile.WriteString(link)
+					}
+				}
+			}
+			for c := n.FirstChild; c != nil; c = c.NextSibling {
+				processLinks(c, resultFile)
+			}
+		}
+		// extractLinks returns a slice of unique links from the HTML document
+		func extractLinks(n *html.Node) []string {
+			var links []string
+			visited := make(map[string]bool)
+			var visitNode func(*html.Node)
+			visitNode = func(n *html.Node) {
+				if n.Type == html.ElementNode && n.Data == "a" {
+					for _, a := range n.Attr {
+						if a.Key == "href" {
+							link := a.Val
+							if !visited[link] {
+								links = append(links, link)
+								visited[link] = true
+							}
+						}
+					}
+				}
+				for c := n.FirstChild; c != nil; c = c.NextSibling {
+					visitNode(c)
+				}
+			}
+			visitNode(n)
+			return links
+		}
+		func main() {
+			if len(os.Args) != 3 {
+				fmt.Println("Usage: go run crawler.go <url> <depth>")
+				return
+			}
+			url := os.Args[1]
+			depthStr := os.Args[2]
+			depth, err := strconv.Atoi(depthStr)
+			if err != nil {
+				fmt.Println("Error converting depth to integer:", err)
+				return
+			}
+			var searchDir string // searchDir will be created automatically based on the current date, minutes, and seconds
+			Crawl(url, depth, searchDir)
+		}
+`,
+// =======================================================================================
+// =======================================================================================
+// =======================================================================================
 },
 
 }
