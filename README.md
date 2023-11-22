@@ -256,6 +256,18 @@ You can use this command before start:
 	./Gocron -all
 	./Gocron --all
 
+## ◉ Crawling
+### Usage 
+	
+	./Gocron <URL> <depth>
+
+### example:
+
+	./Gocron https://example.com 2
+
+<br>in this example Gocron Crawler go and get every links of that will be print
+
+<br>maybe the website protect by robot.txt ot another you dont have any link
 
 ### ◉ if just write one input you get all about that:
 	READING AND WRITING DATA
