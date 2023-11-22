@@ -78,16 +78,16 @@ func GetUserInput(GetBoleanFromGetFirstArgFunction bool) {
 
 		if len(SliceOfWords) >= 2 {
 			// FirstInput, SecondInput := SliceOfWords[0], SliceOfWords[1]
-			Regular = IfUsris2orMoreWords(SliceOfWords)
-		}
-		// if Regular {
-		// }
+			if Regular {
+				Regular = IfUsris2orMoreWords(SliceOfWords)
+			}
 
-		if len(SliceOfWords) >= 4 {
-			// fmt.Printf("%q", SliceOfWords)
-			Regular = IfUserInputIsCrawlURL(SliceOfWords)
+			if Regular {
+				Regular = IfUserInputIsCrawlURL(SliceOfWords)
+			}
 		}
-
+		
+		
 		if Regular {
 			Regular = IfUsrisALL(FinalInput)
 		}
@@ -531,17 +531,15 @@ func SaveToFile(sentence string) error {
 func IfUserInputIsCrawlURL(SliceOfWords[]string) bool {
 	const CRAWL = "crawl"
 	var URL string
-	var depthStr string
 	if CRAWL == strings.ToLower(SliceOfWords[0]) {
 		if SliceOfWords[1] != "" {
 			URL = SliceOfWords[1]
-			depthStr = SliceOfWords[2]			
+			depthStr := SliceOfWords[2]
 			depth, err := strconv.Atoi(depthStr)
 			if err != nil {
 				fmt.Println("Error converting depth to integer:", err) 
 			} else {
-				searchDir := SliceOfWords[3]
-				crawl.Crawl(URL, depth, searchDir)
+				crawl.Crawl(URL, depth)
 				return false
 			}
 			return false

@@ -29,6 +29,8 @@ var TitleOfHelp = []string{
 	"help",
 	"-help",
 	"--help",
+	"usage",
+	"--usage",
 }
 
 var Message string = fmt.Sprintln(`
@@ -47,9 +49,9 @@ func HelpMessage() {
 	words := SplitIntoWords(Message)
 	PrintWordByWord(words)
 	fmt.Println()
-	time.Sleep(time.Second * 2)
+	time.Sleep(time.Second * 1)
 	color.HiBlue(fmt.Sprintln("You can use this command before start:"))
-	time.Sleep(time.Second * 2)
+	time.Sleep(time.Second * 1)
 	color.HiBlue(fmt.Sprintln(`Run
   go run .
 
@@ -66,17 +68,26 @@ Help
 Show All
 	./Gocron all
 	./Gocron -all
-	./Gocron --all`))
-	time.Sleep(time.Second * 2)
+	./Gocron --all`)) /*go run crawler.go <url> <depth>*/
+	time.Sleep(time.Second * 1)
 	color.HiCyan(fmt.Sprintln("example command after run program:"))
-	time.Sleep(time.Second * 2)
+	time.Sleep(time.Second * 1)
 	color.HiCyan(fmt.Sprintln(`	help
 	for example
 	all regex
 	goroutines and channels`))
-	time.Sleep(time.Second * 2)
+	time.Sleep(time.Second * 1)
+	color.Red(fmt.Sprintln("Usage for Crawling:"))
+	time.Sleep(time.Second * 1)
+	color.Red(fmt.Sprintln(`	
+go run . <url> <depth>
+./Gocron <url> <depth>
+
+example: 
+	go run . https://example.com 1`))
+	time.Sleep(time.Second * 1)
 	color.HiMagenta(fmt.Sprintln("if just write one input you get all about that:"))
-	time.Sleep(time.Second * 2)
+	time.Sleep(time.Second * 1)
 	color.HiMagenta(fmt.Sprintln(`	READING AND WRITING DATA
 	READINGANDWRITINGDATA
 	ALL READING AND WRITING DATA
@@ -104,8 +115,9 @@ Show All
 	ALL HTTP CLIENTS
 	ALLHTTPCLIENTS
 	ALL CREATING HTTP CLIENTS
-	ALLCREATINGHTTPCLIENTS`))
-	time.Sleep(time.Second * 2)
+	ALLCREATINGHTTPCLIENTS
+	`))
+	time.Sleep(time.Second * 1)
 	color.HiBlue(fmt.Sprintln("💠💠💠 Would you like to join the gocron project on GitHub? (yes/no)"))
 
 

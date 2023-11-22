@@ -8,37 +8,19 @@ Terminal:
 */
 
 package crawl
+
+
 import (
 	"fmt"
-	"golang.org/x/net/html"
 	"net/http"
-	"os"
-	"time"
+	"golang.org/x/net/html"
 )
 
 // Crawl function takes a URL and recursively crawls the pages
-func Crawl(url string, depth int, searchDir string) {
+func Crawl(url string, depth int) {
 	if depth <= 0 {
 		return
 	}
-
-	// Create a directory for the search
-	today := time.Now().Format("2006-01-02")
-	searchDir = fmt.Sprintf("%s-%s", today, searchDir)
-
-	err := os.Mkdir(searchDir, 0755)
-	if err != nil {
-		fmt.Println("Error creating directory:", err)
-		return
-	}
-
-	// Create a file to store search results
-	resultFile, err := os.Create(fmt.Sprintf("%s/searchResult.txt", searchDir))
-	if err != nil {
-		fmt.Println("Error creating result file:", err)
-		return
-	}
-	defer resultFile.Close()
 
 	// Make an HTTP request
 	resp, err := http.Get(url)
@@ -55,35 +37,34 @@ func Crawl(url string, depth int, searchDir string) {
 		return
 	}
 
-	// Process the links on the current page and write them to the result file
-	ProcessLinks(doc, resultFile)
+	// Process the Links on the current page
+	ProcessLinks(doc)
 
 	// Recursively crawl the linked pages
-	links := ExtractLinks(doc)
-	for _, link := range links {
-		Crawl(link, depth-1, searchDir)
+	Links := ExtractLinks(doc)
+	for _, link := range Links {
+		Crawl(link, depth-1)
 	}
 }
 
-// ProcessLinks extracts and prints the links on the current page
-func ProcessLinks(n *html.Node, resultFile *os.File) {
+// ProcessLinks extracts and prints the Links on the current page
+func ProcessLinks(n *html.Node) {
 	if n.Type == html.ElementNode && n.Data == "a" {
 		for _, a := range n.Attr {
 			if a.Key == "href" {
-				link := fmt.Sprintf("Link: %s\n", a.Val)
-				resultFile.WriteString(link)
+				fmt.Println("Link:", a.Val)
 			}
 		}
 	}
 
-	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		ProcessLinks(c, resultFile)
+	for C := n.FirstChild; C != nil; C = C.NextSibling {
+		ProcessLinks(C)
 	}
 }
 
-// ExtractLinks returns a slice of unique links from the HTML document
+// ExtractLinks returns a slice of unique Links from the HTML document
 func ExtractLinks(n *html.Node) []string {
-	var links []string
+	var Links []string
 	visited := make(map[string]bool)
 
 	var visitNode func(*html.Node)
@@ -93,18 +74,18 @@ func ExtractLinks(n *html.Node) []string {
 				if a.Key == "href" {
 					link := a.Val
 					if !visited[link] {
-						links = append(links, link)
+						Links = append(Links, link)
 						visited[link] = true
 					}
 				}
 			}
 		}
 
-		for c := n.FirstChild; c != nil; c = c.NextSibling {
-			visitNode(c)
+		for C := n.FirstChild; C != nil; C = C.NextSibling {
+			visitNode(C)
 		}
 	}
 
 	visitNode(n)
-	return links
+	return Links
 }
