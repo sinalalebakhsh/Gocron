@@ -37,3 +37,4 @@ crawl https://www.irna.ir/service/province/tehran 1 crawl
 crawl https://www.irna.ir/service/province/tehran 2 crawl
 crawl https://fa.wikipedia.org/wiki/%d8%a7%d8%b3%d8%aa%d8%a7%d9%86_%d8%aa%d9%87%d8%b1%d8%a7%d9%86 1 tehran
 crawl https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/preface.html 1
+crawl https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/preface.html 2

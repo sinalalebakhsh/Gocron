@@ -157,7 +157,8 @@ var OriginSingleDef = SingleDefinitions{
 		"go tool dist list": `488🚀 This will provide you a list of operating systems and architectures separated by / characters:`,
 		"tool dist list":    `488🚀 This will provide you a list of operating systems and architectures separated by / characters:`,
 		"dist list":         `488🚀 This will provide you a list of operating systems and architectures separated by / characters:`,
-		//
+		// ioutil
+		"ioutil":"The ioutil package in Go stands for 'input/output utility.' It is a package in the Go standard library that provides utility functions for I/O operations, particularly simplifying common tasks involving file I/O and reading from or writing to streams of data.",
 		//
 		//
 		//
