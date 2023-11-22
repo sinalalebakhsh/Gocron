@@ -5,12 +5,12 @@ var TitleOfRegEx = []string{
     "ALLREGEX", 
 }
 
-var OriginalAllRegex = DataBase{
+var OriginalAllRegex = DataBase {
 	Alldatafield: `
 
 189.Regular Expressions
-    The regular expressions used in this section perform basic matches, but the regexp package
-    supports an extensive pattern syntax, which is described at https://pkg.go.dev/regexp/syntax@go1.17.1.
+The regular expressions used in this section perform basic matches, but the regexp package
+supports an extensive pattern syntax, which is described at https://pkg.go.dev/regexp/syntax@go1.17.1.
     
     The Basic Functions Provided by the regexp Package
     Function                Description
@@ -726,5 +726,5 @@ var OriginalAllRegex = DataBase{
             fmt.Println("String:", builder.String())
         }
         
-`,
+    `,
 }
