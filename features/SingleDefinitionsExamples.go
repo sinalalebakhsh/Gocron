@@ -2583,8 +2583,101 @@ main.go:
 
 `,
 
-// =======================================================================================
-"lookuphost":         `LookupHost-1
+		// =======================================================================================
+		"lookuphost": `LookupHost-1
+main.go:
+	/* LookupHost
+	*/
+	package main
+
+	import (
+		"fmt"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s hostname\n", os.Args[0])
+			os.Exit(1)
+		}
+		name := os.Args[1]
+		addrs, err := net.LookupHost(name)
+		if err != nil {
+			fmt.Println("Error: ", err.Error())
+			os.Exit(2)
+		}
+		for _, s := range addrs {
+			fmt.Println(s)
+		}
+		os.Exit(0)
+	}
+
+`,
+		// =======================================================================================
+		"find lookuphost": `LookupHost-1
+main.go:
+	/* LookupHost
+	*/
+	package main
+
+	import (
+		"fmt"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s hostname\n", os.Args[0])
+			os.Exit(1)
+		}
+		name := os.Args[1]
+		addrs, err := net.LookupHost(name)
+		if err != nil {
+			fmt.Println("Error: ", err.Error())
+			os.Exit(2)
+		}
+		for _, s := range addrs {
+			fmt.Println(s)
+		}
+		os.Exit(0)
+	}
+
+`,
+		// =======================================================================================
+		"lookuphost code": `LookupHost-1
+main.go:
+	/* LookupHost
+	*/
+	package main
+
+	import (
+		"fmt"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s hostname\n", os.Args[0])
+			os.Exit(1)
+		}
+		name := os.Args[1]
+		addrs, err := net.LookupHost(name)
+		if err != nil {
+			fmt.Println("Error: ", err.Error())
+			os.Exit(2)
+		}
+		for _, s := range addrs {
+			fmt.Println(s)
+		}
+		os.Exit(0)
+	}
+
+`,
+		// =======================================================================================
+		"lookuphost program": `LookupHost-1
 main.go:
 	/* LookupHost
 	*/
@@ -2615,9 +2708,10 @@ main.go:
 
 `,
 // =======================================================================================
-"find lookuphost":    `LookupHost-1
+"lookupport":         `LookupPort-1
 main.go:
-	/* LookupHost
+	// go run main.go tcp telnet
+	/* LookupPort
 	*/
 	package main
 
@@ -2628,27 +2722,28 @@ main.go:
 	)
 
 	func main() {
-		if len(os.Args) != 2 {
-			fmt.Fprintf(os.Stderr, "Usage: %s hostname\n", os.Args[0])
+		if len(os.Args) != 3 {
+			fmt.Fprintf(os.Stderr,
+				"Usage: %s network-type service\n",
+				os.Args[0])
 			os.Exit(1)
 		}
-		name := os.Args[1]
-		addrs, err := net.LookupHost(name)
+		networkType := os.Args[1]
+		service := os.Args[2]
+		port, err := net.LookupPort(networkType, service)
 		if err != nil {
 			fmt.Println("Error: ", err.Error())
 			os.Exit(2)
 		}
-		for _, s := range addrs {
-			fmt.Println(s)
-		}
+		fmt.Println("Service port ", port)
 		os.Exit(0)
 	}
 
 `,
-// =======================================================================================
-"lookuphost code":    `LookupHost-1
+"lookupport program": `LookupPort-1
 main.go:
-	/* LookupHost
+	// go run main.go tcp telnet
+	/* LookupPort
 	*/
 	package main
 
@@ -2659,27 +2754,28 @@ main.go:
 	)
 
 	func main() {
-		if len(os.Args) != 2 {
-			fmt.Fprintf(os.Stderr, "Usage: %s hostname\n", os.Args[0])
+		if len(os.Args) != 3 {
+			fmt.Fprintf(os.Stderr,
+				"Usage: %s network-type service\n",
+				os.Args[0])
 			os.Exit(1)
 		}
-		name := os.Args[1]
-		addrs, err := net.LookupHost(name)
+		networkType := os.Args[1]
+		service := os.Args[2]
+		port, err := net.LookupPort(networkType, service)
 		if err != nil {
 			fmt.Println("Error: ", err.Error())
 			os.Exit(2)
 		}
-		for _, s := range addrs {
-			fmt.Println(s)
-		}
+		fmt.Println("Service port ", port)
 		os.Exit(0)
 	}
 
 `,
-// =======================================================================================
-"lookuphost program": `LookupHost-1
+"find lookupport":    `LookupPort-1
 main.go:
-	/* LookupHost
+	// go run main.go tcp telnet
+	/* LookupPort
 	*/
 	package main
 
@@ -2690,26 +2786,59 @@ main.go:
 	)
 
 	func main() {
-		if len(os.Args) != 2 {
-			fmt.Fprintf(os.Stderr, "Usage: %s hostname\n", os.Args[0])
+		if len(os.Args) != 3 {
+			fmt.Fprintf(os.Stderr,
+				"Usage: %s network-type service\n",
+				os.Args[0])
 			os.Exit(1)
 		}
-		name := os.Args[1]
-		addrs, err := net.LookupHost(name)
+		networkType := os.Args[1]
+		service := os.Args[2]
+		port, err := net.LookupPort(networkType, service)
 		if err != nil {
 			fmt.Println("Error: ", err.Error())
 			os.Exit(2)
 		}
-		for _, s := range addrs {
-			fmt.Println(s)
-		}
+		fmt.Println("Service port ", port)
 		os.Exit(0)
 	}
 
 `,
+"lookup port":        `LookupPort-1
+main.go:
+	// go run main.go tcp telnet
+	/* LookupPort
+	*/
+	package main
+
+	import (
+		"fmt"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 3 {
+			fmt.Fprintf(os.Stderr,
+				"Usage: %s network-type service\n",
+				os.Args[0])
+			os.Exit(1)
+		}
+		networkType := os.Args[1]
+		service := os.Args[2]
+		port, err := net.LookupPort(networkType, service)
+		if err != nil {
+			fmt.Println("Error: ", err.Error())
+			os.Exit(2)
+		}
+		fmt.Println("Service port ", port)
+		os.Exit(0)
+	}
+
+`,
+
 // =======================================================================================
 // =======================================================================================
 // =======================================================================================
-// =======================================================================================
-},
+	},
 }
