@@ -2707,8 +2707,8 @@ main.go:
 	}
 
 `,
-// =======================================================================================
-"lookupport":         `LookupPort-1
+		// =======================================================================================
+		"lookupport": `LookupPort-1
 main.go:
 	// go run main.go tcp telnet
 	/* LookupPort
@@ -2740,7 +2740,8 @@ main.go:
 	}
 
 `,
-"lookupport program": `LookupPort-1
+		// =======================================================================================
+		"lookupport program": `LookupPort-1
 main.go:
 	// go run main.go tcp telnet
 	/* LookupPort
@@ -2772,7 +2773,8 @@ main.go:
 	}
 
 `,
-"find lookupport":    `LookupPort-1
+		// =======================================================================================
+		"find lookupport": `LookupPort-1
 main.go:
 	// go run main.go tcp telnet
 	/* LookupPort
@@ -2804,7 +2806,8 @@ main.go:
 	}
 
 `,
-"lookup port":        `LookupPort-1
+		// =======================================================================================
+		"lookup port": `LookupPort-1
 main.go:
 	// go run main.go tcp telnet
 	/* LookupPort
@@ -2836,9 +2839,338 @@ main.go:
 	}
 
 `,
+// =======================================================================================
+"getheadinfo": `GetHeadInfo-1
+main.go:
+	// go run main.go www.google.com:80
 
+	/* GetHeadInfo
+	*/
+	package main
+
+	import (
+		"fmt"
+		"io"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s host:port ", os.Args[0])
+			os.Exit(1)
+		}
+		service := os.Args[1]
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		conn, err := net.DialTCP("tcp", nil, tcpAddr)
+		checkError(err)
+		_, err = conn.Write([]byte("HEAD / HTTP/1.0\r\n\r\n"))
+		checkError(err)
+		result, err := io.ReadAll(conn)
+		checkError(err)
+		fmt.Println(string(result))
+		os.Exit(0)
+	}
+
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
+
+`,
 // =======================================================================================
+"get head info": `GetHeadInfo-1
+main.go:
+	// go run main.go www.google.com:80
+
+	/* GetHeadInfo
+	*/
+	package main
+
+	import (
+		"fmt"
+		"io"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s host:port ", os.Args[0])
+			os.Exit(1)
+		}
+		service := os.Args[1]
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		conn, err := net.DialTCP("tcp", nil, tcpAddr)
+		checkError(err)
+		_, err = conn.Write([]byte("HEAD / HTTP/1.0\r\n\r\n"))
+		checkError(err)
+		result, err := io.ReadAll(conn)
+		checkError(err)
+		fmt.Println(string(result))
+		os.Exit(0)
+	}
+
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
+
+`,
 // =======================================================================================
+"get headinfo": `GetHeadInfo-1
+main.go:
+	// go run main.go www.google.com:80
+
+	/* GetHeadInfo
+	*/
+	package main
+
+	import (
+		"fmt"
+		"io"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s host:port ", os.Args[0])
+			os.Exit(1)
+		}
+		service := os.Args[1]
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		conn, err := net.DialTCP("tcp", nil, tcpAddr)
+		checkError(err)
+		_, err = conn.Write([]byte("HEAD / HTTP/1.0\r\n\r\n"))
+		checkError(err)
+		result, err := io.ReadAll(conn)
+		checkError(err)
+		fmt.Println(string(result))
+		os.Exit(0)
+	}
+
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
+
+`,
 // =======================================================================================
+"gethead info": `GetHeadInfo-1
+main.go:
+	// go run main.go www.google.com:80
+
+	/* GetHeadInfo
+	*/
+	package main
+
+	import (
+		"fmt"
+		"io"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s host:port ", os.Args[0])
+			os.Exit(1)
+		}
+		service := os.Args[1]
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		conn, err := net.DialTCP("tcp", nil, tcpAddr)
+		checkError(err)
+		_, err = conn.Write([]byte("HEAD / HTTP/1.0\r\n\r\n"))
+		checkError(err)
+		result, err := io.ReadAll(conn)
+		checkError(err)
+		fmt.Println(string(result))
+		os.Exit(0)
+	}
+
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
+
+`,
+// =======================================================================================
+"gethead info http":  `GetHeadInfo-1
+main.go:
+	// go run main.go www.google.com:80
+
+	/* GetHeadInfo
+	*/
+	package main
+
+	import (
+		"fmt"
+		"io"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s host:port ", os.Args[0])
+			os.Exit(1)
+		}
+		service := os.Args[1]
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		conn, err := net.DialTCP("tcp", nil, tcpAddr)
+		checkError(err)
+		_, err = conn.Write([]byte("HEAD / HTTP/1.0\r\n\r\n"))
+		checkError(err)
+		result, err := io.ReadAll(conn)
+		checkError(err)
+		fmt.Println(string(result))
+		os.Exit(0)
+	}
+
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
+
+`,
+"get head info http": `GetHeadInfo-1
+main.go:
+	// go run main.go www.google.com:80
+
+	/* GetHeadInfo
+	*/
+	package main
+
+	import (
+		"fmt"
+		"io"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s host:port ", os.Args[0])
+			os.Exit(1)
+		}
+		service := os.Args[1]
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		conn, err := net.DialTCP("tcp", nil, tcpAddr)
+		checkError(err)
+		_, err = conn.Write([]byte("HEAD / HTTP/1.0\r\n\r\n"))
+		checkError(err)
+		result, err := io.ReadAll(conn)
+		checkError(err)
+		fmt.Println(string(result))
+		os.Exit(0)
+	}
+
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
+
+`,
+"get headinfo http":  `GetHeadInfo-1
+main.go:
+	// go run main.go www.google.com:80
+
+	/* GetHeadInfo
+	*/
+	package main
+
+	import (
+		"fmt"
+		"io"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s host:port ", os.Args[0])
+			os.Exit(1)
+		}
+		service := os.Args[1]
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		conn, err := net.DialTCP("tcp", nil, tcpAddr)
+		checkError(err)
+		_, err = conn.Write([]byte("HEAD / HTTP/1.0\r\n\r\n"))
+		checkError(err)
+		result, err := io.ReadAll(conn)
+		checkError(err)
+		fmt.Println(string(result))
+		os.Exit(0)
+	}
+
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
+
+`,
+"get head infohttp":  `GetHeadInfo-1
+main.go:
+	// go run main.go www.google.com:80
+
+	/* GetHeadInfo
+	*/
+	package main
+
+	import (
+		"fmt"
+		"io"
+		"net"
+		"os"
+	)
+
+	func main() {
+		if len(os.Args) != 2 {
+			fmt.Fprintf(os.Stderr, "Usage: %s host:port ", os.Args[0])
+			os.Exit(1)
+		}
+		service := os.Args[1]
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		conn, err := net.DialTCP("tcp", nil, tcpAddr)
+		checkError(err)
+		_, err = conn.Write([]byte("HEAD / HTTP/1.0\r\n\r\n"))
+		checkError(err)
+		result, err := io.ReadAll(conn)
+		checkError(err)
+		fmt.Println(string(result))
+		os.Exit(0)
+	}
+
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
+
+`,
 	},
 }
