@@ -2839,8 +2839,8 @@ main.go:
 	}
 
 `,
-// =======================================================================================
-"getheadinfo": `GetHeadInfo-1
+		// =======================================================================================
+		"getheadinfo": `GetHeadInfo-1
 main.go:
 	// go run main.go www.google.com:80
 
@@ -2881,8 +2881,8 @@ main.go:
 	}
 
 `,
-// =======================================================================================
-"get head info": `GetHeadInfo-1
+		// =======================================================================================
+		"get head info": `GetHeadInfo-1
 main.go:
 	// go run main.go www.google.com:80
 
@@ -2923,8 +2923,8 @@ main.go:
 	}
 
 `,
-// =======================================================================================
-"get headinfo": `GetHeadInfo-1
+		// =======================================================================================
+		"get headinfo": `GetHeadInfo-1
 main.go:
 	// go run main.go www.google.com:80
 
@@ -2965,8 +2965,8 @@ main.go:
 	}
 
 `,
-// =======================================================================================
-"gethead info": `GetHeadInfo-1
+		// =======================================================================================
+		"gethead info": `GetHeadInfo-1
 main.go:
 	// go run main.go www.google.com:80
 
@@ -3007,8 +3007,8 @@ main.go:
 	}
 
 `,
-// =======================================================================================
-"gethead info http":  `GetHeadInfo-1
+		// =======================================================================================
+		"gethead info http": `GetHeadInfo-1
 main.go:
 	// go run main.go www.google.com:80
 
@@ -3049,8 +3049,8 @@ main.go:
 	}
 
 `,
-// =======================================================================================
-"get head info http": `GetHeadInfo-1
+		// =======================================================================================
+		"get head info http": `GetHeadInfo-1
 main.go:
 	// go run main.go www.google.com:80
 
@@ -3091,8 +3091,8 @@ main.go:
 	}
 
 `,
-// =======================================================================================
-"get headinfo http":  `GetHeadInfo-1
+		// =======================================================================================
+		"get headinfo http": `GetHeadInfo-1
 main.go:
 	// go run main.go www.google.com:80
 
@@ -3133,8 +3133,8 @@ main.go:
 	}
 
 `,
-// =======================================================================================
-"get head infohttp":  `GetHeadInfo-1
+		// =======================================================================================
+		"get head infohttp": `GetHeadInfo-1
 main.go:
 	// go run main.go www.google.com:80
 
@@ -3175,9 +3175,153 @@ main.go:
 	}
 
 `,
-// =======================================================================================
+		// =======================================================================================
 
-"day time server":`DaytimeServer-1
+		"day time server": `DaytimeServer-1
+/* DaytimeServer
+ */
+package main
+
+import (
+	"fmt"
+	"net"
+	"os"
+	"time"
+)
+
+func main() {
+	service := ":1200"
+	tcpAddr, err := net.ResolveTCPAddr("tcp", service)
+	checkError(err)
+	listener, err := net.ListenTCP("tcp", tcpAddr)
+	checkError(err)
+	for {
+		conn, err := listener.Accept()
+		if err != nil {
+			continue
+		}
+		daytime := time.Now().String()
+		conn.Write([]byte(daytime)) // don't care about return value
+		conn.Close()                // we're finished with this client
+	}
+}
+func checkError(err error) {
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+		os.Exit(1)
+	}
+}
+
+/*
+
+This will produce output such as the following:
+$telnet localhost 1200
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+2017-01-02 20:13:21.934698384 +1100 AEDTConnection closed by foreign host.
+Where 2017-01-02 20:13:21.934698384 +1100 AEDT is the output from the server.
+
+*/
+`,
+		// =======================================================================================
+		"daytime server": `DaytimeServer-1
+/* DaytimeServer
+ */
+package main
+
+import (
+	"fmt"
+	"net"
+	"os"
+	"time"
+)
+
+func main() {
+	service := ":1200"
+	tcpAddr, err := net.ResolveTCPAddr("tcp", service)
+	checkError(err)
+	listener, err := net.ListenTCP("tcp", tcpAddr)
+	checkError(err)
+	for {
+		conn, err := listener.Accept()
+		if err != nil {
+			continue
+		}
+		daytime := time.Now().String()
+		conn.Write([]byte(daytime)) // don't care about return value
+		conn.Close()                // we're finished with this client
+	}
+}
+func checkError(err error) {
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+		os.Exit(1)
+	}
+}
+
+/*
+
+This will produce output such as the following:
+$telnet localhost 1200
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+2017-01-02 20:13:21.934698384 +1100 AEDTConnection closed by foreign host.
+Where 2017-01-02 20:13:21.934698384 +1100 AEDT is the output from the server.
+
+*/
+`,
+		// =======================================================================================
+		"day timeserver": `DaytimeServer-1
+/* DaytimeServer
+ */
+package main
+
+import (
+	"fmt"
+	"net"
+	"os"
+	"time"
+)
+
+func main() {
+	service := ":1200"
+	tcpAddr, err := net.ResolveTCPAddr("tcp", service)
+	checkError(err)
+	listener, err := net.ListenTCP("tcp", tcpAddr)
+	checkError(err)
+	for {
+		conn, err := listener.Accept()
+		if err != nil {
+			continue
+		}
+		daytime := time.Now().String()
+		conn.Write([]byte(daytime)) // don't care about return value
+		conn.Close()                // we're finished with this client
+	}
+}
+func checkError(err error) {
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+		os.Exit(1)
+	}
+}
+
+/*
+
+This will produce output such as the following:
+$telnet localhost 1200
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+2017-01-02 20:13:21.934698384 +1100 AEDTConnection closed by foreign host.
+Where 2017-01-02 20:13:21.934698384 +1100 AEDT is the output from the server.
+
+*/
+`,
+		// =======================================================================================
+		"daytimeserver": `DaytimeServer-1
 /* DaytimeServer
  */
 package main
@@ -3225,148 +3369,297 @@ Where 2017-01-02 20:13:21.934698384 +1100 AEDT is the output from the server.
 */
 `,
 // =======================================================================================
-"daytime server":`DaytimeServer-1
-/* DaytimeServer
- */
-package main
-
-import (
-	"fmt"
-	"net"
-	"os"
-	"time"
-)
-
-func main() {
-	service := ":1200"
-	tcpAddr, err := net.ResolveTCPAddr("tcp", service)
-	checkError(err)
-	listener, err := net.ListenTCP("tcp", tcpAddr)
-	checkError(err)
-	for {
-		conn, err := listener.Accept()
-		if err != nil {
-			continue
+	"simpleechoserver":   `
+main.go:
+	/* SimpleEchoServer
+	*/
+	package main
+	import (
+		"fmt"
+		"net"
+		"os"
+	)
+	func main() {
+		service := ":1201"
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		listener, err := net.ListenTCP("tcp", tcpAddr)
+		checkError(err)
+		for {
+			conn, err := listener.Accept()
+			if err != nil {
+				continue
+			}
+			handleClient(conn)
+			conn.Close() // we're finished
 		}
-		daytime := time.Now().String()
-		conn.Write([]byte(daytime)) // don't care about return value
-		conn.Close()                // we're finished with this client
 	}
-}
-func checkError(err error) {
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
-		os.Exit(1)
+	func handleClient(conn net.Conn) {
+		var buf [512]byte
+		for {
+			n, err := conn.Read(buf[0:])
+			if err != nil {
+				return
+			}
+			fmt.Println(string(buf[0:]))
+			_, err2 := conn.Write(buf[0:n])
+			if err2 != nil {
+				return
+			}
+		}
 	}
-}
-
-/*
-
-This will produce output such as the following:
-$telnet localhost 1200
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-2017-01-02 20:13:21.934698384 +1100 AEDTConnection closed by foreign host.
-Where 2017-01-02 20:13:21.934698384 +1100 AEDT is the output from the server.
-
-*/
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
 `,
 // =======================================================================================
-"day timeserver":`DaytimeServer-1
-/* DaytimeServer
- */
-package main
-
-import (
-	"fmt"
-	"net"
-	"os"
-	"time"
-)
-
-func main() {
-	service := ":1200"
-	tcpAddr, err := net.ResolveTCPAddr("tcp", service)
-	checkError(err)
-	listener, err := net.ListenTCP("tcp", tcpAddr)
-	checkError(err)
-	for {
-		conn, err := listener.Accept()
-		if err != nil {
-			continue
+	"simple echo server": `
+main.go:
+	/* SimpleEchoServer
+	*/
+	package main
+	import (
+		"fmt"
+		"net"
+		"os"
+	)
+	func main() {
+		service := ":1201"
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		listener, err := net.ListenTCP("tcp", tcpAddr)
+		checkError(err)
+		for {
+			conn, err := listener.Accept()
+			if err != nil {
+				continue
+			}
+			handleClient(conn)
+			conn.Close() // we're finished
 		}
-		daytime := time.Now().String()
-		conn.Write([]byte(daytime)) // don't care about return value
-		conn.Close()                // we're finished with this client
 	}
-}
-func checkError(err error) {
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
-		os.Exit(1)
+	func handleClient(conn net.Conn) {
+		var buf [512]byte
+		for {
+			n, err := conn.Read(buf[0:])
+			if err != nil {
+				return
+			}
+			fmt.Println(string(buf[0:]))
+			_, err2 := conn.Write(buf[0:n])
+			if err2 != nil {
+				return
+			}
+		}
 	}
-}
-
-/*
-
-This will produce output such as the following:
-$telnet localhost 1200
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-2017-01-02 20:13:21.934698384 +1100 AEDTConnection closed by foreign host.
-Where 2017-01-02 20:13:21.934698384 +1100 AEDT is the output from the server.
-
-*/
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
 `,
 // =======================================================================================
-"daytimeserver":`DaytimeServer-1
-/* DaytimeServer
- */
-package main
-
-import (
-	"fmt"
-	"net"
-	"os"
-	"time"
-)
-
-func main() {
-	service := ":1200"
-	tcpAddr, err := net.ResolveTCPAddr("tcp", service)
-	checkError(err)
-	listener, err := net.ListenTCP("tcp", tcpAddr)
-	checkError(err)
-	for {
-		conn, err := listener.Accept()
-		if err != nil {
-			continue
+	"echo server":        `
+main.go:
+	/* SimpleEchoServer
+	*/
+	package main
+	import (
+		"fmt"
+		"net"
+		"os"
+	)
+	func main() {
+		service := ":1201"
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		listener, err := net.ListenTCP("tcp", tcpAddr)
+		checkError(err)
+		for {
+			conn, err := listener.Accept()
+			if err != nil {
+				continue
+			}
+			handleClient(conn)
+			conn.Close() // we're finished
 		}
-		daytime := time.Now().String()
-		conn.Write([]byte(daytime)) // don't care about return value
-		conn.Close()                // we're finished with this client
 	}
-}
-func checkError(err error) {
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
-		os.Exit(1)
+	func handleClient(conn net.Conn) {
+		var buf [512]byte
+		for {
+			n, err := conn.Read(buf[0:])
+			if err != nil {
+				return
+			}
+			fmt.Println(string(buf[0:]))
+			_, err2 := conn.Write(buf[0:n])
+			if err2 != nil {
+				return
+			}
+		}
 	}
-}
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
+`,
+// =======================================================================================
+	"echoserver":         `
+main.go:
+	/* SimpleEchoServer
+	*/
+	package main
+	import (
+		"fmt"
+		"net"
+		"os"
+	)
+	func main() {
+		service := ":1201"
+		tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+		checkError(err)
+		listener, err := net.ListenTCP("tcp", tcpAddr)
+		checkError(err)
+		for {
+			conn, err := listener.Accept()
+			if err != nil {
+				continue
+			}
+			handleClient(conn)
+			conn.Close() // we're finished
+		}
+	}
+	func handleClient(conn net.Conn) {
+		var buf [512]byte
+		for {
+			n, err := conn.Read(buf[0:])
+			if err != nil {
+				return
+			}
+			fmt.Println(string(buf[0:]))
+			_, err2 := conn.Write(buf[0:n])
+			if err2 != nil {
+				return
+			}
+		}
+	}
+	func checkError(err error) {
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+			os.Exit(1)
+		}
+	}
+`,
+// =======================================================================================
+"interface":`Interfaces are named collections of method signatures.
+main.go:
+	package main
 
-/*
+	import (
+		"fmt"
+	)
 
-This will produce output such as the following:
-$telnet localhost 1200
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-2017-01-02 20:13:21.934698384 +1100 AEDTConnection closed by foreign host.
-Where 2017-01-02 20:13:21.934698384 +1100 AEDT is the output from the server.
+	type GeometryShapes interface {
+		Area() float64
+	}
 
-*/
+	type Rectangle struct {
+		width, height float64
+	}
+
+	func (reg Rectangle) Area(width, height float64) float64 {
+		return reg.width * reg.height
+	}
+
+	// empty interface as function parameter
+	func displayValue(i interface {}) {
+		fmt.Println(i)
+	}
+
+	// function with an empty interface as its parameter
+	func displayValuess(i... interface {}) {
+		fmt.Printf("%v",i)
+	}
+
+	func main() {
+		// variable of empty interface type
+		var CC123 interface {}
+		fmt.Println("Value:", CC123)
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+		// Empty Interface to Pass Function Argument of Any Type
+		a := "Welcome to Programiz"
+		b := 20
+		c := false
+		// pass string to the function 
+		displayValue(a)
+		// pass integer number to the function
+		displayValue(b)
+		// pass boolean value to the function
+		displayValue(c)
+
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		// function call with a single parameter
+		displayValuess(a)
+		// function call with 2 parameters
+		displayValuess(a, b)
+		// function call with 3 parameters
+		displayValuess(a, b, c)
+
+	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		// Golang Type Assertions
+		// create an empty interface
+		
+		var TpAsr interface {} = 0
+		TpAsr = 10
+
+		// store integer to an empty interface
+		// type assertion
+		interfaceValue := TpAsr.(int)
+		fmt.Println(interfaceValue)
+		// Output:
+		//      10
+
+		// store integer to an empty interface
+		TpAsr = "Golang"
+		// type assertion
+		interfaceValue = TpAsr.(int)
+		fmt.Println(interfaceValue)
+		// Output:
+			// panic: interface conversion: interface {} is string, not int 
+
+
+
+		// Avoiding panic in Type Assertions
+		// create an empty interface
+		// var TpAsr interface{}
+		TpAsr = 12
+		// type assertion
+		interfaceValue, booleanValue := TpAsr.(int)
+		fmt.Println("Interface Value:", interfaceValue)
+		fmt.Println("Boolean Value:", booleanValue)
+		// Output
+			// Interface Value: 12
+			// Boolean Value: true
+
+		TpAsr = "Golang"
+		// type assertion
+		interfaceValue2, booleanValue2 := TpAsr.(int)
+		fmt.Println("Interface Value:", interfaceValue2)
+		fmt.Println("Boolean Value:", booleanValue2)
+		//   Output
+			//   Interface Value: 0
+			//   Boolean Value: false
+
+			
+	}
+
 `,
 // =======================================================================================
 // =======================================================================================
@@ -3375,5 +3668,5 @@ Where 2017-01-02 20:13:21.934698384 +1100 AEDT is the output from the server.
 // =======================================================================================
 // =======================================================================================
 
-},
+	},
 }
