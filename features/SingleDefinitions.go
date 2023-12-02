@@ -609,6 +609,9 @@ var OriginSingleDef = SingleDefinitions{
 		"elem()":       "484🚀 Elem()      🔔 This method returns the Value to which a pointer refers. This method can also be used with interfaces, as described in Chapter 29. This method panics if the underlying value's Kind is not Ptr.",
 		"isvalid()":    "484🚀 IsValid()   🔔 This method returns false if the Value is the zero value, created as Value{} rather than obtained using ValueOf, for example. This method doesn't relate to reflected values that are the zero value of their reflected type. If this method returns false, then all other Value methods will panic.",
 		//
+		"interface":"Interfaces are named collections of method signatures. for more information write interface example",
+		"why use interface":"",
+		"why use interface?":"",
 		// 🚀🚀🚀🚀🚀🚀 🔔🔔🔔🔔🔔🔔
 
 	},
