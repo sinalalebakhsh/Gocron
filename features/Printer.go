@@ -39,9 +39,10 @@ func PrintWordByWord(words []string) {
 func GoodByePrint(){
 	color.HiBlue(`
 ┌─────────────────┐
-|    GoodBye      |
-└─────────────────┘
-	`)
+|    GoodBye      | 
+└─────────────────┘ 
+⣿⣤⣿⣿⣤⣿⣿⣤⣿⣿⣤⣿⣿⣤⣿⣿
+`)
 }
 
 func ClearTerminal() {
