@@ -1,3 +1,4 @@
+// This is first
 package getuserinput
 
 import (
@@ -16,7 +17,7 @@ import (
 	"math/rand"
 )
 
-// after ensure user dont wrote arg more than one like -h or --help
+// After ensure user dont wrote arg more than one like -h or --help
 // get user input in this condition
 func GetUserInput(GetBoleanFromGetFirstArgFunction bool) {
 
